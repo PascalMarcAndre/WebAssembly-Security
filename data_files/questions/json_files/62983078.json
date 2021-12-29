@@ -1,0 +1,26 @@
+{
+    "tags": [
+        "webassembly",
+        "emscripten"
+    ],
+    "owner": {
+        "reputation": 572,
+        "user_id": 3680412,
+        "user_type": "registered",
+        "profile_image": "https://i.stack.imgur.com/FiXfl.jpg?s=128&g=1",
+        "display_name": "Guillaume Besson",
+        "link": "https://stackoverflow.com/users/3680412/guillaume-besson"
+    },
+    "is_answered": true,
+    "view_count": 186,
+    "accepted_answer_id": 62995569,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1595248661,
+    "creation_date": 1595177096,
+    "question_id": 62983078,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/62983078/building-libsoxr-to-webassembly-leads-to-function-signature-mismatch-error",
+    "title": "Building libsoxr to Webassembly leads to function signature mismatch error",
+    "body": "<p>I'm trying to build libsoxr to WebAssembly with emscripten. Everything I try leads to a <code>RuntimeError: function signature mismatch</code> error when calling the <code>soxr_create</code> function.  I'm using the <code>latest</code> tag of emscripten. I also tried the provided examples and the behavior is the same. I tried using NodeJS and Chromium.</p>\n<p>Here's how to reproduce:</p>\n<pre><code>git clone https://git.code.sf.net/p/soxr/code\ncd soxr\nemcmake cmake -DBUILD_EXAMPLES=ON .\nemmake make\nnode examples/2-stream.js\n</code></pre>\n<p>The stack trace is:</p>\n<pre><code>exception thrown: RuntimeError: function signature mismatch,RuntimeError: function signature mismatch\n    at wasm-function[50]:0xf72e\n    at wasm-function[49]:0xe90d\n    at wasm-function[60]:0x1057f\n    at wasm-function[14]:0xcac\n    at wasm-function[13]:0xb53\n    at wasm-function[11]:0x699\n...\n</code></pre>\n<p>When building a file with only a <code>main</code> function calling <code>soxr_create</code> and building with <code>-g --profiling</code>, here's the stack trace I'm getting:</p>\n<pre><code>exception thrown: RuntimeError: function signature mismatch,RuntimeError: function signature mismatch\n    at dft_stage_init (wasm-function[68]:0x1b8e2)\n    at _soxr_init (wasm-function[66]:0x190be)\n    at rate_create (wasm-function[88]:0x1f8fa)\n    at initialise (wasm-function[124]:0x43c90)\n    at soxr_set_io_ratio (wasm-function[122]:0x4373f)\n    at soxr_create (wasm-function[119]:0x43213)\n    at __original_main (wasm-function[135]:0x45646)\n    at main (wasm-function[136]:0x45684)\n    at /home/geekuillaume/code/wasm-audio-resampler/soxr_wasm.js:1635:22\n    at callMain (/home/geekuillaume/code/wasm-audio-resampler/soxr_wasm.js:2377:15)\n</code></pre>\n<p>I've tried using emscripten sanitizer but it does nothing.</p>\n"
+}

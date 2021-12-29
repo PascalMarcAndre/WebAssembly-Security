@@ -1,0 +1,29 @@
+{
+    "tags": [
+        "asp.net",
+        "identityserver4",
+        "blazor",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 2579,
+        "user_id": 195965,
+        "user_type": "registered",
+        "accept_rate": 82,
+        "profile_image": "https://www.gravatar.com/avatar/aec177aa3bc73958600e3c37d266b3ee?s=128&d=identicon&r=PG",
+        "display_name": "Jonas Arcangel",
+        "link": "https://stackoverflow.com/users/195965/jonas-arcangel"
+    },
+    "is_answered": true,
+    "view_count": 546,
+    "accepted_answer_id": 64273062,
+    "answer_count": 2,
+    "score": 0,
+    "last_activity_date": 1602210007,
+    "creation_date": 1601863602,
+    "question_id": 64201620,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/64201620/network-error-in-blazor-webassembly-site-with-asp-net-core-identity-login-link",
+    "title": "Network Error in Blazor WebAssembly site with ASP.Net Core Identity login link",
+    "body": "<p>In my BlazorWebAssembly + ASP.NET Core Identity test site (.NET 5.0 RC1), I'm getting the following error when trying to log in.</p>\n<blockquote>\n<p>There was an error trying to log you in: 'Network Error'</p>\n</blockquote>\n<p>I have already set appsettings OIDC to be the following:</p>\n<pre><code>{\n  &quot;SiteName&quot;: &quot;MyProject&quot;,\n  &quot;oidc&quot;: {\n    &quot;Authority&quot;: &quot;https://167.172.118.170/&quot;,\n    &quot;ClientId&quot;: &quot;MyProject&quot;,\n    &quot;DefaultScopes&quot;: [\n      &quot;openid&quot;,\n      &quot;profile&quot;\n    ],\n    &quot;PostLogoutRedirectUri&quot;: &quot;/&quot;,\n    &quot;RedirectUri&quot;: &quot;https://167.172.118.170/authentication/login-callback&quot;,\n    &quot;ResponseType&quot;: &quot;code&quot;\n  }\n}\n</code></pre>\n<p>Why is it not able to connect?</p>\n<p>Test site is at <a href=\"http://167.172.118.170/\" rel=\"nofollow noreferrer\">http://167.172.118.170/</a> and the code can be found in <a href=\"https://github.com/jonasarcangel/BlazorLoginNetworkErrorIssue\" rel=\"nofollow noreferrer\">https://github.com/jonasarcangel/BlazorLoginNetworkErrorIssue</a></p>\n"
+}

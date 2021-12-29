@@ -1,0 +1,29 @@
+{
+    "tags": [
+        "azure-active-directory",
+        "microsoft-graph-api",
+        "msal",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 7,
+        "user_id": 10216272,
+        "user_type": "registered",
+        "profile_image": "https://graph.facebook.com/2027863500570931/picture?type=large",
+        "display_name": "Samo Simoncic",
+        "link": "https://stackoverflow.com/users/10216272/samo-simoncic"
+    },
+    "is_answered": true,
+    "view_count": 306,
+    "accepted_answer_id": 65804844,
+    "answer_count": 3,
+    "score": 0,
+    "last_activity_date": 1611127506,
+    "creation_date": 1610131781,
+    "last_edit_date": 1610136722,
+    "question_id": 65634788,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/65634788/graph-api-with-asp-net-core-blazor-webassembly",
+    "title": "Graph API with ASP.NET Core Blazor WebAssembly",
+    "body": "<p>I would like to get information from Microsoft graph web API. I followed these instructions:</p>\n<p><a href=\"https://docs.microsoft.com/en-us/aspnet/core/blazor/security/webassembly/graph-api?view=aspnetcore-5.0\" rel=\"nofollow noreferrer\">https://docs.microsoft.com/en-us/aspnet/core/blazor/security/webassembly/graph-api?view=aspnetcore-5.0</a></p>\n<p>The problem is that the variable &quot;token&quot; in the AuthenticateRequestAsync method is always null. It means that the Blazor app does not get the token.</p>\n<pre><code>public async Task AuthenticateRequestAsync(HttpRequestMessage request)\n            {\n                var result = await TokenProvider.RequestAccessToken(\n                    new AccessTokenRequestOptions()\n                    {\n                        Scopes = new[] { &quot;https://graph.microsoft.com/User.Read&quot; }\n                    });\n    \n                if (result.TryGetToken(out var token))\n                {\n                    request.Headers.Authorization ??= new AuthenticationHeaderValue(\n                        &quot;Bearer&quot;, token.Value);\n                }\n            }\n</code></pre>\n<p>The Program.cs has the following code:</p>\n<pre><code>builder.Services.AddScoped(sp =&gt; new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });\n\n            builder.Services.AddMsalAuthentication&lt;RemoteAuthenticationState, RemoteUserAccount&gt;(options =&gt;\n             {\n                 options.ProviderOptions.DefaultAccessTokenScopes.Add(&quot;https://graph.microsoft.com/User.Read&quot;);\n                 builder.Configuration.Bind(&quot;AzureAd&quot;, options.ProviderOptions.Authentication);\n                 \n             });\n\n            builder.Services.AddGraphClient(&quot;https://graph.microsoft.com/User.Read&quot;);\n</code></pre>\n<p>In Index.razor I just add two lines of code I OnInitializedAsync method</p>\n<pre><code>var request = GraphClient.Me.Request();\nuser = await request.GetAsync();\n</code></pre>\n<p>I spent a lot of time to figure out what is the main issue but without success. I will appreciate any help.</p>\n"
+}

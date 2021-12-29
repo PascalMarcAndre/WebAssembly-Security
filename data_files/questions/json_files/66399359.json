@@ -1,0 +1,28 @@
+{
+    "tags": [
+        "asp.net-core",
+        "blazor",
+        "blazor-webassembly",
+        "asp.net5"
+    ],
+    "owner": {
+        "reputation": 2409,
+        "user_id": 10851213,
+        "user_type": "registered",
+        "profile_image": "https://i.stack.imgur.com/r7MgN.jpg?s=128&g=1",
+        "display_name": "fingers10",
+        "link": "https://stackoverflow.com/users/10851213/fingers10"
+    },
+    "is_answered": false,
+    "view_count": 40,
+    "answer_count": 0,
+    "score": 0,
+    "last_activity_date": 1614497684,
+    "creation_date": 1614433154,
+    "last_edit_date": 1614497684,
+    "question_id": 66399359,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/66399359/why-blazor-onclick-not-working-inside-hoverable-html-element-content-but-onmou",
+    "title": "Why Blazor @onclick not working inside hoverable html element content but @onmousedown works?",
+    "body": "<p>In my <code>blazor</code> <code>webassembly</code> app, I'm using <code>bulma</code> <code>dropdown</code> component and I have <code>Log out</code> <code>button</code> inside togglable dropdown content.</p>\n<p>Here is the html of my <code>Log out</code> button.</p>\n<pre><code>&lt;div id=&quot;userMenu&quot; class=&quot;dropdown is-right @(UserMenuCollapsed ? &quot;is-active&quot; : null)&quot; @onclick=&quot;ToggleUserMenu&quot; @onfocusout=&quot;FocusOutHandler&quot;&gt;\n    &lt;div class=&quot;dropdown-trigger p-1&quot;&gt;\n        &lt;button class=&quot;bg-green-300 rounded-full h-10 w-10 flex items-center justify-center border-none cursor-pointer&quot; aria-haspopup=&quot;true&quot; aria-controls=&quot;user-menu&quot;&gt;AR&lt;/button&gt;\n    &lt;/div&gt;\n    &lt;div class=&quot;dropdown-menu&quot; id=&quot;dropdown-menu&quot; role=&quot;menu&quot;&gt;\n        &lt;div class=&quot;dropdown-content&quot;&gt;\n            &lt;NavLink href=&quot;/profile&quot; Match=&quot;NavLinkMatch.All&quot; class=&quot;dropdown-item&quot;&gt;\n                Profile (@context.User.Identity.Name)\n            &lt;/NavLink&gt;\n            &lt;hr class=&quot;dropdown-divider&quot;&gt;\n            &lt;button class=&quot;dropdown-item&quot; @onclick=&quot;BeginSignOut&quot;&gt;Log out&lt;/button&gt;\n        &lt;/div&gt;\n    &lt;/div&gt;\n&lt;/div&gt;\n</code></pre>\n<p>This piece of html get displayed when I click <code>#userMenu</code> <code>div</code> element. Now when I click <code>Log out</code> button nothing happens.</p>\n<p>On googling I found like sometime changing <code>@onclick</code> to <code>@onmousedown</code> will make click action to work. I changed and it got worked. But not sure why. Please can anyone explain what happens under the hood?</p>\n<p><strong>Update 1:</strong>\nAfter reading @Umair comments, I have tried to use <code>event stop propagation</code> but that doesn't seem to work.</p>\n<p>Here is the updated code:</p>\n<pre><code>&lt;div id=&quot;userMenu&quot; class=&quot;dropdown is-right @(UserMenuCollapsed ? &quot;is-active&quot; : null)&quot; @onclick=&quot;ToggleUserMenu&quot; @onfocusout=&quot;FocusOutHandler&quot;&gt;\n    &lt;div class=&quot;dropdown-trigger p-1&quot;&gt;\n        &lt;button class=&quot;bg-green-300 rounded-full h-10 w-10 flex items-center justify-center border-none cursor-pointer&quot; aria-haspopup=&quot;true&quot; aria-controls=&quot;user-menu&quot;&gt;AR&lt;/button&gt;\n    &lt;/div&gt;\n    &lt;div class=&quot;dropdown-menu&quot; id=&quot;dropdown-menu&quot; role=&quot;menu&quot;&gt;\n        &lt;div class=&quot;dropdown-content&quot;&gt;\n            &lt;NavLink href=&quot;/profile&quot; Match=&quot;NavLinkMatch.All&quot; class=&quot;dropdown-item&quot;&gt;\n                Profile (@context.User.Identity.Name)\n            &lt;/NavLink&gt;\n            &lt;hr class=&quot;dropdown-divider&quot;&gt;\n            &lt;button class=&quot;dropdown-item&quot; @onclick=&quot;BeginSignOut&quot; @onclick:stopPropagation=&quot;stopPropagation&quot;&gt;Log out&lt;/button&gt;\n        &lt;/div&gt;\n    &lt;/div&gt;\n&lt;/div&gt;\n\n@code {\n    private bool stopPropagation = false;\n}\n</code></pre>\n"
+}

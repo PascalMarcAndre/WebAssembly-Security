@@ -1,0 +1,27 @@
+{
+    "tags": [
+        "browser",
+        "chromium",
+        "webassembly",
+        "skia"
+    ],
+    "owner": {
+        "reputation": 63,
+        "user_id": 11049672,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/dd24904fd974e284be472b25dd5a2b5c?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Desmond Ding",
+        "link": "https://stackoverflow.com/users/11049672/desmond-ding"
+    },
+    "is_answered": false,
+    "view_count": 173,
+    "answer_count": 0,
+    "score": 4,
+    "last_activity_date": 1613640423,
+    "creation_date": 1582089595,
+    "question_id": 60293524,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/60293524/how-to-intercept-skia-draw-commands-from-chromium-browser",
+    "title": "How to intercept Skia draw commands from Chromium Browser",
+    "body": "<p>This is an experimental project of mine related to remote browser isolation. I'm trying to intercept <a href=\"https://skia.org/\" rel=\"nofollow noreferrer\">Skia</a> draw commands in a running Chromium instance and later replay them in a different browser instance at client-side via <a href=\"https://skia.org/user/modules/canvaskit\" rel=\"nofollow noreferrer\">CanvasKit</a>, a WebAssembly build of Skia.</p>\n\n<p>However, I'm having a hard time figuring out where and how to intercept those draw commands within Chromium source code. Any advice on how to approach my problem is much appreciated!</p>\n"
+}

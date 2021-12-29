@@ -1,0 +1,27 @@
+{
+    "tags": [
+        "routing",
+        "blazor",
+        "webassembly",
+        "blazor-client-side"
+    ],
+    "owner": {
+        "reputation": 96,
+        "user_id": 6830857,
+        "user_type": "registered",
+        "profile_image": "https://i.stack.imgur.com/sXQMo.jpg?s=128&g=1",
+        "display_name": "Kasper Olesen",
+        "link": "https://stackoverflow.com/users/6830857/kasper-olesen"
+    },
+    "is_answered": true,
+    "view_count": 508,
+    "answer_count": 2,
+    "score": 0,
+    "last_activity_date": 1573820704,
+    "creation_date": 1573813551,
+    "question_id": 58875009,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/58875009/can-you-get-blazor-webassembly-to-update-a-component-using-navigation",
+    "title": "Can you get Blazor WebAssembly to update a component using navigation?",
+    "body": "<p>I have been using the Blazor WebAssembly example as my basis for a new application and its going pretty well. But I am hoping to make the NavMenu more dynamic.</p>\n\n<p>In this case, I want to have admin / moderator specific options in the NavMenu, which I am trying to add after the user has logged in. I am currently using NavigationManager.NavigateTo(page, false) to switch between Razor pages. Its actually one Razor page mainly, so the login and a dynamic table is on the same page, depending on whether the app has a token or not.</p>\n\n<p>I use the false option to ensure that it wont refresh the whole page, or the token will be lost. What I now find strange though, is that if I click the NavBar it will update the NavBar, showing the new admin options, which is nice. But I had hoped doing this same thing in the code with NavigationManager.NavigateTo(page, false) would also make the navbar update.</p>\n\n<p>I have been looking at some videos and tutorials about Blazor and how to use components, but I still find it confusing how to call between components and get external / parent components to update.</p>\n\n<p>I can think of different ways I probably could get it to work but I am hoping to figure out what the proper way to do it would be and follow code conventions. I suspect I am missing some basic way to do stuff like this even though I have been looking into this.</p>\n\n<p>Code I have added</p>\n\n<pre><code>        &lt;li class=\"nav-item px-3\"&gt;\n            &lt;NavLink class=\"nav-link\" href=\"counter\"&gt;\n                &lt;span class=\"oi oi-list-rich\" aria-hidden=\"true\"&gt;&lt;/span&gt; Noter\n            &lt;/NavLink&gt;\n        &lt;/li&gt;\n        @if (ApiService.Token.HasValue)\n        {\n            &lt;li class=\"nav-item px-3\"&gt;\n                &lt;NavLink class=\"nav-link\" href=\"logout\"&gt;\n                    &lt;span class=\"oi oi-list-rich\" aria-hidden=\"true\"&gt;&lt;/span&gt; AdminStuff\n                &lt;/NavLink&gt;\n            &lt;/li&gt;\n        }\n        &lt;li class=\"nav-item px-3\"&gt;\n            &lt;NavLink class=\"nav-link\" href=\"logout\"&gt;\n                &lt;span class=\"oi oi-list-rich\" aria-hidden=\"true\"&gt;&lt;/span&gt; Log ud\n            &lt;/NavLink&gt;\n        &lt;/li&gt;\n</code></pre>\n"
+}

@@ -1,0 +1,26 @@
+{
+    "tags": [
+        "blazor-webassembly",
+        "asp.net-core-hosted-services"
+    ],
+    "owner": {
+        "reputation": 107,
+        "user_id": 2587822,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/1217659cff71804549faf1d8596ab27f?s=128&d=identicon&r=PG",
+        "display_name": "David Bowser",
+        "link": "https://stackoverflow.com/users/2587822/david-bowser"
+    },
+    "is_answered": false,
+    "view_count": 166,
+    "answer_count": 0,
+    "score": 0,
+    "last_activity_date": 1597769677,
+    "creation_date": 1597765208,
+    "last_edit_date": 1597769677,
+    "question_id": 63472026,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/63472026/deploying-self-contained-not-relying-on-installed-net-hosting-bundle-net-c",
+    "title": "Deploying &#39;Self-Contained&#39; (Not relying on installed .NET Hosting bundle) .NET Core hosted Blazor WebAssembly App to IIS",
+    "body": "<p>*Note, I asked this earlier and it was closed because it was a supposed duplicate of this question\n<a href=\"https://stackoverflow.com/questions/49034308/asp-net-core-web-api-published-in-iis-after-moved-to-different-iis-server-pc-giv?noredirect=1&amp;lq=1\">asp.net core web api published in IIS after moved to different IIS server pc gives error 500.19 (0x8007000d)</a></p>\n<p>However, that question and the one answer I received were about installing .NET Core Hosting Bundle which I don't believe applies since this is a 'SELF-CONTAINED' deploy. Am I missing something?\nSo, again...</p>\n<p>I have developed a Blazor WebAssembly App that will be used on a Server running Windows 2012 on our Intranet. This is targeting .Net 5.0 Core Hosted and Self-Contained. I need to deploy to IIS 8.5 and have some questions.</p>\n<ol>\n<li>When I add the website in IIS, do I point to the root deploy directory with the executable and web.config? Is there anything else I need to do so that IIS will find the index file in the wwwroot sub-directory?</li>\n<li>Is is appropriate to put the deploy directory for this app directly under inetpub as long as I give permissions to my virtual App Pool to it?</li>\n<li>The publish task created a rather large BlazorDebugProxy directory. This is for release so I don't understand why this was created. Is there a way to prevent this from happening?</li>\n</ol>\n<p>I have tried to set this up the best I can after searching for hours. I found posts with some related information but nothing showing how to set up IIS for the self-contained app or answer my other questions above.</p>\n<p>Note that when I try to browse to the site from IIS, I get a 500.19 'The requested page cannot be accessed because the related configuration data for the page is invalid.' I have not made changes to the file as it was created by the publish process. It is:</p>\n<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;\n&lt;configuration&gt;\n  &lt;location path=&quot;.&quot; inheritInChildApplications=&quot;false&quot;&gt;\n    &lt;system.webServer&gt;\n      &lt;handlers&gt;\n        &lt;add name=&quot;aspNetCore&quot; path=&quot;*&quot; verb=&quot;*&quot; modules=&quot;AspNetCoreModuleV2&quot; resourceType=&quot;Unspecified&quot; /&gt;\n      &lt;/handlers&gt;\n      &lt;aspNetCore processPath=&quot;.\\AppName.Server.exe&quot; stdoutLogEnabled=&quot;false&quot; stdoutLogFile=&quot;.\\logs\\stdout&quot; hostingModel=&quot;inprocess&quot; /&gt;\n    &lt;/system.webServer&gt;\n  &lt;/location&gt;\n&lt;/configuration&gt;\n&lt;!--ProjectGuid: 60862cf1-bea8-48f4-8ae9-270f2f537927--&gt;\n</code></pre>\n"
+}

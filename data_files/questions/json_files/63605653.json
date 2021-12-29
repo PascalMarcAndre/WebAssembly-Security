@@ -1,0 +1,31 @@
+{
+    "tags": [
+        "c#",
+        "azure-active-directory",
+        "openid-connect",
+        "msal",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 6900,
+        "user_id": 7453,
+        "user_type": "registered",
+        "accept_rate": 93,
+        "profile_image": "https://www.gravatar.com/avatar/9221ab436283d74b2f9980004df83c1c?s=128&d=identicon&r=PG",
+        "display_name": "Patrick Szalapski",
+        "link": "https://stackoverflow.com/users/7453/patrick-szalapski"
+    },
+    "is_answered": true,
+    "view_count": 186,
+    "accepted_answer_id": 63687434,
+    "answer_count": 1,
+    "score": 1,
+    "last_activity_date": 1603283068,
+    "creation_date": 1598475521,
+    "last_edit_date": 1603283068,
+    "question_id": 63605653,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/63605653/is-there-a-way-to-supply-a-domain-hint-for-single-sign-on-using-msal-net-on-a-bl",
+    "title": "Is there a way to supply a domain hint for single sign-on using MSAL.NET on a Blazor WebAssembly Client?",
+    "body": "<p>Is there any way to supply a domain hint (or otherwise avoid the need for the &quot;pick an account&quot; prompt) when using <strong>MSAL.NET</strong> in a Blazor WebAssembly application on the <strong>client</strong> side? I thought maybe it would be a setting or option passed in to builder.Services.AddMsalAuthentication, but I don't see it.</p>\n<p><a href=\"https://stackoverflow.com/questions/63604911/is-there-a-way-to-supply-a-domain-hint-for-single-sign-on-using-msal-net\">I figured it out for the server</a>, but not the client yet.  Without being able to set this, I get redundant &quot;pick an account&quot; prompts from microsoftonline.com when trying to authenticate.</p>\n<p>I currently have, in Program.cs on the client:</p>\n<pre class=\"lang-cs prettyprint-override\"><code>builder.Services.AddMsalAuthentication(options =&gt;\n{\n    builder.Configuration.Bind(&quot;AzureAd&quot;, options.ProviderOptions.Authentication);\n    options.ProviderOptions.DefaultAccessTokenScopes.Add(myScope);\n    options.UserOptions.RoleClaim = &quot;roles&quot;;\n});\n</code></pre>\n"
+}

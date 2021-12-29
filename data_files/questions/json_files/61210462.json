@@ -1,0 +1,27 @@
+{
+    "tags": [
+        "asp.net-core",
+        "blazor",
+        "blazor-client-side"
+    ],
+    "owner": {
+        "reputation": 1830,
+        "user_id": 3025663,
+        "user_type": "registered",
+        "accept_rate": 58,
+        "profile_image": "https://i.stack.imgur.com/5NSjB.jpg?s=128&g=1",
+        "display_name": "Varin",
+        "link": "https://stackoverflow.com/users/3025663/varin"
+    },
+    "is_answered": true,
+    "view_count": 377,
+    "answer_count": 1,
+    "score": 1,
+    "last_activity_date": 1586877144,
+    "creation_date": 1586875495,
+    "question_id": 61210462,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/61210462/blazor-webassembly-how-to-securely-consume-private-restricted-api",
+    "title": "Blazor WebAssembly - how to securely consume private/restricted API?",
+    "body": "<p>I want to build 2 apps. </p>\n\n<ol>\n<li>Private API in .NET that takes care of database access / processing of data.</li>\n<li>Blazor WebAssembly app which will connect to this API securely, to search data.</li>\n</ol>\n\n<p>Since Blazor WebAssembly DLLs can be decompiled, I can't use any private/secret keys in the APP.\nI don't want anyone being able to use the API if they discover the endpoints. Only the Blazor APP can use the API (and any other app I might build in the future).</p>\n\n<p>How should I approach this? Is it even possible to do it securely or should I go Server Side?</p>\n"
+}

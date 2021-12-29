@@ -1,0 +1,27 @@
+{
+    "tags": [
+        "rust",
+        "rust-macros"
+    ],
+    "owner": {
+        "reputation": 815,
+        "user_id": 5189001,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/f0a368165cc2b83af3f8c28cfbfb99f6?s=128&d=identicon&r=PG&f=1",
+        "display_name": "GScrivs",
+        "link": "https://stackoverflow.com/users/5189001/gscrivs"
+    },
+    "is_answered": false,
+    "view_count": 36,
+    "closed_date": 1579100024,
+    "answer_count": 0,
+    "score": 0,
+    "last_activity_date": 1579100137,
+    "creation_date": 1579099825,
+    "last_edit_date": 1579100137,
+    "question_id": 59753853,
+    "link": "https://stackoverflow.com/questions/59753853/is-it-possible-to-iterate-over-an-external-structs-members-in-a-macro",
+    "closed_reason": "Duplicate",
+    "title": "Is it possible to iterate over an external struct&#39;s members in a macro?",
+    "body": "<p>I'm working on a Rust app that needs to compile for WebAssembly, which means exposing quite a lot of internal &amp; external structs for use from TypeScript.  I want to write a macro to automate this job as it's quite tedious.</p>\n\n<p>I want is a macro <code>wasm_wrap_type!(WasmStruct, ExternalCrateStruct)</code> which produces a struct with the <code>wasm_bindgen</code> attribute called <code>WasmStruct</code> that implements all the public methods of <code>ExternalCrateStruct</code> (and added JavaScript getters &amp; setters for properties).</p>\n\n<p>I know that libraries like serde iterate over members using a <code>derive</code> macro, but I don't think that's possible to use in this situation.</p>\n\n<p>My end goal is that calling this:</p>\n\n<pre><code>wasm_wrap_type!(WasmStruct, ExternalCrateStruct)\n</code></pre>\n\n<p>Generates this:</p>\n\n<pre><code>#[wasm_bindgen]\npub struct WasmStruct(ExternalCrateStruct);\n\n#[wasm_bindgen]\nimpl WasmStruct {\n\n    // For each member of ExternalCrateStruct...\n    #[wasm_bindgen(setter)]\n    pub fn member(&amp;self) -&gt; TypeOfSetter {\n        &amp;self.0.member\n    }\n\n    #[wasm_bindgen(getter)]\n    pub fn set_member(&amp;mut self, new_value: TypeOfSetter) {\n        self.0.member = new_value;\n    }\n\n    // For each ecsFunction of ExternalCrateStruct...\n    pub fn ecsFunction(&amp;self, args...) -&gt; ReturnType? {\n        self.0.ecsFunction(args...)\n    }\n}\n</code></pre>\n\n<p>Is it possible to iterate over the member and public functions of a struct defined in a separate crate?</p>\n"
+}

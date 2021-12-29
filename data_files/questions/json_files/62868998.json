@@ -1,0 +1,30 @@
+{
+    "tags": [
+        "asp.net-core",
+        "identityserver4",
+        "blazor",
+        "blazor-client-side",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 1596,
+        "user_id": 1206480,
+        "user_type": "registered",
+        "accept_rate": 76,
+        "profile_image": "https://www.gravatar.com/avatar/369c998e75bc392472c387df640dd97a?s=128&d=identicon&r=PG",
+        "display_name": "user1206480",
+        "link": "https://stackoverflow.com/users/1206480/user1206480"
+    },
+    "is_answered": true,
+    "view_count": 1638,
+    "accepted_answer_id": 62985357,
+    "answer_count": 2,
+    "score": 1,
+    "last_activity_date": 1595190787,
+    "creation_date": 1594612332,
+    "question_id": 62868998,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/62868998/login-error-using-blazor-web-assembly-and-identity-server-4",
+    "title": "Login error using Blazor Web Assembly and Identity Server 4",
+    "body": "<p>I followed the tutorial for the Blazor WebAssembly standalone app by microsoft.  I'm using Identity Server 4 along with it's UI installed for login, etc., and was able to view the well-known page.  I assumed that I had everything in place for a standard login from the blazor app, but I never get to the login page for Identity Server.  Instead the Blazor app returns this error message when I hit the login link:</p>\n<blockquote>\n<p>There was an error trying to log you in: 'Invalid response\nContent-Type: text/html, from URL:\nhttps:login.microsoftonline.com/.well-known/openid-configuration'</p>\n</blockquote>\n<p>I'm not sure why this is happening, and I have no clue as to why the url is directed at microsoftonline.com. I feel like I am missing an obvious step here. What am I missing?</p>\n<p><strong>Blazor launchSettings:</strong></p>\n<pre><code>{\n  &quot;iisSettings&quot;: {\n    &quot;windowsAuthentication&quot;: false,\n    &quot;anonymousAuthentication&quot;: true,\n    &quot;iisExpress&quot;: {\n      &quot;applicationUrl&quot;: &quot;http://localhost:59723&quot;,\n      &quot;sslPort&quot;: 44398\n    }\n  },\n  &quot;profiles&quot;: {\n    &quot;IIS Express&quot;: {\n      &quot;commandName&quot;: &quot;IISExpress&quot;,\n      &quot;launchBrowser&quot;: true,\n      &quot;inspectUri&quot;: &quot;{wsProtocol}://{url.hostname}:{url.port}/_framework/debug/ws-proxy?browser={browserInspectUri}&quot;,\n      &quot;environmentVariables&quot;: {\n        &quot;ASPNETCORE_ENVIRONMENT&quot;: &quot;Development&quot;\n      }\n    },\n    &quot;ClientBlazor&quot;: {\n      &quot;commandName&quot;: &quot;Project&quot;,\n      &quot;launchBrowser&quot;: true,\n      &quot;inspectUri&quot;: &quot;{wsProtocol}://{url.hostname}:{url.port}/_framework/debug/ws-proxy?browser={browserInspectUri}&quot;,\n      &quot;applicationUrl&quot;: &quot;https://localhost:5003&quot;,\n      &quot;environmentVariables&quot;: {\n        &quot;ASPNETCORE_ENVIRONMENT&quot;: &quot;Development&quot;\n      }\n    }\n  }\n}\n</code></pre>\n<p><strong>Blazor appsettings:</strong></p>\n<pre><code>{\n  &quot;Local&quot;: {\n    &quot;Authority&quot;: &quot;https://localhost:5001&quot;,\n    &quot;ClientId&quot;: &quot;BlazorClient&quot;,\n    &quot;DefaultScopes&quot;: [\n      &quot;openid&quot;,\n      &quot;profile&quot;\n    ],\n    &quot;PostLogoutRedirectUri&quot;: &quot;/&quot;,\n    &quot;ResponseType&quot;:  &quot;code&quot;\n  }\n}\n</code></pre>\n<p><strong>Blazor Main method:</strong></p>\n<pre><code>public static async Task Main(string[] args)\n        {\n            var builder = WebAssemblyHostBuilder.CreateDefault(args);\n            builder.RootComponents.Add&lt;App&gt;(&quot;app&quot;);\n\n            builder.Services.AddTransient(sp =&gt; new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });\n\n            builder.Services.AddOidcAuthentication(options =&gt;\n            {\n                // Configure your authentication provider options here.\n                // For more information, see https://aka.ms/blazor-standalone-auth\n                builder.Configuration.Bind(&quot;Local&quot;, options.ProviderOptions);\n            });\n\n            await builder.Build().RunAsync();\n        }\n</code></pre>\n<p><strong>Identity Server launchSettings:</strong></p>\n<pre><code>{\n  &quot;profiles&quot;: {\n    &quot;SelfHost&quot;: {\n      &quot;commandName&quot;: &quot;Project&quot;,\n      &quot;launchBrowser&quot;: true,\n      &quot;environmentVariables&quot;: {\n        &quot;ASPNETCORE_ENVIRONMENT&quot;: &quot;Development&quot;\n      },\n      &quot;applicationUrl&quot;: &quot;https://localhost:5001&quot;\n    }\n  }\n}\n</code></pre>\n<p><strong>Identity Server config:</strong></p>\n<pre><code>public static IEnumerable&lt;Client&gt; Clients =&gt;\n            new List&lt;Client&gt;\n            {\n                // SPA client using code flow + pkce\n                new Client\n                {\n                    ClientId = &quot;BlazorClient&quot;,\n                    ClientName = &quot;Blazor Client&quot;,\n                    ClientUri = &quot;https://loclhost:5003/&quot;,\n\n                    AllowedGrantTypes = GrantTypes.Code,\n                    RequirePkce = true,\n                    RequireClientSecret = false,\n\n                    RedirectUris =\n                    {\n                        &quot;https://localhost:5003/authentication/login-callback&quot;\n                    },\n\n                    PostLogoutRedirectUris = { &quot;http://localhost:5003/&quot; },\n                    AllowedCorsOrigins = { &quot;http://localhost:5003&quot; },\n\n                    AllowedScopes = { &quot;openid&quot;, &quot;profile&quot; },\n                    Enabled = true\n                }\n            };\n</code></pre>\n"
+}

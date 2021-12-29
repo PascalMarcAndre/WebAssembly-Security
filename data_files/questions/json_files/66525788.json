@@ -1,0 +1,28 @@
+{
+    "tags": [
+        "asp.net",
+        "sql-server",
+        "asp.net-core",
+        ".net-core"
+    ],
+    "owner": {
+        "reputation": 11,
+        "user_id": 14860122,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/5ff13a422dabaa874949f6eecafcc5f0?s=128&d=identicon&r=PG&f=1",
+        "display_name": "samsepi0l",
+        "link": "https://stackoverflow.com/users/14860122/samsepi0l"
+    },
+    "is_answered": false,
+    "view_count": 64,
+    "answer_count": 0,
+    "score": -1,
+    "last_activity_date": 1615195756,
+    "creation_date": 1615188580,
+    "last_edit_date": 1615195756,
+    "question_id": 66525788,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/66525788/blazor-webassembly-with-both-sql-server-database-authorization-and-msal-auth",
+    "title": "Blazor webassembly with both SQL Server database authorization and MSAL auth",
+    "body": "<p>I'm writing a Blazor webassembly app (API and wasm client) that has to only be usable for users that are signed in the Azure Active Directory and have a user row in the API's SQL Server database.</p>\n<p>This is my <strong>Client/Program.cs:</strong>:</p>\n<pre><code>using System;\nusing System.Net.Http;\nusing System.Threading.Tasks;\nusing IsotopeTracker.Client.Extensions;\nusing IsotopeTracker.Client.Services;\nusing Microsoft.AspNetCore.Components.WebAssembly.Authentication;\nusing Microsoft.AspNetCore.Components.WebAssembly.Hosting;\nusing Microsoft.Extensions.Configuration;\nusing Microsoft.Extensions.DependencyInjection;\nusing Microsoft.Graph;\n\nnamespace MyApp.Client\n{\n    public class Program\n    {\n        public static async Task Main(string[] args)\n        {\n            var builder = WebAssemblyHostBuilder.CreateDefault(args);\n            builder.RootComponents.Add&lt;App&gt;(&quot;#app&quot;);\n\n            builder.Services.AddHttpClient(&quot;MyApp.ServerAPI&quot;, client =&gt; client.BaseAddress = new Uri(builder.HostEnvironment.BaseAddress))\n                .AddHttpMessageHandler&lt;BaseAddressAuthorizationMessageHandler&gt;();\n\n            // Supply HttpClient instances that include access tokens when making requests to the server project\n            builder.Services.AddScoped(sp =&gt; sp.GetRequiredService&lt;IHttpClientFactory&gt;().CreateClient(&quot;MyApp.ServerAPI&quot;));\n            \n            builder.Services.AddMsalAuthentication(options =&gt;\n            {\n                builder.Configuration.Bind(&quot;AzureAd&quot;, options.ProviderOptions.Authentication);\n                options.ProviderOptions.DefaultAccessTokenScopes.Add(&quot;api://&lt;scope guid&gt;/Api.Access&quot;);\n            });\n    \n            builder.Services.AddGraphClient();\n            builder.Services.AddTransient&lt;IUserService, UserService&gt;();\n\n            await builder.Build().RunAsync();\n        }\n    }\n}\n</code></pre>\n<p>My idea is to create a method in my &quot;UserService&quot; (UserService.IsUser) such that it can check whether the user is registered in the app's database.</p>\n<ul>\n<li>How can I make the client show an &quot;unauthorized&quot; page if the UserService.IsUser method returns false?</li>\n<li>Is the above a good approach? I chose this approach because the app users need to be able to control access to this app themselves without involving the Azure Active Directory admins.</li>\n<li>I would also like to have &quot;local&quot; app roles so that I ask my UserService whether a user is an admin an can control access to components based on that.</li>\n</ul>\n<p><strong>Additional information:</strong></p>\n<p>I use .NET 5.0</p>\n"
+}

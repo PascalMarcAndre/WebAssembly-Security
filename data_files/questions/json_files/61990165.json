@@ -1,0 +1,26 @@
+{
+    "tags": [
+        "blazor",
+        "blazor-client-side"
+    ],
+    "owner": {
+        "reputation": 31,
+        "user_id": 6762219,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/ca22cfa49b08a5709181e17b018eed10?s=128&d=identicon&r=PG&f=1",
+        "display_name": "dvlpr",
+        "link": "https://stackoverflow.com/users/6762219/dvlpr"
+    },
+    "is_answered": true,
+    "view_count": 176,
+    "answer_count": 1,
+    "score": 1,
+    "last_activity_date": 1590352218,
+    "creation_date": 1590343394,
+    "last_edit_date": 1590352218,
+    "question_id": 61990165,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/61990165/securing-blazor-webassembly-source",
+    "title": "Securing Blazor webassembly source",
+    "body": "<p>I created .NET Core hosted Blazor webassembly project with identity server using Visual Studio template. Any idea how I should change the configuration if I want the whole Blazor compiled client code to be available only to authenticated users? </p>\n\n<p>Now everyone can access client side app compiled code even if I secure all Blazor routes with <code>[Authorize]</code> because single-page-app is downloaded as a single entity to the browser. I do not want to make compiled code available publicly to users who don't even have access to app. </p>\n"
+}

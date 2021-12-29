@@ -1,0 +1,28 @@
+{
+    "tags": [
+        "c#",
+        "authentication",
+        "authorization",
+        "asp.net-core-webapi",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 1,
+        "user_id": 8233601,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/25048d8f0ba58602eb373dcabd531550?s=128&d=identicon&r=PG",
+        "display_name": "srole",
+        "link": "https://stackoverflow.com/users/8233601/srole"
+    },
+    "is_answered": false,
+    "view_count": 114,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1599501329,
+    "creation_date": 1599501096,
+    "question_id": 63782180,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/63782180/asp-net-core-authentication-with-jwt",
+    "title": "Asp Net Core authentication with JWT",
+    "body": "<p>I'm currently planning on making an online scheduler in Blazor Webassembly (NET Core 3.1). As I've written intranet applications most of the time, I'm kind of concerned about the security aspects of the web api that the client will consume.</p>\n<p>Currently, we're issuing JWT Tokens from the Backend with the username and the validity of the token in hours to the client and store the said token in the local storage of the browser. Since the token can be accessed by the user and the claims can be extracted from it, is there anything I have to be aware of? The token then is set as the DefaultRequestHeader of the HttpClient after the user has logged in. A cusotm Middleware then validates the token and sets the username in a scoped service if the user is authenticated.</p>\n<p>The users (customers and employees) are stored in a database which is not publicly accessible. There is no option to register a user via the website. Users can create appointments in multiple locations of the company (not at the same time/day) but how do you restrict a user from consuming an api endpoint for one location but not for the other? Since claims can be manipulated I'm really not that confident in writing the accessible locations into the jwt.</p>\n<p>Some actions also required to be executed in the four eyes principal, e.g. a second user needs to login (30 seconds validity with a refresh if possoible) in order to confirm the action. Are there existing mechanisms which are capable of handling such a thing?</p>\n<p>Any advice, sources or thoughts are welcome. Feel free to ask for more details if necessary.</p>\n"
+}

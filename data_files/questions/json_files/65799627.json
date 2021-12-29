@@ -1,0 +1,28 @@
+{
+    "tags": [
+        "debugging",
+        "attributes",
+        "blazor",
+        "webassembly"
+    ],
+    "owner": {
+        "reputation": 1,
+        "user_id": 15039170,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/aab6e9e8e7639ce38e0c7a288f77a37b?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Sergey Neklyudov",
+        "link": "https://stackoverflow.com/users/15039170/sergey-neklyudov"
+    },
+    "is_answered": false,
+    "view_count": 47,
+    "answer_count": 0,
+    "score": 0,
+    "last_activity_date": 1611093400,
+    "creation_date": 1611090889,
+    "last_edit_date": 1611093400,
+    "question_id": 65799627,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/65799627/c-blazor-webassembly-custom-authorize-attribute-not-working-debug",
+    "title": "C# Blazor Webassembly custom authorize attribute not working debug",
+    "body": "<p>I found a problem with the authorization attributes in the blazor. I wrote a class for working with roles in attributes in order to pass them through parameters.</p>\n<p>First variant - Default attribute</p>\n<pre><code>@attribute [Authorize]\n</code></pre>\n<p>Second variant - Custom attribute</p>\n<pre><code>@attribute [AuthorizeRoles(RoleType.Administrator)]\n\npublic class AuthorizeRolesAttribute : AuthorizeAttribute\n{\n    public AuthorizeRolesAttribute(params RoleType[] roles)\n    {\n        Roles = RoleTypeExtension.GetStringRoles(roles);\n    }\n}\n</code></pre>\n<p>When I use first variant then all working, but then I use second variant I have problem with Debug from all project and project work very well. I have error &quot;The breakpoint cannot be hit. Unbound breakpoint&quot;</p>\n<p>How to solve this problem?</p>\n<p>You can use this example - <a href=\"https://vivien-chevallier.com/Articles/create-a-custom-authorizeattribute-that-accepts-parameters-of-type-enum\" rel=\"nofollow noreferrer\">https://vivien-chevallier.com/Articles/create-a-custom-authorizeattribute-that-accepts-parameters-of-type-enum</a></p>\n"
+}

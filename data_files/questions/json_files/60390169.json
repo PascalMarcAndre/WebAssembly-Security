@@ -1,0 +1,27 @@
+{
+    "tags": [
+        ".net-core",
+        "blazor",
+        "webassembly"
+    ],
+    "owner": {
+        "reputation": 174,
+        "user_id": 1227445,
+        "user_type": "registered",
+        "accept_rate": 50,
+        "profile_image": "https://www.gravatar.com/avatar/258b21cb64d360f84617ef2ae72633b5?s=128&d=identicon&r=PG",
+        "display_name": "user1227445",
+        "link": "https://stackoverflow.com/users/1227445/user1227445"
+    },
+    "is_answered": false,
+    "view_count": 205,
+    "answer_count": 0,
+    "score": 1,
+    "last_activity_date": 1582618563,
+    "creation_date": 1582618563,
+    "question_id": 60390169,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/60390169/blazor-publish-failed",
+    "title": "Blazor Publish Failed",
+    "body": "<p>I'm doing some tests with Blazor and WebAssembly and I've been following a few of the tutorials over at <a href=\"https://docs.microsoft.com/en-us/aspnet/core/blazor/?view=aspnetcore-3.1\" rel=\"nofollow noreferrer\">https://docs.microsoft.com/en-us/aspnet/core/blazor/?view=aspnetcore-3.1</a></p>\n\n<p>I can build and run my test project just fine. However, when I try to publish either the Blazor Client or Blazor Server in Visual Studio 2019, I get an error message that says:</p>\n\n<pre><code>Publish failed\nPublish has encountered an error.\nObject reference not set to an instance of an object.\n</code></pre>\n\n<p>It then makes reference to a log file, which I've checked and it contains the following.</p>\n\n<pre><code>System.NullReferenceException: Object reference not set to an instance of an object.\nat Microsoft.Publish.Framework.Provider.DefaultPublishTabProvider.CreatePublishServiceProvider(IVsHierarchy hierarchy)\nat Microsoft.Publish.Framework.Provider.DefaultPublishTabProvider.CreateViewAsync(IVsHierarchy project, IAsyncServiceProvider serviceProvider, CancellationToken cancellationToken)\nat Microsoft.Publish.Framework.Provider.PublishProjectDesignerTabProvider.&lt;CreateViewAsync&gt;d__7.MoveNext()\n</code></pre>\n\n<p>I'm not sure if this is a bug because Blazor WebAssembly is still in preview or if there is something wrong with my set up. I've tried googling this error, but it turns up very little.</p>\n\n<p>So I'm just wondering if anyone else that has had a play with Blazor and WebAssembly has seen this error before and if they worked out how to solve it?</p>\n"
+}

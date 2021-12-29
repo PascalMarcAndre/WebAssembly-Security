@@ -1,0 +1,29 @@
+{
+    "tags": [
+        "azure",
+        "azure-active-directory",
+        "azure-functions",
+        "blazor",
+        "azure-ad-b2c"
+    ],
+    "owner": {
+        "reputation": 11,
+        "user_id": 10958435,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/657ed0f3e143ce412f82fc58526d0184?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Tim Daborn",
+        "link": "https://stackoverflow.com/users/10958435/tim-daborn"
+    },
+    "is_answered": false,
+    "view_count": 211,
+    "answer_count": 0,
+    "score": 1,
+    "last_activity_date": 1599488271,
+    "creation_date": 1598558055,
+    "last_edit_date": 1599488271,
+    "question_id": 63623303,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/63623303/blazor-standalone-client-calling-a-function-via-azure-b2c",
+    "title": "Blazor standalone client calling a function via Azure B2C",
+    "body": "<p>Is there a good example or a walkthrough of a Blazor standalone app calling a function app via an Azure Active Directory B2C passing in a claim with an identity to the function?</p>\n<p>I have been working my way through the documentation,\n<a href=\"https://docs.microsoft.com/en-us/aspnet/core/blazor/security/webassembly/standalone-with-azure-active-directory-b2c?view=aspnetcore-3.1\" rel=\"nofollow noreferrer\">Secure an ASP.NET Core Blazor WebAssembly standalone app with Azure Active Directory B2C</a> and\n<a href=\"https://docs.microsoft.com/en-us/aspnet/core/blazor/security/webassembly/additional-scenarios?view=aspnetcore-3.1\" rel=\"nofollow noreferrer\">ASP.NET Core Blazor WebAssembly additional security scenario</a>s but cannot get past 404 result.</p>\n<p>So what am I trying to achieve? I want to put together a couple of POCs. The first is a Blazor standalone client app, authenticating via B2C, then passing an authorisation token claims token to an azure function, where I can unpack the user id and email address. The second is same as above, but with Api Management between the Blazor client and the functions api.  Because of the nature of the project I am using the consumption plan for both the functions and api management.</p>\n<p>So just concentrating on the first case (Blazor - B2C - Function), on the assumption if I get that to work, the api will follow\u2026</p>\n<p>I have a B2C client tenant with 2 applications: a front end app authorised for the scopes of a 2nd B2C application for the api.  My Function app has authentication/authorisation set to 'Login with Active Directory' with the client ID set to the Front end app's client id, the issuer uri set to the B2C's pocsignupsignin Userflow and the 'Allowed Token Audiences' set to the client id of the Api in B2C.</p>\n<p>I can get a JWT token via a browser and using postman successfully call a function in my function app passing a bearer token.</p>\n<p>My Blazor app can log in to B2C.  If I have no authorisation configured for the web app, then my function call is successful.</p>\n<p>But once I turn authorisation I run into CORS 404 - origin 'https://localhost:44389' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.  But I have CORS configured with 'Enable Access-Control-Allow-Credentials' and my client url configured.</p>\n<p>What am I missing?\nI also suspect that the token with the id will not be passed correctly.</p>\n<p>From Program.cs</p>\n<pre class=\"lang-cs prettyprint-override\"><code>builder.Services.AddHttpClient(&quot;ServerAPI&quot;,\n           client =&gt; client.BaseAddress = new Uri(functionURI))\n       .AddHttpMessageHandler&lt;CustomAuthorizationMessageHandler&gt;();\n \n \nbuilder.Services.AddMsalAuthentication(options =&gt;\n{\n    builder.Configuration.Bind(&quot;AzureAdB2C&quot;, options.ProviderOptions.Authentication);\n    options.ProviderOptions.DefaultAccessTokenScopes.Add(readScopeURI);\n    options.ProviderOptions.DefaultAccessTokenScopes.Add(writeScopeURI);\n    Console.WriteLine($&quot;options.ProviderOptions.DefaultAccessTokenScopes {options.ProviderOptions.DefaultAccessTokenScopes}&quot;);\n});\n</code></pre>\n<p>From CustomAuthorizationMessageHandler</p>\n<pre class=\"lang-cs prettyprint-override\"><code>public class CustomAuthorizationMessageHandler : AuthorizationMessageHandler\n  {\n \n\n public CustomAuthorizationMessageHandler(IAccessTokenProvider provider,\n     NavigationManager navigationManager)\n     : base(provider, navigationManager)\n {\n     ConfigureHandler(\n         authorizedUrls: new[] { B2CClientUrl },\n         scopes: new[] { &quot;read&quot;, &quot;write&quot; });\n }\n \n}\n</code></pre>\n<p>From appsettings</p>\n<pre><code>&quot;AzureAdB2C&quot;:\n{\n  &quot;Authority&quot;: B2C signupsignin uri,\n  &quot;ClientId&quot;: B2C frontend client,\n  &quot;ValidateAuthority&quot;: false\n}\n</code></pre>\n<p>Function call</p>\n<pre class=\"lang-cs prettyprint-override\"><code>   async Task GetFromDedicatedFunctionClient(string subUrl)\n   {\n       try\n       {\n           var client = ClientFactory.CreateClient(&quot;ServerAPI&quot;);\n           Console.WriteLine($&quot;client.BaseAddress {client.BaseAddress}&quot;);\n \n           result =\n           await client.GetStringAsync(subUrl);\n \n       }\n       catch \u2026\n       }\n\n</code></pre>\n"
+}

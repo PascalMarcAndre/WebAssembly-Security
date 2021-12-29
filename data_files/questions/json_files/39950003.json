@@ -1,0 +1,28 @@
+{
+    "tags": [
+        "visual-studio",
+        "visual-c++",
+        "dll",
+        "cmake"
+    ],
+    "owner": {
+        "reputation": 1154,
+        "user_id": 6521181,
+        "user_type": "registered",
+        "accept_rate": 81,
+        "profile_image": "https://www.gravatar.com/avatar/81957e6bc199ffd1ce4362dda7d488f1?s=128&d=identicon&r=PG&f=1",
+        "display_name": "John London",
+        "link": "https://stackoverflow.com/users/6521181/john-london"
+    },
+    "is_answered": false,
+    "view_count": 266,
+    "answer_count": 1,
+    "score": 1,
+    "last_activity_date": 1476093652,
+    "creation_date": 1476060708,
+    "question_id": 39950003,
+    "content_license": "CC BY-SA 3.0",
+    "link": "https://stackoverflow.com/questions/39950003/statically-link-to-vcruntimexxx-dll-while-dynamically-link-to-ucrtbase-dll-with",
+    "title": "Statically link to vcruntimexxx.dll while dynamically link to ucrtbase.dll with Cmake",
+    "body": "<p>When building Visual C++ with <code>cl.exe</code> in command line, I can do this with <code>cl /MT /GL main.cpp /link /LTCG /NODEFAULTLIB:libucrt.lib ucrt.lib</code>. I can verify the result by running <code>tasklist /m /fi \"imagename eq main.exe\"</code>, the list will contain ucrtbase.dll but not vcruntimexxx.dll as expected.</p>\n\n<p>Now my real problem: I want to build <a href=\"https://github.com/WebAssembly/binaryen\" rel=\"nofollow\">https://github.com/WebAssembly/binaryen</a> like above. I added the following in the main CMakelists.txt:</p>\n\n<pre><code>  ADD_COMPILE_FLAG(\"/MT\")\n  ADD_COMPILE_FLAG(\"/GL\")\n  ADD_LINK_FLAG(\"/LTCG\")\n  ADD_LINK_FLAG(\"/NODEFAULTLIB:libucrt.lib\")\n  ADD_LINK_FLAG(\"ucrt.lib\")\n</code></pre>\n\n<p>The programs built still dynamically linked to vcruntimexxx.dll.</p>\n\n<p>How to do this with CMake?</p>\n"
+}

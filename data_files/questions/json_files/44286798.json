@@ -1,0 +1,27 @@
+{
+    "tags": [
+        "web",
+        "memory-leaks",
+        "webassembly"
+    ],
+    "owner": {
+        "reputation": 2887,
+        "user_id": 3925120,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/1570dc8babc3c9f39ba3867da94d14e4?s=128&d=identicon&r=PG",
+        "display_name": "Max Shenfield",
+        "link": "https://stackoverflow.com/users/3925120/max-shenfield"
+    },
+    "is_answered": true,
+    "view_count": 575,
+    "accepted_answer_id": 44287198,
+    "answer_count": 1,
+    "score": 3,
+    "last_activity_date": 1496240132,
+    "creation_date": 1496239066,
+    "question_id": 44286798,
+    "content_license": "CC BY-SA 3.0",
+    "link": "https://stackoverflow.com/questions/44286798/can-a-webassembly-program-leak-memory",
+    "title": "Can a WebAssembly program leak memory?",
+    "body": "<p>WebAssembly programs start with a fixed amount of virtual memory, and can <a href=\"https://github.com/WebAssembly/design/blob/master/Semantics.md#resizing\" rel=\"nofollow noreferrer\">request additional memory at runtime</a>. They are also encouraged to <a href=\"https://github.com/WebAssembly/design/blob/master/Semantics.md#resizing\" rel=\"nofollow noreferrer\">discard unused physical pages</a>. Can long running, badly behaved WebAssembly programs <a href=\"https://en.wikipedia.org/wiki/Memory_leak\" rel=\"nofollow noreferrer\">leak memory</a>? Will this eventually cause the WebAssembly program to crash?</p>\n"
+}

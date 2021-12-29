@@ -1,0 +1,26 @@
+{
+    "tags": [
+        "blazor"
+    ],
+    "owner": {
+        "reputation": 1141,
+        "user_id": 2120273,
+        "user_type": "registered",
+        "accept_rate": 80,
+        "profile_image": "https://i.stack.imgur.com/MTl6N.png?s=128&g=1",
+        "display_name": "Kaine",
+        "link": "https://stackoverflow.com/users/2120273/kaine"
+    },
+    "is_answered": true,
+    "view_count": 263,
+    "accepted_answer_id": 62468163,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1592562170,
+    "creation_date": 1592558713,
+    "question_id": 62467195,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/62467195/how-to-use-two-way-data-binding-in-blazor-component-library-project",
+    "title": "How to use two way data binding in Blazor Component Library Project",
+    "body": "<p>I would like to share some basic input components between Blazor projects but I seem to be missing something in my shared razor project when it comes to supporting the data binding.</p>\n\n<p>Using the Microsoft component binding example <a href=\"https://docs.microsoft.com/en-us/dotnet/architecture/blazor-for-web-forms-developers/components\" rel=\"nofollow noreferrer\">here</a>.</p>\n\n<p>The Component Code looks like this:</p>\n\n<pre><code>    Password: &lt;input\n    value=\"@Password\"\n    @oninput=\"OnPasswordChanged\"\n    type=\"@(showPassword ? \"text\" : \"password\")\" /&gt;\n\n&lt;label&gt;&lt;input type=\"checkbox\" @bind=\"showPassword\" /&gt;Show password&lt;/label&gt;\n\n@code {\n    private bool showPassword;\n\n    [Parameter]\n    public string Password { get; set; }\n\n    [Parameter]\n    public EventCallback&lt;string&gt; PasswordChanged { get; set; }\n\n    private Task OnPasswordChanged(ChangeEventArgs e)\n    {\n        Password = e.Value.ToString();\n        return PasswordChanged.InvokeAsync(Password);\n    }\n}\n</code></pre>\n\n<p>and then this is used like this:</p>\n\n<pre><code>&lt;PasswordBox @bind-Password=\"password\" /&gt;\n\n@code {\n    string password;\n}\n</code></pre>\n\n<p>When the component is declared directly in my Blazor WebAssembly project this works as expected. However, if I move the component to a library so that I use it in shared components I get a compile error:</p>\n\n<blockquote>\n  <p>Error     The attribute names could not be inferred from bind attribute\n  'bind-Password'. Bind attributes should be of the form 'bind' or\n  'bind-value' along with their corresponding optional parameters like\n  'bind-value:event', 'bind:format'</p>\n</blockquote>\n\n<p>My guess is that I'm missing a reference in my shared project which handles these bind attributes - but I don't know how to find how what I need to reference. </p>\n\n<p>I currently reference:</p>\n\n<ul>\n<li><p>NETStandard.Library 2.1</p></li>\n<li><p>Microsoft.AspNetCore.Components (3.1.5)</p></li>\n<li>Microsoft.AspNetCore.Components.Web (3.1.5)</li>\n<li>System.Net.Http.Json (3.2.1)</li>\n</ul>\n\n<p>This seems enough for normal attribute binding for fields and passing values from one component to another - but not for this specific two-way bind syntax. What am I missing?</p>\n"
+}

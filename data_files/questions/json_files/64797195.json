@@ -1,0 +1,26 @@
+{
+    "tags": [
+        "c#",
+        "asp.net",
+        "blazor-server-side",
+        "blazor-client-side",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "user_type": "does_not_exist",
+        "display_name": "user14622931"
+    },
+    "is_answered": true,
+    "view_count": 1192,
+    "accepted_answer_id": 64798061,
+    "answer_count": 1,
+    "score": 6,
+    "last_activity_date": 1612447597,
+    "creation_date": 1605149404,
+    "last_edit_date": 1605152282,
+    "question_id": 64797195,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/64797195/how-to-authorize-users-role-in-client-side-of-blazor-wasm",
+    "title": "How to authorize user&#39;s role in client side of blazor wasm?",
+    "body": "<h2>Environments</h2>\n<ul>\n<li>Asp.Net Core 5.0</li>\n<li>Blazor WebAssembly App (Asp.Net Core Hosting)</li>\n<li>Asp.Net Core Identity (with Identity Server 4)</li>\n</ul>\n<h2>Problem</h2>\n<p>I want to use Role-based authorization between Server side and Client side.</p>\n<p>I can login correctly and <code>UserManager.IsInRoleAsync(user, &quot;admin&quot;)</code> returns True in the Server side.</p>\n<p>But neither <code>@attribute [Authorize(Roles = &quot;admin&quot;)]</code> nor <code>&lt;AuthorizeView Roles=&quot;admin&quot;&gt;</code> doesn't work in the Client side. Also <code>User.Identity.IsInRole(&quot;admin&quot;)</code> returns False in the Client side.</p>\n<p>How can I get the user's role in the Client side?</p>\n<h2>Codes</h2>\n<h3>Server.csproj</h3>\n<pre class=\"lang-cs prettyprint-override\"><code>// Startup.ConfigureServices()\n\nservices.AddDefaultIdentity&lt;ApplicationUser&gt;(options =&gt;\n{\n    options.SignIn.RequireConfirmedAccount = true;\n\n    options.Password.RequiredLength = 6;\n    options.Password.RequiredUniqueChars = 2;\n    options.Password.RequireNonAlphanumeric = false;\n\n    options.User.RequireUniqueEmail = true;\n})\n    .AddRoles&lt;IdentityRole&gt;()\n    .AddEntityFrameworkStores&lt;ApplicationDbContext&gt;();\n\nservices.AddIdentityServer()\n    .AddApiAuthorization&lt;ApplicationUser, ApplicationDbContext&gt;();\n\nservices.AddAuthentication()\n    .AddIdentityServerJwt();\n</code></pre>\n<pre class=\"lang-cs prettyprint-override\"><code>// Startup.Configure()\n\napp.UseIdentityServer();\napp.UseAuthentication();\napp.UseAuthorization();\n</code></pre>\n<pre class=\"lang-cs prettyprint-override\"><code>// RolesController.Get()\n\nvar userid = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);\nvar currentUser = await userManager.FindByIdAsync(userid);\nreturn await userManager.IsInRoleAsync(currentUser, &quot;admin&quot;); // Returns True\n</code></pre>\n<h3>Client.csproj</h3>\n<pre class=\"lang-cs prettyprint-override\"><code>// Program.Main()\n\nbuilder.Services.AddScoped(sp =&gt; sp.GetRequiredService&lt;IHttpClientFactory&gt;().CreateClient(&quot;WebAppIdentity.ServerAPI&quot;));\n\nbuilder.Services.AddApiAuthorization();\n</code></pre>\n<pre class=\"lang-cs prettyprint-override\"><code>// Test.razor\n\n&lt;AuthorizeView Roles=&quot;admin&quot;&gt;\n    &lt;Authorizing&gt;\n        Authorizing...\n    &lt;/Authorizing&gt;\n    &lt;NotAuthorized&gt;\n        You are not an admin. // Always here\n    &lt;/NotAuthorized&gt;\n    &lt;Authorized&gt;\n        Hello, admin!\n    &lt;/Authorized&gt;\n&lt;/AuthorizeView&gt;\n\n&lt;button @onclick=&quot;ShowInfo&quot;&gt;Show Info&lt;/button&gt;\n&lt;p&gt;@infoString&lt;/p&gt;\n\n@code\n{\n    [CascadingParameter]\n    private Task&lt;AuthenticationState&gt; stateTask { get; set; }\n    private string infoString { get; set; }\n\n    private async void ShowInfo()\n    {\n        var user = (await stateTask).User;\n\n        infoString = $&quot;Is admin: {user.IsInRole(&quot;admin&quot;)}&quot;; // Always False\n    }\n}\n</code></pre>\n"
+}

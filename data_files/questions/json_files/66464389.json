@@ -1,0 +1,27 @@
+{
+    "tags": [
+        "typescript",
+        "bit-manipulation",
+        "webassembly"
+    ],
+    "owner": {
+        "reputation": 512,
+        "user_id": 881481,
+        "user_type": "registered",
+        "accept_rate": 55,
+        "profile_image": "https://www.gravatar.com/avatar/1d867273499ce1dc2bc441335973cd58?s=128&d=identicon&r=PG",
+        "display_name": "Logan R. Kearsley",
+        "link": "https://stackoverflow.com/users/881481/logan-r-kearsley"
+    },
+    "is_answered": false,
+    "view_count": 37,
+    "answer_count": 1,
+    "score": 2,
+    "last_activity_date": 1614875508,
+    "creation_date": 1614803048,
+    "question_id": 66464389,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/66464389/bit-rotations-in-webassembly",
+    "title": "Bit rotations in WebAssembly",
+    "body": "<p>I have a hot bit of code in TypeScript which does a bunch of arithmetic--notably, several 32-bit rotations. E.g.,</p>\n<pre class=\"lang-js prettyprint-override\"><code>  let a = t &lt;&lt; 16 | t &gt;&gt;&gt; 16; // rotate left by 16 bits\n  let b = t &lt;&lt; 12 | t &gt;&gt;&gt; 20; // rotate left by 12 bits\n  let c = t &lt;&lt; 8 | t &gt;&gt;&gt; 24; // rotate left by 8 bits\n  let d = t &lt;&lt; 7 | t &gt;&gt;&gt; 25; // rotate left by 7 bits\n</code></pre>\n<p>I am trying to port the function containing these operations over to WebAssembly to get better performance, since Lots of Math is exactly what WebAssembly should be good at. Unfortunately, the WebAssembly version ends up giving incorrect results, and I have managed to narrow the error down to precisely these bit rotation operations.</p>\n<p>Now, WebAssembly has a convenient <code>i32.rotl</code> opcode which should replace the double shifts and bitwise or all on its own, but in the case of, for example, <code>t = 1634760805</code> (0x61707865), the TypeScript code gives a result of 2019910000 (0x78656170) when rotating by 16 bits, which simple inspection of the hex digits shows to be correct. Moving just that one operation over to WebAssembly, though, gives a result of 512.</p>\n<p>So, I thought maybe there's something I don't understand about the <code>rotl</code> operation, and I tried just directly translating the double-shift-and-or into WebAssembly... and it still produces a result of 512.</p>\n<p>My test code that uses the <code>rotl</code> opcode looks like this:</p>\n<pre><code>  (func $rot (param $a i32) (param $r i32) (result i32)\n    (local $xa i32)\n\n    ;; x[a] = x[a] rotl r;\n    (local.set $xa (i32.rotl (local.get $r) (i32.load (local.get $a))))\n    (i32.store (local.get $a) (local.get $xa))\n    (local.get $xa)\n  )\n</code></pre>\n<p>It just reads a 32-bit value out of memory (pointed to by $a), rotates it by $r, stores the result back in linear memory and returns it.</p>\n<p>The version that simulates <code>rotl</code> with shifts and bitwise or looks like this:</p>\n<pre><code>  (func $rot (param $a i32) (param $r i32) (result i32)\n    (local $xa i32)\n\n    ;; x[a] = x[a] rotl r;\n    (local.set $xa (i32.load (local.get $a)))\n    (local.set $xa (i32.or\n      (i32.shl   (local.get $r) (local.get $xa))\n      (i32.shr_u (i32.sub (i32.const 32) (local.get $r)) (local.get $xa))))\n    (i32.store (local.get $a) (local.get $xa))\n    (local.get $xa)\n  )\n</code></pre>\n<p>So... any ideas on what's going wrong?</p>\n<p>(I have already verified that yes, the correct starting values are in fact where I expect them to be in linear memory, both by directly inspecting the memory buffer on the TypeScript/JavaScript side and by using a really basic WASM debugging function: <code>(func $read (param $a i32) (result i32) (i32.load (local.get $a)))</code>)</p>\n"
+}

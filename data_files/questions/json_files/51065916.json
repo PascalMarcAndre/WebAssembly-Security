@@ -1,0 +1,29 @@
+{
+    "tags": [
+        "c#",
+        "webassembly"
+    ],
+    "owner": {
+        "reputation": 3397,
+        "user_id": 157017,
+        "user_type": "registered",
+        "accept_rate": 76,
+        "profile_image": "https://www.gravatar.com/avatar/56a1e98febe15df6e547764e1b05b090?s=128&d=identicon&r=PG",
+        "display_name": "Adam",
+        "link": "https://stackoverflow.com/users/157017/adam"
+    },
+    "is_answered": true,
+    "view_count": 233,
+    "closed_date": 1530113049,
+    "accepted_answer_id": 51066107,
+    "answer_count": 1,
+    "score": -1,
+    "last_activity_date": 1530111921,
+    "creation_date": 1530111312,
+    "last_edit_date": 1530111530,
+    "question_id": 51065916,
+    "link": "https://stackoverflow.com/questions/51065916/make-one-simple-c-static-function-a-webassembly",
+    "closed_reason": "Not suitable for this site",
+    "title": "Make one simple C# static function a WebAssembly",
+    "body": "<p>I have a 20-line string manipulation static C# method that doesn't have a dependency on any IO or any 3rd party lib. In other words, it is self contained.</p>\n\n<pre><code>public static string Manipulate (string val) {\n    string results;\n    // Do string manip stuff to val\n    return results;\n}\n</code></pre>\n\n<p>I want to use a similar functionality in JavaScript to do what this function does, which might create a difference between the server side and the client side. Alternatively, this can be an Ajax call to maintain the same behaviour on client and server.</p>\n\n<p>WebAssembly is another option, but I didn't find much about C# and WebAssembly and Blazor is too much for what we are looking for.</p>\n\n<p>Given this is an internal app, so browser permissions are not an issue and the browsers used are the evergreen ones.</p>\n\n<p>Is there any tutorial to guide us through compiling a simple C# method to wasm? The requirement is to read one textbox \"TextBoxInput\" pass the input to the function on change and put the results in another textbox \"TextBoxOutput\".</p>\n"
+}

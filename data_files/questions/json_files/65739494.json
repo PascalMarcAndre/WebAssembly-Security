@@ -1,0 +1,28 @@
+{
+    "tags": [
+        "asp.net-core",
+        "authentication",
+        "asp.net-web-api",
+        ".net-core",
+        "blazor"
+    ],
+    "owner": {
+        "reputation": 9,
+        "user_id": 15013711,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/c9eed9afd338666af67d74b9b0b36992?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Saga",
+        "link": "https://stackoverflow.com/users/15013711/saga"
+    },
+    "is_answered": false,
+    "view_count": 197,
+    "answer_count": 1,
+    "score": 1,
+    "last_activity_date": 1610732793,
+    "creation_date": 1610726890,
+    "question_id": 65739494,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/65739494/windows-authentication-using-blazor-with-net-core-webapi",
+    "title": "Windows Authentication using Blazor with .Net Core WebApi",
+    "body": "<p>I have the task to develop a Blazor Webassembly App. This app is only used within the companys network and for security reasons we would like to use the existing AD and NTLM Authentication.</p>\n<p>So far I have a minimal Blazor App configured and running in IIS. Its configured to use Windows Authentication and that works so far. When I open the app in Browser I get asked for my credentials.\nThe app should also communicate with a .net core webapi which is also secured by windows authentication. This webapi security too works as it should. When I open an URL to it in Browser I get asked for my credentials and the page loads as it should.</p>\n<p>Now the Problem: When I call the same url (that works in Browser) from my Blazor app with HttpClient.GetAsync I get an &quot;401: Not Authorized&quot; error. Even though the app itself is loaded with the same authentication. Is there something I have to do?\nThe MSDN Documenations a gigantic and I couldnt find a Solution.</p>\n<p>In the WebApi Startup.cs in ConfigureServices() I added</p>\n<pre><code>services.AddAuthentication(IISDefaults.AuthenticationScheme);\nservices.AddAuthorization();\n</code></pre>\n<p>and in Configure()</p>\n<pre><code>app.UseCors(x =&gt; x.AllowAnyMethod().AllowAnyHeader().SetIsOriginAllowed(origin =&gt; true).AllowCredentials());\napp.UseAuthentication();\napp.UseAuthorization();\n</code></pre>\n<p>PS:\nThe Blazor App uses .NET Core 3.1\nThe WebApi uese .NET 5.0</p>\n"
+}

@@ -1,0 +1,30 @@
+{
+    "tags": [
+        "blazor",
+        "azure-ad-b2c",
+        "webassembly",
+        "msal",
+        "asp.net-core-5.0"
+    ],
+    "owner": {
+        "reputation": 103,
+        "user_id": 2631623,
+        "user_type": "registered",
+        "profile_image": "https://graph.facebook.com/1188276998/picture?type=large",
+        "display_name": "Michael Kossin",
+        "link": "https://stackoverflow.com/users/2631623/michael-kossin"
+    },
+    "is_answered": true,
+    "view_count": 95,
+    "accepted_answer_id": 64950072,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1606011587,
+    "creation_date": 1605989258,
+    "last_edit_date": 1605990026,
+    "question_id": 64947553,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/64947553/how-do-i-control-the-page-to-which-a-user-is-directed-after-logging-in-using-aad",
+    "title": "How do I control the page to which a user is directed after logging in using AAD B2C in Blazor?",
+    "body": "<p>I have a hosted WASM website using Azure's AAD B2C for user authentication and authorization.  The root of the website is a simple landing page that presents the user with a button that takes the user to the Authorization page, which is identical to the default one created according to the tutorial at <a href=\"https://docs.microsoft.com/en-us/aspnet/core/blazor/security/webassembly/hosted-with-azure-active-directory-b2c?view=aspnetcore-5.0\" rel=\"nofollow noreferrer\">https://docs.microsoft.com/en-us/aspnet/core/blazor/security/webassembly/hosted-with-azure-active-directory-b2c?view=aspnetcore-5.0</a></p>\n<p>I would like the user to be redirected to a specific page once they complete the login procedure- not back to the landing page (and not to a page they were on with an [authorize] tag that they weren't authorized to access).  I have tried setting returnUrl to the url of the page I want the user to be directed to after login ( Navigation.NavigateTo($&quot;authentication/login?returnUrl=http://localhost:5000/Start&quot;); ), but we are still directed back to the root page.</p>\n"
+}

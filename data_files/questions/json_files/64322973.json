@@ -1,0 +1,29 @@
+{
+    "tags": [
+        "c#",
+        "asp.net",
+        "asp.net-core",
+        "blazor",
+        "blazor-server-side"
+    ],
+    "owner": {
+        "reputation": 2115,
+        "user_id": 3960200,
+        "user_type": "registered",
+        "accept_rate": 41,
+        "profile_image": "https://graph.facebook.com/726296462/picture?type=large",
+        "display_name": "Etienne Charland",
+        "link": "https://stackoverflow.com/users/3960200/etienne-charland"
+    },
+    "is_answered": true,
+    "view_count": 2312,
+    "answer_count": 2,
+    "score": 2,
+    "last_activity_date": 1602625006,
+    "creation_date": 1602525283,
+    "question_id": 64322973,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/64322973/entity-framework-with-blazor-login-page",
+    "title": "Entity Framework with Blazor Login Page",
+    "body": "<p>When it comes to use Identity Framework with Blazor Server, Microsoft's official statement is that it's not supported and to use a Razor login page instead. The issue is that Blazor can't write cookies.</p>\n<p>This has a few drawbacks:</p>\n<ul>\n<li>Cannot re-use the HTML layout files, need to recreate duplicate layout files for Razor.</li>\n<li>Cannot embed login buttons on Blazor page</li>\n<li>Poor user experience if need to optionally login as part of a checkout experience</li>\n</ul>\n<p><a href=\"https://github.com/stavroskasidis/BlazorWithIdentity\" rel=\"nofollow noreferrer\">This guy figured out a way to make a Blazor login page work with Blazor WebAssembly...</a> not sure how he worked around the issue nor if a similar approach can work for Blazor Server.</p>\n<p>I was thinking of alternative solutions. The issue is to store the cookie. <a href=\"https://github.com/blazored/LocalStorage\" rel=\"nofollow noreferrer\">Local storage can be used in Blazor</a> but local storage is not safe for security tokens. Cookies however could also be set via JavaScript interop in a similar way.</p>\n<p>Would this approach work, setting the login cookie via JavaScript interop after login, and then the cookie gets sent on any further page load? Has anyone done it?</p>\n<p>For single-page admin content, I found a simpler approach of creating a GatedContent component that shows a login form, and then shows ChildContent after login. Of course, this won't preserve the session on page refresh, but it works for some cases.</p>\n"
+}

@@ -1,0 +1,28 @@
+{
+    "tags": [
+        "node.js",
+        "npm",
+        "rust",
+        "npm-install"
+    ],
+    "owner": {
+        "reputation": 61,
+        "user_id": 9124404,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/8b198424b25d4f8e95cde3963e5b3084?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Spaceface16518",
+        "link": "https://stackoverflow.com/users/9124404/spaceface16518"
+    },
+    "is_answered": false,
+    "view_count": 3021,
+    "answer_count": 0,
+    "score": 3,
+    "last_activity_date": 1596739367,
+    "creation_date": 1548983166,
+    "last_edit_date": 1551455415,
+    "question_id": 54471516,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/54471516/maximum-call-stack-exceeded-running-npm-install",
+    "title": "Maximum call stack exceeded running npm install",
+    "body": "<p>I'm following the <a href=\"https://rustwasm.github.io/book/introduction.html\" rel=\"nofollow noreferrer\">Conway's Game of Life tutorial for Rust and WebAssembly</a> and I'm stuck at the point where I'm <a href=\"https://rustwasm.github.io/book/game-of-life/hello-world.html#install-the-dependencies\" rel=\"nofollow noreferrer\">supposed to run <code>npm install</code> to install dependencies</a>. I keep getting ambiguous errors but after going through many different logs it boils down the <code>RangeError: Maximum call stack size exceeded</code>.</p>\n\n<p>I'm using</p>\n\n<ul>\n<li>macOS 10.14.2</li>\n<li>Node v10.15.1</li>\n<li>npm 6.7.0</li>\n<li>Rust 1.32.0 (with rustup, Cargo, and wasm-pack)</li>\n<li>webpack ^4.16.3</li>\n</ul>\n\n<p>(copied from various manifest and <code>-v</code> commands)</p>\n\n<p>I've tried</p>\n\n<ul>\n<li>clearing npm's cache and re-running <code>npm install</code> like in <a href=\"https://stackoverflow.com/q/40566348/9124404\">this answer</a></li>\n<li>Updating npm</li>\n<li>Reinstalling npm (and Node.js) from scratch (x2)</li>\n<li>Installing specific dependencies (like <code>npm install webpack</code>)</li>\n<li>Downloading a package and running <code>npm install</code> on the archive</li>\n</ul>\n\n<p>I noticed that I was getting some error 404's upon fetching some of <a href=\"https://www.npmjs.com/~xtuc\" rel=\"nofollow noreferrer\">xtuc</a>'s packages, supposedly because either the user is not found or because the URL contains non-url-friendly characters or something, but this is happening no matter what.</p>\n\n<p>The log fails here</p>\n\n<pre class=\"lang-none prettyprint-override\"><code>107 http fetch GET 404 https://registry.npmjs.org/@xtuc%2flong 1309ms\n108 http fetch GET 404 https://registry.npmjs.org/@xtuc%2flong 406ms\n109 silly fetchPackageMetaData error for @xtuc/long@4.2.1 404 Not Found - GET https://registry.npmjs.org/@xtuc%2flong - User not found\n110 verbose stack RangeError: Maximum call stack size exceeded\n110 verbose stack     at RegExp.test (&lt;anonymous&gt;)\n110 verbose stack     at isDepOptional (/usr/local/lib/node_modules/npm/lib/install/deps.js:405:45)\n110 verbose stack     at failedDependency (/usr/local/lib/node_modules/npm/lib/install/deps.js:414:9)\n110 verbose stack     at failedDependency (/usr/local/lib/node_modules/npm/lib/install/deps.js:430:9)\n110 verbose stack     at failedDependency (/usr/local/lib/node_modules/npm/lib/install/deps.js:430:9)\n110 verbose stack     at failedDependency (/usr/local/lib/node_modules/npm/lib/install/deps.js:430:9)\n110 verbose stack     at failedDependency (/usr/local/lib/node_modules/npm/lib/install/deps.js:430:9)\n110 verbose stack     at failedDependency (/usr/local/lib/node_modules/npm/lib/install/deps.js:430:9)\n110 verbose stack     at failedDependency (/usr/local/lib/node_modules/npm/lib/install/deps.js:430:9)\n110 verbose stack     at failedDependency (/usr/local/lib/node_modules/npm/lib/install/deps.js:430:9)\n110 verbose stack     at failedDependency (/usr/local/lib/node_modules/npm/lib/install/deps.js:430:9)\n110 verbose stack     at failedDependency (/usr/local/lib/node_modules/npm/lib/install/deps.js:430:9)\n110 verbose stack     at failedDependency (/usr/local/lib/node_modules/npm/lib/install/deps.js:430:9)\n...\n</code></pre>\n\n<p>This keeps going on for a while.</p>\n\n<p>The terminal output looks like this</p>\n\n<pre class=\"lang-none prettyprint-override\"><code>npm ERR! Maximum call stack size exceeded\n\nnpm ERR! A complete log of this run can be found in:\nnpm ERR!     ~/.npm/_logs/2019-02-01T00_45_12_400Z-debug.log\n</code></pre>\n\n<p>I have minimal experience with npm and node.js (I am more a Rust person) but I used to use them a lot a while ago and I never remember having this issue before.</p>\n\n<p>That said, my best guess as to what's happening (purely from what the logs look like) is that npm can't fetch the package because it can't find the user, which is inadvertently causing some sort of loop that keeps calling the same function over and over again, eventually exceeding the call stack. I have no idea though.</p>\n"
+}

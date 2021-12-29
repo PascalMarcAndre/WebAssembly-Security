@@ -1,0 +1,29 @@
+{
+    "tags": [
+        "asp.net-identity",
+        "identityserver4",
+        "blazor"
+    ],
+    "owner": {
+        "reputation": 2238,
+        "user_id": 1146891,
+        "user_type": "registered",
+        "accept_rate": 90,
+        "profile_image": "https://i.stack.imgur.com/OZODk.png?s=128&g=1",
+        "display_name": "Francesco Cristallo",
+        "link": "https://stackoverflow.com/users/1146891/francesco-cristallo"
+    },
+    "is_answered": true,
+    "view_count": 940,
+    "accepted_answer_id": 63477812,
+    "answer_count": 1,
+    "score": 3,
+    "last_activity_date": 1597791870,
+    "creation_date": 1590608729,
+    "last_edit_date": 1590609826,
+    "question_id": 62051608,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/62051608/blazor-webassembly-authentication-with-identityserver4-asp-net-core-identity-an",
+    "title": "Blazor WebAssembly Authentication with IdentityServer4, Asp.Net Core Identity and custom provider without Entity Framework",
+    "body": "<p>I have a Blazor Server-side app that uses a custom Identity provider for CosmosDB that does not use Entity Framework. I want to convert the app to <strong>Blazor WebAssembly hosted on Asp.net Core</strong>.</p>\n\n<p>My Blazor Server-side Startup.cs custom provider looks like this:</p>\n\n<pre><code> services.AddTransient&lt;IRoleStore&lt;ApplicationRole&gt;, CosmosDBRoleStore&lt;ApplicationRole&gt;&gt;();\n services.AddTransient&lt;IUserStore&lt;ApplicationUser&gt;, CosmosDBUserStore&lt;ApplicationUser&gt;&gt;();\n services.AddIdentity&lt;ApplicationUser, ApplicationRole&gt;().AddDefaultTokenProviders();\n services.AddAuthentication();\n services.AddAuthorization();\n</code></pre>\n\n<p>The current template in Visual Studio for Blazor WebAssembly <strong>hosted on Asp.net Core</strong> uses Identity Server4 on top of Asp.Net Core Identity + SQL Server, and it requires a DBContext from Entity Framework Core.</p>\n\n<pre><code> services.AddDbContext&lt;ApplicationDbContext&gt;(options =&gt;\n                options.UseSqlServer(\n                    Configuration.GetConnectionString(\"DefaultConnection\")));\n\n  services.AddDefaultIdentity&lt;ApplicationUser&gt;(options =&gt; \n                options.SignIn.RequireConfirmedAccount = true)\n                .AddEntityFrameworkStores&lt;ApplicationDbContext&gt;();\n\n  services.AddIdentityServer().AddApiAuthorization&lt;ApplicationUser, ApplicationDbContext&gt;();\n  services.AddAuthentication().AddIdentityServerJwt();\n</code></pre>\n\n<p>I installed the custom Cosmos DB Identity provider, but the line </p>\n\n<pre><code> services.AddIdentityServer().AddApiAuthorization&lt;ApplicationUser, ApplicationDbContext&gt;();\n</code></pre>\n\n<p>Requires an Entity Framework DBContext to populate all parameters for IdentityServer4.</p>\n\n<p>I analyzed four scenarios:</p>\n\n<p>1) Use Entity Framework on top of my custom Identity Provider, but it would require almost a total recoding since it uses a deeply customized CosmosDB integration with custom Login/Logout/Signup etc.. pages</p>\n\n<p>2) Use Identity Server4 on top of my custom Provider, but I'm new to it and the whole framework is complex and all the examples with Asp.Net Core Identity use Entity Framework as well and I can't figure out how to do it.</p>\n\n<p>3) Drop my custom Identity provider and use Azure B2C. After some tests, I find it messy and difficult to customize, with popups and unbranded confirm emails. This would also nullify weeks of work on custom Profile edit pages.</p>\n\n<p>4) Keep the project on Blazor Server-Side and do not migrate</p>\n\n<p>Is there anything I'm missing that would help solve the problem? Any library that could help configuring IdentityServer4 with a custom Identity provider that do not use Entity Framework?</p>\n"
+}

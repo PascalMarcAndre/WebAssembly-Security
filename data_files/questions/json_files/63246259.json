@@ -1,0 +1,26 @@
+{
+    "tags": [
+        "blazor",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 53,
+        "user_id": 3526037,
+        "user_type": "registered",
+        "accept_rate": 40,
+        "profile_image": "https://www.gravatar.com/avatar/c706e856b7e28b864a138f1f6de88653?s=128&d=identicon&r=PG&f=1",
+        "display_name": "user3526037",
+        "link": "https://stackoverflow.com/users/3526037/user3526037"
+    },
+    "is_answered": false,
+    "view_count": 46,
+    "answer_count": 0,
+    "score": 1,
+    "last_activity_date": 1596541764,
+    "creation_date": 1596541764,
+    "question_id": 63246259,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/63246259/replacing-jsruntime-current-in-blazor-webassembly",
+    "title": "Replacing JSRuntime.Current in Blazor-WebAssembly",
+    "body": "<p>Working on a <em>somewhat non-conventional</em> Blazor proof-of-concept currently - trying to use Blazor WebAssembly to do data transformations on the client, within the context of a standard Javascript SPA (React).</p>\n<p>I'm currently having an issue where the exact API I need to use has been removed - <strong>JSRuntime.Current.</strong> In order to perform the data transformations, I need two-way messaging between the WebAssembly module and JS. The data transformation happens in intervals using System.Timers, which means I can't just do a static method and return the processed data, but rather need to invoke the appropriate JS function at regular intervals directly.</p>\n<p>This means I face the issue(s) of:</p>\n<ul>\n<li>If the classes and methods are dynamic, I can Inject JSRuntime into the instance but not invoke the appropriate C# methods via JS</li>\n<li>If the classes and methods are static, I can invoke C# via JS, but I cannot invoke the JS to return it after processing</li>\n</ul>\n<p>The best solution I've been able to create so far has been PubSub messaging between static and dynamic methods - which is a completely ridiculous way to deal with this issue.</p>\n<p>Ideas?</p>\n"
+}

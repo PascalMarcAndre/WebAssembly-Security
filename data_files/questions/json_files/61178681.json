@@ -1,0 +1,26 @@
+{
+    "tags": [
+        "blazor-client-side"
+    ],
+    "owner": {
+        "reputation": 279,
+        "user_id": 2202866,
+        "user_type": "registered",
+        "accept_rate": 0,
+        "profile_image": "https://www.gravatar.com/avatar/4ed8e7126edc505c150f9d7d39e568fc?s=128&d=identicon&r=PG",
+        "display_name": "user2202866",
+        "link": "https://stackoverflow.com/users/2202866/user2202866"
+    },
+    "is_answered": true,
+    "view_count": 1135,
+    "answer_count": 1,
+    "score": 6,
+    "last_activity_date": 1597830538,
+    "creation_date": 1586728362,
+    "last_edit_date": 1586737601,
+    "question_id": 61178681,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/61178681/how-to-add-additional-claims-to-blazor-webassembly-3-2-0-preview-3-application",
+    "title": "How to add additional claims to Blazor WebAssembly 3.2.0 Preview 3 application",
+    "body": "<p>I created a Asp.Net Core hosted Blazor webassembly 3.2.0 Preview 3 application with the authentication option of In-App accounts. I then added a few additional attributes to the ApplicationUser class, and migrated these changes to the database. I then implemented a custom claims factory like so:</p>\n\n<pre><code>public class MyCustomUserClaimsPrincipalFactory : UserClaimsPrincipalFactory&lt;ApplicationUser&gt;\n{\n    public MyCustomUserClaimsPrincipalFactory(\n        UserManager&lt;ApplicationUser&gt; userManager,\n        IOptions&lt;IdentityOptions&gt; optionsAccessor)\n            : base(userManager, optionsAccessor)\n    {\n    }\n\n    protected override async Task&lt;ClaimsIdentity&gt; GenerateClaimsAsync(ApplicationUser user)\n    {\n        var identity = await base.GenerateClaimsAsync(user);\n        identity.AddClaim(new Claim(ClaimTypes.GivenName, user.FirstName ?? string.Empty));\n        .....\n\n        return identity;\n    }\n}\n</code></pre>\n\n<p>and registered the claims factory in the server application like so:</p>\n\n<pre><code>services.AddDefaultIdentity&lt;ApplicationUser&gt;(options =&gt; options.SignIn.RequireConfirmedAccount = true)\n            .AddEntityFrameworkStores&lt;ApplicationDbContext&gt;()\n            .AddClaimsPrincipalFactory&lt;MyCustomUserClaimsPrincipalFactory&gt;();\n</code></pre>\n\n<p>However, when I list the claims in a client web app component, I do not see any of the additional claims I added in the custom claims factory. The code I am using to list the claims is:</p>\n\n<pre><code>&lt;AuthorizeView&gt;\n   &lt;Authorized&gt;\n    &lt;ul&gt;\n        @foreach (var claim in context.User.Claims)\n        {\n            &lt;li&gt;&lt;span&gt;@claim.Type&lt;/span&gt;&lt;span&gt;@claim.Value&lt;/span&gt;&lt;/li&gt;\n        }\n    &lt;/ul&gt;\n   &lt;/Authorized&gt;\n&lt;/AuthorizeView&gt;\n</code></pre>\n\n<p>I verified that the claims factory code is being called.  How can I get the additional claims in the client web app?</p>\n\n<p>Edit: I have even tried using ClaimsTransformer (as suggested <a href=\"https://visualstudiomagazine.com/articles/2019/11/01/authorization-claims.aspx\" rel=\"noreferrer\">here</a>) but I still do not see the additional claims </p>\n"
+}

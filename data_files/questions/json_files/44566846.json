@@ -1,0 +1,29 @@
+{
+    "tags": [
+        "c++",
+        "emscripten",
+        "sdl-image",
+        "webassembly"
+    ],
+    "owner": {
+        "reputation": 2805,
+        "user_id": 2583765,
+        "user_type": "registered",
+        "accept_rate": 75,
+        "profile_image": "https://www.gravatar.com/avatar/5e54eb8bd99cabcd824ddb09367efb4d?s=128&d=identicon&r=PG&f=1",
+        "display_name": "birgersp",
+        "link": "https://stackoverflow.com/users/2583765/birgersp"
+    },
+    "is_answered": true,
+    "view_count": 1422,
+    "accepted_answer_id": 44569488,
+    "answer_count": 1,
+    "score": 3,
+    "last_activity_date": 1497535151,
+    "creation_date": 1497527681,
+    "question_id": 44566846,
+    "content_license": "CC BY-SA 3.0",
+    "link": "https://stackoverflow.com/questions/44566846/how-to-load-textures-using-sdl-to-a-webassembly-project-using-emscripten",
+    "title": "How to load textures using SDL to a WebAssembly project using emscripten?",
+    "body": "<p>I'm trying to load a texture to my application using SDL. When building as a native application, it works as it should. But when I'm building it with Emscripten, the texture cannot be loaded.</p>\n\n<p>The width of the texture image is <strong>64</strong> pixels, which I can verify by printing out the <code>w</code> member of the SDL_Surface instance. But when I try to print out the same member in the WebAssembly application, it yields <strong>5076</strong>...</p>\n\n<p><strong>Does the image become \"broken\" somehow when packed with emscripten?</strong></p>\n\n<p>Here's the code to load the texture:</p>\n\n<pre><code>SDL_Surface *image = IMG_Load(\"resources/binaries/crate.jpg\");\nGLuint textureID;\nglGenTextures(1, &amp;textureID);\nglBindTexture(GL_TEXTURE_2D, textureID);\nstd::cout &lt;&lt; image-&gt;w &lt;&lt; std::endl;\nglTexImage2D(GL_TEXTURE_2D, 0, 3, 64, 64, 0, GL_RGB, GL_UNSIGNED_BYTE, image-&gt;pixels);\n</code></pre>\n\n<p>Here's the command to build the web app with Emscripten</p>\n\n<pre><code>emcc --bind -s USE_SDL=2 -s USE_SDL_IMAGE=2 -o webapp.js src/webapp.cpp --preload-file resources\n</code></pre>\n\n<p>The error message I'm getting the browser when launching the web app is</p>\n\n<blockquote>\n  <p>webapp.js:9533 WebGL: INVALID_VALUE: texImage2D: width or height out of range</p>\n</blockquote>\n\n<p>Which makes sense, since the resolution of the image is so crazy...</p>\n"
+}

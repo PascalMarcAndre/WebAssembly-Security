@@ -1,0 +1,30 @@
+{
+    "tags": [
+        "vue.js",
+        "webpack",
+        "error-handling",
+        "emscripten",
+        "webassembly"
+    ],
+    "owner": {
+        "reputation": 1505,
+        "user_id": 8309806,
+        "user_type": "registered",
+        "accept_rate": 60,
+        "profile_image": "https://i.stack.imgur.com/dP8rf.png?s=128&g=1",
+        "display_name": "avi12",
+        "link": "https://stackoverflow.com/users/8309806/avi12"
+    },
+    "is_answered": false,
+    "view_count": 367,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1592991225,
+    "creation_date": 1592950990,
+    "last_edit_date": 1592987736,
+    "question_id": 62544648,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/62544648/cant-load-wasm-in-a-vue-component",
+    "title": "Can&#39;t load WASM in a Vue component",
+    "body": "<p>In <code>main.cpp</code>:</p>\n<pre class=\"lang-cpp prettyprint-override\"><code>#include &lt;emscripten.h&gt;\n\nEMSCRIPTEN_KEEPALIVE\nextern &quot;C&quot; {\n    const char *testFunc(const char *parameter) {\n        return parameter;\n    }\n}\n</code></pre>\n<p>Compilation command:</p>\n<pre class=\"lang-bsh prettyprint-override\"><code>em++ .\\main.cpp -s EXPORTED_RUNTIME_METHODS='[&quot;ccall&quot;, &quot;cwrap&quot;]' -o wasm_module.js;\n</code></pre>\n<p>In the Vue component:</p>\n<pre class=\"lang-js prettyprint-override\"><code>import wasmModule from &quot;./wasm/wasm_module.js&quot;; // I put both WASM and JS wrapper in the same folder\n\nexport default {\n  created() {\n    console.log(wasmModule);\n  }\n};\n</code></pre>\n<p>In <code>vue.config.js</code>, I've added:</p>\n<pre class=\"lang-js prettyprint-override\"><code>module.exports = {\n  configureWebpack: {\n    module: {\n      rules: [\n        {\n          test: /\\.wasm$/,\n          loaders: [&quot;wasm-loader&quot;]\n        }\n      ]\n    }\n  }\n};\n</code></pre>\n<p>But, I'm getting:</p>\n<pre><code>Uncaught (in promise) RuntimeError: abort(CompileError: WebAssembly.instantiate(): expected magic word 00 61 73 6d, found 3c 21 44 4f @+0) at Error\n</code></pre>\n<hr />\n<h2>UPDATE</h2>\n<p>I ended using a slightly different compilation command, which was given by a member of the official <a href=\"https://discord.gg/hbeh5mt\" rel=\"nofollow noreferrer\">WebAssembly Discord server</a>:</p>\n<pre><code>em++ .\\main.cpp -s EXPORTED_RUNTIME_METHODS'[&quot;call&quot;, &quot;cwrap&quot;]' -s MODULARIZE -s ENVIRONMENT=&quot;web&quot; -s EXPORTED_FUNCTIONS='[&quot;_testFunc&quot;]' -o wasm_module.js\n</code></pre>\n<p>Then, I dug up in the <code>wasm_module.js</code> and found a variable <code>scriptDirectory</code>, which is responsible for locating the <code>wasm_module.wasm</code> file<br />\nAfter logging it to the console, it outputted:</p>\n<pre><code>http://localhost:8080/js/\n</code></pre>\n<p>So, I moved the <code>.wasm</code> file into <code>public/js</code>, and by the way, deleted the <code>configureWebpack</code> entry as it's now useless</p>\n<p>Now, I could:</p>\n<pre class=\"lang-js prettyprint-override\"><code>import wasmModule from &quot;./wasm/wasm_module.js&quot;;\nexport default {\n  async created() {\n    const instance = await wasmModule();\n    const func = instance._testFunc();\n  }\n};\n</code></pre>\n<p>However, there is still one problem:<br />\nNo matter the arguments I pass into <code>_testFunc</code>, I'm getting the output <code>0</code> every single time</p>\n"
+}

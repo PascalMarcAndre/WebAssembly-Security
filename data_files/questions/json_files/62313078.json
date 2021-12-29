@@ -1,0 +1,29 @@
+{
+    "tags": [
+        "json",
+        "asp.net-core",
+        ".net-core",
+        "blazor",
+        "webassembly"
+    ],
+    "owner": {
+        "reputation": 11,
+        "user_id": 13723539,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/756fdad70b8f73ed3bbd18a40e3b3861?s=128&d=identicon&r=PG&f=1",
+        "display_name": "HStewart",
+        "link": "https://stackoverflow.com/users/13723539/hstewart"
+    },
+    "is_answered": false,
+    "view_count": 422,
+    "answer_count": 0,
+    "score": 0,
+    "last_activity_date": 1591905772,
+    "creation_date": 1591822915,
+    "last_edit_date": 1591905772,
+    "question_id": 62313078,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/62313078/httpclientfactory-and-webassembly-net-core-hosted-crashes-on-on-client",
+    "title": "HttpClientFactory and WebAssembly .Net core hosted crashes on on client",
+    "body": "<p>I am looking to call external webservice from a Blazor WebAssembly which is also ASP.Net Core hosted.</p>\n\n<p>Couple of background information</p>\n\n<ol>\n<li>A lot of this is based on Tim Corey's video on HtmlClient in normal Blazor Server which works find.</li>\n</ol>\n\n<p><a href=\"https://www.youtube.com/watch?v=cwgck1k0YKU\" rel=\"nofollow noreferrer\">https://www.youtube.com/watch?v=cwgck1k0YKU</a></p>\n\n<ol start=\"2\">\n<li>Microsoft has documentation on adding client,  but so far when it called sendasync it exits</li>\n</ol>\n\n<p><a href=\"https://docs.microsoft.com/en-us/aspnet/core/security/blazor/webassembly/additional-scenarios?view=aspnetcore-3.1\" rel=\"nofollow noreferrer\">https://docs.microsoft.com/en-us/aspnet/core/security/blazor/webassembly/additional-scenarios?view=aspnetcore-3.1</a></p>\n\n<p>the following is some code for what is being attempted. I am new to Blazor and love it.</p>\n\n<p>Update: 06/11/2020\nI have created a GitHub example - with this problem included - it actually a little more because it allows multiple ASP.Net Code Host to be used but only works if 2nd host is passed through the original host</p>\n\n<p><a href=\"https://github.com/HStewartGitHome/BlazorMultiServer\" rel=\"nofollow noreferrer\">https://github.com/HStewartGitHome/BlazorMultiServer</a></p>\n\n<p>Stewart</p>\n\n<pre><code>public static async Task Main(string[] args)\n{\n    string uri = \"https://www.metaweather.com/api/\";\n    var builder = WebAssemblyHostBuilder.CreateDefault(args);\n    builder.RootComponents.Add&lt;App&gt;(\"app\");\n\n    builder.Services.AddTransient(sp =&gt; new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });\n\n    builder.Services.AddHttpClient(\"ServerAPI\",\n                     client =&gt; client.BaseAddress = new Uri(uri))\n                    .AddHttpMessageHandler&lt;BaseAddressAuthorizationMessageHandler&gt;();\n\n    builder.Services.AddTransient(sp =&gt; sp.GetRequiredService&lt;IHttpClientFactory&gt;()\n                    .CreateClient(\"ServerAPI\"));\n\n    await builder.Build().RunAsync();\n}\n\nprotected override async Task OnInitializedAsync()\n{\n    var request = new HttpRequestMessage(HttpMethod.Get,\n        \"location/2471217/\");\n\n    var client = _clientFactory.CreateClient(\"ServerAPI\");\n\n    HttpResponseMessage response = await client.SendAsync(request);\n\n    if (response.IsSuccessStatusCode)\n    {\n        forecast = await response.Content.ReadFromJsonAsync&lt;WeatherForecastModel&gt;();\n        errorString = null;\n    }\n    else\n    {\n        errorString = $\"There was an error getting our forecast: { response.ReasonPhrase }\";\n\n    }\n}\n</code></pre>\n"
+}

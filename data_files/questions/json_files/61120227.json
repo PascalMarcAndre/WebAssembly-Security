@@ -1,0 +1,30 @@
+{
+    "tags": [
+        "asp.net-core",
+        "blazor",
+        "iis-express",
+        "blazor-client-side",
+        "asp.net-core-staticfile"
+    ],
+    "owner": {
+        "reputation": 648,
+        "user_id": 2862934,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/eeccb6d448bf50536821c3ff2804f9f8?s=128&d=identicon&r=PG&f=1",
+        "display_name": "benjamin",
+        "link": "https://stackoverflow.com/users/2862934/benjamin"
+    },
+    "is_answered": true,
+    "view_count": 3650,
+    "accepted_answer_id": 61252765,
+    "answer_count": 2,
+    "score": 2,
+    "last_activity_date": 1616339533,
+    "creation_date": 1586432056,
+    "last_edit_date": 1587047576,
+    "question_id": 61120227,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/61120227/in-blazor-webassembly-solution-how-to-host-the-blazor-wasm-client-app-on-a-diff",
+    "title": "In Blazor WebAssembly solution, how to host the Blazor WASM client app on a different port to the server API",
+    "body": "<p>I have a Blazor WebAssembly solution with a client project, server project and shared project, based on the default solution template from Microsoft. I'm editing and debugging in Visual Studio 2019 preview with Google Chrome.</p>\n\n<p>Out-of-the-box, the solution has a single start-up project, which is the server application. That server application has a project reference to the client application. You can set it to use HTTPS by checking \"Enable SSL\" in the server project properties and I have done that.</p>\n\n<p>When you click on debug it works perfectly.</p>\n\n<p>Now I want to change it so that all my Blazor WASM pages are served from <a href=\"https://localhost:44331\" rel=\"nofollow noreferrer\">https://localhost:44331</a> and the API Controller endpoints of the server application are served from <a href=\"https://localhost:44331/api\" rel=\"nofollow noreferrer\">https://localhost:44331/api</a></p>\n\n<p>I want to use this extra \"/api\" portion of the URL to keep the requests to the API separate from just navigating around the Blazor client app. So if I request \"<a href=\"https://localhost:44331/api/something\" rel=\"nofollow noreferrer\">https://localhost:44331/api/something</a>\" I know I'm going to hit a point in my web API but if I request \"<a href=\"https://localhost:44331/something\" rel=\"nofollow noreferrer\">https://localhost:44331/something</a>\" I know I'm going to hit a particular page in the Blazor client app. I think it will also be closer to how a normal setup would be in production.</p>\n\n<p>I hope it's clear what I'm trying to do.</p>\n\n<p>The obvious place to start seemed to be changing the \"App URL\" setting in the \"Debug\" portion of the Properties of the server app to \"<a href=\"http://localhost:52708/api\" rel=\"nofollow noreferrer\">http://localhost:52708/api</a>\". The project assigns a secure URL of \"<a href=\"https://localhost:44331/api\" rel=\"nofollow noreferrer\">https://localhost:44331/api</a>\". I left the setting the same in the client app, so in the client app, the \"App URL\" setting in the \"Debug\" portion of the Properties of the client app is still \"<a href=\"http://localhost:52708\" rel=\"nofollow noreferrer\">http://localhost:52708</a>\", with the project assigning a secure URL of \"<a href=\"https://localhost:44331\" rel=\"nofollow noreferrer\">https://localhost:44331</a>\".</p>\n\n<p>That breaks everything.</p>\n\n<p>Now \"<a href=\"https://localhost:44331/\" rel=\"nofollow noreferrer\">https://localhost:44331/</a>\" takes me to a 404 Not Found error and \"<a href=\"https://localhost:44331/api\" rel=\"nofollow noreferrer\">https://localhost:44331/api</a>\" takes me to a page that says:</p>\n\n<blockquote>\n  <p>Loading...<br>\n  An unhandled error has occurred. Reload \ud83d\uddd9</p>\n</blockquote>\n\n<p>That would have been too easy! Does anybody know the correct way to get the environment how I want please?</p>\n"
+}

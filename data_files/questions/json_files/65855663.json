@@ -1,0 +1,29 @@
+{
+    "tags": [
+        "c#",
+        "asp.net-core",
+        "identityserver4",
+        "blazor-webassembly",
+        "asp.net-core-scaffolding"
+    ],
+    "owner": {
+        "reputation": 32323,
+        "user_id": 3728901,
+        "user_type": "registered",
+        "accept_rate": 58,
+        "profile_image": "https://i.stack.imgur.com/u3jKU.jpg?s=128&g=1",
+        "display_name": "Do Nhu Vy",
+        "link": "https://stackoverflow.com/users/3728901/do-nhu-vy"
+    },
+    "is_answered": false,
+    "view_count": 73,
+    "answer_count": 0,
+    "score": 1,
+    "last_activity_date": 1611375300,
+    "creation_date": 1611375300,
+    "question_id": 65855663,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/65855663/how-to-override-logindisplay-in-blazor-identity-server-4-in-asp-net-core-webasse",
+    "title": "How to override LoginDisplay in Blazor Identity Server 4 in ASP.NET Core WebAssembly .NET 5?",
+    "body": "<p>Maybe have some question related to override existing authentication/authorization in ASP.NET Core 3 . My question is in another specific context (not duplicated question).</p>\n<p>I am using ASP.NET Core Blazor WebAssembly on .NET 5 (version 5.0.102), Microsoft Visual Studio Community 2019 Version 16.8.4 (lastest technology stack at the current time). I create project from template of Blazor WebAssembly template .NET 5 with individual account from Identity Server 4.</p>\n<p>This is file <code>MainLayout.razor</code></p>\n<p><a href=\"https://i.stack.imgur.com/rVXPT.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/rVXPT.png\" alt=\"enter image description here\" /></a></p>\n<pre><code>@inherits LayoutComponentBase\n\n@inject NavigationManager NavigationManager\n\n&lt;div class=&quot;page&quot;&gt;\n    @*\n        &lt;div class=&quot;sidebar&quot;&gt;\n            &lt;NavMenu /&gt;\n        &lt;/div&gt;*@\n\n    &lt;div class=&quot;main&quot;&gt;\n        &lt;div class=&quot;px-4 auth&quot;&gt;\n            &lt;!-- &lt;div class=&quot;top-row px-4 auth&quot; /&gt;--&gt;\n            &lt;!-- Th\u00eam menu v\u00e0o \u0111\u00e2y --&gt;\n\n            &lt;DxMenu&gt;&lt;/DxMenu&gt;\n\n            &lt;div class=&quot;top-row&quot;&gt;\n                &lt;LoginDisplay /&gt;\n            &lt;/div&gt;\n        &lt;/div&gt;\n\n        &lt;div class=&quot;content px-4&quot;&gt;\n            @Body\n        &lt;/div&gt;\n    &lt;/div&gt;\n&lt;/div&gt;\n\n@code{\n    void GotoHome()\n    {\n        NavigationManager.NavigateTo(&quot;/&quot;);\n    }\n}\n</code></pre>\n<p>When I integrated with other UI framework, CSS of Identity Server 4 is conflict, cause defect at UI. I need override/rewrite UI razor page(s) (<code>&lt;LoginDisplay /&gt;</code>) of Identity Server 4, how to do it?</p>\n"
+}

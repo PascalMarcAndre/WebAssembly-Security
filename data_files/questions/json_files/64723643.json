@@ -1,0 +1,30 @@
+{
+    "tags": [
+        "c#",
+        ".net",
+        "multithreading",
+        "dependency-injection",
+        "blazor"
+    ],
+    "owner": {
+        "reputation": 103,
+        "user_id": 2631623,
+        "user_type": "registered",
+        "profile_image": "https://graph.facebook.com/1188276998/picture?type=large",
+        "display_name": "Michael Kossin",
+        "link": "https://stackoverflow.com/users/2631623/michael-kossin"
+    },
+    "is_answered": true,
+    "view_count": 89,
+    "accepted_answer_id": 64765741,
+    "answer_count": 1,
+    "score": -1,
+    "last_activity_date": 1604998734,
+    "creation_date": 1604713141,
+    "last_edit_date": 1604762577,
+    "question_id": 64723643,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/64723643/how-do-i-use-functions-within-a-class-injected-as-a-task-without-using-calling",
+    "title": "How do I use functions within a class injected as a task without using calling .Result?",
+    "body": "<p>I am attempting to implement the answer given by lolsharp here: <a href=\"https://stackoverflow.com/questions/61146743/grpc-web-channel-authentication-with-blazor-webassembly-via-dependency-injection\">gRPC-Web Channel Authentication with Blazor Webassembly via Dependency Injection</a></p>\n<p>They inject a Task of type GrpcChannel, where GrpcChannel is a class:</p>\n<pre><code>@inject Task&lt;GrpcChannel&gt; Channel\n</code></pre>\n<p>This is done since the channel is registered using async.</p>\n<p>I tried using a function within this class like so:</p>\n<p><code>GetAllResponse getAllResponse = await Channel.Result.GetAllAsync(new Google.Protobuf.WellKnownTypes.Empty());</code></p>\n<p>But this fails with the error &quot;Cannot wait on monitors on this runtime&quot;, since the mechanism cannot be supported on single-threaded webassembly (as explained at <a href=\"https://stackoverflow.com/questions/63211539/blazor-startup-error-system-threading-synchronizationlockexception-cannot-wait\">Blazor Startup Error: System.Threading.SynchronizationLockException: Cannot wait on monitors on this runtime</a>).</p>\n<p>How can I use functions within the Channel class within a Razor page if channel is registered asynchronously?</p>\n<p>Edit: as requested, here is the dependency as declared in Program.cs</p>\n<pre><code>builder.Services.AddSingleton(async services =&gt;\n        {\n            Console.WriteLine(&quot;In addsingleton&quot;);\n            var config = services.GetRequiredService&lt;IConfiguration&gt;();\n            #if DEBUG\n            var baseUri = &quot;http://localhost:8999/&quot;;\n#else\n            var baseUri = &quot;[mysite]&quot;;\n#endif\n            Console.WriteLine(&quot;About to set new httpclient&quot;);\n            var httpClient = new HttpClient(new \nGrpcWebHandler(GrpcWebMode.GrpcWeb, new HttpClientHandler()));\n            \n            var scopedFactory = \nservices.GetRequiredService&lt;IServiceScopeFactory&gt;();\n            using (var scope = scopedFactory.CreateScope())\n            {\n                \n                var authenticationService = \nscope.ServiceProvider.GetRequiredService&lt;IAccessTokenProvider&gt;();\n\n                var tokenResult = await \nauthenticationService.RequestAccessToken();\n                \n                if (tokenResult.TryGetToken(out var token))\n                {\n                    var credentials = CallCredentials.FromInterceptor((context, metadata) =&gt;\n                    {\n                        if (!string.IsNullOrEmpty(token.Value))\n                        {\n                            metadata.Add(&quot;Authorization&quot;, $&quot;Bearer \n{token.Value}&quot;);\n                        }\n                        return Task.CompletedTask;\n                    });\n\n                    var channel = GrpcChannel.ForAddress(baseUri, new \nGrpcChannelOptions { HttpClient = httpClient, Credentials = \nChannelCredentials.Create(new SslCredentials(), credentials) });\n                    var client = new \nGrpcServices.GrpcServicesClient(channel);\n                    return client;\n                }\n            }\n</code></pre>\n"
+}

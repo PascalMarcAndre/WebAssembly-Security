@@ -1,0 +1,28 @@
+{
+    "tags": [
+        "c#",
+        "asp.net-mvc",
+        "identityserver4",
+        "blazor"
+    ],
+    "owner": {
+        "reputation": 1817,
+        "user_id": 3242154,
+        "user_type": "registered",
+        "accept_rate": 80,
+        "profile_image": "https://www.gravatar.com/avatar/3c368f3140571a8d9a652dcf4607d549?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Nicolas",
+        "link": "https://stackoverflow.com/users/3242154/nicolas"
+    },
+    "is_answered": false,
+    "view_count": 856,
+    "answer_count": 0,
+    "score": 0,
+    "last_activity_date": 1591300690,
+    "creation_date": 1591300690,
+    "question_id": 62203126,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/62203126/using-blazor-components-from-a-shared-library-in-an-asp-net-core-web-application",
+    "title": "Using Blazor components from a Shared Library in an ASP.NET Core Web Application (IdentityServer project)",
+    "body": "<p>Recently I created a new Blazor Webassembly project including Authentication (Individual User Accounts) and ASP.NET Core hosted. \nThis generated 3 projects for me, namely: Client (Blazor Webassembly), Server (where the authentication stuff resides in, using Identityserver - looks like a ASP.NET Core Web Application template using MVC / Razor) and a Shared project.</p>\n\n<p>I want all my components to be reused easily so I also created a <code>Razor Class Library</code> where my (Blazor) components reside in. </p>\n\n<p>In this shared library I created a few components which I also used in my Webassembly project, this all works fine. </p>\n\n<p>However, I also want to use these components in the Server project. This is however not so easy. \nI tried the following using this link: <a href=\"https://medium.com/@geobourno/bringing-blazor-in-an-existing-net-core-mvc-project-d605d9f9ebe8\" rel=\"nofollow noreferrer\">https://medium.com/@geobourno/bringing-blazor-in-an-existing-net-core-mvc-project-d605d9f9ebe8</a></p>\n\n<ol>\n<li>I added <code>services.AddServerSideBlazor();</code>and <code>endpoints.MapBlazorHub();</code> in the <code>startup.cs</code> file of the server project</li>\n<li>I added a reference to <code>blazor.server.js</code> and <code>&lt;base href=\"/\"&gt;</code> in my <code>_Layout.cshtml</code>:\n<a href=\"https://i.stack.imgur.com/buzrr.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/buzrr.png\" alt=\"enter image description here\"></a></li>\n<li>I added a reference to the shared components library</li>\n<li>I was not sure about the following, in the link/tutorial they either add a reference to a Blazor app (while mine is actually a Razor Class Library) or in the other case the add an <code>_Imports.razor</code> file. I chose the latter (create a <code>_Imports.razor</code> file with the right <code>usings</code> in it)</li>\n<li>Next I added a component from the shared library in an existing <code>.cshtml</code> file as following: <code>&lt;component type=\"typeof(MarketingPage)\" render-mode=\"ServerPrerendered\" /&gt;</code> as well as a using to the shared library in the same page: <code>@using PCS2.ComponentsLibrary.Index</code></li>\n</ol>\n\n<p>After these steps there are several issues.</p>\n\n<ul>\n<li><p>The html / component is being showed but the corresponding <code>CSS</code> is not. I assumed that when I referenced my Shared component Library it would also include the css files that are inside the <code>wwwroot</code> of my shared component library. I thought adding a reference to the stylesheet as following would solve the issue (but sadly it doesn't):</p>\n\n<p><code>&lt;link href=\"_content/PCS2.ComponentsLibrary/css/TailwindStyles.css\" rel=\"stylesheet\" /&gt;</code></p>\n\n<p><code>&lt;link href=\"_content/PCS2.ComponentsLibrary/css/CustomStyles.css\" rel=\"stylesheet\" /&gt;</code></p></li>\n</ul>\n\n<p>when inspecting it I can see the files are not being loaded:</p>\n\n<p><a href=\"https://i.stack.imgur.com/ScNKg.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/ScNKg.png\" alt=\"enter image description here\"></a></p>\n\n<p>These css files reside in the <code>wwwroot</code> of my component class library:</p>\n\n<p><a href=\"https://i.stack.imgur.com/3DqoR.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/3DqoR.png\" alt=\"enter image description here\"></a></p>\n\n<ul>\n<li>There are several blazor.server.js errors being generated after adding the component:</li>\n</ul>\n\n<p><a href=\"https://i.stack.imgur.com/giO2U.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/giO2U.png\" alt=\"enter image description here\"></a></p>\n\n<p>Any clue how I can get this to work? </p>\n"
+}

@@ -1,0 +1,27 @@
+{
+    "tags": [
+        "identityserver4",
+        "asp.net-core-identity",
+        "blazor-client-side"
+    ],
+    "owner": {
+        "reputation": 11,
+        "user_id": 13790981,
+        "user_type": "registered",
+        "profile_image": "https://lh4.googleusercontent.com/-0AsH1Fniqm8/AAAAAAAAAAI/AAAAAAAAAAA/AMZuuckzT7NH4TPnQORBOYN7PmkHpbirQw/photo.jpg?sz=128",
+        "display_name": "JMA",
+        "link": "https://stackoverflow.com/users/13790981/jma"
+    },
+    "is_answered": false,
+    "view_count": 91,
+    "answer_count": 0,
+    "score": 1,
+    "last_activity_date": 1593000887,
+    "creation_date": 1592834758,
+    "last_edit_date": 1593000887,
+    "question_id": 62516300,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/62516300/blazor-webassembly-identityserver4-settings-options",
+    "title": "Blazor Webassembly IdentityServer4 settings options",
+    "body": "<p>I've searched the web a few days and watched many youtube video's about this, but it's all a bit new and not all options are clear to me, so maybe someone here can help me with a few questions about the new Blazor Webassembly template that makes use of IdentityServer4 for authentication and authorization.</p>\n<ol>\n<li>If the server part of the application is running on IIS with windows authentication, can I get the windows username and add that to a claim (to be shown on the webpage)?</li>\n<li>Is it possible to perform single sign on when a user is logged in into windows?</li>\n<li>If I'm correct there are 2 tokens. 1 for auhentication and 1 for authorisation, can I set custom lifetimes? And can I revoke these tokens?</li>\n<li>I've seen how to use roles and that they are added to the claims, but can I add other custom claims to the token?</li>\n<li>Looking into more documentation revoking should only be possible with reference tokens. Is is possible to switch to reference tokens and not jwt? If not is there still an option to deny access to the api for a user almost in real time (e.g. when an employee is fired)?</li>\n</ol>\n<p>Thanks in advance</p>\n"
+}

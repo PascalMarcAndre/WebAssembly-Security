@@ -1,0 +1,27 @@
+{
+    "tags": [
+        "blazor",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 32791,
+        "user_id": 137100,
+        "user_type": "registered",
+        "accept_rate": 90,
+        "profile_image": "https://i.stack.imgur.com/akWbA.jpg?s=128&g=1",
+        "display_name": "Mark",
+        "link": "https://stackoverflow.com/users/137100/mark"
+    },
+    "is_answered": true,
+    "view_count": 650,
+    "accepted_answer_id": 62700961,
+    "answer_count": 1,
+    "score": 2,
+    "last_activity_date": 1593707311,
+    "creation_date": 1593705776,
+    "question_id": 62700536,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/62700536/how-can-i-customize-blazor-webassembly-msal-auth-to-store-token-in-localstorage",
+    "title": "How can I customize Blazor WebAssembly Msal auth to store token in localStorage instead of sessionStorage?",
+    "body": "<h1>Context</h1>\n<p>I am working off the <a href=\"https://docs.microsoft.com/en-us/aspnet/core/blazor/security/webassembly/standalone-with-azure-active-directory-b2c?view=aspnetcore-3.1\" rel=\"nofollow noreferrer\">Secure an ASP.NET Core Blazor WebAssembly standalone app with Azure Active Directory B2C</a> guide to enable client-side authentication in my Blazor WebAssembly app (there is no server-side component, the entire app runs in the browser). The setup works as expected, I am able to redirect users to the AD B2C user flow, log in, and redirect back into my app with the user properly authenticated.</p>\n<h1>Problem</h1>\n<p>The default authentication behavior persists the JWT token retrieved from AD B2C inside of <code>sessionStorage</code>, which clears as soon as the browser window is closed. I would like to customize this default functionality to instead persist the token to <code>localStorage</code> for longer-lived auth sessions\u2014I'd love to keep the user logged in to subsequent visits after they close the browser window. The docs don't seem to provide any info on how I might accomplish this.</p>\n<p>I've also taken a look at the <a href=\"https://docs.microsoft.com/en-us/aspnet/core/blazor/security/webassembly/additional-scenarios?view=aspnetcore-3.1#save-app-state-before-an-authentication-operation\" rel=\"nofollow noreferrer\">Additional Scenarios</a> docs to under how the <code>RemoteAuthenticatorView</code> might be customized, but was unable to find any info related to how these tokens are stored and retrieved.</p>\n<p>I appreciate any guidance on this!</p>\n"
+}

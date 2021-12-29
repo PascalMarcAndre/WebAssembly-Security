@@ -1,0 +1,30 @@
+{
+    "tags": [
+        "c#",
+        "many-to-many",
+        "asp.net-core-webapi",
+        "blazor-server-side",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 509,
+        "user_id": 3419211,
+        "user_type": "registered",
+        "accept_rate": 64,
+        "profile_image": "https://graph.facebook.com/100000859618233/picture?type=large",
+        "display_name": "user3419211",
+        "link": "https://stackoverflow.com/users/3419211/user3419211"
+    },
+    "is_answered": false,
+    "view_count": 60,
+    "answer_count": 0,
+    "score": 0,
+    "last_activity_date": 1609199204,
+    "creation_date": 1609170442,
+    "last_edit_date": 1609199204,
+    "question_id": 65480251,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/65480251/how-to-create-a-many-to-many-relationships-between-applicationuser-and-a-proje",
+    "title": "How to create a &quot;many-to-many&quot; relationships between ApplicationUser and a Project in Blazor WebAssembly with ASP.NET Core Hosted?",
+    "body": "<p>I created a Blazor WebAssembly project with ASP.NET Core Hosted. The solution consists of 3 projects:</p>\n<ul>\n<li><p>MyApp.Client,</p>\n</li>\n<li><p>MyApp.Server and it contains:</p>\n<pre><code>public class ApplicationUser : IdentityUser\n{\n    public string FirstName { get; set; }\n    public string LastName { get; set; }\n    // If I uncomment AdviceDocumentsUsers then I dont get the error\n    public List&lt;AdviceDocumentsUsers&gt; AdviceDocumentsUsers { get; set; } = new List&lt;AdviceDocumentsUsers&gt;();\n}\n\npublic class AdviceDocumentsUsers\n{\n    public string ApplicationUserId { get; set; }\n    public ApplicationUser ApplicationUser { get; set; }\n    public int AdviceDocumentId { get; set; }\n    public AdviceDocument AdviceDocument { get; set; }\n}\n</code></pre>\n</li>\n<li><p>MyApp.Shared and it contains AdviceDocument:</p>\n<pre><code>public class AdviceDocument\n{\n  public int Id { get; set; }\n  public string Title { get; set; }\n  public List&lt;AdviceDocumentsUsersDTO&gt; AdviceDocumentsUsersDTO { get; set; } = new List&lt;AdviceDocumentsUsersDTO&gt;();\n}\n\npublic class AdviceDocumentsUsersDTO\n{\n  public string ApplicationUserId { get; set; }\n  public int AdviceDocumentId { get; set; }\n}\n\npublic class UserModel&lt;T&gt;\n{\n  public string Id { get; set; }\n  public string UserName { get; set; }\n  public string FirstName { get; set; }\n  public string LastName { get; set; }\n\n  public List&lt;AdviceDocument&gt; AdviceDocuments { get; set; }\n  public List&lt;AdviceDocumentsUsersDTO&gt; AdviceDocumentsUsersDTO { get; set; } = new List&lt;AdviceDocumentsUsersDTO&gt;();\n}\n</code></pre>\n</li>\n</ul>\n<p>MyApp.Client and MyApp.Server have MyApp.Shared as ProjectReference.</p>\n<p>MyApp.Shared cannot get AdviceDocumentsUsers class, that is why I'm using AdviceDocumentsUsersDTO and UserModel. In the controllers I'm mapping AdviceDocumentsUsers to AdviceDocumentsUsersDTO and ApplicationUser to UserModel.</p>\n<p>If I run and try to login, I get an error:</p>\n<blockquote>\n<p>InvalidOperationException: The entity type 'AdviceDocumentsUsers'\nrequires a primary key to be defined. If you intended to use a keyless\nentity type, call 'HasNoKey' in 'OnModelCreating'. For more\ninformation on keyless entity types, see\n<a href=\"https://go.microsoft.com/fwlink/?linkid=2141943\" rel=\"nofollow noreferrer\">https://go.microsoft.com/fwlink/?linkid=2141943</a>.</p>\n</blockquote>\n<pre><code>public class ApplicationDbContext : ApiAuthorizationDbContext&lt;ApplicationUser&gt;\n{\n    public ApplicationDbContext(\n        DbContextOptions options,\n        IOptions&lt;OperationalStoreOptions&gt; operationalStoreOptions) : base(options, operationalStoreOptions)\n    {\n    }\n\n    protected override void OnModelCreating(ModelBuilder builder)\n    {\n        builder.Entity&lt;AdviceDocumentsUsers&gt;().HasKey(x =&gt; new { x.ApplicationUserId, x.AdviceDocumentId });\n\n        base.OnModelCreating(builder);\n    }\n\n    public DbSet&lt;ApplicationUser&gt; ApplicationUsers { get; set; }\n    public DbSet&lt;AdviceDocument&gt; AdviceDocuments { get; set; }\n    public DbSet&lt;AdviceDocumentsUsers&gt; AdviceDocumentsUsers { get; set; }\n}\n</code></pre>\n<p>What do I need to change in order to get a proper many-to0many relationship working between ApplicationUser and AdviceDocument?</p>\n"
+}

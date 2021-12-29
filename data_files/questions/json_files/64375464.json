@@ -1,0 +1,29 @@
+{
+    "tags": [
+        "azure-functions",
+        "microservices",
+        "appdomain",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 1016,
+        "user_id": 420003,
+        "user_type": "registered",
+        "accept_rate": 46,
+        "profile_image": "https://www.gravatar.com/avatar/5245c44a669ced2c623dcc089b9a647f?s=128&d=identicon&r=PG",
+        "display_name": "TLDR",
+        "link": "https://stackoverflow.com/users/420003/tldr"
+    },
+    "is_answered": false,
+    "view_count": 23,
+    "answer_count": 0,
+    "score": 0,
+    "last_activity_date": 1602790627,
+    "creation_date": 1602777678,
+    "last_edit_date": 1602790627,
+    "question_id": 64375464,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/64375464/sandboxing-blazor-webassemblies-in-lieu-of-appdomain-sandboxing",
+    "title": "Sandboxing Blazor WebAssemblies in lieu of AppDomain Sandboxing",
+    "body": "<p>I need a way to securely load assemblies created by 3rd parties on a multi tenant server that may perform a variety of tasks.</p>\n<p>What are my choices beyond what is listed below, and what is the most ideal?</p>\n<ul>\n<li>WebAssembly rehosting (perhaps borrow ideas from Blazor WASM Unit testing?)</li>\n<li>Silverlight (no.)</li>\n<li>AppDomain</li>\n<li>URL to an Azure Function app (how do function apps work? CScript might work as well)</li>\n<li>MicroServices (I don't know enough about this, I just need to load and run a DLL function)</li>\n</ul>\n"
+}

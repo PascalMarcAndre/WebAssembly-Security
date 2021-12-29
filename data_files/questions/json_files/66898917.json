@@ -1,0 +1,26 @@
+{
+    "tags": [
+        "authentication",
+        "blazor-webassembly",
+        "asp.net-core-5.0"
+    ],
+    "owner": {
+        "reputation": 29,
+        "user_id": 1282441,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/77debb35db2d99c8d3b05ee27bd02ca4?s=128&d=identicon&r=PG",
+        "display_name": "user1282441",
+        "link": "https://stackoverflow.com/users/1282441/user1282441"
+    },
+    "is_answered": false,
+    "view_count": 11,
+    "answer_count": 0,
+    "score": 0,
+    "last_activity_date": 1617255271,
+    "creation_date": 1617255271,
+    "question_id": 66898917,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/66898917/blazor-webassembly-net-5-0-unregister-service-worker",
+    "title": "blazor webassembly .net 5.0 unregister service-worker",
+    "body": "<p>I have a Blazor Webassembly app that uses authentication via Google, Facebook and Twitter. When I login and logout or I switch between authorization providers (on my development environment), everything works as expected. However when I publish it to IIS (for production): I can login the first time (with Google for example) but after I logout, I can not login again. I noticed that if I unregister the service-worker.js, everything works as expected. So if I unregister the service-worker after logout... it all works and I can login again.</p>\n<p>With that said, I tried the code bellow to execute on logout and unregister the service-worker:</p>\n<pre><code>    window.RemoveWorker = () =&gt; {\n        navigator.serviceWorker.getRegistrations().then(function (registrations) {\n            for (let registration of registrations) {\n                registration.unregister()\n            }\n        });\n        return true;\n    };\n</code></pre>\n<p>After I tested it, it did not work... I still have to use F12 to use the browser dev tools to unregister the server-worker and then I ca login again. Any hints or ideas would be appreciated.</p>\n"
+}

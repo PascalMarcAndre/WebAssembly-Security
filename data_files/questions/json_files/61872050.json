@@ -1,0 +1,29 @@
+{
+    "tags": [
+        "c#",
+        "asp.net-core",
+        "blazor",
+        "webassembly"
+    ],
+    "owner": {
+        "reputation": 1664,
+        "user_id": 1786007,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/c6bfb48152374c6833ec10ecf0574e0b?s=128&d=identicon&r=PG",
+        "display_name": "Venson",
+        "link": "https://stackoverflow.com/users/1786007/venson"
+    },
+    "is_answered": true,
+    "view_count": 737,
+    "accepted_answer_id": 61873178,
+    "answer_count": 1,
+    "score": 2,
+    "last_activity_date": 1590776780,
+    "creation_date": 1589812529,
+    "last_edit_date": 1589814721,
+    "question_id": 61872050,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/61872050/blazor-webassembly-blocks-webapi-allowanonymous",
+    "title": "Blazor WebAssembly blocks WebApi AllowAnonymous",
+    "body": "<p>I have created an Blazor WebAssembly project and want to provide a WebAPI with one public available function.</p>\n\n<pre><code>[Route(\"api/[controller]\")]\n[ApiController]\n[Authorize]\npublic class SystemEvalApiController : ControllerBase\n{\n    public SystemEvalApiController(AppDbContext context, IMapper mapper)\n    {...}\n\n    [Route(\"LatestEvals\")]\n    [AllowAnonymous]\n    public ActionResult LatestEvals()\n</code></pre>\n\n<p>that is my Api controller and I should be able to call it with:</p>\n\n<pre><code>SystemEvalPublicViewModel = await Http\n                .GetFromJsonAsync&lt;SystemEvalPublicViewModel&gt;(\n                    HttpService.BuildUrl(\"api/SystemEvalApi/LatestEvals\"));\n</code></pre>\n\n<p>When i am not logged into any account. But instead I get this error:</p>\n\n<pre><code>info: System.Net.Http.HttpClient.JPB.BorannRemapping.ServerAPI.LogicalHandler[100]\n      Start processing HTTP request GET https://localhost:44330/api/SystemEvalApi/LatestEvals\nblazor.webassembly.js:1 info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[2]\n      Authorization failed.\n</code></pre>\n\n<p>It looks like the \"DefaultAuthorizationService\" does not recognize the Anonymous attribute but I cannot find the point where it fails directly.</p>\n\n<p>How do I declare an WebAPI function to be accessable from the HttpClient without Login.\nMicrosoft.AspNetCore.Components.WebAssembly.Server 3.2.0.-rc1.20223.4</p>\n\n<p>Edit:\nHere is the declaration for ClientServices:</p>\n\n<pre><code>var builder = WebAssemblyHostBuilder.CreateDefault(args);\nbuilder.RootComponents.Add&lt;App&gt;(\"app\");\n\nbuilder.Services.AddHttpClient(\"JPB.BorannRemapping.ServerAPI\", client =&gt;\n    {\n        client.BaseAddress = new Uri(builder.HostEnvironment.BaseAddress);\n    })\n    .AddHttpMessageHandler&lt;BaseAddressAuthorizationMessageHandler&gt;();\n\n// Supply HttpClient instances that include access tokens when making requests to the server project\nbuilder.Services.AddTransient(sp =&gt; sp.GetRequiredService&lt;IHttpClientFactory&gt;().CreateClient(\"JPB.BorannRemapping.ServerAPI\"));\nbuilder.Services.AddTransient(e =&gt; new HttpService(e.GetService&lt;HttpClient&gt;()));\nbuilder.Services.AddApiAuthorization();\nbuilder.Services.AddBlazoredLocalStorage();\n\nawait builder.Build().RunAsync();\n</code></pre>\n"
+}

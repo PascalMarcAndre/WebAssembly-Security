@@ -1,0 +1,29 @@
+{
+    "tags": [
+        "c#",
+        "identityserver4",
+        "logout",
+        "webassembly",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 11,
+        "user_id": 7199890,
+        "user_type": "registered",
+        "profile_image": "https://graph.facebook.com/10153951940930264/picture?type=large",
+        "display_name": "Oscar",
+        "link": "https://stackoverflow.com/users/7199890/oscar"
+    },
+    "is_answered": true,
+    "view_count": 156,
+    "accepted_answer_id": 65112514,
+    "answer_count": 1,
+    "score": 1,
+    "last_activity_date": 1606927833,
+    "creation_date": 1605350674,
+    "question_id": 64833025,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/64833025/blazor-webassembly-app-authentication-logout-results-in-there-was-an-error-try",
+    "title": "Blazor WebAssembly app /authentication/logout results in &quot;There was an error trying to log you out: &#39;&#39;&quot; fail",
+    "body": "<p>I created a Blazor WebAssembly app and when clicking on the logout link <code>/authentication/logout</code> I get redirected to <code>/authentication/logout-failed?message=The%20logout%20was%20not%20initiated%20from%20within%20the%20page.</code> with the message:</p>\n<blockquote>\n<p>There was an error trying to log you out: ''</p>\n</blockquote>\n<p>I'm using IdentityServer4.</p>\n<p>How can I perform a proper logout and that I'm also logged out of the service providers (Facebook, Google and/or Microsoft)?</p>\n<pre class=\"lang-cs prettyprint-override\"><code>    public class Startup\n    {\n        public Startup(IConfiguration configuration)\n        {\n            Configuration = configuration;\n        }\n\n        public IConfiguration Configuration { get; }\n\n        public void ConfigureServices(IServiceCollection services)\n        {\n            services.AddDbContext&lt;ApplicationDbContext&gt;(options =&gt;\n                options.UseSqlServer(\n                    Configuration.GetConnectionString(&quot;DefaultConnection&quot;)));\n\n            services.AddDefaultIdentity&lt;ApplicationUser&gt;(options =&gt; options.SignIn.RequireConfirmedAccount = true)\n                .AddRoles&lt;IdentityRole&gt;()\n                .AddEntityFrameworkStores&lt;ApplicationDbContext&gt;();\n            services.AddAuthentication()\n                .AddFacebook(facebookOptions =&gt;\n                {\n                    facebookOptions.ClientId = Configuration[&quot;Authentication:Facebook:ClientId&quot;];\n                    facebookOptions.ClientSecret = Configuration[&quot;Authentication:Facebook:ClientSecret&quot;];\n                })\n                .AddGoogle(googleOptions =&gt;\n                {\n                    googleOptions.ClientId = Configuration[&quot;Authentication:Google:ClientId&quot;];\n                    googleOptions.ClientSecret = Configuration[&quot;Authentication:Google:ClientSecret&quot;];\n                })\n                .AddMicrosoftAccount(microsoftOptions =&gt;\n                {\n                    microsoftOptions.ClientId = Configuration[&quot;Authentication:Microsoft:ClientId&quot;];\n                    microsoftOptions.ClientSecret = Configuration[&quot;Authentication:Microsoft:ClientSecret&quot;];\n                });\n\n            services.Configure&lt;IdentityOptions&gt;(options =&gt;\n                options.ClaimsIdentity.UserIdClaimType = ClaimTypes.NameIdentifier);\n\n            services.AddIdentityServer()\n                .AddApiAuthorization&lt;ApplicationUser, ApplicationDbContext&gt;();\n\n            services.AddAuthentication()\n                .AddIdentityServerJwt();\n            services.AddControllersWithViews();\n            services.AddRazorPages();\n            services.AddOptions();\n            services.AddAutoMapper(typeof(Startup));\n            services.AddTransient&lt;IEmailSender, EmailSender&gt;();\n        }\n\n        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)\n        {\n            if (env.IsDevelopment())\n            {\n                app.UseDeveloperExceptionPage();\n                app.UseDatabaseErrorPage();\n                app.UseWebAssemblyDebugging();\n            }\n            else\n            {\n                app.UseExceptionHandler(&quot;/Error&quot;);\n                app.UseHsts();\n            }\n\n            app.UseHttpsRedirection();\n            app.UseBlazorFrameworkFiles();\n            app.UseStaticFiles();\n\n            app.UseRouting();\n\n            app.UseIdentityServer();\n            app.UseAuthentication();\n            app.UseAuthorization();\n\n            app.UseEndpoints(endpoints =&gt;\n            {\n                endpoints.MapRazorPages();\n                endpoints.MapControllers();\n                endpoints.MapFallbackToFile(&quot;index.html&quot;);\n            });\n        }\n</code></pre>\n"
+}

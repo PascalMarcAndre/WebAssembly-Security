@@ -1,0 +1,27 @@
+{
+    "tags": [
+        "c#",
+        "asp.net-core",
+        "blazor"
+    ],
+    "owner": {
+        "reputation": 483,
+        "user_id": 3036876,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/71792046d30101cd8c2f5f01e82f8533?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Sras",
+        "link": "https://stackoverflow.com/users/3036876/sras"
+    },
+    "is_answered": false,
+    "view_count": 26,
+    "answer_count": 0,
+    "score": 0,
+    "last_activity_date": 1613010113,
+    "creation_date": 1613006947,
+    "last_edit_date": 1613010113,
+    "question_id": 66147554,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/66147554/blazor-redirect-loopback",
+    "title": "Blazor Redirect Loopback",
+    "body": "<p>I have blazor webassembly hosted asp.net core project. It errors when logging wrong password or email.</p>\n<p>Server, Client, Shared.</p>\n<p>When I build it usually it open the Client side and work okay.</p>\n<p>But sometime, it showed the below page redirecting to account/login, I'm I haven't defined anything for this route.</p>\n<p>I try to find the cause but I could not. The only I can try and it works by removing this line in startup class and add it back after it works. But, when I try to restart to the PC then the same issue happened and I need to do the same way which is annoying</p>\n<pre><code> services.AddSingleton&lt;IAuthorizationPolicyProvider, PermissionPolicyProvider&gt;();\n        services.AddScoped&lt;IAuthorizationHandler, PermissionAuthorizationHandler&gt;();\n</code></pre>\n<p>It implemented code</p>\n<pre><code> using Microsoft.AspNetCore.Authorization;\nusing Microsoft.Extensions.Options;\nusing System;\nusing System.Collections.Generic;\nusing System.Linq;\nusing System.Threading.Tasks;\n\nnamespace SchoolHero.Server.Permission\n{\n    internal class PermissionPolicyProvider : IAuthorizationPolicyProvider\n    {\n        public DefaultAuthorizationPolicyProvider FallbackPolicyProvider { get; }\n        public PermissionPolicyProvider(IOptions&lt;AuthorizationOptions&gt; options)\n        {\n            FallbackPolicyProvider = new DefaultAuthorizationPolicyProvider(options);\n        }\n        public Task&lt;AuthorizationPolicy&gt; GetDefaultPolicyAsync() =&gt; FallbackPolicyProvider.GetDefaultPolicyAsync();\n        public Task&lt;AuthorizationPolicy&gt; GetPolicyAsync(string policyName)\n        {\n            if (policyName.StartsWith(&quot;Permission&quot;, StringComparison.OrdinalIgnoreCase))\n            {\n                var policy = new AuthorizationPolicyBuilder();\n                policy.AddRequirements(new PermissionRequirement(policyName));\n                return Task.FromResult(policy.Build());\n            }\n            return FallbackPolicyProvider.GetPolicyAsync(policyName);\n        }\n        public Task&lt;AuthorizationPolicy&gt; GetFallbackPolicyAsync() =&gt; FallbackPolicyProvider.GetDefaultPolicyAsync();\n    }\n}\n</code></pre>\n<p>another class</p>\n<pre><code>using Microsoft.AspNetCore.Authorization;\nusing System;\nusing System.Collections.Generic;\nusing System.Linq;\nusing System.Threading.Tasks;\n\nnamespace SchoolHero.Server.Permission\n{\n    internal class PermissionAuthorizationHandler : AuthorizationHandler&lt;PermissionRequirement&gt;\n    {\n        public PermissionAuthorizationHandler() { }\n        protected override async Task HandleRequirementAsync(AuthorizationHandlerContext context, PermissionRequirement requirement)\n        {\n            if (context.User == null)\n            {\n                return;\n            }\n            var permissionss = context.User.Claims.Where(x =&gt; x.Type == &quot;Permission&quot; &amp;&amp;\n                                                                x.Value == requirement.Permission &amp;&amp;\n                                                                x.Issuer == &quot;LOCAL AUTHORITY&quot;);\n            if (permissionss.Any())\n            {\n                context.Succeed(requirement);\n                return;\n            }\n        }\n    }\n}\n</code></pre>\n"
+}

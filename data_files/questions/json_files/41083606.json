@@ -1,0 +1,30 @@
+{
+    "tags": [
+        "c++",
+        "qt",
+        "web-applications",
+        "google-nativeclient",
+        "ppapi"
+    ],
+    "owner": {
+        "reputation": 333,
+        "user_id": 1814118,
+        "user_type": "registered",
+        "accept_rate": 59,
+        "profile_image": "https://i.stack.imgur.com/qtTeE.jpg?s=128&g=1",
+        "display_name": "Raju",
+        "link": "https://stackoverflow.com/users/1814118/raju"
+    },
+    "is_answered": true,
+    "view_count": 1492,
+    "accepted_answer_id": 41178057,
+    "answer_count": 1,
+    "score": 2,
+    "last_activity_date": 1573213479,
+    "creation_date": 1481437920,
+    "question_id": 41083606,
+    "content_license": "CC BY-SA 3.0",
+    "link": "https://stackoverflow.com/questions/41083606/porting-c-code-native-client-to-browser-web-app",
+    "title": "Porting c++ code (native client) to browser (Web app)",
+    "body": "<p>I have a c++ module written using Qt-creator SDK. I want to port this code to run on any webpage without compromising the source-code to end user. User should be able to see the output of this module on any browser(Chrome, Firefox, Safari, Explorer) without having to install any additional browser plugin. What are the better options available to achieve this. I have googled and found few such options:</p>\n\n<ol>\n<li>Google Native client (NaCl) - But it runs only on Chrome. Is this the future of web applications??</li>\n<li>PPAPI - Not sure if it is same as NaCl</li>\n<li>NPAPI - almost depricated</li>\n<li>Emscripten - It converts c++ to js. So source-code is visible to user.</li>\n<li>WebAssembly</li>\n</ol>\n\n<p>Are there any other options to achievce waht I am looking for? If not which one I should pick from the above options!? Many thanks in advance. a</p>\n"
+}

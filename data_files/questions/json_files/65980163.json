@@ -1,0 +1,27 @@
+{
+    "tags": [
+        "c#",
+        "progressive-web-apps",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 3,
+        "user_id": 13410749,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/07895247f0825c27cebea94fe42a4fa4?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Philipp Kricheldorf",
+        "link": "https://stackoverflow.com/users/13410749/philipp-kricheldorf"
+    },
+    "is_answered": false,
+    "view_count": 45,
+    "answer_count": 0,
+    "score": 0,
+    "last_activity_date": 1612144826,
+    "creation_date": 1612102786,
+    "last_edit_date": 1612144826,
+    "question_id": 65980163,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/65980163/blazor-netcore-hosted-problems-with-launchsettings",
+    "title": "Blazor .NetCore hosted problems with launchsettings",
+    "body": "<p>I created a default Blazor Webassembly app with checked Progressive Web App and ASP.NET Core hosted.\n<br>Then I changed the applicationUrl in both launchsettings.json files (server and client).</p>\n<pre><code>&quot;applicationUrl&quot;: &quot;https://0.0.0.0:5001;http://0.0.0.0:5000&quot;,\n I can open the browser with my local address (192.168.1.5:5000 calls the App).\n</code></pre>\n<p>After changing the launchsettings.json on either Server or Client app I can't get the &quot;install&quot; button for the progressive webapp anymore in my browser.\nAlso Visual Studio won't open the browser automatically anymore to open up the browser with the address.</p>\n<p>Any clues? Is that a bug?</p>\n<p><em><strong>When I change the startup url in the project settings -&gt; Debug it also won't open the browser.</strong></em></p>\n<p>There are no exceptions or logs in the output or console.</p>\n<p>I just want the app to be available in my private network for a proof of concept if I can install it as PWA on my phone and so on.</p>\n<p>Thanks in advance</p>\n"
+}

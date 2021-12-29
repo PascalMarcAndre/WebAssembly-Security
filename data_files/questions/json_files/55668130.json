@@ -1,0 +1,24 @@
+{
+    "tags": [
+        "multithreading",
+        "segmentation-fault",
+        "signals",
+        "posix",
+        "sandbox"
+    ],
+    "owner": {
+        "user_type": "does_not_exist",
+        "display_name": "user1544337"
+    },
+    "is_answered": false,
+    "view_count": 54,
+    "answer_count": 0,
+    "score": 4,
+    "last_activity_date": 1555176610,
+    "creation_date": 1555176610,
+    "question_id": 55668130,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/55668130/how-do-sandboxing-environments-recover-from-faults",
+    "title": "How do sandboxing environments recover from faults?",
+    "body": "<p>In JavaScript runtimes and other JIT-compiled environments where code needs to be sandboxed, how can the larger program recover when the dynamically loaded code faults?</p>\n\n<p>For instance, the code that SpiderMonkey generates for WebAssembly contains instructions which throw <code>SIGILL</code> when they are executed (e.g., to do a bounds check). When such a fault is thrown, I suppose the exception handler of the JavaScript engine is called. But such a signal handler is very restricted in its abilities. To jump out of the bad dynamically generated code it would typically use <code>siglongjmp</code>, but if I understand the notes at the bottom of <code>man signal-safety</code> correctly, if that happens, then no other unsafe function may be used by the program ever again. Such a restriction is of course unreasonable for a JS runtime (e.g.).</p>\n\n<p><strong>So how do sandboxing environments recover from child faults without losing abilities</strong> (in particular, becoming restricted to only async-safe functions)?</p>\n\n<p>One thought I had is that perhaps the sandboxed code is ran in another thread with its own signal handler, so that the main thread does not lose any abilities when the child thread receives a signal. But I don't know whether that is correct; I find it hard to find documentation on how signals and threads interact exactly.</p>\n\n<p>As you will see this question is tagged <a href=\"/questions/tagged/posix\" class=\"post-tag\" title=\"show questions tagged &#39;posix&#39;\" rel=\"tag\">posix</a>, but I am in principle also interested in the Windows approach.</p>\n"
+}

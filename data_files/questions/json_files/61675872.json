@@ -1,0 +1,28 @@
+{
+    "tags": [
+        "c#",
+        "asp.net",
+        "blazor",
+        "webassembly",
+        "blazor-client-side"
+    ],
+    "owner": {
+        "reputation": 118,
+        "user_id": 8344623,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/485785bbdcf411c5fc1e0896b1602f8b?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Camile",
+        "link": "https://stackoverflow.com/users/8344623/camile"
+    },
+    "is_answered": false,
+    "view_count": 87,
+    "answer_count": 0,
+    "score": 0,
+    "last_activity_date": 1588929458,
+    "creation_date": 1588929458,
+    "question_id": 61675872,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/61675872/secure-blazor-webassembly-set-up-for-a-game-server",
+    "title": "Secure Blazor WebAssembly set-up for a game server?",
+    "body": "<p>I've been looking to implement a simple web-browser game. Blazor WebAssembly seems really neat, but exposing all my code (.dlls) is something I'd like to avoid. For this reason, I've been planning to have 2 separate projects - <strong>Blazor WebAssembly</strong> project with client-side logic and an <strong>Asp.NET Rest server</strong> to handle Rest requests from the client, database communication, game/account logic and game updates.</p>\n\n<p><strong>Currently my prototype looks as follows:</strong></p>\n\n<ol>\n<li>WebAssembly project\n\n<ol>\n<li>A page sending a http request + showing results</li>\n</ol></li>\n<li>Rest server\n\n<ol>\n<li>Controller class handling the GET request</li>\n</ol></li>\n</ol>\n\n<p>The prototype works, <em>but</em> the nature of the application requires me to be running updates of data and evaluation of game state server-side every now and then (think game loop, but in my case I only need to run it a few times a day). </p>\n\n<p>I have no idea how to handle that with the current approach - <strong>how do I ensure, that the Rest Server doesn't start handling a breaking request in the middle of updating the game state/updating database?</strong> Do I implement some thread-safe solution within the Controller classes? Is there something available out of the box? </p>\n\n<p>If the whole 'game state update' takes little time (few seconds tops) <strong>do I have to worry about blocking clients waiting for their HTTP requests to get served?</strong></p>\n\n<p>And lastly: <strong>How do I handle updating the client-side page with data once the game update is performed?</strong> My current idea is to have clients periodically ask the server if there are any updates.</p>\n"
+}

@@ -1,0 +1,29 @@
+{
+    "tags": [
+        "authorization",
+        "httpclient",
+        "blazor",
+        "synchronous",
+        "policy"
+    ],
+    "owner": {
+        "reputation": 13,
+        "user_id": 13681455,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/453183c305fffd9afd8f28701f9adba1?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Mohammed Rubeesh ",
+        "link": "https://stackoverflow.com/users/13681455/mohammed-rubeesh"
+    },
+    "is_answered": false,
+    "view_count": 48,
+    "answer_count": 0,
+    "score": 1,
+    "last_activity_date": 1613641228,
+    "creation_date": 1613580722,
+    "last_edit_date": 1613641228,
+    "question_id": 66246436,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/66246436/blazor-webassembly-check-if-policy-exists",
+    "title": "Blazor webassembly, check if Policy exists",
+    "body": "<p>In my blazor webassembly project i am trying to load poilicies from webapi, so that admin can set policies(permissions) for each role.\nThe problem is that the Authorization policy validation on the first page is done even before getting the response from httpclient request as it is async call, and i get an error the policy does not exists.\nIs there any way that i can execute httpclient request synchronously OR check if the policy exists and wait till policy initialization is complete.</p>\n<p><strong>JSON Object:</strong></p>\n<pre><code>[\n {&quot;policy&quot;: &quot;Administration&quot;,&quot;roles&quot;: [&quot;admin&quot;]},\n {&quot;policy&quot;: &quot;FinanceTransaction&quot;,&quot;roles&quot;: [&quot;admin,accountant&quot;]},\n .....\n]\n</code></pre>\n<p><strong>Policy Initialization:</strong></p>\n<pre><code>   public class Program\n    {\n        public static async Task Main(string[] args)\n        {\n            var builder = WebAssemblyHostBuilder.CreateDefault(args);\n            builder.RootComponents.Add&lt;App&gt;(&quot;#app&quot;);\n\n            var baseAddress = builder.Configuration[&quot;apiUrl&quot;];\n\n            builder.Services.AddHttpClient(&quot;Anonymous&quot;, client =&gt; client.BaseAddress = new Uri(baseAddress));\n\n            builder.Services.AddHttpClient(&quot;Protected&quot;, client =&gt; client.BaseAddress = new Uri(baseAddress));\n\n            builder.Services.AddScoped(sp =&gt; sp.GetRequiredService&lt;IHttpClientFactory&gt;().CreateClient(&quot;Protected&quot;));\n\n\n        builder.Services.AddAuthorizationCore(async options =&gt;\n            {\n                var httpClientFactory = builder.Build().Services.GetRequiredService&lt;IHttpClientFactory&gt;();\n                var http = httpClientFactory.CreateClient(&quot;Anonymous&quot;);\n\n                var tasks = await http.GetFromJsonAsync&lt;IEnumerable&lt;PolicyRoles&gt;&gt;($&quot;AppPolicy&quot;);\n                foreach (var task in tasks)\n                {\n                    AppLoadStatus.PolicyLoaded = true;\n                    OnPolicyLoaded.Invoke();\n                    if (task.Roles.Any())\n                        options.AddPolicy(task.Policy, policy =&gt; { policy.RequireRole(task.Roles); });\n                }\n            });\n\n            await builder.Build().RunAsync();\n        }\n    }\n</code></pre>\n<p><strong>Razor Page:</strong></p>\n<pre><code>@page &quot;/Items/&quot;\n\n@attribute [Authorize(Policy = &quot;FinanceTransaction&quot;)]\n\n&lt;div class=&quot;col col-lg-9&quot;&gt;\n    @if (items == null)\n      {\n         &lt;LoadingSpinner LoadFailed=&quot;@loadFailed&quot; /&gt;\n      }\n    else\n      {\n         .....\n     .....\n \n      }\n&lt;div&gt;\n</code></pre>\n<p>If i try to load the above page directly i get the error:\n<strong>crit: Microsoft.AspNetCore.Components.WebAssembly.Rendering.WebAssemblyRenderer[100]\nUnhandled exception rendering component: The AuthorizationPolicy named: 'FinanceTransaction' was not found</strong></p>\n<p>But if i wait for policy initialization and navigate to other pages everything would work fine.</p>\n<p>Can any one help me to resolve the issue. Or is there any other better approach for this</p>\n<p><strong>app.razor:</strong></p>\n<pre><code>\n@if (!AppLoadStatus.PolicyLoaded)\n{\n    &lt;LoadingSpinner /&gt;\n}\nelse\n{\n    &lt;CascadingAuthenticationState&gt;\n        &lt;Router AppAssembly=&quot;@typeof(Program).Assembly&quot;&gt;\n            &lt;Found Context=&quot;routeData&quot;&gt;\n                &lt;AuthorizeRouteView RouteData=&quot;@routeData&quot; DefaultLayout=&quot;@typeof(MainLayout)&quot;&gt;\n                    &lt;NotAuthorized&gt;\n                        @if (!context.User.Identity.IsAuthenticated)\n                        {\n                            &lt;RedirectToLogin /&gt;\n                        }\n                        else\n                        {\n                            &lt;AccessDenied /&gt;\n                        }\n                    &lt;/NotAuthorized&gt;\n                &lt;/AuthorizeRouteView&gt;\n            &lt;/Found&gt;\n            &lt;NotFound&gt;\n                &lt;LayoutView Layout=&quot;@typeof(MainLayout)&quot;&gt;\n                    &lt;RedirectToHome /&gt;\n                &lt;/LayoutView&gt;\n            &lt;/NotFound&gt;\n        &lt;/Router&gt;\n    &lt;/CascadingAuthenticationState&gt;\n}\n@code{\n    protected override void OnInitialized()\n    {\n        ServiceExtensions.OnPolicyLoaded += () =&gt; { StateHasChanged(); };\n    }\n}\n</code></pre>\n"
+}

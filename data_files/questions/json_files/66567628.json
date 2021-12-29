@@ -1,0 +1,28 @@
+{
+    "tags": [
+        "authentication",
+        "get",
+        "bearer-token",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 1141,
+        "user_id": 2120273,
+        "user_type": "registered",
+        "accept_rate": 80,
+        "profile_image": "https://i.stack.imgur.com/MTl6N.png?s=128&g=1",
+        "display_name": "Kaine",
+        "link": "https://stackoverflow.com/users/2120273/kaine"
+    },
+    "is_answered": false,
+    "view_count": 13,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1615394887,
+    "creation_date": 1615389301,
+    "question_id": 66567628,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/66567628/how-to-authenticate-user-on-image-src-request-from-core-hosted-blazor-web-assemb",
+    "title": "How to authenticate user on image src request from core hosted blazor web assembly",
+    "body": "<p>When calling the default API in a Blazor Core Hosted Webassembly application I use the preconfigured HttpClient which includes headers for the security token. This means on the server I have access to which user is logged in.</p>\n<p>However, when loading an image into an img tag with the src property this doesn't use the HttpClient and so the header is not attached to the get request. This is fine if you want to serve a static, public, image from the server side (e.g. logo, brand image, icon etc.), but how can you authenticate this request such that users can only get their own images?</p>\n<p>I have made an Images controller to handle the calls, which can either be a standard MVC controller or an API controller, and put an [Authorize] attribute on the GetImage/{id} method, but I don't know how to get the browser to authenticate (I get a 401, even through the user is logged into the application)</p>\n<p>In an MVC site this would usually be handled by an auth cookie sent with requests from the browser, but Blazor doesn't set this cookie.</p>\n<p>I could use the HttpClient to download the image, convert it into base64 and set the content of the img tag using that base64 string, but this bypasses the browser cache and seems needlessly complicated as I would then need to handle all these transfers and caching etc. manually in the client.</p>\n<p>What is the best way to authenticate this browser triggered get request? Can I set a cookie by hand that will do this?</p>\n"
+}

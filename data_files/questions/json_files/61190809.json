@@ -1,0 +1,28 @@
+{
+    "tags": [
+        "asynchronous",
+        "google-apps-script",
+        "async-await",
+        "webassembly"
+    ],
+    "owner": {
+        "reputation": 327,
+        "user_id": 11831068,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/968c3b2680b25e986ae04ec2a1d04a33?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Perhaps you see this name.",
+        "link": "https://stackoverflow.com/users/11831068/perhaps-you-see-this-name"
+    },
+    "is_answered": true,
+    "view_count": 1266,
+    "answer_count": 1,
+    "score": 3,
+    "last_activity_date": 1610380380,
+    "creation_date": 1586790398,
+    "last_edit_date": 1592644375,
+    "question_id": 61190809,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/61190809/running-async-functions-on-google-apps-script",
+    "title": "Running async functions on Google Apps Script",
+    "body": "<p>I am attempting to run WebAssembly on the new V8 Google Apps Script runtime, and it appears to be supported, however it seems that async functions are terminated after they return a Promise.</p>\n<pre><code>let wasm= new Uint8Array([/* snip */]).buffer\nfunction add(a,b) {\n  return((async()=&gt;{\n  console.log(&quot;running function...&quot;)\n  results=await WebAssembly.instantiate(wasm)\n  return results.instance.exports.add(a,b)\n})());\n}\nfunction test(){\n  add(2,3).then(console.log).catch(console.error)\n}\n</code></pre>\n<p>when I run <code>test</code> &quot;running function...&quot; is logged, then nothing. No errors, no results. I have confirmed that <code>WebAssembly.instantiate</code> returns a Promise.\nDoes anyone know what is going on, or is this something to ask Google about?</p>\n<h3>Update:</h3>\n<p>Created a issue at <a href=\"https://issuetracker.google.com/issues/153828715\" rel=\"nofollow noreferrer\">https://issuetracker.google.com/issues/153828715</a></p>\n"
+}

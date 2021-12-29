@@ -1,0 +1,27 @@
+{
+    "tags": [
+        "webassembly"
+    ],
+    "owner": {
+        "reputation": 855,
+        "user_id": 8151832,
+        "user_type": "registered",
+        "accept_rate": 74,
+        "profile_image": "https://i.stack.imgur.com/hZx2t.jpg?s=128&g=1",
+        "display_name": "YHSPY",
+        "link": "https://stackoverflow.com/users/8151832/yhspy"
+    },
+    "is_answered": true,
+    "view_count": 140,
+    "accepted_answer_id": 48646858,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1519973998,
+    "creation_date": 1517906189,
+    "last_edit_date": 1517915799,
+    "question_id": 48638653,
+    "content_license": "CC BY-SA 3.0",
+    "link": "https://stackoverflow.com/questions/48638653/can-anyone-help-explain-the-one-pass-verification-process-shows-in-webassembly",
+    "title": "Can anyone help explain the &quot;one-pass verification&quot; process shows in WebAssembly design rational",
+    "body": "<p>What is the meaning of \"one-pass verification\"? And why a stack based machine can simplify this process?</p>\n\n<p>Also, I find the following sentence in the WebAssembly doc \"Semantic->Validation\" section:</p>\n\n<blockquote>\n  <p>A module binary must be validated before it is compiled.</p>\n</blockquote>\n\n<p>I would like to know when the validation process will occur? During the process of \"wat2wasm\" or at any other stage? Thanks!</p>\n"
+}

@@ -1,0 +1,26 @@
+{
+    "tags": [
+        ".net-core",
+        "identityserver4",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 21,
+        "user_id": 14066253,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/85511ab11a8d175ab8f5224d1d63030b?s=128&d=identicon&r=PG&f=1",
+        "display_name": "rkits",
+        "link": "https://stackoverflow.com/users/14066253/rkits"
+    },
+    "is_answered": false,
+    "view_count": 201,
+    "answer_count": 0,
+    "score": 0,
+    "last_activity_date": 1599480179,
+    "creation_date": 1599480179,
+    "question_id": 63777257,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/63777257/blazor-webassembly-identity-server-login-error-on-production-server-only",
+    "title": "Blazor Webassembly - Identity Server login error - on production server only",
+    "body": "<p>Hi i have a Blazor WebAssembly app, that i designed using mainly this Tutorial:\n<a href=\"https://docs.microsoft.com/en-us/aspnet/core/blazor/security/webassembly/hosted-with-identity-server?view=aspnetcore-3.1&amp;tabs=visual-studio\" rel=\"nofollow noreferrer\">Secure an ASP.NET Core Blazor WebAssembly hosted App with ID server</a></p>\n<p>So whether i run it on the development machine (Windows 10, with VS installed) with IISExpress or deployed to the production IIS server everything on my scaffolded login pages works fine.</p>\n<p>Now after deploying the project to another machine running IIS (same version) when i try to login i get this message:</p>\n<p>There was an error trying to log you in: ''</p>\n<p>I'm not that experienced using iis and asp so i'm still looking for a way to debug this further.</p>\n<p>Any guesses what I'm missing?</p>\n<p>(dotnet core runtime 3.1.7 installed on both machines)</p>\n"
+}

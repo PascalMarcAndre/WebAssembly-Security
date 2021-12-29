@@ -1,0 +1,29 @@
+{
+    "tags": [
+        "c#",
+        "asp.net-core",
+        "blazor",
+        "blazor-client-side",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 3,
+        "user_id": 12254868,
+        "user_type": "registered",
+        "profile_image": "https://lh6.googleusercontent.com/-kFsynUJzOIw/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3rc5mOQRPAr_CWN746XjOhqg0057DA/photo.jpg?sz=128",
+        "display_name": "KingOfTheNorth",
+        "link": "https://stackoverflow.com/users/12254868/kingofthenorth"
+    },
+    "is_answered": true,
+    "view_count": 83,
+    "accepted_answer_id": 64997636,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1606270735,
+    "creation_date": 1606189242,
+    "question_id": 64979938,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/64979938/net-core-3-1-blazor-webassembly-does-not-contain-a-definition-for-loginmode",
+    "title": ".net core 3.1 Blazor WebAssembly: does not contain a definition for &quot;LoginMode&quot;",
+    "body": "<p>I am currently trying to change the default of popup to redirect upon logging in.<br />\nI am using .NETCORE 3.1 Blazor WebAssembly any help would be great! Thanks!</p>\n<p><a href=\"https://i.stack.imgur.com/p1aHS.png\" rel=\"nofollow noreferrer\">code block</a></p>\n<p><a href=\"https://i.stack.imgur.com/ydgTx.png\" rel=\"nofollow noreferrer\">csproj packages</a></p>\n"
+}

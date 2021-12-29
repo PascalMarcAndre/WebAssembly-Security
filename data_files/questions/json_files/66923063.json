@@ -1,0 +1,26 @@
+{
+    "tags": [
+        "c#",
+        "blazor"
+    ],
+    "owner": {
+        "reputation": 1,
+        "user_id": 3191570,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/b9714e2645d823cd2e7e5b0805c841eb?s=128&d=identicon&r=PG&f=1",
+        "display_name": "CarpeNC",
+        "link": "https://stackoverflow.com/users/3191570/carpenc"
+    },
+    "is_answered": false,
+    "view_count": 37,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1617628281,
+    "creation_date": 1617384742,
+    "last_edit_date": 1617628281,
+    "question_id": 66923063,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/66923063/how-to-remove-unused-dlls-from-blazor-webassembly-publishingwithout-manually-m",
+    "title": "How to remove unused .dlls from blazor webassembly publishing(without manually modifying blazor.boot.json etc)",
+    "body": "<p>We upgraded our old netstandard 2 blazor webassembly app to net 5 recently but the number of dlls in the publish folder went from 43 (netstandard 2) to 181 (net 5). At first I thought it was because I added JSON.NET as a package dependency.... but even after removing and creating an &quot;empty&quot; blazor webassembly, I noticed that there were the same 181 dlls in the publish folder ...(almost like self-contained but it's not)</p>\n<p>The total download size has doubled and takes wayyyy longer for all those .dlls to finish downloading making it almost unusable.</p>\n<p>Old:<a href=\"https://i.stack.imgur.com/8fh9L.png\" rel=\"nofollow noreferrer\">enter image description here</a></p>\n<p>New: <a href=\"https://i.stack.imgur.com/hTsj9.png\" rel=\"nofollow noreferrer\">enter image description here</a></p>\n<p>PublishProfile:</p>\n<pre><code> &lt;Project ToolsVersion=&quot;4.0&quot; xmlns=&quot;http://schemas.microsoft.com/developer/msbuild/2003&quot;&gt;\n  &lt;PropertyGroup&gt;\n    &lt;DeleteExistingFiles&gt;True&lt;/DeleteExistingFiles&gt;\n    &lt;PublishWithAspNetCoreTargetManifest&gt;true&lt;/PublishWithAspNetCoreTargetManifest&gt;\n    &lt;ExcludeApp_Data&gt;False&lt;/ExcludeApp_Data&gt;\n    &lt;LaunchSiteAfterPublish&gt;False&lt;/LaunchSiteAfterPublish&gt;\n    &lt;LastUsedBuildConfiguration&gt;Release&lt;/LastUsedBuildConfiguration&gt;\n    &lt;LastUsedPlatform&gt;Any CPU&lt;/LastUsedPlatform&gt;\n    &lt;SkipExtraFilesOnServer&gt;True&lt;/SkipExtraFilesOnServer&gt;\n    &lt;PublishProvider&gt;FileSystem&lt;/PublishProvider&gt;\n    &lt;PublishUrl&gt;bin\\Release\\net5.0\\browser-wasm\\publish\\&lt;/PublishUrl&gt;\n    &lt;PublishDir&gt;bin\\PublishOut\\&lt;/PublishDir&gt;\n    &lt;WebPublishMethod&gt;FileSystem&lt;/WebPublishMethod&gt;\n    &lt;SiteUrlToLaunchAfterPublish /&gt;\n    &lt;TargetFramework&gt;net5.0&lt;/TargetFramework&gt;\n    &lt;ProjectGuid&gt;d1f52af3-75a6-43ab-aba9-961d4460413a&lt;/ProjectGuid&gt;\n    &lt;SelfContained&gt;false&lt;/SelfContained&gt;\n  &lt;/PropertyGroup&gt;\n&lt;/Project&gt;\n</code></pre>\n<p>I started to go through and manually verify each .dlls actual usage and remove it from blazor.boot.json, etc, but that is going to take way too long.</p>\n<p>I saw in other threads the recommendation for</p>\n<p><code>&lt;PublishWithAspNetCoreTargetManifest&gt;true&lt;/PublishWithAspNetCoreTargetManifest&gt;</code> into the .csproj file\nbut that didn't work for me.</p>\n<p>How can I limit the publish to only include used .dlls?</p>\n"
+}

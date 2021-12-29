@@ -1,0 +1,30 @@
+{
+    "tags": [
+        "authentication",
+        "authorization",
+        "blazor",
+        "webassembly",
+        ".net-5"
+    ],
+    "owner": {
+        "reputation": 2342,
+        "user_id": 1080633,
+        "user_type": "registered",
+        "accept_rate": 69,
+        "profile_image": "https://i.stack.imgur.com/RieF7.jpg?s=128&g=1",
+        "display_name": "fonZ",
+        "link": "https://stackoverflow.com/users/1080633/fonz"
+    },
+    "is_answered": false,
+    "view_count": 127,
+    "answer_count": 0,
+    "score": 2,
+    "last_activity_date": 1606055452,
+    "creation_date": 1606055103,
+    "last_edit_date": 1606055452,
+    "question_id": 64955291,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/64955291/how-to-combine-multiple-authentication-schemes-for-different-types-of-clients-u",
+    "title": "How to combine multiple authentication schemes for different types of clients (user/pass and client/secret) in a Blazor WASM project?",
+    "body": "<p>I have a Blazor WASM project with a Blazor Client and ASP.NET core server. I can authenticate with user/password using the following code:</p>\n<pre><code>services\n    .AddDefaultIdentity&lt;ApplicationUser&gt;(\n        options =&gt; options.SignIn.RequireConfirmedAccount = true)\n    .AddRoles&lt;IdentityRole&gt;()\n    .AddEntityFrameworkStores&lt;ApplicationDbContext&gt;();\n\nservices\n    .AddIdentityServer()\n    .AddApiAuthorization&lt;ApplicationUser, ApplicationDbContext&gt;();\n\nservices\n    .AddAuthentication()\n    .AddIdentityServerJwt();\n\nservices.AddTransient&lt;IProfileService, ProfileService&gt;();\n\nservices.AddAuthorization(options =&gt;\n{\n    options.AddPolicy(&quot;ApiScope&quot;, policy =&gt;\n    {\n        policy.RequireAuthenticatedUser();\n        policy.RequireClaim(&quot;scope&quot;, &quot;api1&quot;);\n    });\n});\n</code></pre>\n<p>When I add the following code, I can successfully authenticate with clientcredentials from a console client. But then the Blazor client user/password authentication stops working.</p>\n<pre><code>...\n\nservices\n    .AddIdentityServer()\n    .AddApiAuthorization&lt;ApplicationUser, ApplicationDbContext&gt;()\n    +.AddInMemoryApiScopes(Config.ApiScopes)\n    +.AddClientStore&lt;ClientStore&gt;()\n    +.AddDeveloperSigningCredential();\n\nservices\n    .AddAuthentication()\n    .AddIdentityServerJwt();\n\n+services\n+    .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)\n+    .AddJwtBearer(JwtBearerDefaults.AuthenticationScheme, options =&gt;\n+    {\n+        options.Authority = &quot;https://localhost:44311&quot;;\n+        options.TokenValidationParameters = new TokenValidationParameters\n+        {\n+            ValidateAudience = false,\n+        };\n+    });\n\n...\n</code></pre>\n<p>In the browser while trying to authenticate in the Blazor client, the console prints:</p>\n<pre><code>info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[2]\n      Authorization failed. These requirements were not met:\n      DenyAnonymousAuthorizationRequirement: Requires an authenticated user.\n</code></pre>\n<p>I have tried a lot, but I'm not able to make both work together. It seems that somehow this configuration requires authentication for everything, even the pages/controllers that are marked AllowAnonymous. So, when I try to authenticate, it gives me an error telling me the user must be authenticated: DenyAnonymousAuthorizationRequirement. The policy, &quot;ApiScope&quot; is only intended for the clientcredentials client, not for the Blazor client. If removed, the RequireAuthenticatedUser call doesn't make a difference, same error.</p>\n<p>Any help is appreciated.</p>\n"
+}

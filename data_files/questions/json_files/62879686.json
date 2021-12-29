@@ -1,0 +1,26 @@
+{
+    "tags": [
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 2360,
+        "user_id": 5306333,
+        "user_type": "registered",
+        "accept_rate": 83,
+        "profile_image": "https://graph.facebook.com/10206236442642876/picture?type=large",
+        "display_name": "John Baird",
+        "link": "https://stackoverflow.com/users/5306333/john-baird"
+    },
+    "is_answered": true,
+    "view_count": 177,
+    "accepted_answer_id": 62879933,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1594656896,
+    "creation_date": 1594655921,
+    "question_id": 62879686,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/62879686/blazor-webassembly-authentication",
+    "title": "Blazor WebAssembly Authentication",
+    "body": "<p>I'm learning blazor and am having some difficulty wrapping my head around authentication.  I have a .net core web api hosted and want to connect a blazor web assembly to it, but all the tutorials i find use it hosted in an asp.net core host in one package. How secure is the authentication when hosted like this on the same machine?</p>\n"
+}

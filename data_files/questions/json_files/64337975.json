@@ -1,0 +1,29 @@
+{
+    "tags": [
+        "asp.net-core",
+        "redirect",
+        "identityserver4",
+        "blazor",
+        "identity"
+    ],
+    "owner": {
+        "reputation": 5,
+        "user_id": 14275324,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/790f4bde62277293cf3ba5564ec298d1?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Bas",
+        "link": "https://stackoverflow.com/users/14275324/bas"
+    },
+    "is_answered": true,
+    "view_count": 643,
+    "accepted_answer_id": 64348922,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1602670828,
+    "creation_date": 1602601954,
+    "question_id": 64337975,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/64337975/openidconnect-in-blazor-webassembly-with-an-identityserver4-asp-net-core-ident",
+    "title": "OpenIDConnect in Blazor WebAssembly with an IdentityServer4 + ASP.NET Core Identity postgresql database without redirect",
+    "body": "<p>I'm trying to create an IdentityServer4 + ASP.NET Core Identity backend to handle both access/refresh tokens and user/signin management. At some point in time I will also create a web API, hence I need the access tokens. My frontend is a Blazor WebAssembly.</p>\n<p>In nearly every guide/tutorial I read, I am pointed towards an authorization code grant using Open ID Connect. However, when I implement this, I am redirected from a user login page to the identityserver login page on a different port as follows:</p>\n<pre><code>services.AddAuthentication(options =&gt;\n        {\n            options.DefaultScheme = &quot;Cookies&quot;;\n            options.DefaultChallengeScheme = &quot;oidc&quot;;\n        })\n        .AddCookie(&quot;Cookies&quot;)\n        .AddOpenIdConnect(&quot;oidc&quot;, options =&gt;\n        {\n            options.SignInScheme = &quot;Cookies&quot;;\n\n            options.Authority = &quot;https://localhost:5000&quot;;\n            options.RequireHttpsMetadata = false;\n\n            options.ClientId = &quot;mvc&quot;;\n            options.SaveTokens = true;\n        });\n</code></pre>\n<p>In this example my identityserver runs on localhost:5000, and my blazor wasm on localhost:5003. I want the user to be able to login using the frontend UI from Blazor Webassembly on the same domain, how can I do that?</p>\n"
+}

@@ -1,0 +1,28 @@
+{
+    "tags": [
+        "microsoft-graph-api",
+        "blazor",
+        "azure-ad-b2c",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 5620,
+        "user_id": 33272,
+        "user_type": "registered",
+        "accept_rate": 64,
+        "profile_image": "https://www.gravatar.com/avatar/b0260be84c93badc7ff9617758a780f3?s=128&d=identicon&r=PG",
+        "display_name": "Philipp Schmid",
+        "link": "https://stackoverflow.com/users/33272/philipp-schmid"
+    },
+    "is_answered": true,
+    "view_count": 125,
+    "answer_count": 1,
+    "score": 1,
+    "last_activity_date": 1610503847,
+    "creation_date": 1610491140,
+    "question_id": 65693124,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/65693124/using-azure-b2c-login-to-access-microsoft-graph-is-the-social-login-is-a-microso",
+    "title": "Using Azure B2C login to access Microsoft Graph is the social login is a Microsoft account",
+    "body": "<p>I have an application (Blazor WebAssembly in my case but I believe this scenario applies to other application types as well) that uses the excellent (and convenient) <a href=\"https://docs.microsoft.com/en-us/azure/active-directory-b2c/overview\" rel=\"nofollow noreferrer\">Azure B2C login services</a> to allow my users to register and log in using either a local account or some social accounts. In particular, I am supporting logging in with a Microsoft account. Once a user is logged in using his Microsoft account I want to give the user the option to save content on OneDrive without the user having to provide credentials again to access the <a href=\"https://docs.microsoft.com/en-us/graph/overview\" rel=\"nofollow noreferrer\">Microsoft Graph API</a>.</p>\n<p>In the returned claims after logging in using Azure B2C API I see that there is a <strong>idp</strong> claim (that's how I can determine if the user is logged in using a Microsoft account) and there is also a <strong>idp_access_token</strong> claim but it is not a valid JWT to use against the Microsoft Graph unfortunately.</p>\n<p><strong>What is the nature of the <em>idp_access_token</em>? How can I use it to access the Microsoft Graph and request additional scopes?</strong></p>\n"
+}

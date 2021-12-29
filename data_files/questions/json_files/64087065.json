@@ -1,0 +1,27 @@
+{
+    "tags": [
+        "asp.net",
+        "authentication",
+        "blazor",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 63,
+        "user_id": 7813837,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/85f20cb92f15f7ffebedfb2da51aab33?s=128&d=identicon&r=PG&f=1",
+        "display_name": "WilliamG",
+        "link": "https://stackoverflow.com/users/7813837/williamg"
+    },
+    "is_answered": false,
+    "view_count": 194,
+    "answer_count": 0,
+    "score": 2,
+    "last_activity_date": 1601199984,
+    "creation_date": 1601199984,
+    "question_id": 64087065,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/64087065/blazor-webassembly-authentication-is-verry-slow",
+    "title": "Blazor Webassembly Authentication is verry slow",
+    "body": "<p>hi I have created a blazor webassembly project, which uses an API to fetch data and authorize. The authentication works fine, the problem is the app is very slow. For example to login procedure can take up to 5 seconds through the bazor app, while procedure is verry fast if I call the login action through the API. What am I doing wrong? Here is the blazor code for the authentication. I have not included the API code since the authentication is fast thorugh postman</p>\n<p><strong>Login.razor</strong></p>\n<pre><code>@page &quot;/login&quot;\n@inject IAuthService AuthService\n@inject NavigationManager NavigationManager\n@using System.Net.Http\n@inject HttpClient Http\n\n&lt;h1&gt;Register&lt;/h1&gt;\n\n&lt;div class=&quot;card&quot;&gt;\n    &lt;div class=&quot;card-body&quot;&gt;\n        &lt;h5 class=&quot;card-title&quot;&gt;Please enter your details&lt;/h5&gt;\n        &lt;EditForm Model=&quot;UserLoginViewModel&quot; OnValidSubmit=&quot;HandleRegistration&quot;&gt;\n            &lt;DataAnnotationsValidator /&gt;\n            &lt;ValidationSummary /&gt;\n\n            &lt;div class=&quot;form-group&quot;&gt;\n                &lt;label for=&quot;email&quot;&gt;Email address&lt;/label&gt;\n                &lt;InputText Id=&quot;email&quot; class=&quot;form-control&quot; @bind-Value=&quot;UserLoginViewModel.Email&quot; /&gt;\n                &lt;ValidationMessage For=&quot;@(() =&gt; UserLoginViewModel.Email)&quot; /&gt;\n            &lt;/div&gt;\n            &lt;div class=&quot;form-group&quot;&gt;\n                &lt;label for=&quot;password&quot;&gt;Password&lt;/label&gt;\n                &lt;InputText Id=&quot;password&quot; type=&quot;password&quot; class=&quot;form-control&quot; @bind-Value=&quot;UserLoginViewModel.Password&quot; /&gt;\n                &lt;ValidationMessage For=&quot;@(() =&gt; UserLoginViewModel.Password)&quot; /&gt;\n            &lt;/div&gt;\n            &lt;button type=&quot;submit&quot; class=&quot;btn btn-primary&quot;&gt;Submit&lt;/button&gt;\n        &lt;/EditForm&gt;\n    &lt;/div&gt;\n&lt;/div&gt;\n\n&lt;h2 value=&quot;@test&quot; innderHtml=&quot;@test&quot; text=&quot;@test&quot;&gt;&lt;/h2&gt;\n\n@code {\n    string test = &quot;wow&quot;;\n    private UserLoginViewModel UserLoginViewModel = new UserLoginViewModel();\n\n\n\n    private async Task HandleRegistration()\n    {\n\n        var result = await AuthService.Login(UserLoginViewModel);\n\n        if (result.Successful)\n        {\n            NavigationManager.NavigateTo(&quot;/&quot;);\n        }\n    }\n\n}\n</code></pre>\n<p><strong>Authservice -&gt; Login-function</strong></p>\n<pre><code>public async Task&lt;LoginResult&gt; Login(UserLoginViewModel model)\n        {\n\n            var loginAsJson = JsonSerializer.Serialize(model);\n            var response = await _httpClient.PostAsync(&quot;Account/Login&quot;, new StringContent(loginAsJson, Encoding.UTF8, &quot;application/json&quot;));\n            LoginResult loginResult = JsonSerializer.Deserialize&lt;LoginResult&gt;(await response.Content.ReadAsStringAsync(), new JsonSerializerOptions { PropertyNameCaseInsensitive = true });\n\n\n            if (!response.IsSuccessStatusCode)\n                return loginResult;\n\n\n            await _localStorage.SetItemAsync(&quot;authToken&quot;, loginResult.Token);\n            ((ApiAuthenticationStateProvider)_authenticationStateProvider).MarkUserAsAuthenticated(model.Email);\n            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(&quot;bearer&quot;, loginResult.Token);\n\n\n            return loginResult;\n\n        }\n</code></pre>\n<p>Thank you!</p>\n"
+}

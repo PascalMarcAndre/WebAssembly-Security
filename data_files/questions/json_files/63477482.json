@@ -1,0 +1,24 @@
+{
+    "tags": [
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 11,
+        "user_id": 3910034,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/356dc2c8f5302cceefa0c8db63cbea67?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Jagdriver",
+        "link": "https://stackoverflow.com/users/3910034/jagdriver"
+    },
+    "is_answered": false,
+    "view_count": 332,
+    "answer_count": 1,
+    "score": 1,
+    "last_activity_date": 1605880597,
+    "creation_date": 1597789665,
+    "question_id": 63477482,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/63477482/containerrizing-hosted-blazor-webassembly-for-raspberry-pi-docker-swarm",
+    "title": "Containerrizing Hosted Blazor WebAssembly for Raspberry Pi Docker Swarm",
+    "body": "<p>I\u2019m developing a DotNet Core hosted Blazor WebAssembly, as a frontend to my backend ASPNet Core API, running on Raspberry Pi\u2019s, containerised in a Docker Swarm.</p>\n<p>I\u2019m developing on a MacBook Pro, using VSCode for Mac, and it\u2019s really a great tool. I created the solution as \u201cdotnet new blazorwasm \u2014hosted\u201d and got the solution created and build.</p>\n<p>I have installed Docker Desktop, and created a Buildx builder for arm, which works great with all my other solutions (DotNet Core API, DotNet Background solutions), but with the hosted blazorwasm solution, I run into several problems, probably caused by my lacking knowledge on setting up build options.</p>\n<p>So I installed Visual Studio 2019 (I have used VS on Windows for 20 years) and was actually surprised over the look and feel, a really great tool.</p>\n<p>I created the hosted Blazor WebAssembly solution, which works great om Mac, and even the Docker desktop integration work without problems.</p>\n<p>Building the Docker Image was easy, I just used my Buildx builder, and executed below command from the command line:</p>\n<p>\u201cdocker buildx build --file ./SnakeConsole/Server/Dockerfile --platform linux/arm/v7  -t jagdriver/wavesnake:SnakeConsole3 --push .\u201d</p>\n<p>On the Raspberry Swarm, I then created the Stack/Container. The Stack installed <strong>but the container refused to start</strong>, and the log was:</p>\n<p><em>standard_init_linux.go:211: exec user process caused \u201cexec format error\u201d.</em></p>\n<p>I have seen this error before, and as far as I remember I added \u201c-r ubuntu.19.10-arm\u201d to the dotnet publish command to ensure that the code is generated for linux-arm.</p>\n<p>So I tried to add \u201c-r ubuntu.19.10-arm\u201d to the dotnet publish command in below dockerfile, and execute the Docker buildx build command again, but then the Build Engine run into below error.</p>\n<p><em>project.assets.json' doesn't have a target for '.NETCoreApp,Version=v5.0/browser-wasm'. Ensure that restore has run and that you have included 'net5.0' in the TargetFrameworks for your project. You may also need to include 'browser-wasm' in your project's RuntimeIdentifiers</em></p>\n<p><em><strong>Can anyone out the give me a helping hand on this, thanks in advance.</strong></em></p>\n<p><strong>FACTS:</strong></p>\n<ol>\n<li>The solution I\u2019m mentioning is the standard Hosted Blazor\nWebAssembly template without any changes.</li>\n<li>The target framework is .Net 5.0</li>\n<li>Visual Studio for Mac community is version 8.7.2 (build 4)</li>\n</ol>\n<p><strong>Docker file from the default hosted Blazor WebAssembly template.</strong></p>\n<pre><code>FROM mcr.microsoft.com/dotnet/aspnet:5.0-buster-slim AS base\nWORKDIR /app\nEXPOSE 80\nEXPOSE 443\n\nFROM mcr.microsoft.com/dotnet/sdk:5.0-buster-slim AS build\nWORKDIR /src\nCOPY SnakeConsole/Server/SnakeConsole.Server.csproj SnakeConsole/Server/\nCOPY SnakeConsole/Client/SnakeConsole.Client.csproj SnakeConsole/Client/\nCOPY SnakeConsole/Shared/SnakeConsole.Shared.csproj SnakeConsole/Shared/\nRUN dotnet restore &quot;SnakeConsole/Server/SnakeConsole.Server.csproj&quot;\nCOPY . .\nWORKDIR &quot;/src/SnakeConsole/Server&quot;\nRUN dotnet build &quot;SnakeConsole.Server.csproj&quot; -c Release -o /app/build\n\nFROM build AS publish\nRUN dotnet publish &quot;SnakeConsole.Server.csproj&quot; -c Release -o /app/publish\n\nFROM base AS final\nWORKDIR /app\nCOPY --from=publish /app/publish .\nENTRYPOINT [&quot;dotnet&quot;, &quot;SnakeConsole.Server.dll&quot;]\n</code></pre>\n"
+}

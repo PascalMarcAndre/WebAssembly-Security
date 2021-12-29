@@ -1,0 +1,30 @@
+{
+    "tags": [
+        "c#",
+        "asp.net-core",
+        "blazor",
+        "webassembly",
+        "asp.net-core-5.0"
+    ],
+    "owner": {
+        "reputation": 1950,
+        "user_id": 1121245,
+        "user_type": "registered",
+        "accept_rate": 80,
+        "profile_image": "https://www.gravatar.com/avatar/b9b01fb3b20f21cebcc7784fb4809abd?s=128&d=identicon&r=PG",
+        "display_name": "Michele mpp Marostica",
+        "link": "https://stackoverflow.com/users/1121245/michele-mpp-marostica"
+    },
+    "is_answered": false,
+    "view_count": 1386,
+    "answer_count": 0,
+    "score": 9,
+    "last_activity_date": 1606951061,
+    "creation_date": 1606577448,
+    "last_edit_date": 1606951061,
+    "question_id": 65051266,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/65051266/denyanonymousauthorizationrequirement-requires-an-authenticated-user",
+    "title": "DenyAnonymousAuthorizationRequirement: Requires an authenticated user",
+    "body": "<p>I recently updated to .NET 5, and work on a WebAssembly Hosted App that uses AAD for authentication/authorization.</p>\n<p>I tried to follow what specified <a href=\"https://docs.microsoft.com/en-us/aspnet/core/migration/31-to-50?view=aspnetcore-5.0&amp;tabs=visual-studio\" rel=\"noreferrer\">here</a> and the code in the template <a href=\"https://github.com/AzureAD/microsoft-identity-web/tree/master/ProjectTemplates/templates/ComponentsWebAssembly-CSharp\" rel=\"noreferrer\">here</a>.</p>\n<p>A beta user is experiencing this issue:\n<a href=\"https://i.stack.imgur.com/SITNM.png\" rel=\"noreferrer\"><img src=\"https://i.stack.imgur.com/SITNM.png\" alt=\"enter image description here\" /></a></p>\n<p>Do you have any hint of what I am doing wrong?\nHow should I catch this error and redirect to the login page?</p>\n<p>This is the MSAL configuration on the Client side:</p>\n<pre class=\"lang-cs prettyprint-override\"><code>builder.Services.AddMsalAuthentication(options =&gt;\n{\n    var authentication = options.ProviderOptions.Authentication;\n    authentication.Authority = &quot;https://login.microsoftonline.com/XXX&quot;;\n    authentication.ClientId = &quot;XXX&quot;;\n    authentication.ValidateAuthority = true;\n    options.ProviderOptions.LoginMode = &quot;redirect&quot;;\n    options.ProviderOptions.DefaultAccessTokenScopes\n        .Add(&quot;api://XXX/user_impersonation&quot;);\n});\n</code></pre>\n<p>This is in the <em>startup.cs</em> of the Server side:</p>\n<pre class=\"lang-cs prettyprint-override\"><code>services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)\n        .AddMicrosoftIdentityWebApi(Configuration.GetSection(&quot;AzureAd&quot;))\n        .EnableTokenAcquisitionToCallDownstreamApi()\n        .AddDownstreamWebApi(&quot;DownstreamApi&quot;, Configuration.GetSection(&quot;DownstreamApi&quot;))\n        .AddInMemoryTokenCaches();\n\nservices.Configure&lt;JwtBearerOptions&gt;(\n    JwtBearerDefaults.AuthenticationScheme, options =&gt;\n    {\n        options.TokenValidationParameters.NameClaimType = &quot;name&quot;;\n    });\n</code></pre>\n<pre class=\"lang-cs prettyprint-override\"><code>public void Configure(IApplicationBuilder app, IWebHostEnvironment env)\n{\n    app.UseDeveloperExceptionPage();\n    app.UseWebAssemblyDebugging();\n\n    app.UseHttpsRedirection();\n    app.UseBlazorFrameworkFiles();\n    app.UseStaticFiles();\n\n    app.UseRouting();\n\n    app.UseAuthentication();\n    app.UseAuthorization();\n\n    app.UseEndpoints(endpoints =&gt;\n    {\n        endpoints.MapControllers();\n        endpoints.MapFallbackToFile(&quot;index.html&quot;);\n    });\n}\n</code></pre>\n<p>Thanks in advance!</p>\n"
+}

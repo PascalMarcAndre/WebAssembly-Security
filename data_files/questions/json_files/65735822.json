@@ -1,0 +1,28 @@
+{
+    "tags": [
+        "c#",
+        "blazor-webassembly",
+        ".net-5",
+        "hsts",
+        "strict-transport-security"
+    ],
+    "owner": {
+        "reputation": 964,
+        "user_id": 9334155,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/60c4e58c548f15519e4fdc687d3961b6?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Husam Ebish",
+        "link": "https://stackoverflow.com/users/9334155/husam-ebish"
+    },
+    "is_answered": false,
+    "view_count": 39,
+    "answer_count": 0,
+    "score": 0,
+    "last_activity_date": 1610712413,
+    "creation_date": 1610712413,
+    "question_id": 65735822,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/65735822/strict-transport-security-in-blazor-webassembly",
+    "title": "&quot;Strict Transport Security&quot; in Blazor webassembly",
+    "body": "<p>I Have 2 web applications: MVC &amp; Blazor webassembly.</p>\n<p>In MVC project I was able to set up the application to enforce the <code>strict-transport-security</code> by adding HSTS Middleware in startup class by following the instructions in <a href=\"https://docs.microsoft.com/en-us/aspnet/core/security/enforcing-ssl?view=aspnetcore-5.0&amp;tabs=visual-studio\" rel=\"nofollow noreferrer\">Microsoft documentation</a>.</p>\n<p>The question is: how can I configure a Blazor webassembly to enforce strict-transport-security in its response headers?</p>\n<p>I tried that by adding the following <code>web.config</code> file to the project:</p>\n<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;\n&lt;configuration xmlns:xdt=&quot;http://schemas.microsoft.com/XML-Document-Transform&quot;&gt;\n  &lt;location&gt;\n    &lt;system.webServer&gt;\n      &lt;security xdt:Transform=&quot;Insert&quot;&gt;\n        &lt;requestFiltering removeServerHeader=&quot;true&quot; /&gt;\n      &lt;/security&gt;\n      &lt;httpProtocol xdt:Transform=&quot;Insert&quot;&gt;\n        &lt;customHeaders&gt;\n          &lt;remove name=&quot;X-Powered-By&quot; /&gt;\n          &lt;add name=&quot;Strict-Transport-Security&quot; value=&quot;max-age=31536000&quot; /&gt;\n       &lt;/customHeaders&gt;\n      &lt;/httpProtocol&gt;\n    &lt;/system.webServer&gt;\n  &lt;/location&gt;\n&lt;/configuration&gt;\n</code></pre>\n<blockquote>\n<p>But I could not deploy the application after adding this config file.</p>\n</blockquote>\n"
+}

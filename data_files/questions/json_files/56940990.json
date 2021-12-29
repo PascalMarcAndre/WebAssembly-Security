@@ -1,0 +1,27 @@
+{
+    "tags": [
+        "security",
+        "heap-memory",
+        "webassembly"
+    ],
+    "owner": {
+        "reputation": 95,
+        "user_id": 4907638,
+        "user_type": "registered",
+        "profile_image": "https://graph.facebook.com/10209703477730108/picture?type=large",
+        "display_name": "Vasilii Rogin",
+        "link": "https://stackoverflow.com/users/4907638/vasilii-rogin"
+    },
+    "is_answered": true,
+    "view_count": 128,
+    "accepted_answer_id": 56942074,
+    "answer_count": 2,
+    "score": 2,
+    "last_activity_date": 1562617302,
+    "creation_date": 1562612023,
+    "question_id": 56940990,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/56940990/how-browser-protects-process-memory-from-webassembly-compiled-code",
+    "title": "How browser protects process memory from webassembly compiled code?",
+    "body": "<p>According to \"Analyzing the Performance of WebAssembly vs. Native Code\" research, a webassembly code is compiled into native x86 instructions in Chrome. As far as I understood, it is possible to create WS code which will access random memory in random address.\nOf course, there will be segfault if WA tries to access memory which is not belongs into process. But, in the same time, JS and WA runs in the same process, is not it?\nHow Chrome protects Javascript memory from webassembly? What if WS code will find out address range for internal JS structures and modify it?</p>\n"
+}

@@ -1,0 +1,29 @@
+{
+    "tags": [
+        "security",
+        "electron",
+        "webassembly"
+    ],
+    "owner": {
+        "reputation": 713,
+        "user_id": 1508479,
+        "user_type": "registered",
+        "accept_rate": 64,
+        "profile_image": "https://i.stack.imgur.com/K8WcV.jpg?s=128&g=1",
+        "display_name": "Vinay",
+        "link": "https://stackoverflow.com/users/1508479/vinay"
+    },
+    "is_answered": true,
+    "view_count": 403,
+    "accepted_answer_id": 56507571,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1563201029,
+    "creation_date": 1559997717,
+    "last_edit_date": 1563201029,
+    "question_id": 56506468,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/56506468/is-wasm-safe-to-store-client-side-secrets",
+    "title": "Is wasm safe to store client side secrets?",
+    "body": "<p>The security context of my question is as follows:</p>\n\n<p>I currently have an <a href=\"https://electronjs.org/\" rel=\"nofollow noreferrer\">electron</a> desktop application which runs my webapp. Inside my app there is a feature which allows a authenticated user to access a document(pdf) which is password protected. The document is prepared on server and password is generated using SHA256 hash of 10 character string. The 10 characters are made up of two parts 1) variable doc id and 2nd fixed salt.</p>\n\n<p>On the client inside electron currently i have a native node module which was written in C and compiled using node-gyp. I make a call to this module which contains the code to generate the same password using the two parts of the password. The whole purpose of having this native node module on the client was that as the module is a compiled binary it can not be reverse engineered and no one can access my secret salt. If salt is discovered then the other part is easy to find and hence all docs are accessible to attacker.</p>\n\n<p>I read about WebAssembly and how it compiles lower language code to wasm which can then be loaded in to browsers. This effectively means i can use the same C code that i use in my native module but now over the web instead of in electron.</p>\n\n<p>My doubts were on the security and reverse engineering part of wasm module that gets produced. I read that it is possible to reverse engineer and get back the C file from wasm but the format which it gives is not exactly the same as source and how much can it help the attacker is again a question.</p>\n\n<p>Some threads that i have read </p>\n\n<ul>\n<li><a href=\"https://twitter.com/jebdec/status/1012749064696295425?lang=en\" rel=\"nofollow noreferrer\">https://twitter.com/jebdec/status/1012749064696295425?lang=en</a></li>\n<li><a href=\"https://news.ycombinator.com/item?id=17507767\" rel=\"nofollow noreferrer\">https://news.ycombinator.com/item?id=17507767</a></li>\n<li><a href=\"https://www.reddit.com/r/WebAssembly/comments/8qmxjv/can_we_decompile_wasm_to_ccsource/\" rel=\"nofollow noreferrer\">https://www.reddit.com/r/WebAssembly/comments/8qmxjv/can_we_decompile_wasm_to_ccsource/</a></li>\n</ul>\n\n<p>Apart from security concerns i think i maybe using wasm for a wrong purpose here as being on the open web if there is code the source of which is not viewable and auditable, it presents a very large security issue on the whole. </p>\n\n<p>Any comments/advice will be helpful.</p>\n"
+}

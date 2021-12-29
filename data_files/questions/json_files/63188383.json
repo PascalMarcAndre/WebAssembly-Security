@@ -1,0 +1,31 @@
+{
+    "tags": [
+        "c#",
+        "asp.net-core",
+        "asp.net-core-webapi",
+        "blazor",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 2935,
+        "user_id": 2427359,
+        "user_type": "registered",
+        "accept_rate": 62,
+        "profile_image": "https://i.stack.imgur.com/MMrrm.png?s=128&g=1",
+        "display_name": "Simon",
+        "link": "https://stackoverflow.com/users/2427359/simon"
+    },
+    "is_answered": true,
+    "view_count": 962,
+    "accepted_answer_id": 63189101,
+    "answer_count": 3,
+    "score": 2,
+    "last_activity_date": 1596304297,
+    "creation_date": 1596184274,
+    "last_edit_date": 1596206365,
+    "question_id": 63188383,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/63188383/why-is-the-authentication-cookie-not-working-against-the-authorize-attribute",
+    "title": "Why is the Authentication Cookie not working against the [Authorize] attribute?",
+    "body": "<p>We try to implement an Authentication via Cookies in our Blazor-WebAssembly app.</p>\n<p><strong>Controller:</strong> Set the Auth-Cookie:</p>\n<pre><code>[Route(&quot;[controller]&quot;)]\n[ApiController]\npublic class AuthController : ControllerBase\n{\n    [HttpPost]\n    public async Task&lt;AdUser&gt; Login(Credentials pCredentials)\n    {\n        // [...] credential check jere\n\n            var lClaims = new List&lt;Claim&gt; {\n                new Claim(ClaimTypes.Name, &quot;SamAccountName&quot;),\n            };\n            var lClaimsIdentity = new ClaimsIdentity(lClaims, CookieAuthenticationDefaults.AuthenticationScheme);\n\n            // set cookie\n            await HttpContext.SignInAsync(\n            CookieAuthenticationDefaults.AuthenticationScheme,\n            new ClaimsPrincipal(lClaimsIdentity),\n            new AuthenticationProperties\n            {\n                IsPersistent = true,\n                ExpiresUtc = DateTime.UtcNow.AddYears(1),\n                RedirectUri = this.Request.Host.Value\n            });\n\n        // [...]\n    }\n}\n</code></pre>\n<p>When I look into the developer-tools of the edge browser than I can see, that the cookie is set:</p>\n<p><a href=\"https://i.stack.imgur.com/nlf7I.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/nlf7I.png\" alt=\"enter image description here\" /></a></p>\n<p>Now the following <code>Controller</code> has a Search-Action and should have restricted access by adding the [Authorize] attribute:</p>\n<pre><code>[Route(&quot;[controller]&quot;)]\n[ApiController]\npublic class ClientsController : ControllerBase\n{\n    [HttpGet(&quot;search&quot;)]\n    [Authorize]\n    public ActionResult&lt;List&lt;Shared.Client&gt;&gt; Search(string pText)\n    {\n        // [...] Code here\n        \n        return lResult;\n    }\n}\n</code></pre>\n<p>When I do an HTTP-Request <code>/Clients?search=My Search Text</code> to the ClientsController, the developer tools of the Edge shows me, that there is a request made to <code>/Account/Login</code>. Thats confusing to me, because the response code is 200 but no Account-Controller exists in my project.</p>\n<p><strong>Why is my Authentication Cookie not working against the <code>[Authorize]</code> attribute?</strong></p>\n<p><a href=\"https://i.stack.imgur.com/5rF7L.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/5rF7L.png\" alt=\"enter image description here\" /></a></p>\n<p>Some further details about my configurations:</p>\n<p><strong>Startup.cs</strong> (Server-Side)</p>\n<pre><code>namespace BlazorWebAssemblyApp.Server\n{\n    public class Startup\n    {\n        /// [...]\n\n        public void ConfigureServices(IServiceCollection services)\n        {\n            // [...]\n            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(); // This line is required for the authentication cookie       \n            // [...]\n        }\n    }\n    \n    public void Configure(IApplicationBuilder app, IWebHostEnvironment env)\n    {\n        // [...]\n\n        app.UseAuthorization();\n\n        app.UseEndpoints(endpoints =&gt;\n        {\n            endpoints.MapRazorPages();\n            endpoints.MapControllers();\n            endpoints.MapFallbackToFile(&quot;index.html&quot;);\n        });\n    }\n}\n</code></pre>\n"
+}

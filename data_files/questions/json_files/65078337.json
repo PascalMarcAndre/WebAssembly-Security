@@ -1,0 +1,26 @@
+{
+    "tags": [
+        "blazor",
+        "blazor-client-side"
+    ],
+    "owner": {
+        "reputation": 509,
+        "user_id": 7279624,
+        "user_type": "registered",
+        "profile_image": "https://i.stack.imgur.com/Kgv01.jpg?s=128&g=1",
+        "display_name": "M. Azyoksul",
+        "link": "https://stackoverflow.com/users/7279624/m-azyoksul"
+    },
+    "is_answered": false,
+    "view_count": 42,
+    "answer_count": 0,
+    "score": 1,
+    "last_activity_date": 1606758582,
+    "creation_date": 1606757408,
+    "last_edit_date": 1606758582,
+    "question_id": 65078337,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/65078337/why-does-debugging-blazor-client-side-opens-in-a-different-browser-window",
+    "title": "Why does debugging Blazor client-side opens in a different browser window?",
+    "body": "<p>I am new to Blazor development. When I first create a Blazor WebAssembly app and debug it on IIS, the app opens in the browser (Chrome), however, it opens on a new window where I am not signed in. This behavior is different from ASP.NET MVC apps or even Blazor server-side apps.</p>\n<p>I am trying to understand why is this the case, will it behave like this all the time, is this changeable, and whether or not I should use it. I couldn't find any resource about this on the internet.</p>\n"
+}

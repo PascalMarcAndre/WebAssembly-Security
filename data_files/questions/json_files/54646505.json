@@ -1,0 +1,27 @@
+{
+    "tags": [
+        "security",
+        "emscripten",
+        "webassembly"
+    ],
+    "owner": {
+        "reputation": 11,
+        "user_id": 10356867,
+        "user_type": "registered",
+        "profile_image": "https://lh3.googleusercontent.com/-70q0MnG1sGY/AAAAAAAAAAI/AAAAAAAAADQ/zZzVT6_uSxk/photo.jpg?sz=128",
+        "display_name": "Vesa Norilo",
+        "link": "https://stackoverflow.com/users/10356867/vesa-norilo"
+    },
+    "is_answered": false,
+    "view_count": 176,
+    "answer_count": 0,
+    "score": 1,
+    "last_activity_date": 1549963146,
+    "creation_date": 1549963013,
+    "last_edit_date": 1549963146,
+    "question_id": 54646505,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/54646505/can-you-exploit-emscripten-compiled-wasm-to-run-arbitrary-javascript",
+    "title": "Can you exploit emscripten-compiled Wasm to run arbitrary JavaScript?",
+    "body": "<p>I'm trying to understand the threat level of the following scenario in a web application:</p>\n\n<ul>\n<li>Web app contains a C++ component compiled to Wasm by Emscripten</li>\n<li>Runs 3rd party Wasm blobs (assume fully untrusted)</li>\n<li>Assume neither blob can call back to JS via import/export</li>\n<li>All Wasm blobs share memory</li>\n</ul>\n\n<p>So, obviously a malicious blob could clobber the memory used by the C++ component. I'm wondering how likely it is that it could somehow run arbitrary JS in the context of the web app, ie. inject a script via some of the hooks emscripten puts into Module.</p>\n\n<p>Thanks!!</p>\n"
+}

@@ -1,0 +1,29 @@
+{
+    "tags": [
+        "asp.net-core",
+        "protobuf-net",
+        "blazor-webassembly",
+        "protobuf-net.grpc"
+    ],
+    "owner": {
+        "reputation": 179,
+        "user_id": 3443770,
+        "user_type": "registered",
+        "profile_image": "https://graph.facebook.com/601368775/picture?type=large",
+        "display_name": "paburgos",
+        "link": "https://stackoverflow.com/users/3443770/paburgos"
+    },
+    "is_answered": true,
+    "view_count": 182,
+    "accepted_answer_id": 64538844,
+    "answer_count": 1,
+    "score": 1,
+    "last_activity_date": 1603721561,
+    "creation_date": 1603326523,
+    "last_edit_date": 1603390690,
+    "question_id": 64473529,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/64473529/trying-to-azure-ad-authentication-with-grpc-web-using-protobuf-net",
+    "title": "trying to Azure AD authentication with gRPC-Web using protobuf-net",
+    "body": "<p>I am trying to Azure AD authentication with gRPC-Web in a blazor webassembly app. I am using protobuf-net to help me with the serialization. I am not sure how to pass the token to have the server side recognize it. this is what I have:</p>\n<pre><code>var headers = new Metadata\n               {\n                 { &quot;Authorization&quot;, $&quot;Bearer {Token}&quot; }\n               };\n</code></pre>\n<p>and, I am sending that as a parameter in the method I want to consume</p>\n<pre><code>var result = await Client.CreateCustomer(this.customer, headers);\n</code></pre>\n<p>This is how the service is injected:</p>\n<pre><code>builder.Services.AddTransient(services =&gt;\n        {\n            var httpClient = new HttpClient(new GrpcWebHandler(GrpcWebMode.GrpcWeb, new HttpClientHandler()));\n            var channel = Grpc.Net.Client.GrpcChannel.ForAddress(&quot;****&quot;, new GrpcChannelOptions { HttpClient = httpClient });\n            return channel.CreateGrpcService&lt;Application.Services.ICustomerService&lt;ServerCallContext&gt;&gt;();\n        });\n</code></pre>\n<p>This is how the service is published:</p>\n<pre><code>endpoints.MapGrpcService&lt;CustomerService&gt;().RequireAuthorization().EnableGrpcWeb()\n</code></pre>\n<p>and, this is the implementation:</p>\n<pre><code>public class CustomerService : ICustomerService&lt;ServerCallContext&gt;\n{\n    [Authorize]\n    public async ValueTask&lt;Customer&gt; CreateCustomer(Customer customerDTO, ServerCallContext context) \n    {****}\n}\n</code></pre>\n<p>the error I am getting is cannot convert from 'Grpc.Core.Metadata' to 'Grpc.Core.ServerCallContext' which is kind of obvious.</p>\n<p>The reference I have found uses Metadata but is ServerCallContext the one I am supposed to use <a href=\"https://docs.microsoft.com/en-us/dotnet/architecture/grpc-for-wcf-developers/metadata\" rel=\"nofollow noreferrer\">https://docs.microsoft.com/en-us/dotnet/architecture/grpc-for-wcf-developers/metadata</a>  so what I am missing, what I am doing wrong, how to properly use both using protobuf-net?</p>\n"
+}

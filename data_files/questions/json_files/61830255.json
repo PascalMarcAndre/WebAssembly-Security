@@ -1,0 +1,25 @@
+{
+    "tags": [
+        "asp.net-core",
+        "blazor"
+    ],
+    "owner": {
+        "reputation": 2459,
+        "user_id": 1721898,
+        "user_type": "registered",
+        "profile_image": "https://i.stack.imgur.com/7rd9J.jpg?s=128&g=1",
+        "display_name": "Norm Johanson",
+        "link": "https://stackoverflow.com/users/1721898/norm-johanson"
+    },
+    "is_answered": true,
+    "view_count": 71,
+    "answer_count": 1,
+    "score": 1,
+    "last_activity_date": 1589628277,
+    "creation_date": 1589587792,
+    "question_id": 61830255,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/61830255/in-a-blazor-wasm-get-raw-oauth-tokens",
+    "title": "In a Blazor WASM get raw oauth tokens?",
+    "body": "<p>I have an authenticated user in a Blazor WebAssembly application via the OidcAuthentication provider. I know how to checkout all of the claims from the user object via the <code>AuthenticationStateProvider</code> but is there anyway to get the raw oauth token in my Blazor pages?</p>\n"
+}

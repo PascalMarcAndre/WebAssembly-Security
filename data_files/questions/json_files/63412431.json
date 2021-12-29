@@ -1,0 +1,28 @@
+{
+    "tags": [
+        "elasticsearch",
+        "https",
+        "logstash",
+        "serilog",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 269,
+        "user_id": 13705843,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/75dee0c4aea2cb4dde0631495f0290a1?s=128&d=identicon&r=PG&f=1",
+        "display_name": "azzurro123",
+        "link": "https://stackoverflow.com/users/13705843/azzurro123"
+    },
+    "is_answered": false,
+    "view_count": 50,
+    "answer_count": 0,
+    "score": 0,
+    "last_activity_date": 1597406677,
+    "creation_date": 1597406677,
+    "question_id": 63412431,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/63412431/configure-logstash-conf-to-listen-to-https",
+    "title": "Configure logstash.conf to listen to HTTPS",
+    "body": "<p>I'm trying to set up the basic Elk Stack: ElasticSearch with Kibana and Logstash together with a <strong>.NET Standard 2.1 Blazor WebAssembly Hosted</strong> application.</p>\n<p>I use Serilog for logging, but I don't want to use the <strong>Serilog.Sinks.Elasticsearch</strong> NuGet package, because it seems not to work with the current Blazor WebAssembly release.</p>\n<p>Thus I want to use <strong>Serilog.Sinks.Http</strong> to trace the HTTPS requests.</p>\n<p>My application structure looks like this:</p>\n<ul>\n<li>BlazorApp.Client (https://localhost:0815)</li>\n<li>BlazorApp.Server (https://localhost:1234)</li>\n</ul>\n<p>I can send logs from my Client to my Server app using the Serilog Sinks Http plugin.</p>\n<p>Currently I'm struggling to correctly configure the <code>logstash.conf</code> file to listen to HTTPS calls. I want to use the installed <a href=\"https://www.elastic.co/blog/introducing-logstash-input-http-plugin\" rel=\"nofollow noreferrer\">Http Plugin</a></p>\n<pre><code>input {\n    http {\n        host =&gt; &quot;127.0.0.1&quot;\n        port =&gt; 1234\n        ssl =&gt; on\n    }\n}\n\noutput {\n    elasticsearch {\n        hosts =&gt; [&quot;localhost:9200&quot;]\n        index =&gt; &quot;logstash_http&quot;\n    }\n    stdout { codec =&gt; rubydebug }\n}\n</code></pre>\n<p>When I start logstash with <strong>logstash -f logstash.conf</strong> my Logstash API starts and shuts down immediately.</p>\n<p>Unfortunately I don't know where Visual Studio is putting the SSL/TLS key for apps simply running under HTTPS on localhost.</p>\n<p>Do you know how to correctly configure logstash to listen to HTTPS calls on localhost?</p>\n"
+}

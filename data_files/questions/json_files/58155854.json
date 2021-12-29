@@ -1,0 +1,28 @@
+{
+    "tags": [
+        "webpack",
+        "browser",
+        "server",
+        "webassembly"
+    ],
+    "owner": {
+        "reputation": 113,
+        "user_id": 11169288,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/5bf0f0bd907468302ffea394536cc938?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Joshua Moore",
+        "link": "https://stackoverflow.com/users/11169288/joshua-moore"
+    },
+    "is_answered": false,
+    "view_count": 1018,
+    "answer_count": 0,
+    "score": 9,
+    "last_activity_date": 1569765228,
+    "creation_date": 1569764921,
+    "last_edit_date": 1569765228,
+    "question_id": 58155854,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/58155854/how-to-satisfy-strict-mime-type-checking-for-wasm",
+    "title": "How to satisfy strict mime type checking for wasm?",
+    "body": "<p>I got a webassembly module to compile using emscripten. Now I'm trying to serve it up in a web page using expressjs. </p>\n\n<p>I've tried following <a href=\"https://github.com/webpack/webpack/tree/master/examples/wasm-simple\" rel=\"noreferrer\">this gist</a> on including webassembly via webpack, including a modification I found since this gist is a little older. </p>\n\n<p>The webpack looks like this:</p>\n\n<pre><code>const path = require('path');\n\nmodule.exports = {\n  optimization: {\n    mangleWasmImports: false\n  },\n  entry: './src/index.js',\n  output: {\n    path: path.resolve(__dirname, './dist/'),\n    filename: 'dynamic-graph.bundle.js'\n  },\n  target: \"web\",\n  module: {\n    rules: [\n      // Emscripten JS files define a global. With `exports-loader` we can \n      // load these files correctly (provided the global\u2019s name is the same\n      // as the file name).\n      {\n        test: /fourd\\.js$/,\n        loader: \"exports-loader\"\n      },\n      // wasm files should not be processed but just be emitted and we want\n      // to have their public URL.\n      {\n        test: /fourd\\.wasm$/,\n        type: \"javascript/auto\",\n        loader: \"file-loader\",\n        options: {\n          publicPath: \"dist/\"\n        }\n      }\n    ]\n  }\n}\n\n</code></pre>\n\n<p>I set up https on the dev-server, because I know that sometimes causes issues. It's a self signed certificate, but Chrome and Firefox let me get around that. </p>\n\n<pre class=\"lang-js prettyprint-override\"><code>const express = require('express')\nconst fs = require('fs')\nexpress.static.mime.types['wasm'] = 'application/wasm'\nconst https = require('https')\nconst app = express()\n\napp.use('/', express.static(__dirname))\napp.use((req, res, next) =&gt; {\n  res.header('X-Content-Type-Options', 'nosniff')\n  next()\n})\nhttps.createServer({\n  key: fs.readFileSync('server.key'),\n  cert: fs.readFileSync('server.cert')\n}, app).listen(8000, () =&gt; {\n  console.log('Listening...')\n})\n</code></pre>\n\n<p>In a previous version, I was able to use Module.onRuntimeInitialized to wait for the wasm module to be instantiated. That code still works, I compiled the webpack using the same em++ flags as before, namely <code>-std=c++11 -s WASM=1 -s ALLOW_MEMORY_GROWTH=1 -s SAFE_HEAP=1 -O0 -g4 -s ASSERTIONS=1</code></p>\n\n<p>The error I get in the browser is the following: <code>Failed to load module script: The server responded with a non-JavaScript MIME type of \"application/wasm\". Strict MIME type checking is enforced for module scripts per HTML spec.</code> which throws me for a loop, because I thought application/wasm is exactly what the MIME type should be.</p>\n"
+}

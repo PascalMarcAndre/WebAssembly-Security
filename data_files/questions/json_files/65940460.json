@@ -1,0 +1,29 @@
+{
+    "tags": [
+        "c#",
+        "memory-management",
+        "garbage-collection",
+        "blazor",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 337,
+        "user_id": 1615596,
+        "user_type": "registered",
+        "accept_rate": 67,
+        "profile_image": "https://www.gravatar.com/avatar/f4a91e024a965b53137a77d6c0ff2745?s=128&d=identicon&r=PG",
+        "display_name": "Ryan Jarvis",
+        "link": "https://stackoverflow.com/users/1615596/ryan-jarvis"
+    },
+    "is_answered": false,
+    "view_count": 81,
+    "answer_count": 0,
+    "score": 2,
+    "last_activity_date": 1611848689,
+    "creation_date": 1611848689,
+    "question_id": 65940460,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/65940460/what-are-these-gc-minor-nursery-full-log-messages-in-my-blazor-webassembly-app-t",
+    "title": "What are these GC Minor Nursery Full log messages in my Blazor WebAssembly app trying to tell me?",
+    "body": "<p>I am working on a Blazor WebAssembly app.  I have recently started seeing the following log messages show up in my browser's (Chrome) dev console:</p>\n<pre><code>blazor.webassembly.js:1 L: GC_MINOR: (Nursery full) time 0.94ms, stw 0.94ms promoted 29K major size: 2592K in use: 1873K los size: 1024K in use: 183K\nblazor.webassembly.js:1 L: GC_MINOR: (Nursery full) time 0.58ms, stw 0.60ms promoted 37K major size: 2624K in use: 1915K los size: 1024K in use: 183K\nblazor.webassembly.js:1 L: GC_MINOR: (Nursery full) time 1.00ms, stw 1.02ms promoted 23K major size: 2720K in use: 2009K los size: 1024K in use: 183K\nblazor.webassembly.js:1 L: GC_MINOR: (Nursery full) time 0.63ms, stw 0.63ms promoted 18K major size: 2816K in use: 2127K los size: 1024K in use: 183K\nblazor.webassembly.js:1 L: GC_MINOR: (Nursery full) time 0.87ms, stw 0.88ms promoted 11K major size: 2944K in use: 2254K los size: 1024K in use: 183K\n</code></pre>\n<p>The values next to <code>major size</code> and the first <code>in use</code> tag steadily increase increase until major size reaches roughly 19000K and the following messages display:</p>\n<pre><code>blazor.webassembly.js:1 L: GC_MINOR: (Nursery full) time 0.82ms, stw 0.84ms promoted 18K major size: 19408K in use: 18141K los size: 1024K in use: 48K\nblazor.webassembly.js:1 L: GC_MAJOR_SWEEP: major size: 4192K in use: 18333K\nblazor.webassembly.js:1 L: GC_MAJOR: (LOS overflow) time 34.43ms, stw 36.44ms los size: 1024K in use: 32K \n</code></pre>\n<p>Then the whole cycle repeats itself.</p>\n<p>I understand these messages are related to garbage collection, but what are they specifically trying to communicate and could they indicate that I have a potential memory leak in my client?</p>\n"
+}

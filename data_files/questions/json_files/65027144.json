@@ -1,0 +1,30 @@
+{
+    "tags": [
+        "c#",
+        "visual-studio",
+        "blazor",
+        "blazor-webassembly",
+        ".net-5"
+    ],
+    "owner": {
+        "reputation": 36381,
+        "user_id": 3850405,
+        "user_type": "registered",
+        "accept_rate": 64,
+        "profile_image": "https://www.gravatar.com/avatar/b2b9eece8c493ba7ddcff82f845ff2af?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Ogglas",
+        "link": "https://stackoverflow.com/users/3850405/ogglas"
+    },
+    "is_answered": true,
+    "view_count": 637,
+    "accepted_answer_id": 65027340,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1606414476,
+    "creation_date": 1606413519,
+    "question_id": 65027144,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/65027144/blazor-webassembly-app-with-individual-user-accounts-and-store-user-accounts-in",
+    "title": "Blazor WebAssembly App with Individual User Accounts and Store user accounts in-app using gives no local user accounts",
+    "body": "<p>Creating a new <code>Blazor WebAssembly App</code> with <code>Individual User Accounts</code> and <code>Store user accounts in-app</code> using <code>Visual Studio 2019 16.8.2</code> and <code>.NET 5.0</code> gives no local user accounts.</p>\n<p><a href=\"https://i.stack.imgur.com/WeiRJ.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/WeiRJ.png\" alt=\"enter image description here\" /></a></p>\n<p>Starting the app it says:</p>\n<blockquote>\n<p>Before authentication will function correctly, you must configure your\nprovider details in Program.cs</p>\n</blockquote>\n<p>Program.cs:</p>\n<pre><code>public class Program\n{\n    public static async Task Main(string[] args)\n    {\n        var builder = WebAssemblyHostBuilder.CreateDefault(args);\n        builder.RootComponents.Add&lt;App&gt;(&quot;#app&quot;);\n\n        builder.Services.AddScoped(sp =&gt; new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });\n\n        builder.Services.AddOidcAuthentication(options =&gt;\n        {\n            // Configure your authentication provider options here.\n            // For more information, see https://aka.ms/blazor-standalone-auth\n            builder.Configuration.Bind(&quot;Local&quot;, options.ProviderOptions);\n        });\n\n        await builder.Build().RunAsync();\n    }\n}\n</code></pre>\n<p>Clicking on Log in redirects to:</p>\n<p>https://localhost:44444/authentication/login-failed</p>\n<p>With the following message:</p>\n<blockquote>\n<p>There was an error trying to log you in: 'Invalid response\nContent-Type: text/html, from URL:\nhttps:login.microsoftonline.com/.well-known/openid-configuration'</p>\n</blockquote>\n<p><code>wwwroot</code> -&gt; <code>appsettings.json</code> looks like this:</p>\n<pre><code>{\n  &quot;Local&quot;: {\n    &quot;Authority&quot;: &quot;https://login.microsoftonline.com/&quot;,\n    &quot;ClientId&quot;: &quot;33333333-3333-3333-33333333333333333&quot;\n  }\n}\n</code></pre>\n<p><a href=\"https://aka.ms/blazor-standalone-auth\" rel=\"nofollow noreferrer\">https://aka.ms/blazor-standalone-auth</a> leads to <a href=\"https://docs.microsoft.com/en-gb/aspnet/core/blazor/security/webassembly/?view=aspnetcore-3.1\" rel=\"nofollow noreferrer\">https://docs.microsoft.com/en-gb/aspnet/core/blazor/security/webassembly/?view=aspnetcore-3.1</a></p>\n<p>Standalone Blazor WebAssembly apps seems to either require <code>Azure Active Directory (AAD)</code>, <code>Azure Active Directory B2C (AAD B2C)</code> or another <code>Identity Provider (IP)</code>.</p>\n<p>Creating another application with <code>Individual User Accounts</code> and <code>Store user accounts in-app</code> gives <code>ASP.NET Core Identity</code> identity users and their own database.</p>\n"
+}

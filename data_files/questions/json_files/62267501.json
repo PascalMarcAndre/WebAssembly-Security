@@ -1,0 +1,30 @@
+{
+    "tags": [
+        "javascript",
+        "c#",
+        "asp.net-core",
+        "blazor",
+        "blazor-client-side"
+    ],
+    "owner": {
+        "reputation": 2603,
+        "user_id": 638311,
+        "user_type": "registered",
+        "accept_rate": 89,
+        "profile_image": "https://i.stack.imgur.com/zD4Ta.jpg?s=128&g=1",
+        "display_name": "INNVTV",
+        "link": "https://stackoverflow.com/users/638311/innvtv"
+    },
+    "is_answered": false,
+    "view_count": 155,
+    "answer_count": 0,
+    "score": 0,
+    "last_activity_date": 1591723279,
+    "creation_date": 1591635997,
+    "last_edit_date": 1591723279,
+    "question_id": 62267501,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/62267501/preparing-di-object-in-blazor-webassembly-via-middleware-with-cookies-jsinterop",
+    "title": "Preparing DI object in Blazor WebAssembly via Middleware with cookies/JSInterop prior to target route initialization",
+    "body": "<p>Here is a simplified version of my scenario. Based on the default WebAssembly template I have an object managed by dependancy injection:</p>\n\n<p><strong>CookieSetting.cs:</strong></p>\n\n<pre><code>public class CookieSetting\n{\n    public string MyProperty { get; set; }\n}\n</code></pre>\n\n<p><strong>Program.cs:</strong></p>\n\n<pre><code>builder.Services.AddSingleton&lt;CookieSetting&gt;();\n</code></pre>\n\n<p><strong>_Imports.razor:</strong></p>\n\n<pre><code>...\n@inject CookieSetting CookieSetting\n@inject IJSRuntime JSRuntime\n...\n</code></pre>\n\n<p>I also have a javascript file to manage cookie data:</p>\n\n<p><strong>wwwroot/js/extensions.js:</strong></p>\n\n<pre><code>function getCookie(name) {\n    var nameEQ = name + \"=\";\n    var ca = document.cookie.split(';');\n    for (var i = 0; i &lt; ca.length; i++) {\n        var c = ca[i];\n        while (c.charAt(0) == ' ') c = c.substring(1, c.length);\n        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);\n    }\n    return null;\n};\n\nfunction setCookie(name, value) {\n  document.cookie = name + \"=\" + value + \"; path=/\";\n}\n</code></pre>\n\n<p><strong>wwwroot/index.html:</strong></p>\n\n<pre><code>...\n&lt;script src=\"_framework/blazor.webassembly.js\"&gt;&lt;/script&gt;\n&lt;script src=\"js/extensions.js\"&gt;&lt;/script&gt;\n...\n</code></pre>\n\n<p>In my Main.Layout page <strong>OnInitializedAsync()</strong> method I make a call to get cookie data and apply the property to the injected object so it can be available to any page components that use the MainLayout:</p>\n\n<p><strong>MainLayout.cs</strong></p>\n\n<pre><code>@code\n{\n    protected override async Task OnInitializedAsync()\n    {\n        await JSRuntime.InvokeAsync&lt;string&gt;(\"setCookie\", \"cookieName\", \"cookieValue\");\n\n        var cookieValue = await JSRuntime.InvokeAsync&lt;string&gt;(\"getCookie\", \"cookieName\");\n\n        CookieSetting.MyProperty = cookieValue;\n\n    }\n}\n</code></pre>\n\n<p>Note: in this simplified scenario I also set the property prior to retrieving it.</p>\n\n<p>In <strong>Index.razor</strong> I've added the following line:</p>\n\n<pre><code>&lt;p&gt;Value: @CookieSetting.MyProperty&lt;/p&gt;\n</code></pre>\n\n<p>When you run this example you will notice that when you first load the page the value is not available. but if you navigate away from the page then back it is there. If you do a browser refresh it is again not loaded.</p>\n\n<p>I understand that this is expected behavior as both the MainLayout and Index components are running their Initialization steps in parallel and there is no guarantee that MainLayout will be complete in time for the first route to have access to the updated object. But each subsequent page will (unless a user does a browser refresh on any given route)</p>\n\n<p>I'm also aware that I can write a StateChanged event on the <strong>CookieSetting</strong> class and listen for it to fire but in my scenario I want to avoid having to include this event management in every single page component - especially for a class that is required to be set up so these pages can begin doing their tasks. </p>\n\n<p>What I would prefer is to ensure that the set up for the CookieSetting class is completed before any page components initiate. I was thinking this could be done within <strong>Program.Main</strong> but since I need to access cookie data I can't seem to use <strong>JSInterop</strong> this early in the pipeline. Will the JavaScript even be ready to call at this time?</p>\n\n<p>I tried moving the setup to <strong>App.Razor</strong> but still have the same issue.</p>\n\n<p>What I need is a way to delay page components to initialize from <strong>MainLayout</strong> <em>(or somewhere else?)</em> until <strong>CookieSetting</strong> is ready.</p>\n\n<p>Any help is appreciated!</p>\n\n<p><strong>Updated to add some clarity to the kind of solution I am looking for:</strong></p>\n\n<p>Essentially I'm looking for a solution that ensures the CookieSettings class has completed it's initialization before the first route a user requests loads. This should happen similar to how a middleware pipeline would work in a .Net core web service project. But ONLY when first loading the site. The initial load can be the default page or a deep link that is requested. Perhaps this is just not possible in Blazor WebAssembly especially since I am using JavaScript for cookie access... But perhaps there is a way to route to an intermediary page between routes when/if this is an initial load?</p>\n"
+}

@@ -1,0 +1,28 @@
+{
+    "tags": [
+        "azure",
+        "blazor",
+        "azure-ad-b2c",
+        "webassembly"
+    ],
+    "owner": {
+        "reputation": 5,
+        "user_id": 9100652,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/e6fd919ba3f1fbeb2550a75247a51e8c?s=128&d=identicon&r=PG&f=1",
+        "display_name": "eColumbia99",
+        "link": "https://stackoverflow.com/users/9100652/ecolumbia99"
+    },
+    "is_answered": true,
+    "view_count": 507,
+    "accepted_answer_id": 64828184,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1605302486,
+    "creation_date": 1605167113,
+    "question_id": 64799789,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/64799789/blazor-azure-ad-b2c-net-5-error-trying-to-login",
+    "title": "Blazor Azure AD B2C net 5 Error trying to login",
+    "body": "<p>I'm following the instructions for setting up a Blazor Web Assembly hosted using Azure AD B2C located here: <a href=\"https://docs.microsoft.com/en-us/aspnet/core/blazor/security/webassembly/hosted-with-azure-active-directory-b2c?view=aspnetcore-5.0\" rel=\"nofollow noreferrer\">https://docs.microsoft.com/en-us/aspnet/core/blazor/security/webassembly/hosted-with-azure-active-directory-b2c?view=aspnetcore-5.0</a></p>\n<p>When the login is clicked a message appears stating 'There was an error trying to log you in: 'Error: could not resolve endpoints. Please check network and try again. Detail: TypeError: NetworkError when attempting to fetch resource.'</p>\n<p>In the debug window the message is displayed: Microsoft .AspNetCore.Authorization.DefaultAuthorizationService[2] Authorization failed. These requirements were not met: DenyAnonymousAuthorizationRequirement: Requires an authenticated user.</p>\n<p>In the Microsoft instructions for this error message the recommendation is in Azure for the app set the manifest setting of allowPublicClient to null or true. I set this attribute for both the server app and the client app to true but this did not make a difference.</p>\n"
+}

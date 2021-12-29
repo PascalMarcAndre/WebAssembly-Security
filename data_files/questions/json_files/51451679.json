@@ -1,0 +1,28 @@
+{
+    "tags": [
+        "javascript",
+        "webassembly"
+    ],
+    "owner": {
+        "reputation": 66451,
+        "user_id": 169992,
+        "user_type": "registered",
+        "accept_rate": 83,
+        "profile_image": "https://i.stack.imgur.com/OeNfG.png?s=128&g=1",
+        "display_name": "Lance Pollard",
+        "link": "https://stackoverflow.com/users/169992/lance-pollard"
+    },
+    "is_answered": true,
+    "view_count": 421,
+    "accepted_answer_id": 51532848,
+    "answer_count": 1,
+    "score": 1,
+    "last_activity_date": 1532591805,
+    "creation_date": 1532131234,
+    "last_edit_date": 1532135063,
+    "question_id": 51451679,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/51451679/how-to-store-hex-values-i-e-raw-bytes-in-webassembly-data-segment",
+    "title": "How to Store Hex Values (i.e. Raw Bytes) in WebAssembly Data Segment",
+    "body": "<p>I have this situation:</p>\n\n<pre><code>(module \n  (memory (import \"js\" \"mem\") 1)\n  (data (i32.const 0) \"\\aa\"))\n\nfetch('index.wasm').then(function(response){\n  return response.arrayBuffer()\n}).then(function(bytes){\n  return WebAssembly.instantiate(bytes, {\n    js: {\n      mem: memory\n    }\n  })\n})\n</code></pre>\n\n<p>I am trying to place \"raw bytes\" into the data segment in WebAssembly according to the <a href=\"https://webassembly.github.io/spec/core/text/values.html#strings\" rel=\"nofollow noreferrer\">docs</a>. But getting this error in the browser (not getting a compilation error with <code>wat2wasm</code>):</p>\n\n<pre><code>Uncaught (in promise) CompileError: AsyncCompile: Wasm decoding failed: expected section length @+37\n</code></pre>\n\n<p>I've tried different variants such as this, which doesn't throw an error but when I log the output there is no output (I would expect it to say \"0\" or something:</p>\n\n<pre><code>(data (i32.const 0) \"\\00\")\n</code></pre>\n\n<p>I try other things such as this:</p>\n\n<pre><code>(data (i32.const 0) \"\\a0\")\n</code></pre>\n\n<p>But it gives the same error. Any help would be appreciated.</p>\n\n<p>As an example to further demonstrate how to use the raw bytes feature, it would be helpful to know how to represent a number like <code>123</code>. I do the following and get strange results when I serialize to an Uint8Array -> String in JavaScript:</p>\n\n<pre><code>(data (i32.const 0) \"123\")\n</code></pre>\n\n<p>So wondering how that should look in terms of hex codes. <code>123</code> in hex is <code>0x7B</code>, so maybe:</p>\n\n<pre><code>(data (i32.const 0) \"\\7b\")\n</code></pre>\n\n<p>But I think it needs to be two hex numbers, or not quite sure. Anyway if that's too complicated or distracts from the first part of the question no need to address it.</p>\n"
+}

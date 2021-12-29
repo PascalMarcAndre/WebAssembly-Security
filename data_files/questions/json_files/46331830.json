@@ -1,0 +1,27 @@
+{
+    "tags": [
+        "webassembly"
+    ],
+    "owner": {
+        "reputation": 64155,
+        "user_id": 249933,
+        "user_type": "registered",
+        "accept_rate": 81,
+        "profile_image": "https://www.gravatar.com/avatar/458f2e0d08d4114f8b323798cfea141d?s=128&d=identicon&r=PG",
+        "display_name": "ColinE",
+        "link": "https://stackoverflow.com/users/249933/coline"
+    },
+    "is_answered": true,
+    "view_count": 2645,
+    "accepted_answer_id": 46500236,
+    "answer_count": 2,
+    "score": 4,
+    "last_activity_date": 1593442975,
+    "creation_date": 1505941835,
+    "last_edit_date": 1505943873,
+    "question_id": 46331830,
+    "content_license": "CC BY-SA 3.0",
+    "link": "https://stackoverflow.com/questions/46331830/why-is-my-webassembly-function-slower-than-the-javascript-equivalent",
+    "title": "Why is my WebAssembly function slower than the JavaScript equivalent?",
+    "body": "<p>Apologies for the broad question! I'm learning WASM and have created a Mandelbrot algorithm in C:</p>\n\n<pre><code>int iterateEquation(float x0, float y0, int maxiterations) {\n  float a = 0, b = 0, rx = 0, ry = 0;\n  int iterations = 0;\n  while (iterations &lt; maxiterations &amp;&amp; (rx * rx + ry * ry &lt;= 4.0)) {\n    rx = a * a - b * b + x0;\n    ry = 2.0 * a * b + y0;\n    a = rx;\n    b = ry;\n    iterations++;\n  }\n  return iterations;\n}\n\nvoid mandelbrot(int *buf, float width, float height) {\n  for(float x = 0.0; x &lt; width; x++) {\n    for(float y = 0.0; y &lt; height; y++) {\n      // map to mandelbrot coordinates\n      float cx = (x - 150.0) / 100.0;\n      float cy = (y - 75.0) / 100.0;\n      int iterations = iterateEquation(cx, cy, 1000);\n      int loc = ((x + y * width) * 4);\n      // set the red and alpha components\n      *(buf + loc) = iterations &gt; 100 ? 255 : 0;\n      *(buf + (loc+3)) = 255;\n    }\n  }\n}\n</code></pre>\n\n<p>I'm compiling to WASM as follows (filename input / output omitted for clarity)</p>\n\n<pre><code>clang -emit-llvm  -O3 --target=wasm32 ...\nllc -march=wasm32 -filetype=asm ...\ns2wasm --initial-memory 6553600 ...\nwat2wasm ... \n</code></pre>\n\n<p>I'm loading in JavaScript, compiling, then invoking as follows:</p>\n\n<pre><code>instance.exports.mandelbrot(0, 300, 150)\n</code></pre>\n\n<p>The output is being copied to a canvas, which enables me to verify that it is executed correctly. On my computer the above function takes around 120ms to execute.</p>\n\n<p>However, here's a JavaScript equivalent:</p>\n\n<pre><code>const iterateEquation = (x0, y0, maxiterations) =&gt; {\n  let a = 0, b = 0, rx = 0, ry = 0;\n  let iterations = 0;\n  while (iterations &lt; maxiterations &amp;&amp; (rx * rx + ry * ry &lt;= 4)) {\n    rx = a * a - b * b + x0;\n    ry = 2 * a * b + y0;\n    a = rx;\n    b = ry;\n    iterations++;\n  }\n  return iterations;\n}\n\nconst mandelbrot = (data) =&gt; {\n  for (var x = 0; x &lt; 300; x++) {\n    for (var y = 0; y &lt; 150; y++) {\n      const cx = (x - 150) / 100;\n      const cy = (y - 75) / 100;\n      const res = iterateEquation(cx, cy, 1000);\n      const idx = (x + y * 300) * 4;\n      data[idx] = res &gt; 100 ? 255 : 0;\n      data[idx+3] = 255;\n    }\n  }\n}\n</code></pre>\n\n<p>Which only takes ~62ms to execute.</p>\n\n<p>Now I know WebAssembly is very new, and is not terribly optimised. But I can't help feeling that it should be faster than this!</p>\n\n<p>Can anyone spot something obvious I might have missed?</p>\n\n<p>Also, my C code writes directly to memory starting at '0' - I am wondering if this is safe? Where is the stack stored in the paged linear memory? Am I going to risk overwriting it?</p>\n\n<p>Here's a fiddle to illustrate:</p>\n\n<p><a href=\"https://wasdk.github.io/WasmFiddle/?jvoh5\" rel=\"nofollow noreferrer\">https://wasdk.github.io/WasmFiddle/?jvoh5</a></p>\n\n<p>When run, it logs the timings of the two equivalent implementations (WASM then JavaScript)</p>\n"
+}

@@ -1,0 +1,27 @@
+{
+    "tags": [
+        "javascript",
+        "c",
+        "webassembly"
+    ],
+    "owner": {
+        "reputation": 85,
+        "user_id": 3902376,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/066a8419540fa57445967e20f1e28adf?s=128&d=identicon&r=PG&f=1",
+        "display_name": "craigmc08",
+        "link": "https://stackoverflow.com/users/3902376/craigmc08"
+    },
+    "is_answered": true,
+    "view_count": 6097,
+    "accepted_answer_id": 44102745,
+    "answer_count": 1,
+    "score": 7,
+    "last_activity_date": 1495409180,
+    "creation_date": 1495374087,
+    "question_id": 44097584,
+    "content_license": "CC BY-SA 3.0",
+    "link": "https://stackoverflow.com/questions/44097584/webassembly-linkerror-function-import-requires-a-callable",
+    "title": "WebAssembly LinkError: function import requires a callable",
+    "body": "<p>I've recently started working with WebAssembly. I hit a problem trying to use log in my C code. I recreated the error in the simplest way I could. The error I get is</p>\n\n<pre><code>Uncaught (in promise) LinkError: WebAssembly.Instance(): Import #1 module=\"env\" function=\"_log\" error: function import requires a callable\n</code></pre>\n\n<p>The error points to this function, specifically <code>WebAsembly.Instance(module, imports)</code></p>\n\n<pre><code>function loadWebAssembly(filename, imports = {}) {\n  return fetch(filename)\n    .then((response) =&gt; response.arrayBuffer())\n    .then((buffer) =&gt; WebAssembly.compile(buffer))\n    .then((module) =&gt; {\n      imports.env = imports.env || {}\n      Object.assign(imports.env, {\n        memoryBase: 0,\n        tableBase: 0,\n        memory: new WebAssembly.Memory({\n          initial: 256,\n          maximum: 512,\n        }),\n        table: new WebAssembly.Table({\n          initial: 0,\n          maximum: 0,\n          element: 'anyfunc',\n        }),\n      })\n      return new WebAssembly.Instance(module, imports)\n    })\n}\n</code></pre>\n\n<p>(I call this function with <code>loadWebAssembly('/test.wasm')</code>)</p>\n\n<p>My C code is</p>\n\n<pre><code>#include &lt;math.h&gt;\n\ndouble test(v) {\n  return log(v)\n}\n</code></pre>\n\n<p>and gets no errors when compiled with</p>\n\n<pre><code>emcc test.c -Os -s WASM=1 -s SIDE_MODULE=1 -o test.wasm\n</code></pre>\n\n<p>I haven't been able to fix this error, I hope someone can help me out.</p>\n"
+}

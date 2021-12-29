@@ -1,0 +1,27 @@
+{
+    "tags": [
+        "plugins",
+        "webassembly"
+    ],
+    "owner": {
+        "reputation": 1678,
+        "user_id": 2741831,
+        "user_type": "registered",
+        "accept_rate": 76,
+        "profile_image": "https://www.gravatar.com/avatar/04de2cacb87b9135031fadf7d2d477cd?s=128&d=identicon&r=PG&f=1",
+        "display_name": "user2741831",
+        "link": "https://stackoverflow.com/users/2741831/user2741831"
+    },
+    "is_answered": true,
+    "view_count": 95,
+    "accepted_answer_id": 56748525,
+    "answer_count": 1,
+    "score": 1,
+    "last_activity_date": 1561446300,
+    "creation_date": 1561384007,
+    "question_id": 56737992,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/56737992/can-i-use-webassembly-for-plugins-like-blender-uses-python",
+    "title": "Can I use webassembly for plugins like blender uses python?",
+    "body": "<p>I was talking to a friend of mine who knows a lot about js and wasm.He told me the technology goes far beyond web, since it is basicly a way to run near native applications on devices without actually giving them access to the computer.<br>\nWhich means that thrid party or untrusted code on a smartphone for instance cannot accidentally or intentional change other apps or parts of the system.\nThis seamed to me like the perfect conditions to build a plugin system for an application I am working on.\nI asked him about it but he was unable to give me a clear answer.\nSo the question is, can I use webassembly outside of a webbrowser, with custom bindings to safely allow users to extend the functionality of my application (a special image viewer) without sacrificing too much speed? It seams it should work using libnode or something, but is there a problem I might run into?</p>\n"
+}

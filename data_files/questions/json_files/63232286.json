@@ -1,0 +1,28 @@
+{
+    "tags": [
+        "asp.net",
+        "asp.net-identity",
+        "blazor",
+        "claims-based-identity",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 1,
+        "user_id": 13995444,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/704254e7f96aa77e2cabd6f1d4ba4163?s=128&d=identicon&r=PG&f=1",
+        "display_name": "fornax",
+        "link": "https://stackoverflow.com/users/13995444/fornax"
+    },
+    "is_answered": false,
+    "view_count": 100,
+    "answer_count": 0,
+    "score": 0,
+    "last_activity_date": 1596468258,
+    "creation_date": 1596468258,
+    "question_id": 63232286,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/63232286/blazor-webassembly-asp-net-core-hosted-authentication-not-working-for-any-razo",
+    "title": "Blazor WebAssembly ASP.NET Core Hosted - Authentication not working for any razor pages under /Server/Pages",
+    "body": "<p>I want to setup a website where all public pages are served by the server project and only registered users will/can launch the Blazor application. I am able to achieve this.</p>\n<p>The part where I am failing is when razor pages are placed under /Server/Pages/ the authentication providers don't work. The same page (say MyPage.cshtml) works fine if the route is /Identity/Account/MyPage but fails if placed in /Pages folder of the Server project.</p>\n<p>My cookie basepath is set to /</p>\n<p>GitHub repo demonstrating my issue:-\n<a href=\"https://github.com/fornax76/IdentityDemo\" rel=\"nofollow noreferrer\">https://github.com/fornax76/IdentityDemo</a></p>\n<p>How do I ensure that authentication (User.Identity.IsAuthenticated) works for razor page Index.cshtml placed under /Server/Pages ?</p>\n"
+}

@@ -1,0 +1,28 @@
+{
+    "tags": [
+        "javascript",
+        "emscripten",
+        "webassembly"
+    ],
+    "owner": {
+        "reputation": 632,
+        "user_id": 1741640,
+        "user_type": "registered",
+        "accept_rate": 57,
+        "profile_image": "https://www.gravatar.com/avatar/a828984227cf922be235dabf37407d53?s=128&d=identicon&r=PG",
+        "display_name": "Eturcim",
+        "link": "https://stackoverflow.com/users/1741640/eturcim"
+    },
+    "is_answered": false,
+    "view_count": 416,
+    "answer_count": 0,
+    "score": 5,
+    "last_activity_date": 1543423493,
+    "creation_date": 1543376473,
+    "last_edit_date": 1543423493,
+    "question_id": 53511771,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/53511771/why-my-quicksort-exported-in-webassembly-is-slower-than-a-pure-javascript-implem",
+    "title": "Why my quicksort exported in webassembly is slower than a pure javascript implementation?",
+    "body": "<p>I have implemented a very naive quicksort in pure Javascript and in C, the later being exported as a WebAssembly module.</p>\n\n<p>I am sorting the 2 same arrays of 10<sup>6</sup> integers in the range [0;1000]. \nThe pure javascript implementation takes on average 780ms, while the WebAssembly based takes 935ms (1020ms when no optimization flags set).</p>\n\n<p>Why is the pure javascript implementation the fastest?</p>\n\n<p>Below the 2 implementations in question:</p>\n\n<p>JS:</p>\n\n<pre><code>function swap(array, swapy1, swapy2) {\n  let tmp = array[swapy1];\n  array[swapy1] = array[swapy2];\n  array[swapy2] = tmp;\n}\n\n\nfunction partition(array, lo, hi) {\n  const pivot = array[hi];\n  let i = lo - 1;\n  for (let j = lo; j &lt; hi; j++) {\n    if (array[j] &lt; pivot) {\n      if (i !== j) {\n        i++;\n        swap(array, i, j)\n      }\n    }\n  }\n  i++;\n  swap(array, i, hi);\n  return i;\n}\n\nexport default function sort(array, lo, hi) {\n  if (lo &lt; hi) {\n    const p = partition(array, lo, hi);\n    sort(array, lo, p - 1);\n    sort(array, p + 1, hi);\n  }\n}\n</code></pre>\n\n<p>C:</p>\n\n<pre><code>void swap(int *array, int swapy1, int swapy2) {\n    int tmp = array[swapy1];\n    array[swapy1] = array[swapy2];\n    array[swapy2] = tmp;\n  }\n\n\n  int partition(int *array, int lo, int hi) {\n    int pivot = array[hi];\n    int i = lo - 1;\n    for (int j = lo; j &lt; hi; j++) {\n      if (array[j] &lt; pivot) {\n        if (i != j) {\n          i++;\n          swap(array, i, j);\n        }\n      }\n    }\n    i++;\n    swap(array, i, hi);\n    return i;\n  }\n\n  void sort(int *array, int lo, int hi) {\n    if (lo &lt; hi) {\n      int p = partition(array, lo, hi);\n      sort(array, lo, p - 1);\n      sort(array, p + 1, hi);\n    }\n  }\n\n  void quicksort(int *array, int lo, int hi, char *exp) {\n   struct timeval t1, t2;\n   double elapsedTime;\n\n    gettimeofday(&amp;t1, NULL);\n    sort(array, lo, hi);\n    gettimeofday(&amp;t2, NULL);\n\n    // compute and print the elapsed time in millisec\n    elapsedTime = (t2.tv_sec - t1.tv_sec) * 1000.0;      // sec to ms\n    elapsedTime += (t2.tv_usec - t1.tv_usec) / 1000.0;   // us to ms\n\n    printf(\" - 10%s entries sorted in %.0f ms\\n\", exp, elapsedTime);\n  }\n</code></pre>\n\n<p>Caller code (through emscripten Module object):</p>\n\n<pre><code>WasmModule().then(wasm =&gt; {\n    console.log(\"Monothreaded Lomuto Quicksort, WebAssembly\");\n    function callWasm(array, exponant) {\n      let heapBuf = wasm._malloc(array.length * Uint32Array.BYTES_PER_ELEMENT);\n      wasm.HEAP32.set(array, heapBuf / 4);\n      wasm.ccall('quicksort', null, ['number', 'number', 'number', 'string'], [heapBuf, 0, array.length - 1, exponant]);\n      wasm._free(heapBuf);\n    }\n    millionIntCopy = millionInt.slice();\n    tenMillionIntCopy = tenMillionIntCopy.slice();\n    callWasm(millionIntCopy, \"\\u2076\");\n    // callWasm(tenMillionIntCopy, \"\\u2077\"); // stack overflow\n    // callWasm(hundredMillionInt, \"\\u2078\"); stackoverflow\n  })\n</code></pre>\n\n<p>Full project may be found <a href=\"https://github.com/Mic75/quicksort-wasm\" rel=\"nofollow noreferrer\">here</a></p>\n"
+}

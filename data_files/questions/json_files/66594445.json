@@ -1,0 +1,29 @@
+{
+    "tags": [
+        "asp.net",
+        "asp.net-mvc",
+        "progressive-web-apps",
+        "blazor-webassembly",
+        "azure-webapps"
+    ],
+    "owner": {
+        "reputation": 39,
+        "user_id": 14084707,
+        "user_type": "registered",
+        "profile_image": "https://graph.facebook.com/2616804911865960/picture?type=large",
+        "display_name": "Krishnareddy Chinthireddy",
+        "link": "https://stackoverflow.com/users/14084707/krishnareddy-chinthireddy"
+    },
+    "is_answered": false,
+    "view_count": 34,
+    "answer_count": 0,
+    "score": -1,
+    "last_activity_date": 1615888523,
+    "creation_date": 1615525310,
+    "last_edit_date": 1615888523,
+    "question_id": 66594445,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/66594445/how-to-create-blazor-webassembly-progressive-web-application-with-azure-ad-authe",
+    "title": "How to create Blazor WebAssembly Progressive Web Application with Azure Ad authentication",
+    "body": "<p>I want to create a  Blazor WebAssembly Progressive Web Application with Azure Ad authentication.</p>\n<p>so i have downloaded visual studio blazor templets but when i tried to create the application the option of selecting the authentication has disable for work or school accounts</p>\n<p>is there any to enable it</p>\n<p>please refer the below screen<a href=\"https://i.stack.imgur.com/Gebpx.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/Gebpx.png\" alt=\"enter image description here\" /></a></p>\n<p>&quot;The work or school accounts option is disable&quot; is there any way to enable it</p>\n"
+}

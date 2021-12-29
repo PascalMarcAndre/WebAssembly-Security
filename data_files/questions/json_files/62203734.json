@@ -1,0 +1,27 @@
+{
+    "tags": [
+        "azure",
+        "docker",
+        "blazor",
+        "asp.net-blazor"
+    ],
+    "owner": {
+        "reputation": 33,
+        "user_id": 2112796,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/8e596e47b97f11d02ae01a6605ab0280?s=128&d=identicon&r=PG",
+        "display_name": "user2112796",
+        "link": "https://stackoverflow.com/users/2112796/user2112796"
+    },
+    "is_answered": true,
+    "view_count": 342,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1591369116,
+    "creation_date": 1591303195,
+    "question_id": 62203734,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/62203734/is-blazor-app-with-open-id-connect-supported-by-azure-app-service-containers",
+    "title": "Is Blazor app with Open ID Connect supported by Azure App Service Containers?",
+    "body": "<p><strong>Problem</strong>\nWe are getting the following error in the browser after deploying Blazor webassembly app as an App Service Container:</p>\n\n<pre><code>AuthenticationService.js:1 Mixed Content: The page at 'https://YYY.azurewebsites.net/authentication/login?returnUrl=https%3A%2F%2FYYY.azurewebsites.net%2Ffetchdata' was loaded over HTTPS, but requested an insecure XMLHttpRequest endpoint 'http://YYY.azurewebsites.net/.well-known/openid-configuration'. This request has been blocked; the content must be served over HTTPS.\n</code></pre>\n\n<p>Wondering if docker deployment is supported in Blazor at this moment, if yes, how can we fix this?</p>\n\n<p><strong>Steps to re-pro:</strong>\n 1. In VS 2019 Professional preview Version 16.7.0 Preview 2.0: create Blazor app (standard \"Blazor WebAssembly App\" template) with Hosted option on and in-app authentication with Identity Server\n 2. Deploy linux docker container to Azure Web App for containers service (B1) \n 3. HTTPS Only setting is ON for the App Service</p>\n\n<p>We are using the following simple docker file for that:</p>\n\n<pre><code>FROM mcr.microsoft.com/dotnet/core/aspnet:3.1 AS runtime\nWORKDIR /app\nEXPOSE 80\nCOPY . .\nENTRYPOINT [\"dotnet\", \"AppNameHere.Server.dll\"]\n</code></pre>\n\n<p>Somehow OIDC JS library used by Blazor is not picking up the fact that we are runnig over HTTPS (although HTTP is used between the container instance and App service load balancer).</p>\n"
+}

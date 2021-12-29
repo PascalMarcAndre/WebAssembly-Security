@@ -1,0 +1,28 @@
+{
+    "tags": [
+        "blazor",
+        "blazor-server-side",
+        "blazor-component"
+    ],
+    "owner": {
+        "reputation": 51,
+        "user_id": 6022618,
+        "user_type": "registered",
+        "profile_image": "https://lh5.googleusercontent.com/-io4FMaKYmSI/AAAAAAAAAAI/AAAAAAAAB70/gFfkGMStnQQ/photo.jpg?sz=128",
+        "display_name": "Daniel Weber",
+        "link": "https://stackoverflow.com/users/6022618/daniel-weber"
+    },
+    "is_answered": true,
+    "view_count": 893,
+    "accepted_answer_id": 64741676,
+    "answer_count": 1,
+    "score": 2,
+    "last_activity_date": 1604860173,
+    "creation_date": 1604840646,
+    "last_edit_date": 1604840811,
+    "question_id": 64738381,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/64738381/css-isolation-in-blazor-server-components",
+    "title": "CSS isolation in blazor-server components",
+    "body": "<p>with the new .NET 5 preview CSS isolation comes in blazor.\nDoes anybody know, is it possible to use the CSS isolation in blazor server?</p>\n<p>I have play a lot around, but in my blazor server app CSS isolation doesn't work.\nOr is this feature only available in blazor WebAssembly?</p>\n<p>so I tried it:</p>\n<ul>\n<li>create a new blazor component, e.g. test.razor</li>\n<li>create component CSS file with name test.razor.css and write the CSS code in this file</li>\n<li>now start the blazor-server app, but no static CSS file will added and the CSS classes doesn't found.</li>\n</ul>\n<p>TargetFramework is &quot;net5.0&quot;.\ninstalled dotnet version is &quot;5.0.100-rc.2.20479.15&quot;.</p>\n<p>greetings\nDaniel</p>\n"
+}

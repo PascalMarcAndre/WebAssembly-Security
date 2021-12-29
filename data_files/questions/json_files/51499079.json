@@ -1,0 +1,27 @@
+{
+    "tags": [
+        "llvm",
+        "llvm-ir",
+        "webassembly"
+    ],
+    "owner": {
+        "reputation": 2123,
+        "user_id": 859268,
+        "user_type": "registered",
+        "accept_rate": 38,
+        "profile_image": "https://www.gravatar.com/avatar/8c067b90194680181e3677ec3b274601?s=128&d=identicon&r=PG",
+        "display_name": "Claudio Pomo",
+        "link": "https://stackoverflow.com/users/859268/claudio-pomo"
+    },
+    "is_answered": false,
+    "view_count": 748,
+    "answer_count": 0,
+    "score": 3,
+    "last_activity_date": 1532436642,
+    "creation_date": 1532436642,
+    "question_id": 51499079,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/51499079/llvm-set-target-to-webassembly",
+    "title": "LLVM set target to WebAssembly",
+    "body": "<p>I've coded a fronted in C++ to exploit LLVM core in order to get a PHP file and generate an IR for a classical architecture. I'm able to run this code with embedded JIT compiler of LLVM.\nI would produce an IR to WebAssembly. I'm using LLVM 6.0 with WebAssembly as target built </p>\n\n<pre><code>$ llvm-config --targets-built\nAArch64 AMDGPU ARM BPF Hexagon Lanai Mips MSP430 NVPTX PowerPC Sparc SystemZ X86 XCore WebAssembly AVR\n</code></pre>\n\n<p>I've set this update in my code</p>\n\n<pre><code>...\nLLVMSetTarget((LLVMOpaqueModule *)context-&gt;module, \"wasm32\");\n...\n</code></pre>\n\n<p>Now I noticed that dupmed IR code is identical with or without my code edit, and I've followed this pipeline to generate my wasm file</p>\n\n<pre><code>$ llc -asm-verbose=false -march=wasm32 -o my.s my.bc\n$ binaryen/bin/s2wasm my.s &gt; my.wast\n$ wabt/bin/wat2wasm my.wast -o my.wasm\n</code></pre>\n\n<p>But when I run </p>\n\n<pre><code>$ node ./runwasm.js my.wasm main\n</code></pre>\n\n<p>I get the following error</p>\n\n<p><code>RuntimeError: memory access out of bounds</code></p>\n\n<p>I can't understand where is the problem because if I follow this <a href=\"https://gist.github.com/yurydelendik/4eeff8248aeb14ce763e\" rel=\"nofollow noreferrer\">tutorial</a>, I will not get any error.</p>\n\n<p>Suggestions?</p>\n"
+}

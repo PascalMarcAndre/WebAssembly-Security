@@ -1,0 +1,28 @@
+{
+    "tags": [
+        ".net",
+        ".net-core",
+        "blazor",
+        "blazor-client-side",
+        "asp.net-blazor"
+    ],
+    "owner": {
+        "reputation": 1,
+        "user_id": 8420125,
+        "user_type": "registered",
+        "profile_image": "https://lh3.googleusercontent.com/-Z59zDplious/AAAAAAAAAAI/AAAAAAAAAVE/VWOIuVsbnHM/photo.jpg?sz=128",
+        "display_name": "Arul MV",
+        "link": "https://stackoverflow.com/users/8420125/arul-mv"
+    },
+    "is_answered": false,
+    "view_count": 69,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1608253401,
+    "creation_date": 1607616893,
+    "question_id": 65238256,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/65238256/how-to-use-same-login-page-in-multiple-projects-in-blazor-webassembly",
+    "title": "How to use same login page in multiple projects in blazor webassembly?",
+    "body": "<p>I have created 3 blazor webassembly projects, all projects are having the same styles.\nMy problem is I am duplicating the Login page for all the projects.</p>\n<p>Is there any option to use the same page in all projects?</p>\n<p>If I try to use the Razor library, I can't access the AuthenticationStateProvider.</p>\n"
+}

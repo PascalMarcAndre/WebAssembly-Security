@@ -1,0 +1,29 @@
+{
+    "tags": [
+        "c#",
+        "asp.net-core",
+        "blazor",
+        "azure-cognitive-services",
+        "blazor-client-side"
+    ],
+    "owner": {
+        "reputation": 261,
+        "user_id": 12393792,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/061b4453a944fafa89ad09f0837ef459?s=128&d=identicon&r=PG&f=1",
+        "display_name": "brstkr",
+        "link": "https://stackoverflow.com/users/12393792/brstkr"
+    },
+    "is_answered": true,
+    "view_count": 656,
+    "accepted_answer_id": 62690018,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1593670107,
+    "creation_date": 1593546754,
+    "question_id": 62665194,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/62665194/blazor-webassembly-pwa-iformfile-fromform-is-always-null",
+    "title": "Blazor WebAssembly PWA - IFormFile FromForm is always null",
+    "body": "<p>I have setup a  <code>Blazor WebAssembly ASP.Net Core hosted PWA</code> project and am using <code>Azure Cognitive Services</code> in it. Therefore I have in one of my client-views a form where the user can upload an image and this will be referred to Azure.</p>\n<p>In the razor-view I have this:</p>\n<pre class=\"lang-cs prettyprint-override\"><code>@inject HttpClient client;\n@inject IFileReaderService FileReader;\n@inject NavigationManager navi;\n\n&lt;div class=&quot;text-center&quot;&gt;\n    &lt;input class=&quot;btn btn-secondary &quot; name=&quot;file&quot; @ref=&quot;InpReference&quot; type=&quot;file&quot; id=&quot;file-selector&quot; placeholder=&quot;Brows&quot; accept=&quot;image/*&quot; capture=&quot;camera&quot; @onclick=&quot;InputFile&quot;&gt;\n\n    @if (_fileSelected != false)\n    {\n        &lt;input class=&quot;btn btn-primary&quot; type=&quot;button&quot; role=&quot;button&quot; id=&quot;startbutton&quot; @onclick=&quot;Upload&quot; value=&quot;upload&quot; /&gt;\n    }\n&lt;/div&gt;\n\n@code {\n        private async Task Upload()\n        {\n            // content base structure\n            MultipartFormDataContent content = new MultipartFormDataContent();\n            content.Headers.ContentDisposition = new System.Net.Http.Headers.ContentDispositionHeaderValue(&quot;form-data&quot;);\n    \n            \n            foreach (/*IFileReference*/var fileReference in fileReferences)\n            {\n                Console.WriteLine(&quot;test1&quot;);\n                // getting the file size\n                IFileInfo fileinfo = await fileReference.ReadFileInfoAsync();\n                Stream fileStream;\n                var fileReferencesArray = fileReferences.ToArray();\n                using (var fs = await fileReference.CreateMemoryStreamAsync((int)fileinfo.Size))\n                {\n                    Console.WriteLine(&quot;test2&quot;);\n                    fileStream=new MemoryStream(fs.ToArray());\n                }\n                Console.WriteLine(&quot;test4&quot; + fileinfo.Size);\n                StreamContent sc = new StreamContent(fileStream, (int)fileStream.Length);\n                content.Add(sc, &quot;file&quot;, fileinfo.Name);\n                Console.WriteLine(&quot;test5&quot;);\n            }\n            Console.WriteLine(&quot;test6&quot;);\n            var response = await client.PostJsonAsync&lt;List&lt;Prediction&gt;&gt;(&quot;api/Azure/Prediction&quot;, content);\n            Console.WriteLine(response.Count + &quot; : &quot; + response.GetType().ToString());\n            foreach (var prediction in  response)\n            {\n                Console.WriteLine(prediction.Id + &quot;:&quot; + prediction.Name + &quot;,&quot; + prediction.Probability.ToString());\n            }\n            navi.NavigateTo(&quot;detailView/&quot;);\n    \n    \n        }\n}\n\n</code></pre>\n<p>My WebApi Controller for the handling:</p>\n<pre class=\"lang-cs prettyprint-override\"><code>    ...\n        [HttpPost]\n        public List&lt;Prediction&gt; getPrediction([FromForm]IFormFile file)\n        {\n            if (file == null)\n            {\n                return new List&lt;Prediction&gt;();\n            }\n            List&lt;Prediction&gt; predicitions = azure_Client.GetPrediction(file.OpenReadStream());\n            return predicitions;\n        }\n    ...\n</code></pre>\n<p>The problem is that the <code>[FromForm]IFormFile file</code> in the controller is always <code>null</code>. This is only null in the <code>PWA</code> project. I have set the same project up without <code>PWA</code> and it <strong>works</strong>, it is not <code>null</code> and it is getting the selected image from the view! What is the difference there and why isn't the <code>HttpClient</code> doing the same as in the <code>Blazor WebAssembly ASP.Net Core hosted</code>?</p>\n"
+}

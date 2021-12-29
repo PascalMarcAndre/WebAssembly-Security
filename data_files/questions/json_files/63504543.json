@@ -1,0 +1,29 @@
+{
+    "tags": [
+        "azure",
+        "azure-functions",
+        "blazor",
+        "azure-ad-b2c",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 174,
+        "user_id": 1227445,
+        "user_type": "registered",
+        "accept_rate": 50,
+        "profile_image": "https://www.gravatar.com/avatar/258b21cb64d360f84617ef2ae72633b5?s=128&d=identicon&r=PG",
+        "display_name": "user1227445",
+        "link": "https://stackoverflow.com/users/1227445/user1227445"
+    },
+    "is_answered": true,
+    "view_count": 140,
+    "answer_count": 1,
+    "score": 1,
+    "last_activity_date": 1597967827,
+    "creation_date": 1597924535,
+    "question_id": 63504543,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/63504543/connect-to-active-directory-b2c-secured-azure-function-app-from-blazor-webassemb",
+    "title": "Connect to Active Directory B2C secured Azure Function App from Blazor Webassembly standalone",
+    "body": "<p>I have a standalone Blazor Webassembly project that I'm trying to access an Azure Function App from when running locally in Visual Studio like this for example.</p>\n<pre><code>response = await Http.GetStringAsync(&quot;https://mytestsite897845.azurewebsites.net/api/Test&quot;);\n</code></pre>\n<p>My Azure Function App is configured with Azure Active Directory Authentication / Authorization and I have set 'https://localhost:44351' in the Azure Function App CORS and ticked 'Enable Access-Control-Allow-Credentials'.</p>\n<p>In the Authentication / Authorization section, if I leave 'Action to take when request is not authenticated' set to 'Allow Anonymous requests (no action)', then the above call works just fine and I get a response from my 'Test' Azure Function.</p>\n<p>However as soon as I change 'Action to take when request is not authenticated' to 'Log in with Azure Active Directory', then the above call fails, even after I've logged in with Active Directory B2C. I get the following errors in the browser.</p>\n<pre><code>Access to fetch at 'https://login.windows.net/&lt;my client id&gt;/oauth2/authorize?response_type=code+id_token&amp;redirect_uri=https%3A%2F%2Fmytestsite897845.azurewebsites.net%2F.auth%2Flogin%2Faad%2Fcallback&amp;client_id=48fd8563-3826-4d79-b29a-907a17598afe&amp;scope=openid+profile+email&amp;response_mode=form_post&amp;nonce=e428bf7812ef4327a710b1162353ac3d_20200820091540&amp;state=redir%3D%252Fapi%252FTest'\n(redirected from 'https://mytestsite897845.azurewebsites.net/api/Test') from origin 'https://localhost:44351' has been blocked\nby CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. If an opaque response serves\nyour needs, set the request's mode to 'no-cors' to fetch the resource with CORS disabled.\n\nGET https://login.windows.net/&lt;my client id&gt;/oauth2/authorize?response_type=code+id_token&amp;redirect_uri=https%3A%2F%2Fmytestsite897845.azurewebsites.net%2F.auth%2Flogin%2Faad%2Fcallback&amp;client_id=48fd8563-3826-4d79-b29a-907a17598afe&amp;scope=openid+profile+email&amp;response_mode=form_post&amp;nonce=e428bf7812ef4327a710b1162353ac3d_20200820091540&amp;state=redir%3D%252Fapi%252FTest\nnet::ERR_FAILED\n\ncrit: Microsoft.AspNetCore.Components.WebAssembly.Rendering.WebAssemblyRenderer[100]\n      Unhandled exception rendering component: TypeError: Failed to fetch\nSystem.Net.Http.HttpRequestException: TypeError: Failed to fetch\n   at System.Net.Http.BrowserHttpHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)\n   at System.Net.Http.HttpClient.FinishSendAsyncUnbuffered(Task`1 sendTask, HttpRequestMessage request, CancellationTokenSource cts, Boolean disposeCts, CancellationToken callerToken, Int64 timeoutTime)\n   at System.Net.Http.HttpClient.GetStringAsyncCore(Task`1 getTask, CancellationToken cancellationToken)\n   at BACClient.Pages.Counter.OnInitializedAsync() in .\\Pages\\Counter.razor:line 79\n   at Microsoft.AspNetCore.Components.ComponentBase.RunInitAndSetParametersAsync()\n   at Microsoft.AspNetCore.Components.RenderTree.Renderer.GetErrorHandledTask(Task taskToHandle)\n</code></pre>\n<p>Anyone know what I'm missing?</p>\n"
+}

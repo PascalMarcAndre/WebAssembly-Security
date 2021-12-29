@@ -1,0 +1,28 @@
+{
+    "tags": [
+        "c#",
+        "authentication",
+        "authorization",
+        "blazor",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 595,
+        "user_id": 5104637,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/dae5c8c323762efd379e01ec6ec51dd2?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Tom Crosman",
+        "link": "https://stackoverflow.com/users/5104637/tom-crosman"
+    },
+    "is_answered": false,
+    "view_count": 62,
+    "answer_count": 4,
+    "score": 0,
+    "last_activity_date": 1616098708,
+    "creation_date": 1615829240,
+    "question_id": 66642735,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/66642735/require-authenticated-user-for-entire-app",
+    "title": "Require Authenticated User (For entire app)",
+    "body": "<p>How can I configure my Blazor WebAssembly to require authenticated users for the entire app rather than mark each page or controllers with the [Authorize] attribute?</p>\n<p>My app should only allow authorized users, and the recommended configuration loads a little bit of the page before redirecting to the login.</p>\n"
+}

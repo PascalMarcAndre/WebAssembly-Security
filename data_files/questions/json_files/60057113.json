@@ -1,0 +1,27 @@
+{
+    "tags": [
+        "blazor",
+        "blazor-server-side"
+    ],
+    "owner": {
+        "reputation": 865,
+        "user_id": 1725931,
+        "user_type": "registered",
+        "accept_rate": 92,
+        "profile_image": "https://www.gravatar.com/avatar/84cfcfaa7ce8a7c8a9883411d85cdb64?s=128&d=identicon&r=PG",
+        "display_name": "Newm",
+        "link": "https://stackoverflow.com/users/1725931/newm"
+    },
+    "is_answered": true,
+    "view_count": 2169,
+    "answer_count": 2,
+    "score": 7,
+    "last_activity_date": 1611963753,
+    "creation_date": 1580818121,
+    "last_edit_date": 1580825593,
+    "question_id": 60057113,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/60057113/blazor-webassembly-with-clean-architecture",
+    "title": "Blazor WebAssembly with Clean Architecture",
+    "body": "<p>I am working on a proof of concept project using Blazor WebAssembly.  The project already has a React front end that I am hoping to replicate in Blazor.</p>\n\n<p>I have the following projects in my solution:</p>\n\n<ul>\n<li>Domain - contains entities and does not reference any other layers</li>\n<li>Application - references the domain and contains DTOs,\ncommands/queries (using MediatR/Dapper), validators (using\nFluidValidation) and interfaces for subsequent layers to implement</li>\n<li>Persistence \u2013 references application and uses EF Core to store the\ndomain models in the database</li>\n<li>API - a Web API that registers everything using DI and exposes the\ncommands/queries from the application layer via controllers</li>\n<li>React Front End - uses AJAX to talk to the API</li>\n</ul>\n\n<p>I would like to reference the Application layer in a Blazor WebAssembly project so that I can reuse the validation rules that exist against the DTOs.  Would it be possible for somebody to step though the code in the browser and extract sensitive information, such as connection strings, from the commands/queries?</p>\n\n<p>For example, a simple query may look like this and stepping through the code would allow the <code>IDbConnection</code> to be inspected:  </p>\n\n<pre><code>public class PayCategoryListQueryHandler\n    : IRequestHandler&lt;PayCategoryListQuery, PayCategoryListQueryVm&gt;\n  {\n    private readonly IDbConnection _connection;\n\n    public PayCategoryListQueryHandler(IDbConnection connection)\n    {\n      _connection = connection;\n    }\n\n    public async Task&lt;PayCategoryListQueryVm&gt; Handle(PayCategoryListQuery query, CancellationToken cancellationToken)\n    {\n      {\n        var viewModel = new PayCategoryListQueryVm();\n\n        viewModel.AddRange(\n          await _connection.QueryAsync&lt;PayCategoryListItemDto&gt;(\n            \"SELECT Id, Description, MakeAttendedTimeZero, IsOffSite, IsVisibleToClient FROM PayCategory ORDER BY Description\"));\n\n        return viewModel;\n      }\n    }\n  }\n</code></pre>\n\n<p>Do I need to extract the DTOs and their validation a separate layer that does not contain any database access code to prevent the connection string being leaked?</p>\n\n<p><strong>Clarification</strong></p>\n\n<p>To try and clarify the issue I would like to try and explain my situation a bit better.</p>\n\n<p>My current application uses a React front end with Formik and Yup providing the validation.  This means that each time a change is made to a validation rule I need to reflect it in two places \u2013 the Application layer and the React application. I was hoping that moving to Blazor would alleviate the duplication by only having to maintain validation rules in the Application layer.</p>\n\n<p>The architecture I am currently using is based upon the <a href=\"https://github.com/jasontaylordev/NorthwindTraders\" rel=\"noreferrer\">NorthwindTraders</a> sample application.</p>\n\n<p>Using that example, <a href=\"https://github.com/jasontaylordev/NorthwindTraders/blob/master/Src/Application/Customers/Commands/CreateCustomer/CreateCustomerCommand.cs\" rel=\"noreferrer\">CreateCustomerCommand</a> makes use of <a href=\"https://github.com/jasontaylordev/NorthwindTraders/blob/master/Src/Application/Customers/Commands/CreateCustomer/CreateCustomerCommandValidator.cs\" rel=\"noreferrer\">CreateCustomerCommandValidator</a> which will respond to POST requests via <a href=\"https://github.com/jasontaylordev/NorthwindTraders/blob/master/Src/WebUI/Controllers/CustomersController.cs\" rel=\"noreferrer\">CustomersController</a>.  In order to use this for <strong>client-side</strong> validation in Blazor WebAssembly I would currently need to reference the Application layer.</p>\n\n<p>Given this scenario should all the commands (not command handlers) and validators be moved to a separate project which could then be referenced by Blazor.  The command handlers could remain in the Application layer therefore removing any database access code.</p>\n"
+}

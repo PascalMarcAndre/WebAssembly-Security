@@ -1,0 +1,28 @@
+{
+    "tags": [
+        "c#",
+        "authentication",
+        "blazor",
+        "webassembly",
+        "msal"
+    ],
+    "owner": {
+        "reputation": 15,
+        "user_id": 13971084,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/da155201719657217c52a4ca2569c1cc?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Drdoomsalot",
+        "link": "https://stackoverflow.com/users/13971084/drdoomsalot"
+    },
+    "is_answered": false,
+    "view_count": 36,
+    "answer_count": 0,
+    "score": 0,
+    "last_activity_date": 1595873857,
+    "creation_date": 1595873857,
+    "question_id": 63121229,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/63121229/is-there-a-way-to-add-several-app-registers-to-my-service-provider-for-federatio",
+    "title": "Is there a way to add several app registers to my service provider for federation log in?",
+    "body": "<p>I want to be able to call a different app register depending on what my user selects. I want to be able to have someone create a tenant and then make their own app registration. Then I want to add their app registration to the list of ones I can call to log in from. I'm not really sure how to do that or even if I'm using the right tools.</p>\n<p>Here is how I am adding MSAL Authentication:</p>\n<pre><code>builder.Services.AddMsalAuthentication(options =&gt;\n{\n    var authentication = options.ProviderOptions.Authentication;\n    authentication.Authority = FakeADTenant.TenantAddress;\n    authentication.ClientId = FakeADTenant.AppId;\n    authentication.ValidateAuthority = true;\n\n    options.ProviderOptions.DefaultAccessTokenScopes.Add(FakeADTenant.TokenScope);\n});\n</code></pre>\n<p>I'm hoping I can do something like this:</p>\n<pre><code>builder.Services.AddMsalAuthentication(options =&gt;\n{\n    var authentication = options.ProviderOptions.Authentication;\n    authentication.Authority = FakeADTenant.TenantAddress;\n    authentication.ClientId = FakeADTenant.AppId;\n    authentication.ValidateAuthority = true;\n\n    options.ProviderOptions.DefaultAccessTokenScopes.Add(FakeADTenant.TokenScope);\n});\n\nbuilder.Services.AddMsalAuthentication(options =&gt;\n{\n    var authentication = options.ProviderOptions.Authentication;\n    authentication.Authority = FakeADB2Tenant.TenantAddress;\n    authentication.ClientId = FakeADB2Tenant.AppId;\n    authentication.ValidateAuthority = true;\n\n    options.ProviderOptions.DefaultAccessTokenScopes.Add(FakeADB2Tenant.TokenScope);\n});\n</code></pre>\n<p>I'm hoping I can maybe create a new class for each tenant and call the service with the class or something like that.</p>\n<p>On the other end, when the log in button is clicked, I'm using this page to log in:</p>\n<pre><code>@page &quot;/authentication/{action}&quot;\n@using Microsoft.AspNetCore.Components.WebAssembly.Authentication\n\n&lt;RemoteAuthenticatorView Action=&quot;@Action&quot; /&gt;\n\n@code{\n    [Parameter] public string Action { get; set; }\n}\n</code></pre>\n<p>Thanks for any help, I'm kind of lost here.</p>\n"
+}

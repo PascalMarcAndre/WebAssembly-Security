@@ -1,0 +1,28 @@
+{
+    "tags": [
+        "node.js",
+        "webassembly",
+        "honeypot"
+    ],
+    "owner": {
+        "reputation": 14881,
+        "user_id": 736518,
+        "user_type": "registered",
+        "accept_rate": 77,
+        "profile_image": "https://www.gravatar.com/avatar/1254365f8c7b7af893a73fb937799afe?s=128&d=identicon&r=PG",
+        "display_name": "timaschew",
+        "link": "https://stackoverflow.com/users/736518/timaschew"
+    },
+    "is_answered": false,
+    "view_count": 144,
+    "answer_count": 0,
+    "score": 1,
+    "last_activity_date": 1581423502,
+    "creation_date": 1581321829,
+    "last_edit_date": 1581423502,
+    "question_id": 60146270,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/60146270/im-afraid-ive-installed-a-scam-npm-package-how-to-analyse-a-wasm",
+    "title": "I&#39;m afraid I&#39;ve installed a scam npm package: how to analyse a Wasm?",
+    "body": "<p>I've installed and <strong>executed</strong> (with nodejs) a package from npm: <a href=\"https://www.npmjs.com/package/openssl.js\" rel=\"nofollow noreferrer\">https://www.npmjs.com/package/openssl.js</a></p>\n\n<p>Somehow I didn't realize that it hasn't a good reputation (almost no activity/stars on twitter, github). Now I'm afraid that it is a scam. The worst case would be that is stealing/encrypting my data or something like that.</p>\n\n<p>I've checked the processes, I/O and network in the activity monitor but nothing interesting.\nBut I would like to have more confidence that everything is okay.</p>\n\n<p>Since it is a Wasm file I cannot just check the source code.\nI've tried to decompile with this tool: <a href=\"https://github.com/WebAssembly/wabt\" rel=\"nofollow noreferrer\">https://github.com/WebAssembly/wabt</a> but it gives me for all binaries in that project this error: <code>error: @0x00000004: bad magic value</code>.</p>\n\n<p>Maybe because in the README of the openssl.js package they claim it is build with wasienv toolchain?</p>\n\n<p>Another idea would be install a honeypot and run the same commands in the honeypot. But which honeypot is suitable for this?</p>\n\n<p>// edit</p>\n\n<p>I was able to run wasm2c on this file: <strong>src/raw-wasm/openssl.wasm</strong>.\nBut how can I ensure there was no network interactivity?<br>\nHere are the first lines of the output: <a href=\"https://pastebin.com/YYHecFAC\" rel=\"nofollow noreferrer\">https://pastebin.com/YYHecFAC</a></p>\n"
+}

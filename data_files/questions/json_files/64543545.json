@@ -1,0 +1,29 @@
+{
+    "tags": [
+        "c#",
+        "asp.net-core",
+        ".net-core",
+        "blazor",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 2627,
+        "user_id": 1435376,
+        "user_type": "registered",
+        "accept_rate": 60,
+        "profile_image": "https://i.stack.imgur.com/Ft6s1.jpg?s=128&g=1",
+        "display_name": "Ruben-J",
+        "link": "https://stackoverflow.com/users/1435376/ruben-j"
+    },
+    "is_answered": false,
+    "view_count": 80,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1603790065,
+    "creation_date": 1603739444,
+    "question_id": 64543545,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/64543545/webassembly-blazor-not-using-token-when-deployed-on-iis",
+    "title": "WebAssembly Blazor not using token when deployed on IIS",
+    "body": "<p>I'm currently developing a WebAssembly Blazor application which uses Identity Server 4. As described here <a href=\"https://docs.microsoft.com/en-us/aspnet/core/blazor/security/webassembly/hosted-with-identity-server?view=aspnetcore-3.1&amp;tabs=visual-studio\" rel=\"nofollow noreferrer\">https://docs.microsoft.com/en-us/aspnet/core/blazor/security/webassembly/hosted-with-identity-server?view=aspnetcore-3.1&amp;tabs=visual-studio</a></p>\n<p>When I'm debugging locally or deploy to Azure everything works fine. I can login and the WebAssembly Client uses the token for all future requests. However when I deploy my application to IIS I get stuck in a login loop. On the server no errors are logged and the login is successful. On the client I see that the POST to /connect/token has a valid token as response (which I checked by using the token with Postman). However it looks like the client ignores the the token cause after that I see it logs to the console:</p>\n<pre><code>Info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[2]\n  Authorization failed.\n</code></pre>\n<p>And then it redirects me to login again. Even stranger for me is that also locally on the IIS server this doesn't happen. I'm really confused on why only this happens for remote use on IIS and not on Azure. Hope someone can point me in the right direction.</p>\n"
+}

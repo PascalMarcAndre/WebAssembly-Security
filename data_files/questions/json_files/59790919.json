@@ -1,0 +1,31 @@
+{
+    "tags": [
+        "javascript",
+        "c++",
+        "browser",
+        "webassembly",
+        "emscripten"
+    ],
+    "owner": {
+        "reputation": 384,
+        "user_id": 215263,
+        "user_type": "registered",
+        "accept_rate": 43,
+        "profile_image": "https://www.gravatar.com/avatar/2aa7638b045d1bfb5cc568748408d33d?s=128&d=identicon&r=PG&f=1",
+        "display_name": "b26",
+        "link": "https://stackoverflow.com/users/215263/b26"
+    },
+    "is_answered": true,
+    "view_count": 288,
+    "accepted_answer_id": 60450888,
+    "answer_count": 1,
+    "score": 1,
+    "last_activity_date": 1582910682,
+    "creation_date": 1579277131,
+    "last_edit_date": 1582891603,
+    "question_id": 59790919,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/59790919/how-to-detect-browser-information-from-webassembly-module",
+    "title": "How to detect browser information from WebAssembly module?",
+    "body": "<p>How to initiate a C++ variable (compiled to WebAssembly) from a value detected through JavaScript at launch (like current <code>screen.availWidth</code>)?</p>\n\n<p>This code needs to be initiated from WebAssembly module, so the user can't inject a different value than the real one.</p>\n"
+}

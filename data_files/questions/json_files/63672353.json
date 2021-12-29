@@ -1,0 +1,28 @@
+{
+    "tags": [
+        "c#",
+        "blazor",
+        "blazor-server-side",
+        "blazor-client-side",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 143,
+        "user_id": 10371377,
+        "user_type": "registered",
+        "profile_image": "https://lh3.googleusercontent.com/-9fgEldXjMGM/AAAAAAAAAAI/AAAAAAAAAKo/yqNgYYO8Wfs/photo.jpg?sz=128",
+        "display_name": "Nath Shivanand",
+        "link": "https://stackoverflow.com/users/10371377/nath-shivanand"
+    },
+    "is_answered": true,
+    "view_count": 745,
+    "answer_count": 2,
+    "score": 1,
+    "last_activity_date": 1598976541,
+    "creation_date": 1598882778,
+    "question_id": 63672353,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/63672353/how-to-call-create-webapiblazor-server-app-in-client-sideblazor-webassembly",
+    "title": "how to call create webapi(blazor server app) in client side(blazor webassembly)",
+    "body": "<p>I create a blazor server app project and I use a webapi built in crud api framework</p>\n<p>EmpsController.cs</p>\n<pre><code>    [Route(&quot;api/[controller]&quot;)]\n    [ApiController]\n    public class EmpsController : ControllerBase\n    {\n        private readonly sqldbcontext _context;\n\n        public EmpsController(sqldbcontext context)\n        {\n            _context = context;\n        }\n\n        // GET: api/Emps\n        [HttpGet]\n        public async Task&lt;ActionResult&lt;IEnumerable&lt;Emp&gt;&gt;&gt; Getemps()\n        {\n            return await _context.emps.ToListAsync();\n        }\n\n       [HttpPost]\n        public async Task&lt;ActionResult&lt;Emp&gt;&gt; PostEmp(Emp emp) //I want to call this webapi in clientside(webassembly app)\n        {\n            _context.emps.Add(emp);\n            await _context.SaveChangesAsync();\n\n            return CreatedAtAction(&quot;GetEmp&quot;, new { id = emp.empid }, emp);\n        }\n</code></pre>\n<p>and then I create a blazor webassembly project and create a razor component</p>\n<p>Registration.razor</p>\n<pre><code>@page &quot;/registration&quot;\n@using Newtonsoft.Json;\n@inject NavigationManager navigationManager\n&lt;h3&gt;Registration&lt;/h3&gt;\n@using CrudBlazorServerApp.Data\n\n&lt;div&gt;\n    UserName: &lt;input type=&quot;text&quot; id=&quot;txtusername&quot; placeholder=&quot;Enter Your UserName&quot; @bind=&quot;@username&quot; required /&gt;&lt;br /&gt;\n    Address: &lt;input type=&quot;text&quot; id=&quot;txtempaddress&quot; placeholder=&quot;Enter Your Address&quot; @bind=&quot;@address&quot; required /&gt;&lt;br /&gt;\n    Password:  &lt;input type=&quot;text&quot; id=&quot;txtpassword&quot; placeholder=&quot;Enter Your Password&quot; @bind=&quot;@password&quot; required /&gt;&lt;br /&gt;\n    Country: &lt;input type=&quot;text&quot; id=&quot;txtcountry&quot; placeholder=&quot;Enter Your Country&quot; @bind=&quot;@country&quot; required /&gt;&lt;br /&gt;\n    &lt;button @onclick=&quot;Create&quot;&gt;Submit&lt;/button&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;\n    &lt;a href=&quot;https://localhost:44399/&quot;&gt;Click Here For Login&lt;/a&gt;\n&lt;/div&gt;\n\n@code {\n    string username = &quot;&quot;;\n    string address = &quot;&quot;;\n    string password = &quot;&quot;;\n    string country = &quot;&quot;;\n\n    Emp empList = new Emp();\n\n    protected async Task Create()\n    {\n        var client = new HttpClient();\n\n        HttpResponseMessage response = await client.PostAsJsonAsync&lt;Emp&gt;(&quot;https://localhost:44333/api/emps&quot;,empList);\n        client.DefaultRequestHeaders.Accept.Clear();\n        client.DefaultRequestHeaders.Add(&quot;Accept&quot;, &quot;application/json&quot;);\n        @if (response.IsSuccessStatusCode)\n        {\n            var returnuserdata = await response.Content.ReadAsStringAsync();\n            var userdata = JsonConvert.DeserializeObject(returnuserdata);\n            if (userdata != null)\n            {\n                navigationManager.NavigateTo(&quot;/login&quot;);\n            }\n            else\n            {\n                navigationManager.NavigateTo(&quot;/registration&quot;);\n            }\n        }\n    }\n}\n</code></pre>\n<p>server side(blazor server app project)</p>\n<p><a href=\"https://i.stack.imgur.com/t6GVI.png\" rel=\"nofollow noreferrer\">https://i.stack.imgur.com/t6GVI.png</a></p>\n<p>client side(webassembly project)</p>\n<p><a href=\"https://i.stack.imgur.com/JZxua.png\" rel=\"nofollow noreferrer\">https://i.stack.imgur.com/JZxua.png</a></p>\n<p>I am trying to create record but record not created?</p>\n<p>what I am missing?</p>\n<p>which place need to correction?</p>\n"
+}

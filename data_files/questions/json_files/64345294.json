@@ -1,0 +1,25 @@
+{
+    "tags": [
+        "blazor"
+    ],
+    "owner": {
+        "reputation": 1256,
+        "user_id": 1193140,
+        "user_type": "registered",
+        "accept_rate": 74,
+        "profile_image": "https://www.gravatar.com/avatar/a3996263ecaf08439d015cb3be25af8f?s=128&d=identicon&r=PG",
+        "display_name": "Ryan Buening",
+        "link": "https://stackoverflow.com/users/1193140/ryan-buening"
+    },
+    "is_answered": false,
+    "view_count": 394,
+    "answer_count": 0,
+    "score": 4,
+    "last_activity_date": 1602638453,
+    "creation_date": 1602638453,
+    "question_id": 64345294,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/64345294/blazor-webassembly-websocket-connection-to-ws-127-0-0-151489-failed-err",
+    "title": "Blazor WebAssembly - WebSocket connection to &#39;ws://127.0.0.1:51489/&#39; failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED",
+    "body": "<p>I have a Blazor WebAssembly project which I start locally by using <code>dotnet watch run</code>. When I do this, I get the following output:</p>\n<pre><code>C:\\dev\\BlazorRater\\BlazorRater.UI [master \u2261 +1 ~5 -1 !]&gt; dotnet watch run\nwatch : Started\nBuilding...\ninfo: Microsoft.Hosting.Lifetime[0]\n      Now listening on: http://localhost:5000\ninfo: Microsoft.Hosting.Lifetime[0]\n      Application started. Press Ctrl+C to shut down.\ninfo: Microsoft.Hosting.Lifetime[0]\n      Hosting environment: Development\ninfo: Microsoft.Hosting.Lifetime[0]\n      Content root path: C:\\dev\\BlazorRater\\BlazorRater.UI\n</code></pre>\n<p>In the browser console, the following gets logged on the initial load:</p>\n<pre><code>Debugging hotkey: Shift+Alt+D (when application has focus)\nblazor.webassembly.js:1 blazor Loaded 8.87 MB resourcesThis application was built with linking (tree shaking) disabled. Published applications will be significantly smaller.\n(index):28 WebSocket connection to 'ws://127.0.0.1:51489/' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED\n(anonymous) @ (index):28\n</code></pre>\n<p>When I make a change to a .razor, .razor.css, or .cs, the browser doesn't automatically reload.</p>\n<p>If I then do a Ctrl+F5 to reload my app, I do <strong>not</strong> get the WebSocket connection failure in the console:</p>\n<pre><code>Debugging hotkey: Shift+Alt+D (when application has focus)\nblazor.webassembly.js:1 blazor Loaded 8.87 MB resourcesThis application was built with linking (tree shaking) disabled. Published applications will be significantly smaller.\n</code></pre>\n<p>and now when I make a change to a .razor, .razor.css, or .cs file the browser <strong>will</strong> automatically reload with my changes.</p>\n<p>Why on initial load am I getting a WebSocket error, but don't when I perform a Ctrl+F5? Also, a Ctrl+R does not solve the WebSocket issue. Only a Ctrl+F5 fixes it.</p>\n"
+}

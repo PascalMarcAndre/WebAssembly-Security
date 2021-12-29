@@ -1,0 +1,25 @@
+{
+    "tags": [
+        "javascript",
+        "webassembly"
+    ],
+    "owner": {
+        "reputation": 21,
+        "user_id": 13805084,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/2c064102c4a0a4e8fb1d6d3d11e30fd6?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Humberto",
+        "link": "https://stackoverflow.com/users/13805084/humberto"
+    },
+    "is_answered": false,
+    "view_count": 63,
+    "answer_count": 0,
+    "score": 2,
+    "last_activity_date": 1592995983,
+    "creation_date": 1592995983,
+    "question_id": 62553391,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/62553391/webassembly-file-input-and-virtual-file-system",
+    "title": "Webassembly, file input and virtual file system",
+    "body": "<p>I would like to create a web application that utilizes some C library (<a href=\"https://gitlab.com/Teuniz/EDFlib\" rel=\"nofollow noreferrer\">EDFLib</a>) to read EDF files. The idea would be that the user picks a local file through a <code>&lt;input type=&quot;file&quot; /&gt;</code> to be parsed by the C library. The C library uses <code>fopen</code> to read a given path file to parse the header and then you can read chunks of that file at any offset, which makes reading quite optimal. EDF files are usually quite big as they contain a significant number of bio signals (a normal file can be around 400MB).</p>\n<p>I have been able to compile the C library with the emscripten tools and make the calls to the library successfully. However, I am not sure how to address this situation of passing a file that has been picked by the user due to the limitation of the sandbox of the VM.</p>\n<p>I have found other <a href=\"https://stackoverflow.com/a/47422016/13805084\">similar question</a>, but the solution proposed is about copying the content of the file to the virtual file system, and then use that copied file in the routines of the library. I would like to know if there is some workaround to avoid copying the file to avoid the overload of reading such a big file directly in javascript as it would penalty the performance of the app significantly.</p>\n<p>In my mind, as the user picks the file, it should be also accessible to the WebAssembly context without having to perform any extra action. This is well illustrated in the following picture (taken from <a href=\"https://hacks.mozilla.org/2019/03/standardizing-wasi-a-webassembly-system-interface/\" rel=\"nofollow noreferrer\">this Mozilla post on WASI</a>). So when the user selects a file, there should be some path or file descriptor that can be passed to the C code. However, I have not found a way to do so.</p>\n<p><a href=\"https://i.stack.imgur.com/Nuiee.png\" rel=\"nofollow noreferrer\">illustration of webassembly indicating which files and folders are accessible for the JS application</a></p>\n<p>Any idea whether what I am trying to do is feasible or not?</p>\n"
+}

@@ -1,0 +1,29 @@
+{
+    "tags": [
+        "visual-studio",
+        "ssl",
+        "asp.net-web-api",
+        "identityserver4",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 1,
+        "user_id": 2260740,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/172a1d96f5c1dd33a1d7865c6c2a3c73?s=128&d=identicon&r=PG&f=1",
+        "display_name": "MhD hN",
+        "link": "https://stackoverflow.com/users/2260740/mhd-hn"
+    },
+    "is_answered": false,
+    "view_count": 42,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1613601978,
+    "creation_date": 1613490009,
+    "last_edit_date": 1613546321,
+    "question_id": 66227516,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/66227516/the-site-can-t-be-reached-after-adding-identity-server-authentication",
+    "title": "The site can\u2019t be reached after adding Identity Server authentication",
+    "body": "<p>I created a program with Visual Studio 2019 in Windows 10 Pro Build 19042.630 by <a href=\"https://docs.microsoft.com/en-us/aspnet/core/blazor/security/webassembly/hosted-with-identity-server?view=aspnetcore-5.0&amp;tabs=visual-studio%3E\" rel=\"nofollow noreferrer\">Secure an ASP.NET Core Blazor WebAssembly hosted app with Identity Server</a>, without applying any changes to the default template. I pressed F5 or Ctrl+F5 but browser did not show the home page  in <strong>localhost</strong> and said <a href=\"https://i.stack.imgur.com/QKhJ9.png\" rel=\"nofollow noreferrer\">This site can\u2019t be reached</a> ERR_CONNECTION_REFUSED. In debug tab <a href=\"https://i.stack.imgur.com/UTAkV.png\" rel=\"nofollow noreferrer\">SSL was Enable</a>, but after I disabled it the home page rendered. Now I need SSL for Security, Identity Server and Can not work..</p>\n<p>These solutions did not help me</p>\n<ol>\n<li><a href=\"https://stackoverflow.com/questions/1582788/visual-studio-not-debugging\">Visual Studio not debugging</a></li>\n<li><a href=\"https://stackoverflow.com/questions/39189755/enable-ssl-in-visual-studio-not-prompted-to-install-certificate\">Enable SSL in Visual Studio - not prompted to install certificate</a></li>\n<li><a href=\"https://www.hanselman.com/blog/working-with-ssl-at-development-time-is-easier-with-iisexpress\" rel=\"nofollow noreferrer\">https://www.hanselman.com/blog/working-with-ssl-at-development-time-is-easier-with-iisexpress</a></li>\n<li><a href=\"https://www.pluralsight.com/guides/visual-studio-2017-resolving-ssl-tls-connections-problems-with-iis-express\" rel=\"nofollow noreferrer\">https://www.pluralsight.com/guides/visual-studio-2017-resolving-ssl-tls-connections-problems-with-iis-express</a></li>\n</ol>\n<p>Thanks a lot for your suggestions....</p>\n"
+}

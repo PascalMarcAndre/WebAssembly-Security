@@ -1,0 +1,29 @@
+{
+    "tags": [
+        "asp.net-core",
+        ".net-core",
+        "blazor",
+        "azure-ad-b2c",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 203,
+        "user_id": 5004920,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/1ef4952641dba5749d1992edfe786b6c?s=128&d=identicon&r=PG",
+        "display_name": "Eduardo Fonseca",
+        "link": "https://stackoverflow.com/users/5004920/eduardo-fonseca"
+    },
+    "is_answered": true,
+    "view_count": 39,
+    "accepted_answer_id": 66631463,
+    "answer_count": 1,
+    "score": 1,
+    "last_activity_date": 1615773547,
+    "creation_date": 1615739916,
+    "question_id": 66626979,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/66626979/issue-with-password-reset-flow-for-blazor-with-azure-ad-b2c",
+    "title": "Issue with Password Reset Flow for Blazor with Azure AD B2C",
+    "body": "<p>We have a Blazor WebAssembly app running on .NET Core 3.1 and using Azure B2C Authentication Flows.</p>\n<p>Login flows work just find.</p>\n<p>We now need to implement the Password Reset Flow.\nThe defaults were not working so we followed this guide for a workaround.</p>\n<p><a href=\"https://iheartms.azurewebsites.net/2020/04/10/blazor-aad-b2c-additional-user-flows/?fbclid=IwAR0LQn1zeXPY5JIpezJkMtdzmQSkP38PkFzGeFeUM72-pSD1-rvTsR0BWOE\" rel=\"nofollow noreferrer\">https://iheartms.azurewebsites.net/2020/04/10/blazor-aad-b2c-additional-user-flows/?fbclid=IwAR0LQn1zeXPY5JIpezJkMtdzmQSkP38PkFzGeFeUM72-pSD1-rvTsR0BWOE</a></p>\n<p>It worked for the most part, we are able to reset the password, however, when the flow navigates back to the Blazor App with the token, the passwordreset-callback page is displayed but not redirecting to the main page,\nwe even tried to override all of the methods in the page component to check if any is executing, but none is.</p>\n<p>We need a way to fix this, so the users can login after resetting the password.</p>\n"
+}

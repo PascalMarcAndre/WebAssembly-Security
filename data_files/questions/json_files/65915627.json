@@ -1,0 +1,26 @@
+{
+    "tags": [
+        "blazor",
+        "blazor-server-side"
+    ],
+    "owner": {
+        "reputation": 85,
+        "user_id": 13256346,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/670d97991536404c55736392029ce1ba?s=128&d=identicon&r=PG&f=1",
+        "display_name": "user13256346",
+        "link": "https://stackoverflow.com/users/13256346/user13256346"
+    },
+    "is_answered": true,
+    "view_count": 73,
+    "accepted_answer_id": 65915761,
+    "answer_count": 1,
+    "score": 1,
+    "last_activity_date": 1611737757,
+    "creation_date": 1611737186,
+    "question_id": 65915627,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/65915627/enable-css-isolation-of-rcl-to-work-in-blazor-server",
+    "title": "Enable CSS isolation of RCL to work in blazor server",
+    "body": "<p>I have a razor class library and blazor server that consumes this library, each component in RCL has own css, after reading documentation of microsoft <a href=\"https://docs.microsoft.com/en-us/aspnet/core/blazor/components/css-isolation?view=aspnetcore-5.0\" rel=\"nofollow noreferrer\">ASP.NET Core Blazor CSS isolation</a> I did the following:</p>\n<ol>\n<li>In my razor page of blazor server I added my component: <code>&lt;MyComponent /&gt;</code></li>\n<li>In _Host page I added link for bundeling: <code>&lt;link href=&quot;Blazor.Components.styles.css&quot; rel=&quot;stylesheet&quot;&gt;</code>.</li>\n</ol>\n<p>After running the application I couldn't see the css of MyComponent.</p>\n<p>Did I make something wrong? Can you give me some advice?. I read this <a href=\"https://dev.to/dharsha007/net-5-0-blazor-bites-css-isolation-for-blazor-components-2c33\" rel=\"nofollow noreferrer\">page</a> that follows the same approach but for Webassembly!.</p>\n<p>Thanks.</p>\n"
+}

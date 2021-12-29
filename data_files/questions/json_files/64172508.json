@@ -1,0 +1,29 @@
+{
+    "tags": [
+        "javascript",
+        "c++",
+        "c",
+        "memory-leaks",
+        "webassembly"
+    ],
+    "owner": {
+        "reputation": 1,
+        "user_id": 14379922,
+        "user_type": "registered",
+        "profile_image": "https://lh4.googleusercontent.com/-cXGVB7TpHy8/AAAAAAAAAAI/AAAAAAAAAAA/AMZuucltSVPPaGr8Ey3Yg7WA4snRmFd88Q/photo.jpg?sz=128",
+        "display_name": "ricc vivio",
+        "link": "https://stackoverflow.com/users/14379922/ricc-vivio"
+    },
+    "is_answered": false,
+    "view_count": 132,
+    "answer_count": 0,
+    "score": 0,
+    "last_activity_date": 1601655355,
+    "creation_date": 1601645786,
+    "last_edit_date": 1601655355,
+    "question_id": 64172508,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/64172508/webassembly-memory-leak",
+    "title": "Webassembly memory leak",
+    "body": "<p>I have webassembly code running and i can clearly see some memory leaks. The code is written in C and when I compile with gcc and run the C code there is no memory leak. In the browser javascript just calls a <code>webassembly</code> function (the same function that I tested in C code) and runs it. Using both htop and task manager for Chrome I can see the memory growing during a &quot;for&quot; cycle of that function, but I debugged that same cycle in C using <code>valgrind</code> and as I said before there are no memory leaks. When I compile using <code>webassembly</code> I use this command:</p>\n<pre><code>emcc llab/*.c client_side/*.c -s WASM=1 -s ASSERTIONS=1 -s ALLOW_MEMORY_GROWTH=1 -s USE_PTHREADS=1 -s WASM_MEM_MAX=4GB -s PTHREAD_POOL_SIZE=4 --preload-file data --no-heap-copy -O3 -lm -lpthread -o index.js\n</code></pre>\n<p>During that function the client should create some threads and do some stuff. As i said, in C that function doesn't create any memory leaks, is this a bug of <code>wasm</code>, Chrome or what else could be?</p>\n<p>Furthemore the function does what it is supposed to do, but there is this memory leak that is giving me troubles because I need to iterate that function more and more times. The process created by that function allocates immediatly aboout 800Mb and then when it does the &quot;for&quot; cycle the memory grows with about 1 Mb (more or less) each step (sometimes more sometimes less). As i said i debugged the code in C and there are no memory leaks. The for cycle creates and joins threads which are the core of the function. Any help is appreciated. I can't post the code because is too long is based on a library built in 2 years in C, but I can give my word that in C there are no memory leaks.</p>\n"
+}

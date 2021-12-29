@@ -1,0 +1,28 @@
+{
+    "tags": [
+        "asp.net-core",
+        "authentication",
+        "asp.net-identity",
+        "blazor"
+    ],
+    "owner": {
+        "reputation": 45,
+        "user_id": 13253887,
+        "user_type": "registered",
+        "profile_image": "https://i.stack.imgur.com/ptSpj.jpg?s=128&g=1",
+        "display_name": "dingdonglars",
+        "link": "https://stackoverflow.com/users/13253887/dingdonglars"
+    },
+    "is_answered": true,
+    "view_count": 618,
+    "accepted_answer_id": 61565996,
+    "answer_count": 2,
+    "score": 1,
+    "last_activity_date": 1588491010,
+    "creation_date": 1588448813,
+    "question_id": 61565364,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/61565364/blazor-hosted-authorize-immediately-before-displaying-application",
+    "title": "Blazor hosted - authorize immediately before displaying application",
+    "body": "<p>Can anybody give me a helping push to get my hosted Blazor application (Client, Server and Shared) to request a login immediately, before the application is initially shown. I want the experience that a user must log in before accessing the application at all.</p>\n\n<p>My starting point is the Blazor Webassembly (hosted) template with Api Authorization (Individual User Accounts)</p>\n\n<p>Using the <code>Authorize</code> attribute on either server-side actions or a client-side Razor page will not initiate the authentication flow before the specific action/page with the <code>Authorize</code> attribute is being requested by the user. How would I go about having the authorization flow kicked off as the first thing, before the application is even displayed for the first time? </p>\n\n<p>I am sure this is possible and even trivial for somebody more savvy than me. Can anybody give me a shove in the right direction, please?</p>\n"
+}

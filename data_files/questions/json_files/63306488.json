@@ -1,0 +1,31 @@
+{
+    "tags": [
+        "ios",
+        "security",
+        "webassembly",
+        "sharedarraybuffer",
+        "cross-origin-opener-policy"
+    ],
+    "owner": {
+        "reputation": 1900,
+        "user_id": 856947,
+        "user_type": "registered",
+        "accept_rate": 95,
+        "profile_image": "https://i.stack.imgur.com/uFcyq.jpg?s=128&g=1",
+        "display_name": "Jackalope",
+        "link": "https://stackoverflow.com/users/856947/jackalope"
+    },
+    "is_answered": true,
+    "view_count": 114,
+    "accepted_answer_id": 63324217,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1615831739,
+    "creation_date": 1596820597,
+    "last_edit_date": 1615831739,
+    "question_id": 63306488,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/63306488/can-i-use-sharedarraybuffer-on-ios",
+    "title": "Can I use SharedArrayBuffer on iOS?",
+    "body": "<p>According to Mozilla, <a href=\"https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Opener-Policy\" rel=\"nofollow noreferrer\">there is no browser on iOS supporting the cross-origin-opener-policy,</a> which is one of the <a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer\" rel=\"nofollow noreferrer\">security requirements for enabling a SharedArrayBuffer.</a> Does this mean I cannot use a SharedArrayBuffer for any web-application on the iOS platform?</p>\n"
+}

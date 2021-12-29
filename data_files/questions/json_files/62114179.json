@@ -1,0 +1,30 @@
+{
+    "tags": [
+        "go",
+        "rust",
+        "webassembly",
+        "asm.js"
+    ],
+    "owner": {
+        "reputation": 485,
+        "user_id": 8588369,
+        "user_type": "registered",
+        "accept_rate": 80,
+        "profile_image": "https://www.gravatar.com/avatar/db8dd75cc70f90a4e2e31cdf5b9aa68c?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Nathan Aw",
+        "link": "https://stackoverflow.com/users/8588369/nathan-aw"
+    },
+    "is_answered": true,
+    "view_count": 69,
+    "closed_date": 1590926234,
+    "answer_count": 1,
+    "score": -2,
+    "last_activity_date": 1590926119,
+    "creation_date": 1590917484,
+    "last_edit_date": 1590926119,
+    "question_id": 62114179,
+    "link": "https://stackoverflow.com/questions/62114179/other-than-portability-and-security-reasons-why-would-someone-want-to-run-their",
+    "closed_reason": "Opinion-based",
+    "title": "Other than portability and security reasons, why would someone want to run their existing go/rust/c++ applications in web browsers via WebAssembly?",
+    "body": "<p>Understand that WebAssembly code can be executed at near-native speed across different platforms and that it can be run in modern web browsers.</p>\n\n<p>Other than the above reasons (portability, performance) and perhaps security reasons, why would someone want to run their existing go/rust/c++ applications in web browsers? </p>\n\n<p>Just thought that what should run in web browsers should continue to run in web browsers (i.e., javascript/typescript) and what should run on systems should continue to run on systems (Rust, Go, C/C++) </p>\n\n<p>Nathan Aw (Singapore)</p>\n"
+}

@@ -1,0 +1,30 @@
+{
+    "tags": [
+        "asp.net-core",
+        "authentication",
+        "asp.net-identity",
+        "identityserver4",
+        "blazor"
+    ],
+    "owner": {
+        "reputation": 70,
+        "user_id": 8254151,
+        "user_type": "registered",
+        "profile_image": "https://i.stack.imgur.com/T3ke8.jpg?s=128&g=1",
+        "display_name": "Bub",
+        "link": "https://stackoverflow.com/users/8254151/bub"
+    },
+    "is_answered": true,
+    "view_count": 359,
+    "accepted_answer_id": 63663780,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1598838671,
+    "creation_date": 1598820100,
+    "last_edit_date": 1598833916,
+    "question_id": 63661946,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/63661946/how-do-i-authenticate-a-user-in-serverside-controller-in-a-blazor-webassembly-pr",
+    "title": "How do I authenticate a user in serverside controller in a blazor webassembly project?",
+    "body": "<p>I have a blazor webassembly project using identityserver and facebook authentication. When calling an api controller from webassembly everything works great after setting up an httpclient with <code>.AddHttpMessageHandler&lt;BaseAddressAuthorizationMessageHandler&gt;()</code> and mapping the useridclaimtype to nameidentifier. The user is available through the <code>UserManager.GetUserAsync</code>.</p>\n<p>Now I try to add a pure server controller with view that I want the user to be able to browse to directly from the browser. However when browsing directly to a server view there seems to be no authentication despite me setting up:</p>\n<pre><code>app.UseIdentityServer();\napp.UseAuthentication();\napp.UseAuthorization();\n</code></pre>\n<p>and</p>\n<pre><code>services.AddDefaultIdentity&lt;ApplicationUser&gt;(options =&gt; options.SignIn.RequireConfirmedAccount = true)\n.AddRoles&lt;IdentityRole&gt;()\n.AddEntityFrameworkStores&lt;ApplicationDbContext&gt;();\n\nservices.AddIdentityServer()\n.AddApiAuthorization&lt;ApplicationUser, ApplicationDbContext&gt;();\n\nservices.AddAuthentication()\n.AddIdentityServerJwt().AddFacebook(facebookOptions =&gt;\n{\n   facebookOptions.AppId = Configuration[&quot;id&quot;];\n   facebookOptions.AppSecret = Configuration[&quot;idpwd&quot;];\n});\n\nservices.Configure&lt;IdentityOptions&gt;(options =&gt; options.ClaimsIdentity.UserIdClaimType = ClaimTypes.NameIdentifier);\n</code></pre>\n<p>I had kind of expected the middleware to do the authentication dance automatically for me with this setup. But even though I log in first and carry a .AspNetCore.Identity.Application cookie, the user is still not available through the usermanager. I only get a blank identity with no name and no claims, and if I add an <code>Authorize</code> attribute to the controller I get a 401.</p>\n<p>Am I missing some secret ingredient to get this working? Do I have the wrong expectations on what the middleware should do for me?</p>\n<h1>Update:</h1>\n<p>After playing around a little and comparing a standard asp.net core project that works and my project. It seems that this is the line that kills the serverside controllers:</p>\n<pre><code>services.AddAuthentication().AddIdentityServerJwt()\n</code></pre>\n<p>If I don't add <code>AddIdentityServerJwt()</code>, the controllers behave well and redirect me when I need authorization, and log me in properly. Can anyone explain to me why that is? Is the <code>AddIdentityServerJwt()</code> middleware incompatible with Controllers that returns views?</p>\n<p>It seems to me that adding AddIdentityServerJwt() adds the requirement that an authorization header with a bearer token is required for every request, which the blazor clientside httpclient provides. But when a browser makes a call directly, the bearer token is missing and the pipeline doesn't try to authenticate the user to get one either.</p>\n"
+}

@@ -1,0 +1,28 @@
+{
+    "tags": [
+        "blazor",
+        "blazor-client-side"
+    ],
+    "owner": {
+        "reputation": 1103,
+        "user_id": 3581466,
+        "user_type": "registered",
+        "accept_rate": 40,
+        "profile_image": "https://i.stack.imgur.com/JdFyh.jpg?s=128&g=1",
+        "display_name": "ossentoo",
+        "link": "https://stackoverflow.com/users/3581466/ossentoo"
+    },
+    "is_answered": true,
+    "view_count": 48,
+    "accepted_answer_id": 62381848,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1592198779,
+    "creation_date": 1591983443,
+    "last_edit_date": 1591983810,
+    "question_id": 62349575,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/62349575/blazor-client-server-app-with-aad-auth-errors-on-fetch-data-api-request",
+    "title": "Blazor client/server app with AAD auth errors on Fetch Data api request",
+    "body": "<p>I've just started a Blazor app.<br>\nI'm trying to get AAD auth working with it and have followed these instructions.  I am trying this all locally and haven't deployed to any external server yet.  I'm using the default address that comes out of the box for a new aspnet core app: <a href=\"https://localhost:5001\" rel=\"nofollow noreferrer\">https://localhost:5001</a> (running without IIS Express).</p>\n\n<p>I have followed this MS article (<a href=\"https://docs.microsoft.com/en-us/aspnet/core/security/blazor/webassembly/hosted-with-azure-active-directory?view=aspnetcore-3.1\" rel=\"nofollow noreferrer\">https://docs.microsoft.com/en-us/aspnet/core/security/blazor/webassembly/hosted-with-azure-active-directory?view=aspnetcore-3.1</a> \n), pretty much word for word (except my IDs and application name are different of course).</p>\n\n<p>Everything works well for the login part and i can login.</p>\n\n<p>However, when I try and select the Fetch Data link on the left hand side of the Blazor client side app - I get an error. When i look at the requests in Fiddler, i see the error below.  I have also tried going directly to the WeatherForecast api endpoint (on localhost still) and i get a 401 response (even though i have just logged in successfully).</p>\n\n<p>Bearer error=\"invalid_token\", error_description=\"The audience '<a href=\"https://app.com/d8302c4f-7ef1-49ac-92a0-a9c46b875313\" rel=\"nofollow noreferrer\">https://app.com/d8302c4f-7ef1-49ac-92a0-a9c46b875313</a>' is invalid\"</p>\n\n<p><a href=\"https://i.stack.imgur.com/VB6oe.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/VB6oe.png\" alt=\"401 auth error\"></a></p>\n\n<p>What could the problem be?</p>\n\n<p>It looks like the audience is wrong.</p>\n\n<p>I have this in the client side Program.cs</p>\n\n<p><div class=\"snippet\" data-lang=\"js\" data-hide=\"false\" data-console=\"true\" data-babel=\"false\">\r\n<div class=\"snippet-code\">\r\n<pre class=\"snippet-code-html lang-html prettyprint-override\"><code>            builder.Services.AddMsalAuthentication(options =&gt;\r\n            {\r\n                builder.Configuration.Bind(\"AzureAd\", options.ProviderOptions.Authentication);\r\n                options.ProviderOptions.DefaultAccessTokenScopes.Add(\"https://app.com/d8302c4f-7ef1-49ac-92a0-a9c46b875313/App.Writers\");\r\n            });</code></pre>\r\n</div>\r\n</div>\r\n</p>\n\n<p>App.Writers is the scope for the client side app reg.  I have tried also putting scopes on the server side app reg, but that doesn't appear to work either.</p>\n\n<p>thanks</p>\n"
+}

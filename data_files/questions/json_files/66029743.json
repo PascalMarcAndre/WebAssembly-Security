@@ -1,0 +1,29 @@
+{
+    "tags": [
+        "c#",
+        "jwt",
+        "blazor",
+        "identityserver4",
+        "openid-connect"
+    ],
+    "owner": {
+        "reputation": 269,
+        "user_id": 13705843,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/75dee0c4aea2cb4dde0631495f0290a1?s=128&d=identicon&r=PG&f=1",
+        "display_name": "azzurro123",
+        "link": "https://stackoverflow.com/users/13705843/azzurro123"
+    },
+    "is_answered": true,
+    "view_count": 54,
+    "accepted_answer_id": 66036201,
+    "answer_count": 1,
+    "score": 1,
+    "last_activity_date": 1616431236,
+    "creation_date": 1612363172,
+    "question_id": 66029743,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/66029743/blazor-wasm-authorization-state-logged-multiple-times",
+    "title": "Blazor Wasm Authorization state logged multiple times",
+    "body": "<p>I'm currently working on a Blazor Webassembly application consuming data from an API. Both applications are secured by an IdentityProvider (IdentityServer4):</p>\n<ul>\n<li>Blazor Wasm App (Oidc)</li>\n<li>API</li>\n<li>IdentityServer4</li>\n</ul>\n<p>It works fine, I can login, logout and retrieve the correct data.</p>\n<p>I'm running into 1 issue though:</p>\n<pre><code>info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[1]\n      Authorization was successful.\n</code></pre>\n<p>This message is logged multiple times from <code>blazor.webassembly.js:1</code>, basically any time I do a page transition or load data on a grid or actually any other possible activity.</p>\n<p>It looks to me like a permanent roundtrip from the Blazor app back to the IdentityServer4.</p>\n<p>Do you know why this log message appears multiple times?</p>\n<p>How can I solve this issue?</p>\n"
+}

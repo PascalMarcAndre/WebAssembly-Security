@@ -1,0 +1,28 @@
+{
+    "tags": [
+        "asp.net-core",
+        "blazor",
+        "webassembly"
+    ],
+    "owner": {
+        "reputation": 141,
+        "user_id": 8578818,
+        "user_type": "registered",
+        "accept_rate": 100,
+        "profile_image": "https://www.gravatar.com/avatar/f1e0e85a7efdc5e0e4d455a4a2a9b6a9?s=128&d=identicon&r=PG&f=1",
+        "display_name": "harris",
+        "link": "https://stackoverflow.com/users/8578818/harris"
+    },
+    "is_answered": true,
+    "view_count": 809,
+    "accepted_answer_id": 63593419,
+    "answer_count": 3,
+    "score": 0,
+    "last_activity_date": 1607601371,
+    "creation_date": 1598428652,
+    "question_id": 63593076,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/63593076/readfromjsonasync-returns-object-properties-with-null-values",
+    "title": "ReadFromJsonAsync returns object properties with Null values",
+    "body": "<p>I have a Blazor WebAssembly App (ASP.Net Core Hosted, Progressive Web App) with the following logic:</p>\n<p>Client:</p>\n<pre><code> protected override async Task OnInitializedAsync()\n    {\n        string token = await _loginService.GetToken();\n\n        _http.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue(&quot;Bearer&quot;, token);\n        \n        var result = await _http.PostAsJsonAsync(&quot;api/api/getcalllogs&quot;, userCallsRequestFilters);\n\n        if (result.IsSuccessStatusCode)\n        {\n            var morUserCallLogs = await result.Content.ReadFromJsonAsync&lt;MorUserCallLogsResponse&gt;();\n\n            await js.InvokeAsync&lt;object&gt;(&quot;TestDataTablesAdd&quot;, &quot;#example&quot;);\n        }\n        else\n        {\n            morUserCallLogs = new MorUserCallLogsResponse();\n        }\n    }\n</code></pre>\n<p>Server: (Server side API I have the following code which works as expected:)</p>\n<pre><code>[Authorize]\n[ApiController]\n[Route(&quot;api/[controller]&quot;)]\npublic class MorApiController : ControllerBase\n...\n\n[HttpPost(&quot;getcalllogs&quot;)]\npublic async Task&lt;MorUserCallLogsResponse&gt; GetCallLogs ([FromBody] MorUserCallsRequestFilters filters)\n{\n...\nreturn result;\n</code></pre>\n<p>Server side controller API populates the model ok and when I inspect I see the following snap (*some values have been blanked out for security)\n<a href=\"https://i.stack.imgur.com/SZyoq.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/SZyoq.png\" alt=\"enter image description here\" /></a></p>\n<p>Model: (My MorUserCallLogsResponse model looks like this:)</p>\n<pre><code>namespace MyNumberV2.Model\n{\n    public class MorUserCallLogsResponse\n    {\n        public MorUserCallLogsResponse()\n        { \n            Calls = new List&lt;MorCall&gt;();\n        }\n        public string Error { get; set; }\n        public bool IsSuccessfull { get; set; }\n        public string userid;\n        public string username;\n        ...\n        ...\n        public List&lt;MorCall&gt; Calls { get; set; }\n        public class MorCall\n        {\n            public string calldate2;\n            public string timezone;\n            ...\n            ...\n        }\n    }\n</code></pre>\n<p>Back to blazor and when I try to read this returned object on the following line:</p>\n<pre><code>var morUserCallLogs = await result.Content.ReadFromJsonAsync&lt;MorUserCallLogsResponse&gt;();\n</code></pre>\n<p>My retrieved model looks like this:\n<a href=\"https://i.stack.imgur.com/9U6BK.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/9U6BK.png\" alt=\"enter image description here\" /></a></p>\n<p>As you can see my retrieved model contains all all properties with 140 nested call object models, however all properties are NULL...</p>\n"
+}

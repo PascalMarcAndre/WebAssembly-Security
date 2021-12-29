@@ -1,0 +1,27 @@
+{
+    "tags": [
+        "azure-ad-b2c",
+        "blazor-server-side",
+        "blazor-client-side"
+    ],
+    "owner": {
+        "reputation": 5,
+        "user_id": 9100652,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/e6fd919ba3f1fbeb2550a75247a51e8c?s=128&d=identicon&r=PG&f=1",
+        "display_name": "eColumbia99",
+        "link": "https://stackoverflow.com/users/9100652/ecolumbia99"
+    },
+    "is_answered": true,
+    "view_count": 21,
+    "accepted_answer_id": 64903688,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1605746774,
+    "creation_date": 1605737946,
+    "question_id": 64902302,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/64902302/aad-b2c-primary-key",
+    "title": "AAD B2c primary key",
+    "body": "<p>I'm using Blazor webassembly with Azure ADB2C. A typical task is to retrieve only those records for the logged in user.  Which field from AzureB2C is the best practice to use as the authorized user's primary key?</p>\n<p>I assumed that using the object ID which is a guid and created by Azure ADB2C would be the correct unique field. However I also see examples on the internet using either the user's email and/or user's name.</p>\n<p>I plan on using this field as as a unique field in database tables for the user.</p>\n"
+}

@@ -1,0 +1,27 @@
+{
+    "tags": [
+        "authorization",
+        "blazor",
+        "blazor-webassembly",
+        "asp.net-core-hosted-services"
+    ],
+    "owner": {
+        "reputation": 79,
+        "user_id": 819132,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/7a9e289f6fd7e82cc3a64a665a0e3684?s=128&d=identicon&r=PG",
+        "display_name": "Kommando1980",
+        "link": "https://stackoverflow.com/users/819132/kommando1980"
+    },
+    "is_answered": false,
+    "view_count": 70,
+    "answer_count": 0,
+    "score": 0,
+    "last_activity_date": 1603612584,
+    "creation_date": 1603612584,
+    "question_id": 64521547,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/64521547/blazor-identityserver-authorization-error",
+    "title": "Blazor IdentityServer Authorization Error",
+    "body": "<p>I have a simple Blazor webassembly hosted application.\nThe service controllers are locked down with the [Authorize] tags.</p>\n<p>I can locally debug the application, log in and authorize users using the default SQLite database.</p>\n<p>Problem I am having is that after deploying my simple Blazor webassembly project (Client, Server and Shared) to a hosting environment I cannot log in. I can create and register a new user but I cannot authenticate by logging in?</p>\n<p>I have setup an SSL certificate on the hosting services and it is working (site is secured).\nHere is my appSettings.json</p>\n<pre><code>{\n  &quot;ConnectionStrings&quot;: {\n    &quot;DefaultConnection&quot;: &quot;DataSource=app.db&quot;\n  },\n  &quot;Logging&quot;: {\n      &quot;LogLevel&quot;: {\n      &quot;Default&quot;: &quot;Information&quot;,\n      &quot;Microsoft&quot;: &quot;Warning&quot;,\n      &quot;Microsoft.Hosting.Lifetime&quot;: &quot;Information&quot;\n      }\n    },\n  \n    &quot;IdentityServer&quot;: {\n      &quot;Key&quot;: {\n        &quot;Type&quot;: &quot;File&quot;,\n        &quot;FilePath&quot;:&quot;exported.pfx&quot;,\n        &quot;Password&quot;:&quot;password&quot;\n      },\n      &quot;Clients&quot;: {\n        &quot;BlazorH1.Client&quot;: {\n          &quot;Profile&quot;: &quot;IdentityServerSPA&quot;\n        }\n    }\n    ,\n&quot;AllowedHosts&quot;: &quot;*&quot;\n}\n}\n</code></pre>\n<p>Here is the scripting error that I encounter on the live server:\ninfo: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[2]\nAuthorization failed.\nAuthenticationService.js:1 POST <a href=\"https://www.mydomain.online/connect/token\" rel=\"nofollow noreferrer\">https://www.mydomain.online/connect/token</a> 400</p>\n"
+}

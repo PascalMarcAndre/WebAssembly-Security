@@ -1,0 +1,27 @@
+{
+    "tags": [
+        "webassembly",
+        "native-file-system-api-js"
+    ],
+    "owner": {
+        "reputation": 25,
+        "user_id": 9063173,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/37169bd024aea19eaecb1afc7c47c7e7?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Matheus Zabin",
+        "link": "https://stackoverflow.com/users/9063173/matheus-zabin"
+    },
+    "is_answered": true,
+    "view_count": 22,
+    "accepted_answer_id": 66334957,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1614090056,
+    "creation_date": 1612190074,
+    "last_edit_date": 1612190520,
+    "question_id": 65994552,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/65994552/is-it-possible-to-use-local-sqlite3-file-with-filesystemapi-and-webassembly-in-a",
+    "title": "Is it possible to use local SQLite3 file with FileSystemAPI and WebAssembly in a web app?",
+    "body": "<p>Considering that:</p>\n<ul>\n<li>Browser's File System API enables web apps to write on local files, without subsequent asks for permissions.</li>\n<li>WebAssembly can run a native SQLite3 client.</li>\n</ul>\n<p>It's possible to create a web app that asks for a local SQLite3 file and give WebAssembly client access to it? For example, to create a full-static &quot;SQLite3 administrator&quot; web app.</p>\n<p>I want to start an open source project like this (React+Go+WebAssembly), as a proof of concept, but I don't know if these APIs support that.</p>\n<p>Thanks!</p>\n"
+}

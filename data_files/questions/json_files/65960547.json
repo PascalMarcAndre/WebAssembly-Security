@@ -1,0 +1,27 @@
+{
+    "tags": [
+        "azure",
+        "azure-active-directory",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 21,
+        "user_id": 10723369,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/d7b59a98354a23c0d778634c7c4a7784?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Bob N",
+        "link": "https://stackoverflow.com/users/10723369/bob-n"
+    },
+    "is_answered": true,
+    "view_count": 35,
+    "accepted_answer_id": 65986234,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1612144666,
+    "creation_date": 1611948179,
+    "question_id": 65960547,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/65960547/azure-portal-does-not-match-securing-blazor-webassembly",
+    "title": "Azure portal does not match securing Blazor Webassembly",
+    "body": "<p>I have only recently been tasked with writing some Business-type web applications, in the past many years I had mostly been working on SQL, services, and other non-client project -- so much of this is all new to me.   I have had good success picking up and being productive with hosted Blazor WebAssembly.  I need work through how to secure a Webassembly, so google lead me to:</p>\n<p><a href=\"https://docs.microsoft.com/en-us/aspnet/core/blazor/security/webassembly/hosted-with-azure-active-directory?view=aspnetcore-5.0\" rel=\"nofollow noreferrer\">https://docs.microsoft.com/en-us/aspnet/core/blazor/security/webassembly/hosted-with-azure-active-directory?view=aspnetcore-5.0</a></p>\n<p>While I was not very familiar with the Azure portal, the reference seemed quite detailed and I thought this would be straightforward.  I tried walking through the steps to Register a server API app in an existing tenant:</p>\n<ol>\n<li>Azure Active Directory &gt; App Registrations, New Registrations -- check</li>\n<li>Provide Name for the App -- check</li>\n<li>Choose supported account types (accounts in this organizational directory) -- check</li>\n<li>Leave Redirect URI options to web and don't specify a redirect URI -- check</li>\n<li>Clear Permissions &gt; Grant admin consent to openid and offline_access - NOPE, no option on this screen for this, I wonder if that setting has moved or if somehow I don't the permissions to see it.</li>\n<li>Having no other choice to proceed, I select Register.</li>\n</ol>\n<p>During a quick look, I could not find anything about openid and offline_access. Is it right under my nose, or no longer needed, is the documentation out of date, or is there an easier approach?  I didn't proceed further, other than to tinker, to the client app registration as I felt the server registration was not valid.  Are there any other bumps in the road on the client application registration as well?</p>\n<p>Just for perspective, right now, I am content to just force a login verified against AAD.</p>\n<p>Thanks for any help!</p>\n"
+}

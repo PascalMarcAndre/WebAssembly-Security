@@ -1,0 +1,25 @@
+{
+    "tags": [
+        "webassembly"
+    ],
+    "owner": {
+        "reputation": 71,
+        "user_id": 8967347,
+        "user_type": "registered",
+        "profile_image": "https://graph.facebook.com/1020105198128057/picture?type=large",
+        "display_name": "Datow King",
+        "link": "https://stackoverflow.com/users/8967347/datow-king"
+    },
+    "is_answered": true,
+    "view_count": 1166,
+    "accepted_answer_id": 56037694,
+    "answer_count": 1,
+    "score": 1,
+    "last_activity_date": 1557308367,
+    "creation_date": 1556392541,
+    "question_id": 55884021,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/55884021/uncaught-in-promise-linkerror-webassembly-instantiation-import-1-module-en",
+    "title": "Uncaught (in promise) LinkError: WebAssembly Instantiation: Import #1 module=&quot;env&quot; function=&quot;__memory_base&quot; error: global import must be a number",
+    "body": "<p>I am following the Google CodeLab <a href=\"https://codelabs.developers.google.com/codelabs/web-assembly-intro/index.html#0\" rel=\"nofollow noreferrer\">An Introduction to Web Assembly</a> to learn WebAssembly.</p>\n\n<p>When I work on the step of <a href=\"https://codelabs.developers.google.com/codelabs/web-assembly-intro/index.html#3\" rel=\"nofollow noreferrer\">Serve over HTTP</a>, I hit the below error:</p>\n\n<pre><code>Uncaught (in promise) LinkError: WebAssembly Instantiation: Import #1 module=\"env\" function=\"__memory_base\" error: global import must be a number or WebAssembly.Global object\n    at createWebAssembly (http://127.0.0.1:8000/:11:57)\n    at async init (http://127.0.0.1:8000/:46:18)\n</code></pre>\n\n<p>Here is the JavaScript running on the webpage:</p>\n\n<pre><code>  async function createWebAssembly(path, importObject) {\n    const result = await window.fetch(path);\n    const bytes = await result.arrayBuffer();\n    return WebAssembly.instantiate(bytes, importObject);\n  }\n\n  const memory = new WebAssembly.Memory({initial: 256, maximum: 256});\n  let exports = null;\n\n  async function init() {\n    const env = {\n      'abortStackOverflow': _ =&gt; { throw new Error('overflow'); },\n      'table': new WebAssembly.Table({initial: 0, maximum: 0, element: 'anyfunc'}),\n      'tableBase': 0,\n      'memory': memory,\n      'memoryBase': 1024,\n      'STACKTOP': 0,\n      'STACK_MAX': memory.buffer.byteLength,\n    };\n    const importObject = {env};\n\n    const wasm = await createWebAssembly('output.wasm', importObject);\n    exports = wasm.instance.exports;\n    console.info('got exports', exports);\n    exports._board_init();  // setup lyff board\n\n    // TODO: interact with lyff board\n  }\n  init();\n</code></pre>\n\n<p>The error is from <code>WebAssembly.instantiate(bytes, importObject)</code>; however, I cannot step into that function though. Can someone please let me know what I am missing? Thank you in advance!</p>\n"
+}

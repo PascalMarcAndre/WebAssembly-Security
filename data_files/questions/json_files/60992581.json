@@ -1,0 +1,29 @@
+{
+    "tags": [
+        "blazor",
+        "blazor-client-side",
+        "asp.net-blazor"
+    ],
+    "owner": {
+        "reputation": 2935,
+        "user_id": 2427359,
+        "user_type": "registered",
+        "accept_rate": 62,
+        "profile_image": "https://i.stack.imgur.com/MMrrm.png?s=128&g=1",
+        "display_name": "Simon",
+        "link": "https://stackoverflow.com/users/2427359/simon"
+    },
+    "is_answered": true,
+    "view_count": 7998,
+    "accepted_answer_id": 60992719,
+    "answer_count": 4,
+    "score": 10,
+    "last_activity_date": 1611567180,
+    "creation_date": 1585833716,
+    "last_edit_date": 1585834047,
+    "question_id": 60992581,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/60992581/how-can-i-write-into-the-browser%c2%b4s-console-via-blazor-webassembly",
+    "title": "How can I write into the browser&#180;s console via Blazor WebAssembly?",
+    "body": "<p>In JavaScript we can use the following call to write debug output to the browser\u00b4s console:</p>\n\n<pre><code>console.log(\"My debug output.\");\n</code></pre>\n\n<p>Output in Google Chrome:</p>\n\n<p><a href=\"https://i.stack.imgur.com/06AuT.png\" rel=\"noreferrer\"><img src=\"https://i.stack.imgur.com/06AuT.png\" alt=\"console output in google chrome\"></a></p>\n\n<p>How can I log \"My debug output\" in my component to the browser\u00b4s console via Blazor WebAssembly?</p>\n\n<pre><code>&lt;button @onclick=\"ClickEvent\"&gt;OK&lt;/button&gt;\n\n@code {\n\n    private void ClickEvent()\n    {\n        // console.log(\"My debug output.\");\n    }\n}\n</code></pre>\n"
+}

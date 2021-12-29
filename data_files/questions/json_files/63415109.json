@@ -1,0 +1,27 @@
+{
+    "tags": [
+        "asp.net",
+        ".net-core",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 21,
+        "user_id": 14066253,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/85511ab11a8d175ab8f5224d1d63030b?s=128&d=identicon&r=PG&f=1",
+        "display_name": "rkits",
+        "link": "https://stackoverflow.com/users/14066253/rkits"
+    },
+    "is_answered": false,
+    "view_count": 332,
+    "answer_count": 0,
+    "score": 1,
+    "last_activity_date": 1597740614,
+    "creation_date": 1597416671,
+    "last_edit_date": 1597740614,
+    "question_id": 63415109,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/63415109/blazor-wasm-template-console-errors-jquery-not-defined",
+    "title": "Blazor wasm template console errors - jQuery not defined",
+    "body": "<p>I built a template Blazor wasm App with net.core and identity page scaffolding, with the latest net.core version (3.1.7 or SDK 3.1.401).\nThing is, I'm stuck getting two browser console errors:</p>\n<ul>\n<li>NS_ERROR_NOT_AVAILABLE location: JS frame :: resource:///modules/FaviconLoader.jsm :: onStopRequest</li>\n<li>Loading failed for \u201chttps://localhost:44399/_framework/blazor.webassembly.js\u201d.<br/>\n[displayed as warning]\n<br/><br/>Opening one of the scaffolded Identity pages this error is displayed:</li>\n<li>ReferenceError: jQuery is not defined</li>\n</ul>\n<p>I don't see why I am getting this errors as the pages seem to load fine.\nThanks for your help!</p>\n<p><strong>UPDATE</strong></p>\n<p>(as this answer post has been deleted by moderator <a href=\"https://stackoverflow.com/users/4099593/bhargav-rao\">bhargav-rao</a> I'm adding it here:)</p>\n<p>Could get rid of error #1 by updating Visual Studio to v 16.7.1.</p>\n<p>Building a new test blazor webassembly project with net.core and authentication the load error for blazor.webassembly.js is there right from the start, without any modifications to the project.</p>\n<p>(first guess was it did result from scaffolding of identity pages, but retried with a new project to see its there from the beginning)</p>\n<p>Error #2 disappeared in the browser after changing to server prerendering, in the _Hosts.csprj I changed the blazor.webassembly.js to the first script in the load order:</p>\n<pre><code>&lt;script src=&quot;_framework/blazor.webassembly.js&quot;&gt;&lt;/script&gt;\n&lt;script src=&quot;_content/Microsoft.AspNetCore.Components.WebAssembly.Authentication/AuthenticationService.js&quot;&gt;&lt;/script&gt;\n</code></pre>\n<p>When i run the google mobile friendly test for the site, the files:</p>\n<pre><code>_framework/blazor.webassembly.js\ncss/app.css\ncss/bootstrap.min.css\nimg/myimg01.jpg\n</code></pre>\n<p>are reported under 'resources that could not be loaded'. -?</p>\n<p>jQuery Error still there, but obviously does not matter too much - ?</p>\n<p>Anyone out there with the same problem?</p>\n<p><a href=\"https://i.stack.imgur.com/2DtnE.jpg\" rel=\"nofollow noreferrer\">jQuery Error</a></p>\n"
+}

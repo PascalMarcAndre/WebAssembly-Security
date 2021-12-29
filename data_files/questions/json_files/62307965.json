@@ -1,0 +1,28 @@
+{
+    "tags": [
+        "asp.net-core",
+        "iis",
+        "asp.net-core-3.1"
+    ],
+    "owner": {
+        "reputation": 3087,
+        "user_id": 3545438,
+        "user_type": "registered",
+        "accept_rate": 49,
+        "profile_image": "https://www.gravatar.com/avatar/a7e318fc7a4e748e9be04ea7b03341e7?s=128&d=identicon&r=PG",
+        "display_name": "Matthew Flynn",
+        "link": "https://stackoverflow.com/users/3545438/matthew-flynn"
+    },
+    "is_answered": false,
+    "view_count": 177,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1591863825,
+    "creation_date": 1591804908,
+    "last_edit_date": 1591863825,
+    "question_id": 62307965,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/62307965/application-pool-crashes-iis-10-asp-net-core-3-2-blazor-app-ef-core",
+    "title": "Application Pool Crashes IIS 10 ASP.Net Core 3.2 Blazor App EF Core",
+    "body": "<p>I have an <code>Asp.Net Core 3.2</code> Blazor Webassembly application that has been published to a server running <code>Windows Server 2016</code> with <code>IIS 10</code>.</p>\n\n<p>After publishing to the server I can browse the login page to the site, However, when I attempt to login which calls a service and signs in with <code>Entity Framework Core 3.1.5</code>.</p>\n\n<p>However when I attempt to call a linq query on the <code>DbContext</code> it seems to fail (This is deduced from log files). </p>\n\n<p>Interestingly, if I remote into the server whilst running a login I get a JIT popup with the following error;</p>\n\n<p><a href=\"https://i.stack.imgur.com/j7GHy.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/j7GHy.png\" alt=\"JIT Popup Server\"></a></p>\n\n<p>In the Windows System Log can see the following error;</p>\n\n<blockquote>\n  <p>A process serving application pool 'myapppool(domain)(4.0)(pool)' suffered a fatal communication error with the Windows Process Activation Service. The process id was '10188'. The data field contains the error number.</p>\n</blockquote>\n\n<p>It seems to sometime crashes the apppool as well so if I then refresh the page i get 502 error on the site?</p>\n\n<p>Below is a screen shot of the application pool advanced settings;</p>\n\n<p><a href=\"https://i.stack.imgur.com/yR1x5.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/yR1x5.png\" alt=\"application pool screenshot\"></a></p>\n\n<p>The server is running Windows 2016 with Plesk Obsidian installed on it (I'm not sure if this can interfere in any way??)</p>\n\n<p>Does anyone know whats going on here please?</p>\n"
+}

@@ -1,0 +1,26 @@
+{
+    "tags": [
+        "authentication",
+        "google-authentication",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 153,
+        "user_id": 11476545,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/439ded087dfb9e0529421b669d9914ca?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Bisjob",
+        "link": "https://stackoverflow.com/users/11476545/bisjob"
+    },
+    "is_answered": false,
+    "view_count": 25,
+    "answer_count": 0,
+    "score": 0,
+    "last_activity_date": 1604496445,
+    "creation_date": 1604496445,
+    "question_id": 64681013,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/64681013/blazor-wasm-core-hosted-link-external-login-provider-to-local-accounts",
+    "title": "Blazor WASM core hosted : link external login provider to local accounts",
+    "body": "<p>I'm developping a blazor webassembly core hosted project, and for the authentications I use the default pattern with IdentityServer and EF.</p>\n<p>Now I would like to let the users link their personnal account (google, microsoft,..) in order to add events in their calendar.</p>\n<p>To do so I added Google and microsoft external providers.</p>\n<p>I followed the doc <a href=\"https://docs.microsoft.com/en-us/aspnet/core/security/authentication/social/?view=aspnetcore-3.1&amp;tabs=visual-studio\" rel=\"nofollow noreferrer\">https://docs.microsoft.com/en-us/aspnet/core/security/authentication/social/?view=aspnetcore-3.1&amp;tabs=visual-studio</a></p>\n<p>For google, I can link my account, but I can't gets events in the front-end. I have the following error :\n<em>System.AggregateException: One or more errors occurred. (Operation is not supported on this platform.) ---&gt; System.PlatformNotSupportedException: Operation is not supported on this platform.\\n  at System.Net.Sockets.Socket..ctor (System.Net.Sockets.AddressFamily addressFamily, System.Net.Sockets.SocketType socketType, System.Net.Sockets.ProtocolType protocolType) &lt;0x3a01448 + 0x0003c&gt; in :0 \\n  at System.Net.Sockets.TcpListener..ctor (System.Net.IPAddress localaddr, System.Int32\u2026horizationBroker.cs:154 \\n  at Google.Apis.Auth.OAuth2.GoogleWebAuthorizationBroker.AuthorizeAsync (Google.Apis.Auth.OAuth2.ClientSecrets clientSecrets, System.Collections.Generic.IEnumerable`1[T] scopes, System.String user, System.Threading.CancellationToken taskCancellationToken, Google.Apis.Util.Store.IDataStore dataStore, Google.Apis.Auth.OAuth2.ICodeReceiver codeReceiver) [0x0004d] in C:\\Apiary\\2020-08-17.16-07-28\\Src\\Support\\Google.Apis.Auth\\OAuth2\\GoogleWebAuthorizationBroker.cs:70</em></p>\n<p>For Microsoft, I can't link the account and get the error after setting my microsoft password :\n<em>{&quot;error&quot;:&quot;invalid_request&quot;,&quot;error_description&quot;:&quot;AADSTS90023: Public clients can't send a client secret.}</em></p>\n<ul>\n<li>Am I on the good way, in order to only link calendar events and keep the local accounts ?</li>\n<li>If yes, how can I handle this errors ?</li>\n</ul>\n<p>Thank you in advance !</p>\n"
+}

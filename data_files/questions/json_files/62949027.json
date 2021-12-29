@@ -1,0 +1,27 @@
+{
+    "tags": [
+        "azure",
+        "authentication",
+        "azure-storage",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 24,
+        "user_id": 8122676,
+        "user_type": "registered",
+        "profile_image": "https://lh4.googleusercontent.com/-3Q9uHUdDazk/AAAAAAAAAAI/AAAAAAAAAHc/2PjnC4pMVDQ/photo.jpg?sz=128",
+        "display_name": "Marek S\u0142owikowski",
+        "link": "https://stackoverflow.com/users/8122676/marek-s%c5%82owikowski"
+    },
+    "is_answered": false,
+    "view_count": 425,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1596112574,
+    "creation_date": 1594970367,
+    "question_id": 62949027,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/62949027/blazor-webassembly-azure-ad-authentication-hosted-in-azure-storage-account",
+    "title": "Blazor Webassembly Azure AD authentication hosted in Azure storage account",
+    "body": "<p>According to instruction described in \u201cSecure an ASP.NET Core Blazor WebAssembly standalone app with Azure Active Directory\u201d <a href=\"https://docs.microsoft.com/en-us/aspnet/core/blazor/security/webassembly/standalone-with-azure-active-directory?view=aspnetcore-3.1\" rel=\"nofollow noreferrer\">https://docs.microsoft.com/en-us/aspnet/core/blazor/security/webassembly/standalone-with-azure-active-directory?view=aspnetcore-3.1</a> I have created the simplest blazor webassembly app.\nAt <a href=\"https://portal.azure.com\" rel=\"nofollow noreferrer\">https://portal.azure.com</a> I registered new app in AAD and based on generated GUIDs generated local app with this command:</p>\n<blockquote>\n<p>dotnet new blazorwasm -au SingleOrg --client-id &quot;{CLIENT ID}&quot;\n--tenant-id &quot;{TENANT ID}&quot; -o {APP NAME}</p>\n</blockquote>\n<p>Everything worked fine if I launched app locally. If I copied published app to storage account $web and try to log in I have received:</p>\n<blockquote>\n<p>AADSTS50011: The reply URL specified in the request does not match the\nreply URLs configured for the application: '\u2026'.</p>\n</blockquote>\n<p>During app registration I have defined app as \u201cWeb\u201d and put Redirect URL:\n<a href=\"https://localhost:5001/authentication/login-callback\" rel=\"nofollow noreferrer\">https://localhost:5001/authentication/login-callback</a>\nI have tried different combinations of URL changing hostname, deleting port and changing path. I don\u2019t know how to successfully configure app in AD.</p>\n"
+}

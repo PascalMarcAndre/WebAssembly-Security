@@ -1,0 +1,27 @@
+{
+    "tags": [
+        "blazor",
+        "scss-mixins",
+        "bootstrap-sass",
+        "razor-class-library"
+    ],
+    "owner": {
+        "reputation": 313,
+        "user_id": 2933793,
+        "user_type": "registered",
+        "profile_image": "https://i.stack.imgur.com/seIOE.jpg?s=128&g=1",
+        "display_name": "Tom",
+        "link": "https://stackoverflow.com/users/2933793/tom"
+    },
+    "is_answered": false,
+    "view_count": 160,
+    "answer_count": 0,
+    "score": 1,
+    "last_activity_date": 1607429179,
+    "creation_date": 1607429179,
+    "question_id": 65198591,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/65198591/overriding-isolated-css-in-blazor-component-library-by-consuming-application",
+    "title": "Overriding isolated css in blazor component library by consuming application",
+    "body": "<p>I have set up a blazor component library that defines several blazor components + isolated CSS files. These css files are transpiled from sass files in which I specify the bootstrap grid system using bootstrap's mixins, e.g. @include make-col-ready(); or @include make-col(4);.</p>\n<p>This all works well and the CSS and blazor components are able to be consumed by my blazor webassembly app, which I set up with a project reference dependency to the component library.</p>\n<p>Now the ideal situation would be if I could have the isolated CSS in the component library act as default styling, but that I can override this styling (so also the bootstrap mixins) in the consuming application. Ideally I would like to have !default sass variables set up in my component library, that are used to determine whether to use the default css, or to not include it at all. I have tried something like the following code snippet (just a quick sketch, not to be taken too seriously), but from my understanding, it's not possible to override these variables before they are compiled to css for the consuming application to import.</p>\n<pre><code>/* Component css */\n$defaultComponentCss: true !default;\n\n\n@mixin foobar($defaultComponentCss) {\n    @if($defaultComponentCss) {\n        border-radius: 10px;\n        background-color: red;\n        border-top-right-radius: 83px;\n    }\n}\n\n.main-content {\n    @include foobar($defaultComponentCss);\n}\n\n/* SCSS file in the consuming application*/\n$defaultComponentCss: false;\n\n/*[non-default styling]*/\n</code></pre>\n<p>TL;DR;\nIs there a way to set up a blazor component library so that a consuming application can override the existing isolated css (in the component library), so that different bootstrap grid mixins can be used?</p>\n<p>I hope I provided enough context, if not I'd be glad to provide more.</p>\n<p>Thanks in advance!</p>\n"
+}

@@ -1,0 +1,29 @@
+{
+    "tags": [
+        "asp.net-core",
+        "iis",
+        "blazor",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 41,
+        "user_id": 4408465,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/49bafb0388c66c92fe408cfa6f302de9?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Martin Man&#248;",
+        "link": "https://stackoverflow.com/users/4408465/martin-man%c3%b8"
+    },
+    "is_answered": true,
+    "view_count": 245,
+    "accepted_answer_id": 65055109,
+    "answer_count": 1,
+    "score": 2,
+    "last_activity_date": 1606602748,
+    "creation_date": 1600544564,
+    "last_edit_date": 1606602748,
+    "question_id": 63972772,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/63972772/blazor-not-correctly-redirecting-to-controller-on-iis",
+    "title": "Blazor not correctly redirecting to controller on IIS",
+    "body": "<p>I have started on a blazor-webassembly PWA project (.net 5.0-rc1), hosted on asp.net core, and is working Authentication against 3rd party services.<br />\nThis login flow is based on asp.net core identity.<br />\nThe flow is as follows:</p>\n<ul>\n<li>User enters login site and chooses a provider</li>\n<li>User is redirected to controller, loading provider configuration and redirects user to provider</li>\n<li>User log in using provider</li>\n<li>User is redirected to callback, and is logged into system, JWT is generated</li>\n<li>User is redirected to PWA for handling of JWT.</li>\n</ul>\n<p>When developing locally, the above flow works without any issues.<br />\nHowever when deploying to my webhotel, step 2 is redirected to the Blazor application, rather than the controller on the server, causing a &quot;Not found&quot; page.</p>\n<p>As the server is hosting the application they share the same base url.<br />\nI have tried both a regular link &lt;a href=&quot;...&quot;&gt; and navigate with Navigationmanager.NagivateTo(url, forLoad: true);</p>\n<p>When shown the &quot;Not Found&quot; page, pressing F5 will result in the same page. However pressing Ctrl+F5 causes the server endpoint to be hit, and the rest of the flow works as intented.</p>\n"
+}

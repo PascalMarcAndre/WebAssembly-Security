@@ -1,0 +1,28 @@
+{
+    "tags": [
+        "asp.net-identity",
+        "blazor",
+        "blazor-client-side"
+    ],
+    "owner": {
+        "reputation": 1866,
+        "user_id": 1419658,
+        "user_type": "registered",
+        "accept_rate": 83,
+        "profile_image": "https://lh6.googleusercontent.com/-PBM6G3QRJUo/AAAAAAAAAAI/AAAAAAAAOw0/hGPjTuuiM74/photo.jpg?sz=128",
+        "display_name": "Caleb",
+        "link": "https://stackoverflow.com/users/1419658/caleb"
+    },
+    "is_answered": true,
+    "view_count": 1328,
+    "accepted_answer_id": 61153225,
+    "answer_count": 1,
+    "score": 3,
+    "last_activity_date": 1586629938,
+    "creation_date": 1586588868,
+    "question_id": 61153224,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/61153224/use-authorization-roles-and-policies-in-blazor-webassembly-with-identity",
+    "title": "Use Authorization Roles and Policies in Blazor WebAssembly with Identity?",
+    "body": "<p>I am using a Blazor WebAssembly <code>3.2-preview3</code> application scaffolded with Identity that has created the following 3 projects:</p>\n\n<pre><code>App.Client\nApp.Server\nApp.Shared\n</code></pre>\n\n<p>My <code>IdentityUser</code> implementation is called <code>AppUser</code>, and my <code>ApiAuthorizationDbContext</code> implementation is called <code>AppDb</code></p>\n\n<p>I have a role called <code>Admin</code> that has been assigned to administrators, and a Policy called <code>RequireAdmin</code> that checks for the <code>Admin</code> role.  However, when I try to use an <code>AuthorizeView</code> in <code>App.Client</code> and view the page with an administrator, it does not show the link.</p>\n\n<pre><code>&lt;AuthorizeView Policy=\"RequireAdmin\"&gt;\n    &lt;Authorized&gt;\n        &lt;a class=\"nav-link\" href=\"admin\"&gt;Admin&lt;/a&gt;\n    &lt;/Authorized&gt;\n&lt;/AuthorizeView&gt;\n</code></pre>\n\n<p>How can I enable roles and policies in my Blazor WebAssembly application?</p>\n"
+}

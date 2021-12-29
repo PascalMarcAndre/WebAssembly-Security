@@ -1,0 +1,26 @@
+{
+    "tags": [
+        "blazor",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 16012,
+        "user_id": 1768,
+        "user_type": "registered",
+        "accept_rate": 92,
+        "profile_image": "https://i.stack.imgur.com/6arep.png?s=128&g=1",
+        "display_name": "mattruma",
+        "link": "https://stackoverflow.com/users/1768/mattruma"
+    },
+    "is_answered": true,
+    "view_count": 455,
+    "answer_count": 1,
+    "score": 5,
+    "last_activity_date": 1602181196,
+    "creation_date": 1592303215,
+    "question_id": 62406340,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/62406340/redirect-to-login-page-as-opposed-to-pop-up-login-in-blazor",
+    "title": "Redirect to Login page as opposed to pop-up Login in Blazor",
+    "body": "<p>I have a Blazor WebAssembly app that uses Azure AD B2C for authentication.</p>\n\n<pre><code>builder.Services.AddMsalAuthentication(options =&gt;\n{\n    builder.Configuration.Bind(\"AzureAdB2C\", options.ProviderOptions.Authentication);\n});\n</code></pre>\n\n<p>When the user is redirected to authentication, Blazor display the login in a pop-up.</p>\n\n<p>The problem with the pop-up is that the user could bury it if they clicked on the screen outside of the pop-up.</p>\n\n<p>Wondering if there is a way to force the authentication to redirect to the page as opposed to displaying the pop-up.</p>\n"
+}

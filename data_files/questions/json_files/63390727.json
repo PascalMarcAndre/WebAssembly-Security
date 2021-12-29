@@ -1,0 +1,29 @@
+{
+    "tags": [
+        "c#",
+        "elasticsearch",
+        "blazor",
+        "serilog",
+        "webassembly"
+    ],
+    "owner": {
+        "reputation": 269,
+        "user_id": 13705843,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/75dee0c4aea2cb4dde0631495f0290a1?s=128&d=identicon&r=PG&f=1",
+        "display_name": "azzurro123",
+        "link": "https://stackoverflow.com/users/13705843/azzurro123"
+    },
+    "is_answered": false,
+    "view_count": 280,
+    "answer_count": 0,
+    "score": 0,
+    "last_activity_date": 1597306506,
+    "creation_date": 1597305862,
+    "last_edit_date": 1597306506,
+    "question_id": 63390727,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/63390727/serilog-not-logging-to-elasticsearch-in-blazor-webassembly",
+    "title": "Serilog Not Logging to ElasticSearch in Blazor WebAssembly",
+    "body": "<p>I'm currently working on a <strong>.NET Standard 2.1 Blazor WebAssembly Hosted</strong> application.</p>\n<p>I use Serilog and I set up ElasticSearch and Kibana on my local machine (localhost:9200).</p>\n<p>My project structure looks like this:</p>\n<ul>\n<li>BlazorApp.Client (I want to send logs to ElasticSearch from here)</li>\n<li>BlazorApp.Server</li>\n</ul>\n<p>Unfortunatly my <strong>BlazorApp.Client cannot connect to ElasticSearch</strong>, I cannot use the ElasticSearch middleware in my BlazorApp.Client project: <code>app.UseElasticApm(Configuration);</code> because it's a static web application.</p>\n<p>Though when I send my logs from BlazorApp.Client to an API controller (LogController) running on a server application it works fine - I can show my logs and Kibana finds my Index.</p>\n<p>I already followed this post: <a href=\"https://stackoverflow.com/questions/59060106/serilog-not-logging-to-elasticsearch\">Serilog Not Logging to Elasticsearch</a></p>\n<p>The difference is, I don't have a Startup class and thus cannot use middleware in a Blazor WASm Hosted Client project!</p>\n<p>My <strong>BlazorApp.Client Program.cs</strong> looks like this:</p>\n<pre><code>    public class Program\n    {\n        public static async Task Main(string[] args)\n        {\n            var builder = WebAssemblyHostBuilder.CreateDefault(args);\n            builder.RootComponents.Add&lt;App&gt;(&quot;app&quot;);\n\n            builder.Services.AddTransient(sp =&gt; new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });\n\n            ConfigureLogging(builder);\n\n            try\n            {\n                Log.Information($&quot;starting test application....&quot;);\n                await builder.Build().RunAsync();\n            }\n            catch (Exception e)\n            {\n                Log.Error(e.Message);\n            }\n            finally\n            {\n                Log.Information($&quot;stopping test application.....&quot;);\n            }\n        }\n\n        private static void ConfigureLogging(WebAssemblyHostBuilder builder)\n        {\n            builder.Logging.ClearProviders();\n\n            Log.Logger = new LoggerConfiguration()\n                         .WriteTo.Debug()\n                         .WriteTo.Console(new CompactJsonFormatter())\n                         .WriteTo.Elasticsearch(new ElasticsearchSinkOptions(new Uri(&quot;http://localhost:9200&quot;))\n                                                    {\n                                                        AutoRegisterTemplate = true,\n                                                        IndexFormat = $&quot;client-index-{DateTime.UtcNow:yyyy-MM}&quot;\n                                                    })\n                         .WriteTo.File($&quot;./failures.log&quot;, rollingInterval: RollingInterval.Day)\n                         .CreateLogger();\n        }\n    }\n</code></pre>\n<p>Do you know if it's possible to use Serilogs <code>.WriteTo.ElasticSearch()</code> sink in a Blazor WASm client project?</p>\n<p>In case, how can I configure it properly that i can find my client-index in Kibana and show the logs accordingly in Kibana?</p>\n"
+}

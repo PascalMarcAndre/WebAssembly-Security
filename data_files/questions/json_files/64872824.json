@@ -1,0 +1,30 @@
+{
+    "tags": [
+        "c#",
+        "asp.net-core",
+        "blazor",
+        "blazor-server-side"
+    ],
+    "owner": {
+        "reputation": 4308,
+        "user_id": 1104820,
+        "user_type": "registered",
+        "accept_rate": 66,
+        "profile_image": "https://www.gravatar.com/avatar/7325b123195f91240452230eac497fed?s=128&d=identicon&r=PG",
+        "display_name": "Vlado Pand\u017ei\u0107",
+        "link": "https://stackoverflow.com/users/1104820/vlado-pand%c5%bei%c4%87"
+    },
+    "is_answered": true,
+    "view_count": 67,
+    "accepted_answer_id": 64873624,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1605609895,
+    "creation_date": 1605606478,
+    "last_edit_date": 1605607365,
+    "question_id": 64872824,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/64872824/blazor-prevent-post-actions-for-not-authorized-users",
+    "title": "Blazor prevent POST actions for not authorized users",
+    "body": "<p>I am using Blazor server and I would like to prevent users from making changes to app.\nSome will have <code>writer</code> and some <code>reader</code> permissions.</p>\n<p>I have &quot;global&quot;  component which is nice because I can do something like this:</p>\n<pre><code>&lt;AuthorizeView Policy=&quot;@Policies.HAS_WRITE_PERMISSIONS&quot;&gt;\n    &lt;Authorized&gt;\n        &lt;DxButton SizeMode=&quot;SizeMode.Large&quot; SubmitFormOnClick=&quot;true&quot; Text=&quot;@(IsSaving ? &quot;Saving...&quot;:&quot;Save&quot; )&quot; Enabled=&quot;!IsSaving &amp;&amp; !Disabled&quot;&gt;&lt;/DxButton&gt;\n    &lt;/Authorized&gt;\n    &lt;NotAuthorized&gt;\n        &lt;br /&gt;\n        &lt;i&gt; You are not authoried to make any changes&lt;/i&gt;\n    &lt;/NotAuthorized&gt;\n&lt;/AuthorizeView&gt;\n@code{\n    [Parameter]\n    public bool IsSaving { get; set; }\n\n    [Parameter]\n    public bool Disabled { get; set; }\n\n}\n</code></pre>\n<p>However this not prevent me from &quot;clever&quot; user how can insert button to any form (for example using Chrome developer tools) and hit <code>Save</code>.</p>\n<p>I <strong>don't want</strong> to make special views just for reader persons and duplicate dozens of views. I would like to reuse same views (just prevent them to make any changes to data).</p>\n<p>Is there any global <code>POST</code> actions interceptor in Blazor or anything &quot;global&quot;.</p>\n<p>I tried putting attribute to method but this does not work.</p>\n<pre><code> [Authorize(Policy = Policies.HAS_WRITE_PERMISSIONS)]\n        protected async Task HandleValidSubmit()\n</code></pre>\n<p>EDIT:</p>\n<p>I am not using httpClient to connect to backend (app will always be Blazor server, and never Blazor WebAssembly). I am connected &quot;directly&quot; to backend code.</p>\n<p>EDIT2:</p>\n<p>Ofcourse I could make <code>IdentityContext</code> which checks required roles using <code>AuthenticationStateProvider</code> and add that check to each Submit method but it is uglier than applying attribute or making some &quot;global&quot; solution.</p>\n<pre><code> protected async Task HandleValidSubmit()\n        {\n            if (await IdentityContext.HasWritePermissions() == false)\n            {\n                return;\n            }\n          ...\n</code></pre>\n"
+}

@@ -1,0 +1,28 @@
+{
+    "tags": [
+        "json",
+        "api",
+        "authentication",
+        "blazor-client-side"
+    ],
+    "owner": {
+        "reputation": 1,
+        "user_id": 8721240,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/42ba5b8068c9035de3386fa99905ef33?s=128&d=identicon&r=PG&f=1",
+        "display_name": "BarcodeAPI",
+        "link": "https://stackoverflow.com/users/8721240/barcodeapi"
+    },
+    "is_answered": false,
+    "view_count": 21,
+    "answer_count": 0,
+    "score": 0,
+    "last_activity_date": 1595851604,
+    "creation_date": 1595846145,
+    "last_edit_date": 1595851604,
+    "question_id": 63113536,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/63113536/problem-previewing-component-data-with-blazor-client-authentication",
+    "title": "Problem previewing component data with Blazor Client Authentication",
+    "body": "<p>I am using Blazor WebAssembly for a test application with individual user authentication based on the basic  project(Index/Counter/FetchData/...).\nFetchData component needs for the user to get authorized. If i start the application and go to my custom component (Customer.razor) i get the result of pic1(label returns without value). When i refresh the page, i get the result of pic2(blazor page disappears and i get the value as sole json). Do you guys have a suggestion or solution to this problem?\nI have Microsoft.AspNetCore.Components.WebAssembly 3.2.1.</p>\n<p>Thank you in advance</p>\n<p><a href=\"https://i.stack.imgur.com/uz4yE.png\" rel=\"nofollow noreferrer\">pic1</a> <a href=\"https://i.stack.imgur.com/ZQdk2.png\" rel=\"nofollow noreferrer\">pic2</a></p>\n"
+}

@@ -1,0 +1,27 @@
+{
+    "tags": [
+        "azure-active-directory",
+        "blazor-client-side"
+    ],
+    "owner": {
+        "reputation": 279,
+        "user_id": 2202866,
+        "user_type": "registered",
+        "accept_rate": 0,
+        "profile_image": "https://www.gravatar.com/avatar/4ed8e7126edc505c150f9d7d39e568fc?s=128&d=identicon&r=PG",
+        "display_name": "user2202866",
+        "link": "https://stackoverflow.com/users/2202866/user2202866"
+    },
+    "is_answered": true,
+    "view_count": 177,
+    "accepted_answer_id": 61971335,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1590233370,
+    "creation_date": 1590185319,
+    "question_id": 61964610,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/61964610/asp-net-core-hosted-blazor-webassembly-with-azure-ad-authentication-separate-a",
+    "title": "ASP.Net Core Hosted Blazor Webassembly with Azure AD authentication - Separate app registrations for server and client apps",
+    "body": "<p>I am trying to create ASP.Net Core Hosted Blazor Webassembly with Azure AD authentication. As per this <a href=\"https://docs.microsoft.com/en-us/aspnet/core/security/blazor/webassembly/hosted-with-azure-active-directory?view=aspnetcore-3.1\" rel=\"nofollow noreferrer\">document</a>, Microsoft suggests creating separate app registrations for the server api and the client app. </p>\n\n<p>My question is: is it possible to use the same client id instead of the 2 separate mentioned in the document, since it really is 1 project/artifact (containing the static blazor site + web api) that will be deployed into Azure. Will there be an issue if only 1 app registration is used?</p>\n"
+}

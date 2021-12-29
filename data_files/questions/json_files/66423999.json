@@ -1,0 +1,30 @@
+{
+    "tags": [
+        "azure",
+        "azure-web-app-service",
+        "blazor",
+        "blazor-webassembly",
+        "blazor-client-side"
+    ],
+    "owner": {
+        "reputation": 959,
+        "user_id": 1304247,
+        "user_type": "registered",
+        "accept_rate": 81,
+        "profile_image": "https://www.gravatar.com/avatar/2c7e429204962662336081e66951e608?s=128&d=identicon&r=PG",
+        "display_name": "wafers",
+        "link": "https://stackoverflow.com/users/1304247/wafers"
+    },
+    "is_answered": false,
+    "view_count": 44,
+    "answer_count": 0,
+    "score": 0,
+    "last_activity_date": 1614610433,
+    "creation_date": 1614609109,
+    "last_edit_date": 1614610433,
+    "question_id": 66423999,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/66423999/how-to-use-azure-app-settings-in-a-blazor-webassembly-client-side-application-at",
+    "title": "How to use Azure App Settings in a Blazor WebAssembly Client side application at runtime as appsettings.json configuration?",
+    "body": "<p><a href=\"https://i.stack.imgur.com/etLhi.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/etLhi.png\" alt=\"enter image description here\" /></a></p>\n<ul>\n<li>I'm Working on Blazor WebAssembly Client/Server project (directory structure as above)</li>\n<li>Have some application settings in both client and server projects.</li>\n<li>The projects are hosted in Azure.</li>\n</ul>\n<p><strong>The problem</strong> is in the <em>Client side</em> with the <code>appsettings.json</code></p>\n<ul>\n<li>In the client side, the <code>appsettings.json</code> is within the <code>wwwroot</code> directory. It is okay to access the file within the app, However, <em><strong>the settings cannot be overwritten by Azure Portal Application Settings of the App service.</strong></em></li>\n</ul>\n<p>It means, that after the app is deployed in Azure portal on a Web App Service, my configuration settings do not work with the application settings' variables.</p>\n<p>This is the code in the <code>Progam.cs</code>, which works fine and read the configuration from the file, but ignores the configuration settings of the Web App Service on Azure.</p>\n<pre><code>public static async Task Main(string[] args)\n{\n    var builder = WebAssemblyHostBuilder.CreateDefault(args);\n    builder.RootComponents.Add&lt;App&gt;(&quot;app&quot;);\n    //Add a named httpClient and set base Address and Default Request Headers\n    builder.Services.AddHttpClient(&quot;SOME_WEB_URL&quot;, client =&gt;  // SOME_WEB_URL is defined in the appsettings.json or in the Azure App Service configuration (Application Settings)\n    {\n        client.BaseAddress = new Uri(builder.Configuration[&quot;sbformsapi&quot;]);\n    });\n\n    //Add a named httpClient and set base Address and Default Request Headers\n    builder.Services.AddHttpClient(&quot;WEB_APP_API&quot;, client =&gt;   // WEB_APP_API is defined in the \n    {\n        client.BaseAddress = new Uri(builder.Configuration[&quot;sbwebappapi&quot;]);\n    });\n\n    builder.Services.AddAuthorizationCore();\n    ....\n    await builder.Build().RunAsync();\n}\n</code></pre>\n<p>Could someone please guide how can I either</p>\n<ul>\n<li>set the appsettings.json file outside the wwwroot and read it from there?\nOR</li>\n<li>inject/use the values from Azure App Service configuration's Application settings at runtime?</li>\n</ul>\n<p>I am talking about the application settings here (as in the pic)...</p>\n<p><a href=\"https://i.stack.imgur.com/KpUUC.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/KpUUC.png\" alt=\"enter image description here\" /></a></p>\n"
+}

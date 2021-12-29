@@ -1,0 +1,27 @@
+{
+    "tags": [
+        "azure-active-directory",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 1858,
+        "user_id": 1147577,
+        "user_type": "registered",
+        "accept_rate": 47,
+        "profile_image": "https://www.gravatar.com/avatar/38cfe687ff670056ddf7a581e1a3756e?s=128&d=identicon&r=PG",
+        "display_name": "Martin Andersen",
+        "link": "https://stackoverflow.com/users/1147577/martin-andersen"
+    },
+    "is_answered": false,
+    "view_count": 78,
+    "answer_count": 0,
+    "score": 0,
+    "last_activity_date": 1607085377,
+    "creation_date": 1607018627,
+    "last_edit_date": 1607070318,
+    "question_id": 65131583,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/65131583/why-am-i-getting-graph-api-access-token-failure-group-read-all",
+    "title": "Why am I getting &quot;Graph API access token failure: &#39;Group.Read.All&#39;&quot;",
+    "body": "<p>I am trying to find out why I am getting the error &quot;&quot;Graph API access token failure: 'Group.Read.All'&quot;</p>\n<p>I have followed the guide &quot;<a href=\"https://docs.microsoft.com/en-us/aspnet/core/blazor/security/webassembly/hosted-with-azure-active-directory?view=aspnetcore-3.1\" rel=\"nofollow noreferrer\">Secure an ASP.NET Core Blazor WebAssembly hosted app with Azure Active Directory</a>&quot; and &quot;<a href=\"https://docs.microsoft.com/en-us/aspnet/core/blazor/security/webassembly/azure-active-directory-groups-and-roles?view=aspnetcore-5.0\" rel=\"nofollow noreferrer\">Azure Active Directory (AAD) groups, Administrator Roles, and user-defined roles</a>&quot; I can log in but I also gets errors that I don't want to have.</p>\n<p><a href=\"https://i.stack.imgur.com/UywNw.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/UywNw.png\" alt=\"enter image description here\" /></a></p>\n<p>What I don't understand is where the Group.Read.All calls are coming from.</p>\n<p>This is the HttpClient configuration used to call the MS Graph API</p>\n<pre><code>b.Services.AddHttpClient(&quot;GraphAPI&quot;,\n    client =&gt; client.BaseAddress = new Uri(&quot;https://graph.microsoft.com/&quot;))\n    .AddHttpMessageHandler(provider =&gt; provider.GetService&lt;AuthorizationMessageHandler&gt;()\n                .ConfigureHandler(\n                    authorizedUrls: new []{&quot;https://graph.microsoft.com/&quot;},\n                    scopes: new []{&quot;Group.Read.All&quot;}\n                ));\n</code></pre>\n<p>And used in the CustomUserFactory</p>\n<pre><code>{\nvar client = _clientFactory.CreateClient(&quot;GraphAPI&quot;);\nvar response = await client.GetAsync(&quot;v1.0/me/memberOf&quot;);\nif (response.IsSuccessStatusCode)\n{\n    var userObjects = await response.Content.ReadFromJsonAsync&lt;DirectoryObjects&gt;();\n    foreach (var obj in userObjects?.Values)\n    {\n        if(_appGroups.Contains(obj.DisplayName))\n        {\n            userIdentity.AddClaim(new Claim(&quot;role&quot;, obj.DisplayName));\n            Console.WriteLine($&quot;group {obj.DisplayName}&quot;);\n        }\n    }\n    // var claim = userIdentity.Claims.FirstOrDefault(c =&gt; c.Type == &quot;hasgroups&quot;);\n    // userIdentity.RemoveClaim(claim);\n}\nelse\n{\n    _logger.LogError($&quot;Graph API request failure: {response.ReasonPhrase}&quot;);\n}\n</code></pre>\n<p>}</p>\n<p>I have tried not to set &quot;authorizedUrls&quot; and &quot;scopes&quot; but then the login fails.\nAgain it works and I can read all groups on the logged in user. But I must obvious be doing something wrong.</p>\n<p>Permissions set on the Azure AD for my Blazor WASM Client\n<a href=\"https://i.stack.imgur.com/xfi9c.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/xfi9c.png\" alt=\"enter image description here\" /></a></p>\n"
+}

@@ -1,0 +1,28 @@
+{
+    "tags": [
+        "google-chrome",
+        "chromium",
+        "webassembly"
+    ],
+    "owner": {
+        "reputation": 469,
+        "user_id": 12492341,
+        "user_type": "registered",
+        "profile_image": "https://lh3.googleusercontent.com/a-/AAuE7mBLb0YZg9Sw6N67vnPmuAdlIRKV1cu_4lz6Fr9Jrw=k-s128",
+        "display_name": "Jaden Garcia",
+        "link": "https://stackoverflow.com/users/12492341/jaden-garcia"
+    },
+    "is_answered": true,
+    "view_count": 93,
+    "accepted_answer_id": 65260950,
+    "answer_count": 1,
+    "score": 1,
+    "last_activity_date": 1607739536,
+    "creation_date": 1604948009,
+    "last_edit_date": 1605759737,
+    "question_id": 64757646,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/64757646/debugging-experimental-webassembly-externref-bug-in-google-chrome",
+    "title": "Debugging experimental WebAssembly externref bug in Google Chrome",
+    "body": "<p>Warning: as the reference types proposal isn't complete yet, this code will not run without toggling flags or setting in order to enable executing experimental code.</p>\n<p>If you are on Google Chrome or a Chromium browser, you will need to enable the following flag:\n<code>chrome://flags/#enable-experimental-webassembly-features</code></p>\n<hr />\n<p>I had set up a simple handwritten Wasm module for personal use. I could've easily written it in JavaScript, but it was easier and made more sense to use Wasm, and since it was a simple, personal script, I wouldn't care if other people couldn't run it.</p>\n<p>I had compiled it using wabt's wat2wasm.</p>\n<p>The Wasm module was intended to be fed the entire <code>globalThis</code> object to import from.\nFrom there, it took four TypedArray constructors: <code>Uint8Array</code>, <code>Uint16Array</code>, <code>Uint32Array</code>, and <code>BigUint64Array</code>.</p>\n<p>Take note: no code was executed prior to the Wasm, thus there cannot be any interference.</p>\n<p>Later, I had realized that that the Wasm wasn't working as intended at all, my math was correct, but the variables were wrong.</p>\n<p>I had narrowed my problem down to just this:</p>\n<pre><code>;; global -&gt; global variable\n(import &quot;globalThis&quot; &quot;Uint8Array&quot; (global $Uint8Array externref))\n\n(import &quot;globalThis&quot; &quot;Uint16Array&quot; (global $Uint16Array externref))\n\n(import &quot;globalThis&quot; &quot;Uint32Array&quot; (global $Uint32Array externref))\n\n(import &quot;globalThis&quot; &quot;BigUint64Array&quot; (global $BigUint64Array externref))\n\n;; func -&gt; function\n(import &quot;console&quot; &quot;log&quot; (func $console::log (param externref)))\n\n(start $_start)\n(func $_start\n    global.get $Uint8Array\n    call $console::log\n\n    global.get $Uint16Array\n    call $console::log\n\n    global.get $Uint32Array\n    call $console::log\n\n    global.get $BigUint64Array\n    call $console::log\n)\n</code></pre>\n<p>This Wasm was instantiated like so:</p>\n<pre class=\"lang-js prettyprint-override\"><code>WebAssembly.instantiateStreaming(\n    fetch(\n        &quot;test.wasm&quot;, {\n            mode        : &quot;same-origin&quot;,\n            credentials : &quot;omit&quot;,\n            cache       : &quot;no-store&quot;,\n            redirect    : &quot;error&quot;,\n            referrer    : &quot;no-referrer&quot;\n        }\n    ), globalThis\n).catch( console.error );\n</code></pre>\n<p>The interesting problem is that the logs all say the same thing: <code>Uint8Array</code>.</p>\n<p>I was dumbfounded. This has to be literally impossible. The JavaScript file itself was not cached, the WebAssembly was being fetched with &quot;no-cache,&quot; the web page itself wasn't cached.</p>\n<p>Then I thought, because I was using XHTML, maybe it didn't happen in HTML files. It did there too.</p>\n<p>I tried converting the Wasm file to a TypedArray and just using <code>WebAssembly.instantiate</code>, suddenly, it worked flawlessly.</p>\n<p>At this point the server must be serving the wrong file, because the further I go, the more this seems like nonsense.</p>\n<p>I almost want to say that this is a Chromium browser or V8 runtime error, but I need to narrow it down a bit more before I blindly attempt to present this as a bug.</p>\n<p>I have set up two different versions of the same code, on <a href=\"https://repl.it/@xxpertHacker/TypedArrays\" rel=\"nofollow noreferrer\">Repl.it</a>, and on <a href=\"https://codesandbox.io/s/silent-resonance-107vk\" rel=\"nofollow noreferrer\">CodeSandBox.io</a>, so that hopefully someone can try running it themself, to confirm the bug, and maybe attempt to debug where I went wrong.</p>\n<p>(Could this be a problem with Repl.it's server?)</p>\n"
+}

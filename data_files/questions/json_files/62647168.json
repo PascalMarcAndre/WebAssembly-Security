@@ -1,0 +1,26 @@
+{
+    "tags": [
+        "asp.net-core",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 2857,
+        "user_id": 1671933,
+        "user_type": "registered",
+        "accept_rate": 77,
+        "profile_image": "https://i.stack.imgur.com/H8gb6.png?s=128&g=1",
+        "display_name": "kabuto178",
+        "link": "https://stackoverflow.com/users/1671933/kabuto178"
+    },
+    "is_answered": false,
+    "view_count": 22,
+    "answer_count": 0,
+    "score": 0,
+    "last_activity_date": 1593467184,
+    "creation_date": 1593467184,
+    "question_id": 62647168,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/62647168/blazor-client-side-hosted-asp-for-authentication-access-to-the-application",
+    "title": "Blazor Client-side Hosted ASP for authentication access to the application",
+    "body": "<p>I want to create an application with Blazor webassembly however I do have need for Active Directory to act as initial authentication based on Identity name. Can I use Active Directory on premises to get the user and user group then use JWT as a means to control the authorization afterwards? I was attempting this but only got as far as using JWT and roles based on the JWT token, but attempts to use <code>User.Identity.Name</code> on the controller fails to get the system user Identity currently.</p>\n"
+}

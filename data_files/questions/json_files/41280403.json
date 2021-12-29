@@ -1,0 +1,31 @@
+{
+    "tags": [
+        "asp.net-web-api",
+        "dependency-injection",
+        "asp.net-mvc-5",
+        "asp.net-web-api2",
+        "autofac"
+    ],
+    "owner": {
+        "reputation": 84,
+        "user_id": 6755596,
+        "user_type": "registered",
+        "accept_rate": 80,
+        "profile_image": "https://lh3.googleusercontent.com/-NaBwc5sK7ts/AAAAAAAAAAI/AAAAAAAABzI/wFXRwxCZWyE/photo.jpg?sz=128",
+        "display_name": "Abhijith ponnapally",
+        "link": "https://stackoverflow.com/users/6755596/abhijith-ponnapally"
+    },
+    "is_answered": true,
+    "view_count": 624,
+    "accepted_answer_id": 41299588,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1527600420,
+    "creation_date": 1482400826,
+    "last_edit_date": 1527600420,
+    "question_id": 41280403,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/41280403/dependency-is-not-getting-resolved-in-webapi-including-owin-with-autofac",
+    "title": "Dependency is not getting resolved in WebAPI (including OWIN) with Autofac",
+    "body": "<p>My global.asax looks like below</p>\n\n<pre><code>private void BuildIocContainer()\n    {\n        var builder = new ContainerBuilder();\n        builder.RegisterModule(new BootstrapModule());\n        var container = builder.Build();\n        DependencyResolver.SetResolver(new AutofacDependencyResolver(container));\n        GlobalConfiguration.Configuration.DependencyResolver = new AutofacWebApiDependencyResolver(container); //Set the WebApi DependencyResolver\n    }\n\n    protected void Application_Start()\n    {\n        BuildIocContainer();\n        AreaRegistration.RegisterAllAreas();\n        GlobalConfiguration.Configure(WebApiConfig.Register);\n        FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);\n        RouteConfig.RegisterRoutes(RouteTable.Routes);\n        BundleConfig.RegisterBundles(BundleTable.Bundles);\n    }\n</code></pre>\n\n<p>I have built a bootstrap module for autofac like the one below </p>\n\n<pre><code>public class BootstrapModule : Autofac.Module\n{\n    private Assembly AssemblyOf&lt;T&gt;()\n    {\n        return typeof(T).Assembly;\n    }\n\n    private Assembly WebAssembly\n    {\n        get { return Assembly.GetExecutingAssembly(); }\n    }\n\n    private void RegisterMvc(ContainerBuilder builder)\n    {\n        builder.RegisterType&lt;AsyncControllerActionInvoker&gt;()\n            .As&lt;IActionInvoker&gt;();\n\n        builder.RegisterControllers(WebAssembly)\n            .InjectActionInvoker();\n        builder.RegisterApiControllers(WebAssembly).InjectActionInvoker();\n    }\n\n    private void RegisterLogger(ContainerBuilder builder)\n    {\n        builder.Register(CreateLogger)\n            .SingleInstance();\n        builder.Register(_ =&gt; new NLogWrapper(LogManager.GetLogger(\"DefaultLogger\")))\n            .As&lt;Logging.ILogger&gt;()\n            .SingleInstance();\n    }\n\n    private static System.Func&lt;Type, Logging.ILogger&gt; CreateLogger(IComponentContext componentContext)\n    {\n        return type =&gt; new NLogWrapper(LogManager.GetLogger(type.FullName));\n    }\n\n    protected override void Load(ContainerBuilder builder)\n    {\n        RegisterLogger(builder);\n        RegisterMvc(builder);\n        builder.RegisterAssemblyTypes(WebAssembly)\n                .AsImplementedInterfaces();\n\n        builder.RegisterType&lt;UserService&gt;()\n        .As&lt;IUserService&gt;()\n        .InstancePerRequest();            \n        builder.RegisterAssemblyTypes(typeof(IUserService).Assembly)\n               .AsImplementedInterfaces();\n        builder.RegisterAssemblyTypes(typeof(IUserRepository).Assembly)\n                .AsImplementedInterfaces();\n        builder.RegisterFilterProvider();\n    }\n}\n</code></pre>\n\n<p>Now, when I try to hit account controller through postman client, </p>\n\n<pre><code>private IUserService _userService;\n\n    public AccountController(IUserService userService)\n    {\n        _userService = userService;\n    }\n\n\n\n    // POST api/Account/Register\n    [AllowAnonymous]\n    [Route(\"Register\")]\n    public HttpStatusCode Register(User model)\n    {\n        if (!ModelState.IsValid)\n        {\n            return HttpStatusCode.BadRequest;\n        }\n\n        // TODO : Write mapper if needed\n        var user = new ToolUser()\n        {\n            FirstName = model.FirstName,\n            LastName = model.LastName,\n            EmailID = model.EmailID,\n            DOB = Convert.ToDateTime(model.DateOfBirth),\n            Gender = model.Gender.ToString(),\n            TenandID = model.TenantID,\n            Password = model.Password\n        };\n\n        HttpStatusCode result = _userService.RegisterUser(user);\n\n        return result;\n    }\n</code></pre>\n\n<p>I get the error</p>\n\n<blockquote>\n  <p>\"An error occurred when trying to create a controller of type 'AccountController'. Make sure that the controller has a parameterless public constructor.\"</p>\n</blockquote>\n\n<p>What am I doing wrong?</p>\n"
+}

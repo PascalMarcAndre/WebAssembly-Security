@@ -1,0 +1,29 @@
+{
+    "tags": [
+        "c#",
+        "authorization",
+        "blazor",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 610,
+        "user_id": 4663185,
+        "user_type": "registered",
+        "accept_rate": 61,
+        "profile_image": "https://lh4.googleusercontent.com/-CRvmCOKLHsE/AAAAAAAAAAI/AAAAAAAAHWI/AWXw4ZVN-jQ/photo.jpg?sz=128",
+        "display_name": "Erik Thysell",
+        "link": "https://stackoverflow.com/users/4663185/erik-thysell"
+    },
+    "is_answered": true,
+    "view_count": 70,
+    "accepted_answer_id": 64812763,
+    "answer_count": 2,
+    "score": 0,
+    "last_activity_date": 1605236004,
+    "creation_date": 1605216275,
+    "question_id": 64811949,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/64811949/blazor-wasm-where-to-check-user-privileges",
+    "title": "Blazor wasm - where to check user privileges",
+    "body": "<p>Using a Blazor Web-Assembly web app with asp.net server, I would like to filter what forms/input a user can see/change/use. I.e. an anonymous or logged in user without privileges may not view or modify a select form (combobox).\nThe page shows information about a specific area (the same page is used for different areas but uses input in the url to specify area). If the user has no privileges only a basic view should be allowed. If the user is from the area (area claim value) and has an &quot;elevated&quot; role a more advanced view is shown. It works fine if all I want to check is the user Role is for example &quot;Admin&quot;:</p>\n<pre><code>&lt;AuthorizeView Roles=&quot;Admin&quot;&gt;\n    &lt;Authorized&gt;\n        &lt;div class=&quot;input-group&quot;&gt;\n            &lt;div class=&quot;input-group-prepend&quot;&gt;\n                &lt;span class=&quot;input-group-text&quot;&gt;Secret choise:&lt;/span&gt;\n            &lt;/div&gt;\n            &lt;select @bind=&quot;Choise&quot;&gt;\n                &lt;option value=A&gt;A&lt;/option&gt;\n                &lt;option value=B&gt;B&lt;/option&gt;\n            &lt;/select&gt;\n        &lt;/div&gt;\n    &lt;/Authorized&gt;\n&lt;/AuthorizeView&gt;\n</code></pre>\n<p>But the combination of Role and &quot;area&quot; claim compared to variable values seems to require more code...\nusing razor.cs code to call the server:</p>\n<pre><code>private async Task CheckUserViewPriveligesViaServer()\n{\n    var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();\n    var user = authState.User;\n\n    if (user.Identity.IsAuthenticated)\n    {\n        var claims = user.Claims;\n        var userID = user.FindFirst(c =&gt; c.Type == &quot;sub&quot;)?.Value;\n        UserSiteDTO userSiteDTO = new UserArea() { AreaID = _area.ID, UserID = userID };\n        try\n        {\n            var canUserViewSensitiveInformation = await UsersReposotory.IsUserElevatedAndFromArea(userSiteDTO); // calls asp.net server\n            if (canUserViewSensitiveInformation)\n            {\n                _viewPriveliges = ViewPriveliges.AreaAdmin;\n            }\n            else\n            {\n                _viewPriveliges = ViewPriveliges.None;\n            }\n        }\n        catch (Exception)\n        {\n\n            _viewPriveliges = ViewPriveliges.None;\n            Console.WriteLine(&quot;Unable to get user priveliges&quot;);\n        }\n    }\n    else\n    {\n        _viewPriveliges = ViewPriveliges.None;\n    }\n}\n</code></pre>\n<p>and on the server:</p>\n<pre><code>[HttpPost(&quot;isUserElevatedAndFromArea&quot;)]\npublic async Task&lt;ActionResult&lt;bool&gt;&gt; IsUserElevatedAndFromArea(UserSiteDTO userDTO)\n{\n    if (string.IsNullOrWhiteSpace(userDTO.AreaID) \n        || string.IsNullOrWhiteSpace(userDTO.UserID))\n    {\n        return false;\n    }\n    var user = await _userManager.FindByIdAsync(userDTO.UserID);\n    var claims = await _userManager.GetClaimsAsync(user);\n    var areaOk = false;\n    var adminOk = false;\n    foreach (var c in claims)\n    {\n        if (c.Type == &quot;AreaID&quot;)\n        {\n            if (!string.IsNullOrWhiteSpace(c.Value) &amp;&amp; c.Value == userDTO.AreaID )\n            {\n                areaOk = true;\n            }\n        }\n        if (c.Type == &quot;AreaAdmin&quot;)\n        {\n            if (!string.IsNullOrWhiteSpace(c.Value) || c.Value == &quot;Yes&quot;)\n            {\n                adminOk = true;\n            }\n        }\n    }\n    return areaOk &amp;&amp; adminOk;\n}\n</code></pre>\n<p>coupled with an if statement in the razor code:</p>\n<pre><code>@if (_viewPriveliges == ViewPriveliges.AreaAdmin)\n{\n    &lt;div class=&quot;input-group&quot;&gt;\n        &lt;div class=&quot;input-group-prepend&quot;&gt;\n            &lt;span class=&quot;input-group-text&quot;&gt;Secret choise:&lt;/span&gt;\n        &lt;/div&gt;\n        &lt;select @bind=&quot;Choise&quot;&gt;\n            &lt;option value=A&gt;A&lt;/option&gt;\n            &lt;option value=B&gt;B&lt;/option&gt;\n        &lt;/select&gt;\n    &lt;/div&gt;\n}\n</code></pre>\n<p>The other option would be to &quot;bake&quot; the server code into the razor.cs code to run the checks in webassembly.</p>\n<p>So, my question is if it is &quot;ok&quot; safety wise to check this information in the code (webassembly in the browser) for the page or if this should be done by calling the server through a http get/post call??</p>\n"
+}

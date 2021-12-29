@@ -1,0 +1,26 @@
+{
+    "tags": [
+        "blazor",
+        "webassembly"
+    ],
+    "owner": {
+        "reputation": 2783,
+        "user_id": 784988,
+        "user_type": "registered",
+        "accept_rate": 52,
+        "profile_image": "https://www.gravatar.com/avatar/0fd5186b6b43633b893b903f6b2eb530?s=128&d=identicon&r=PG",
+        "display_name": "JohnB",
+        "link": "https://stackoverflow.com/users/784988/johnb"
+    },
+    "is_answered": false,
+    "view_count": 54,
+    "answer_count": 0,
+    "score": 0,
+    "last_activity_date": 1585252423,
+    "creation_date": 1585252423,
+    "question_id": 60875135,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/60875135/is-there-a-way-for-webassembly-applications-be-run-as-stand-alone-or-self-hosted",
+    "title": "Is there a way for WebAssembly applications be run as stand alone or self hosted?",
+    "body": "<p>We're currently looking at OpenSilver, which is a open-source reimplementation of Silverlight.\nIt runs on browsers via WebAssembly. It uses Mono for WebAssembly and Microsoft Blazor.\nIt runs without the need for browser extensions.</p>\n\n<p>The examples I've seen so far require it be hosted in IIS. \nFrom within Visual studio, it can be hosted via IIS Express or a simulator.</p>\n\n<p>Our clients have security requirements that prohibit them from web applications (hosted in IIS).</p>\n\n<p>We are evaluating OpenSilver as a potential cross platform solution.</p>\n\n<p>Is there any way to run as a standard alone or self hosted application?\nI know Qt/QML has a browser control that let's you load html pages directly.\nI'm pretty sure that's not going to help us at all.\nAre there any alternatives for this?</p>\n\n<p>Thx</p>\n"
+}

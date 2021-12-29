@@ -1,0 +1,26 @@
+{
+    "tags": [
+        "web-applications",
+        "paypal"
+    ],
+    "owner": {
+        "reputation": 341,
+        "user_id": 352635,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/acc093c696d9eeeef8f6cbe31aa66f25?s=128&d=identicon&r=PG",
+        "display_name": "Vitaly",
+        "link": "https://stackoverflow.com/users/352635/vitaly"
+    },
+    "is_answered": true,
+    "view_count": 43,
+    "accepted_answer_id": 64828434,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1605304609,
+    "creation_date": 1605297424,
+    "question_id": 64827234,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/64827234/what-is-the-best-paypal-web-app-workflow-for-client-server-scenario",
+    "title": "What is the best PayPal web app workflow for client-server scenario?",
+    "body": "<p>PayPal documentation is absolutely appalling \u2013 please help. I am building a web app with a SPA client and a server, and I want to implement a robust PayPal payment workflow for the app. This initially will be just a one off payment implementation, but later on I will need to add subscriptions. Anyway, for now  I am just trying to figure out a way to reliably and securely take one-off payments. After countless hours of reading the docs this is what I figured my workflow should be:</p>\n<ol>\n<li>User clicks payment button.</li>\n<li>Client app makes a request to the server asking to create an order.</li>\n<li>Server calls PayPal\u2019s REST API (Create an Order) and receives order details. Server also saves order details in a DB.</li>\n<li>Server sends order details back to the client. Amongst those details I found a redirect URL which points to PayPal checkout.</li>\n<li>Client redirects to the URL.</li>\n<li>User performs order authorisation on PayPal\u2019s website.</li>\n<li>PayPal redirects back to the client, returning a token in the URL.</li>\n<li>Client extracts the token (which is kind of order/payment ID?) and sends the ID to the server, asking to capture the payment.</li>\n<li>Server, using the ID, finds order details in the DB and calls PayPal\u2019s REST API (Capture an order), and marks the order as paid in its DB.</li>\n<li>Server sends success confirmation back to the client.</li>\n<li>Client displays confirmation message.</li>\n</ol>\n<p>This workflow seems secure (at no point the client has any payment info, all sensitive communication is strictly between the server and PayPal) and reliable (the funds are taken from the user at the absolute last moment, on the server, via REST call \u2013 any failure in the workflow will not lead to false or unrecorded fund transfers).</p>\n<p>I also tried the webhooks approach. The flow is much simpler, but there seems to be a delay (about a minute or so) before webhook hits the server; this is not ideal because I want to show payment confirmation instantly.</p>\n<p>So my questions are:</p>\n<p>Is this workflow correct? Am I missing something? Is it oversimplified or overcomplicated? Would you replace some steps with something else?</p>\n<p>I haven\u2019t yet done my research about subscriptions. Will this workflow fit PayPal subscription creation?</p>\n<p>For point 3 in the workflow, what PayPal request should I use: Create Order, Create Order Authorisation, or Authorise Order?</p>\n<p>For point 9 in the workflow, what PayPal request should I use: Capture Order, Authorise Order, or Capture Order Authorisation?</p>\n<p>And the last question. Is there any place I can learn how to develop for PayPal? From reading the docs, I found only the examples are useful. They don\u2019t provide general guidance/tutorials, or explain what approaches should be used and why. Is there a better place to learn PayPal development than PayPal documentation?</p>\n<p>The app is Blazor WebAssembly client (for those who don\u2019t know how Blazor works \u2013 this is similar to a JavaScript SPA application running in the browser, but using C#/.NET) and .NET Core server, also in C#.</p>\n"
+}

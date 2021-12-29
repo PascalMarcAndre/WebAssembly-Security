@@ -1,0 +1,29 @@
+{
+    "tags": [
+        "asp.net",
+        "blazor",
+        "blazor-client-side",
+        "azure-authentication",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 144,
+        "user_id": 9028374,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/e5cd0b8950b5831de518ed53b45638a6?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Tacot",
+        "link": "https://stackoverflow.com/users/9028374/tacot"
+    },
+    "is_answered": true,
+    "view_count": 617,
+    "accepted_answer_id": 63942983,
+    "answer_count": 2,
+    "score": 5,
+    "last_activity_date": 1600362496,
+    "creation_date": 1597864168,
+    "question_id": 63493496,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/63493496/blazor-wasm-authorization-not-working-with-aad-roles",
+    "title": "Blazor WASM Authorization not working with AAD Roles",
+    "body": "<p>I am trying to set up AAD Authorization based on user defined roles following this doc <a href=\"https://docs.microsoft.com/en-us/aspnet/core/blazor/security/webassembly/azure-active-directory-groups-and-roles?view=aspnetcore-3.1#user-defined-roles\" rel=\"noreferrer\">https://docs.microsoft.com/en-us/aspnet/core/blazor/security/webassembly/azure-active-directory-groups-and-roles?view=aspnetcore-3.1#user-defined-roles</a> I am able to set it up in the app manifest and get the API authorization working. However when I try to do it on the UI side I cannot get the claim to appear. I did the json interpreting classes (DirectoryObjects, CustomUserAccount and Value(used by directory object)). I also added the CustomUserFactory removing the group stuff since I only care about roles:</p>\n<pre><code>        private readonly ILogger&lt;CustomUserFactory&gt; _logger;\n        private readonly IHttpClientFactory _clientFactory;\n\n        public CustomUserFactory(IAccessTokenProviderAccessor accessor,\n            IHttpClientFactory clientFactory,\n            ILogger&lt;CustomUserFactory&gt; logger)\n            : base(accessor)\n        {\n            _clientFactory = clientFactory;\n            _logger = logger;\n        }\n\n        public async override ValueTask&lt;ClaimsPrincipal&gt; CreateUserAsync(\n            CustomUserAccount account,\n            RemoteAuthenticationUserOptions options)\n        {\n            var initialUser = await base.CreateUserAsync(account, options);\n\n            if (initialUser.Identity.IsAuthenticated)\n            {\n                var userIdentity = (ClaimsIdentity)initialUser.Identity;\n\n                foreach (var role in account.Roles)\n                {\n                    userIdentity.AddClaim(new Claim(&quot;role&quot;, role));\n                }\n\n                \n            }\n\n            return initialUser;\n        }\n</code></pre>\n<p>and then I modified the program.cs as the doc mentioned:</p>\n<pre><code>    builder.Services.AddMsalAuthentication&lt;RemoteAuthenticationState,\n    CustomUserAccount&gt;(options =&gt;\n    {\n        builder.Configuration.Bind(&quot;AzureAd&quot;, options.ProviderOptions.Authentication);\n        options.ProviderOptions.DefaultAccessTokenScopes.Add(&quot;apiaccessguid&quot;);\n        options.UserOptions.RoleClaim = &quot;role&quot;;\n    }).AddAccountClaimsPrincipalFactory&lt;RemoteAuthenticationState, CustomUserAccount,\n    CustomUserFactory&gt;();\n</code></pre>\n<p>when that didn't work I tried adding it as a policy with no luck as well:</p>\n<pre><code> builder.Services.AddAuthorizationCore(options =&gt;\n    {\n        options.AddPolicy(&quot;Admin&quot;, policy =&gt;\n            policy.RequireClaim(&quot;role&quot;, &quot;admin&quot;));\n    });\n</code></pre>\n<p>for restricting the view I tried in code with the <code>user.IsInRole(&quot;admin&quot;)</code> and in the UI with</p>\n<pre><code>&lt;AuthorizeView Roles=&quot;admin&quot;&gt;\n    &lt;li class=&quot;nav-item px-3&quot;&gt;\n        &lt;NavLink class=&quot;nav-link&quot; href=&quot;Admin&quot;&gt;\n            Admin\n        &lt;/NavLink&gt;\n    &lt;/li&gt;\n&lt;/AuthorizeView&gt;\n</code></pre>\n<p>and with policy:</p>\n<pre><code>&lt;AuthorizeView Policy=&quot;Admin&quot;&gt;\n    &lt;Authorized&gt;\n        &lt;p&gt;\n            The user is in the 'Administrator' AAD Administrative Role\n            and can see this content.\n        &lt;/p&gt;\n    &lt;/Authorized&gt;\n    &lt;NotAuthorized&gt;\n        &lt;p&gt;\n            The user is NOT in the 'Administrator' role and sees this\n            content.\n        &lt;/p&gt;\n    &lt;/NotAuthorized&gt;\n&lt;/AuthorizeView&gt;\n</code></pre>\n<p>and none of them worked. Is there something I am missing? I also verified that the token has the admin role.</p>\n"
+}

@@ -1,0 +1,28 @@
+{
+    "tags": [
+        ".net",
+        ".net-core",
+        ".net-5"
+    ],
+    "owner": {
+        "reputation": 3293,
+        "user_id": 1862658,
+        "user_type": "registered",
+        "accept_rate": 71,
+        "profile_image": "https://www.gravatar.com/avatar/f3f7f8447402ea77e41cade2a491a38b?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Aria",
+        "link": "https://stackoverflow.com/users/1862658/aria"
+    },
+    "is_answered": true,
+    "view_count": 294,
+    "accepted_answer_id": 62450855,
+    "answer_count": 2,
+    "score": 2,
+    "last_activity_date": 1596827856,
+    "creation_date": 1592485140,
+    "question_id": 62450555,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/62450555/will-net-framework-projects-become-cross-platform-by-net-5",
+    "title": "Will .Net Framework projects become Cross-Platform by .Net 5",
+    "body": "<p>Scott announced tat the next version of .Net Core and .Net framework will be released and unified as .Net 5 in November 2020 just few months later.</p>\n\n<p>So we have decided to port some of our projects into .Net Core such as our WCF services and so on but based on these sentences from <a href=\"https://devblogs.microsoft.com/dotnet/net-core-is-the-future-of-net/\" rel=\"nofollow noreferrer\">here</a>.</p>\n\n<blockquote>\n  <p>.NET Framework 4.8 will be the last major version of .NET Framework.\n  If you have existing .NET Framework applications that you are\n  maintaining, there is no need to move these applications to .NET Core.\n  We will continue to both service and support .NET Framework, which\n  includes bug\u2013, reliability\u2013 and security fixes. It will continue to\n  ship with Windows (much of Windows depends on .NET Framework) and we\n  will continue to improve the tooling support for .NET in Visual Studio\n  (Visual Studio is written on .NET Framework).</p>\n  \n  <p>There will be just one .NET going forward, and you will be able to use\n  it to target Windows, Linux, macOS, iOS, Android, tvOS, watchOS and\n  WebAssembly and more.</p>\n</blockquote>\n\n<p>what does the real meaning by <code>If you have existing .NET Framework applications that you are maintaining, there is no need to move these applications to .NET Core.</code><br>\nOne of major gain for us by porting .Net Framework application to .Net Core is being Cross-Platform.</p>\n"
+}

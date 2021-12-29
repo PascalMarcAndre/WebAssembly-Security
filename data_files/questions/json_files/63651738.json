@@ -1,0 +1,27 @@
+{
+    "tags": [
+        "asp.net-core",
+        "authentication",
+        "blazor-client-side"
+    ],
+    "owner": {
+        "reputation": 155,
+        "user_id": 9733925,
+        "user_type": "registered",
+        "profile_image": "https://lh5.googleusercontent.com/-9V9qSenk3bc/AAAAAAAAAAI/AAAAAAAAACc/azFymwcyXj0/photo.jpg?sz=128",
+        "display_name": "TheAnachronism",
+        "link": "https://stackoverflow.com/users/9733925/theanachronism"
+    },
+    "is_answered": true,
+    "view_count": 384,
+    "accepted_answer_id": 63662595,
+    "answer_count": 2,
+    "score": 4,
+    "last_activity_date": 1599140727,
+    "creation_date": 1598734683,
+    "question_id": 63651738,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/63651738/blazor-webassembly-hosted-proxy-crash-on-successful-authentication",
+    "title": "Blazor WebAssembly Hosted Proxy crash on successful authentication",
+    "body": "<p>I've recently encountered quite a weird problem with my Blazor WebAssembly application in which I've used the Authorization package.\nNow I'm not quite sure what it is but something that authentication is doing causes the Debug proxy to crash and the browser window just closes. The only output lines I could get, which I guess have something to do with it is:</p>\n<blockquote>\n<p>Exception thrown: 'System.Net.Sockets.SocketException' in Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.dll\nException thrown: 'System.Net.Sockets.SocketException' in System.Private.CoreLib.dll\nException thrown: 'Microsoft.AspNetCore.Connections.ConnectionResetException' in System.Private.CoreLib.dll\nException thrown: 'Microsoft.AspNetCore.Connections.ConnectionResetException' in System.Private.CoreLib.dll</p>\n</blockquote>\n<p>I've found <a href=\"https://github.com/dotnet/aspnetcore/issues/20511\" rel=\"nofollow noreferrer\">this GitHub issue</a> which I think has to do something with this but I couldn't get any further solutions there...</p>\n<p>I've tried it with different browsers to but the new Microsoft Edge as well as Chrome closes completly.</p>\n<p>Anyone an idea why this happens?</p>\n"
+}

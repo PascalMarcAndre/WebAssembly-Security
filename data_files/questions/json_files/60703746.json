@@ -1,0 +1,27 @@
+{
+    "tags": [
+        "c++",
+        "cmake"
+    ],
+    "owner": {
+        "reputation": 2690,
+        "user_id": 6165833,
+        "user_type": "registered",
+        "accept_rate": 89,
+        "profile_image": "https://www.gravatar.com/avatar/1b6bbdd7a7472d52c14da82af5eb6d20?s=128&d=identicon&r=PG&f=1",
+        "display_name": "ymoreau",
+        "link": "https://stackoverflow.com/users/6165833/ymoreau"
+    },
+    "is_answered": true,
+    "view_count": 38,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1584354790,
+    "creation_date": 1584352494,
+    "last_edit_date": 1584353473,
+    "question_id": 60703746,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/60703746/how-to-include-first-a-cmake-generated-config-h-conflicting-with-3rd-party-files",
+    "title": "How to include first a CMake generated config.h conflicting with 3rd party files?",
+    "body": "<p>I use CMake to generate a config.h file. I thought it was better to generate it in the build folder and not the source folder, because it will not be committed in the versioning system.<br>\nBecause of that, I had to add an include directory to my target, and include my file like <code>&lt;config.h&gt;</code> instead of <code>\"config.h\"</code>.</p>\n\n<pre><code>set(GENERATED_HEADER_DIR ${CMAKE_BINARY_DIR}/geninclude)\n\nexecute_process(COMMAND git describe\n                OUTPUT_VARIABLE version_description\n                OUTPUT_STRIP_TRAILING_WHITESPACE)\n\nconfigure_file(\"${CMAKE_CURRENT_SOURCE_DIR}/src/config.h.in\"\n               \"${GENERATED_HEADER_DIR}/config.h\")\n\n# ... target configuration\n\ntarget_include_directories(my_target\n                           PRIVATE ${GENERATED_HEADER_DIR}\n                           PRIVATE ${SOME_LIB_I_NEED})\n</code></pre>\n\n<p>My problem is: some lib has aslo exposed a <em>config.h</em> file and the both files are messing up each other during the build.</p>\n\n<p>Edit: the project is built to webassembly so apparently it needs to compile everything at once and cannot link to bin libs as it is usually done with C++ projects.</p>\n\n<hr>\n\n<p>Is there a way to to include my own generated file with <code>\".h\"</code> instead of <code>&lt;.h&gt;</code> without putting the file into my <em>src</em> dir?</p>\n\n<p>Or it there a way to prioritize the include so my code will include my generated file and the lib includes its own? I don't think I can modify the lib CMake config though...</p>\n"
+}

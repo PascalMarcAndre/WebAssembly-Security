@@ -1,0 +1,27 @@
+{
+    "tags": [
+        "asp.net-core-webapi",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 73,
+        "user_id": 13129431,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/be40c8995899485adf5c48d87d01ae69?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Zack",
+        "link": "https://stackoverflow.com/users/13129431/zack"
+    },
+    "is_answered": true,
+    "view_count": 25,
+    "accepted_answer_id": 63021518,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1595358704,
+    "creation_date": 1595351014,
+    "last_edit_date": 1595358177,
+    "question_id": 63019489,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/63019489/blazor-webapi-call-returns-partial-model",
+    "title": "Blazor WebAPI call returns partial model",
+    "body": "<p>I'm assuming this is something to do with Newtonsoft.Json...\nWe are making an ASP.NET Core hosted Blazor Webassembly app (starting with the Visual Studio template).\nWhen I call the WebAPI for a custom view model, it only returns some of the properties in the model.</p>\n<p>Model:</p>\n<pre><code>    public class FormViewModel\n    {\n        public Models.Form Form { get; set; }\n        public ObservableCollection&lt;Models.Role&gt; Roles { get; set; } = new ObservableCollection&lt;Models.Role&gt;();\n        public ObservableCollection&lt;Models.IdentifiedViewModelObject&gt; Answers = new ObservableCollection&lt;IdentifiedViewModelObject&gt;();\n        public ObservableCollection&lt;string&gt; Cells = new ObservableCollection&lt;string&gt;();\n        public ObservableCollection&lt;string&gt; Lines = new ObservableCollection&lt;string&gt;();\n        public ObservableCollection&lt;string&gt; Items = new ObservableCollection&lt;string&gt;();\n    }\n</code></pre>\n<p>I verify that all of the class properties do get values.</p>\n<p>But the WebAPI, looking at browser dev tools in chromium edge, returns this model:</p>\n<pre><code>{\n   lpaForm : {...},\n   roles: [...]\n}\n</code></pre>\n"
+}

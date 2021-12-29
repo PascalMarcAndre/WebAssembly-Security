@@ -1,0 +1,29 @@
+{
+    "tags": [
+        "c#",
+        "asp.net-core",
+        "authentication",
+        "asp.net-web-api",
+        "asp.net-identity"
+    ],
+    "owner": {
+        "reputation": 11,
+        "user_id": 15085852,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/8e83178672031296b8e795fff3e14385?s=128&d=identicon&r=PG&f=1",
+        "display_name": "npljzwbkanmzputckb",
+        "link": "https://stackoverflow.com/users/15085852/npljzwbkanmzputckb"
+    },
+    "is_answered": false,
+    "view_count": 57,
+    "answer_count": 1,
+    "score": 1,
+    "last_activity_date": 1611701974,
+    "creation_date": 1611684584,
+    "last_edit_date": 1611684778,
+    "question_id": 65906877,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/65906877/asp-net-core-webapi-authentication-with-identity",
+    "title": "ASP.NET Core WebApi Authentication with Identity",
+    "body": "<p>Okay let me start by saying that I'm rather new to ASP.NET Core and web development in general. Though I did some minor projects in the past.<br />\nI'm at a point where I'm pretty much lost and can't figure out what my issue is. I hope you can at least point me in the right direction.</p>\n<h2>What I want to do</h2>\n<p>TLDR: Authenticate and authorize a Blazor app with a WebApi</p>\n<p>I want to create a Blazor WebAssembly app hosted by an ASP.Core 5 App. Business Logic will get executed by another WebApi.</p>\n<p>So I have 3 relevant projects:</p>\n<ul>\n<li>WebClient (Frontend)</li>\n<li>WebHost (Host for WebClient)</li>\n<li>WebApi (Backend)</li>\n</ul>\n<p>The WebHost is just meant to be hosted in a docker container which will run behind a reverse proxy. So everything I do is running on http locally.</p>\n<p>Blazor communicates with the Backend over WebApi ApiController (REST Api).</p>\n<p>The Frontend has some areas which will need user authentication and authorization. The WebApi is meant to take care of this.</p>\n<p>And here goes my problem.</p>\n<hr />\n<h2>What I've done</h2>\n<p>I've added the IdentityService to my WebApi with customized <code>IdentityUser</code>, <code>IdentityRole</code>, <code>IUserStore</code> and so on.<br />\nWhen I test my Api with Swagger the registration, login, changing password etc works just fine.</p>\n<p>My Issue: The login is not remembered by the WebApi. That means I can log in and my <code>SignInManager</code> tells me everything is cool but the controller won't know anything about the User when I call an endpoint the next time.<br />\nWhen I successfully call the login endopint there is a cookie stored in the browser. When I check the <code>HttpContext</code>on my Backend I can see the cookie.</p>\n<hr />\n<h2>Implementation Details</h2>\n<p>I've tried to keep the snippets short and stripped unrelevant parts.</p>\n<p>Startup Configure Method</p>\n<pre><code>app.UseRouting();\napp.UseAuthentication();\napp.UseAuthorization();\n\napp.UseSwagger();\napp.UseSwaggerUI(...);\n\napp.UseEndpoints(x =&gt; x.MapControllers());\n</code></pre>\n<p>Startup ConfigureServices Method</p>\n<pre><code>services.AddControllers();\nservices.AddSwaggerGen(...);\n\nservices.AddScoped&lt;IUserManager, AppUserManager&gt;();\nservices.AddScoped&lt;ISignInManager, AppSignInManager&gt;();\nservices.AddTransient&lt;IUserStore&lt;AppUser&gt;, AppUserStore&gt;();\nservices.AddTransient&lt;IRoleStore&lt;AppRole&gt;, AppRoleStore&gt;();\nservices.AddIdentity&lt;AppUser, AppRole&gt;()\n        .AddDefaultTokenProviders();\nservices.Configure&lt;IdentityOptions&gt;(...);\n\nservices.AddHttpContextAccessor();\nservices.AddAuthentication();\nservices.AddAuthorization();\n</code></pre>\n<p>Auth Controller Endpoint</p>\n<pre><code>[HttpPost(nameof(Login))]\npublic async Task&lt;IActionResult&gt; Login([FromBody] LoginUserCommand command)\n{\n    // I've abstracted my logic into a Mediator Command\n    // but simplified this is just\n    // SignInManager.PasswordSignInAsync(user, pass, rememberMe)\n    // ClaimsFactory.CreateAsync(user)\n    var result = await Mediator.Send(command); \n\n    if (result.Succeeded)\n    {\n        // I've tried the following 2 methods to store the ClaimsPrincipal with no success\n        await HttpContext.SignInAsync(result.Data);\n        var signInResult = SignIn(result.Data); // positive result\n\n        return Ok(...);\n    }\n\n    return BadRequest(...);\n}\n</code></pre>\n<p>The POST request made by swagger</p>\n<pre><code>curl -X POST &quot;http://localhost:4000/_api/v1/Auth/Login&quot;\n     -H &quot;accept: */*&quot;\n     -H &quot;Content-Type: application/json&quot;\n     -d &quot;{\\&quot;password\\&quot;:\\&quot;P4$$w0rd\\&quot;,\\&quot;rememberMe\\&quot;:true,\\&quot;username\\&quot;:\\&quot;admin\\&quot;}&quot;\n</code></pre>\n<p>The Cookie stored in the Browser</p>\n<pre><code>Name: Identity.External\nContent: CfDJ8EGl21FYRChCvuGjMRYlEqvNaCBZMxNrNE8D [...]\nDomain: localhost\nPath: /\nCreated: 5 minutes ago\nExpires: When the browsing session ends\n</code></pre>\n"
+}

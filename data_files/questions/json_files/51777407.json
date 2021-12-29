@@ -1,0 +1,26 @@
+{
+    "tags": [
+        "protocols",
+        "webassembly"
+    ],
+    "owner": {
+        "reputation": 723,
+        "user_id": 9779026,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/304c70070e68a9c799518d2cdee4d138?s=128&d=identicon&r=PG",
+        "display_name": "2080",
+        "link": "https://stackoverflow.com/users/9779026/2080"
+    },
+    "is_answered": true,
+    "view_count": 64,
+    "accepted_answer_id": 51779625,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1533879357,
+    "creation_date": 1533861041,
+    "question_id": 51777407,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/51777407/webassembly-standardized-interfaces",
+    "title": "WebAssembly: Standardized Interfaces",
+    "body": "<p>The way WebAssembly interfaces with the external world is quite elegant and secure. Adding a function interface is easy, but not yet standardized.</p>\n\n<p>Have calling conventions been established already for Javascript environments (mostly for accessing the DOM in the Browser or the filesystem in Node)?</p>\n"
+}

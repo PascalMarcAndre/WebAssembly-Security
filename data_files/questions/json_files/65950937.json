@@ -1,0 +1,27 @@
+{
+    "tags": [
+        "security",
+        "webassembly",
+        "pyodide"
+    ],
+    "owner": {
+        "reputation": 451,
+        "user_id": 5770245,
+        "user_type": "registered",
+        "accept_rate": 60,
+        "profile_image": "https://www.gravatar.com/avatar/c4d9d4e3c485f8ec2c8caf196583dbb7?s=128&d=identicon&r=PG&f=1",
+        "display_name": "user82395214",
+        "link": "https://stackoverflow.com/users/5770245/user82395214"
+    },
+    "is_answered": false,
+    "view_count": 46,
+    "answer_count": 1,
+    "score": 1,
+    "last_activity_date": 1612103439,
+    "creation_date": 1611908291,
+    "question_id": 65950937,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/65950937/what-are-the-security-risks-associated-with-wasm",
+    "title": "What are the security risks associated with WASM?",
+    "body": "<p><a href=\"https://deno.land/manual/getting_started/webassembly\" rel=\"nofollow noreferrer\">Using Deno</a> you can execute WASM on a server. WASM is sandboxed for the user's safety. From my understanding, WASM code cannot do HTTP requests or modify the DOM.</p>\n<p>Is safety guaranteed server side too? I'm looking to run arbitrary Python code from user input on servers using <a href=\"https://github.com/iodide-project/pyodide\" rel=\"nofollow noreferrer\">pyodide</a> but was concerned that I have missed some important security flaw.</p>\n"
+}

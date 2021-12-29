@@ -1,0 +1,26 @@
+{
+    "tags": [
+        "android",
+        "cordova",
+        "webassembly"
+    ],
+    "owner": {
+        "reputation": 31,
+        "user_id": 9991584,
+        "user_type": "registered",
+        "profile_image": "https://lh6.googleusercontent.com/-uak7tQuQ61U/AAAAAAAAAAI/AAAAAAAAAAA/AB6qoq2kM9o4cxTI6bmmSJZQja3bNIVaig/mo/photo.jpg?sz=128",
+        "display_name": "S&#233;bastien Mah&#233;",
+        "link": "https://stackoverflow.com/users/9991584/s%c3%a9bastien-mah%c3%a9"
+    },
+    "is_answered": true,
+    "view_count": 2070,
+    "answer_count": 2,
+    "score": 3,
+    "last_activity_date": 1587847657,
+    "creation_date": 1529971641,
+    "question_id": 51033272,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/51033272/cordova-application-does-webassembly-supported-on-android",
+    "title": "Cordova application: does webassembly supported on Android?",
+    "body": "<p>I am developing an app with Cordova + Webassembly.</p>\n\n<p>The customer needs the app to work on Windows and Android.\nI am using Visual Studio 2017 + TACO.</p>\n\n<p>The webassembly is generated from C/C++ code using emscripten and is working all fine on Edge and Chrome. It is also working on an Android device (Chrome)</p>\n\n<p>The Cordova app running on Windows is working perfectly.</p>\n\n<p>Now my problem is on Android. The Cordova app on Android log this error:</p>\n\n<pre><code>Fetch API cannot load file:///android_asset/www/script/myApp.wasm. URL scheme \"file\" is not supported.\n</code></pre>\n\n<p>I can't find anywhere if Cordova supports WebAssembly on Android. My understanding is Android is using a WebView component and should rely on Google Chrome (my Webassembly is working fine on Chrome on Android).\nIs there an option somewhere to add a mime-type for cordova on android?</p>\n\n<p>Thanks in advance for any help.</p>\n"
+}

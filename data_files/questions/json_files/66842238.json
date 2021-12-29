@@ -1,0 +1,27 @@
+{
+    "tags": [
+        "rust",
+        "webassembly",
+        "wasm-bindgen",
+        "uint8array"
+    ],
+    "owner": {
+        "reputation": 16860,
+        "user_id": 1343851,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/75d334a32948bcbb10fd4c631ae79cee?s=128&d=identicon&r=PG",
+        "display_name": "Johannes Ewald",
+        "link": "https://stackoverflow.com/users/1343851/johannes-ewald"
+    },
+    "is_answered": false,
+    "view_count": 39,
+    "answer_count": 0,
+    "score": 1,
+    "last_activity_date": 1616939953,
+    "creation_date": 1616939953,
+    "question_id": 66842238,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/66842238/returning-uint8array-or-uint16array-from-rust-with-wasm-bindgen",
+    "title": "Returning Uint8Array or Uint16Array from Rust with wasm-bindgen",
+    "body": "<p>I want to expose a Rust library function to JavaScript that may return <code>&amp;[u8]</code> <em>or</em> <code>&amp;[u16]</code> depending on some condition. What's the most robust and performant way to do that?</p>\n<p>I've come up with two possible solutions:</p>\n<h3>Solution 1: Just returning a Uint8Array</h3>\n<p>With this approach, I transmute <code>&amp;[u16]</code> to <code>&amp;[u8]</code> and then turn it into a <code>Uint16Array</code> on the JS side:</p>\n<pre class=\"lang-rust prettyprint-override\"><code>#[wasm_bindgen]\npub fn my_function() -&gt; Uint8Array {\n    // Pseudo-code\n    match some_condition {\n        IsU8 =&gt; rust_lib_function().into(),\n        IsU16 =&gt; {\n            unsafe { Uint8Array::view(&amp;rust_lib_function().align_to().1) }\n        }\n    }\n}\n</code></pre>\n<p>Afaik I need to be aware of endianess since JS <code>TypedArrays</code> are platform endian. That's why I'm using <code>dataView.getUint16</code> with <code>littleEndian</code> explicitly set to true (because WebAssembly is using Little Endian, correct?).</p>\n<pre class=\"lang-js prettyprint-override\"><code>const uint8Array = my_function();\nconst dataView = new DataView(uint8Array.buffer, uint8Array.byteOffset, uint8Array.byteLength);\nconst length = uint8Array.byteLength / Uint16Array.BYTES_PER_ELEMENT;\nconst uint16Array = new Uint16Array(length);\n\nfor (let i = 0; i &lt; length; i++) {\n  uint16Array[i] = dataView.getUint16(i * Uint16Array.BYTES_PER_ELEMENT, true /* littleEndian */);\n}\n</code></pre>\n<h3>Solution 2: Providing two separate functions</h3>\n<p>I could also provide two separate versions for <code>my_function</code> that I could call depending on some condition. This would require the JS side to check the condition first.</p>\n<pre class=\"lang-rust prettyprint-override\"><code>#[wasm_bindgen]\npub fn my_function_u8() -&gt; Uint8Array {\n    match some_condition {\n        IsU8 =&gt; rust_lib_function().into(),\n        IsU16 =&gt; {\n            panic!(&quot;Call my_function_u16&quot;);\n        }\n    }\n}\n\n#[wasm_bindgen]\npub fn my_function_u16() -&gt; Uint16Array {\n    match some_condition {\n        IsU16 =&gt; rust_lib_function().into(),\n        IsU8 =&gt; {\n            panic!(&quot;Call my_function_u8&quot;);\n        }\n    }\n}\n</code></pre>\n<p>Is there a simpler/more performant solution than the provided ones? Personally I prefer solution 1 since it's easier to maintain in the long term but I don't know if there are any issues with this approach. Since this function is going to be called very often I want to do as less copying as possible.</p>\n"
+}

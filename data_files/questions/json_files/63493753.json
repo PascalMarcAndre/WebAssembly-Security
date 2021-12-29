@@ -1,0 +1,29 @@
+{
+    "tags": [
+        "azure-active-directory",
+        "asp.net-identity",
+        "microsoft-graph-api",
+        "blazor"
+    ],
+    "owner": {
+        "reputation": 503,
+        "user_id": 1464438,
+        "user_type": "registered",
+        "accept_rate": 92,
+        "profile_image": "https://i.stack.imgur.com/CPxh2.jpg?s=128&g=1",
+        "display_name": "Taylor C. White",
+        "link": "https://stackoverflow.com/users/1464438/taylor-c-white"
+    },
+    "is_answered": true,
+    "view_count": 326,
+    "accepted_answer_id": 63523714,
+    "answer_count": 1,
+    "score": 1,
+    "last_activity_date": 1598016117,
+    "creation_date": 1597865334,
+    "question_id": 63493753,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/63493753/blazor-wasm-azuread-auth-httpcontext-user-claims-are-empty",
+    "title": "Blazor WASM - AzureAD Auth - HttpContext.User.Claims are Empty?",
+    "body": "<p>I am trying to switchover to Azure AD for my identity platform on a Blazor WASM app I am building. I have followed <a href=\"https://docs.microsoft.com/en-us/aspnet/core/blazor/security/webassembly/hosted-with-azure-active-directory?view=aspnetcore-3.1\" rel=\"nofollow noreferrer\">this documentation</a> from Microsoft incredibly closely.</p>\n<p>When I log in to the app, the client app is able to display the logged in user's name, which comes from the AuthenticationState object.</p>\n<p>However, on the server side, when I sent a an HTTP request (POSTing a comment for example), the HttpContext.User.Claims are empty, and the following line I was using previously to get the userId returns null:</p>\n<pre><code>comment.UserId = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier); \n</code></pre>\n<p>I plead some ignorance on Claims/Identitys/Microsoft Graph etc., but I still don't know understand why the user / claims would be unknown given this information was accessible at least at one point since the Client App was able to display the user's name...</p>\n<p>I've also looked at the following StackOverflow/GitHub posts, but have not found anything that has solved this issue:</p>\n<ul>\n<li><a href=\"https://stackoverflow.com/questions/57715882/blazor-with-azuread-auth-context-identity-user-name-is-null\">Blazor with AzureAD Auth, Context.Identity.User.Name is null</a></li>\n<li><a href=\"https://github.com/dotnet/AspNetCore.Docs/issues/17598\" rel=\"nofollow noreferrer\">Out of box AAD B2C not grabbing user.identity.name</a></li>\n<li><a href=\"https://github.com/dotnet/AspNetCore.Docs/issues/17598\" rel=\"nofollow noreferrer\">User.Identity.Name empty when implementing Azure B2C in Blazor WebAssembly</a></li>\n</ul>\n<p>What am I missing here to be able to identify the user on the incoming HTTP requests?</p>\n<p>FWIW, here is my Startup.cs class (with some irrelevant code emitted):</p>\n<pre><code>    public void ConfigureServices(IServiceCollection services)\n    {\n        #region Azure Active Directory\n        services.AddAuthentication(AzureADDefaults.BearerAuthenticationScheme)\n            .AddAzureADBearer(options =&gt; {\n                Configuration.Bind(&quot;AzureAd&quot;, options);                 \n            }\n        );\n        #endregion\n\n        services.Configure&lt;JwtBearerOptions&gt;(\n            AzureADDefaults.JwtBearerAuthenticationScheme, options =&gt;\n            {\n                options.TokenValidationParameters.NameClaimType = &quot;name&quot;;\n                //options.TokenValidationParameters.NameClaimType = &quot;preferred_username&quot;;\n            });\n\n        services.AddHttpContextAccessor();\n        services.AddControllersWithViews().AddNewtonsoftJson(x =&gt; x.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);\n        services.AddRazorPages();\n    }\n</code></pre>\n<p>And Configure():</p>\n<pre><code>    public void Configure(IApplicationBuilder app, IWebHostEnvironment env)\n    {\n        app.UseHttpsRedirection();\n        app.UseBlazorFrameworkFiles();\n        app.UseStaticFiles();\n\n        app.UseRouting();\n\n        app.UseAuthentication();\n        app.UseAuthorization();\n\n        app.UseEndpoints(endpoints =&gt;\n        {\n            endpoints.MapRazorPages();\n            endpoints.MapControllers();\n            endpoints.MapFallbackToFile(&quot;index.html&quot;);\n        });\n    }\n</code></pre>\n"
+}

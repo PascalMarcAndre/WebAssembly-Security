@@ -1,0 +1,30 @@
+{
+    "tags": [
+        "c#",
+        "uwp",
+        "wkwebview",
+        "uno-platform",
+        "winui"
+    ],
+    "owner": {
+        "reputation": 469,
+        "user_id": 6115044,
+        "user_type": "registered",
+        "accept_rate": 67,
+        "profile_image": "https://i.stack.imgur.com/UXg98.png?s=128&g=1",
+        "display_name": "berkb",
+        "link": "https://stackoverflow.com/users/6115044/berkb"
+    },
+    "is_answered": true,
+    "view_count": 37,
+    "accepted_answer_id": 62160991,
+    "answer_count": 1,
+    "score": 1,
+    "last_activity_date": 1591130193,
+    "creation_date": 1591125571,
+    "question_id": 62159756,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/62159756/value-was-either-too-large-or-too-small-for-a-uint32-error-on-ios-wkwebview-un",
+    "title": "Value was either too large or too small for a UInt32 Error on iOS WKWebView &amp; Uno 2.4",
+    "body": "<p>I have an Uno WebAssembly app at <a href=\"https://acmsearch.azurewebsites.net/\" rel=\"nofollow noreferrer\">here</a>, you can try it now.\nButton click events not fire and doing nothing sometimes both on iOS and iPadOS WKWebview. They rarely work without problems. Sometimes cleaning web cache from Settings / Safari / Advanced Settings is solves problem. Unfortunately, this error is coming up again soon.</p>\n\n<p><a href=\"https://i.stack.imgur.com/Y4GOp.gif\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/Y4GOp.gif\" alt=\"enter image description here\"></a></p>\n\n<p>I have not any issue on desktop browser, the app running smoothly. I have iPhone X, iPad and iPhone 6. . The app works rarely without problems on X. Seems not run on others. The WebAssembly log on iOS is <a href=\"https://github.com/unoplatform/uno/files/4719089/click.log\" rel=\"nofollow noreferrer\">here</a>.</p>\n\n<p>Is it depends on device RAM size on Apple Device ? The app runs just perfectly on Android WebView.</p>\n"
+}

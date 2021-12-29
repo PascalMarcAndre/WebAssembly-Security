@@ -1,0 +1,27 @@
+{
+    "tags": [
+        "graphql",
+        "blazor-webassembly",
+        "dgraph"
+    ],
+    "owner": {
+        "reputation": 141,
+        "user_id": 2044096,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/59e679a86164655702a2ff831facd030?s=128&d=identicon&r=PG",
+        "display_name": "haPartnerships",
+        "link": "https://stackoverflow.com/users/2044096/hapartnerships"
+    },
+    "is_answered": false,
+    "view_count": 35,
+    "answer_count": 0,
+    "score": 0,
+    "last_activity_date": 1610348209,
+    "creation_date": 1610304505,
+    "last_edit_date": 1610348209,
+    "question_id": 65657149,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/65657149/blazor-webassembly-graphql-client-http-graphqlhttpclient-with-a-bearer-token",
+    "title": "Blazor Webassembly graphql.client.http.graphqlhttpclient with a bearer token",
+    "body": "<p>I am building a blazor Webassembly project using a graphql back end which requires an with bearer jwt token for authorised requests to the server.</p>\n<p>I am struggling to work out how to add a token to the GraphQLHttpClient once I have authenticated my user and received the jwt token from the third party auth provider prior to making a request.</p>\n<p>Any advice on this or a good alternative library?</p>\n<p>The back end is Dgraph hosted service slash graph.</p>\n<p>Thanks</p>\n"
+}

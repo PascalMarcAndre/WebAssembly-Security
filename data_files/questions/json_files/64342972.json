@@ -1,0 +1,30 @@
+{
+    "tags": [
+        "ssh",
+        "browser",
+        "sftp",
+        "client-side",
+        "webassembly"
+    ],
+    "owner": {
+        "reputation": 150,
+        "user_id": 4206056,
+        "user_type": "registered",
+        "profile_image": "https://lh6.googleusercontent.com/-ntqirprVPx4/AAAAAAAAAAI/AAAAAAAAA1s/NAGJ3SV9k3s/photo.jpg?sz=128",
+        "display_name": "Jacob Runge",
+        "link": "https://stackoverflow.com/users/4206056/jacob-runge"
+    },
+    "is_answered": true,
+    "view_count": 150,
+    "closed_date": 1610888806,
+    "accepted_answer_id": 64762676,
+    "answer_count": 1,
+    "score": -1,
+    "last_activity_date": 1610845052,
+    "creation_date": 1602622173,
+    "question_id": 64342972,
+    "link": "https://stackoverflow.com/questions/64342972/connecting-to-a-server-via-ssh-from-the-client-side-browser-without-a-middle-ma",
+    "closed_reason": "Not suitable for this site",
+    "title": "Connecting to a server via SSH from the client-side browser, without a middle man server",
+    "body": "<p>No specific code to look at--just hoping to talk through a problem I am facing, list the options I am aware of, and see if there are any options I am missing. Kindly let me know if this is not appropriate and I will delete the question.</p>\n<p><strong>The problem</strong></p>\n<p>I'm working on a web-based application that features a method of running commands on a user-owned server, ideally via SSH. I need to implement a solution for executing SSH commands from the browser in the most secure and convenient (for users) way possible. I'm detailing some solutions I've come up with that don't quite cut the mustard, and hoping you all may have some ideas I didn't think of, or tools I might not know about.</p>\n<p><strong>My current solution</strong></p>\n<p>Currently, I have a working API that translates HTTPS posts into SSH commands, mostly SFTP. The application connects an SSH instance on the application server to a user-owned server, given a username and password or uploaded private key. The server then maintains the SSH client, reconnecting if necessary using user-provided credentials. The application does not store usernames, passwords, or private keys, and information between the client and application server is conducted over HTTPS; authentication information IS, however, kept in a redis in-memory session instance. Because that information must travel through my middle-man application server, causing potential concerns about the client's server security, I would like to find another solution.</p>\n<p><strong>My ideal solution</strong></p>\n<p>Ideally, I would write an SSH client in a language like Go, converted to WebAssembly, which could be downloaded and run in the browser. No calls to my app server--all SSH traffic, including authentication, goes direct from the client to their server. The WebAssembly would be cached by the browser (though pretty light-weight anyway), preventing egregious download sizes, while still allowing me to do updates as need be. This doesn't work, however, because the browser is sandboxed and can't establish connections with a remote server. I've looked into solutions like <a href=\"https://browsix.org\" rel=\"nofollow noreferrer\">Browsix</a> to run a light Unix system in the browser, which could in turn run the SSH application, but it would appear to be similarly limited to running the WebAssembly directly. (Browsix also seems not to be maintained???)</p>\n<p>I have come up with two potential alternative solutions, both with some drawbacks that have prevented me from committing to them:</p>\n<p><strong>Solution 1</strong></p>\n<p>Move the SSH client client-side. My ideal solution is a form of this, but to get around browser limitations, I would require that clients download a small SSH client that can be called from the client-side web application. Realistically, if I am supporting browsers that do not run Chromium and if I am avoiding maintaining a browser extension for every browser I choose to support, that means I cannot interface between the browser and a native application. To get around this, I think I CAN wrap the SSH client in a web server meant to run on a particular port, say :9090. The web app could then make calls to, say, localhost:9090/listDirectories, which would funnel the request body to the SSH client, which would execute the relevant call on the client-owned server. The only downside to this is that it would require the user to download and run an installer, and the program would have to constantly be running and listening on a port on the client computer. This isn't as seamless of a user experience as I would like, and would be prone to errors like the program terminating or not properly starting up when the machine boots. I would also have to maintain installers for multiple major operating systems.</p>\n<p><strong>Solution 2</strong></p>\n<p>Ditch SSH. Create a small webserver (probably in Go) to listen on a port on the client-owned server. The client-side web app could then make API calls directly to the client-owned server, encrypted over HTTPS, and the webserver listening on the client-owned server would handle the requests. Downsides of this: I need to create a user management system (rather than rely on the client-owned server's authentication systems) and implement some way of ascertaining that the client-owned server is actually owned by the client.</p>\n<p><strong>Possible question from you all</strong></p>\n<p>You may ask, &quot;Why not just make a native application? You could use something like Electron if you're comfortable making web apps!&quot; That's true--but I would really prefer that the application live in the browser for the sake of updates and ease of access. I know, it sounds like I'm just being difficult.</p>\n<p>Please let me know if I can provide any more detail, or if you have any leads for what I should look into next.</p>\n"
+}

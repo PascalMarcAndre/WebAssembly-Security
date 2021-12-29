@@ -1,0 +1,27 @@
+{
+    "tags": [
+        "blazor-webassembly",
+        ".net-5"
+    ],
+    "owner": {
+        "reputation": 161,
+        "user_id": 1930728,
+        "user_type": "registered",
+        "accept_rate": 100,
+        "profile_image": "https://www.gravatar.com/avatar/2eaf785bc931e79e0148d6cc8db261c4?s=128&d=identicon&r=PG",
+        "display_name": "user1930728",
+        "link": "https://stackoverflow.com/users/1930728/user1930728"
+    },
+    "is_answered": true,
+    "view_count": 93,
+    "accepted_answer_id": 65393938,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1608558571,
+    "creation_date": 1608346912,
+    "question_id": 65366286,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/65366286/blazor-webassembly-oidc-authentication-works-fine-locally-but-on-azure-static-w",
+    "title": "Blazor WebAssembly Oidc Authentication works fine locally, but on Azure Static Web Apps has 404 on authentication/login-callback",
+    "body": "<p>I have a Blazor .Net5 WebAssembly that uses Auth0 OIDC authentication.  I setup the authentication following these instructions: <a href=\"https://auth0.com/blog/securing-blazor-webassembly-apps/\" rel=\"nofollow noreferrer\">https://auth0.com/blog/securing-blazor-webassembly-apps/</a></p>\n<p>Following those instructions I was able to develop my app locally and get it working with Auth0 authentication.  However, when I deploy the app using Azure Static Web Apps the authentication is no longer functional.  Looking in the developer tools of Chrome I can see that it successfully (302) calls my authorization endpoint:</p>\n<pre><code>https://login.mysite.com/authorize?clientid=*****...  (302)\n</code></pre>\n<p>The next url is the callback to my site, which fails with a 404:</p>\n<pre><code>https://myapp.mysite.com/authentication/login-callback?code=***... (404)\n</code></pre>\n<p>I do have the following in my index.html:</p>\n<pre><code>&lt;script src=&quot;_content/Microsoft.AspNetCore.Components.WebAssembly.Authentication/AuthenticationService.js&quot;&gt;&lt;/script&gt;\n</code></pre>\n<p>Any idea of what I can do to fix this?</p>\n"
+}

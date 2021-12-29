@@ -1,0 +1,28 @@
+{
+    "tags": [
+        "asp.net",
+        "facebook",
+        "nginx",
+        "blazor",
+        "webassembly"
+    ],
+    "owner": {
+        "reputation": 11,
+        "user_id": 8524938,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/16e97f9e589d03aac36bdea9262e9dcd?s=128&d=identicon&r=PG",
+        "display_name": "user8524938",
+        "link": "https://stackoverflow.com/users/8524938/user8524938"
+    },
+    "is_answered": false,
+    "view_count": 245,
+    "answer_count": 1,
+    "score": 1,
+    "last_activity_date": 1589258707,
+    "creation_date": 1589220261,
+    "question_id": 61736263,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/61736263/blazor-webassembly-asp-net-core-hosted-cannot-authorize-via-facebook",
+    "title": "Blazor Webassembly ASP.NET Core Hosted cannot authorize via Facebook",
+    "body": "<p>I've got problem with my application. When I'm trying to authorize via Facebook on localhost - there's no problems, everything goes fine. After publishing my application authorization becames random... When you try to sign in via facebook there are two options:</p>\n\n<ul>\n<li>Infinity login display, after many login attemps one may be successfull</li>\n<li>You're authorized successfull</li>\n</ul>\n\n<p>In project I use IdentityServer4 with default scaffolded Razor Pages. I think that problem may be in Blazor routing, because facebook response is interpreted by Blazor (but not always, it's random). When I got infinity login loop on one device, I can login without any problems on another device, sometimes clearing browser data helps, but not always. I know... it's very strange but much more frustrating. Below I attach screen from browser, where you can see that facebook callback is going to Blazor.</p>\n\n<p><a href=\"https://i.stack.imgur.com/HLfof.jpg\" rel=\"nofollow noreferrer\">Screenshot of URL from browser</a></p>\n\n<p>I suppose that it could be caused by Nginx configuration - because on localhost there's no problem with no metter if I'm using IIS or Kestrel. This is my Nginx site configuration:</p>\n\n<pre><code>server {\n    server_name   izipass.pl www.izipass.pl;\n    location / {\n        proxy_pass         https://localhost:2020;\n        proxy_http_version 1.1;\n        proxy_set_header   Upgrade $http_upgrade;\n        proxy_set_header   Connection keep-alive;\n        proxy_set_header   Host $host;\n        proxy_cache_bypass $http_upgrade;\n        proxy_set_header   X-Forwarded-For $proxy_add_x_forwarded_for;\n        proxy_set_header   X-Forwarded-Proto $scheme;\n        add_header         Service-Worker-Allowed /;\n    }\n\n    listen 443 ssl; # managed by Certbot\n    ssl_certificate /etc/letsencrypt/live/izipass.pl/fullchain.pem; # managed by Certbot\n    ssl_certificate_key /etc/letsencrypt/live/izipass.pl/privkey.pem; # managed by Certbot\n    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot\n    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot\n}\n\nserver {\n    if ($host = www.izipass.pl) {\n        return 301 https://$host$request_uri;\n    } # managed by Certbot\n\n\n    if ($host = izipass.pl) {\n        return 301 https://$host$request_uri;\n    } # managed by Certbot\n\n\n    server_name   izipass.pl www.izipass.pl;\n    listen 80;\n    return 404; # managed by Certbot\n}\n</code></pre>\n\n<p>I try to figure it out from few days and I looked for any answer over Internet, but none of them solved my problem. I want try to change base path of Blazor app, and move it \"<a href=\"https://.../app\" rel=\"nofollow noreferrer\">https://.../app</a>\" to unable Blazor routing at \"/signin-facebook\".</p>\n\n<p>I will be very grateful for any help.</p>\n"
+}

@@ -1,0 +1,28 @@
+{
+    "tags": [
+        "facebook",
+        "authentication",
+        "blazor",
+        "identity",
+        "webassembly"
+    ],
+    "owner": {
+        "reputation": 1,
+        "user_id": 7762046,
+        "user_type": "registered",
+        "profile_image": "https://i.stack.imgur.com/CHFMZ.png?s=128&g=1",
+        "display_name": "H Sande",
+        "link": "https://stackoverflow.com/users/7762046/h-sande"
+    },
+    "is_answered": false,
+    "view_count": 144,
+    "answer_count": 0,
+    "score": 0,
+    "last_activity_date": 1605685080,
+    "creation_date": 1605685080,
+    "question_id": 64888884,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/64888884/blazor-webassembly-authentication-using-backend-identity-api-and-social-provider",
+    "title": "Blazor WebAssembly authentication using backend identity Api and social providers",
+    "body": "<p>I have a standalone Blazor WebAssembly app that communicates with a few backend Apis (ASP.NET Core REST). One of the Apis has an identity store (using ASP.NET Identity), and it serves JWT bearer tokens for users signing in from the wasm app.</p>\n<p>Now; I would like to enable authentication using social identity providers Facebook and Twitter. Anyone got experience with doing this for this kind of architecture? I am considering two alternative flows:</p>\n<ol>\n<li><p>User calls a method in the Identity Api from the wasm app, which again challenges Facebook auth. On redirect, auth details are picked up by the Identity Api, which handles this and issues a JWT to the front</p>\n</li>\n<li><p>The wasm app itself challenges Facebook, and upon successful auth sends the auth info to the Identity Api, which creates the JWT and sends back to the wasm app</p>\n</li>\n</ol>\n<p>Hope someone has experience with this, I have spent a lot of time trying to solve this :-)</p>\n"
+}

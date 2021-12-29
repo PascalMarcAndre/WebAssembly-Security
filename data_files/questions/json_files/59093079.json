@@ -1,0 +1,28 @@
+{
+    "tags": [
+        "python",
+        "wasm-pack",
+        "emsdk"
+    ],
+    "owner": {
+        "reputation": 15666,
+        "user_id": 941357,
+        "user_type": "registered",
+        "accept_rate": 90,
+        "profile_image": "https://www.gravatar.com/avatar/3adf491b609c2462001889686edde315?s=128&d=identicon&r=PG",
+        "display_name": "ali haider",
+        "link": "https://stackoverflow.com/users/941357/ali-haider"
+    },
+    "is_answered": true,
+    "view_count": 469,
+    "accepted_answer_id": 59097805,
+    "answer_count": 1,
+    "score": 1,
+    "last_activity_date": 1574991349,
+    "creation_date": 1574958531,
+    "question_id": 59093079,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/59093079/issue-with-emsdk-on-mac",
+    "title": "issue with emsdk on mac",
+    "body": "<p>I am trying to setup emsdk on mac with the following command:</p>\n\n<pre><code>./emsdk install latest\n</code></pre>\n\n<p>I cloned the repo from git.  However, I get the following error upon running the command mentioned above:</p>\n\n<pre><code>** NOTICE **: The default SDK changed from `fastcomp` to `upstream`.\nIf you have problems, or wish to revert back to fastcomp for some other reason\nyou can add `-fastcomp` to explicitly install that fastcomp-based\nSDK, .e.g ./emsdk install latest-fastcomp.\n\nInstalling SDK 'sdk-releases-upstream-b024b71038d1291ed7ec23ecd553bf2c0c8d6da6-64bit'..\nInstalling tool 'releases-upstream-b024b71038d1291ed7ec23ecd553bf2c0c8d6da6-64bit'..\nError: Downloading URL 'https://storage.googleapis.com/webassembly/emscripten-releases-builds/mac/b024b71038d1291ed7ec23ecd553bf2c0c8d6da6/wasm-binaries.tbz2': &lt;urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed (_ssl.c:726)&gt;\nWarning: Possibly SSL/TLS issue. Update or install Python SSL root certificates (2048-bit or greater) supplied in Python folder or https://pypi.org/project/certifi/ and try again.\nInstallation failed!\n</code></pre>\n\n<p>I have tried running the following to fix this but it did not solve the issue.</p>\n\n<pre><code>pip install certifi\n</code></pre>\n\n<p>Any other suggestions to fix the issue would be quite welcome.  </p>\n"
+}

@@ -1,0 +1,27 @@
+{
+    "tags": [
+        "logging",
+        "rust"
+    ],
+    "owner": {
+        "reputation": 1565,
+        "user_id": 3833068,
+        "user_type": "registered",
+        "accept_rate": 50,
+        "profile_image": "https://www.gravatar.com/avatar/6a2a668bce4cd485078f912cbda24f2a?s=128&d=identicon&r=PG",
+        "display_name": "Ameo",
+        "link": "https://stackoverflow.com/users/3833068/ameo"
+    },
+    "is_answered": true,
+    "view_count": 643,
+    "closed_date": 1574295626,
+    "answer_count": 1,
+    "score": 3,
+    "last_activity_date": 1574287051,
+    "creation_date": 1574287051,
+    "question_id": 58964020,
+    "link": "https://stackoverflow.com/questions/58964020/is-there-a-way-to-statically-disable-rust-logging-in-production-builds-of-my-app",
+    "closed_reason": "Duplicate",
+    "title": "Is there a way to statically disable Rust logging in production builds of my application?",
+    "body": "<p>I have a WebAssembly module written in Rust that performs logging for debug purposes via the <code>log</code> crate during development.  I notice that, even when I don't configure a logger, the formatting and calls to internal <code>log</code> functions remain in the generated WebAssembly module.  This wastes bytes since the output of those functions will never be used/displayed.</p>\n\n<p>Is there any way to statically disable logging without having to remove the log macro calls in the code?  Additionally, is there a way to only disable this in release builds?</p>\n"
+}

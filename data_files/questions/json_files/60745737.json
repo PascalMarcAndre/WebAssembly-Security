@@ -1,0 +1,30 @@
+{
+    "tags": [
+        "asp.net-core",
+        "signalr",
+        "blazor",
+        "webassembly"
+    ],
+    "owner": {
+        "reputation": 765,
+        "user_id": 4873542,
+        "user_type": "registered",
+        "accept_rate": 83,
+        "profile_image": "https://lh4.googleusercontent.com/-Pgb3zoKnvRo/AAAAAAAAAAI/AAAAAAAAAU8/kDuu8Tt_h6Q/photo.jpg?sz=128",
+        "display_name": "Niek Jannink",
+        "link": "https://stackoverflow.com/users/4873542/niek-jannink"
+    },
+    "is_answered": true,
+    "view_count": 1315,
+    "accepted_answer_id": 60835555,
+    "answer_count": 4,
+    "score": 1,
+    "last_activity_date": 1614012102,
+    "creation_date": 1584557263,
+    "last_edit_date": 1584993111,
+    "question_id": 60745737,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/60745737/failed-to-connect-to-signalr-in-blazor-webassembly",
+    "title": "Failed to connect to SignalR in Blazor webassembly",
+    "body": "<p>I'm trying to connect to a SignalR service from my blazor webassembly client but this fails I think on CORS. This is the code in my razor file.</p>\n\n<pre><code>m_connection = new HubConnectionBuilder()\n    .WithUrl(myMircoServiceUrl, options =&gt;\n    {\n       options.AccessTokenProvider = () =&gt; Task.FromResult(userService.Token);\n    })\n   .WithAutomaticReconnect()\n   .Build();\nawait m_connection.StartAsync();\n</code></pre>\n\n<p>Then in the webassembly logging I see the following error:</p>\n\n<p><em>Access to fetch at 'xxxx/negotiate?negotiateVersion=1' from origin '<a href=\"http://localhost:5010\" rel=\"nofollow noreferrer\">http://localhost:5010</a>' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource. If an opaque response serves your needs, set the request's mode to 'no-cors' to fetch the resource with CORS disabled.</em></p>\n\n<p>I added the following CORS policy in my Blazor server configuration and something similar in the microservice config:</p>\n\n<pre><code>        app.UseResponseCompression();\n\n        if (env.IsDevelopment())\n        {\n            app.UseDeveloperExceptionPage();\n            app.UseBlazorDebugging();\n        }\n        else\n        {\n            app.UseExceptionHandler(@\"/Error\");\n            app.UseHsts();\n        }\n\n        app.UseHttpsRedirection();\n        app.UseStaticFiles();\n        app.UseRouting();\n        app.UseCookiePolicy();\n        app.UseAuthentication();\n        app.UseAuthorization();\n\n        app.UseCors(policy =&gt; policy\n            .WithOrigins(\"http://localhost:5010\")\n            .AllowAnyHeader()\n            .AllowAnyMethod());\n\n        app.UseClientSideBlazorFiles&lt;Client.Program&gt;();\n        app.UseEndpoints(endpoints =&gt;\n        {\n            endpoints.MapControllers();\n            endpoints.MapFallbackToClientSideBlazor&lt;Client.Program&gt;(@\"index.html\");\n        });\n</code></pre>\n\n<p>Anybody got any idea what might be wrong?</p>\n\n<p><strong>Update 1</strong></p>\n\n<p>I now see the following error in the Chrome console:</p>\n\n<p><em>dotnet.js:1 WebSocket connection to 'ws://localhost:5000/hubs/posts?id=9Jxs0DhP924zgw_eIeE9Lg' failed: HTTP Authentication failed; no valid credentials available</em></p>\n\n<p><strong>Update 2</strong></p>\n\n<p>I removed the <code>[Authorize]</code> attribute from the SignalR hub and now it connects. And I can send messages to the hub. Problem is there is a reason for this attribute, because I don't want that people can subscribe to messages that are not for them</p>\n\n<p><strong>Update 3</strong></p>\n\n<p>Still no progress. Looking at pulling out the authentication to a seperate microservice using IdentityServer4. Last status is I have the following startup routines:</p>\n\n<ul>\n<li>Microservice: gist.github.com/njannink/15595b77ffe1c0593be1a555fa37f83f </li>\n<li>Blazor server: gist.github.com/njannink/7302a888110e24d199ea45b66da4f26b </li>\n<li>Blazor client: gist.github.com/njannink/add2568cbf48c8b3c070ccd4f28fd127</li>\n</ul>\n"
+}

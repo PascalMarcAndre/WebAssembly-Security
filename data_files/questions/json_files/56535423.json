@@ -1,0 +1,28 @@
+{
+    "tags": [
+        "javascript",
+        "window",
+        "visibility"
+    ],
+    "owner": {
+        "reputation": 17956,
+        "user_id": 2648811,
+        "user_type": "registered",
+        "accept_rate": 33,
+        "profile_image": "https://www.gravatar.com/avatar/ee5af60b10a2d5fd8c864437a2062f0a?s=128&d=identicon&r=PG",
+        "display_name": "Green Cloak Guy",
+        "link": "https://stackoverflow.com/users/2648811/green-cloak-guy"
+    },
+    "is_answered": true,
+    "view_count": 219,
+    "accepted_answer_id": 56638501,
+    "answer_count": 1,
+    "score": 6,
+    "last_activity_date": 1560803406,
+    "creation_date": 1560217795,
+    "question_id": 56535423,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/56535423/javascript-detect-if-window-is-inactive-but-still-visible",
+    "title": "Javascript - Detect if window is inactive but still visible",
+    "body": "<p><a href=\"https://stackoverflow.com/questions/12536562/detect-whether-a-window-is-visible\">A number</a> <a href=\"https://stackoverflow.com/questions/1060008/is-there-a-way-to-detect-if-a-browser-window-is-not-currently-active\">of other</a> <a href=\"https://stackoverflow.com/questions/9632741/is-there-any-way-to-detect-that-window-is-currently-active-in-ie8\">answers</a> have covered how a running Javascript script can tell whether its current window is active or not. However, that's a pretty restrictive set of choices, and makes no distinctions between (for example) </p>\n\n<ol>\n<li>a minimized window</li>\n<li>an inactive tab</li>\n<li>a floating window partially eclipsed by other programs' floating windows</li>\n<li>a tab that's fullscreened on one monitor while a user does things in another window on the other monitor. </li>\n</ol>\n\n<p>All of these count as <em>inactive</em>, despite the fact that in the latter two cases the webpage remains visible to the user.</p>\n\n<p>While there's evidence that <a href=\"https://stackoverflow.com/questions/35368215/detect-what-percentage-of-viewport-is-obstructed-by-another-window\">this may be technically impossible given how web browser sandboxes work</a>, I'd still like to be able to detect the differences between the above. For example, pausing an animation for (1) or (2), but keeping it going for (3) or (4). I'm wondering if Javascript (plus frameworks, I guess, or WebAssembly) provides a mechanism to determine this - or, failing that, whether any particular browsers have mechanisms to determine it from within the javascript code of one page.</p>\n"
+}

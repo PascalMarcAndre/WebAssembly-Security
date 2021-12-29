@@ -1,0 +1,27 @@
+{
+    "tags": [
+        "rust",
+        "webassembly"
+    ],
+    "owner": {
+        "reputation": 2001,
+        "user_id": 2707195,
+        "user_type": "registered",
+        "accept_rate": 82,
+        "profile_image": "https://i.stack.imgur.com/RlRWZ.jpg?s=128&g=1",
+        "display_name": "Andrei CACIO",
+        "link": "https://stackoverflow.com/users/2707195/andrei-cacio"
+    },
+    "is_answered": false,
+    "view_count": 170,
+    "answer_count": 0,
+    "score": 0,
+    "last_activity_date": 1527431806,
+    "creation_date": 1527430500,
+    "last_edit_date": 1527431806,
+    "question_id": 50553014,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/50553014/color-quantneuquant-compiled-to-webassembly-outputs-zero-values",
+    "title": "color_quant::NeuQuant compiled to WebAssembly outputs zero values",
+    "body": "<p>I am trying to load an image in the browser and use the NewQuant algorithm to quantize my image buffer it in Rust via WebAssembly. However, the NewQuant output contains zero values, regardless of what PNG I try to feed it.</p>\n\n<p>I expose two Rust methods to WASM:</p>\n\n<ol>\n<li><code>alloc</code> for allocating a byte buffer</li>\n<li><code>read_img</code> which will read and process the img buffer</li>\n</ol>\n\n<p>I know that I get zero values because I imported a JavaScript method called <code>log_nr</code> for logging simple <code>u8</code> numbers. The buffer seems to contain valid pixel values.</p>\n\n<pre><code>extern crate color_quant;\nextern crate image;\n\nuse color_quant::NeuQuant;\nuse image::{DynamicImage, GenericImage, Pixel, Rgb};\n\nuse std::collections::BTreeMap;\nuse std::mem;\nuse std::os::raw::c_void;\n\nstatic NQ_SAMPLE_FACTION: i32 = 10;\nstatic NQ_PALETTE_SIZE: usize = 256;\n\nextern \"C\" {\n    fn log(s: &amp;str, len: usize);\n    fn log_nr(nr: u8);\n}\n\nfn get_pixels(img: DynamicImage) -&gt; Vec&lt;u8&gt; {\n    let mut pixels = Vec::new();\n\n    for (_, _, px) in img.pixels() {\n        let rgba = px.to_rgba();\n\n        for channel in px.channels() {\n            pixels.push(*channel);\n        }\n    }\n\n    pixels\n}\n\n#[no_mangle]\npub extern \"C\" fn alloc(size: usize) -&gt; *mut c_void {\n    let mut buf = Vec::with_capacity(size);\n    let ptr = buf.as_mut_ptr();\n    mem::forget(buf);\n\n    return ptr as *mut c_void;\n}\n\nfn process_img(img: DynamicImage) {\n    let pixels: Vec&lt;u8&gt; = get_pixels(img);\n    let quantized = NeuQuant::new(NQ_SAMPLE_FACTION, NQ_PALETTE_SIZE, &amp;pixels);\n\n    let q = quantized.color_map_rgb();\n\n    for c in &amp;q {\n        unsafe {\n            log_nr(*c);\n        }\n    }\n}\n\n#[no_mangle]\npub extern \"C\" fn read_img(buff_ptr: *mut u8, buff_len: usize) {\n    let mut img: Vec&lt;u8&gt; = unsafe { Vec::from_raw_parts(buff_ptr, buff_len, buff_len) };\n\n    return match image::load_from_memory(&amp;img) {\n        Ok(img) =&gt; {\n            process_img(img);\n        }\n        Err(err) =&gt; {\n            let err_msg: String = err.to_string().to_owned();\n            let mut ns: String = \"[load_from_memory] \".to_owned();\n\n            ns.push_str(&amp;err_msg);\n\n            unsafe {\n                log(&amp;ns, ns.len());\n            }\n        }\n    };\n}\n\nfn main() {\n    println!(\"Hello from rust 2\");\n}\n</code></pre>\n\n<p>The JavaScript code is the following:</p>\n\n\n\n<pre><code>run('sample.png');\n\nfunction run(img) {\n    return compile().then(m =&gt; {\n        return loadImgIntoMem(img, m.instance.exports.memory, m.instance.exports.alloc).then(r =&gt; {\n            return m.instance.exports.read_img(r.imgPtr, r.len);\n        });\n    })\n}\n\nfunction compile(wasmFile = 'distil_wasm.gc.wasm') {\n    return fetch(wasmFile)\n        .then(r =&gt; r.arrayBuffer())\n        .then(r =&gt; {\n            let module = new WebAssembly.Module(r);\n            let importObject = {}\n            for (let imp of WebAssembly.Module.imports(module)) {\n                if (typeof importObject[imp.module] === \"undefined\")\n                    importObject[imp.module] = {};\n                switch (imp.kind) {\n                case \"function\": importObject[imp.module][imp.name] = () =&gt; {}; break;\n                case \"table\": importObject[imp.module][imp.name] = new WebAssembly.Table({ initial: 256, maximum: 256, element: \"anyfunc\" }); break;\n                case \"memory\": importObject[imp.module][imp.name] = new WebAssembly.Memory({ initial: 256 }); break;\n                case \"global\": importObject[imp.module][imp.name] = 0; break;\n                }\n            }\n\n            importObject.env = Object.assign({}, importObject.env, {\n                log: (ptr, len) =&gt; console.log(ptrToStr(ptr, len)),\n                log_nr: (nr) =&gt; console.log(nr),\n            });\n\n            return WebAssembly.instantiate(r, importObject);\n        });\n}\n\nfunction loadImgIntoMemEmscripten(img) {\n    return new Promise(resolve =&gt; {\n        fetch(img)\n            .then(r =&gt; r.arrayBuffer())\n            .then(buff =&gt; {\n                const imgPtr = Module._malloc(buff.byteLength);\n                const imgHeap = new Uint8Array(Module.HEAPU8.buffer, imgPtr, buff.byteLength);\n\n                imgHeap.set(new Uint8Array(buff));\n\n                resolve({ imgPtr });\n            });\n    });\n}\n</code></pre>\n"
+}

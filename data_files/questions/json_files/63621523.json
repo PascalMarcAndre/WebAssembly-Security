@@ -1,0 +1,29 @@
+{
+    "tags": [
+        "c#",
+        "azure-active-directory",
+        "blazor-webassembly",
+        ".net-5",
+        "claims-authentication"
+    ],
+    "owner": {
+        "reputation": 217,
+        "user_id": 7523443,
+        "user_type": "registered",
+        "accept_rate": 25,
+        "profile_image": "https://www.gravatar.com/avatar/4a6d376f529a0b9587a56f78639ca1ae?s=128&d=identicon&r=PG&f=1",
+        "display_name": "DJFalstaff",
+        "link": "https://stackoverflow.com/users/7523443/djfalstaff"
+    },
+    "is_answered": false,
+    "view_count": 107,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1598889837,
+    "creation_date": 1598550197,
+    "question_id": 63621523,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/63621523/how-do-i-use-the-blazor-clientside-authorizeview-control-policy-feature-with-azu",
+    "title": "How do I use the Blazor Clientside AuthorizeView control policy feature with Azure Ad?",
+    "body": "<p>I am using the Microsoft example featured at this link\n<a href=\"https://docs.microsoft.com/en-us/aspnet/core/blazor/security/webassembly/standalone-with-azure-active-directory?view=aspnetcore-3.1\" rel=\"nofollow noreferrer\">https://docs.microsoft.com/en-us/aspnet/core/blazor/security/webassembly/standalone-with-azure-active-directory?view=aspnetcore-3.1</a></p>\n<p>My Program.cs file looks like this</p>\n<pre><code>    public class Program\n    {\n        public static async Task Main(string[] args)\n        {\n            var builder = WebAssemblyHostBuilder.CreateDefault(args);\n            builder.RootComponents.Add&lt;App&gt;(&quot;#app&quot;);\n\n            builder.Services.AddScoped(sp =&gt; \n             new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });\n\n            builder.Services.AddAuthorizationCore(config =&gt;\n            {\n                config.AddPolicy(&quot;BackOfficeEditor&quot;, policy =&gt;\n                    policy.RequireClaim(&quot;groups&quot;, &quot;4dd6726b-3949-4b8a-a8e0-9e5eaa65e358&quot;));\n            });\n\n\n            builder.Services.AddMsalAuthentication(options =&gt;\n            {\n                builder.Configuration.Bind(&quot;AzureAd&quot;, options.ProviderOptions.Authentication);\n            });\n\n            await builder.Build().RunAsync();\n        }\n    }\n</code></pre>\n<p>My index.razor files looks like this</p>\n<pre><code>@page &quot;/&quot;\n&lt;AuthorizeView Policy=&quot;BackOfficeEditor&quot;&gt;\n    &lt;p&gt;You can only see this if you satisfy the \n    &lt;b style=&quot;color:magenta;font-size:larger&quot;&gt;\n    BackOfficeEditor&lt;/b&gt; policy.&lt;/p&gt;\n     &lt;/AuthorizeView&gt;\n\n    &lt;AuthorizeView&gt;\n        &lt;NotAuthorized&gt;\n            &lt;br /&gt;\n            You are not logged in\n            &lt;br /&gt;\n        &lt;/NotAuthorized&gt;\n        &lt;Authorized&gt;\n            &lt;br /&gt;\n            Hello, @context.User.Identity.Name! &lt;br /&gt;\n            &lt;h2&gt;here's the list of your claims:&lt;/h2&gt;\n            &lt;ul&gt;\n                @foreach (var claim in context.User.Claims)\n                {\n                    &lt;li&gt;&lt;b&gt;@claim.Type&lt;/b&gt;: @claim.Value&lt;/li&gt;\n                }\n            &lt;/ul&gt;\n        &lt;/Authorized&gt;\n    &lt;/AuthorizeView&gt;\n\n</code></pre>\n<p>You can see in the claims that the user (minonOne) has the right claim in the &quot;groups&quot; section but it doesn't display the custom messsage I added for users in that group.\n<a href=\"https://i.stack.imgur.com/UI7Mz.jpg\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/UI7Mz.jpg\" alt=\"enter image description here\" /></a></p>\n<p>What did I miss in my configuration of this?</p>\n"
+}

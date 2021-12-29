@@ -1,0 +1,29 @@
+{
+    "tags": [
+        "blazor",
+        "identityserver4",
+        "progressive-web-apps",
+        "openid-connect",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 103,
+        "user_id": 5118785,
+        "user_type": "registered",
+        "profile_image": "https://i.stack.imgur.com/cL7bp.png?s=128&g=1",
+        "display_name": "Sjoerdson",
+        "link": "https://stackoverflow.com/users/5118785/sjoerdson"
+    },
+    "is_answered": false,
+    "view_count": 49,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1616419841,
+    "creation_date": 1615304606,
+    "last_edit_date": 1616419841,
+    "question_id": 66550092,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/66550092/how-to-configure-persistent-login-for-blazor-webassembly-and-identityserver-4",
+    "title": "How to configure persistent login for Blazor WebAssembly and IdentityServer 4?",
+    "body": "<p>We have a standalone Blazor WebAssembly App (PWA) where users need to authenticate (oidc) themselves via IdentityServer 4 (with default settings). IdentityServer then returns an access token which the app uses to call several api's. Most users use the app on a mobile device and need to use the application once they receive a notification (once or twice each hour). Everything is working quite well, but since a users login does not persist during the day, they need to reauthenticate themselves multiple times a day. For users this is really annoying behavior. Therefore, I am looking  for a solution where the users login is persisted for at least x hours. I read several blogs and tried to change the settings on IdentityServer, but I just can't seem to change this behavior.</p>\n<p><strong>Actual behavior:</strong></p>\n<ul>\n<li>When a user's session is closed, the user is logged out and needs to login again on IdentityServer.</li>\n<li>After approximately 1 hour the user is logged out either way.</li>\n</ul>\n<p><strong>Expected behavior:</strong></p>\n<ul>\n<li>A user's login is persisted across multiple sessions, e.g. for a total time of x hours (I don't actually know if this is possible?).</li>\n<li>As long as a user is logged in and the application is active (in the background) the user stays authenticated.</li>\n</ul>\n<p>It would already help a lot if a user keeps authenticated as long as it uses the app. However, the only settings with a value of 1 hour (that I can find in IdentityServer) is the access token lifetime, which defaults to 3600 seconds. I also read, though, that this has nothing to do with my problem that a user has to reauthenticate itself.</p>\n<p>I think I'm overlooking something, but I just can't figure out how to fix this. Any help is appreciated!</p>\n<p><strong>UPDATE</strong></p>\n<p>In my Blazor WebAssembly project I have the following configuration in program.cs:</p>\n<pre><code>  builder.Services.AddOidcAuthentication(options =&gt;\n        {\n            builder.Configuration.Bind(&quot;IdentityService&quot;, options.ProviderOptions);\n        });\n</code></pre>\n<p>And in appsettings.json:</p>\n<pre><code>&quot;IdentityService&quot;: {\n    &quot;Authority&quot;: &quot;https://localhost:44362&quot;,\n    &quot;ClientId&quot;: &quot;MyBlazorClient&quot;,\n    &quot;DefaultScopes&quot;: [\n        &quot;openid&quot;,\n        &quot;profile&quot;,\n        &quot;claims&quot;,\n        &quot;roles&quot;\n    ],\n    &quot;ResponseType&quot;: &quot;code&quot;\n},\n</code></pre>\n<p>In IdentityServer I got the following in my startup.cs:</p>\n<pre><code>var builder = services.AddIdentityServer(options =&gt;\n        {\n            options.Events.RaiseErrorEvents = true;\n            options.Events.RaiseInformationEvents = true;\n            options.Events.RaiseFailureEvents = true;\n            options.Events.RaiseSuccessEvents = true;\n            options.UserInteraction.LoginUrl = &quot;/Account/Login&quot;;\n            options.UserInteraction.LogoutUrl = &quot;/Account/Logout&quot;;\n            options.Authentication = new AuthenticationOptions()\n            {\n                CookieLifetime = TimeSpan.FromHours(8), \n                CookieSlidingExpiration = true\n            };\n        })\n</code></pre>\n<p>And last, this is my client configuration in IdentityServer:</p>\n<pre><code>new Client\n{\n    ClientId = &quot;MyBlazorClient&quot;,\n    ClientName = &quot;My Blazor Client Application&quot;,\n    RequireClientSecret = false,\n    AllowedCorsOrigins = { https://localhost:443 },\n    AllowedGrantTypes = GrantTypes.Code,\n    RedirectUris = { &quot;https://localhost:443/authentication/login-callback&quot; },\n    PostLogoutRedirectUris = { &quot;https://localhost:443/authentication/logout-callback&quot; },\n    AllowedScopes = new List&lt;string&gt;\n    {\n        IdentityServerConstants.StandardScopes.OpenId,\n        IdentityServerConstants.StandardScopes.Profile,\n        &quot;roles&quot;,\n        &quot;claims&quot;\n    },\n    RequirePkce = true,\n    AllowPlainTextPkce = false,\n},\n</code></pre>\n"
+}

@@ -1,0 +1,29 @@
+{
+    "tags": [
+        "v8",
+        "asm.js",
+        "webassembly"
+    ],
+    "owner": {
+        "reputation": 494,
+        "user_id": 871821,
+        "user_type": "registered",
+        "accept_rate": 67,
+        "profile_image": "https://www.gravatar.com/avatar/86745c80ad5a0974e23d540abdfe5b02?s=128&d=identicon&r=PG",
+        "display_name": "user3673",
+        "link": "https://stackoverflow.com/users/871821/user3673"
+    },
+    "is_answered": true,
+    "view_count": 690,
+    "accepted_answer_id": 36044304,
+    "answer_count": 2,
+    "score": 2,
+    "last_activity_date": 1458171566,
+    "creation_date": 1458149664,
+    "last_edit_date": 1458152924,
+    "question_id": 36042935,
+    "content_license": "CC BY-SA 3.0",
+    "link": "https://stackoverflow.com/questions/36042935/is-there-a-way-of-providing-asm-js-or-webassembly-code-to-v8-turbofan",
+    "title": "Is There a Way of Providing asm.js or WebAssembly Code to V8 Turbofan?",
+    "body": "<p>After looking into the recently announce support for WebAssembly, it occurs to me that it would dramatically increase its utility if there were some way to:</p>\n\n<ol>\n<li><p>Have TurboFan, the successor to <a href=\"http://jayconrod.com/posts/54/a-tour-of-v8-crankshaft-the-optimizing-compiler\" rel=\"nofollow\">the V8 JIT Crankshaft optimizer</a> output all the assembly code it generates along with the static type signatures, and execution profile of that generated code. </p></li>\n<li><p>Permit the programmer to provide his own asm.js/WebAssembly code for specific static type signatures that override the optimizer.</p></li>\n</ol>\n\n<p>Is there some way to do this already?</p>\n\n<p>There is some indication that it may be from the following passage from <a href=\"http://v8project.blogspot.com/2016/03/experimental-support-for-webassembly.html\" rel=\"nofollow\">this article</a>:</p>\n\n<blockquote>\n  <p>Under the hood, the WebAssembly implementation in V8 is designed to\n  reuse much of the existing JavaScript virtual machine infrastructure,\n  specifically the TurboFan compiler. A specialized WebAssembly decoder\n  validates modules by checking types, local variable indices, function\n  references, return values, and control flow structure in a single\n  pass. The decoder produces a TurboFan graph which is processed by\n  various optimization passes and finally turned into machine code by\n  the same backend which generates machine code for optimized JavaScript\n  and asm.js. In the next few months, the team will concentrate on\n  improving the startup time of the V8 implementation through compiler\n  tuning, parallelism, and compilation policy improvements.</p>\n</blockquote>\n\n<p>To expand on the idea for a more general audience:</p>\n\n<p>Typical top-down optimization involves high level programming and then execution profiling to identify which pieces of code require more effort.  This is true whether the optimization is automated code generation or manual coding of optimized code.  In the case of dynamically typed languages you'll frequently want to go beyond just optimizing dynamically-typed algorithms and provide code specialized for specific static types.  This is, in fact, what the V8 JIT optimizer does automatically.  If humans want to manually provide some particularly 'hot' specialized cases, they'd need to inform the automated optimizer, somehow, that they have already done the work so the automated optimizer can incorporate the manually optimized code rather than automatically generating suboptimal code.</p>\n"
+}

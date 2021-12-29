@@ -1,0 +1,27 @@
+{
+    "tags": [
+        "javascript",
+        "c++",
+        "abstract-syntax-tree"
+    ],
+    "owner": {
+        "reputation": 2685,
+        "user_id": 2016831,
+        "user_type": "registered",
+        "accept_rate": 17,
+        "profile_image": "https://www.gravatar.com/avatar/ba446f99c6f43a5a59255faaba912d9f?s=128&d=identicon&r=PG",
+        "display_name": "bluejayke",
+        "link": "https://stackoverflow.com/users/2016831/bluejayke"
+    },
+    "is_answered": false,
+    "view_count": 41,
+    "answer_count": 0,
+    "score": 0,
+    "last_activity_date": 1597292502,
+    "creation_date": 1597292502,
+    "question_id": 63388092,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/63388092/javascript-code-to-write-executable-from-c",
+    "title": "JavaScript code to write executable from C++",
+    "body": "<p>I've seen similar questions (or so it may seem), such as</p>\n<p><a href=\"https://stackoverflow.com/questions/44314441/how-do-i-compile-c-to-javascript-in-a-browser\">How do I compile C++ to JavaScript in a browser?</a></p>\n<p><a href=\"https://stackoverflow.com/questions/7922961/executing-javascript-code-from-objective-c\">Executing Javascript Code From Objective C</a></p>\n<p><a href=\"https://stackoverflow.com/questions/2474570/library-to-write-javascript-code\">Library to write javascript code</a></p>\n<p><a href=\"https://stackoverflow.com/questions/7005729/what-language-is-javascript-written-in\">What language is JavaScript written in?</a></p>\n<p><a href=\"https://stackoverflow.com/questions/54340789/is-there-any-way-to-compile-code-c-c-with-in-browser\">Is there any way to compile code ( C/ C++ ) with in browser?</a></p>\n<p><a href=\"https://stackoverflow.com/questions/27198437/is-there-a-way-to-use-c-in-javascript\">Is there a way to use C++ in JavaScript?</a></p>\n<p><a href=\"https://stackoverflow.com/questions/7343504/possible-to-write-a-compiler-with-javascript\">Possible to write a Compiler with Javascript?</a></p>\n<p>[most closely related] <a href=\"https://stackoverflow.com/questions/6934981/is-there-such-a-thing-as-a-javascript-compiler\">Is there such a thing as a javascript compiler?</a></p>\n<p><a href=\"https://stackoverflow.com/questions/23764967/how-can-i-write-a-javascript-compiler-for-arduino-or-similar-microcontroller\">How can I write a JavaScript compiler for Arduino or similar microcontroller?</a></p>\n<p>but some of these talk about the opposite.</p>\n<p>Basically what I mean is to take C++ code, convert it to assembly (NTO WebAssembly) [or just skip this step like Microsoft does], and generate machine code, then put the bytes of that machine code in an executable of some kind (unix executable or windows one), just like actual compilers do.</p>\n<p>I realize that this means there will be differences for difference processors and architectures, since it  will be writing the machine code directly, but JavaScript has the ability to write pure bytes and applications using mimeType <code>application/octet-stream</code> and download it to the computer, like</p>\n<p><div class=\"snippet\" data-lang=\"js\" data-hide=\"false\" data-console=\"true\" data-babel=\"false\">\r\n<div class=\"snippet-code\">\r\n<pre class=\"snippet-code-js lang-js prettyprint-override\"><code>var a =document.createElement(\"a\");\na.href = URL.createObjectURL(\n    new Blob([\n      (bytes =&gt; {\n        var headers = \"some header bytes\";\n        for(var i = headers.length; i &lt; bytes.length; i++) {\n          bytes[i] = Math.floor(\n            Math.random() * 256 //represents machine code\n            //and other file headers etc\n          )\n        }\n        headers.split(\"\").forEach((h, i) =&gt; {\n          bytes[i] = h.charCodeAt(h)\n        }) \n        return bytes\n      })(new Uint8Array(500))\n    ], {\n      type: \"application/octet-stream\" //not really\n      //necessary for HTML but for executables it might be\n    })\n)\n\na.download = \"BoruchHashem.html\"//or.exe, but this is just testing\na.click()</code></pre>\r\n</div>\r\n</div>\r\n</p>\n<p>[like in https://stackoverflow.com/questions/23451726/saving-binary-data-as-file-using-javascript-from-a-browser ]</p>\n<p>If one simply knows the archetecture of the processor they are trying to compile for, [and the necessary op-codes][1], as well as the file format specification for the particular type of executable they are trying to run ([such as exe for windows][2]) they should be able to analyze the C++ code using an [AST][3] written in JavaScript (https://stackoverflow.com/questions/13171616/c-parser-in-javascript), then generate the necessary op-codes and machine language bytes and put that in the necessary section of the .exe file, put all of the bytes into a blob and download it to the user (obviously there are security risks if its a public website, anyone can insert malware into it etc. but that's another issue)</p>\n<p>The question is is there any documentation on this, or is there any ready-made JavaScript compilers for C++ that are readily available? Was not able to find anything on github with google searches\n[1]: <a href=\"http://ref.x86asm.net/coder32.html\" rel=\"nofollow noreferrer\">http://ref.x86asm.net/coder32.html</a>\n[2]: <a href=\"https://blog.kowalczyk.info/articles/pefileformat.html\" rel=\"nofollow noreferrer\">https://blog.kowalczyk.info/articles/pefileformat.html</a>\n[3]: <a href=\"https://github.com/ajaxorg/treehugger\" rel=\"nofollow noreferrer\">https://github.com/ajaxorg/treehugger</a></p>\n"
+}

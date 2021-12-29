@@ -1,0 +1,29 @@
+{
+    "tags": [
+        ".net",
+        "dependency-injection",
+        "grpc",
+        "blazor",
+        "blazor-client-side"
+    ],
+    "owner": {
+        "reputation": 339,
+        "user_id": 3246541,
+        "user_type": "registered",
+        "accept_rate": 45,
+        "profile_image": "https://www.gravatar.com/avatar/40c286cc48f1844bf59fed209676e3d7?s=128&d=identicon&r=PG&f=1",
+        "display_name": "lolsharp",
+        "link": "https://stackoverflow.com/users/3246541/lolsharp"
+    },
+    "is_answered": true,
+    "view_count": 1396,
+    "answer_count": 6,
+    "score": 3,
+    "last_activity_date": 1616024631,
+    "creation_date": 1586544484,
+    "question_id": 61146743,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/61146743/grpc-web-channel-authentication-with-blazor-webassembly-via-dependency-injection",
+    "title": "gRPC-Web Channel Authentication with Blazor Webassembly via Dependency Injection",
+    "body": "<p>I am testing gRPC-Web in Blazor Webassembly with authentication and hit a little bit of a block about how to get a clean access to my gRPC channel.</p>\n\n<p>Without authentication there is a pretty simple and clean way, as detailed in the Blazor sample for grpc-dotnet <a href=\"https://github.com/grpc/grpc-dotnet/tree/master/examples/Blazor\" rel=\"nofollow noreferrer\">https://github.com/grpc/grpc-dotnet/tree/master/examples/Blazor</a>.  </p>\n\n<p>Provision of the Channel:</p>\n\n<pre><code>builder.Services.AddSingleton(services =&gt;\n{\n    // Get the service address from appsettings.json\n    var config = services.GetRequiredService&lt;IConfiguration&gt;();\n    var backendUrl = config[\"BackendUrl\"];\n\n    var httpClient = new HttpClient(new GrpcWebHandler(GrpcWebMode.GrpcWebText, new HttpClientHandler()));\n\n    var channel = GrpcChannel.ForAddress(backendUrl, new GrpcChannelOptions { HttpClient = httpClient });\n\n    return channel;\n});\n</code></pre>\n\n<p>Usage in the Razor Files</p>\n\n<pre><code>@inject GrpcChannel Channel\n</code></pre>\n\n<p>Adding authentication directly in the razor file and creating the channel there isn't that complicated either</p>\n\n<pre><code>@inject IAccessTokenProvider AuthenticationService\n...\n\n@code {\n...\nvar httpClient = new HttpClient(new GrpcWebHandler(GrpcWebMode.GrpcWebText, new HttpClientHandler()));\nvar tokenResult = await AuthenticationService.RequestAccessToken();\n\nif (tokenResult.TryGetToken(out var token))\n{\n    var _token = token.Value;\n\n    var credentials = CallCredentials.FromInterceptor((context, metadata) =&gt;\n    {\n        if (!string.IsNullOrEmpty(_token))\n        {\n            metadata.Add(\"Authorization\", $\"Bearer {_token}\");\n        }\n        return Task.CompletedTask;\n    });\n\n    //SslCredentials is used here because this channel is using TLS.\n    //Channels that aren't using TLS should use ChannelCredentials.Insecure instead.\n    var channel = GrpcChannel.ForAddress(baseUri, new GrpcChannelOptions\n    {\n        Credentials = ChannelCredentials.Create(new SslCredentials(), credentials)\n    });\n</code></pre>\n\n<p>But this moves a lot of the required logic into the razor file. Is there a way to combine these and provide an authenticated grpc channel via injection?</p>\n"
+}

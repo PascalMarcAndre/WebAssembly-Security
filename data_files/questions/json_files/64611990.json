@@ -1,0 +1,27 @@
+{
+    "tags": [
+        "authentication",
+        "authorization",
+        "blazor",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 93,
+        "user_id": 5493993,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/699c138484c25d27bfff7fdac9b7182d?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Thrifty2100",
+        "link": "https://stackoverflow.com/users/5493993/thrifty2100"
+    },
+    "is_answered": true,
+    "view_count": 119,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1604569775,
+    "creation_date": 1604074301,
+    "question_id": 64611990,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/64611990/blazor-webassembly-authorizedview-with-roles",
+    "title": "Blazor WebAssembly AuthorizedView with Roles",
+    "body": "<p>I have a blazor page that is supposed to display a button if the user is in the GRP_FAST_ADMIN role.  For testing purposes, if they are not in the role, i print out a list of roles that they are in.  The issue is that their claims do show that they have the correct role, but they are still not authorized.</p>\n<pre><code>@page &quot;/RestartApplication&quot;\n\n\n&lt;AuthorizeView Roles=&quot;GRP_FAST_ADMIN&quot;&gt;\n    &lt;Authorized&gt;\n        &lt;button class=&quot;btn-default&quot; @onclick=&quot;() =&gt; ViewModel.RestartApplication()&quot;&gt;Restart Application&lt;/button&gt;\n    &lt;/Authorized&gt;\n    &lt;NotAuthorized&gt;\n        @if(Claims !=null)\n        {\n            @foreach(var claim in Claims)\n            {\n                &lt;p&gt;@(claim.Type.ToString() + &quot;: &quot; + claim.Value.ToString())&lt;/p&gt;\n            }\n        }\n    &lt;/NotAuthorized&gt;\n&lt;/AuthorizeView&gt;\n\n</code></pre>\n<p>The output from the  section:</p>\n<pre><code>http://schemas.microsoft.com/ws/2008/06/identity/claims/role: CM_GENERAL_USER\n\nhttp://schemas.microsoft.com/ws/2008/06/identity/claims/role: ES_GENERAL_USER\n\nhttp://schemas.microsoft.com/ws/2008/06/identity/claims/role: GRP-PEOPLESOFT-P-GL_GENERAL\n\nhttp://schemas.microsoft.com/ws/2008/06/identity/claims/role: GRP_AWB_ADMIN\n\nhttp://schemas.microsoft.com/ws/2008/06/identity/claims/role: GRP_FAST_ADMIN\n\nhttp://schemas.microsoft.com/ws/2008/06/identity/claims/role: GRP_ILG_RO\n\nhttp://schemas.microsoft.com/ws/2008/06/identity/claims/role: IB_PWR_USER\n\nhttp://schemas.microsoft.com/ws/2008/06/identity/claims/role: IBP_POWER_USER\n\nhttp://schemas.microsoft.com/ws/2008/06/identity/claims/role: MP_ADMIN_GRP\n\nhttp://schemas.microsoft.com/ws/2008/06/identity/claims/role: OFB_GENERAL_USER\n\nhttp://schemas.microsoft.com/ws/2008/06/identity/claims/role: PK_GENERAL_USER\n\nhttp://schemas.microsoft.com/ws/2008/06/identity/claims/role: PT_GENERAL_USER\n\nhttp://schemas.microsoft.com/ws/2008/06/identity/claims/role: PT_PWR_USER\n\nhttp://schemas.microsoft.com/ws/2008/06/identity/claims/role: RESORT_OPS_UTILITY\n</code></pre>\n<p>Basic authentication works. I can successfully use  for just making sure someone is signed-in.  Authorization is setup in the startup of the WebAssembly with this:</p>\n<pre><code> public static IServiceCollection AddPowerToolsWebServices(this IServiceCollection services)\n        {\n            services.AddDevExpressBlazor();\n            services.AddBlazoredLocalStorage();\n            services.AddAuthorizationCore();\n            services.AddScoped&lt;TokenAuthenticationStateProvider&gt;();\n            services.AddScoped&lt;AuthenticationStateProvider, TokenAuthenticationStateProvider&gt;(provider =&gt;\n            provider.GetRequiredService&lt;TokenAuthenticationStateProvider&gt;());\n            return services;\n        }\n</code></pre>\n<p>I am handling the override for GetAuthenticationStateAsync()</p>\n<pre><code> public override async Task&lt;AuthenticationState&gt; GetAuthenticationStateAsync()\n        {\n            var token = await GetTokenAsync();\n            if (string.IsNullOrWhiteSpace(token))\n                return _Anonymous;\n\n            _HttpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(&quot;bearer&quot;, token);\n            return new AuthenticationState(new ClaimsPrincipal(new ClaimsIdentity(ParseClaimsFromJwt(token), &quot;jwt&quot;)));\n        }\n</code></pre>\n<p>This parses all claims and gets each role and adds them individually as a claim.  Not sure what I am missing.</p>\n"
+}

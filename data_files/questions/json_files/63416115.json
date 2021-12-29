@@ -1,0 +1,26 @@
+{
+    "tags": [
+        "blazor"
+    ],
+    "owner": {
+        "reputation": 1047,
+        "user_id": 656822,
+        "user_type": "registered",
+        "accept_rate": 40,
+        "profile_image": "https://www.gravatar.com/avatar/668c679c425efc6d541c2496a6e1f963?s=128&d=identicon&r=PG",
+        "display_name": "user656822",
+        "link": "https://stackoverflow.com/users/656822/user656822"
+    },
+    "is_answered": false,
+    "view_count": 106,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1597422722,
+    "creation_date": 1597420391,
+    "last_edit_date": 1597420717,
+    "question_id": 63416115,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/63416115/how-to-read-user-name-in-blazor-webassembly-app-template",
+    "title": "How to read user name in Blazor WebAssembly App template",
+    "body": "<p>I created a Blazor WebAssembly app from template (templates 3.1.7).</p>\n<p>I checked ASP.NET Core hosted and changed authentication to individual user accounts.</p>\n<p>How can I read the user name in the api? <code>User.Identity.Name</code> is null</p>\n"
+}

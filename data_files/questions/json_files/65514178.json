@@ -1,0 +1,26 @@
+{
+    "tags": [
+        "asp.net-identity",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 14881,
+        "user_id": 1123020,
+        "user_type": "registered",
+        "accept_rate": 60,
+        "profile_image": "https://www.gravatar.com/avatar/78465afdabcd3781cf060e74fd28cfab?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Yoda",
+        "link": "https://stackoverflow.com/users/1123020/yoda"
+    },
+    "is_answered": true,
+    "view_count": 56,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1615410692,
+    "creation_date": 1609366096,
+    "question_id": 65514178,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/65514178/where-is-login-page-defined-in-blazor-webassembly",
+    "title": "Where is login page defined in Blazor WebAssembly?",
+    "body": "<p>I've created .NET Core 5.0 Blazor WebAssembly hosted in ASP .NET Core.\nMultiple views are missing but they application works. In particular the whole login page is missing and I can't forgot password page defined. How can I override them?</p>\n<p><a href=\"https://i.stack.imgur.com/rX6dP.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/rX6dP.png\" alt=\"enter image description here\" /></a></p>\n"
+}

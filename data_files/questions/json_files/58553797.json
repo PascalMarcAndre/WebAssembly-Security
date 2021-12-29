@@ -1,0 +1,29 @@
+{
+    "tags": [
+        "asp.net-core",
+        "logging",
+        "blazor",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 4236,
+        "user_id": 758765,
+        "user_type": "registered",
+        "accept_rate": 74,
+        "profile_image": "https://www.gravatar.com/avatar/f3fed18422c9db37c455728ecf3f880c?s=128&d=identicon&r=PG",
+        "display_name": "ThomasArdal",
+        "link": "https://stackoverflow.com/users/758765/thomasardal"
+    },
+    "is_answered": false,
+    "view_count": 2389,
+    "answer_count": 1,
+    "score": 2,
+    "last_activity_date": 1599910084,
+    "creation_date": 1571987281,
+    "last_edit_date": 1599910084,
+    "question_id": 58553797,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/58553797/set-up-logging-with-blazor-webassembly",
+    "title": "Set up logging with Blazor WebAssembly",
+    "body": "<p>I'm doing some experiments with Blazor and want to set up logging. I see that Blazor logs to Microsoft.Extensions.Logging out of the box and that the log messages go to the developer console inside the browser. That is a nice start.</p>\n\n<p>Now I want to try and log messages to other destinations as well. It could be a cloud-service. I'm wondering where to set that up. In ASP.NET Core, you would set it up using the <code>ConfigureLogging</code> method in <code>Program.cs</code>. But this isn't available with Blazor:</p>\n\n<pre class=\"lang-cs prettyprint-override\"><code>public static IWebAssemblyHostBuilder CreateHostBuilder(string[] args) =&gt;\n    BlazorWebAssemblyHost.CreateDefaultBuilder()\n        .UseBlazorStartup&lt;Startup&gt;()\n        .ConfigureLogging(...); // &lt;- compile error\n</code></pre>\n\n<p>As a fallback, I'm trying to set it up through <code>ConfigureServices</code> in <code>Startup.cs</code>:</p>\n\n<pre class=\"lang-cs prettyprint-override\"><code>public void ConfigureServices(IServiceCollection services)\n{\n    services.AddLogging(builder =&gt; builder\n        .AddMyLogger()\n        .SetMinimumLevel(LogLevel.Information));\n}\n</code></pre>\n\n<p>with <code>AddMyLogger</code>:</p>\n\n<pre class=\"lang-cs prettyprint-override\"><code>public static ILoggingBuilder AddMyLogger(this ILoggingBuilder builder)\n{\n    builder.Services.AddSingleton&lt;ILoggerProvider, MyLoggerProvider&gt;();\n    return builder;\n}\n</code></pre>\n\n<p>and <code>MyLoggerProvider</code>:</p>\n\n<pre class=\"lang-cs prettyprint-override\"><code>public class MyLoggerProvider : ILoggerProvider\n{\n    public ILogger CreateLogger(string categoryName)\n    {\n        return new MyLogger();\n    }\n\n    public void Dispose()\n    {\n    }\n}\n</code></pre>\n\n<p>and <code>MyLogger</code>:</p>\n\n<pre class=\"lang-cs prettyprint-override\"><code>public class MyLogger : ILogger\n{\n    public MyLogger()\n    {\n    }\n\n    public IDisposable BeginScope&lt;TState&gt;(TState state)\n    {\n        return null;\n    }\n\n    public bool IsEnabled(LogLevel logLevel)\n    {\n        return true;\n    }\n\n    public void Log&lt;TState&gt;(LogLevel logLevel, EventId eventId, TState state, Exception exception, Func&lt;TState, Exception, string&gt; formatter)\n    {\n    }\n}\n</code></pre>\n\n<p>The <code>AddMyLogger</code>-method is called but my logger is never created or receives any <code>Log</code>-calls.</p>\n\n<p>Am I doing something wrong here or is logging with Blazor WebAssembly simply not ready yet?</p>\n"
+}

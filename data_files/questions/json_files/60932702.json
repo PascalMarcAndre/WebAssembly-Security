@@ -1,0 +1,30 @@
+{
+    "tags": [
+        "asp.net",
+        "entity-framework",
+        "asp.net-core",
+        "asp.net-identity",
+        "blazor"
+    ],
+    "owner": {
+        "reputation": 77,
+        "user_id": 10229906,
+        "user_type": "registered",
+        "profile_image": "https://lh4.googleusercontent.com/-Apbpadfhkd0/AAAAAAAAAAI/AAAAAAAAEAI/QLCFL4EnJWg/photo.jpg?sz=128",
+        "display_name": "Luiz Eug&#234;nio Barbieri",
+        "link": "https://stackoverflow.com/users/10229906/luiz-eug%c3%aanio-barbieri"
+    },
+    "is_answered": true,
+    "view_count": 2260,
+    "accepted_answer_id": 60992132,
+    "answer_count": 1,
+    "score": 2,
+    "last_activity_date": 1585832252,
+    "creation_date": 1585578346,
+    "last_edit_date": 1585594199,
+    "question_id": 60932702,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/60932702/blazor-asp-net-core-3-1-web-api-returning-404-error-when-published",
+    "title": "Blazor ASP.Net Core 3.1 web API returning 404 error when published",
+    "body": "<p>I'm doing some tests with Blazor WebAssembly App ASP.NET Core hosted. This is a template in a previous version, which delivers a solution with three projects, being the client, the server and the shared one. In this solution I am using Entity Framework to access the database and Identity Core to perform user registration and login.</p>\n\n<p>For this, I implemented the following controller.</p>\n\n<pre><code>using BlazorAutoComplete.Shared.Models;\nusing Microsoft.AspNetCore.Identity;\nusing Microsoft.AspNetCore.Mvc;\nusing Microsoft.Extensions.Configuration;\nusing Microsoft.IdentityModel.Tokens;\nusing System;\nusing System.Collections.Generic;\nusing System.IdentityModel.Tokens.Jwt;\nusing System.Security.Claims;\nusing System.Text;\nusing System.Threading.Tasks;\n\n[Route(\"api/[controller]\")]\n[ApiController]\npublic class AccountController : ControllerBase\n{\n    private readonly UserManager&lt;IdentityUser&gt; _userManager;\n    private readonly SignInManager&lt;IdentityUser&gt; _signInManager;\n    private readonly IConfiguration _configuration;\n\n    public AccountController(UserManager&lt;IdentityUser&gt; userManager, SignInManager&lt;IdentityUser&gt; signInManager, IConfiguration configuration)\n    {\n        this._userManager = userManager;\n        this._signInManager = signInManager;\n        this._configuration = configuration;\n    }\n\n    [HttpGet]\n    public string Get()\n    {\n        return $\"AccountController :: {DateTime.Now.ToShortDateString()}\";\n    }\n\n    [HttpPost(\"Login\")]\n    public async Task&lt;ActionResult&lt;UserToken&gt;&gt; Login([FromBody] UserInfo userInfo)\n    {\n        var result = await _signInManager.PasswordSignInAsync(userInfo.Email, userInfo.Password, isPersistent: false, lockoutOnFailure: false);\n\n        if (result.Succeeded)\n        {\n            return await GenerateTokenAsync(userInfo);\n        }\n        else\n        {\n            return BadRequest(new { message = \"Login inv\u00e1lido\" });\n        }\n    }\n</code></pre>\n\n<p>I also have the registration method on this controller, but that is beside the point.</p>\n\n<p>The problem I need help with: in development mode, all services work (login, registration and Get which returns only one string, accessed in \"api/account\"). However, when I publish my project, only that Get service works. When I try to access the login API, I get a 404 Not Found response.</p>\n\n<p>The login method call.</p>\n\n<pre><code>@inject HttpClient http\n@inject NavigationManager navigation\n@inject TokenAuthenticationProvider authStateProvider\nasync Task FazerLogin()\n{\n    try\n    {\n        var loginAsJson = JsonSerializer.Serialize(userInfo);\n\n        var httpResponse = await http.PostAsync(\"api/account/login\", new StringContent(loginAsJson, Encoding.UTF8, \"application/json\"));\n\n        if (httpResponse.IsSuccessStatusCode)\n        {\n            var responseAsString = await httpResponse.Content.ReadAsStringAsync();\n\n            var loginResult = JsonSerializer.Deserialize&lt;UserToken&gt;(responseAsString, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });\n\n            await authStateProvider.Login(loginResult.Token);\n            navigation.NavigateTo(\"/\");\n        }\n        else\n        {\n            loginFalhou = true;\n            Mensagem = $\"N\u00e3o foi poss\u00edvel realizar o login do usu\u00e1rio. (Erro: {httpResponse.StatusCode})\";\n        }\n    }\n    catch (Exception)\n    {\n        loginFalhou = true;\n        Mensagem = $\"N\u00e3o foi poss\u00edvel realizar o login do usu\u00e1rio...\";\n    }\n\n}\n</code></pre>\n\n<p>I used the PostAsync method to check if httpResponse was successful in communication. But I also tried to implement the method as follows:</p>\n\n<pre><code>async Task FazerLogin()\n{\n    try\n    {\n        var loginResult = await http.PostJsonAsync&lt;UserToken&gt;(\"/api/account/login\", userInfo);\n\n        await authStateProvider.Login(loginResult.Token);\n        navigation.NavigateTo(\"/\");\n    }\n    catch (Exception ex)\n    {\n        Console.Write(ex);\n    }\n}\n</code></pre>\n\n<p>But the error remains.</p>\n\n<p><a href=\"https://i.stack.imgur.com/aZIA7.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/aZIA7.png\" alt=\"Error occurring when login service call using HttpClient.\"></a></p>\n\n<p>I understand that Blazor WebAssembly ASP.NET Core Hosted is a template in a previous version. But I believe the problem is in ASP.NET Core 3.1.</p>\n\n<p>The only difference I notice between the services is that the service that works returns only one string. The login, registration and other controllers return a Task>. Is this the problem? If so, is there another way to implement the login?</p>\n"
+}

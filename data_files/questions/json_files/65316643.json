@@ -1,0 +1,27 @@
+{
+    "tags": [
+        "blazor-webassembly",
+        ".net-5"
+    ],
+    "owner": {
+        "reputation": 161,
+        "user_id": 1930728,
+        "user_type": "registered",
+        "accept_rate": 100,
+        "profile_image": "https://www.gravatar.com/avatar/2eaf785bc931e79e0148d6cc8db261c4?s=128&d=identicon&r=PG",
+        "display_name": "user1930728",
+        "link": "https://stackoverflow.com/users/1930728/user1930728"
+    },
+    "is_answered": true,
+    "view_count": 60,
+    "accepted_answer_id": 65321735,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1608115548,
+    "creation_date": 1608087192,
+    "question_id": 65316643,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/65316643/how-to-read-large-string-from-sessionstorage-in-blazor-webassembly-my-result-is",
+    "title": "How to read large string from sessionStorage in Blazor WebAssembly? My result is truncated",
+    "body": "<p>I am working on a new Blazor WebAssembly application (NET 5.0) and I'm having trouble reading a large string (~ 3000 characters) from the session storage.  I'm getting a result, but it is truncated with a &quot;...&quot; added to the middle.  The result is always exactly 1000 bytes.</p>\n<p>In the code below dataKey is string key of data I want to read.  JSRuntime in injected like this:</p>\n<pre><code>@inject IJSRuntime JSRuntime\n</code></pre>\n<p>My first attempt at reading the item from session storage looked like this:</p>\n<pre><code>// Initial try (truncated)\nvar myValue1 = await JSRuntime.InvokeAsync&lt;string&gt;(&quot;sessionStorage.getItem&quot;, dataKey);\n</code></pre>\n<p>Then after doing some searching I saw that it was recommended not to await in a webassembly, so I changed it to this:</p>\n<pre><code>// Remove the await (still truncated)\nvar myValue2 = ((IJSInProcessRuntime)JSRuntime).Invoke&lt;string&gt;(&quot;sessionStorage.getItem&quot;, dataKey);\n</code></pre>\n<p>This gave me an identical result, a truncated string of exactly 1000 bytes.</p>\n<p>After doing more reading I saw that it was recommended to use an Unmarshalled call for certain cases.  I tried that but my result was only null.  I couldn't find a clear example of this use case, so my code may be incorrect.</p>\n<pre><code>// Unmarshalled (null)\nvar myValue3 = ((IJSUnmarshalledRuntime)JSRuntime).InvokeUnmarshalled&lt;string, object&gt;(&quot;sessionStorage.getItem&quot;, dataKey);\n</code></pre>\n<p>After extensive searching I couldn't find any other recommendations.  Can anyone help me read this string from session storage?</p>\n<p>Thanks!</p>\n"
+}

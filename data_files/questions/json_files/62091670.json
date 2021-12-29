@@ -1,0 +1,29 @@
+{
+    "tags": [
+        "asp.net-identity",
+        "blazor",
+        "asp.net-core-identity",
+        "blazor-client-side"
+    ],
+    "owner": {
+        "reputation": 1452,
+        "user_id": 6375238,
+        "user_type": "registered",
+        "accept_rate": 84,
+        "profile_image": "https://i.stack.imgur.com/MjiYo.jpg?s=128&g=1",
+        "display_name": "donquijote",
+        "link": "https://stackoverflow.com/users/6375238/donquijote"
+    },
+    "is_answered": false,
+    "view_count": 73,
+    "answer_count": 0,
+    "score": 0,
+    "last_activity_date": 1590774887,
+    "creation_date": 1590773811,
+    "last_edit_date": 1590774887,
+    "question_id": 62091670,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/62091670/ef-core-equivalent-to-throwifv1schemafalse-and-where-to-implement-on-blazor-web",
+    "title": "EF Core equivalent to throwIfV1Schema:false and where to implement on Blazor WebAssembly app",
+    "body": "<p>I use the option <code>throwIfV1Schema:false</code> with EF 6 during development, for example with:</p>\n\n<pre><code>public MyDbContext() : base(\"DefaultConnection\", throwIfV1Schema:false){}\n</code></pre>\n\n<p>However with EF Core I haven't found an equivalent to this option.</p>\n\n<p>If this option exists with EF Core then ideally I would like to know where to implement it on a Blazor WebAssembly app where the dbcontext is used via Dependency Injection as a Configured Service on Startup.cs with:</p>\n\n<pre><code>services.AddDbContext&lt;MyDbContext&gt;(options =&gt;\n                options.UseSqlServer(\n                    Configuration.GetConnectionString(\"DefaultConnection\")));\n</code></pre>\n"
+}

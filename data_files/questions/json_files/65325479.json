@@ -1,0 +1,25 @@
+{
+    "tags": [
+        "asp.net-core",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 1,
+        "user_id": 9424796,
+        "user_type": "registered",
+        "profile_image": "https://lh4.googleusercontent.com/-IG68RO37C3g/AAAAAAAAAAI/AAAAAAAAAAs/iUpo7ZGDkBM/photo.jpg?sz=128",
+        "display_name": "Jean St&#233;phane Alexis",
+        "link": "https://stackoverflow.com/users/9424796/jean-st%c3%a9phane-alexis"
+    },
+    "is_answered": false,
+    "view_count": 23,
+    "answer_count": 0,
+    "score": 0,
+    "last_activity_date": 1608129824,
+    "creation_date": 1608129824,
+    "question_id": 65325479,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/65325479/server-side-page-only-load-on-hard-refresh-on-blazor-webassembly-hosted",
+    "title": "Server side page only load on hard refresh on blazor WebAssembly hosted",
+    "body": "<p>I have a problem with blazor webassembly hosted .net core 3.1, where my server side pages (the identityserver ui pages for that instance) only load on browser hard refresh only when app is published, base in index.html (client-side) is set &quot;/thestring/&quot; and usepathbase(&quot;/thestring&quot;) and place before userouting() in startup (server-side). Also user login seems successful but aren't persisted, I suspect the /authentication/login-callback being called isn't found because of the first problem.</p>\n<p>as I know the question might be broad and not enough the details, what could have I done wrong?</p>\n"
+}

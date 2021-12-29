@@ -1,0 +1,28 @@
+{
+    "tags": [
+        "c++",
+        "assembly",
+        "simd",
+        "webassembly"
+    ],
+    "owner": {
+        "reputation": 351,
+        "user_id": 3900123,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/0c2a43adeac7bb506c17a4db01444423?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Dan Weber",
+        "link": "https://stackoverflow.com/users/3900123/dan-weber"
+    },
+    "is_answered": false,
+    "view_count": 140,
+    "answer_count": 0,
+    "score": 2,
+    "last_activity_date": 1603333292,
+    "creation_date": 1603332462,
+    "last_edit_date": 1603333292,
+    "question_id": 64474197,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/64474197/is-there-anyway-to-use-pmaddubsw-for-unsigned-by-unsigned-multiplication-more-ef",
+    "title": "Is there anyway to use pmaddubsw for unsigned by unsigned multiplication more efficiently than pmullw?",
+    "body": "<p><a href=\"https://www.felixcloutier.com/x86/pmaddubsw\" rel=\"nofollow noreferrer\">Pmaddubsw</a> is a fascinating instruction since it performs Unsigned by Signed Multiplication.  What this means in practice is that, the order of the operands matter, and if you try to multiply an unsigned value as a signed value that has a value higher than 127, you will get rather unexpected results in the final bit representation.</p>\n<p>This is of interest to me, because I'm proposing an expanding (8bit to 16bit) horizontal multiply-add instruction for the WebAssembly SIMD instruction set.</p>\n<p>What I'd like to do then is determine which is the ideal implementation for said instruction on x86_64 targetting AVX.  If I can use pmaddubsw in 1-op, it would be more ideal than the 7 op solution required with pmullw, pand, psrlw.  But with the limitations being on unsigned by signed multiplication, I'm not sure if it's possible to end up with an unsigned result in 1-op or at the very least, end up with a solution better than the pmullw, pand, psrlw solution.</p>\n<p>The only way I've come up with that matches the behavior is to mask, shift, and call pmaddubsw  twice which yields the same number of instructions and not necessarily a more optimal solution.</p>\n<p>You can see both on <a href=\"https://godbolt.org/z/zMrz57\" rel=\"nofollow noreferrer\">Godbolt here.</a></p>\n<p>Side note: someone has different task, but a similar objective with this question --  <a href=\"https://stackoverflow.com/questions/64375928/unsigned-multiplication-using-signed-multiplier\">Unsigned Multiplication using Signed Multiplier</a></p>\n"
+}

@@ -1,0 +1,28 @@
+{
+    "tags": [
+        "c#",
+        "authentication",
+        "blazor",
+        "asp.net-core-3.1"
+    ],
+    "owner": {
+        "reputation": 1,
+        "user_id": 14794191,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/05660aa2cb4221caf3a7dbf2fbc2b86c?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Falco Lannoo",
+        "link": "https://stackoverflow.com/users/14794191/falco-lannoo"
+    },
+    "is_answered": true,
+    "view_count": 244,
+    "accepted_answer_id": 65225646,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1607552220,
+    "creation_date": 1607528070,
+    "question_id": 65219885,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/65219885/blazor-server-get-aad-access-token-from-current-logged-in-user",
+    "title": "Blazor server - get AAD access token from current logged in user",
+    "body": "<p>I'm trying to retrieve an Azure AD token from my Blazor server website, so I can add this as an Authorization header in a downstream API service.\nI was able to setup AAD authentication in the website (which works perfectly fine), but I'm unable to retrieve an access token, which needs to be added as an authorization header in my downstream API calls.</p>\n<p>I'm using Blazor server (so not WebAssembly) in .NET core 3.1</p>\n<p>This is my current setup, but the access token is always null and can't seem to fix it.\nAny help is greatly appreciated!</p>\n<p><strong>Startup.cs</strong></p>\n<pre><code>services.AddAuthentication(AzureADDefaults.AuthenticationScheme)\n            .AddAzureAD(options =&gt; Configuration.Bind(&quot;AzureAd&quot;, options))\n            .AddCookie();\n\nservices.Configure&lt;OpenIdConnectOptions&gt;(AzureADDefaults.AuthenticationScheme, options =&gt;\n        {\n            options.SaveTokens = true;\n        });\n</code></pre>\n<p><strong>_Host.cshtml</strong></p>\n<p>I added a code block and try to retrieve the accessToken from the HttpContext.\nThen I can propagate the value to my controllers using a CascadingValue object in my app.razor\nHowever, the access_token is always empty. The &quot;User.Identity.IsAuthenticated&quot; is true, so it is entering my if statement.</p>\n<pre><code>@{\n    string accessToken = null;\n    if (User.Identity.IsAuthenticated)\n    {\n        accessToken = await HttpContext.GetTokenAsync(&quot;access_token&quot;);\n        // accessToken is always empty :(\n    }\n}\n</code></pre>\n<p>What am I missing here?\nMost of the articles I could find about this was for Blazor WebAssembly</p>\n<p>Side note:\nNot sure if this is relevant for this, but in my controllers, I'm able to get the ClaimsPrincipal object. But I don't think I'm able to get a bearer token from that object (but thought it was worth mentioning here).</p>\n<pre><code>var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();\nvar user = authState.User;\n</code></pre>\n"
+}

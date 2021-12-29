@@ -1,0 +1,27 @@
+{
+    "tags": [
+        "blazor",
+        "webassembly"
+    ],
+    "owner": {
+        "reputation": 143,
+        "user_id": 3345552,
+        "user_type": "registered",
+        "accept_rate": 88,
+        "profile_image": "https://www.gravatar.com/avatar/2ea698c8c9eb907b967b936f1d551be3?s=128&d=identicon&r=PG&f=1",
+        "display_name": "SvenM",
+        "link": "https://stackoverflow.com/users/3345552/svenm"
+    },
+    "is_answered": true,
+    "view_count": 385,
+    "accepted_answer_id": 60165699,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1581413608,
+    "creation_date": 1581410736,
+    "question_id": 60164866,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/60164866/blazor-fallback-for-older-browsers",
+    "title": "Blazor fallback for older browsers",
+    "body": "<p>For context : I wanted to make a simple bot-detection mechanism (captcha) on a registration page. So I decided to have an iframe with a small Blazor client-side app that just shows a checkbox and does some C# operations (hashing a variable with a salt). Since this gets compiled to wasm, it would be pretty hard to bypass. I realize it's not impossible, but for a small site it should be more than enough. It's more userfriendly than having to type something, and it doesn't have dependencies on 3rd party tools like google's recaptcha.</p>\n\n<p>But obviously, this will not work on older browsers. I could show an alternative captcha for those browsers, but the Blazor docs are not very helpful when it comes to browser support (they just say \"latest\").</p>\n\n<p>Is there a way to determine whether a browser will be able to handle Blazor correctly? </p>\n\n<p>Would it be good enough to just detect if the browser supports WebAssembly? Or does Blazor have other requirements?</p>\n\n<p>Thanks!</p>\n"
+}

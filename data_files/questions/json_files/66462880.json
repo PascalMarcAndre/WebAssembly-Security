@@ -1,0 +1,27 @@
+{
+    "tags": [
+        "c++",
+        "tensorflow",
+        "encryption",
+        "webassembly"
+    ],
+    "owner": {
+        "reputation": 53,
+        "user_id": 10475567,
+        "user_type": "registered",
+        "profile_image": "https://lh5.googleusercontent.com/-IHHVOAUjkrI/AAAAAAAAAAI/AAAAAAAAAAA/APUIFaNW2v5Qoq3md9GwNxxkVyW9SJAqvw/mo/photo.jpg?sz=128",
+        "display_name": "Vedanta Jha",
+        "link": "https://stackoverflow.com/users/10475567/vedanta-jha"
+    },
+    "is_answered": false,
+    "view_count": 29,
+    "answer_count": 0,
+    "score": 0,
+    "last_activity_date": 1614796398,
+    "creation_date": 1614796398,
+    "question_id": 66462880,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/66462880/encrypt-a-tflite-file-in-c",
+    "title": "Encrypt a tflite file in C++",
+    "body": "<p>I am trying to use a custom tflite model on browser.\nA simple C++ file reads the model and interprets it. This C++ file is converted to WebAssembly to be able to run on browser.\nThe tflite model is basically a FlatBuffer file, Want to know how can I encrypt it.\nI am looking for a fast encryption/decryption method implemented on C++.</p>\n<p>I would implement the decryption code with the key on the C++ file, And as it would be converted to WebAssembly, No one would be able to access the original C++ file and get the key.</p>\n"
+}

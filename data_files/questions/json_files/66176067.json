@@ -1,0 +1,29 @@
+{
+    "tags": [
+        "azure-active-directory",
+        "blazor",
+        "blazor-server-side",
+        "blazor-webassembly",
+        "asp.net-blazor"
+    ],
+    "owner": {
+        "reputation": 11,
+        "user_id": 15199008,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/53774d28fb1a3b26682f33735f6c4137?s=128&d=identicon&r=PG",
+        "display_name": "RogueHobbit",
+        "link": "https://stackoverflow.com/users/15199008/roguehobbit"
+    },
+    "is_answered": true,
+    "view_count": 64,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1616158299,
+    "creation_date": 1613149568,
+    "last_edit_date": 1613228841,
+    "question_id": 66176067,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/66176067/how-do-you-configure-a-blazor-server-application-using-azure-ad-in-a-load-balanc",
+    "title": "How do you configure a Blazor Server application using Azure AD in a load balanced environment?",
+    "body": "<p>I have an intranet Blazor Server application created using the Visual Studio template with the Work or School Accounts authentication option. Everything was working beautifully when running on my local machine and when the app was published to our development environment. However, once I moved the app to our staging environment, the application would sometimes crash after authenticating the user in Azure.</p>\n<p>After troubleshooting the issue, I believe the problem to be that our on-premises staging environment is load balanced (mimicking production). Our dev environment is not load balanced. I think what was occurring was that once authenticated in Azure and redirected back to the application, the user doesn't always land on the same server due to the load balancer. This breaks the Signal-R circuit and caused the application to crash. This also explains why the error was random; happening maybe 2 out of every 10 logon attempts. To test this, I removed Azure AD authentication from the application and allowed anonymous access to every page. The crashes stopped.</p>\n<p>My question is if anyone knows of any workaround to get Blazor Server with Azure AD authentication working with an on-premises load balancer. I searched all over the web and the only workaround I found was to use sticky sessions with Azure Signal R service. We are not hosting apps on the cloud yet. Is switching to Blazor Webassembly the only option if I want to use Blazor with authentication in my environment? Someone at work suggested switching the application to use our on premises ADFS server. However, wouldn't that encounter the same issue?</p>\n<p>For reference, here is the code in startup.cs ConfigureServices method that sets up the Azure authentication in the application:</p>\n<pre><code>services.AddAuthentication(AzureADDefaults.AuthenticationScheme)\n            .AddAzureAD(options =&gt; Configuration.Bind(&quot;AzureAd&quot;, options));\n\n\n        services.AddControllersWithViews(options =&gt;\n        {\n            var policy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build();\n            \n\n            options.Filters.Add(new AuthorizeFilter(policy));\n        });\n</code></pre>\n"
+}

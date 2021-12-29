@@ -1,0 +1,27 @@
+{
+    "tags": [
+        "c#",
+        "identityserver4",
+        "blazor",
+        "bearer-token"
+    ],
+    "owner": {
+        "reputation": 21,
+        "user_id": 12816347,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/cf89f024de7e476652de800a9d145393?s=128&d=identicon&r=PG&f=1",
+        "display_name": "ca53rlb",
+        "link": "https://stackoverflow.com/users/12816347/ca53rlb"
+    },
+    "is_answered": true,
+    "view_count": 466,
+    "answer_count": 1,
+    "score": 1,
+    "last_activity_date": 1588598459,
+    "creation_date": 1588593425,
+    "question_id": 61591696,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/61591696/blazor-webassembly-invoking-protected-webapi-methods-and-relaying-bearer-token",
+    "title": "Blazor WebAssembly invoking protected WebAPI methods and relaying bearer token",
+    "body": "<p>I have a restful service running on localhost:5002, Identity server on 5000 and Blazor WebAssembly app on localhost:1330. There is probably something going on with they're not all on the same domain. </p>\n\n<p>I can authenticate with my Blazor WebAssembly app (Client not server) Which inturn calls WebApi methods, I get returned, 401 not authorised. I've manually added the bearer token to the requests and it works perfectly returning results etc. </p>\n\n<pre><code>HttpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(\"Bearer\", \"{{BEARER TOKEN VALUE}}\");\n</code></pre>\n\n<p>My main question is. What's the best way to get the Bearer token and pass it on? </p>\n"
+}

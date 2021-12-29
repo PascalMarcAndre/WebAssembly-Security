@@ -1,0 +1,27 @@
+{
+    "tags": [
+        "blazor",
+        "webassembly"
+    ],
+    "owner": {
+        "reputation": 9128,
+        "user_id": 693560,
+        "user_type": "registered",
+        "accept_rate": 77,
+        "profile_image": "https://www.gravatar.com/avatar/e71609811ad09d2eba439b051790fbc7?s=128&d=identicon&r=PG",
+        "display_name": "Bronzato",
+        "link": "https://stackoverflow.com/users/693560/bronzato"
+    },
+    "is_answered": true,
+    "view_count": 34,
+    "accepted_answer_id": 65505199,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1609322773,
+    "creation_date": 1609318942,
+    "question_id": 65504397,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/65504397/customizing-the-authorizing-message-top-left-corner-of-a-blazor-wasm-app",
+    "title": "Customizing the &#39;Authorizing...&#39; message (top left corner) of a Blazor Wasm app",
+    "body": "<p>When a Blazor WebAssembly application loads, it first downloads blazor.webassembly.js and all the .NET assemblies of the application. Until everything is loaded, it displays a loading message. We can easily change this message in the <code>wwwroot/index.html</code></p>\n<pre><code>&lt;body&gt;\n&lt;!-- \ud83d\udc47 Here --&gt;\n&lt;app&gt;Loading...&lt;/app&gt;\n\n&lt;div id=&quot;blazor-error-ui&quot;&gt;\n    An unhandled error has occurred.\n    &lt;a href=&quot;&quot; class=&quot;reload&quot;&gt;Reload&lt;/a&gt;\n    &lt;a class=&quot;dismiss&quot;&gt;\ud83d\uddd9&lt;/a&gt;\n&lt;/div&gt;\n&lt;script src=&quot;_framework/blazor.webassembly.js&quot;&gt;&lt;/script&gt;\n</code></pre>\n\n<p>But also, if we secure ou application with authentication (<code>CascadingAuthenticationState</code>, <code>AuthorizeRouteView</code>, ...), we also see 'Authorizing...' in the top left corner.</p>\n<p>My question is: how this message can be customized ? I didn't see anything about that.</p>\n"
+}

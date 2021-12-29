@@ -1,0 +1,31 @@
+{
+    "tags": [
+        "blazor",
+        "blazor-client-side",
+        "blazor-webassembly",
+        "asp.net-blazor",
+        "asp.net-core-5.0"
+    ],
+    "owner": {
+        "reputation": 2024,
+        "user_id": 2816057,
+        "user_type": "registered",
+        "accept_rate": 87,
+        "profile_image": "https://graph.facebook.com/1585677544/picture?type=large",
+        "display_name": "Michael Tranchida",
+        "link": "https://stackoverflow.com/users/2816057/michael-tranchida"
+    },
+    "is_answered": true,
+    "view_count": 208,
+    "accepted_answer_id": 65471001,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1609107492,
+    "creation_date": 1609004239,
+    "last_edit_date": 1609004797,
+    "question_id": 65458988,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/65458988/injecting-an-httpclient-into-a-blazor-component-in-a-razor-class-library",
+    "title": "Injecting an HttpClient into a Blazor Component in a Razor class library",
+    "body": "<p>I created a solution from the Blazor WebAssembly template where I checked off the ASP.NET Core hosted checkbox, so I have <code>Client</code>, <code>Server</code>, <code>Shared</code> projects in the solution.</p>\n<p>To this solution I added a Razor class library (without checking &quot;Support pages and views&quot;) called BlogsRcl in which I have a Blazor component called <code>Blogs.razor</code>.</p>\n<p>I want to be able to inject an HttpClient into my <code>Blogs.razor</code> component just like the <code>FetchData.razor</code> component in the 'Client` project has, i.e. '@inject HttpClient Http'.</p>\n<p>In the '.csproj' file for my BlogsRcl project I added either/or/both references to</p>\n<pre><code>&lt;PackageReference Include=&quot;Microsoft.Extensions.Http&quot; Version=&quot;5.0.0.0&quot; /&gt;\n&lt;PackageReference Include=&quot;System.Net.Http&quot; Version=&quot;5.0.0&quot; /&gt;\n</code></pre>\n<p>which, everything's kosher with <code>Microsoft.Extensions.Http</code>, but when I add <code>System.Net.Http</code>, every project in the solution complains that it is <code>Unable to find package System.Net.Http with version (&gt;= 5.0.0)</code>.</p>\n<p>Yet when I do a Go To Definition on the <code>HttpClient</code> in the <code>FetchData.razor</code> component in the <code>Client</code> project, the metadata says <code>Assembly System.Net.Http, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</code>.</p>\n<p><strong>Edit:</strong> I tried adding <code>&lt;PackageReference Include=&quot;System.Net.Http.Json&quot; Version=&quot;5.0.0&quot; /&gt;</code> too, to no avail.</p>\n<p>What am I missing?</p>\n"
+}

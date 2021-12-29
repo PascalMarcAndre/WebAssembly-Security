@@ -1,0 +1,29 @@
+{
+    "tags": [
+        ".net-core",
+        "azure-active-directory",
+        "webassembly",
+        "webapi",
+        "blazor-client-side"
+    ],
+    "owner": {
+        "reputation": 129,
+        "user_id": 842117,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/89f2d81716cb8cb5639d01a68916453a?s=128&d=identicon&r=PG",
+        "display_name": "Circus Ranger",
+        "link": "https://stackoverflow.com/users/842117/circus-ranger"
+    },
+    "is_answered": false,
+    "view_count": 263,
+    "answer_count": 0,
+    "score": 1,
+    "last_activity_date": 1584619510,
+    "creation_date": 1584612030,
+    "last_edit_date": 1584619510,
+    "question_id": 60754751,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/60754751/blazor-webassembly-standalone-access-multiple-aad-protected-apis",
+    "title": "Blazor WebAssembly Standalone access multiple AAD protected APIs",
+    "body": "<p>I have managed to make <a href=\"https://docs.microsoft.com/en-us/aspnet/core/security/blazor/webassembly/standalone-with-azure-active-directory?view=aspnetcore-3.1\" rel=\"nofollow noreferrer\">default template work</a> (my blazor standalone SPA should acquire tokens for several scopes from different ADApps - webAPIs; I've managed to get token only for one scope at the time even if I defined additionalScopes or defaultaccesstokenscopes).</p>\n\n<pre><code>builder.Services.AddMsalAuthentication(options =&gt;\n{\n    var config = options.ProviderOptions;\n    config.Authentication.Authority = \"https://login.microsoftonline.com/tenantID\";\n    config.Authentication.ClientId = \"clientID\";\n    options.ProviderOptions.DefaultAccessTokenScopes.Add(\"offline_access\");\n    options.ProviderOptions.DefaultAccessTokenScopes.Add(\"https://graph.microsoft.com/user.read\");\n    options.ProviderOptions.DefaultAccessTokenScopes.Add(\"https://tenant.crm.dynamics.com/user_impersonation\");\n    options.ProviderOptions.DefaultAccessTokenScopes.Add(\"clientID/scope1\");\n    // tried this too\n    // config.AdditionalScopesToConsent.Add(\"https://tenant.crm.dynamics.com/user_impersonation\");\n});\n</code></pre>\n\n<p>Now there is a question on how to get the other tokens because it gets the token only for 'clientID' scope if multiple scopes are mentioned...? and use those tokens from wasm page in HttpClient request?</p>\n\n<p>In angular (with MSAL) this is all done automatically, you define scopes you want and it gets all the tokens. Then it intercepts all requests and adds authorization header and corresponding token by domain of the request.</p>\n\n<p>Is there similar mechanism here or should this be done manually by adding corresponding token for every request and using HttpRequestMessage with HttpClient.SendAsync()?</p>\n\n<p>Obviously for business application there is not much of a use without contacting some kind of protected API, which is usually an app in the same AAD. For example let's say it can be a simple query to the Dynamics CRM's webapi.</p>\n"
+}

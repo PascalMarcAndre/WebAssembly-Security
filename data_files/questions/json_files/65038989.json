@@ -1,0 +1,30 @@
+{
+    "tags": [
+        "azure",
+        "blazor",
+        "azure-ad-b2c",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 1332,
+        "user_id": 2663033,
+        "user_type": "registered",
+        "accept_rate": 100,
+        "profile_image": "https://i.stack.imgur.com/8RJho.jpg?s=128&g=1",
+        "display_name": "TheMagnificent11",
+        "link": "https://stackoverflow.com/users/2663033/themagnificent11"
+    },
+    "is_answered": true,
+    "view_count": 95,
+    "accepted_answer_id": 65109794,
+    "answer_count": 2,
+    "score": 0,
+    "last_activity_date": 1606918402,
+    "creation_date": 1606487188,
+    "last_edit_date": 1606789000,
+    "question_id": 65038989,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/65038989/blazor-webassembly-azure-b2c-error-aadb2c90205-insufficient-permissions",
+    "title": "Blazor WebAssembly Azure B2C Error: AADB2C90205 (insufficient permissions)",
+    "body": "<p>I created a sample Blazor WebAssembly app to be secured with Azure B2C using the steps outlined in the Microsoft docs article: <a href=\"https://docs.microsoft.com/en-us/aspnet/core/blazor/security/webassembly/hosted-with-azure-active-directory-b2c?view=aspnetcore-3.1\" rel=\"nofollow noreferrer\">https://docs.microsoft.com/en-us/aspnet/core/blazor/security/webassembly/hosted-with-azure-active-directory-b2c?view=aspnetcore-3.1</a>.</p>\n<p>The application works except for the authentication.  The B2C modal loads to sign-in, but then the UI displays the following error message.</p>\n<p><code>There was an error trying to log you in: 'AADB2C90205: This application does not have sufficient permissions against this web resource to perform the operation.</code></p>\n<p>Here are some redacted screenshots for my B2C configuration (I'm sure the code is correct as it's the default code generated from the <code>dotnet new</code> CLI command).</p>\n<p>Any ideas on the configuration error?</p>\n<p><strong>App Registrations</strong>\n<a href=\"https://i.stack.imgur.com/3Wv4P.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/3Wv4P.png\" alt=\"App Registrations\" /></a></p>\n<p><strong>API - Overview</strong>\n<a href=\"https://i.stack.imgur.com/4IWEo.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/4IWEo.png\" alt=\"API - Overview\" /></a></p>\n<p><strong>API - Authentication</strong>\n<a href=\"https://i.stack.imgur.com/mJbWA.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/mJbWA.png\" alt=\"API - Authentication\" /></a></p>\n<p><strong>API - Expose an API</strong>\n<a href=\"https://i.stack.imgur.com/xibqM.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/xibqM.png\" alt=\"API - Expose an API\" /></a></p>\n<p><strong>Client - Overview</strong>\n<a href=\"https://i.stack.imgur.com/hdldA.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/hdldA.png\" alt=\"Client - Overview\" /></a></p>\n<p><strong>Client - Authentication</strong>\n<a href=\"https://i.stack.imgur.com/SSrhA.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/SSrhA.png\" alt=\"Client - Authentication\" /></a></p>\n<p><strong>Client - API Permissions</strong>\n<a href=\"https://i.stack.imgur.com/zdG9c.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/zdG9c.png\" alt=\"Client - API Permissions\" /></a></p>\n<p><strong>Sign-up/in User Flow - Overview</strong>\n<a href=\"https://i.stack.imgur.com/EK7IB.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/EK7IB.png\" alt=\"Sign-up/in User Flow - Overview\" /></a></p>\n<p><strong>Sign-up/in User Flow - User Attributes</strong>\n<a href=\"https://i.stack.imgur.com/COCEO.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/COCEO.png\" alt=\"Sign-up/in User Flow - User Attributes\" /></a></p>\n<p><strong>Sign-up/in User Flow - Application Claims</strong>\n<a href=\"https://i.stack.imgur.com/8Bzy6.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/8Bzy6.png\" alt=\"Sign-up/in User Flow - Application Claims\" /></a></p>\n"
+}

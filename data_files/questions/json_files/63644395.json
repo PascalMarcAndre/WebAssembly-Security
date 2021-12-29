@@ -1,0 +1,29 @@
+{
+    "tags": [
+        "c#",
+        "blazor",
+        "blazor-client-side",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 143,
+        "user_id": 10371377,
+        "user_type": "registered",
+        "profile_image": "https://lh3.googleusercontent.com/-9fgEldXjMGM/AAAAAAAAAAI/AAAAAAAAAKo/yqNgYYO8Wfs/photo.jpg?sz=128",
+        "display_name": "Nath Shivanand",
+        "link": "https://stackoverflow.com/users/10371377/nath-shivanand"
+    },
+    "is_answered": true,
+    "view_count": 104,
+    "accepted_answer_id": 63645099,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1598698820,
+    "creation_date": 1598685008,
+    "last_edit_date": 1598698820,
+    "question_id": 63644395,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/63644395/how-to-find-the-error-in-blazor-wabassembly-appvery-difficult-to-find-the-error",
+    "title": "how to find the error in blazor wabassembly app(very difficult to find the error)",
+    "body": "<p>difficulty to find the error in webassembly(client side) blazor</p>\n<p>I am calling server side(blazor server app) webapi in client side((blazor webassembly app))</p>\n<p><strong>first I create a blazor server app project and then use built in webapi framework for crud operation</strong></p>\n<p><img src=\"https://i.stack.imgur.com/jlWXl.png\" alt=\"API response\" /></p>\n<p>when I calling the webapi in client side then very very difficulty to find the error</p>\n<p><strong>then I create a blazor webassembly project and then add this below razor page inside pages folder</strong></p>\n<p>DisplayEmployeeData.razor</p>\n<pre><code>@page &quot;/DisplayEmployeeData&quot;\n@using CrudBlazorServerApp.Data\n@using System.Net.Http\n@inject HttpClient Http\n\n&lt;h3&gt;DisplayEmployeeData&lt;/h3&gt;\n\n@if (empList == null)\n{\n    &lt;p&gt;&lt;em&gt;Loading...&lt;/em&gt;&lt;/p&gt;\n}\nelse\n{\n    &lt;table class='table'&gt;\n        &lt;thead&gt;\n            &lt;tr&gt;\n                &lt;th&gt;empid&lt;/th&gt;\n                &lt;th&gt;username&lt;/th&gt;\n                &lt;th&gt;empaddress&lt;/th&gt;\n                &lt;th&gt;password&lt;/th&gt;\n                &lt;th&gt;country&lt;/th&gt;\n            &lt;/tr&gt;\n        &lt;/thead&gt;\n        &lt;tbody&gt;\n            @foreach (var emp in empList)\n            {\n            &lt;tr&gt;\n                &lt;td&gt;@emp.empid&lt;/td&gt;\n                &lt;td&gt;@emp.username&lt;/td&gt;\n                &lt;td&gt;@emp.empaddress&lt;/td&gt;\n                &lt;td&gt;@emp.password&lt;/td&gt;\n                &lt;td&gt;@emp.country&lt;/td&gt;\n\n            &lt;/tr&gt;\n            }\n        &lt;/tbody&gt;\n    &lt;/table&gt;\n}\n\n@code {\n    Emp[] empList;\n    protected override async Task OnInitializedAsync() =&gt;\n        empList = await Http.GetJsonAsync&lt;Emp[]&gt;(&quot;api/emps/&quot;); //**here I put the debugger but emplist give the null**\n}\n\n</code></pre>\n<p><img src=\"https://i.stack.imgur.com/LaQv0.png\" alt=\"Browser screenshot with error\" /></p>\n<p>what type error?</p>\n<p>my webapi path is wrong?</p>\n<p>see my console log very very difficulty to find the error?</p>\n"
+}

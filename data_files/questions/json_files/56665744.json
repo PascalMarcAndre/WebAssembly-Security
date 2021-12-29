@@ -1,0 +1,30 @@
+{
+    "tags": [
+        "signalr",
+        "webassembly",
+        "blazor",
+        "asp.net-core-signalr",
+        "blazor-server-side"
+    ],
+    "owner": {
+        "reputation": 8186,
+        "user_id": 311343,
+        "user_type": "registered",
+        "accept_rate": 63,
+        "profile_image": "https://www.gravatar.com/avatar/d966ec61fcaf459d0a057828f285694c?s=128&d=identicon&r=PG",
+        "display_name": "Tim",
+        "link": "https://stackoverflow.com/users/311343/tim"
+    },
+    "is_answered": true,
+    "view_count": 816,
+    "accepted_answer_id": 56679804,
+    "answer_count": 2,
+    "score": 1,
+    "last_activity_date": 1561113240,
+    "creation_date": 1560940810,
+    "question_id": 56665744,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/56665744/which-hosting-model-for-blazor-application-with-dynamic-ui-talking-to-remote-sql",
+    "title": "Which hosting model for Blazor application with dynamic UI talking to remote SQL Server?",
+    "body": "<p>If you wanted to port a \"legacy\" ASP.NET application that fetches data from a remote SQL Server instance by way of <code>System.Data.SqlCient</code> methods running in the code-behind of a <code>HttpHandler</code> (the data returned from the server gets jsonified and injected into the UI widgets, e.g. kendoUI), what is the appropriate Blazor hosting model?</p>\n\n<pre><code>  Blazor server-side  \n  Blazor ASP.NET Core Hosted \n  Blazor client-side\n</code></pre>\n\n<p>Judging from the description that Visual Studio 2019 Preview offers of <code>Blazor (server-side)</code>:</p>\n\n<blockquote>\n  <p>... This template can be used for web applications with rich dynamic user interfaces...</p>\n</blockquote>\n\n<p><code>Blazor (server-side)</code> seems the right choice.   </p>\n\n<p>But does <code>SignalR</code> give you a way to use <code>Blazor (ASP.NET Core hosted)</code> instead? Visual Studio says this hosting model \"runs on WebAssembly and is hosted on an ASP.NET Core server\" but I'm not sure what that means, exactly. Where is the WebAssembly running? Client? Server? Both places? </p>\n\n<p>Can <code>SignalR</code> together with the <code>Blazor (ASP.NET Core hosted)</code> model be used to create a pipeline from the server-side <code>WebAssembly</code> to the client-side <code>WebAssembly</code> that obviates the need for the <code>HttpHandler</code>?</p>\n\n<p>The description of SignalR here on StackOverflow suggests that it is almost magical in its capabilities:</p>\n\n<blockquote>\n  <p>ASP.NET SignalR ... makes it <em>incredibly simple</em> to add real-time web functionality to your applications...to have your server-side code push content to the connected clients as it happens, in real-time.<br>\n  [my emphasis]</p>\n</blockquote>\n\n<p>Ignoring the \"as it happens, in real-time\" phrase for a moment as being unrelated to the question, can the same pipeline be used to push any (smallish) data-set to the \"connected client\"?  This is a legacy \"intranet\" application that I'm asking about, BTW, with only a few dozen users.</p>\n"
+}

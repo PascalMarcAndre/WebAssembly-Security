@@ -1,0 +1,26 @@
+{
+    "tags": [
+        "asp.net-core",
+        "blazor",
+        "webassembly"
+    ],
+    "owner": {
+        "reputation": 63,
+        "user_id": 13673251,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/48d55926a94eb4c09aa6debc6cb8c24c?s=128&d=identicon&r=PG&f=1",
+        "display_name": "elyl",
+        "link": "https://stackoverflow.com/users/13673251/elyl"
+    },
+    "is_answered": false,
+    "view_count": 577,
+    "answer_count": 0,
+    "score": 5,
+    "last_activity_date": 1591195689,
+    "creation_date": 1591195689,
+    "question_id": 62175805,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/62175805/how-can-i-use-windows-authentication-with-blazor-webassembly-and-asp-net-core-se",
+    "title": "How can I use Windows Authentication with Blazor WebAssembly and ASP.NET Core server?",
+    "body": "<p>There seem to be plenty of tutorials on how to use third-party authentication providers for Blazor WebAssembly, but there doesn't seem to be a documented process for using Windows Authentication (on-site Active Directory domain) from an ASP.NET Core hosted server.</p>\n\n<p>Is this actually possible?  I would like the Core server to authenticate the user with the roles and policies, and for this information to be accessible from the WebAssembly client also.  I understand that the Client can only use authentication to show/hide UI elements, and that any actual securing should be done on the Server, but is there a way to access the Windows authentication/authorization from both sides of the application?</p>\n"
+}

@@ -1,0 +1,29 @@
+{
+    "tags": [
+        "c#",
+        "asp.net-core",
+        "blazor",
+        "blazor-client-side",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 2409,
+        "user_id": 10851213,
+        "user_type": "registered",
+        "profile_image": "https://i.stack.imgur.com/r7MgN.jpg?s=128&g=1",
+        "display_name": "fingers10",
+        "link": "https://stackoverflow.com/users/10851213/fingers10"
+    },
+    "is_answered": true,
+    "view_count": 166,
+    "accepted_answer_id": 65268247,
+    "answer_count": 1,
+    "score": 2,
+    "last_activity_date": 1607796830,
+    "creation_date": 1606407417,
+    "question_id": 65025694,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/65025694/blazor-webassembly-shows-wrong-time-in-ui",
+    "title": "Blazor Webassembly shows wrong time in UI",
+    "body": "<p>I'm developing my app in <code>.Net 5.0 Blazor WebAssembly</code>. I'm displaying current time in HTML. But the time displayed is always <code>-5.30 Hrs</code> the time displayed in my system clock.</p>\n<p>After some googling I found the following in <a href=\"https://docs.microsoft.com/en-us/aspnet/core/blazor/globalization-localization?view=aspnetcore-5.0#blazor-webassembly\" rel=\"nofollow noreferrer\">official docs</a>.</p>\n<p>I added the below tags in <code>.csproj</code> file but still no luck.</p>\n<p>Here is my code:</p>\n<p><strong>.csproj:</strong></p>\n<pre class=\"lang-xml prettyprint-override\"><code>&lt;PropertyGroup&gt;\n    &lt;TargetFramework&gt;net5.0&lt;/TargetFramework&gt;\n    &lt;BlazorWebAssemblyLoadAllGlobalizationData&gt;true&lt;/BlazorWebAssemblyLoadAllGlobalizationData&gt;\n    &lt;InvariantGlobalization&gt;true&lt;/InvariantGlobalization&gt;\n    &lt;ServiceWorkerAssetsManifest&gt;service-worker-assets.js&lt;/ServiceWorkerAssetsManifest&gt;\n&lt;/PropertyGroup&gt;\n\n&lt;ItemGroup&gt;\n    &lt;PackageReference Include=&quot;Microsoft.AspNetCore.Components.WebAssembly&quot; Version=&quot;5.0.0&quot; /&gt;\n    &lt;PackageReference Include=&quot;Microsoft.AspNetCore.Components.WebAssembly.DevServer&quot; Version=&quot;5.0.0&quot; PrivateAssets=&quot;all&quot; /&gt;\n    &lt;PackageReference Include=&quot;Microsoft.Extensions.Localization&quot; Version=&quot;5.0.0&quot; /&gt;\n    &lt;PackageReference Include=&quot;System.Net.Http.Json&quot; Version=&quot;5.0.0&quot; /&gt;\n&lt;/ItemGroup&gt;\n</code></pre>\n<p><strong>Code:</strong></p>\n<pre><code>@using System.Threading\n@implements IDisposable\n\n&lt;p&gt;@CurrentDateTime&lt;/p&gt;\n\n@code {\n    private Timer _timer;\n    public string CurrentDateTime { get; set; }\n\n    protected override void OnAfterRender(bool firstRender)\n    {\n        if (firstRender)\n        {\n            _timer = new Timer(DateTimeCallback, null, TimeSpan.FromSeconds(1), TimeSpan.FromSeconds(1));\n        }\n    }\n\n    private async void DateTimeCallback(object state)\n    {\n        CurrentDateTime = DateTimeOffset.UtcNow.ToLocalTime().ToString(&quot;dd MMM yyyy hh:mm:ss tt&quot;);\n        await InvokeAsync(StateHasChanged);\n    }\n\n    public void Dispose()\n    {\n        _timer?.Dispose();\n    }\n}\n</code></pre>\n<p><strong>Time Screenshot:</strong></p>\n<p><a href=\"https://i.stack.imgur.com/3lWqN.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/3lWqN.png\" alt=\"enter image description here\" /></a></p>\n<p>Please assist on what I'm missing.</p>\n"
+}

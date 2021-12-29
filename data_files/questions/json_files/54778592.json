@@ -1,0 +1,28 @@
+{
+    "tags": [
+        "javascript",
+        "api",
+        "security",
+        "webassembly"
+    ],
+    "owner": {
+        "reputation": 345,
+        "user_id": 2776935,
+        "user_type": "registered",
+        "accept_rate": 75,
+        "profile_image": "https://www.gravatar.com/avatar/1490f6b94b4483db00bc5e596b37700e?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Yen",
+        "link": "https://stackoverflow.com/users/2776935/yen"
+    },
+    "is_answered": false,
+    "view_count": 198,
+    "answer_count": 0,
+    "score": 1,
+    "last_activity_date": 1550634977,
+    "creation_date": 1550634977,
+    "question_id": 54778592,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/54778592/api-key-security-for-webassembly-application",
+    "title": "api key security for WebAssembly application",
+    "body": "<p>I know it's always a bad idea to put api key in frontend. </p>\n\n<p>We are designing a WebAssembly application which authenticates through Javascript api call. Other users can get the WebAssembly binary which we provide and build their own website if they have the api key.  </p>\n\n<p>To alleviate the misuse, each key has to bind to user specified domain name. (Just like how Google does, which I feel is not a very secure way...)<br>\nEven with HTTPS, in order to address the concern which client may modify the api response at JS side, which is going to pass into WebAssembly app to determine the authentication status, server side signs the response and WebAssembly app embeds server public key to verify the response which is not being modified after receiving at JS side. </p>\n\n<p>So the flow would be...</p>\n\n<p>Start WebAssembly app with api key<br>\n-> JS side call auth api with key as parameter and referer<br>\n-> server checks domain name (referer) and key. Return <strong>signed response</strong> which can be verified only by WebAssembly app (not JS client).<br>\n-> If ok, start the WebAssembly app</p>\n\n<p>However referer is spoofable. In this case we are thinking getting domain name from WebAssembly side then encrypt domain name with key to generate one obfuscated url parameter. The server then will be able to decrypt that parameter to get the correct key and domain name.</p>\n\n<p>I am wondering if this is the best way to do it, or we are just making things more complicated without gaining real security.</p>\n"
+}

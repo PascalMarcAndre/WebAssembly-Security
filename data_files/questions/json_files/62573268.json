@@ -1,0 +1,29 @@
+{
+    "tags": [
+        "azure",
+        "authentication",
+        "blazor",
+        "serverless",
+        "azure-static-website-hosting"
+    ],
+    "owner": {
+        "reputation": 21,
+        "user_id": 13811752,
+        "user_type": "registered",
+        "profile_image": "https://lh5.googleusercontent.com/-EhFlsI1Tdaw/AAAAAAAAAAI/AAAAAAAAAAA/AMZuuckIRY-EZ8QCQIs9_I983-eaLCbgxg/photo.jpg?sz=128",
+        "display_name": "Glenn-Vegar S&#248;rensen",
+        "link": "https://stackoverflow.com/users/13811752/glenn-vegar-s%c3%b8rensen"
+    },
+    "is_answered": false,
+    "view_count": 137,
+    "answer_count": 0,
+    "score": 2,
+    "last_activity_date": 1593102785,
+    "creation_date": 1593080980,
+    "last_edit_date": 1593102785,
+    "question_id": 62573268,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/62573268/static-blazor-web-assembly-with-secure-azure-functions-backend",
+    "title": "Static blazor web assembly with secure azure functions backend",
+    "body": "<p>So I have been looking at the <a href=\"https://www.youtube.com/watch?v=whyb5zgcLNM\" rel=\"nofollow noreferrer\">video</a> describing the static website/serverless architecture with blazor. I felt really inspired to create something like this. Unfortunately, I cannot find a decent source for how to actually authenticate against the secure Azure Functions backend with the Blazor web assembly.</p>\n<p>The whole point here is to have just the static blazor site, with no backend API(just the azure functions), and to not worry about users, but leverage this part to azure and providers (In my case Facebook). So I have set up the authentication part in the Azure Functions authentication panel to Facebook. (ref image) I am also hopeful that I will be able to get the userid as an input binding somehow.</p>\n<p><a href=\"https://i.stack.imgur.com/6Zb0e.png\" rel=\"nofollow noreferrer\">Azure Functions Authentication / Authorization</a></p>\n<p>I never tried asking online for help before but I am at my last leg with this issue.\ud83e\udd26\u200d\u2642\ufe0f\nIf anyone has any tutorials, examples, or tips on how to make the blazor pages and httpclient authenticated against the azure functions in a static blazor webassembly project, it will be much appreciated.</p>\n"
+}

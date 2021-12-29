@@ -1,0 +1,26 @@
+{
+    "tags": [
+        "asp.net-core",
+        "blazor"
+    ],
+    "owner": {
+        "reputation": 706,
+        "user_id": 3593088,
+        "user_type": "registered",
+        "accept_rate": 100,
+        "profile_image": "https://www.gravatar.com/avatar/988a1a85fb21b8feb2abcaf79e9ce972?s=128&d=identicon&r=PG&f=1",
+        "display_name": "levis84",
+        "link": "https://stackoverflow.com/users/3593088/levis84"
+    },
+    "is_answered": false,
+    "view_count": 144,
+    "answer_count": 0,
+    "score": 0,
+    "last_activity_date": 1599835319,
+    "creation_date": 1599835319,
+    "question_id": 63849288,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/63849288/blazor-webassembly-storing-auth0-secrets",
+    "title": "Blazor webassembly storing auth0 secrets",
+    "body": "<p>For Blazor Server I store Auth0 settings for an API I consume using AWS Parameter Store.</p>\n<p>I want to store secrets for a Blazor web assembly app and everywhere tells me that you shouldn't store any user secrets because it is downloaded by the client.</p>\n<p>Thats all fine - I get why - but I need to interact with my API which requires Auth0 keys etc. - so where do I store/use these keys for my web assembly app?</p>\n"
+}

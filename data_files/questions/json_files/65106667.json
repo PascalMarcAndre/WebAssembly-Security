@@ -1,0 +1,29 @@
+{
+    "tags": [
+        "azure",
+        "blazor",
+        "azure-ad-b2c",
+        "msal"
+    ],
+    "owner": {
+        "reputation": 53,
+        "user_id": 3809766,
+        "user_type": "registered",
+        "accept_rate": 50,
+        "profile_image": "https://www.gravatar.com/avatar/76550cac78df38c7fe92cdf781afdf88?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Victornor",
+        "link": "https://stackoverflow.com/users/3809766/victornor"
+    },
+    "is_answered": true,
+    "view_count": 151,
+    "accepted_answer_id": 65120313,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1606972753,
+    "creation_date": 1606906522,
+    "question_id": 65106667,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/65106667/using-azure-ad-b2c-for-blazor-web-api-authentication",
+    "title": "Using azure AD B2C for blazor web api authentication",
+    "body": "<p>I've been following this documentation for using Azure AD B2C for authentication in a blazor web app\n<a href=\"https://docs.microsoft.com/en-us/aspnet/core/blazor/security/webassembly/hosted-with-azure-active-directory-b2c?view=aspnetcore-5.0\" rel=\"nofollow noreferrer\">https://docs.microsoft.com/en-us/aspnet/core/blazor/security/webassembly/hosted-with-azure-active-directory-b2c?view=aspnetcore-5.0</a></p>\n<p>After following this documentation, we're left with a solution containing a server and a client, both running on https port 5001. Now, i'd like to switch to using an external api, rather than the one running on port 5001.</p>\n<p>Everything seems good and authentication succeeds when manually using the access token retrieved by blazor. But blazor is only automatically attaching the authentication headers to requests starting with https://localhost:5001.</p>\n<p>When i'm instead using https://localhost:5003, the authentication header is left empty.</p>\n<p>Is there something i can add to the provider options of my MsalAuthentication, in order for it to pass this access token to my api running on https://localhost:5003?</p>\n<pre><code>builder.Services.AddHttpClient(&quot;{MyAssembly}.ServerAPI&quot;, client =&gt; client.BaseAddress = new Uri(&quot;https://localhost:5003&quot;))\n            .AddHttpMessageHandler&lt;BaseAddressAuthorizationMessageHandler&gt;();\n\n// Supply HttpClient instances that include access tokens when making requests to the server project\nbuilder.Services.AddScoped(sp =&gt; sp.GetRequiredService&lt;IHttpClientFactory&gt;().CreateClient(&quot;{MyAssembly}.ServerAPI&quot;));\n\nbuilder.Services.AddMsalAuthentication(options =&gt;\n{\n    builder.Configuration.Bind(&quot;AzureAdB2C&quot;, options.ProviderOptions.Authentication);\n    options.ProviderOptions.DefaultAccessTokenScopes.Add(&quot;https://{myproject}.onmicrosoft.com/e3b857b7-df50-4633-ae02-df4d4b20e911/API.Access openid offline_access&quot;);\n});\n</code></pre>\n"
+}

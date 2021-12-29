@@ -1,0 +1,28 @@
+{
+    "tags": [
+        "iis",
+        "https",
+        "lets-encrypt",
+        "asp.net-core-3.1",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 33,
+        "user_id": 14016210,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/3416d5185f07ec77503a7c893ea18ecf?s=128&d=identicon&r=PG&f=1",
+        "display_name": "user14016210",
+        "link": "https://stackoverflow.com/users/14016210/user14016210"
+    },
+    "is_answered": false,
+    "view_count": 206,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1596714153,
+    "creation_date": 1596634612,
+    "question_id": 63266415,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/63266415/use-of-letsencrypt-certificate-in-blazor-webassembly-project-published-on-iss-in",
+    "title": "Use of LetsEncrypt certificate in Blazor Webassembly project published on ISS in Windows Server",
+    "body": "<p>I'm following this solution to use certificate for my Webassembly project.\n<a href=\"https://stackoverflow.com/questions/57012001/invalidoperationexception-key-type-not-specified-microsoft-aspnetcore-apiautho\">InvalidOperationException: Key type not specified. Microsoft.AspNetCore.ApiAuthorization.IdentityServer.ConfigureSigningCredentials.LoadKey()</a></p>\n<p>If I use a self certificate it will works fine but I need of a C.A. certificate and I created it with Let's Encrypt.\nHow can I add LetsEncrypt certificate into appsettings.json? My new certificate hasn't password so the code below not works.</p>\n<pre><code>     &quot;IdentityServer&quot;: {\n    &quot;Key&quot;: {\n      &quot;Type&quot;: &quot;File&quot;,\n      &quot;FilePath&quot;: &quot;C:\\cert.pfx&quot;,\n      &quot;Password&quot;: &quot;password123&quot;\n    }\n  }\n</code></pre>\n<p>Can someone help me, please?</p>\n"
+}

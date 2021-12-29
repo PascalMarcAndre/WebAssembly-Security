@@ -1,0 +1,30 @@
+{
+    "tags": [
+        "visual-studio-2019",
+        "blazor",
+        "visual-studio-debugging",
+        "blazor-client-side",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 15374,
+        "user_id": 93356,
+        "user_type": "registered",
+        "accept_rate": 85,
+        "profile_image": "https://i.stack.imgur.com/vD4W3.jpg?s=128&g=1",
+        "display_name": "Sergi Papaseit",
+        "link": "https://stackoverflow.com/users/93356/sergi-papaseit"
+    },
+    "is_answered": true,
+    "view_count": 4687,
+    "answer_count": 5,
+    "score": 11,
+    "last_activity_date": 1609028584,
+    "creation_date": 1591982684,
+    "last_edit_date": 1592750251,
+    "question_id": 62349412,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/62349412/unable-to-debug-blazor-hosted-webassembly-3-2-0-from-visual-studio-2019-16-6-2",
+    "title": "Unable to debug Blazor hosted webassembly 3.2.0 from Visual Studio 2019 16.6.2",
+    "body": "<p>I have Visual Studio 2019 16.6.2 installed, along with the .NET Core 3.1.301 SDK and all the necessary Blazor templates.</p>\n<p>If I create a brand new Blazor WebAssmbly application, I can run it from Visual Studio by pressing <kbd>Ctrl</kbd>+<kbd>F5</kbd> and it opens a new tab on my active browser window and starts fine.</p>\n<p>But when I press <kbd>F5</kbd>, a new, separate browser window is opened (which is midly annoying), but the page remains at <code>about:blank</code> for a while until an error message appears in Visual Studio:</p>\n<pre><code>Failed to launch debug adapter.  Additional information may be available in the output window.\n\nUnable to launch browser: \n&quot;Could not open wss://localhost:5001/_framework/debug/ws-proxy?browser=wsAFFlocalhostA50821FdevtoolsFbrowserFceed3b95-58ac-470a-b10c-5d139cfd7117&quot;: timeout after 60000ms\n</code></pre>\n<p>Whether the Blazor WebAssembly application is &quot;Hosted&quot; or not doesn't make a difference.</p>\n<p>I've followed the steps in the <a href=\"https://docs.microsoft.com/en-gb/aspnet/core/security/enforcing-ssl?view=aspnetcore-3.1&amp;tabs=visual-studio#troubleshoot-certificate-problems\" rel=\"noreferrer\">Enforce HTTPS in ASP.NET Core</a>, but that made no difference.</p>\n<p>If, while waiting for the <code>about:blank</code> window to crash, I manually open the client side url on a browser tab, the app loads and the debugger breakpoints are hit.\nDuring the short while before it goes on to crash, if I hit <kbd>Shift</kbd>+<kbd>Alt</kbd>+<kbd>D</kbd> I <em>always</em> get the following error:</p>\n<pre><code>Unable to find debuggable browser tab\nCould not get a list of browser tabs from http://127.0.0.1:9222/json. Ensure your browser is running with debugging enabled.\n\nResolution\n\nIf you are using Microsoft Edge (80+) for your development, follow these instructions:\nPress Win+R and enter the following:\n\nmsedge --remote-debugging-port=9222 --user-data-dir=&quot;C:\\Users\\sergi\\AppData\\Local\\Temp\\blazor-edge-debug&quot; --no-first-run https://localhost:44372/\n</code></pre>\n<p>I get this each and every time, no matter how often I run the command (having closed all browser instances, rebooted, etc).</p>\n<p>This happens in both Edge 84 (Edgium) and Chrome.</p>\n<p>I should be able to create a new Blazor WebAssembly app and hit <kbd>F5</kbd> on Visual Studio out of the box. What am I missing?</p>\n<h3>UPDATE</h3>\n<p>I've just tried using &quot;old Edge&quot; (EdgeHtml) and Firefox as the debug browser in Visual Studio, and both work as expected (meaning that the application at least starts up when pressing <kbd>F5</kbd>). The problem apears to be both Chromium-based browsers then...</p>\n<h3>UPDATE 2</h3>\n<p>@JamesHancock posted an easy enough workaround in the comments. For a full resolution (and explanation), <a href=\"https://github.com/dotnet/aspnetcore/issues/22911\" rel=\"noreferrer\">I've logged a Github issue</a> with the ASP.NET Core team.</p>\n"
+}

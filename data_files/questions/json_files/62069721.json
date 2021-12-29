@@ -1,0 +1,28 @@
+{
+    "tags": [
+        "mysql",
+        "asp.net-identity",
+        "blazor",
+        "blazor-server-side"
+    ],
+    "owner": {
+        "reputation": 473,
+        "user_id": 12984060,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/8e03432ca764bd0648f6d9c1392b3102?s=128&d=identicon&r=PG&f=1",
+        "display_name": "nogood",
+        "link": "https://stackoverflow.com/users/12984060/nogood"
+    },
+    "is_answered": true,
+    "view_count": 326,
+    "answer_count": 1,
+    "score": 1,
+    "last_activity_date": 1598205866,
+    "creation_date": 1590683201,
+    "last_edit_date": 1590757506,
+    "question_id": 62069721,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/62069721/how-to-deploy-blazor-untouched-demoapp-but-with-working-authorization-blazorser",
+    "title": "How to deploy Blazor untouched DemoApp BUT with working Authorization (BlazorServer)",
+    "body": "<p>I can't come up with a solution by myself ... for the following Task!</p>\n\n<p>I try to deploy the untouched Blazor template from Visual Studio (Blazor Server (not WebAssembly) with Authentication ON (individual users).</p>\n\n<p>If I start the app locally on my PC everything works fine. I can register a Account log in etc.</p>\n\n<p>But If I \"Publish\" the Blazor App and upload it to my Hosting Side I cant use the Authentication Register/Login etc. \n(Hosting on interserver.net / ASP.NET Web Hosting (0 of 25 MSSQL used)  / config with plesk)</p>\n\n<p>I get a Server Status 500 Error.</p>\n\n<p>Some points to mention. I set the App Template to work with \"App will store User internal\".</p>\n\n<p>I am pretty much a noob to Databases, SQL etc..</p>\n\n<hr>\n\n<p>My thoughts are that the problem is that I use the \"App store User internal\" Option right at the creation of the Project. True?</p>\n\n<p>Do I need to also publish my SQLDatabase that is auto created with the Template (locally) to my server?\n(yes then -> how ?)</p>\n\n<p>Do I use the DB Connection String from appsetting.json and create a DB on my Server with the same name as the local db? But at my hoster if I want to add a SQL db I have to create a User and a Password. At the local Project I didn't have to enter a User or a passwordd so how to do that then?</p>\n\n<p>Extremely sorry for my lack of knowledge. Please share your knowledge to help me find some peace after all... </p>\n"
+}

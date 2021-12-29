@@ -1,0 +1,26 @@
+{
+    "tags": [
+        "node.js",
+        "webassembly"
+    ],
+    "owner": {
+        "reputation": 839,
+        "user_id": 3316009,
+        "user_type": "registered",
+        "accept_rate": 100,
+        "profile_image": "https://i.stack.imgur.com/Q0EyA.jpg?s=128&g=1",
+        "display_name": "calvin",
+        "link": "https://stackoverflow.com/users/3316009/calvin"
+    },
+    "is_answered": false,
+    "view_count": 50,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1605188012,
+    "creation_date": 1605187156,
+    "question_id": 64804673,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/64804673/how-can-i-run-webassembly-in-nodejs-14-15",
+    "title": "How can I run WebAssembly in nodejs 14.15",
+    "body": "<p>I download nodejs 14.15.0 from its <a href=\"https://nodejs.org/en/download/\" rel=\"nofollow noreferrer\">official site</a>, and I run the following</p>\n<pre><code># ./bin/node --expose-wasm  \nWelcome to Node.js v14.15.0.\nType &quot;.help&quot; for more information.\n&gt; Wasm\nUncaught ReferenceError: Wasm is not defined\n</code></pre>\n<p>I think maybe <code>Wasm</code> is not avaliable, so I need to use <code>WebAssembly</code>.</p>\n<p>So I run the following code</p>\n<pre><code>const fs = require('fs');\nconst buf = fs.readFileSync('./addTwo.wasm');\n\nfunction toUint8Array(buf) {\n  var u = new Uint8Array(buf.length);\n  for (var i = 0; i &lt; buf.length; ++i) {\n    u[i] = buf[i];\n  }\n  return u;\n}\n\nconst lib = WebAssembly.instantiateModule(toUint8Array(buf)).exports;\n</code></pre>\n<p>However it outputs</p>\n<pre><code>TypeError: WebAssembly.instantiateModule is not a function\n</code></pre>\n"
+}

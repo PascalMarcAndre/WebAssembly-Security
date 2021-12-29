@@ -1,0 +1,29 @@
+{
+    "tags": [
+        "asp.net-core",
+        "authentication",
+        "identityserver4",
+        "blazor-client-side",
+        "asp.net-blazor"
+    ],
+    "owner": {
+        "reputation": 103,
+        "user_id": 4264726,
+        "user_type": "registered",
+        "accept_rate": 20,
+        "profile_image": "https://www.gravatar.com/avatar/9ff8000ca82256d185730eeaca97d224?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Claudio",
+        "link": "https://stackoverflow.com/users/4264726/claudio"
+    },
+    "is_answered": false,
+    "view_count": 132,
+    "answer_count": 0,
+    "score": 0,
+    "last_activity_date": 1591803233,
+    "creation_date": 1591803233,
+    "question_id": 62307425,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/62307425/blazor-webassembly-identity-server-4-authentication-with-custom-db-schema-and-va",
+    "title": "Blazor WebAssembly identity server 4 authentication with custom db schema and validation",
+    "body": "<p>From visual studio i have created a new Blazor WebAssembly app with authentication (individual user accounts) .net core hosted.</p>\n\n<p>The sample app created by visual studio template use:</p>\n\n<ul>\n<li>sql server (ok)</li>\n<li>entity framework (ok)</li>\n<li>identity server 4 (ok)</li>\n<li>jwt (ok)</li>\n</ul>\n\n<p>but with a predefinite db schema and login components.</p>\n\n<p>Now i would like to use my own db schema and tables, and also use my own login page and login validation, but i can't find a sample for this simple task.</p>\n\n<p>Someone can help me?</p>\n\n<p>Thanks</p>\n"
+}

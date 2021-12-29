@@ -1,0 +1,25 @@
+{
+    "tags": [
+        "ngrok"
+    ],
+    "owner": {
+        "reputation": 194,
+        "user_id": 445150,
+        "user_type": "registered",
+        "accept_rate": 60,
+        "profile_image": "https://graph.facebook.com/100001155452798/picture?type=large",
+        "display_name": "Mario Duarte",
+        "link": "https://stackoverflow.com/users/445150/mario-duarte"
+    },
+    "is_answered": false,
+    "view_count": 37,
+    "answer_count": 2,
+    "score": 0,
+    "last_activity_date": 1617208561,
+    "creation_date": 1603363067,
+    "question_id": 64480491,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/64480491/cant-login-on-blazor-webassembly",
+    "title": "Can&#39;t login on Blazor WebAssembly",
+    "body": "<p>I am trying to use ngrok to access my Blazor WebAssembly application, but I am unable to login.</p>\n<blockquote>\n<p>There was an error trying to log you in: 'Network Error'</p>\n</blockquote>\n<p>Inspecting the calls I noticed that he tries to access the Url: http://localhost/.well-known/openid-configuration instead <a href=\"http://abcdefgh.ngrok.io/.well-known/openid-configuration\" rel=\"nofollow noreferrer\">http://abcdefgh.ngrok.io/.well-known/openid-configuration</a></p>\n<p>Is there any way to fix this via boot parameters?</p>\n"
+}

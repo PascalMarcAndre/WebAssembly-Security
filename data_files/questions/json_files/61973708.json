@@ -1,0 +1,26 @@
+{
+    "tags": [
+        "azure-ad-b2c",
+        "blazor",
+        "blazor-client-side"
+    ],
+    "owner": {
+        "reputation": 43,
+        "user_id": 10291195,
+        "user_type": "registered",
+        "profile_image": "https://i.stack.imgur.com/zasAB.jpg?s=128&g=1",
+        "display_name": "DebugMaster",
+        "link": "https://stackoverflow.com/users/10291195/debugmaster"
+    },
+    "is_answered": true,
+    "view_count": 371,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1590691562,
+    "creation_date": 1590244740,
+    "question_id": 61973708,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/61973708/adb2c-with-authentication-logout-not-working-in-blazor",
+    "title": "ADB2C with authentication/logout not working in Blazor",
+    "body": "<p>When using ADB2C for authentication in a Blazor Webassembly project, the authentication/logout seems to log out and shows a page with the request to close all browsers. \nAnyway if the user just uses the back button in the browser she/he is still able to access the contents and is treated as still loged-on.\nSo, how to get a real logout? </p>\n"
+}

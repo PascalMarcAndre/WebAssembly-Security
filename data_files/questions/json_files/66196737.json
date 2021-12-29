@@ -1,0 +1,30 @@
+{
+    "tags": [
+        "c",
+        "go",
+        "socket.io",
+        "webassembly",
+        "openal"
+    ],
+    "owner": {
+        "reputation": 2497,
+        "user_id": 6387370,
+        "user_type": "registered",
+        "accept_rate": 55,
+        "profile_image": "https://i.stack.imgur.com/CpJXI.png?s=128&g=1",
+        "display_name": "zakaria amine",
+        "link": "https://stackoverflow.com/users/6387370/zakaria-amine"
+    },
+    "is_answered": false,
+    "view_count": 37,
+    "answer_count": 0,
+    "score": 0,
+    "last_activity_date": 1613383716,
+    "creation_date": 1613315210,
+    "last_edit_date": 1613383716,
+    "question_id": 66196737,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/66196737/openal-webassembly-how-to-consume-the-captured-audio-data",
+    "title": "OpenAL / Webassembly: how to consume the captured audio data",
+    "body": "<p>I am working on a prototype in which I send the sound data from OpenAL (front end using webassembly) to a backend through <code>socket.io</code> and then write the data to a file. It works fine, except that after I write all the raw data to a file(e.g test.raw), and try to convert it to wav format, I get noise only. I tried both <code>ffmpeg</code> and <code>sox</code> without any luck:</p>\n<ul>\n<li>sox -r 44100 -e signed-integer -b 16 -c 1 test.raw out_sox.wav</li>\n<li>ffmpeg -f s16le -ar 44100 -ac 1 -c:a pcm_s16le -i test.raw out.wav -y</li>\n</ul>\n<p>Here is the program used for sound capture:</p>\n<pre><code>\n\n#include &lt;stdio.h&gt;\n#include &lt;stdlib.h&gt;\n#include &lt;string.h&gt;\n#include &lt;emscripten.h&gt;\n#include &lt;AL/al.h&gt;\n#include &lt;AL/alc.h&gt;\n\n#define BUFFER_SIZE 64\n\n\nint cnt=0;\n\nvoid mycallback(void *arg)\n{\n    ALCint nframes;\n    ALCdevice *dev = (ALCdevice*)arg;\n\n    alcGetIntegerv(dev, ALC_CAPTURE_SAMPLES, 1, &amp;nframes);\n\n    char buffer[BUFFER_SIZE];\n\n    if(nframes&gt;0)\n    {\n        alcCaptureSamples(dev, buffer, nframes);\n\n        cnt++;\n\n        char *command = (char *)malloc(2000);\n\n        command = strcpy(command, &quot;socket.emit('record', [&quot;);\n      \n         for (int i = 0; i &lt; sizeof(buffer); i++) {\n\n            char currentValue[30];\n            sprintf(currentValue, &quot;%d&quot;, buffer[i]);\n\n            command = strcat(command, currentValue);\n\n            if (i != sizeof(buffer) - 1) {\n                command = strcat(command, &quot;, &quot;);\n            }\n        }\n\n        command = strcat(command, &quot;])&quot;);\n\n        emscripten_run_script(command);\n\n        free(command); \n    }\n\n    if (cnt &gt; 1000) {\n        emscripten_cancel_main_loop();\n        fprintf(stdout, &quot; -#################### Done! \\n&quot;);\n        emscripten_run_script(&quot;socket.close()&quot;);\n    }\n}\n\nEMSCRIPTEN_KEEPALIVE\nint record() {\n    \n    ALCdevice *dev = NULL;\n\n    emscripten_run_script(&quot;console.log('recording ')&quot;);\n\n    dev = alcCaptureOpenDevice(alcGetString(NULL, ALC_CAPTURE_DEVICE_SPECIFIER), 44100, AL_FORMAT_MONO16, BUFFER_SIZE);\n    ALCcontext *context = alcCreateContext(dev, NULL);\n\n    alcCaptureStart(dev);\n\n    emscripten_set_main_loop_arg(mycallback, dev, -1, 1);\n\n    return 0;\n}\n\nint main(int argc, char *argv[])\n{\n    emscripten_run_script(&quot;console.log('start recording ====== ')&quot;);\n    record();\n}\n\n</code></pre>\n<p>and here is a snippet from the backend:</p>\n<pre><code>//imports, etc..\n\nserver, err := socketio.NewServer(nil)\n\n    if err != nil {\n        log.Fatal(err.Error())\n    }\n\n    f, err := os.OpenFile(&quot;test.raw&quot;, os.O_CREATE, 0600)\n\n    if err != nil {\n        log.Fatal(err.Error())\n    }\n\n    server.OnEvent(&quot;/&quot;, &quot;record&quot;, func(s socketio.Conn, data []rune) string {\n\n        fmt.Printf(&quot; recording test, received %d \\n&quot;, len(data))\n\n        err = binary.Write(f, binary.BigEndian, []byte(string(data)))\n\n        if err != nil {\n            fmt.Println(err.Error())\n        }\n\n        return &quot;ok&quot;\n    })\n\n\n//run server,...etc\n</code></pre>\n<p>I am wondering if I am missing on some settings, or simply doing things wrong. I am using <code>AL_FORMAT_MONO16</code> for the data format. I am also sending the data as int array and then converting to byte before writing it to the file, any help would appreciated.</p>\n"
+}

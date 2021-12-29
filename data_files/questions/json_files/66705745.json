@@ -1,0 +1,29 @@
+{
+    "tags": [
+        "signalr",
+        "blazor",
+        "blazor-webassembly",
+        "blazor-client-side"
+    ],
+    "owner": {
+        "reputation": 1823,
+        "user_id": 868159,
+        "user_type": "registered",
+        "accept_rate": 52,
+        "profile_image": "https://www.gravatar.com/avatar/2f9e1c42e084cddf7866a0601f2974a2?s=128&d=identicon&r=PG",
+        "display_name": "oatsoda",
+        "link": "https://stackoverflow.com/users/868159/oatsoda"
+    },
+    "is_answered": false,
+    "view_count": 66,
+    "answer_count": 0,
+    "score": 1,
+    "last_activity_date": 1616155503,
+    "creation_date": 1616146833,
+    "last_edit_date": 1616155503,
+    "question_id": 66705745,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/66705745/blazor-webassembly-signalr-hubconnection-causing-javascript-error-on-reload",
+    "title": "Blazor WebAssembly SignalR HubConnection causing javascript error on reload",
+    "body": "<p>I have a SignalR <code>HubConnection</code> within my Blazor WebAssembly application and whilst it works most of the time, if I reload the page (via the browser reload) then I often am getting the following error in the console and the connection is not made:</p>\n<blockquote>\n<p>Uncaught Error: The delegate target that is being invoked is no longer available.  Please check if it has been prematurely GC'd.\nat Object.invoke_delegate (dotnet.5.0.4.js:1)\nat WebSocket. (dotnet.5.0.4.js:1)</p>\n</blockquote>\n<p>Here's a rough, simplified view of the code where I create the <code>HubConnection</code> (and dispose it).</p>\n<pre><code>@inherits LayoutBase\n@attribute [Authorize]\n\n&lt;AuthorizeView&gt;\n    &lt;Authorized&gt;\n        //...\n    &lt;/Authorized&gt;\n    &lt;NotAuthorized&gt;\n        //...\n    &lt;/NotAuthorized&gt;\n&lt;/AuthorizeView&gt;\n</code></pre>\n<pre><code>public class LayoutBase : LayoutComponentBase, IAsyncDisposable\n{\n    [Inject] public IAccessTokenProvider AccessTokenProvider { get; set; }\n    \n    private readonly HubConnection _hubConnection;\n    \n    protected override async Task OnInitializedAsync()\n    {\n        _hubConnection = new HubConnectionBuilder()\n                    .AddNewtonsoftJsonProtocol(c =&gt;\n                    {\n                        //...\n                    })\n                    .WithUrl(notificationHubUrl, option =&gt; option.AccessTokenProvider = GetAccessToken)\n                    .WithAutomaticReconnect()\n                    .Build();                   \n                    \n        _hubConnection.Closed += HubConnectionOnClosed;\n        _hubConnection.Reconnected += HubConnectionOnReconnected;\n        _hubConnection.Reconnecting += HubConnectionOnReconnecting;\n        \n        await _hubConnection.StartAsync()\n        await base.OnInitializedAsync();\n    }   \n    \n    private async Task&lt;string&gt; GetAccessToken()\n    {\n        var tokenResult = await AccessTokenProvider.RequestAccessToken(...)\n        // etc...\n    }\n    \n    // .. Event Handlers\n    \n    public ValueTask DisposeAsync()\n    {\n        _logger.LogInformation($&quot;Disposing Hub: {_hubConnection.ConnectionId}&quot;);\n\n        _hubConnection.Closed -= HubConnectionOnClosed;\n        _hubConnection.Reconnected -= HubConnectionOnReconnected;\n        _hubConnection.Reconnecting -= HubConnectionOnReconnecting;\n\n        return _hubConnection.DisposeAsync();\n    }\n}\n</code></pre>\n<p>Previously I had it as an injected service but I eventually simplified it to this structure but it continues to get this error on reload.  It's not every time I reload but most times.</p>\n<p>I have tried changing the dispose pattern without success.  I can't find any information on the error anywhere else.</p>\n<p>Any ideas?</p>\n"
+}

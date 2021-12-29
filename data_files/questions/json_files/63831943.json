@@ -1,0 +1,30 @@
+{
+    "tags": [
+        "c#",
+        "asp.net-core",
+        "cookies",
+        "dotnet-httpclient",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 53,
+        "user_id": 9182405,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/aa60cfe3be6b12825c32eddc9aeced02?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Dumas.DED",
+        "link": "https://stackoverflow.com/users/9182405/dumas-ded"
+    },
+    "is_answered": true,
+    "view_count": 1744,
+    "accepted_answer_id": 63903147,
+    "answer_count": 3,
+    "score": 3,
+    "last_activity_date": 1609772982,
+    "creation_date": 1599748297,
+    "last_edit_date": 1599751212,
+    "question_id": 63831943,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/63831943/httpclient-doesnt-include-cookies-with-requests-in-blazor-webassembly-app",
+    "title": "HttpClient doesn&#39;t include cookies with requests in Blazor Webassembly app",
+    "body": "<p>I have a Blazor Webassembly app with a user service that is designed to hit an API to retrieve a user's detailed info. The service looks like this:</p>\n<pre><code>public class UserDataService : IUserDataService\n{\n    public readonly HttpClient _HttpClient;\n\n    public UserDataService(HttpClient httpClientDI)\n    {\n        _HttpClient = httpClientDI;\n    }\n\n    public async Task&lt;User&gt; GetUserInfo()\n    {\n        try\n        {\n            return await _HttpClient.GetFromJsonAsync&lt;User&gt;(&quot;api/users/MyUserInfo&quot;);\n        }\n        catch (Exception ex)\n        {\n            Console.WriteLine(ex.Message);\n            throw;\n        }\n    }\n}\n</code></pre>\n<p>The API is specifically designed to read an encrypted cookie from the client request. This cookie contains the user's email address, and is used by the user info service to retrieve a more detailed set of user information.</p>\n<pre><code>[HttpGet(&quot;MyUserInfo&quot;)]\npublic User MyUserInfo()\n{\n    var myCookie = HttpContext.Request.Cookies.FirstOrDefault(c =&gt; c.Key == &quot;MyCookie&quot;);\n\n    var userMask = JsonConvert.DeserializeObject&lt;AuthUserMask&gt;(Protector.Unprotect(myCookie.Value));\n\n    var user = UserService.Find(userMask.Email).FirstOrDefault();\n\n    return user;\n}\n</code></pre>\n<p>I'm able to verify that the cookie is there in the browser when I run the web app, but when the app makes the request to the API the cookie is not included. In fact the request doesn't include any cookies from the client at all.</p>\n<p><a href=\"https://i.stack.imgur.com/getnR.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/getnR.png\" alt=\"enter image description here\" /></a></p>\n<p>I'm completely new to Blazor and I'm not sure what if any conventions exist for this type of scenario, but at the moment I'm just trying to get this new web app to work with our existing service. Is there a way to ensure the cookies are included? What could I be doing wrong?</p>\n<p>Thanks in advance for the help.</p>\n<p><strong>EDIT</strong></p>\n<p>Here's the code that's creating the cookie. It's part of a larger method that verifies the user is authenticated, but this is the relevant part:</p>\n<pre><code>{\n    var userJson = JsonConvert.SerializeObject(new AuthUserMask()\n    {\n        Email = user.Email,\n        isActive = user.IsActive\n    });\n\n    var protectedContents = Protector.Protect(userJson);\n\n    HttpContext.Response.Cookies.Append(&quot;MyCookie&quot;, protectedContents, new CookieOptions()\n    {\n        SameSite = SameSiteMode.None,\n        Secure = true,\n        Path = &quot;/&quot;,\n        Expires = DateTime.Now.AddMinutes(60)\n    });\n\n    HttpContext.Response.Redirect(returnUrl);\n}\n</code></pre>\n<p><strong>EDIT 2</strong></p>\n<p>Tried the following out in the UserDataService to see what would happen:</p>\n<pre><code>public async Task&lt;User&gt; GetUserInfo()\n{\n    try\n    {\n        _HttpClient.DefaultRequestHeaders.Add(&quot;Test&quot;, &quot;ABC123&quot;);\n        return await _HttpClient.GetFromJsonAsync&lt;User&gt;(&quot;api/users/MyUserInfo&quot;);\n    }\n    catch (Exception ex)\n    {\n        Console.WriteLine(ex.Message);\n        throw;\n    }\n}\n</code></pre>\n<p>Unfortunately the result is the same - the RequestCookieCollection is completely empty when it hits the API.</p>\n"
+}

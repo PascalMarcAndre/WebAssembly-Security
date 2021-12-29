@@ -1,0 +1,30 @@
+{
+    "tags": [
+        "javascript",
+        "google-chrome",
+        "browser",
+        "drm",
+        "webassembly"
+    ],
+    "owner": {
+        "reputation": 317,
+        "user_id": 6393732,
+        "user_type": "registered",
+        "accept_rate": 75,
+        "profile_image": "https://www.gravatar.com/avatar/af3105e9140f080d2293d3dbc841024d?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Patently Paul",
+        "link": "https://stackoverflow.com/users/6393732/patently-paul"
+    },
+    "is_answered": true,
+    "view_count": 776,
+    "accepted_answer_id": 42187365,
+    "answer_count": 1,
+    "score": 4,
+    "last_activity_date": 1486901356,
+    "creation_date": 1486897006,
+    "question_id": 42186728,
+    "content_license": "CC BY-SA 3.0",
+    "link": "https://stackoverflow.com/questions/42186728/could-webassembly-be-a-way-to-enforce-drm",
+    "title": "Could webassembly be a way to enforce drm?",
+    "body": "<p>The Idea of using compiled languages on might be a great way to increase performance significantly.  </p>\n\n<p>But could it used to set a drm?</p>\n\n<p>For example: Some website offers browser games and doesn't want the source code to be used by others. Would webassembly-script tied deep into the game mechanics be used to detect if it is used on another site and lock it down with no way to decompile and bypass it?</p>\n\n<p>I don't want to sound like a pirate with this, but it might concern adblock-users, that <a href=\"https://github.com/gorhill/uBlock\" rel=\"nofollow noreferrer\">also block trackers</a>.  </p>\n\n<p>When for example a <a href=\"https://audiofingerprint.openwpm.com/\" rel=\"nofollow noreferrer\">Audio Context Fingerprinting</a>-script is run behind without being detected, how can it be blocked?</p>\n"
+}

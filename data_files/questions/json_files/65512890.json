@@ -1,0 +1,26 @@
+{
+    "tags": [
+        "blazor",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 1255,
+        "user_id": 675203,
+        "user_type": "registered",
+        "accept_rate": 42,
+        "profile_image": "https://www.gravatar.com/avatar/c2f27062d5781ee50aefa4e76e10a60b?s=128&d=identicon&r=PG",
+        "display_name": "Steven Lemmens",
+        "link": "https://stackoverflow.com/users/675203/steven-lemmens"
+    },
+    "is_answered": false,
+    "view_count": 178,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1609364265,
+    "creation_date": 1609358375,
+    "question_id": 65512890,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/65512890/blazor-webassembly-cannot-provide-a-value-for-property-authenticationstateprov",
+    "title": "Blazor WebAssembly: Cannot provide a value for property &#39;AuthenticationStateProvider&#39;",
+    "body": "<p>I have a Blazor WebAssembly project, with a Server-side API for authentication. I have added Identity to this Server project and this seems to work. Both registering and logging in works.</p>\n<p>But as soon as I add <code>CascadingAuthenticationState</code> tag to my App.razor of my WebAssembly app, the Webassembly app breaks and prints the error: <code> Cannot provide a value for property 'AuthenticationStateProvider' on type 'Microsoft.AspNetCore.Components.Authorization.CascadingAuthenticationState'.</code></p>\n<p>I see a lot of posts about this, and the solution every time seems to be to add <code> builder.Services.AddAuthorizationCore()</code> to the Program.cs file, but this does not fix anything.</p>\n<p>Since this is a WebAssembly project that already existed before I added Identity myself, I suspect something is missing.\nCan anyone think of something I might check?</p>\n<p>My <code>Program</code> class:</p>\n<pre><code>public static async Task Main(string[] args)\n{\n   var builder = WebAssemblyHostBuilder.CreateDefault(args);\n   builder.RootComponents.Add&lt;App&gt;(&quot;#app&quot;);\n\n   builder.Services.AddAuthorizationCore();\n   builder.Services.AddScoped(sp =&gt; new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });\n\n   await builder.Build().RunAsync();\n}\n</code></pre>\n<p>My App.razor file:</p>\n<pre><code>&lt;CascadingAuthenticationState&gt;\n&lt;Router AppAssembly=&quot;@typeof(Program).Assembly&quot; PreferExactMatches=&quot;@true&quot;&gt;\n    &lt;Found Context=&quot;routeData&quot;&gt;\n        &lt;RouteView RouteData=&quot;@routeData&quot; DefaultLayout=&quot;@typeof(MainLayout)&quot; /&gt;\n    &lt;/Found&gt;\n    &lt;NotFound&gt;\n        &lt;LayoutView Layout=&quot;@typeof(MainLayout)&quot;&gt;\n            &lt;p&gt;Sorry, there's nothing at this address.&lt;/p&gt;\n        &lt;/LayoutView&gt;\n    &lt;/NotFound&gt;\n&lt;/Router&gt;\n&lt;/CascadingAuthenticationState&gt;\n</code></pre>\n"
+}

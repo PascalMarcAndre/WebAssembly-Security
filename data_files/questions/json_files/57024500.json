@@ -1,0 +1,28 @@
+{
+    "tags": [
+        "c++",
+        "qt",
+        "sockets",
+        "emscripten"
+    ],
+    "owner": {
+        "reputation": 56360,
+        "user_id": 131930,
+        "user_type": "registered",
+        "accept_rate": 91,
+        "profile_image": "https://www.gravatar.com/avatar/91536fe27d32713b8a154a0bf42f6748?s=128&d=identicon&r=PG",
+        "display_name": "Jeremy Friesner",
+        "link": "https://stackoverflow.com/users/131930/jeremy-friesner"
+    },
+    "is_answered": false,
+    "view_count": 115,
+    "answer_count": 0,
+    "score": 0,
+    "last_activity_date": 1563077115,
+    "creation_date": 1563077115,
+    "question_id": 57024500,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/57024500/what-is-required-to-get-a-bsd-sockets-based-program-to-do-lan-networking-under-e",
+    "title": "What is required to get a BSD-sockets-based program to do LAN networking under Emscripten?",
+    "body": "<p>Background:  I've got an C++/Qt-based application that communicates with servers on the user's LAN.  It uses non-blocking TCP and UDP sockets, and the networking is implemented via calls to the BSD sockets API (i.e. <code>socket()</code>/<code>send()</code>/<code>recv()</code>/<code>select()</code>/etc).  It all works well.</p>\n\n<p>The other day, just for fun, I decided to recompile the application using <a href=\"https://emscripten.org\" rel=\"nofollow noreferrer\">emscripten</a>, so that it could run as a WebAssembly app inside a web browser.</p>\n\n<p>This worked surprisingly well -- within an hour or two, I had my app up and running inside Google Chrome.  However, the app's usefulness in this configuration is severely limited by the fact that it isn't able to connect to any servers -- presumably this is because it is running in a restricted/sandboxed environment.</p>\n\n<p>If I wanted to pursue this line of development beyond the clever-hack-demo stage and try to make it useful, I would need to find a way for my program to discover and connect to servers on the user's LAN.</p>\n\n<p>My question is:  is that functionality at all possible for a Emscripten/WebAssembly-based app to perform?  If so, what steps would I need to take?  (i.e. would it require upgrading the LAN's servers to handle WebSocket-based connections?  Would it require adding some sort of proxy server to run on the web server that the web page was served from?  Is UDP even a thing in a web-app context?  Are there other hoops that would also have to be jumped through?)</p>\n"
+}

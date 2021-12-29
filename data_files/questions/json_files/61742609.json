@@ -1,0 +1,28 @@
+{
+    "tags": [
+        "authentication",
+        "authorization",
+        "facebook-login",
+        "blazor",
+        "google-login"
+    ],
+    "owner": {
+        "reputation": 153,
+        "user_id": 6432344,
+        "user_type": "registered",
+        "profile_image": "https://graph.facebook.com/1142767009124124/picture?type=large",
+        "display_name": "Istv&#225;n Piroska",
+        "link": "https://stackoverflow.com/users/6432344/istv%c3%a1n-piroska"
+    },
+    "is_answered": true,
+    "view_count": 1540,
+    "answer_count": 1,
+    "score": 1,
+    "last_activity_date": 1589275793,
+    "creation_date": 1589249625,
+    "question_id": 61742609,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/61742609/blazor-client-webassembly-facebook-or-google-login",
+    "title": "Blazor Client (webassembly) Facebook or Google login",
+    "body": "<p>I know it isn't a specific issue, but can you give me any guideline how to create Facebook or Google login for Blazor Client (Webassembly) app?\nI emphasize Client (so not Server!) because it is exist and working well.</p>\n\n<p>Or just tell me that it is possible? And need I use the server (asp.net core web api) or the client would be enough itself?</p>\n\n<p>I appreciate any hint.</p>\n"
+}

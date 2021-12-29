@@ -1,0 +1,25 @@
+{
+    "tags": [
+        "webassembly"
+    ],
+    "owner": {
+        "reputation": 537,
+        "user_id": 8704621,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/32dd2598932413d0b26ab24dfa0d7111?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Siraj Kakeh",
+        "link": "https://stackoverflow.com/users/8704621/siraj-kakeh"
+    },
+    "is_answered": true,
+    "view_count": 1105,
+    "accepted_answer_id": 49540541,
+    "answer_count": 1,
+    "score": 3,
+    "last_activity_date": 1530435909,
+    "creation_date": 1522251833,
+    "question_id": 49538827,
+    "content_license": "CC BY-SA 3.0",
+    "link": "https://stackoverflow.com/questions/49538827/how-private-is-my-code-in-webassembly",
+    "title": "How private is my code in WebAssembly?",
+    "body": "<p>I have some c++ binary running on my web server that does some calculations and I was thinking about moving it to the user side using Webassembly. My question is how private will my c++ code be? Is it possible to transform a compiled Webassembly file back to c++?</p>\n"
+}

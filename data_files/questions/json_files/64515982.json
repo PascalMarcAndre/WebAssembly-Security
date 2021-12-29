@@ -1,0 +1,26 @@
+{
+    "tags": [
+        "javascript",
+        "emscripten"
+    ],
+    "owner": {
+        "reputation": 11,
+        "user_id": 14512906,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/daca2afa7be45bcb0e89361dfef04d10?s=128&d=identicon&r=PG&f=1",
+        "display_name": "dwz8",
+        "link": "https://stackoverflow.com/users/14512906/dwz8"
+    },
+    "is_answered": false,
+    "view_count": 195,
+    "answer_count": 1,
+    "score": 1,
+    "last_activity_date": 1604137917,
+    "creation_date": 1603559100,
+    "last_edit_date": 1603808298,
+    "question_id": 64515982,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/64515982/problem-with-emscripten-with-minimal-runtime",
+    "title": "Problem with Emscripten with MINIMAL_RUNTIME",
+    "body": "<p>I am new to emscripten, so this may be an easy one to answer for others. I can't get access to my C functions. Here is the setup:</p>\n<p>Simple C file square.c:</p>\n<pre><code>#include &lt;stdio.h&gt;\n#include &lt;math.h&gt;\n#include &lt;stdlib.h&gt;\n#include &lt;emscripten.h&gt;\n\nEMSCRIPTEN_KEEPALIVE \ndouble square(double x){\n    return x*x;\n}\n</code></pre>\n<p>Content of ready.js:</p>\n<pre><code>ready = function () {\n    startup();\n}\n</code></pre>\n<p>startup is a function that I added to square.html to know when everything is ready.</p>\n<p>Emcc command Line:</p>\n<pre><code>emcc square.c -DNDEBUG -s MINIMAL_RUNTIME -s ALLOW_MEMORY_GROWTH=1 -s INVOKE_RUN=0 -s ENVIRONMENT=web,worker -s MODULARIZE=1 -s SUPPORT_ERRNO=0 --pre-js ./ready.js -s EXPORT_NAME=wasmMod -o square.html \n</code></pre>\n<p>output is as expected: square.html, square.js, square.wasm</p>\n<p>Everything runs in Chrome as expected, startup is called. Now I want to access the square function:</p>\n<pre><code>function startup(){\n  console.log('startup called');\n  let y = _square(2);\n  console.log(`square: ${y}`);\n}\n</code></pre>\n<p>this gives me an error: &quot;VM291:1 Uncaught ReferenceError: _square is not defined&quot;\nIf I use</p>\n<pre><code>let y = wasmMod._square(2);\n</code></pre>\n<p>instead, I get\n&quot;square.js:783 TypeError: wasmMod._square is not a function&quot;</p>\n<p>I have tried a lot of things and searched the web, but I can't seem to find the error.\nIf I remove -s MODULARIZE=1, I can call _square(2) without problems, however, in that case wasmMod doesn't hold anything, all variables and functions are in Global context, which is something I want to avoid.\nOnce it works I want to embed this part into a larger JS project using ES6 modules, so my goal is to keep everything related to emscripten in one module.</p>\n<p>Any help is very much appreciated. Thanks in advance!</p>\n<p>2020/10/27: added script from html file:</p>\n<pre><code>// Depending on the build flags that one uses, different files need to be downloaded\n// to load the compiled page. The right set of files will be expanded to be downloaded\n// via the directive below.\n  function binary(url) { // Downloads a binary file and outputs it in the specified callback\n      return new Promise((ok, err) =&gt; {\n        var x = new XMLHttpRequest();\n        x.open('GET', url, true);\n        x.responseType = 'arraybuffer';\n        x.onload = () =&gt; { ok(x.response); }\n        x.send(null);\n      });\n    }\n  \n  function script(url) { // Downloads a script file and adds it to DOM\n    return new Promise((ok, err) =&gt; {\n      var s = document.createElement('script');\n      s.src = url;\n      s.onload = () =&gt; {\n        var c = wasmMod;\n        delete wasmMod;\n        ok(c);\n      };\n      document.body.appendChild(s);\n    });\n  }\n  Promise.all([script('square.js'), binary('square.wasm')]).then((r) =&gt; {\n  // Detour the JS code to a separate variable to avoid instantiating with 'r' array as &quot;this&quot; directly to avoid strict ECMAScript/Firefox GC problems that cause a leak, see https://bugzilla.mozilla.org/show_bug.cgi?id=1540101\n  var js = r[0];\n  js({ wasm: r[1] });\n});\n</code></pre>\n<p>2020/10/27: added some content from square.js:</p>\n<pre><code>var wasmMod=\nfunction(wasmMod) {\n  wasmMod = wasmMod || {};\n\nvar Module = wasmMod;\n\n...lots of javascript follows ...\n\nvar imports = {\n &quot;env&quot;: asmLibraryArg,\n &quot;wasi_snapshot_preview1&quot;: asmLibraryArg\n};\n\nvar _square, _fflush, stackSave, stackRestore, stackAlloc, _emscripten_get_sbrk_ptr, _sbrk;\n\nif (!Module[&quot;wasm&quot;]) throw &quot;Must load WebAssembly Module in to variable Module.wasm before adding compiled output .js script to the DOM&quot;;\n\nWebAssembly.instantiate(Module[&quot;wasm&quot;], imports).then(function(output) {\n var asm = output.instance.exports;\n _square = asm[&quot;square&quot;];\n _fflush = asm[&quot;fflush&quot;];\n stackSave = asm[&quot;stackSave&quot;];\n stackRestore = asm[&quot;stackRestore&quot;];\n stackAlloc = asm[&quot;stackAlloc&quot;];\n _emscripten_get_sbrk_ptr = asm[&quot;emscripten_get_sbrk_ptr&quot;];\n _sbrk = asm[&quot;sbrk&quot;];\n wasmTable = asm[&quot;__indirect_function_table&quot;];\n initRuntime(asm);\n ready();\n}).catch(function(error) {\n console.error(error);\n});\n\n\n  return {}\n}\n</code></pre>\n"
+}

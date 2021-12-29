@@ -1,0 +1,29 @@
+{
+    "tags": [
+        "asp.net-core",
+        "microsoft-graph-api",
+        "msal",
+        "blazor-client-side"
+    ],
+    "owner": {
+        "reputation": 73,
+        "user_id": 13129431,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/be40c8995899485adf5c48d87d01ae69?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Zack",
+        "link": "https://stackoverflow.com/users/13129431/zack"
+    },
+    "is_answered": true,
+    "view_count": 1022,
+    "accepted_answer_id": 62926383,
+    "answer_count": 3,
+    "score": 4,
+    "last_activity_date": 1611262588,
+    "creation_date": 1594052237,
+    "last_edit_date": 1594865537,
+    "question_id": 62760219,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/62760219/blazor-webassembly-authenticated-event",
+    "title": "Blazor Webassembly Authenticated Event",
+    "body": "<p>When authenticating users with Microsoft.AspNetCore.Components.WebAssembly.Authentication, in a Blazor Webassembly application on the client side app that is hosted on ASP.NET Core (latest, blazor), when/how to call an action every time a user is authenticated? Even if they come back to the app and have an active session.</p>\n<p><strong>Update 2020-07-15:</strong>\nThe problem I am trying to overcome is that we have a service that goes to Graph API once a user logs in (MSAL) to get their info and profile image. After they log in, I use the RemoteAuthenticatorView.OnLogInSucceeded event to know when they actually logged in. Trouble is, if they then refresh the page (F5), the service loses the Graph info. I guess what I'm actually trying to achieve is to persist session data.</p>\n"
+}

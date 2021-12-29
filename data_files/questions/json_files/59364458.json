@@ -1,0 +1,29 @@
+{
+    "tags": [
+        "c++",
+        "linker",
+        "clang",
+        "webassembly"
+    ],
+    "owner": {
+        "reputation": 12725,
+        "user_id": 3485,
+        "user_type": "registered",
+        "accept_rate": 76,
+        "profile_image": "https://www.gravatar.com/avatar/07b5ff3ac4366f44df6220dabc3c7f2f?s=128&d=identicon&r=PG",
+        "display_name": "Hoffmann",
+        "link": "https://stackoverflow.com/users/3485/hoffmann"
+    },
+    "is_answered": true,
+    "view_count": 1078,
+    "accepted_answer_id": 59366076,
+    "answer_count": 1,
+    "score": 3,
+    "last_activity_date": 1576542827,
+    "creation_date": 1576531276,
+    "question_id": 59364458,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/59364458/undefined-symbol-when-clang-compiling-to-target-wasm",
+    "title": "Undefined symbol when clang compiling to target wasm",
+    "body": "<p>So I have managed to get some simple webassembly application running in the browser, I managed to call webassembly code from Javascript. However when I try to call Javascript from C code I can't get the code to compile</p>\n\n<p>I am using clang 9.0 and wasi-libc. How I am compiling:</p>\n\n<p>clang --target=wasm32-wasi -Wl,--allow-undefined-file=src/wasm.syms -Wl,--export-all --sysroot wasm-test/wasi-libc/sysroot -O2 -s -o ./public/main.wasm ./src/main.cpp</p>\n\n<p>src/main.cpp:</p>\n\n<pre class=\"lang-cpp prettyprint-override\"><code>#include &lt;stdio.h&gt;\n\nvoid __console_log(int str, int len);\n\nint main()\n{\n    printf(\"MAIN!\\n\");\n    return 0;\n}\n\nextern \"C\"\n{\n    void test()\n    {\n        char *str = \"TEST!\";\n        __console_log((int)str, 5);\n    }\n\n    int test2()\n    {\n        return 10;\n    }\n}\n</code></pre>\n\n<p>wasm.syms:</p>\n\n<pre><code>__console_log\n</code></pre>\n\n<p>If I remove the references to <code>__console_log</code> in the cpp file it works, but when I add it I keep getting a linking error even though I have <code>--allow-undefined-file=src/wasm.syms</code> in the command line (tried with -U=__console_log as well, same error):</p>\n\n<p><code>wasm-ld: error: /var/folders/vl/4bjdkcfx1gncfx0vzrl0s57c0000gn/T/main-a723f9.o: undefined symbol: __console_log(int, int)</code></p>\n\n<p>Here is the full logs when running with the <code>-v</code> flag:</p>\n\n<pre><code>$ clang --target=wasm32-wasi -Wl,--allow-undefined-file=src/wasm.syms -Wl,--export-all --sysroot /Users/hoff/dev/wasm-test/wasi-libc/sysroot -O2 -s -o ./public/main.wasm ./src/main.cpp -v\nclang version 9.0.0 (git://github.com/llvm/llvm-project.git 0399d5a9682b3cef71c653373e38890c63c4c365)\nTarget: wasm32-unknown-wasi\nThread model: posix\nInstalledDir: /Users/hoff/dev/wasm-test/clang/bin\n \"/Users/hoff/dev/wasm-test/clang/bin/clang-9\" -cc1 -triple wasm32-unknown-wasi -emit-obj -disable-free -disable-llvm-verifier -discard-value-names -main-file-name main.cpp -mrelocation-model static -mthread-model posix -masm-verbose -mconstructor-aliases -fuse-init-array -target-cpu generic -fvisibility hidden -dwarf-column-info -debugger-tuning=gdb -target-linker-version 512.4 -momit-leaf-frame-pointer -v -resource-dir /Users/hoff/dev/wasm-test/clang/lib/clang/9.0.0 -isysroot /Users/hoff/dev/wasm-test/wasi-libc/sysroot -internal-isystem /Users/hoff/dev/wasm-test/wasi-libc/sysroot/include/wasm32-wasi/c++/v1 -internal-isystem /Users/hoff/dev/wasm-test/wasi-libc/sysroot/include/c++/v1 -internal-isystem /Users/hoff/dev/wasm-test/clang/lib/clang/9.0.0/include -internal-isystem /Users/hoff/dev/wasm-test/wasi-libc/sysroot/include/wasm32-wasi -internal-isystem /Users/hoff/dev/wasm-test/wasi-libc/sysroot/include -O2 -fdeprecated-macro -fdebug-compilation-dir /Users/hoff/dev/wasm-test -ferror-limit 19 -fmessage-length 102 -fobjc-runtime=gnustep -fcxx-exceptions -fexceptions -fno-common -fdiagnostics-show-option -fcolor-diagnostics -vectorize-loops -vectorize-slp -o /var/folders/vl/4bjdkcfx1gncfx0vzrl0s57c0000gn/T/main-a723f9.o -x c++ ./src/main.cpp\nclang -cc1 version 9.0.0 based upon LLVM 9.0.0 default target x86_64-apple-darwin17.6.0\nignoring nonexistent directory \"/Users/hoff/dev/wasm-test/wasi-libc/sysroot/include/wasm32-wasi/c++/v1\"\nignoring nonexistent directory \"/Users/hoff/dev/wasm-test/wasi-libc/sysroot/include/c++/v1\"\nignoring nonexistent directory \"/Users/hoff/dev/wasm-test/wasi-libc/sysroot/include/wasm32-wasi\"\n#include \"...\" search starts here:\n#include &lt;...&gt; search starts here:\n /Users/hoff/dev/wasm-test/clang/lib/clang/9.0.0/include\n /Users/hoff/dev/wasm-test/wasi-libc/sysroot/include\nEnd of search list.\n./src/main.cpp:17:21: warning: ISO C++11 does not allow conversion from string literal to 'char *'\n      [-Wwritable-strings]\n        char *str = \"TEST!\";\n                    ^\n1 warning generated.\n \"/Users/hoff/dev/wasm-test/clang/bin/wasm-ld\" --strip-all -L/Users/hoff/dev/wasm-test/wasi-libc/sysroot/lib/wasm32-wasi /Users/hoff/dev/wasm-test/wasi-libc/sysroot/lib/wasm32-wasi/crt1.o --allow-undefined-file=src/wasm.syms --export-all /var/folders/vl/4bjdkcfx1gncfx0vzrl0s57c0000gn/T/main-a723f9.o -lc /Users/hoff/dev/wasm-test/clang/lib/clang/9.0.0/lib/wasi/libclang_rt.builtins-wasm32.a -o ./public/main.wasm\nwasm-ld: error: /var/folders/vl/4bjdkcfx1gncfx0vzrl0s57c0000gn/T/main-a723f9.o: undefined symbol: __console_log(int, int)\nclang-9: error: linker command failed with exit code 1 (use -v to see invocation)\n</code></pre>\n\n<p>Any help is appreciated.</p>\n"
+}

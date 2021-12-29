@@ -1,0 +1,31 @@
+{
+    "tags": [
+        ".net",
+        "asp.net-core",
+        "web",
+        "blazor",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 59,
+        "user_id": 10308289,
+        "user_type": "registered",
+        "profile_image": "https://lh4.googleusercontent.com/-ts_sbvbndts/AAAAAAAAAAI/AAAAAAAAAFM/Qf0XfSR3Wk0/photo.jpg?sz=128",
+        "display_name": "netotz",
+        "link": "https://stackoverflow.com/users/10308289/netotz"
+    },
+    "is_answered": true,
+    "view_count": 96,
+    "closed_date": 1604136868,
+    "accepted_answer_id": 64617763,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1604364069,
+    "creation_date": 1604109732,
+    "last_edit_date": 1604177777,
+    "question_id": 64617743,
+    "link": "https://stackoverflow.com/questions/64617743/what-is-difference-between-model-class-and-data-class",
+    "closed_reason": "Opinion-based",
+    "title": "What is difference between model class and data class?",
+    "body": "<p>I'm new to web development and I'm struggling to differentiate between a model class and a data class, specially when implementing them.</p>\n<p>I found <a href=\"https://stackoverflow.com/questions/44182066/understanding-model-class-vs-data-class-in-mvc\">this question</a> and I kind of understood the theory about it: the data class contains all the core information about an object and a model class only contains the information that needs to be exposed. So I can have a user data class like this:</p>\n<pre class=\"lang-cs prettyprint-override\"><code>public class User {\n    public long Id { get; set; }\n\n    public string Name { get; set; }\n\n    public string Password { get; set; }\n\n    public string Email { get; set; }\n\n    public int Score { get; set; }\n}\n</code></pre>\n<p>And a model class for the login page like this:</p>\n<pre class=\"lang-cs prettyprint-override\"><code>public class UserModel {\n    [Required]\n    public string Password { get; set; }\n\n    [Required]\n    [EmailAdress]\n    public string Email { get; set; }\n}\n</code></pre>\n<p>And I would have to create another model class for sign up, for example, adding the <code>Name</code> property. But do I need to be repeating the same properties for each new model? Do the models need to inherit from <code>User</code> data class? Is all of this specific to MVC pattern? How do the model class and the  data class relate to each other in the actual implementation?</p>\n<p>I'm using Blazor WebAssembly if that helps.</p>\n"
+}

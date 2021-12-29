@@ -1,0 +1,28 @@
+{
+    "tags": [
+        "webpack",
+        "webpack-dev-server",
+        "wasm-bindgen"
+    ],
+    "owner": {
+        "reputation": 5674,
+        "user_id": 870207,
+        "user_type": "registered",
+        "accept_rate": 0,
+        "profile_image": "https://www.gravatar.com/avatar/50fa4a2d71492f94030da21388aecd54?s=128&d=identicon&r=PG",
+        "display_name": "teknopaul",
+        "link": "https://stackoverflow.com/users/870207/teknopaul"
+    },
+    "is_answered": false,
+    "view_count": 149,
+    "answer_count": 0,
+    "score": 4,
+    "last_activity_date": 1571309410,
+    "creation_date": 1568811793,
+    "last_edit_date": 1571309410,
+    "question_id": 57993453,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/57993453/how-do-i-access-a-wasm-modules-memory-when-its-loaded-by-webpack",
+    "title": "How do I access a wasm modules memory when its loaded by webpack",
+    "body": "<p>I'm trying to follow</p>\n\n<p><a href=\"https://stackoverflow.com/questions/47529643/how-to-return-a-string-or-similar-from-rust-in-webassembly\">How to return a string (or similar) from Rust in WebAssembly?</a></p>\n\n<p>Which allows accessing String data inside a wasm module.  </p>\n\n<p>I have used <code>wasm-pack build</code> to build a RUST module and I can access the methods exported but not the memory directly.</p>\n\n<p>The webpack generated JavScript has a method that allows me to read Strings</p>\n\n<pre><code>function getStringFromWasm(ptr, len) {\n    return cachedTextDecoder.decode(getUint8Memory().subarray(ptr, ptr + len));\n}\n</code></pre>\n\n<p>but it is not exported, if I hack this generated .js file to </p>\n\n<pre><code>export function getStringFromWasm(ptr, len)\n</code></pre>\n\n<p>I can access Strings returned by RUST code.</p>\n\n<p>How can I configure the webpack code generator to give me similar access, or otherwise expose the module's <code>exports.memory</code>?</p>\n\n<p>Webpack does not seem to give me a handle on the module itself.  I cant find a way to load the <code>.wasm</code> file webpack generates with <code>WebAssembly.instantiateStreaming()</code> since it seems to rely on the other generated files.</p>\n"
+}

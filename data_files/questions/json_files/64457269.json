@@ -1,0 +1,27 @@
+{
+    "tags": [
+        "multithreading",
+        "webassembly",
+        "uno-platform"
+    ],
+    "owner": {
+        "reputation": 370,
+        "user_id": 1239531,
+        "user_type": "registered",
+        "accept_rate": 89,
+        "profile_image": "https://www.gravatar.com/avatar/41aa029916ef4907c19dc249a24ee278?s=128&d=identicon&r=PG",
+        "display_name": "Mike S.",
+        "link": "https://stackoverflow.com/users/1239531/mike-s"
+    },
+    "is_answered": true,
+    "view_count": 114,
+    "answer_count": 1,
+    "score": 1,
+    "last_activity_date": 1603312112,
+    "creation_date": 1603258481,
+    "question_id": 64457269,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/64457269/how-many-threads-does-the-uno-platform-support-for-wasm-webassembly-projects",
+    "title": "How many threads does the uno-platform support for WASM (webassembly) projects?",
+    "body": "<p>I am trying to determine if the uno-platform will work for a specific project that I want to deploy as a WebAssembly app.</p>\n<p>I've played around with Uno and have configured the newly available threading support using:</p>\n<pre class=\"lang-html prettyprint-override\"><code> &lt;MonoWasmRuntimeConfiguration&gt;threads-release&lt;/MonoWasmRuntimeConfiguration&gt;\n</code></pre>\n<p>As I understand it, threading support is only available in Chrome and Edge at this time...but that is ok for my needs.</p>\n<p>I've created a simple button that should spin up 10 worker threads like so:</p>\n<pre class=\"lang-cs prettyprint-override\"><code>        private void Button_Click(object sender, RoutedEventArgs e)\n        {\n            for (int i = 0; i &lt; 10; i++)\n            {\n                var t = new Thread(() =&gt; DoWork());\n                t.Start();\n\n            }\n\n        }\n\n        private void DoWork()\n        {\n            for (int n = 0; n &lt; 10000; n++)\n            {\n                Console.WriteLine($&quot;Task {Thread.CurrentThread.ManagedThreadId} running {n}&quot;);\n            }\n        }\n</code></pre>\n<p>This code is the only thing added to the default &quot;hello world&quot; WASM project from the uno-platform templates.</p>\n<p>When looking at the output, I can see that 2 threads are working as expected and interweaving results. (prior to the <code>&lt;MonoWasmRuntimeConfiguration&gt;threads-release&lt;/MonoWasmRuntimeConfiguration&gt;</code> the output would be synchronous for a single &quot;thread&quot; and then synchronous for the next &quot;thread&quot;)</p>\n<blockquote>\n<p>Task 3 running 9987</p>\n</blockquote>\n<blockquote>\n<p>Task 2 running 9843</p>\n</blockquote>\n<blockquote>\n<p>Task 3 running 9988</p>\n</blockquote>\n<p>At the completion of both threads, the follow warning is logged in the browser console.</p>\n<pre><code>PThread 70424616 is attempting to join to itself!\n__emscripten_do_pthread_join @ dotnet.js:1\n_pthread_join @ dotnet.js:1\nmono_native_thread_join @ 00806cba:0x70078\nthreads_native_thread_join_lock @ 00806cba:0xbfd98\nmono_threads_join_threads @ 00806cba:0x6aefe\nmono_runtime_do_background_work @ 00806cba:0xdb520\nmono_background_exec @ 00806cba:0xf89c5\nModule._mono_background_exec @ dotnet.js:1\npump_message @ dotnet.js:1\nsetTimeout (async)\n_schedule_background_exec @ dotnet.js:1\nmono_threads_schedule_background_job @ 00806cba:0x1612c\nmono_threads_add_joinable_runtime_thread @ 00806cba:0xd8aa4\nsgen_client_thread_detach_with_lock @ 00806cba:0xc67bd\nthread_detach_with_lock @ 00806cba:0xc0142\nunregister_thread @ 00806cba:0x5e469\nmono_thread_info_detach @ 00806cba:0xd98c6\nmono_thread_info_exit @ 00806cba:0x49724\nstart_wrapper @ 00806cba:0xc1206\ndynCall_ii @ 00806cba:0x11d3d7\nModule.dynCall_ii @ dotnet.js:1\nonmessage @ dotnet.worker.js:1\n</code></pre>\n<p>Two questions arise which I can't find documentation about.</p>\n<ol>\n<li>Why only 2 threads?   (on both Chrome and Edge)  Is this a browser limitation?  A setting in Uno-platform?</li>\n<li>Why do the remaining 8 threads not get started?  They are essentially lost and none of the work gets performed.  Is this a bug in the uno-platform?  Mono?  emscripten possibly?</li>\n</ol>\n<p>I know threading is still experimental, but I am curious if there is a known limitation that I am hitting?</p>\n"
+}

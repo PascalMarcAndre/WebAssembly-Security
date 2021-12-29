@@ -1,0 +1,27 @@
+{
+    "tags": [
+        "dependency-injection",
+        "ninject",
+        "blazor",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 26,
+        "user_id": 13658234,
+        "user_type": "registered",
+        "profile_image": "https://i.stack.imgur.com/BuibQ.jpg?s=128&g=1",
+        "display_name": "H&#252;seyin KARACAO\u011eLU",
+        "link": "https://stackoverflow.com/users/13658234/h%c3%bcseyin-karacao%c4%9elu"
+    },
+    "is_answered": false,
+    "view_count": 249,
+    "answer_count": 0,
+    "score": 0,
+    "last_activity_date": 1592478590,
+    "creation_date": 1592478590,
+    "question_id": 62448612,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/62448612/using-dependency-injection-in-blazor-webassembly",
+    "title": "Using Dependency Injection in Blazor WebAssembly",
+    "body": "<p>I need use dependency injection in Blazor WebAssembly app. But there is a situation, my blazor app in <code>UI layer</code>. I will inject dependency from <code>business layer</code> and I need inject <code>data layer</code> too. But <code>UI layer</code> shouldn't access to data layer. How I can fix this? And another question is, can I adapt Ninject in this Program.cs file?</p>\n\n<p><strong>Program.cs</strong></p>\n\n<pre><code>public class Program\n{\n    public static async Task Main(string[] args)\n    {\n        var builder = WebAssemblyHostBuilder.CreateDefault(args);\n        builder.Services.AddSingleton&lt;IMyBusiness, MyBusiness&gt;();\n        builder.Services.AddSingleton&lt;IMyRepository, MyRepository&gt;();\n        builder.RootComponents.Add&lt;App&gt;(\"app\");\n\n        await builder.Build().RunAsync();\n    }\n}\n</code></pre>\n"
+}

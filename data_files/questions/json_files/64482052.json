@@ -1,0 +1,26 @@
+{
+    "tags": [
+        "blazor",
+        "blazor-webassembly",
+        "asp.net-blazor"
+    ],
+    "owner": {
+        "reputation": 185,
+        "user_id": 5820408,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/6ff9cb44778611c4a0f474e1bc832d23?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Tovich",
+        "link": "https://stackoverflow.com/users/5820408/tovich"
+    },
+    "is_answered": false,
+    "view_count": 34,
+    "answer_count": 0,
+    "score": 1,
+    "last_activity_date": 1603394195,
+    "creation_date": 1603369098,
+    "question_id": 64482052,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/64482052/blazor-webassembly-jwt-in-headers-before-my-app",
+    "title": "Blazor Webassembly - JWT in headers (before my app)",
+    "body": "<p>How can I use a JWT which is issued upstream of my application (Webassembly hosted by ASP.NET Core)?</p>\n<ol>\n<li>The customer clicks on the URL <a href=\"http://www.example.com\" rel=\"nofollow noreferrer\">www.example.com</a></li>\n<li>An external provider takes care of the authentication (before my Blazor app - Webassembly hosted by ASP.NET Core)</li>\n<li>The external provider redirects the user to <a href=\"http://www.example.com/myblazorapp\" rel=\"nofollow noreferrer\">www.example.com/myblazorapp</a> with the JWT in the headers</li>\n<li>&quot;MyBlazorApp&quot; must retrieve this JWT and use it during future calls to APIs</li>\n</ol>\n"
+}

@@ -1,0 +1,29 @@
+{
+    "tags": [
+        "asp.net-core",
+        "authentication",
+        "jwt",
+        "blazor",
+        "webassembly"
+    ],
+    "owner": {
+        "reputation": 137,
+        "user_id": 4299188,
+        "user_type": "registered",
+        "accept_rate": 75,
+        "profile_image": "https://www.gravatar.com/avatar/bec4a2ab7bf4babfbf3dfdf12f3297c4?s=128&d=identicon&r=PG&f=1",
+        "display_name": "muco",
+        "link": "https://stackoverflow.com/users/4299188/muco"
+    },
+    "is_answered": false,
+    "view_count": 7,
+    "answer_count": 0,
+    "score": 0,
+    "last_activity_date": 1617704734,
+    "creation_date": 1617704734,
+    "question_id": 66966873,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/66966873/denyanonymousauthorizationrequirement-error-in-blazor-wasm",
+    "title": "DenyAnonymousAuthorizationRequirement Error in Blazor WASM",
+    "body": "<p>I am work on a Blazor Webassembly hosted app that use JWT authentication/authorization. When I run the project and try to register or login, I take this error.<a href=\"https://i.stack.imgur.com/or3fg.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/or3fg.png\" alt=\"enter image description here\" /></a></p>\n<p>How should I catch this error.</p>\n<pre><code>//ConfigureServices\n    \n\n        services.AddIdentity&lt;IdentityUser, IdentityRole&gt;()\n            .AddEntityFrameworkStores&lt;ApplicationDbContext&gt;()\n            .AddDefaultTokenProviders();\n\n        services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)\n            .AddJwtBearer(options =&gt;\n\n            options.TokenValidationParameters = new TokenValidationParameters\n            {\n               \n                ValidateIssuer = false,\n                ValidateAudience = false,\n                ValidateLifetime = true,\n                ValidateIssuerSigningKey = true,\n                IssuerSigningKey = new SymmetricSecurityKey(\n                    Encoding.UTF8.GetBytes(Configuration[&quot;jwt:key&quot;])),\n                ClockSkew = TimeSpan.Zero\n\n            }); ;\n    \n</code></pre>\n<p>//Configure Method</p>\n<pre><code>public void Configure(IApplicationBuilder app, IWebHostEnvironment env)\n        {\n            if (env.IsDevelopment())\n            {\n                app.UseDeveloperExceptionPage();\n                app.UseWebAssemblyDebugging();\n            }\n            else\n            {\n                app.UseExceptionHandler(&quot;/Error&quot;);\n                app.UseHsts();\n            }\n\n            app.UseHttpsRedirection();\n            app.UseBlazorFrameworkFiles();\n            app.UseStaticFiles();\n\n            app.UseRouting();\n            app.UseAuthentication();\n            app.UseAuthorization();\n            \n            app.UseEndpoints(endpoints =&gt;\n            {\n                endpoints.MapRazorPages().RequireAuthorization();\n                endpoints.MapControllers().RequireAuthorization();\n                endpoints.MapFallbackToFile(&quot;index.html&quot;);\n            });\n        }\n</code></pre>\n"
+}

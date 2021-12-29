@@ -1,0 +1,28 @@
+{
+    "tags": [
+        "c#",
+        "asp.net-core",
+        "blazor",
+        ".net-5",
+        "asp.net-blazor"
+    ],
+    "owner": {
+        "reputation": 143,
+        "user_id": 5190129,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/9560a8089760f9764495207f118a59cd?s=128&d=identicon&r=PG&f=1",
+        "display_name": "JvS",
+        "link": "https://stackoverflow.com/users/5190129/jvs"
+    },
+    "is_answered": false,
+    "view_count": 123,
+    "answer_count": 0,
+    "score": 0,
+    "last_activity_date": 1609703766,
+    "creation_date": 1609703766,
+    "question_id": 65554308,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/65554308/can-no-longer-run-blazor-application-without-visual-studio-after-upgrade-to-net",
+    "title": "Can no longer run Blazor application without Visual Studio after upgrade to .NET 5.0",
+    "body": "<p>I have recently upgraded a set of Blazor (ASP.NET Core\u2013hosted WebAssembly) projects from .NET Core 3.1 to .NET 5.0. After having done this, I noticed I can no longer simply run the compiled executable and navigate to the localhost:xxxx address in the browser to use my application. Yet, when I run or debug my application from Visual Studio, it works fine.</p>\n<p>I can get a similar situation by simply creating a new .NET 5.0 ASP.NET Core\u2013hosted Blazor WebAssembly App from the template, building it, running the executable in the server project's bin folder from Windows Explorer and trying to navigate to the address (localhost:xxxx) in the browser. Curiously, the same thing seems to happen when I create it in .NET Core 3.1.</p>\n<p>When I use the browser to navigate to localhost:xxxx, I get a 404 on the https address and get redirected to https from http even when I have unchecked Enable SSL in the reproduction solution. I also get the 404 when I use the https address to try to navigate to my application (which at the moment has SSL disabled), but I get an ERR_INVALID_HTTP_RESPONSE when I try to navigate to the http address. On the other hand, calls to a subaddress that hit the API (localhost:xxxx/api/Foo/Get) will work, though only for https.</p>\n<p>I have trusted the self-signed certificate, so that at least isn't the problem.</p>\n<p>What has changed or am I now doing wrong?</p>\n"
+}

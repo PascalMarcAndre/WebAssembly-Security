@@ -1,0 +1,30 @@
+{
+    "tags": [
+        "c#",
+        "asp.net-core",
+        "nunit",
+        "blazor",
+        "blazor-client-side"
+    ],
+    "owner": {
+        "reputation": 244,
+        "user_id": 5574962,
+        "user_type": "registered",
+        "profile_image": "https://i.stack.imgur.com/EmmZL.png?s=128&g=1",
+        "display_name": "3per",
+        "link": "https://stackoverflow.com/users/5574962/3per"
+    },
+    "is_answered": true,
+    "view_count": 283,
+    "accepted_answer_id": 65745288,
+    "answer_count": 2,
+    "score": 3,
+    "last_activity_date": 1610756771,
+    "creation_date": 1597904346,
+    "last_edit_date": 1608265666,
+    "question_id": 63499351,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/63499351/cannot-get-index-html-from-a-nunit-test",
+    "title": "Cannot get index.html from a NUnit test",
+    "body": "<p>I try to write end-end test with NUnit and Asp.net-core-hosted Blazor WebAssembly Application.</p>\n<p>I created a new project with 3.1.7 template.\nThen I just add a NUnit project and write simple test.</p>\n<pre><code>private const string serviceUrl = &quot;https://localhost:50200&quot;;\nprivate HttpClient _httpClient;\n\n[OneTimeSetUp]\npublic void Init()\n{\n    var arguments = new string[0];\n    var builder = Program.CreateHostBuilder(arguments);\n\n    _httpClient = new HttpClient();\n\n    builder\n        .ConfigureWebHostDefaults(w =&gt; w.UseUrls(serviceUrl))\n        .Build()\n        .Start();\n}\n\n[Test]\npublic async Task HomePageResponcesOk()\n{            \n    var requestUrl = serviceUrl;\n    var response = await _httpClient.GetAsync(requestUrl);\n    Assert.AreEqual(HttpStatusCode.OK, response.StatusCode);\n}\n\n[Test]\npublic async Task ApiResponcesOk()\n{\n    var requestUrl = $&quot;{serviceUrl}/WeatherForecast&quot;;\n    var response = await _httpClient.GetAsync(requestUrl);\n    Assert.AreEqual(HttpStatusCode.OK, response.StatusCode);\n}\n</code></pre>\n<p>I've changed nothing else.</p>\n<p>I get the next result</p>\n<pre><code>Test                        Duration  Error Message\nHomePageResponcesOk Failed  45 ms     Expected: OK   But was:  NotFound \nApiResponcesOk      Passed  364 ms      \n</code></pre>\n<p>What I do wrong?</p>\n<p>I can point out, that it works fine in more early Blazor WebAssembly versions.</p>\n<hr />\n<p>I have added yet two other tests</p>\n<pre><code>[Test]\npublic async Task AppCssResponcesOk()\n{\n    var requestUrl = $&quot;{serviceUrl}/css/app.css&quot;;\n    var response = await _httpClient.GetAsync(requestUrl);\n    Assert.AreEqual(HttpStatusCode.OK, response.StatusCode);\n}\n\n[Test]\npublic async Task WebAssemblyResponcesOk()\n{\n    var requestUrl = $&quot;{serviceUrl}/_framework/blazor.webassembly.js&quot;;\n    var response = await _httpClient.GetAsync(requestUrl);\n    Assert.AreEqual(HttpStatusCode.OK, response.StatusCode);\n}\n</code></pre>\n<p>They return the same result <code>Failed  45 ms     Expected: OK   But was:  NotFound</code>.</p>\n<p>I assume that <code>app.UseStaticFiles();</code> does not work how I expect. May it be true? How fix it?</p>\n<hr />\n<p>So, when test project started, the backend does not know where <em>wwwroot</em> is. It can be fixed with <code>UseWebRoot()</code>.</p>\n<pre><code>builder\n    .ConfigureWebHostDefaults(w =&gt;\n    {\n        w.UseUrls(serviceUrl);\n        w.UseWebRoot(@&quot;..\\..\\..\\..\\BlazorApp2\\Client\\wwwroot&quot;);\n    })\n   .Build()\n   .Start();\n</code></pre>\n<p>All tests passed successfully, except <code>WebAssemblyResponcesOk()</code>. It is beacause of  the file placed in another directory <code>\\BlazorApp2\\Client\\bin\\Debug\\netstandard2.1\\wwwroot\\_framework</code>.\nIf I add second <code>.UseWebRoot()</code> then just first one be cancelled.</p>\n<hr />\n<p>Ok, I dive into ASP.Net Core source code with the debugger.</p>\n<p>There are next facts.</p>\n<p>If run backend project, then <code>_fileProvider</code> field in the class <code>StaticFileMiddleware</code> gets a complex value with next structure:</p>\n<pre><code>CompositeFileProvider-- ._fileProviders\n                               |                  \n                               +-- NullFileProvider\n                               |\n                               +-- StaticWebAssetsFileProvider-- .InnerProvider\n                                                                       |\n                                                             PhysicalFileProvider\n                               |\n                               +-- StaticWebAssetsFileProvider-- .InnerProvider\n                                                                       |    \n                                                             PhysicalFileProvider\n</code></pre>\n<p>One<code>PhysicalFileProvider</code> is targeted to <em>wwwroot</em> in the source code, another to <em>wwwroot</em> in the <code>/bin</code>.</p>\n<p>If run the tests, <code>StaticFileMiddleware</code> <code>_fileProvider</code> gets simple <code>PhysicalFileProvider</code> target as <code>UseWebRoot()</code> argument is. If I return to version without <code>UseWebRoot()</code>, <code>NullFileProvider</code> will be set there.</p>\n<p>Now I can realized what was hapenning on the start. But I still don't know what exactly has an effect on a StaticFileMiddleware file provider. The class construcor gets the value with a injection of <code>IOptions&lt;StaticFileOptions&gt;</code>.</p>\n<p>Where should I set a breakpoint for catching DI registration of this type?</p>\n"
+}

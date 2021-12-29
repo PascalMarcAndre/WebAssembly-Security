@@ -1,0 +1,26 @@
+{
+    "tags": [
+        "httpclient",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 11,
+        "user_id": 6342840,
+        "user_type": "registered",
+        "profile_image": "https://i.stack.imgur.com/NlQNq.jpg?s=128&g=1",
+        "display_name": "bedrock",
+        "link": "https://stackoverflow.com/users/6342840/bedrock"
+    },
+    "is_answered": false,
+    "view_count": 15,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1617197624,
+    "creation_date": 1617138843,
+    "last_edit_date": 1617175547,
+    "question_id": 66878555,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/66878555/how-to-fix-the-http-put-delet-errors-in-webassembly-app",
+    "title": "How to Fix the HTTP PUT &amp; DELET Errors in WebAssembly App",
+    "body": "<p>I have built a small WebAssembly app to test with Web Services using HTTPClient.</p>\n<ol>\n<li>The Web serivices on server side is build with ASP.NET CORE (.NET 5).  All APIs are successfully tested using PostMan.</li>\n<li>The WebAssembly at client side is also created with .NET 5.</li>\n<li>Both of them are using HTTPS.</li>\n<li>The CORS has been enabled on the Server side.</li>\n</ol>\n<p>In WebAssembly app, the HttpClient.GetFromJsonAsync &amp; HttpClient.PostAsJsonAsync are working fine.</p>\n<p>I encountered following error when using HttpClient.PutAsync, HttpClient.PutAsJsonAsync or HttpClient.DeleteAsync. (The test code segments are posted at the end).</p>\n<p>It looks like that the PUT &amp; DELETE requests were being blocked for some reason and did not reach the Web service at all. If the reason is security, why the POST request is working.  I'll appreciate any help or suggestion on how to fix the problems related to PUT &amp; DELETE.</p>\n<p>Error messages:</p>\n<pre><code>Loaded 8.62 MB resources from cache\nLoaded 0.06 MB resources from network\n'iisexpress.exe' (CoreCLR: clrhost): Loaded 'C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\5.0.4\\System.Buffers.dll'. Skipped loading symbols. Module is optimized and the debugger option 'Just My Code' is enabled.\nmono_wasm_runtime_ready fe00e07a-5519-4dfe-b35a-f867dbaf2e28\ncrit: Microsoft.AspNetCore.Components.WebAssembly.Rendering.WebAssemblyRenderer[100]\n      Unhandled exception rendering component: TypeError: Failed to fetch\nSystem.Net.Http.HttpRequestException: TypeError: Failed to fetch\n   at System.Net.Http.BrowserHttpHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)\n   at System.Net.Http.HttpClient.SendAsyncCore(HttpRequestMessage request, HttpCompletionOption completionOption, Boolean async, Boolean emitTelemetryStartStop, CancellationToken cancellationToken)\n   at BlazorWebAssembly.Pages.List.HandleDelete(Person p) in C:\\Users\\yyang\\source\\repos\\Advanced\\BlazorWebAssembly\\Pages\\List.razor:line 72\n   at Microsoft.AspNetCore.Components.ComponentBase.CallStateHasChangedOnAsyncCompletion(Task task)\n   at Microsoft.AspNetCore.Components.RenderTree.Renderer.GetErrorHandledTask(Task taskToHandle)\nThe thread 0x5624 has exited with code 0 (0x0).\nThe thread 0x5818 has exited with code 0 (0x0).\nThe thread 0x1420 has exited with code 0 (0x0).\nThe thread 0x53b8 has exited with code 0 (0x0).\n</code></pre>\n<pre><code>TEST CODE USING Http.PutAsync\n\npublic async Task HandleValidSubmit()\n{\n    if (Mode == &quot;Edit&quot;)\n    {\n        Person2 p2 = new Person2();\n        p2.CopyData(PersonData);\n\n        string data = JsonSerializer.Serialize(p2);\n        StringContent centent = new StringContent(data, UnicodeEncoding.UTF8, &quot;application/json&quot;);\n\n        HttpResponseMessage response = await Http.PutAsync(&quot;/api/people&quot;, centent);\n\n        if (!response.IsSuccessStatusCode)\n        {\n            string statusCode = response.StatusCode.ToString();\n            string reason = response.ReasonPhrase;\n        }\n    }\n    else\n    {\n        await Http.PostAsJsonAsync&lt;Person&gt;(&quot;/api/people&quot;, PersonData);\n    }\n\n    NavManager.NavigateTo(&quot;/people&quot;);\n}\n\n==============================================================================  \nTEST CODE USING Http.PutAsJsonAsync\n\npublic async Task HandleValidSubmit()\n{\n    if (Mode == &quot;Edit&quot;)\n    {\n        Person2 p2 = new Person2();\n        p2.CopyData(PersonData);\n\n        HttpResponseMessage response = await Http.PutAsJsonAsync&lt;Person2&gt;(&quot;/api/people&quot;, p2);\n\n        if (!response.IsSuccessStatusCode)\n        {\n            string statusCode = response.StatusCode.ToString();\n            string reason = response.ReasonPhrase;\n        }\n    }\n    else\n    {\n        await Http.PostAsJsonAsync&lt;Person&gt;(&quot;/api/people&quot;, PersonData);\n    }\n\n    NavManager.NavigateTo(&quot;/people&quot;);\n}\n==============================================================================  \nTEST CODE USING Http.DeleteAsync\n\npublic async Task HandleDelete(Person p)\n{\n    HttpResponseMessage resp = await http.DeleteAsync($&quot;/api/people/{p.PersonId}&quot;);\n\n    if (resp.IsSuccessStatusCode)\n    {\n        await UpdateData();\n    }\n    else\n    {\n        errMsg = resp.ReasonPhrase;\n    }\n}   \n</code></pre>\n"
+}

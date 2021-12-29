@@ -1,0 +1,29 @@
+{
+    "tags": [
+        ".net",
+        "asp.net-core",
+        "blazor-client-side",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 4458,
+        "user_id": 210456,
+        "user_type": "registered",
+        "accept_rate": 75,
+        "profile_image": "https://www.gravatar.com/avatar/20387dcb084b25f5f6a2ac41ee22431e?s=128&d=identicon&r=PG",
+        "display_name": "Dragouf",
+        "link": "https://stackoverflow.com/users/210456/dragouf"
+    },
+    "is_answered": true,
+    "view_count": 1269,
+    "accepted_answer_id": 63387729,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1597289382,
+    "creation_date": 1597241505,
+    "question_id": 63378376,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/63378376/blazor-webassembly-add-authorize-attribute-at-layout-level",
+    "title": "Blazor WebAssembly. Add Authorize attribute at layout level",
+    "body": "<p>I started from a visual studio template, a new Blazor WebAssembly with authentication and web API as the server-side.</p>\n<p>My problem there is to protect all the pages and not just some pages. I tried to add :</p>\n<pre><code>@using Microsoft.AspNetCore.Authorization\n@attribute [Authorize]\n</code></pre>\n<p>to the MainLayout instead of all pages but without any luck.\nI wanted to do that because I'm writing an admin and I don't want people to see the layout at all if there are not connected</p>\n"
+}

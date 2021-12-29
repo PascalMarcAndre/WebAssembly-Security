@@ -1,0 +1,30 @@
+{
+    "tags": [
+        "oauth-2.0",
+        "dropbox-api",
+        "session-storage",
+        "blazor-webassembly",
+        "pkce"
+    ],
+    "owner": {
+        "reputation": 2387,
+        "user_id": 479701,
+        "user_type": "registered",
+        "accept_rate": 43,
+        "profile_image": "https://www.gravatar.com/avatar/45b3e24b791b1a4a75cf074fdde05d31?s=128&d=identicon&r=PG",
+        "display_name": "Andy Raddatz",
+        "link": "https://stackoverflow.com/users/479701/andy-raddatz"
+    },
+    "is_answered": false,
+    "view_count": 91,
+    "answer_count": 0,
+    "score": 1,
+    "last_activity_date": 1607009120,
+    "creation_date": 1606689475,
+    "last_edit_date": 1607009120,
+    "question_id": 65065966,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/65065966/how-can-i-implement-dropbox-oauth2-pkce-flow-with-blazor-webassembly",
+    "title": "How can I implement Dropbox OAuth2 + PKCE flow with Blazor Webassembly?",
+    "body": "<p>I am trying to use the Dropbox.Api dotnet SDK, which is built on netstandard 2.0, by translating the example <a href=\"https://github.com/dropbox/dropbox-sdk-dotnet/tree/main/dropbox-sdk-dotnet/Examples/OAuthPKCE\" rel=\"nofollow noreferrer\">from the docs here</a> into a Blazor Webassembly project.  I have narrowed down the issue to the fact that the <code>PKCEOAuthFlow</code> class uses private members <code>CodeVerifier</code> and <code>CodeChallenge</code> to implement the PKCE flow, and these private members are generated and set only in the constructor, which makes sense.</p>\n<p>So here is specifically where I am stuck: How can I persist that <em>exact</em> object with its one-time generated <code>CodeVerifier/CodeChallenge</code> which must be the same when I try to call <code>ProcessCodeFlowAsync</code> after the Dropbox redirect back to my app?</p>\n<p>I have tried the following:</p>\n<ol>\n<li>Opening the dropbox authorize URL in a new tab so that the main tab stays open. This fails because when Dropbox redirects the user back, they stay in the new tab and my object is only still alive back in the first tab.</li>\n<li>Making an <code>ILoginService</code> class, injecting it into my pages as a singleton by doing <code>builder.Services.AddSingleton&lt;ILoginService, DropboxLoginService&gt;();</code> inside <code>Program.cs</code>, but I always get a new one.  I am not sure exactly why this fails, but I believe that the entire Webassembly app goes out of scope when I send the user to Dropbox and after the redirect it has to create a new <code>ILoginService</code> anyways.</li>\n<li>I also tried making my entire <code>DropboxLoginService</code> class <code>static</code>, with a static <code>PKCEOAuthFlow</code> member set in the static constructor.  I also end up with a new object every time when I do it this way, probably for the same reason as #2.</li>\n<li>I tried saving my object to the browser session storage using <code>Blazored.SessionStorage</code>, but I quickly realized this does not persist any private members, and the object that I retrieve after the redirect again has a new <code>CodeVerifier</code> and <code>CodeChallenge</code>.</li>\n<li>DID NOT TRY THIS YET - I think that MAYBE I could serialize the entire object in some binary format, then save a base64 string to the session storage to retrieve it later.  However, this feels like a security hole considering that the whole point of PKCE is to avoid untrustworthy storage with sensitive information.  It would basically negate the security since an intrepid hacker could possibly get at that object and MITM my user somehow.  Basically it is no more secure than going back to normal OAuth2 with my app secret stored somewhere.</li>\n</ol>\n<p>Am I making this too complicated?  Is there some way to keep my <code>PKCEOAuthFlow</code> object in memory from the start to the end of my flow, across the 2 redirects from my app -&gt; Dropbox -&gt; back to my app?  I think this question goes beyond Dropbox and would apply to any OAuth2 + PKCE flow implementation in Blazor Webassembly, or really any serverless SPA or PWA.</p>\n"
+}

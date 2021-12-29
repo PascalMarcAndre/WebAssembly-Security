@@ -1,0 +1,28 @@
+{
+    "tags": [
+        "authentication",
+        "amazon-cognito",
+        "blazor",
+        "webassembly"
+    ],
+    "owner": {
+        "reputation": 1,
+        "user_id": 13259718,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/3d929f0ee668666c8789576f6e5fe3be?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Steve Pearson",
+        "link": "https://stackoverflow.com/users/13259718/steve-pearson"
+    },
+    "is_answered": false,
+    "view_count": 111,
+    "closed_date": 1591606057,
+    "answer_count": 0,
+    "score": 0,
+    "last_activity_date": 1591535838,
+    "creation_date": 1591535838,
+    "question_id": 62245922,
+    "link": "https://stackoverflow.com/questions/62245922/standalone-blazor-webassembly-authentication-very-slow",
+    "closed_reason": "Duplicate",
+    "title": "Standalone Blazor WebAssembly authentication very slow",
+    "body": "<p>Using AddOidcAuthentication and linking to AWS Cognito service resulting in a huge delay between start of the auth process and redirecting to AWS for sign in.  This appears even using a very vanilla Blazor app and add in support for authentication as per Microsoft Docs.  Looking to see if anyone else I experiencing this issue and or workaround/fix?</p>\n\n<p>Json options very simple</p>\n\n<p><div class=\"snippet\" data-lang=\"js\" data-hide=\"false\" data-console=\"true\" data-babel=\"false\">\r\n<div class=\"snippet-code\">\r\n<pre class=\"snippet-code-js lang-js prettyprint-override\"><code>  \"OidcProviderOptions\": {\r\n    \"Authority\": \"https://cognito-idp.eu-west-2.amazonaws.com/eu-west-XXXXXXXXX\",\r\n    \"ClientId\": \"CLIENT_ID\"\r\n  },</code></pre>\r\n</div>\r\n</div>\r\n</p>\n\n<p>Auth process initially throws an error due to 'X-Frame-Options' to 'DENY' imposed by Cognito.  There then follows a 10 second delay before it redirects to the login screen - no other requests present during that time.</p>\n"
+}

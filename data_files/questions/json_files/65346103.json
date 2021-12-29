@@ -1,0 +1,27 @@
+{
+    "tags": [
+        "asp.net-core",
+        "signalr",
+        "signalr-hub",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 171,
+        "user_id": 2922795,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/0c4acb3c0c6d438632a9e144a022ae4f?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Alasdair Thomson",
+        "link": "https://stackoverflow.com/users/2922795/alasdair-thomson"
+    },
+    "is_answered": false,
+    "view_count": 92,
+    "answer_count": 0,
+    "score": 1,
+    "last_activity_date": 1608228521,
+    "creation_date": 1608228521,
+    "question_id": 65346103,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/65346103/hubconnectioncontext-user-property-not-populated-for-signalr-blazor-wasm-ide",
+    "title": "HubConnectionContext.User property not populated for SignalR / Blazor WASM / IdentityServer hubs",
+    "body": "<p>I followed the tutorial <a href=\"https://docs.microsoft.com/en-us/aspnet/core/tutorials/signalr-blazor-webassembly?view=aspnetcore-5.0&amp;tabs=visual-studio\" rel=\"nofollow noreferrer\">Use ASP.NET Core SignalR with a hosted Blazor WebAssembly app</a> and <a href=\"https://docs.microsoft.com/en-us/aspnet/core/signalr/authn-and-authz?view=aspnetcore-5.0\" rel=\"nofollow noreferrer\">Authentication and authorization in ASP.NET Core SignalR</a> to create an authenticated SignalR hub.</p>\n<p>However I can't get the logged in user from the hub Context.User.Identity.Name object.</p>\n<p>Upon user creation I have added a claim:</p>\n<pre><code>await _userManager.AddClaimAsync(user, new Claim(ClaimTypes.Email, Input.Email));\n</code></pre>\n<p>In Startup.cs I have registered this IUserIdProvider and setting a breakpoint confirms it gets called during runtime but it returns null.</p>\n<pre><code>public class EmailBasedUserIdProvider : IUserIdProvider\n{\n    public virtual string GetUserId(HubConnectionContext connection)\n    {\n        return connection.User?.FindFirst(ClaimTypes.Email)?.Value;\n    }\n}\n</code></pre>\n<p>In the hub, I have set the [Authorize] attribute but the Context.User.Identity object is null for the Name property and if I look in the Claims collection, the SQLServer user Id is present but nothing else.</p>\n<p>I suspect the problem is in the EmailBasedUserIdProvider which is unable to find the Email claim because it is not there on the connection.User object. What needs to be done to make this available?</p>\n<p>Thanks</p>\n"
+}

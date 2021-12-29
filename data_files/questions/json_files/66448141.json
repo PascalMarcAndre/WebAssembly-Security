@@ -1,0 +1,30 @@
+{
+    "tags": [
+        "c#",
+        "azure",
+        "blazor",
+        "identityserver4",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 36381,
+        "user_id": 3850405,
+        "user_type": "registered",
+        "accept_rate": 64,
+        "profile_image": "https://www.gravatar.com/avatar/b2b9eece8c493ba7ddcff82f845ff2af?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Ogglas",
+        "link": "https://stackoverflow.com/users/3850405/ogglas"
+    },
+    "is_answered": false,
+    "view_count": 104,
+    "answer_count": 0,
+    "score": 0,
+    "last_activity_date": 1614772217,
+    "creation_date": 1614724590,
+    "last_edit_date": 1614725151,
+    "question_id": 66448141,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/66448141/blazor-app-useidentityserver-with-pfx-key-file-unexpected-character-enco",
+    "title": "Blazor - app.UseIdentityServer(); with .pfx key file - Unexpected character encountered while parsing number",
+    "body": "<p>I have created a new Blazor WebAssembly App with Individual User Accounts, Store user accounts in-app and ASP.NET Core hosted in .NET 5. When deploying my app to Azure App Service I get the following error:</p>\n<blockquote>\n<p>Object reference not set to an instance of an object.at\nMicrosoft.Extensions.DependencyInjection.IdentityServerBuilderConfigurationExtensions</p>\n</blockquote>\n<p>Reading these links I have to provide my own certificate in production for IdentityServer:</p>\n<p><a href=\"https://stackoverflow.com/q/64186403/3850405\">Blazor Web Assembly App .Net Core Hosted: publish runtime error</a></p>\n<p><a href=\"https://stackoverflow.com/a/56904000/3850405\">https://stackoverflow.com/a/56904000/3850405</a></p>\n<p><a href=\"https://docs.microsoft.com/en-us/aspnet/core/security/authentication/identity-api-authorization?view=aspnetcore-5.0#example-deploy-to-azure-app-service\" rel=\"nofollow noreferrer\">https://docs.microsoft.com/en-us/aspnet/core/security/authentication/identity-api-authorization?view=aspnetcore-5.0#example-deploy-to-azure-app-service</a></p>\n<p>I then created a <code>.pfx</code> file like this and I have verified that it works and my password is correct.</p>\n<p><a href=\"https://stackoverflow.com/a/48790088/3850405\">https://stackoverflow.com/a/48790088/3850405</a></p>\n<p>I then placed the <code>.pfx</code> file in my <code>Server</code> projects root folder and marked <code>Copy to Output Directory</code> as <code>Copy Always</code>.</p>\n<p>I then updated <code>appsettings.json</code> to look like this:</p>\n<pre><code>  &quot;IdentityServer&quot;: {\n    &quot;Clients&quot;: {\n      &quot;BlazorTest.Client&quot;: {\n        &quot;Profile&quot;: &quot;IdentityServerSPA&quot;\n      }\n    },\n    &quot;Key&quot;: {\n      &quot;Type&quot;: &quot;File&quot;,\n      &quot;FilePath&quot;: &quot;localhost.pfx&quot;,\n      &quot;Password&quot;: &quot;MySercurePassword123?&quot;\n    }\n  },\n</code></pre>\n<p>Now the project does not work neither locally or on Azure. It fails on <code>app.UseIdentityServer();</code> in <code>Startup.cs</code> with the following error:</p>\n<blockquote>\n<p>Newtonsoft.Json.JsonReaderException: 'Unexpected character encountered\nwhile parsing number: \ufffd. Path '', line 1, position 1.'</p>\n</blockquote>\n<p>According to Microsoft docs my certificate should be valid:</p>\n<p>A production certificate to use for signing tokens.</p>\n<ul>\n<li>There are no specific requirements for this certificate; it can be a self-signed certificate or a certificate provisioned through a CA authority.</li>\n<li>It can be generated through standard tools like PowerShell or OpenSSL.</li>\n<li>It can be installed into the certificate store on the target machines or deployed as a .pfx file with a strong password.</li>\n</ul>\n<p><a href=\"https://docs.microsoft.com/en-us/aspnet/core/security/authentication/identity-api-authorization?view=aspnetcore-5.0#deploy-to-production\" rel=\"nofollow noreferrer\">https://docs.microsoft.com/en-us/aspnet/core/security/authentication/identity-api-authorization?view=aspnetcore-5.0#deploy-to-production</a></p>\n<p>If I load the key like this it works:</p>\n<pre><code>&quot;Key&quot;: {\n  &quot;Type&quot;: &quot;Store&quot;,\n  &quot;StoreName&quot;: &quot;My&quot;,\n  &quot;StoreLocation&quot;: &quot;CurrentUser&quot;,\n  &quot;Name&quot;: &quot;CN=blazortest&quot;\n}\n</code></pre>\n"
+}

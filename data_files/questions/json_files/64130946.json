@@ -1,0 +1,28 @@
+{
+    "tags": [
+        "multithreading",
+        "webpack",
+        "create-react-app",
+        "webassembly",
+        "emscripten"
+    ],
+    "owner": {
+        "reputation": 11,
+        "user_id": 14364999,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/916bf7050a5da81496113bac8d665964?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Ajohnson",
+        "link": "https://stackoverflow.com/users/14364999/ajohnson"
+    },
+    "is_answered": false,
+    "view_count": 190,
+    "answer_count": 0,
+    "score": 1,
+    "last_activity_date": 1601440550,
+    "creation_date": 1601440550,
+    "question_id": 64130946,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/64130946/use-emscripten-webassembly-threads-c-with-webpack-create-react-app",
+    "title": "Use emscripten webassembly threads (C++) with webpack (create-react-app)",
+    "body": "<p>I have an emscripten/webassembly wrapped C++ class that launches and uses pthreads internally.  It generally works fine when used in javascript on Chrome in its stand-alone development sandbox.  However, I can't really get it to work with create-react-app and webpack (i.e. I used react-app-rewired to be able to configure webpack).</p>\n<p>The problem seems to be from the complexity of the javascript and wasm files that a threaded emscripten build creates, and the confusion those scripts have due to the renaming of files that webpack produces.  The files produced for a multi-threaded emscipten build are:</p>\n<pre><code>MyModule.js\nMyModule.wasm\nMyModule.worker.js\n</code></pre>\n<p>I can (I think) get it to work in the non-threaded mode where there is just a <code>MyModule.js</code> and a <code>MyModule.wasm</code> file through the use of the <code>Module</code>'s <code>locateFile</code> method.  However, the system gets very confused due to the introduction of the new <code>MyModule.worker.js</code> file which the <code>MyModule.js</code> file launches on its own within a WebWorker.  And of course the <code>MyModule.worker.js</code> file needs to also find and get access to <code>MyModule.wasm</code>, and that gets lost too (i.e. can't find the right file name due to the webpack renaming).</p>\n<p>Anyway, I've spent hours searching the web for any successful use cases like this, and trying may things, including manually editing the <code>MyModule.js</code> and <code>MyModule.worker.js</code> files, but without any luck so far.</p>\n<p>Has anyone successfully tried something like this, or any other advice on getting a multi-threaded emscripten/wasm build to run properly with webpack (or create-react-app)?  Any advice would be greatly appreciated.</p>\n<p>NOTE: This question isn't about running a emscripten/webassembly module in a web-worker thread (although in the end I'm going to run all this in a web-worker).  Its specifically about a multi-threaded emscripten build (i.e. C++ with pthreads) launching and running properly with webpack.</p>\n"
+}

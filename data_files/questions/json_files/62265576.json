@@ -1,0 +1,28 @@
+{
+    "tags": [
+        "asp.net-core",
+        "asp.net-identity",
+        "service-worker",
+        "blazor",
+        "blazor-client-side"
+    ],
+    "owner": {
+        "reputation": 53,
+        "user_id": 3790293,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/53ac1d993595d282f84b147d1052bd16?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Andy Smith",
+        "link": "https://stackoverflow.com/users/3790293/andy-smith"
+    },
+    "is_answered": false,
+    "view_count": 672,
+    "answer_count": 0,
+    "score": 1,
+    "last_activity_date": 1607091808,
+    "creation_date": 1591630048,
+    "question_id": 62265576,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/62265576/blazor-wasm-pwa-offline-behaviour-with-server-side-requests",
+    "title": "Blazor WASM - PWA - Offline behaviour with server-side requests",
+    "body": "<p>I've created a new project using the default project template for a Blazor Webassembly app, with identity, asp.net core hosted, and PWA options checked.  This gives us a WASM blazor SPA app with some basic offline PWA ability, and a server-side asp.net core app.</p>\n\n<p>When authenticating with identity, the pages are served by the Server app.  As such, they can't be reached when the app is running offline.  This is to be expected, but the user experience (out of the box) in this scenario is poor with default 404, or \"you have no internet\" pages rendered by the browser.</p>\n\n<p>I'd like to clean this up so the user is safely/gracefully warned about the failure to GET the remote pages.  I started to look at the service-worker.js provided by the template and it already contains code to deal with \"connect\" and \"identity\" urls and ensure they are fetched from the server-side.  I've attempted to add to this by using the approach shown here - <a href=\"https://googlechrome.github.io/samples/service-worker/custom-offline-page/\" rel=\"nofollow noreferrer\">https://googlechrome.github.io/samples/service-worker/custom-offline-page/</a></p>\n\n<pre><code>async function onFetch(event) {\n    let cachedResponse = null;\n\n    var shouldServeIndexHtml = true;\n\n    console.info('Service worker: onFetch');\n\n    if (event.request.method === 'GET') {\n        // For all navigation requests, try to serve index.html from cache\n        // If you need some URLs to be server-rendered, edit the following check to exclude those URLs\n        shouldServeIndexHtml = event.request.mode === 'navigate'\n            &amp;&amp; !event.request.url.includes('/connect/')\n            &amp;&amp; !event.request.url.includes('/Identity/');\n\n        const request = shouldServeIndexHtml ? 'index.html' : event.request;\n        const cache = await caches.open(cacheName);\n        cachedResponse = await cache.match(request);\n    }\n\n    console.info('Service worker event.request.url: ' + event.request.url);\n\n    if (cachedResponse != null) {\n        console.info('Service worker we have cachedResponse: ' + cachedResponse.url);\n        return cachedResponse\n\n    } else {\n        console.info('Service worker cachedResponse is null, starting fetch ');\n\n        try {\n            const networkResponse = await fetch(event.request);\n            return networkResponse;\n        } catch (error) {\n            // catch is only triggered if an exception is thrown, which is likely\n            // due to a network error.\n            // If fetch() returns a valid HTTP response with a response code in\n            // the 4xx or 5xx range, the catch() will NOT be called.\n            console.log('Fetch failed; returning offline page instead.', error);\n\n            console.log('Fetch failed shouldServeIndexHtml ',shouldServeIndexHtml);\n\n            if (shouldServeIndexHtml == false) {\n\n                console.log('Fetch failed, attempting fallback');\n\n                const request = 'index.html';\n                const cache = await caches.open(cacheName);\n                cachedResponse = await cache.match(request);\n\n                if (cachedResponse != null) {\n                    console.info('Service worker we have fallback cachedResponse: ' + cachedResponse.url);\n                    return cachedResponse\n\n                } else {\n                    console.info('Service worker fallback cachedResponse is null');\n                }\n            }\n        }\n\n\n    }\n\n}\n</code></pre>\n\n<p>Code is rough at the moment, apologies!</p>\n\n<p>This <strong><em>almost</em></strong> works.  If a GET is attempted to a server page (identified with shouldServeIndexHtml = false), it now attempts the fetch in a try/catch.  The catch then does fire, and I try to route to \"index.html\", but here is where it all falls down.  This ends with the Blazor client-side Router going to the NotFound layout.</p>\n\n<p>This makes me think that this isn't the best approach to this, but has anyone else attempted to sort this out using the service worker, or via another method?</p>\n"
+}

@@ -1,0 +1,27 @@
+{
+    "tags": [
+        "c",
+        "configuration-files",
+        "webassembly",
+        "emcc"
+    ],
+    "owner": {
+        "reputation": 2004,
+        "user_id": 9724750,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/5ab06fab3d1d9317889437631ef0ccce?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Neil",
+        "link": "https://stackoverflow.com/users/9724750/neil"
+    },
+    "is_answered": true,
+    "view_count": 43,
+    "answer_count": 1,
+    "score": 2,
+    "last_activity_date": 1612377659,
+    "creation_date": 1609161937,
+    "question_id": 65478323,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/65478323/webassembly-c-how-can-i-create-configuration-files",
+    "title": "webassembly (C) How can I create configuration files?",
+    "body": "<p>I would like to create configuration for my webassembly app. It just needs to be able to store some key-value pairs: whether it's JSON, XML, .cfg, .csv or .txt any will do. Is it possible to do this with webassembly? Do I need to serve the config files or how will the configuration file need to be delivered to the client? What path will I use to open the file?</p>\n<p>Further info:\nI'm using straight C with emcc. My build command is:</p>\n<pre><code>emcc \\\nmain.c \\\n-s USE_SDL=2 \\\n-O3 \\\n-s WASM=1 \\\n-o main.js \n</code></pre>\n<p>I am not exposing anything to javascript. It's all wasm manipulating the canvas with SDL. I haven't written any javascript.</p>\n<p>I'm currently serving with Python's simple http server using <code>python3 -m http.server 8080</code></p>\n<p>I have already tried using libconfig but I got stuck with compiling it and having it find the config file.</p>\n"
+}

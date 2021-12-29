@@ -1,0 +1,29 @@
+{
+    "tags": [
+        "authentication",
+        "jwt",
+        "authorization",
+        "blazor-server-side"
+    ],
+    "owner": {
+        "reputation": 801,
+        "user_id": 4362292,
+        "user_type": "registered",
+        "accept_rate": 16,
+        "profile_image": "https://www.gravatar.com/avatar/720b1bb494ff131908fa3a7cf9e22ba2?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Kle",
+        "link": "https://stackoverflow.com/users/4362292/kle"
+    },
+    "is_answered": false,
+    "view_count": 287,
+    "answer_count": 0,
+    "score": 2,
+    "last_activity_date": 1586429629,
+    "creation_date": 1586420381,
+    "last_edit_date": 1586429629,
+    "question_id": 61116803,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/61116803/using-jwt-authentication-without-identity-at-blazor-server-app-login-page",
+    "title": "Using JWT Authentication without Identity at Blazor Server app Login page",
+    "body": "<p>Normally in the current authentication we\u2019re using, after the user name and password is entered from login UI, the credentials are checked at server side and if the user is authorized then a JWT token is sent back to client and this JWT token is saved in localstorage. The [Authorize] tag is doing the authorization in the middleware. </p>\n\n<p>I want to use Blazor\u2019s CascadingAuthenticationState, AuthorizeView and JWT authentication without using Identity library, is this possible? Now I used Blazored.LocalStorage.IlocalStorageService and saved the token to localstorage. How can I add token to each requests. Most of examples are blazor webassembly. I could not find similar scenario  like mine. Is Using Identity the only way to authentication blazor server app. I have to use my own server and middleware so I wont use Identity? Or maybe I should create hybrit way to use both of them. What is your suggestion?</p>\n"
+}

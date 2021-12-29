@@ -1,0 +1,26 @@
+{
+    "tags": [
+        "blazor",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 37,
+        "user_id": 2870553,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/80b8f1fc68df76e5e69ac6549e11e899?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Zero",
+        "link": "https://stackoverflow.com/users/2870553/zero"
+    },
+    "is_answered": true,
+    "view_count": 107,
+    "accepted_answer_id": 64508457,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1603556613,
+    "creation_date": 1603490503,
+    "question_id": 64507804,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/64507804/how-to-implement-custom-properties-in-applicationuser-in-blazor-3-2-webassembly",
+    "title": "How to implement custom properties in ApplicationUser in Blazor 3.2 Webassembly Hosted in .NetCore",
+    "body": "<p>I'm trying to get a custom property in the default template of Blazor WebAssembly 3.2, but when I debug the context.User.Identity.Name at the blazor.server part it is null. I can see the user is context.User.Identity.IsAUthenticated is true, but all the other properties seem null or empty.</p>\n<p>So to reproduce:</p>\n<ol>\n<li>Create a new Blazor WebAssembly 3.2 project</li>\n<li>Do the add-migration inital + database-update</li>\n<li>Start the blazor.server project and register a user and login</li>\n<li>Set a breakpoint on the Get method of the Weatherforecast.</li>\n<li>The context.User.Identity.Name is empty</li>\n</ol>\n<p>Anyone got a guide for this, or a hint where to look. Thanks</p>\n"
+}

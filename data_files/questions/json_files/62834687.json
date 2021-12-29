@@ -1,0 +1,30 @@
+{
+    "tags": [
+        "c#",
+        ".net-core",
+        "identityserver4",
+        "blazor",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 378,
+        "user_id": 889829,
+        "user_type": "registered",
+        "accept_rate": 53,
+        "profile_image": "https://www.gravatar.com/avatar/a934f0cea0fd2a104f8eb2cb411dbf3c?s=128&d=identicon&r=PG",
+        "display_name": "user889829",
+        "link": "https://stackoverflow.com/users/889829/user889829"
+    },
+    "is_answered": true,
+    "view_count": 528,
+    "accepted_answer_id": 62834951,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1594386300,
+    "creation_date": 1594385358,
+    "question_id": 62834687,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/62834687/is-it-possible-to-configure-blazor-webassembly-oidc-with-a-custom-login-componen",
+    "title": "Is it possible to configure Blazor WebAssembly oidc with a custom login component/page",
+    "body": "<p>I have a blazor wasm application configured with oidc authentication that is working properly. The site has 2 domains,</p>\n<ol>\n<li>identity.example.com running Identity Server 4</li>\n<li>example.com which servers up the blazor wasm site.</li>\n</ol>\n<p>Everything is working, when I add</p>\n<pre><code>@attribute [Authorize]\n</code></pre>\n<p>to a razor component the user (if not authenticated) is redirected to <a href=\"https://identity.example.com/Account/Login?ReturnUrl..\" rel=\"nofollow noreferrer\">https://identity.example.com/Account/Login?ReturnUrl..</a>.\nI was wondering if there was a way to implement a custom login page/component on the mysite.com domain, something like mysite.com/Login so the user would be redirected to that and that form would submit to to the identity domains AccountController and still have the framework handle the jwt token and...?</p>\n<p>I had a couple of other reasons first, I would like everything on the site to be behind authentication. Right now I have added @attribute [Authorize] to every page but this still causes the site to load and only after the user can see the site are they redirected to the login page on identity.example.com. It just looks kinda strange, next the Login page on identity.example.com  looks nothing like the rest of the site I would like to try to make the &quot;theming&quot; of the login page look like the rest of the site</p>\n<p>I have currently configured Oidc like this</p>\n<p><code>nuget package Microsoft.AspNetCore.Components.WebAssembly.Authentication</code></p>\n<p>in appsetting.json</p>\n<pre><code>{\n  &quot;oidc&quot;: {\n    &quot;Authority&quot;: &quot;https://identity.example.com/&quot;,\n    &quot;ClientId&quot;: &quot;abcd&quot;,\n    &quot;DefaultScopes&quot;: [\n      &quot;openid&quot;,\n      &quot;profile&quot;,\n      &quot;email&quot;\n    ],\n    &quot;PostLogoutRedirectUri&quot;: &quot;https://example.com&quot;,\n    &quot;ResponseType&quot;: &quot;code&quot;\n  }\n} \n</code></pre>\n<p>then in my Program.cs I have</p>\n<pre><code>builder.Services.AddOidcAuthentication(options =&gt; {\n  builder.Configuration.Bind(&quot;oidc&quot;, options.ProviderOptions);                  \n});\n</code></pre>\n<p>and in my wwwroot/index.html</p>\n<pre><code>&lt;script src=&quot;_content/Microsoft.AspNetCore.Components.WebAssembly.Authentication/AuthenticationService.js&quot;&gt;&lt;/script&gt;\n</code></pre>\n"
+}

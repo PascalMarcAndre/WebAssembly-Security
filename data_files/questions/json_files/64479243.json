@@ -1,0 +1,29 @@
+{
+    "tags": [
+        "c#",
+        "blazor",
+        "razor-pages",
+        "webassembly",
+        "authorize"
+    ],
+    "owner": {
+        "reputation": 106,
+        "user_id": 1333795,
+        "user_type": "registered",
+        "profile_image": "https://i.stack.imgur.com/dTk6I.jpg?s=128&g=1",
+        "display_name": "Adam Sieros\u0142awski",
+        "link": "https://stackoverflow.com/users/1333795/adam-sieros%c5%82awski"
+    },
+    "is_answered": true,
+    "view_count": 173,
+    "accepted_answer_id": 64541531,
+    "answer_count": 1,
+    "score": 1,
+    "last_activity_date": 1603731099,
+    "creation_date": 1603358808,
+    "question_id": 64479243,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/64479243/blazor-webassembly-with-server-side-razor-page-authorize-problem",
+    "title": "Blazor WebAssembly with server side Razor page authorize problem",
+    "body": "<p>I created the Blazor WebAssembly app in Visual Studio 2019 with options ASP.NET Core hosted and authentication (Individual User Accounts, Store user accounts in-app) on IdentityServer4. Program generated from Visual Studio. I did not modify anything. Everything works correctly. I'm able to log in and see the client side pages with [Authorize] attribute.</p>\n<p>In the next step I add a new Razor Page to the server side (not on the client side) - Reports.cshtml\nAfter starting the program, I can go to the newly created page. It works fine.</p>\n<p>Now I'm adding [Authorize] attribute to the server side Reports.cshtml page. After starting the program and loggin in, the attempt to display the Reports.cshtml page ends with an error: 401 Unauthorized</p>\n<p>What's wrong with that?</p>\n<p>Startup.cs</p>\n<pre><code>public void ConfigureServices(IServiceCollection services)\n{\n    services.AddDbContext&lt;ApplicationDbContext&gt;(options =&gt;\n        options.UseSqlServer(\n            Configuration.GetConnectionString(&quot;DefaultConnection&quot;)));\n\n    services.AddDefaultIdentity&lt;ApplicationUser&gt;(options =&gt; options.SignIn.RequireConfirmedAccount = false)\n        .AddEntityFrameworkStores&lt;ApplicationDbContext&gt;();\n\n    services.AddIdentityServer()\n        .AddApiAuthorization&lt;ApplicationUser, ApplicationDbContext&gt;();\n\n    services.AddAuthentication()\n        .AddIdentityServerJwt();\n\n    services.AddControllersWithViews();\n    services.AddRazorPages();\n}\n\npublic void Configure(IApplicationBuilder app, IWebHostEnvironment env)\n{\n    if (env.IsDevelopment())\n    {\n        app.UseDeveloperExceptionPage();\n        app.UseDatabaseErrorPage();\n        app.UseWebAssemblyDebugging();\n    }\n    else\n    {\n        app.UseExceptionHandler(&quot;/Error&quot;);\n        // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.\n        app.UseHsts();\n    }\n\n    app.UseHttpsRedirection();\n    app.UseBlazorFrameworkFiles();\n    app.UseStaticFiles();\n\n    app.UseRouting();\n\n    app.UseIdentityServer();\n    app.UseAuthentication();\n    app.UseAuthorization();\n\n    app.UseEndpoints(endpoints =&gt;\n    {\n        endpoints.MapRazorPages();\n        endpoints.MapControllers();\n        endpoints.MapFallbackToFile(&quot;index.html&quot;);\n    });\n}\n</code></pre>\n<p>appsettings.json</p>\n<pre><code>{\n  &quot;ConnectionStrings&quot;: {\n    &quot;DefaultConnection&quot;: &quot;Server=(localdb)\\\\mssqllocaldb;Database=aspnet-BlazorAuthTest1;Trusted_Connection=True;MultipleActiveResultSets=true&quot;\n  },\n  &quot;Logging&quot;: {\n      &quot;LogLevel&quot;: {\n      &quot;Default&quot;: &quot;Information&quot;,\n      &quot;Microsoft&quot;: &quot;Warning&quot;,\n      &quot;Microsoft.Hosting.Lifetime&quot;: &quot;Information&quot;\n      }\n    },\n  &quot;IdentityServer&quot;: {\n    &quot;Clients&quot;: {\n      &quot;BlazorAuth.Client&quot;: {\n        &quot;Profile&quot;: &quot;IdentityServerSPA&quot;\n      }\n    }\n  },\n&quot;AllowedHosts&quot;: &quot;*&quot;\n}\n</code></pre>\n<p>Thank you for your help!</p>\n"
+}

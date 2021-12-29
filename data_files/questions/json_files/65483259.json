@@ -1,0 +1,28 @@
+{
+    "tags": [
+        "webassembly",
+        "emscripten",
+        "dwarf"
+    ],
+    "owner": {
+        "reputation": 10968,
+        "user_id": 1458617,
+        "user_type": "registered",
+        "accept_rate": 72,
+        "profile_image": "https://www.gravatar.com/avatar/0790c4e75c14c45344fef4937aac2e8a?s=128&d=identicon&r=PG",
+        "display_name": "Rudolfs Bundulis",
+        "link": "https://stackoverflow.com/users/1458617/rudolfs-bundulis"
+    },
+    "is_answered": false,
+    "view_count": 116,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1612377035,
+    "creation_date": 1609185008,
+    "last_edit_date": 1609230381,
+    "question_id": 65483259,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/65483259/webassembly-debug-symbols-wasm-vs-file",
+    "title": "WebAssembly debug symbols (wasm:// vs file://)",
+    "body": "<p>I need an advice on how WebAssembly binaries produced with emscripten can store their debug symbols to understand why my particular case does not work while a trivial one does.</p>\n<p>So I was trying to test this <a href=\"https://github.com/Kagami/dav1d.js\" rel=\"nofollow noreferrer\">AV1</a> WebAssembly port but it failed with errors in malloc so I wanted to debug it. I added <code>-g4</code> and <code>-source-map-base</code> which gave me the ability to see C code, but none of the variables, all the variables in scope had the WebAssembly names - <code>var0</code> etc.</p>\n<p>I watched <a href=\"https://www.youtube.com/watch?v=VBMHswhun-s\" rel=\"nofollow noreferrer\">this</a> Youtube video, took Chrome Canary + the mentioned <a href=\"https://developers.google.com/web/updates/2020/12/webassembly\" rel=\"nofollow noreferrer\">Chrome DevTools WebAssembly Extension</a>. I made a trivial example where I compiled a single file with a trivial <code>main()</code> doing some printing. Initially it did not show variables but when I added <code>-gseparate-dwarf</code> then I got variables as well. What I saw was that the browser did a lot of <code>file://</code> based requests and Chrome asked for permissions for file access on the drive (I would assume after loading the dwarf file it got the paths, since <code>llvm-dwarfdump</code> showed full paths in the <code>.debug.wasm</code> file and the original <code>.wasm</code> file had a <code>external_debug_info</code> section pointing to the separate <code>.wasm</code> file). The biggest difference I can see is that in this case I generated a <code>.html</code> as the output from <code>emcc</code>, but as far as I can see it has similar glue code to what the library that I am trying to test already has.</p>\n<p>Now, I tried doing the same with that project - I forked it, added a debug build with <code>-gseparate-dwarf</code> but the Chrome DevTools WebAssembly Extension now complains that it cannot load the symbols. But there is a big difference - if with the previous trivial sample the messages were always like <code>Trying to load simbols for &lt;some C file path&gt; via (&lt;my dwarf wasm file path&gt;)</code>, then now instead of the C file path it has a path like <code>wasm://wasm/&lt;some hex word&gt;</code> and I also see the same scheme (<code>wasm://</code>) in the source inspector. Also what seems interesting that once the <code>-gseparate-dwarf</code> is used, there is no more <code>sourceMappingURL</code> section in the <code>.wasm</code> file.</p>\n<p>I could not find any sources of the Chrome DevTools WebAssembly Extension so I can't judge what exactly fails, but I am puzzled about the <code>wasm://</code> vs <code>file://</code> schema change between the two scenarios. Can anyone please give some guidance?</p>\n<p>Attaching screenshots from both cases to illustrate the schema differences:\n<a href=\"https://i.stack.imgur.com/m8PUg.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/m8PUg.png\" alt=\"Bad Example\" /></a>\n<a href=\"https://i.stack.imgur.com/IusGQ.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/IusGQ.png\" alt=\"Good Example\" /></a></p>\n"
+}

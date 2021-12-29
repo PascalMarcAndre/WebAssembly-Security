@@ -1,0 +1,27 @@
+{
+    "tags": [
+        "identityserver4",
+        "blazor",
+        "blazor-webassembly",
+        "blazor-hosted"
+    ],
+    "owner": {
+        "reputation": 11,
+        "user_id": 11042434,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/a3351a92e85f3a8f5080c00945f6c9f4?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Black-Pawn-C7",
+        "link": "https://stackoverflow.com/users/11042434/black-pawn-c7"
+    },
+    "is_answered": false,
+    "view_count": 36,
+    "answer_count": 0,
+    "score": 1,
+    "last_activity_date": 1608337134,
+    "creation_date": 1608337134,
+    "question_id": 65365508,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/65365508/hosted-blazor-webassembly-use-an-existing-external-identity-server",
+    "title": "hosted Blazor WebAssembly use an existing, external Identity Server",
+    "body": "<p>Hi I have a hosted WebAssembly project. I have managed to implement IS4 on the client side using the the standalone method <a href=\"https://docs.microsoft.com/en-us/aspnet/core/blazor/security/webassembly/standalone-with-authentication-library?view=aspnetcore-5.0&amp;tabs=visual-studio\" rel=\"nofollow noreferrer\">https://docs.microsoft.com/en-us/aspnet/core/blazor/security/webassembly/standalone-with-authentication-library?view=aspnetcore-5.0&amp;tabs=visual-studio</a>.</p>\n<p>I can not however find a guide to secure the server api side. Any help would be greatly appreciated</p>\n"
+}

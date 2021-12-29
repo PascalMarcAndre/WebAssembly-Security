@@ -1,0 +1,27 @@
+{
+    "tags": [
+        "blazor",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 154,
+        "user_id": 11205109,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/6cf7cbf06d2f40fc956b7eb78da3a1a1?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Raymond A.",
+        "link": "https://stackoverflow.com/users/11205109/raymond-a"
+    },
+    "is_answered": true,
+    "view_count": 150,
+    "accepted_answer_id": 65515496,
+    "answer_count": 3,
+    "score": 3,
+    "last_activity_date": 1614887510,
+    "creation_date": 1606293124,
+    "last_edit_date": 1606677751,
+    "question_id": 65001011,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/65001011/fresh-blazor-webassembly-template-cli-v5-0-100-produces-unauthorized",
+    "title": "Fresh Blazor Webassembly Template CLI v5.0.100 produces &quot;Unauthorized&quot;",
+    "body": "<p>Sorry for the newbe question.<br />\nI really need to understand what is the workaround on this new template.</p>\n<p><strong>Reproduce the error:</strong><br />\nVisual Studio, Brand new Blazor App, named &quot;Demo3&quot;</p>\n<p>.NET 5.0, Blazor WebAssembly App, Template &quot;CLI v5.0.100&quot;<br />\nASP.NET Core Hosted, https<br />\nAuthentication, Single Domain, Read directory data</p>\n<p>Run Create</p>\n<p>I have done this hundreds of times on previous templates. But this &quot;new&quot; template, imidiately produces an error I cannot figure out.</p>\n<p><strong>Details:</strong><br />\nLog in as normal<br />\nClick &quot;Fetch data&quot; (the weather forcast)<br />\nAnd I get this error message.</p>\n<p>Keywords: 401 and Unauthorized.<br />\nI guess the Unauthorized, is the important information.</p>\n<pre><code>info: System.Net.Http.HttpClient.Demo3.ServerAPI.ClientHandler[100]\n      Sending HTTP request GET https://localhost:44345/WeatherForecast\nWeatherForecast:1 Failed to load resource: the server responded with a status of 401 ()\nblazor.webassembly.js:1 info: System.Net.Http.HttpClient.Demo3.ServerAPI.ClientHandler[101]\n      Received HTTP response after 1272.7899ms - Unauthorized\nblazor.webassembly.js:1 info: System.Net.Http.HttpClient.Demo3.ServerAPI.LogicalHandler[101]\n      End processing HTTP request after 1340.08ms - Unauthorized\nblazor.webassembly.js:1 crit: Microsoft.AspNetCore.Components.WebAssembly.Rendering.WebAssemblyRenderer[100]\n      Unhandled exception rendering component: Response status code does not indicate success: 401 (Unauthorized).\nSystem.Net.Http.HttpRequestException: Response status code does not indicate success: 401 (Unauthorized).\n  at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode () &lt;0x337bf70 + 0x00052&gt; in &lt;filename unknown&gt;:0 \n  at System.Net.Http.Json.HttpClientJsonExtensions.GetFromJsonAsyncCore[T] (System.Threading.Tasks.Task`1[TResult] taskResponse, System.Text.Json.JsonSerializerOptions options, System.Threading.CancellationToken cancellationToken) &lt;0x32c6740 + 0x000f4&gt; in &lt;filename unknown&gt;:0 \n  at Demo3.Client.Pages.FetchData.OnInitializedAsync () [0x0003c] in D:\\repos\\nameofrepo\\src\\Demo3\\Demo3\\Client\\Pages\\FetchData.razor:48 \n  at Microsoft.AspNetCore.Components.ComponentBase.RunInitAndSetParametersAsync () &lt;0x2c764b0 + 0x0013a&gt; in &lt;filename unknown&gt;:0 \n  at Microsoft.AspNetCore.Components.RenderTree.Renderer.GetErrorHandledTask (System.Threading.Tasks.Task taskToHandle) &lt;0x2f401a8 + 0x000b6&gt; in &lt;filename unknown&gt;:0 \n</code></pre>\n<p>As the error indicates, there is a authorization error.</p>\n<p>My question is:<br />\nHas someone found a &quot;offical MS link&quot; to this error?<br />\nOr, can someone explain what is wrong.</p>\n<p><strong>Follow-up</strong><br />\nJust to clearify, I do not change or add any code. The test run is done directly after the template is finished. I have, of course, tried to debug the error and look at the settings in AzureAD, but no luck.</p>\n<p><strong>Second follow-up</strong><br />\nInvestigated a hint, the AADSTS7000218 detail in the comment.</p>\n<p>So I set up an project. Here are the details:<br />\nI changed to Kestrel.<br />\nI changed to Azure App settings to SPA, with the same redirect address.</p>\n<p>Gave myself owner permissions to both apps.<br />\nAdded the server to api permissions on the client app. &quot;api://BlazorApp1_Server/user_impersonation&quot;</p>\n<p>Tested: Same errors.\nThe details, and I still notice the audience detail.</p>\n<pre><code>Microsoft.AspNetCore.Components.WebAssembly.Rendering.WebAssemblyRenderer[100]\n      Unhandled exception rendering component: Response status code does not indicate success: 401 (Unauthorized).\nSystem.Net.Http.HttpRequestException: Response status code does not indicate success: 401 (Unauthorized).\n</code></pre>\n<p>And in the response headers:</p>\n<pre><code>www-authenticate: Bearer error=&quot;invalid_token&quot;, error_description=&quot;The audience 'api://blazorapp1_server' is invalid&quot;\n</code></pre>\n<p>But nothing about AADSTS7000218 or missing client secret.</p>\n<p>Still not giving up on this... I'll be back...</p>\n"
+}

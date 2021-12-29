@@ -1,0 +1,28 @@
+{
+    "tags": [
+        "security",
+        "browser",
+        "blazor"
+    ],
+    "owner": {
+        "reputation": 1377,
+        "user_id": 5084424,
+        "user_type": "registered",
+        "accept_rate": 88,
+        "profile_image": "https://i.stack.imgur.com/RBdXZ.jpg?s=128&g=1",
+        "display_name": "SimonS",
+        "link": "https://stackoverflow.com/users/5084424/simons"
+    },
+    "is_answered": true,
+    "view_count": 65,
+    "accepted_answer_id": 66317874,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1614005065,
+    "creation_date": 1613466417,
+    "question_id": 66221439,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/66221439/blazor-webassembly-application-fails-to-load-due-to-integrity-errors",
+    "title": "Blazor WebAssembly Application fails to load due to integrity errors",
+    "body": "<p>We have developed a Blazor WebAssembly Application that has already gone into productive usage for a certain group of customers.</p>\n<p>The Application works well in all Browsers with Standard Security settings. However, this morning I got a call from one of the customers, where the Application did not load at all in their Chrome Browser.</p>\n<p>I saw the following Errors in the console:</p>\n<ul>\n<li><code>Unknown error occurred while trying to verify integrity.</code></li>\n<li><code>Failed to load resource: the server responded with a status of 403 (forbidden)</code></li>\n<li><code>Failed to find a valid digest in the 'integrity' attribute for ressource '&lt;somepath.dll&gt;' with SHA-256 integrity &lt;sha56&gt;. the resource has been blocked</code></li>\n</ul>\n<p>Now my question is, what could cause this? Is this a Browser Security setting, or another security setting e.g on server, in code etc.? How can I fix this?</p>\n<p>Here's a picture of the errors mentioned above</p>\n<p><a href=\"https://i.stack.imgur.com/CuCOO.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/CuCOO.png\" alt=\"Console Errors Blazor Chrome\" /></a></p>\n"
+}

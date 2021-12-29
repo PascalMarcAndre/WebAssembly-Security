@@ -1,0 +1,27 @@
+{
+    "tags": [
+        "webassembly",
+        "ieee-754"
+    ],
+    "owner": {
+        "reputation": 5667,
+        "user_id": 870815,
+        "user_type": "registered",
+        "accept_rate": 68,
+        "profile_image": "https://i.stack.imgur.com/r2Qyo.jpg?s=128&g=1",
+        "display_name": "John",
+        "link": "https://stackoverflow.com/users/870815/john"
+    },
+    "is_answered": true,
+    "view_count": 390,
+    "answer_count": 1,
+    "score": 5,
+    "last_activity_date": 1610579817,
+    "creation_date": 1610293575,
+    "last_edit_date": 1610579817,
+    "question_id": 65655125,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/65655125/why-does-webassembly-have-a-square-root-opcode",
+    "title": "Why does webassembly have a square root opcode?",
+    "body": "<p>Webassembly offers only one of the more advanced floating point operations: the square root.</p>\n<p>It doesn't have any of the others typically implemented in CPUs, such as powers and trigonometric functions, and this rationale is explained in the official FAQ:</p>\n<blockquote>\n<p>WebAssembly doesn\u2019t include its own math functions like sin, cos, exp,\npow, and so on. WebAssembly\u2019s strategy for such functions is to allow\nthem to be implemented as library routines in WebAssembly itself (note\nthat x86\u2019s sin and cos instructions are slow and imprecise and are\ngenerally avoided these days anyway). Users wishing to use faster and\nless precise math functions on WebAssembly can simply select a math\nlibrary implementation which does so.</p>\n</blockquote>\n<p>That begs the question if there's something special about square roots that justify to make an exception for it. It's useful for distance calculation, but does that come up that much more often that other kinds of powers or the exponential? Is it particularly fast on CPUs and they wanted to exploit that?</p>\n<p>If we make two buckets of functions,</p>\n<ol>\n<li>the first being addition, multiplication, division and remainder and</li>\n<li>the second being powers, trigonometrics and their inversions</li>\n</ol>\n<p>then why did they put square root in the first?</p>\n<p>EDIT: I just realized that sqrt is special in that an approximation can be found by shifting the exponent one to the right. The exact result still requires finding the square root of the mantissa though, and that's still an interative process. But maybe this head start makes sqrt nice enough to warrant inclusion in IEEE's required operations as Olsonist noted.</p>\n<p>There's also the property that <code>sqrt(x*x)=x</code> for all <code>x</code> for which <code>x*x</code> isn't over- or underflowing, which is unusual for operations that can involve rounding (<a href=\"https://stackoverflow.com/a/41656528/870815\">see this SO answer</a>).</p>\n"
+}

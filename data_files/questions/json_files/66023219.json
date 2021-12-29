@@ -1,0 +1,31 @@
+{
+    "tags": [
+        "docker",
+        "asp.net-core",
+        "asp.net-web-api",
+        "blazor-webassembly",
+        "docker-networking"
+    ],
+    "owner": {
+        "reputation": 776,
+        "user_id": 2116114,
+        "user_type": "registered",
+        "accept_rate": 22,
+        "profile_image": "https://i.stack.imgur.com/wy097.jpg?s=128&g=1",
+        "display_name": "Parsa",
+        "link": "https://stackoverflow.com/users/2116114/parsa"
+    },
+    "is_answered": true,
+    "view_count": 32,
+    "accepted_answer_id": 66031308,
+    "answer_count": 1,
+    "score": 1,
+    "last_activity_date": 1612368535,
+    "creation_date": 1612338479,
+    "last_edit_date": 1612338796,
+    "question_id": 66023219,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/66023219/api-call-to-another-container-doesnt-work-in-blazor-wasm",
+    "title": "Api call to another container doesn&#39;t work in blazor wasm",
+    "body": "<p>I have a project whose schema is like this :</p>\n<p><a href=\"https://i.stack.imgur.com/4jEHA.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/4jEHA.png\" alt=\"enter image description here\" /></a></p>\n<p>When blazor webassembly published output, which exists in <strong>client_container</strong>(nginx alpine image), calls api, which is up in <strong>api_container</strong>, nothing happens.</p>\n<p>And it couldn't receive any data.</p>\n<p>The worse thing is that, blazor client_container doesn't provide me with any error.</p>\n<p>Opening the page on my PC : http://localhost:8081/</p>\n<p>The working result should be like this :</p>\n<p><a href=\"https://i.stack.imgur.com/IDm3u.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/IDm3u.png\" alt=\"enter image description here\" /></a></p>\n<p>BUT it works like this :</p>\n<p><a href=\"https://i.stack.imgur.com/uYuTc.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/uYuTc.png\" alt=\"enter image description here\" /></a></p>\n<p>The API call in razor component is this :</p>\n<pre><code>protected override async Task OnInitializedAsync()\n{\n    // in Debugging\n    //people = await Http.GetFromJsonAsync&lt;List&lt;Person&gt;&gt;(&quot;http://localhost:8080/api/people&quot;);\n\n    // in Publish in Docker\n    people = await Http.GetFromJsonAsync&lt;List&lt;Person&gt;&gt;(&quot;http://api_container/api/people&quot;);\n}\n</code></pre>\n<p>These are docker run commands :</p>\n<pre><code>docker run -p 8080:80 --rm --name api_container --network store_network parsalotfy/store_api\ndocker run -p 8081:80 --rm --name client_container --network store_network parsalotfy/store_client\n</code></pre>\n<p>To test if the api is accessible in client_container, I did such a test :</p>\n<pre><code>docker exec -it client_container sh\n</code></pre>\n<p>then in nginx client_countainer :</p>\n<pre><code>/usr/share/nginx/html # curl http://api_container/api/people\n</code></pre>\n<p>this is the result :</p>\n<p><a href=\"https://i.stack.imgur.com/UMLXD.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/UMLXD.png\" alt=\"enter image description here\" /></a></p>\n<p><strong>It is odd that api is accessible in client_container but the api call in razor component fails.</strong></p>\n<p>and this is client_container log :</p>\n<p><a href=\"https://i.stack.imgur.com/paVv3.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/paVv3.png\" alt=\"enter image description here\" /></a></p>\n<p>You can take a look at all the code here in <a href=\"https://github.com/parsalotfy/UniProject_Store\" rel=\"nofollow noreferrer\">github</a> in case you are interested</p>\n<p>Sorry if it was too boring :)</p>\n<p>Thank you.</p>\n"
+}

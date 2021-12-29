@@ -1,0 +1,27 @@
+{
+    "tags": [
+        "authentication",
+        "blazor",
+        "roles"
+    ],
+    "owner": {
+        "reputation": 153,
+        "user_id": 11476545,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/439ded087dfb9e0529421b669d9914ca?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Bisjob",
+        "link": "https://stackoverflow.com/users/11476545/bisjob"
+    },
+    "is_answered": true,
+    "view_count": 678,
+    "accepted_answer_id": 62321670,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1591869267,
+    "creation_date": 1591801078,
+    "question_id": 62306681,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/62306681/blazor-authentication-role-based",
+    "title": "Blazor authentication role based",
+    "body": "<p>I'm working on a client-side blazor application with the last webassembly version (3.2.0).</p>\n\n<p>I started the project from the visual tool with enabling local authentications and I tried to add roles. </p>\n\n<p>First, I added the roles in the ApplicationDbContext :</p>\n\n<pre><code>public class ApplicationDbContext : ApiAuthorizationDbContext&lt;ApplicationUser&gt;\n{\n    public ApplicationDbContext(\n        DbContextOptions options,\n        IOptions&lt;OperationalStoreOptions&gt; operationalStoreOptions) : base(options, operationalStoreOptions)\n    {\n    }\n\n    protected override void OnModelCreating(ModelBuilder builder)\n    {\n        base.OnModelCreating(builder);\n\n        builder.Entity&lt;IdentityRole&gt;()\n               .HasData(new IdentityRole { Name = \"User\", NormalizedName = \"USER\", Id = Guid.NewGuid().ToString(), ConcurrencyStamp = Guid.NewGuid().ToString() });\n        builder.Entity&lt;IdentityRole&gt;()\n               .HasData(new IdentityRole { Name = \"Admin\", NormalizedName = \"ADMIN\", Id = Guid.NewGuid().ToString(), ConcurrencyStamp = Guid.NewGuid().ToString() });\n    }\n}\n</code></pre>\n\n<p>Then I added Roles to the IdentityBuilder in the startup class : </p>\n\n<pre><code>public void ConfigureServices(IServiceCollection services)\n{\n   services.AddDbContext&lt;ApplicationDbContext&gt;(options =&gt;\n       options.UseSqlServer(\n           Configuration.GetConnectionString(\"DefaultConnection\")));\n\n   services.AddDefaultIdentity&lt;ApplicationUser&gt;(options =&gt; options.SignIn.RequireConfirmedAccount = true)\n       .AddRoles&lt;IdentityRole&gt;()\n       .AddEntityFrameworkStores&lt;ApplicationDbContext&gt;();\n\n   services.AddIdentityServer()\n       .AddApiAuthorization&lt;ApplicationUser, ApplicationDbContext&gt;();\n\n   services.AddAuthentication()\n       .AddIdentityServerJwt();\n\n   services.AddControllersWithViews();\n   services.AddRazorPages();\n}\n</code></pre>\n\n<p>And then in my DbInitializer I created an Admin account with both roles :</p>\n\n<pre><code>    private async Task SeedASPIdentityCoreAsync()\n    {\n        if (!await context.Users.AnyAsync())\n        {\n            var admin = new ApplicationUser()\n            {\n                UserName = \"admin@admin.com\",\n                Email = \"admin@admin.com\",\n                EmailConfirmed = true,\n            };\n            var result = await userManager.CreateAsync(admin, \"aA&amp;123\");\n            if (!result.Succeeded)\n            {\n                throw new Exception(result.Errors.First().Description);\n            }\n\n            result = await userManager.AddClaimsAsync(admin, new Claim[]\n                {\n                    new Claim(JwtClaimTypes.Email, \"admin@admin.com\"),\n                    new Claim(JwtClaimTypes.Name, \"admin@admin.com\")\n                });\n\n\n            ApplicationUser user = await userManager.FindByNameAsync(\"admin@admin.com\");\n\n            try\n            {\n                result = await userManager.AddToRoleAsync(user, \"User\");\n                result = await userManager.AddToRoleAsync(user, \"Admin\");\n            }\n            catch\n            {\n                await userManager.DeleteAsync(user);\n                throw;\n            }\n\n            if (!result.Succeeded)\n            {\n                await userManager.DeleteAsync(user);\n                throw new Exception(result.Errors.First().Description);\n            }\n        }\n    }\n</code></pre>\n\n<p>But the roles doen't appear in the JWT, and the client-side has no idea about the roles.</p>\n\n<p>How can I add the roles in the JWT, as with the new version of blazor, there is no need of the LoginController ? (If i well understood the changes)</p>\n"
+}

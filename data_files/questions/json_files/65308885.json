@@ -1,0 +1,28 @@
+{
+    "tags": [
+        "jquery",
+        ".net",
+        "asp.net-core",
+        "blazor",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 21,
+        "user_id": 11436278,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/b84e69cc56f198c4333997b4377aeca5?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Cristian",
+        "link": "https://stackoverflow.com/users/11436278/cristian"
+    },
+    "is_answered": false,
+    "view_count": 251,
+    "answer_count": 2,
+    "score": 2,
+    "last_activity_date": 1608126120,
+    "creation_date": 1608046221,
+    "question_id": 65308885,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/65308885/how-to-import-jquery-ui-to-blazor-webassembly",
+    "title": "How to import JQuery UI to Blazor WebAssembly?",
+    "body": "<p>I want to discover Blazor and I'm trying to transfer a project from .NET Core MVC to Blazor WebAssembly. I configured basic HTML and CSS design and everything works normally. Now, I have a page there I need to use some jQuery functions, one of them is map of a country via jquery.vmap, in simple html and on MVC is working, but in blazor no. I put all scripts in Index.html and  tag in my razor view.\nMy Index.html page:</p>\n<pre><code>&lt;html&gt;\n\n&lt;head&gt;\n    &lt;meta charset=&quot;utf-8&quot; /&gt;\n    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no&quot; /&gt;\n    &lt;title&gt;RVT_Observer&lt;/title&gt;\n    &lt;base href=&quot;/&quot; /&gt;\n\n    &lt;link href=&quot;Maps/dist/jqvmap.css&quot; media=&quot;screen&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; /&gt;\n\n    &lt;script type=&quot;text/javascript&quot; src=&quot;https://code.jquery.com/jquery-1.11.3.min.js&quot;&gt;&lt;/script&gt;\n    &lt;script type=&quot;text/javascript&quot; src=&quot;Maps/dist/jquery.vmap.js&quot;&gt;&lt;/script&gt;\n    &lt;script type=&quot;text/javascript&quot; src=&quot;Maps/dist/maps/jquery.vmap.moldova.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;\n    &lt;script&gt;\njQuery(document).ready(function () {\n    jQuery('#vmap').vectorMap({\n        map: 'moldova_md',\n        backgroundColor: null,\n        color: '#d2d4d5',\n        hoverColor: '#006ed6',\n        enableZoom: false,\n        showTooltip: true,\n        \n\n        onRegionClick: function (event, code, region) {\n            switch (code) {\n                case code:\n                    window.location.replace(&quot;/Map/RM/&quot; + code);\n            }\n        }\n    });\n});\n&lt;/script&gt;\n\n        &lt;link href=&quot;css/bootstrap/bootstrap.min.css&quot; rel=&quot;stylesheet&quot; /&gt;\n        &lt;link href=&quot;css/app.css&quot; rel=&quot;stylesheet&quot; /&gt;\n        &lt;link href=&quot;manifest.json&quot; rel=&quot;manifest&quot; /&gt;\n\n        &lt;link rel=&quot;stylesheet&quot; href=&quot;css/nicepage.css&quot; media=&quot;screen&quot;&gt;\n        &lt;link rel=&quot;stylesheet&quot; href=&quot;css/Page-1.css&quot; media=&quot;screen&quot;&gt;\n        &lt;link id=&quot;u-theme-google-font&quot; rel=&quot;stylesheet&quot; href=&quot;https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&quot;&gt;\n\n        &lt;link href=&quot;Maps/dist/jqvmap.css&quot; media=&quot;screen&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; /&gt;\n\n        &lt;link rel=&quot;apple-touch-icon&quot; sizes=&quot;512x512&quot; href=&quot;icon-512.png&quot; /&gt;\\\n        &lt;script class=&quot;u-script&quot; type=&quot;text/javascript&quot; src=&quot;js/nicepage.js&quot; defer=&quot;&quot;&gt;&lt;/script&gt;\n&lt;/head&gt;\n\n&lt;body class=&quot;u-body&quot;&gt;\n\n    &lt;app&gt;&lt;div class=&quot;loader&quot; /&gt;&lt;/app&gt;\n\n    &lt;div id=&quot;blazor-error-ui&quot;&gt;\n        An unhandled error has occurred.\n        &lt;a href=&quot;&quot; class=&quot;reload&quot;&gt;Reload&lt;/a&gt;\n        &lt;a class=&quot;dismiss&quot;&gt;\ud83d\uddd9&lt;/a&gt;\n    &lt;/div&gt;\n\n    &lt;script src=&quot;_framework/blazor.webassembly.js&quot;&gt;&lt;/script&gt;\n    \n    &lt;script&gt;\n        if ('serviceWorker' in navigator) {\n            navigator.serviceWorker.register('/service-worker.js');\n        }\n    &lt;/script&gt;\n    &lt;footer class=&quot;u-clearfix u-footer u-grey-80&quot; id=&quot;sec-cc6e&quot;&gt;\n    &lt;/footer&gt;\n    &lt;/bodyclass=&quot;u-body&quot;&gt;\n\n&lt;/html&gt;\n</code></pre>\n<p>My Razor page there I try to inject IJSRuntime, but also is not working:</p>\n<pre><code>@page &quot;/election&quot;\n@using RVT_Observer.Shared\n@inject HttpClient HttpClient\n@inject IJSRuntime jsRuntime\n\n&lt;div id=&quot;vmap&quot; style=&quot;width: 800px; height: 625px;&quot;&gt;&lt;/div&gt;\n\n@code {\n\n    protected override async Task OnInitializedAsync()\n    {\n        await GetResults();\n    }\n\n    [Inject]\n    protected IJSRuntime JsRuntime { get; set; }\n\n    protected override void OnAfterRender(bool firstRender)\n    {\n        if (firstRender)\n            JsRuntime.InvokeVoidAsync(&quot;vmap.initialize&quot;);\n    }\n\n    private async Task GetResults()\n    {\n        var response = await HttpClient.PostAsJsonAsync($&quot;api/Results&quot;, &quot;0&quot;);\n    }\n</code></pre>\n<p>What I'm doing wrong? Thank you for you answer!</p>\n"
+}

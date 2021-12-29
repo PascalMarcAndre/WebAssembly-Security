@@ -1,0 +1,28 @@
+{
+    "tags": [
+        "c#",
+        "computer-science",
+        "blazor",
+        "webassembly"
+    ],
+    "owner": {
+        "reputation": 1664,
+        "user_id": 1786007,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/c6bfb48152374c6833ec10ecf0574e0b?s=128&d=identicon&r=PG",
+        "display_name": "Venson",
+        "link": "https://stackoverflow.com/users/1786007/venson"
+    },
+    "is_answered": true,
+    "view_count": 1219,
+    "accepted_answer_id": 65777187,
+    "answer_count": 1,
+    "score": 1,
+    "last_activity_date": 1610982853,
+    "creation_date": 1576411381,
+    "question_id": 59343706,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/59343706/save-large-file-created-with-cs-in-blazor",
+    "title": "Save large file created with Cs in Blazor",
+    "body": "<p>I am working on a weekend project that aggregates downloads from other sites in a zip file with Blazor (webassmbly).</p>\n\n<p>The zip file is created in c# code and need to be saved on the local computer. I am using a modified version of <a href=\"https://stackoverflow.com/a/53822526/3138087\">this answer</a> because the file size can easily extend over 400 mb.</p>\n\n<p>My Version partitions the js call to not imminently overflow the webassembly VM but after a certain filesize it happens and i get the folloring exception:</p>\n\n<pre><code>WASM: Try saving 213776418bytes --my message\nblazor.webassembly.js:1 WASM: GC_MAJOR_SWEEP: major size: 1808K in use: 94964K\nblazor.webassembly.js:1 WASM: GC_MAJOR: (LOS overflow) time 71.98ms, stw 72.00ms los size: 486832K in use: 481083K\nWASM: \ufeffError: Garbage collector could not allocate 16384 bytes of memory for major heap section.\nUncaught (in promise) ExitStatus\u00a0{name: \"ExitStatus\", message: \"Program terminated with exit(1)\", status: 1}\n</code></pre>\n\n<p>Is there currently any other way to save a file from WebAssembly other then transferring the file content to js and then save them with Blob? </p>\n"
+}

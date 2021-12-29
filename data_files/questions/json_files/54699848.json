@@ -1,0 +1,26 @@
+{
+    "tags": [
+        "desktop-application",
+        "chromium"
+    ],
+    "owner": {
+        "reputation": 184,
+        "user_id": 1109741,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/8ce3672a70f2aae96ff3da502ea58417?s=128&d=identicon&r=PG",
+        "display_name": "Matanya Cohen",
+        "link": "https://stackoverflow.com/users/1109741/matanya-cohen"
+    },
+    "is_answered": false,
+    "view_count": 2365,
+    "answer_count": 0,
+    "score": 0,
+    "last_activity_date": 1608798090,
+    "creation_date": 1550182226,
+    "last_edit_date": 1550217553,
+    "question_id": 54699848,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/54699848/what-mean-no-sandbox-mean-can-access-system",
+    "title": "What mean --no-sandbox mean? Can access system?",
+    "body": "<p>When I run chromium on --mo-sandbox, that mean have a way to access local system? I guess not?</p>\n\n<p>Actually, I wonder why have not some fork for this project (Chromium), that give ability access local system/ For these situation that app run locally. In such way, we can run full application on browser without extra level as node (Electron or ECF. etc..). </p>\n\n<p>Rather than, I not understand why not have JS lib to connect to database directly from the browser. Or at least from Webassembly?</p>\n"
+}

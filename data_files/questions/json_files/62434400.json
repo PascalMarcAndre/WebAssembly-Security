@@ -1,0 +1,27 @@
+{
+    "tags": [
+        "authentication",
+        "identityserver4",
+        "blazor"
+    ],
+    "owner": {
+        "reputation": 153,
+        "user_id": 11476545,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/439ded087dfb9e0529421b669d9914ca?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Bisjob",
+        "link": "https://stackoverflow.com/users/11476545/bisjob"
+    },
+    "is_answered": true,
+    "view_count": 372,
+    "accepted_answer_id": 62654562,
+    "answer_count": 1,
+    "score": 4,
+    "last_activity_date": 1593510106,
+    "creation_date": 1592413153,
+    "question_id": 62434400,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/62434400/blazor-webassembly-identityserver-eventsink-and-httpcontext",
+    "title": "Blazor webassembly - IdentityServer EventSink and HttpContext",
+    "body": "<p>I'm working on a Blazor webassembly application, in ASP.NET Core 3.1 with IdentityServer. \nAs IdentityServer handle all login, logout, register, ... events, I'm trying to catch theses events in order to obtain some informations about users.</p>\n\n<p>To be clear, I'm trying to memorize the login Date, and to catch new users registration to give them some role automatically.</p>\n\n<p>Here all the services I use in my startup class :</p>\n\n<pre><code>        services.AddDefaultIdentity&lt;ApplicationUser&gt;(options =&gt; options.SignIn.RequireConfirmedAccount = true)\n            .AddRoles&lt;IdentityRole&gt;()\n            .AddEntityFrameworkStores&lt;ApplicationDbContext&gt;();\n\n        services.Configure&lt;IdentityOptions&gt;(options =&gt;\n            options.ClaimsIdentity.UserIdClaimType = ClaimTypes.NameIdentifier);\n\n        services.AddIdentityServer()\n            .AddApiAuthorization&lt;ApplicationUser, ApplicationDbContext&gt;(options =&gt; {\n                options.IdentityResources[\"openid\"].UserClaims.Add(\"name\");\n                options.ApiResources.Single().UserClaims.Add(\"name\");\n                options.IdentityResources[\"openid\"].UserClaims.Add(\"role\");\n                options.ApiResources.Single().UserClaims.Add(\"role\");\n            });\n\n        // Need to do this as it maps \"role\" to ClaimTypes.Role and causes issues\n        JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Remove(\"role\");\n\n        services.AddAuthentication()\n            .AddIdentityServerJwt();\n</code></pre>\n\n<p>I've implemented the IEventSink pattern (<a href=\"http://docs.identityserver.io/en/stable/topics/events.html\" rel=\"nofollow noreferrer\">http://docs.identityserver.io/en/stable/topics/events.html</a>) :</p>\n\n<pre><code>public class IdentityServerEventSink : IEventSink\n{\n    private readonly UserManager&lt;ApplicationUser&gt; userManager;\n    private readonly IHttpContextAccessor httpContextAccessor;\n\n    public IdentityServerEventSink(UserManager&lt;ApplicationUser&gt; userManager, IHttpContextAccessor httpContextAccessor)\n    {\n        this.userManager = userManager;\n        this.httpContextAccessor = httpContextAccessor;\n    }\n\n    public async Task PersistAsync(Event @event)\n    {\n        if (@event.Id.Equals(EventIds.ClientAuthenticationSuccess))\n        {\n            var identity = httpContextAccessor.HttpContext.User;\n            var id = httpContextAccessor.HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);\n            var user = await userManager.Users.FirstOrDefaultAsync(u =&gt; u.Id == id);\n        }\n    }\n}\n</code></pre>\n\n<p>And in the startup.cs :</p>\n\n<pre><code>services.AddHttpContextAccessor();\nservices.AddTransient&lt;IEventSink, IdentityServerEventSink&gt;();\n</code></pre>\n\n<p>But when I get in the ClientAuthenticationSuccess event, the identity is always anonymous.</p>\n\n<p>I tried also in the middleware but I have the same issue :</p>\n\n<pre><code>            app.Use(async (context, next) =&gt;\n        {\n            await next.Invoke();\n            //handle response\n            //you may also need to check the request path to check whether it requests image\n            if (context.User.Identity.IsAuthenticated)\n            {\n                var userName = context.User.Identity.Name;\n                //retrieve uer by userName\n                using (var dbContext = context.RequestServices.GetRequiredService&lt;ApplicationDbContext&gt;())\n                {\n                    var user = dbContext.Users.Where(u =&gt; u.UserName == userName).FirstOrDefault();\n                    user.LastLogon = System.DateTime.Now;\n                    dbContext.Update(user);\n                    dbContext.SaveChanges();\n                }\n            }\n        });\n</code></pre>\n\n<p>Do you have any ideas ? \nI heard HttpContextAccessor is a bad things in Blazor.</p>\n"
+}

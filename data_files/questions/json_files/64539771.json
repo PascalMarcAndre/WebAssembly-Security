@@ -1,0 +1,27 @@
+{
+    "tags": [
+        "asp.net-core",
+        "blazor-client-side",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 13,
+        "user_id": 12857256,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/d3404e7b519c9ee2b51eba096679ba6c?s=128&d=identicon&r=PG&f=1",
+        "display_name": "SimUtz",
+        "link": "https://stackoverflow.com/users/12857256/simutz"
+    },
+    "is_answered": true,
+    "view_count": 70,
+    "accepted_answer_id": 66683340,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1616028801,
+    "creation_date": 1603724862,
+    "question_id": 64539771,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/64539771/blazor-webassembly-authorize",
+    "title": "Blazor WebAssembly Authorize",
+    "body": "<p>I started from a visual studio template, a new Blazor WebAssembly with authentication and web API as the server-side.</p>\n<p>Now i want to secure my Pages and the server API. I do the following:</p>\n<pre><code>Page:\n&lt;AuthorizeView Roles=&quot;Administrator&quot;&gt;\n    &lt;Authorized&gt;\n        &lt;h1&gt;Weather forecast&lt;/h1&gt;\n\n        &lt;p&gt;This component demonstrates fetching data from the server.&lt;/p&gt;\n\n        @if (forecasts == null)\n        {\n            &lt;p&gt;&lt;em&gt;Loading...&lt;/em&gt;&lt;/p&gt;\n        }\n        else\n        {\n            &lt;table class=&quot;table&quot;&gt;\n                &lt;thead&gt;\n                    &lt;tr&gt;\n                        &lt;th&gt;Date&lt;/th&gt;\n                        &lt;th&gt;Temp. (C)&lt;/th&gt;\n                        &lt;th&gt;Temp. (F)&lt;/th&gt;\n                        &lt;th&gt;Summary&lt;/th&gt;\n                    &lt;/tr&gt;\n                &lt;/thead&gt;\n                &lt;tbody&gt;\n                    @foreach (var forecast in forecasts)\n                    {\n                        &lt;tr&gt;\n                            &lt;td&gt;@forecast.Date.ToShortDateString()&lt;/td&gt;\n                            &lt;td&gt;@forecast.TemperatureC&lt;/td&gt;\n                            &lt;td&gt;@forecast.TemperatureF&lt;/td&gt;\n                            &lt;td&gt;@forecast.Summary&lt;/td&gt;\n                        &lt;/tr&gt;\n                    }\n                &lt;/tbody&gt;\n            &lt;/table&gt;\n        }\n    &lt;/Authorized&gt;\n    &lt;NotAuthorized&gt;\n    ...\n    &lt;/NotAuthorized&gt;\n&lt;/AuthorizeView&gt;\n\n@code {\n\n    private WeatherForecast[] forecasts;\n\n    protected override async Task OnInitializedAsync()\n    {\n        var response = await Http.GetAsync(&quot;Api/WeatherForecast/Get&quot;);\n        //var resp = await Http.GetFromJsonAsync&lt;WeatherForecast[]&gt;(&quot;Api/WeatherForecast/Get&quot;);\n\n        if (response.IsSuccessStatusCode)\n        {\n            var s = await response.Content.ReadAsStringAsync();\n            forecasts = await response.Content.ReadFromJsonAsync&lt;WeatherForecast[]&gt;();\n        }\n    }\n}\n\nAPI\n[Authorize]\n    [ApiController]\n    [Route(&quot;api/[controller]/[action]&quot;)]\n    public class WeatherForecastController : Controller\n    {\n        private static readonly string[] Summaries = new[]\n        {\n            &quot;Freezing&quot;, &quot;Bracing&quot;, &quot;Chilly&quot;, &quot;Cool&quot;, &quot;Mild&quot;, &quot;Warm&quot;, &quot;Balmy&quot;, &quot;Hot&quot;, &quot;Sweltering&quot;, &quot;Scorching&quot;\n        };\n\n        private readonly ILogger&lt;WeatherForecastController&gt; logger;\n\n        public WeatherForecastController(ILogger&lt;WeatherForecastController&gt; logger)\n        {\n            this.logger = logger;\n        }\n\n      \n        [HttpGet]\n        public IEnumerable&lt;WeatherForecast&gt; Get()\n        {\n            var rng = new Random();\n            return Enumerable.Range(1, 5).Select(index =&gt; new WeatherForecast\n            {\n                Date = DateTime.Now.AddDays(index),\n                TemperatureC = rng.Next(-20, 55),\n                Summary = Summaries[rng.Next(Summaries.Length)]\n            })\n            .ToArray();\n        }\n    }\n</code></pre>\n<p>The User that call the page &quot;fetchdata&quot; is not logged in and can not show des site.\nBut OnInitializedAsync is still called. The API blocks because [Authorize].</p>\n<p>But now here comes the problem.\nWith the var response = await Http.GetAsync(&quot;Api/WeatherForecast/Get&quot;); i get an HttpCode 200 back. But the API is never called?! Where does it come from?</p>\n<p>Is something wrong here? How can i make my Page and my API secure?</p>\n<p>I do not want to use the AuthenticationStateProvider in every Page like that:</p>\n<p>@code {</p>\n<pre><code>private WeatherForecast[] forecasts;\n\n[CascadingParameter]\nTask&lt;AuthenticationState&gt; authenticationStateTask { get; set; }\n\nprotected override async Task OnInitializedAsync()\n{\n\n    if(authenticationStateTask.Result.User.IsInRole(&quot;Administrator&quot;))\n    {\n        var response = await Http.GetAsync(&quot;Api/WeatherForecast/Get&quot;);\n        //var resp = await Http.GetFromJsonAsync&lt;WeatherForecast[]&gt;(&quot;Api/WeatherForecast/Get&quot;);\n\n        if (response.IsSuccessStatusCode)\n        {\n            var s = await response.Content.ReadAsStringAsync();\n            forecasts = await response.Content.ReadFromJsonAsync&lt;WeatherForecast[]&gt;();\n        }\n    }\n\n}\n</code></pre>\n<p>}</p>\n"
+}

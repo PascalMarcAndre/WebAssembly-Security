@@ -1,0 +1,31 @@
+{
+    "tags": [
+        "types",
+        "stack",
+        "specifications",
+        "type-systems",
+        "webassembly"
+    ],
+    "owner": {
+        "reputation": 468,
+        "user_id": 6374865,
+        "user_type": "registered",
+        "accept_rate": 67,
+        "profile_image": "https://www.gravatar.com/avatar/5d4c82bb8d666f6bd21d6127bdf2257d?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Mauro Bringolf",
+        "link": "https://stackoverflow.com/users/6374865/mauro-bringolf"
+    },
+    "is_answered": true,
+    "view_count": 65,
+    "accepted_answer_id": 49684851,
+    "answer_count": 1,
+    "score": 1,
+    "last_activity_date": 1522985546,
+    "creation_date": 1522940615,
+    "last_edit_date": 1522941330,
+    "question_id": 49675646,
+    "content_license": "CC BY-SA 3.0",
+    "link": "https://stackoverflow.com/questions/49675646/why-are-result-types-of-control-flow-instructions-arbitrary-especially-return",
+    "title": "Why are result types of control flow instructions arbitrary? (Especially `return`)",
+    "body": "<p>I am trying to understand the type system of WebAssembly and confused by control flow instructions. I don't understand <strong>why the result type of <code>br</code>, <code>result</code> or <code>unreachable</code> is an arbitrary type sequence</strong> (t_2^*):</p>\n\n<ul>\n<li><p><a href=\"https://webassembly.github.io/spec/core/valid/instructions.html#valid-return\" rel=\"nofollow noreferrer\">https://webassembly.github.io/spec/core/valid/instructions.html#valid-return</a></p></li>\n<li><p><a href=\"https://webassembly.github.io/spec/core/valid/instructions.html#valid-br\" rel=\"nofollow noreferrer\">https://webassembly.github.io/spec/core/valid/instructions.html#valid-br</a></p></li>\n<li><p><a href=\"https://webassembly.github.io/spec/core/valid/instructions.html#valid-unreachable\" rel=\"nofollow noreferrer\">https://webassembly.github.io/spec/core/valid/instructions.html#valid-unreachable</a></p></li>\n</ul>\n\n<p>I ran the following two snippets in the <a href=\"https://github.com/WebAssembly/spec/tree/master/interpreter\" rel=\"nofollow noreferrer\">reference interpreter</a>:</p>\n\n<pre><code> (module\n   (func (result i32)\n     (i32.const 1)\n     (i32.const 2)\n     (return)\n     (return)\n   )\n )\n</code></pre>\n\n<p>No type error is reported. However, this one:</p>\n\n<pre><code> (module\n   (func (result i32)\n     (i32.const 1)\n     (i32.const 2)\n     (return)\n     (f32.const 2)\n   )\n )\n</code></pre>\n\n<p>Now I get type error: \"test.wast:2.2-7.3: invalid module: type mismatch: operator requires [i32] but stack has [f32]\".</p>\n\n<p>But I can try and exploit the \"arbitrary type sequence\" and write weird programs that are still well-typed:</p>\n\n<pre><code>(module\n (func (result i32)\n  (i32.const 1)\n  (i32.const 2)\n  (return)\n  (i32.add)\n  (i32.add)\n  (i32.add)\n  (i32.add)\n  (i32.add)\n  (i32.add)\n  (i32.add)\n )\n)\n</code></pre>\n\n<p>So what is the point of type checking after the return statement?</p>\n"
+}

@@ -1,0 +1,30 @@
+{
+    "tags": [
+        "rust",
+        "webassembly",
+        "rust-cargo",
+        "wasm-bindgen",
+        "wasm-pack"
+    ],
+    "owner": {
+        "reputation": 25,
+        "user_id": 12262084,
+        "user_type": "registered",
+        "profile_image": "https://lh6.googleusercontent.com/-OIAo-_MKJX8/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3rfjM8bY71FREsXr0EmDPqqKbmGCvg/photo.jpg?sz=128",
+        "display_name": "mar-tina",
+        "link": "https://stackoverflow.com/users/12262084/mar-tina"
+    },
+    "is_answered": true,
+    "view_count": 443,
+    "accepted_answer_id": 60713707,
+    "answer_count": 1,
+    "score": 2,
+    "last_activity_date": 1584443714,
+    "creation_date": 1583180282,
+    "last_edit_date": 1584371846,
+    "question_id": 60496032,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/60496032/passing-strings-between-rust-and-javascript-when-building-with-wasm-pack",
+    "title": "Passing strings between Rust and JavaScript when building with wasm-pack",
+    "body": "<p>I'm building a Chrome extension and I opted to use some WebAssembly functionality. I'm using wasm-pack to build the source because it provides a <code>--target web</code> that reduces the complexity of plugging in the Wasm functions. Passing integer values between Rust and JS works seamlessly, but I can't seem to be able to pass a string to Rust and vice versa.</p>\n\n<p>Here is what I am working with:</p>\n\n<pre class=\"lang-rust prettyprint-override\"><code>#[wasm_bindgen]\nextern \"C\" {\n    fn alert(s: &amp;str);\n\n    #[wasm_bindgen(js_namespace = console)]\n    fn log(x: &amp;str);\n} \n\n#[wasm_bindgen]\npub extern \"C\" fn add_two(x: i32) -&gt; i32 {\n   x + 2\n}\n\n#[wasm_bindgen]\npub fn hello(name: &amp;str) {\n    log(\"Hello\") // &lt;-- passing a '&amp;str' directly works. I can see it in the browser.\n    log(name) // &lt;-- does not seem to work. There is no output\n    alert(&amp;format!(\"Hello {}\", name)); // &lt;- Only output im getting is \"Hello !\"\n}\n</code></pre>\n\n<p><strong>Update: More information on how i'm importing and instantiating wasm</strong> </p>\n\n<p>After building with wasm-pack and importing the pkg directory generated into my JS folder. I make the contents of the pkg directory available to the project through the manifest.json file as a web_resource.</p>\n\n<p>Here is how i'm loading the script in my content_script.js</p>\n\n<pre><code>(async function() {\n  // Get the JS File\n  const src = await import(\"/pkg/rusty.js\");\n  // Fetch the wasm file.\n  const wasm_src = chrome.extension.getURL(\"/pkg/rusty_bg.wasm\");\n  //src has an exported function 'default' that initializes the WebAssembly module.\n  let wasm = await src.default(wasm_src);\n\n  wasm.hello(\"stack-overflow\");\n})();\n\n</code></pre>\n\n<p>I also noticed that my generated wasm_bg file has some Rust error output at the bottom . \n<a href=\"https://i.stack.imgur.com/tgOO0.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/tgOO0.png\" alt=\"Error output in wasm_bg\"></a></p>\n"
+}

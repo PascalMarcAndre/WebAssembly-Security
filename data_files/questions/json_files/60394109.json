@@ -1,0 +1,25 @@
+{
+    "tags": [
+        "webassembly",
+        "blazor-client-side"
+    ],
+    "owner": {
+        "reputation": 61,
+        "user_id": 6525935,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/9ca0e7a647281198ab8958d4679dc4f7?s=128&d=identicon&r=PG",
+        "display_name": "Lucas Luis Baruffi",
+        "link": "https://stackoverflow.com/users/6525935/lucas-luis-baruffi"
+    },
+    "is_answered": true,
+    "view_count": 714,
+    "answer_count": 2,
+    "score": 2,
+    "last_activity_date": 1591783619,
+    "creation_date": 1582631863,
+    "question_id": 60394109,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/60394109/client-side-blazor-authentication-token-expired-on-server-side",
+    "title": "Client side Blazor authentication token expired on server side",
+    "body": "<p>I'm having a problem with client side token with blazor authentication. I implemented the authentication based on this blog posts, I'm using webassembly project.</p>\n\n<p><a href=\"https://chrissainty.com/securing-your-blazor-apps-introduction-to-authentication-with-blazor/\" rel=\"nofollow noreferrer\">https://chrissainty.com/securing-your-blazor-apps-introduction-to-authentication-with-blazor/</a></p>\n\n<p><a href=\"https://chrissainty.com/securing-your-blazor-apps-authentication-with-clientside-blazor-using-webapi-aspnet-core-identity/\" rel=\"nofollow noreferrer\">https://chrissainty.com/securing-your-blazor-apps-authentication-with-clientside-blazor-using-webapi-aspnet-core-identity/</a></p>\n\n<p><a href=\"https://chrissainty.com/securing-your-blazor-apps-configuring-role-based-authorization-with-client-side-blazor/\" rel=\"nofollow noreferrer\">https://chrissainty.com/securing-your-blazor-apps-configuring-role-based-authorization-with-client-side-blazor/</a></p>\n\n<p>Almost everything works fine, but I'm having an issue. On server side the authentication token gets expired but on client side, I still have the authentication token on local storage. My function to get local state:</p>\n\n<pre><code>   public override async Task&lt;AuthenticationState&gt; GetAuthenticationStateAsync()\n    {\n        var savedToken = await _localStorage.GetItemAsync&lt;string&gt;(\"authToken\");            \n\n        if (string.IsNullOrWhiteSpace(savedToken))\n        {\n            return new AuthenticationState(new ClaimsPrincipal(new ClaimsIdentity()));\n        }\n\n        _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(\"bearer\", savedToken);\n\n        return new AuthenticationState(new ClaimsPrincipal(new ClaimsIdentity(ParseClaimsFromJwt(savedToken), \"jwt\")));\n    }\n</code></pre>\n\n<p>Well, looking on response header I can see that server tells me that my local token is expired, but I don't know how to get this information on client side. So my client side tells me that I'm authenticated but on server side I'm not. I don't want to make a request to test this every time that my method GetAuthenticationStateAsync runs to clean manually the token of local storage. How is the best way to deal with this behavor? I'm missing someting on my code?</p>\n\n<p>The header response: \"www-authenticate: Bearer error=\"invalid_token\", error_description=\"The token expired at '02/24/2020 11:52:35'\"\"</p>\n\n<p>Thanks.</p>\n"
+}

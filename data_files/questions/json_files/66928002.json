@@ -1,0 +1,29 @@
+{
+    "tags": [
+        "c#",
+        "asp.net-core",
+        "razor-pages",
+        "httpcontext",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 1,
+        "user_id": 12484570,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/70ca0a6afb66dc21ba0397aa66bc21dd?s=128&d=identicon&r=PG&f=1",
+        "display_name": "agretsuko",
+        "link": "https://stackoverflow.com/users/12484570/agretsuko"
+    },
+    "is_answered": false,
+    "view_count": 19,
+    "answer_count": 0,
+    "score": 0,
+    "last_activity_date": 1617548715,
+    "creation_date": 1617427684,
+    "last_edit_date": 1617548715,
+    "question_id": 66928002,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/66928002/access-x-ms-client-principal-name-in-razor-page",
+    "title": "Access X-MS-CLIENT-PRINCIPAL-NAME in Razor page",
+    "body": "<p>In the Blazor WebAssembly app that I'm currently working on, the username(X-MS-CLIENT-PRINCIPAL-NAME) is accessed in Startup.cs through HttpContext.</p>\n<pre><code>\npublic void ConfigureServices(IServiceCollection services)\n{\n    services.AddControllersWithViews();\n    services.AddRazorPages();\n    services.AddServerSideBlazor();\n    services.AddHttpContextAccessor();\n}\npublic void Configure(IApplicationBuilder app, IWebHostEnvironment env)\n{\n     app.Use(async (context, next) =&gt;\n     {\n        var username = context.Request.Headers[&quot;X-MS-CLIENT-PRINCIPAL-NAME&quot;];\n        // Perform some business logic to check if user has access to the site.\n     });\n}\n</code></pre>\n<p>I want to access the same <strong>username</strong> in my RazorPage so that I could utilize it. In my client side, I have injected HttpContextAccessor and attempted to access the username.</p>\n<pre><code>@using Microsoft.AspNetCore.Http;\n@inject IHttpContextAccessor HttpContextAccessor\n\n@code {\n    private string username;\n\n    protected override async Task OnInitializedAsync()\n    {\n        userName = HttpContextAccessor.HttpContext.Request.Headers[&quot;X-MS-CLIENT-PRINCIPAL-NAME&quot;];\n    }\n}\n</code></pre>\n<p>However, on running the application, I obtain</p>\n<pre><code>Microsoft.AspNetCore.Components.WebAssembly.Rendering.WebAssemblyRenderer[100]\n      Unhandled exception rendering component: Cannot provide a value for property 'HttpContextAccessor' on type 'HoshiApp.Client.Shared.Page'. There is no registered service of type 'Microsoft.AspNetCore.Http.IHttpContextAccessor'.\n</code></pre>\n<p>Is there any way I can directly access the username mentioned in Startup?</p>\n"
+}

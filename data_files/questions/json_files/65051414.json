@@ -1,0 +1,28 @@
+{
+    "tags": [
+        "c#",
+        "azure",
+        "blazor",
+        "azure-ad-b2c"
+    ],
+    "owner": {
+        "reputation": 11,
+        "user_id": 13576115,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/536fb2737b56e0ff274b1cb03031cfda?s=128&d=identicon&r=PG&f=1",
+        "display_name": "jokk",
+        "link": "https://stackoverflow.com/users/13576115/jokk"
+    },
+    "is_answered": true,
+    "view_count": 69,
+    "accepted_answer_id": 65053193,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1606588538,
+    "creation_date": 1606578401,
+    "question_id": 65051414,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/65051414/error-on-loading-request-b2c-login-screen-on-blazor-webassembly-app",
+    "title": "Error on loading request B2C login screen on Blazor WebAssembly app",
+    "body": "<p>I have followed this tutorial to add authorization and authentication to my WebAssembly app using Azure AD B2C. <a href=\"https://docs.microsoft.com/en-us/aspnet/core/blazor/security/webassembly/hosted-with-azure-active-directory-b2c?view=aspnetcore-5.0\" rel=\"nofollow noreferrer\">https://docs.microsoft.com/en-us/aspnet/core/blazor/security/webassembly/hosted-with-azure-active-directory-b2c?view=aspnetcore-5.0</a></p>\n<p>I have done the tutorial, and done no extra adjustment to the code. However, i am facing an issue when trying to login when running the app.</p>\n<p>The resource is not working because the URL the app is using is wrong. It uses this: <a href=\"https://easytimeslot.b2clogin.comeasytimeslot.onmicrosoft.com/b2c_1_customuserflow/v2.0/.well-known/openid-configuration\" rel=\"nofollow noreferrer\">https://easytimeslot.b2clogin.comeasytimeslot.onmicrosoft.com/b2c_1_customuserflow/v2.0/.well-known/openid-configuration</a></p>\n<p>Instead of using this: <a href=\"https://easytimeslot.b2clogin.com/easytimeslot.onmicrosoft.com/b2c_1_customuserflow/v2.0/.well-known/openid-configuration\" rel=\"nofollow noreferrer\">https://easytimeslot.b2clogin.com/easytimeslot.onmicrosoft.com/b2c_1_customuserflow/v2.0/.well-known/openid-configuration</a></p>\n<p>Now what have i tried so far to fix it. I tried editing the appsettings.json file, and adding a trailing slash to the Instance and i tried a starting slash in the Domain. None of the them worked.</p>\n<p>I also tried looking through the code for the URL, but couldn't find anything.</p>\n<p>Does anyone know what i can do to solve this?\nThank you in advance!</p>\n"
+}

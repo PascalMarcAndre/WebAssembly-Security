@@ -1,0 +1,28 @@
+{
+    "tags": [
+        "authentication",
+        "identityserver4",
+        "blazor",
+        "blazor-client-side"
+    ],
+    "owner": {
+        "reputation": 23,
+        "user_id": 6029872,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/9836937630e3d725f89ac7d03b898828?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Vu Minh",
+        "link": "https://stackoverflow.com/users/6029872/vu-minh"
+    },
+    "is_answered": true,
+    "view_count": 4756,
+    "accepted_answer_id": 60596261,
+    "answer_count": 1,
+    "score": 2,
+    "last_activity_date": 1585814873,
+    "creation_date": 1583720256,
+    "question_id": 60593985,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/60593985/how-to-authorize-a-blazor-webassembly-spa-app-using-identity-server",
+    "title": "How to authorize a Blazor WebAssembly SPA app using Identity Server",
+    "body": "<p>I am writing a demo Blazor WebAssembly SPA technical demo app, but I have some problems with authentication.\nI'm going to use Identity Server to do the authorization but i can't find any libraries to support it.\nAll the tutorials I found guided to use Blazor Server or add an ASP.net Core hosted, but it's not really make sense for my demo app.</p>\n\n<p>I am glad if anyone can help.</p>\n\n<p>Thank you</p>\n"
+}

@@ -1,0 +1,26 @@
+{
+    "tags": [
+        "blazor",
+        "blazor-client-side"
+    ],
+    "owner": {
+        "reputation": 285,
+        "user_id": 9855089,
+        "user_type": "registered",
+        "profile_image": "https://i.stack.imgur.com/hMA6J.jpg?s=128&g=1",
+        "display_name": "Jaap",
+        "link": "https://stackoverflow.com/users/9855089/jaap"
+    },
+    "is_answered": true,
+    "view_count": 618,
+    "accepted_answer_id": 61006252,
+    "answer_count": 2,
+    "score": 0,
+    "last_activity_date": 1594677261,
+    "creation_date": 1585823988,
+    "question_id": 60989640,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/60989640/blazor-webassembly-3-2-0-preview-3-using-appsettings-environment-json-in-pro",
+    "title": "Blazor WebAssembly 3.2.0 Preview 3 - Using appsettings.{environment}.json in Program.cs",
+    "body": "<p>I'm using Blazor WebAssembly 3.2.0 Preview 3 / Static / Client Side</p>\n\n<ul>\n<li>Blazor .gRPC <code>Program.cs</code> Code example: <a href=\"https://github.com/grpc/grpc-dotnet/tree/master/examples/Blazor\" rel=\"nofollow noreferrer\">https://github.com/grpc/grpc-dotnet/tree/master/examples/Blazor</a></li>\n<li>Docs Blazor Wasm appsettings page: <a href=\"https://docs.microsoft.com/en-us/aspnet/core/blazor/dependency-injection?view=aspnetcore-3.1#blazor-webassembly\" rel=\"nofollow noreferrer\">https://docs.microsoft.com/en-us/aspnet/core/blazor/dependency-injection?view=aspnetcore-3.1#blazor-webassembly</a></li>\n</ul>\n\n<p>I'm now using <code>#if DEBUG #else #endif</code> for the string variable \"<code>backendUrl</code>\". I'd like to load that setting from appsettings.{environment}.json. </p>\n\n<p>I can get the config after <code>var host = builder.Build();</code> (<em>info from Microsoft Docs, see sample code below, and <a href=\"https://docs.microsoft.com/en-us/aspnet/core/blazor/dependency-injection?view=aspnetcore-3.1#blazor-webassembly\" rel=\"nofollow noreferrer\">link</a> here above</em>) but the gRPC service is called before that. </p>\n\n<p><a href=\"https://devblogs.microsoft.com/aspnet/blazor-webassembly-3-2-0-preview-3-release-now-available/\" rel=\"nofollow noreferrer\">More info</a> about appsetting.{environment}.json in Blazor WebAssembly 3.2.0 Preview 3</p>\n\n<p>My question: is it possible or should I keep using <code>#if DEBUG</code> etc. <br />(<em>I'd like to use appsettings whenever it is possible anywhere in my code.</em>)</p>\n\n<p><strong>Part of my Program.cs</strong></p>\n\n<pre><code>    string backendUrl = string.Empty;\n#if DEBUG\n    backendUrl = \"https://localhost:5001\"; // Local debug URL\n#else\n    backendUrl = \"https://&lt;example&gt;.com:5001\"; // Production URL\n#endif\n    builder.Services.AddSingleton(services =&gt;\n    {\n        // Create a gRPC-Web channel pointing to the backend server.\n        // GrpcWebText is used because server streaming requires it. If server streaming is not used in your app\n        // then GrpcWeb is recommended because it produces smaller messages.\n        var httpClient = new HttpClient(new GrpcWebHandler(GrpcWebMode.GrpcWebText, new HttpClientHandler()));\n        var channel = GrpcChannel.ForAddress(backendUrl, new GrpcChannelOptions { HttpClient = httpClient });\n        return channel;\n    });\n\n    // load settings from appsettings.{environment}.json\n    // see: https://docs.microsoft.com/en-us/aspnet/core/blazor/dependency-injection?view=aspnetcore-3.1#add-services-to-an-app\n    var host = builder.Build();\n\n    var backendDomain = host.Configuration[\"Settings:BackEndDomain\"];\n    Console.WriteLine($\"Backend Domain: {backendDomain}\");\n\n    await host.RunAsync();\n\n    // original\n    // await builder.Build().RunAsync();\n</code></pre>\n"
+}

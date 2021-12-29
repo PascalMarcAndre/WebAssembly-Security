@@ -1,0 +1,28 @@
+{
+    "tags": [
+        "google-chrome",
+        "webpack",
+        "webassembly"
+    ],
+    "owner": {
+        "reputation": 1908,
+        "user_id": 3683187,
+        "user_type": "registered",
+        "accept_rate": 63,
+        "profile_image": "https://i.stack.imgur.com/tj2pu.png?s=128&g=1",
+        "display_name": "Xharlie",
+        "link": "https://stackoverflow.com/users/3683187/xharlie"
+    },
+    "is_answered": true,
+    "view_count": 1795,
+    "accepted_answer_id": 55041379,
+    "answer_count": 1,
+    "score": 4,
+    "last_activity_date": 1551954128,
+    "creation_date": 1551949808,
+    "question_id": 55039923,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/55039923/why-does-chrome-eventually-throw-out-of-memory-wasm-memory-after-repeatedly-r",
+    "title": "Why does Chrome eventually throw &quot;Out of memory: wasm memory&quot; after repeatedly refreshing a page that uses WebAssembly?",
+    "body": "<p>I would like to believe that refreshing a browser window or tab cannot leak. Unfortunately, this does not appear to be the case when WebAssembly is concerned.</p>\n\n<p>I have built a WebAssembly crate with Rust. The compiled size of the crate is approximately 360 Kb (prior to content compression) and the crate works just fine in Firefox and even on Safari on iOS. However, I am having numerous issues in Chrome, one of them being that refreshing the page that uses the <code>.wasm</code> eventually leads to an out-of-memory error in the Console.</p>\n\n<p>The page works fine for about 35 refreshes and then throws the following:</p>\n\n<pre><code>Uncaught (in promise) RangeError: WebAssembly Instantiation: Out of memory: wasm memory\n</code></pre>\n\n<p>After this, the tab is useless but opening a new tab and loading the page works as expected -- again, for about the first 35 refreshes.</p>\n\n<p>Is this a bug in the browser or am I doing something wrong in my code? If it is a bug, is there any way to work around it? (Not that I expect that it will manifest itself in production but anyway...)</p>\n\n<p>(Presumably, the promise mentioned in the error message is the one returned by <code>import('...')</code>. I am using webpack and so I am affected by <a href=\"https://github.com/webpack/webpack/issues/6615\" rel=\"nofollow noreferrer\">https://github.com/webpack/webpack/issues/6615</a> )</p>\n"
+}

@@ -1,0 +1,30 @@
+{
+    "tags": [
+        "javascript",
+        "firebase",
+        "google-cloud-firestore",
+        "cors",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 11,
+        "user_id": 15532277,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/1c719ea61f3388c8ec7de77a8695d5f4?s=128&d=identicon&r=PG&f=1",
+        "display_name": "chelraebecker",
+        "link": "https://stackoverflow.com/users/15532277/chelraebecker"
+    },
+    "is_answered": true,
+    "view_count": 24,
+    "closed_date": 1617691134,
+    "accepted_answer_id": 66963202,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1617687457,
+    "creation_date": 1617665474,
+    "question_id": 66960982,
+    "link": "https://stackoverflow.com/questions/66960982/how-can-i-bypass-cors-to-make-a-call-to-firestore-from-blazor-webassembly-call",
+    "closed_reason": "Duplicate",
+    "title": "How can I bypass CORS to make a call to Firestore from Blazor WebAssembly? (call is in in JavaScript)",
+    "body": "<p>I am building a simple login page using Blazor WebAssembly and utilizing JSInterop to write JS functions in order to work with Firebase/Firestore. I have a function that signs the user in through a simple custom form using Firebase methods, then grabs the id token and user id to then pass into another function that requests access to Firestore. Everything works perfectly through Postman, but when I run through this process in my app, I am blocked by a CORS error:</p>\n<pre><code>Access to fetch at 'https://firestore.googleapis.com/v1/projects/trailblazor-\n5ba6f/databases/(default)/documents/users/JJNlKtvGMcUm7MjfkuJy6WdlMiO2' from origin \n'https://localhost:44318' has been blocked by CORS policy: Response to preflight request doesn't pass\naccess control check: It does not have HTTP ok status.\n</code></pre>\n<p>Here is my code for the request to access user data in Firestore (passing in the id token and user id):</p>\n<pre><code>async function sendToken(idToken, userId) {\n    try {\n        const response = await fetch(`https://firestore.googleapis.com/v1/projects/trailblazor-5ba6f/databases/(default)/documents/users/${userId}`, {\n            headers: new Headers({\n                'x-api-key': '**omitted for security**',\n                'Authorization': 'Bearer ' + idToken,\n                'Access-Control-Allow-Origin': 'https://localhost:44318',\n                'Access-Control-Allow-Credentials': 'true',\n                'Access-Control-Allow-Headers': 'Content-Type',\n                'Content-Type': 'application/json'\n            }),\n            mode: 'cors'\n        });\n        const receivedResponse = await response.json();\n        if (receivedResponse != null) {\n            console.log(receivedResponse);\n        }\n    } catch (error) {\n        return error.message;\n    }\n}\n</code></pre>\n<p>As you can see, I've tried loads of headers and nothing has worked so far. Even the CORS-enabling Chrome extension I have enabled is not helping. I have thought about making a proxy server, but I'm not sure if that makes sense quite yet. I've reviewed the Firebase docs and this should be how I can access Firestore, and like I said, everything works flawlessly in Postman (of course).</p>\n"
+}

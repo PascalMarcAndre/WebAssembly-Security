@@ -1,0 +1,27 @@
+{
+    "tags": [
+        "mongodb",
+        "go",
+        "webassembly"
+    ],
+    "owner": {
+        "reputation": 1,
+        "user_id": 7293785,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/ed9f548009f98161b0038060e7e9a574?s=128&d=identicon&r=PG&f=1",
+        "display_name": "mshirobokov",
+        "link": "https://stackoverflow.com/users/7293785/mshirobokov"
+    },
+    "is_answered": true,
+    "view_count": 332,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1563201040,
+    "creation_date": 1559938382,
+    "last_edit_date": 1563201040,
+    "question_id": 56500709,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/56500709/how-to-connect-to-a-local-mongodb-instance-from-wasm-module",
+    "title": "How to connect to a local mongodb instance from wasm module?",
+    "body": "<p>I'm trying to store some data in my local MongoDB instance using Go compiled to WebAssembly. The problem is, I cannot even connect to it. The mondog instance doesn't react to connection from wasm module in any way. This problem arises only when connecting from wasm module. The same code when compiled in ordinary way works fine, as well as connection from mongo shell. The runned mongod instance has no password protection.</p>\n\n<p>My OS is Windows 10 in case that matters.</p>\n\n<p>I've tried to change mongod bind_ip parameter from localhost to the actual local adress of my machine and use different browsers (Chrome 75.0.3770.80, Opera 60.0.3255.109).\nChanging the timeout duration doesn't do the trick also.</p>\n\n<pre class=\"lang-golang prettyprint-override\"><code>func connectToMongo(URI string, timeout time.Duration) *mongo.Client {\n\n    ctx, cancel := context.WithTimeout(context.Background(), timeout)\n    defer cancel()\n\n    client, err := mongo.Connect(ctx, options.Client().ApplyURI(URI))\n\n    if err != nil {\n        log.Fatal(err)\n    }\n\n    err = client.Ping(ctx, readpref.Primary())\n\n    if err != nil {\n        log.Fatal(err) // It fails here\n    }\n\n    return client\n}\n\nfunc main() {\n    client := connectToMongo(\"mongodb://localhost:27017\", 20*time.Second)\n}\n\n</code></pre>\n\n<pre class=\"lang-html prettyprint-override\"><code>&lt;html&gt;\n    &lt;head&gt;\n        &lt;script type=\"text/javascript\" src=\"./wasm_exec.js\"&gt;&lt;/script&gt;\n        &lt;script&gt;\n            const go = new Go();\n            WebAssembly.instantiateStreaming(fetch('main.wasm'),go.importObject).then( res=&gt; {\n                go.run(res.instance)    \n            })\n        &lt;/script&gt;\n    &lt;/head&gt;\n&lt;/html&gt;\n</code></pre>\n\n<p>I run mongod.exe without any parameters so it is binded to localhost.</p>\n\n<p>I expected my code to connect to mongod instance, but actually I get the following error in browser console: \"context deadline exceeded\".</p>\n\n<p>I'm still learning Go and a total newbie in JavaScript so I might be missing something very simple. Any help would be greatly appreciated.</p>\n"
+}

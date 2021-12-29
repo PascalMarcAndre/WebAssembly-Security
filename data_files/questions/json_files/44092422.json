@@ -1,0 +1,29 @@
+{
+    "tags": [
+        "javascript",
+        "html",
+        "security",
+        "web",
+        "browser"
+    ],
+    "owner": {
+        "reputation": 327,
+        "user_id": 1483512,
+        "user_type": "registered",
+        "accept_rate": 71,
+        "profile_image": "https://www.gravatar.com/avatar/6c057f8208875357b7c27e2b918bd665?s=128&d=identicon&r=PG",
+        "display_name": "AntiMS",
+        "link": "https://stackoverflow.com/users/1483512/antims"
+    },
+    "is_answered": false,
+    "view_count": 68,
+    "answer_count": 0,
+    "score": 0,
+    "last_activity_date": 1495331310,
+    "creation_date": 1495331310,
+    "question_id": 44092422,
+    "content_license": "CC BY-SA 3.0",
+    "link": "https://stackoverflow.com/questions/44092422/where-all-can-javascript-and-plugins-live-hide-in-a-webpage",
+    "title": "Where all can javascript (and plugins) live/hide in a webpage?",
+    "body": "<p>I've written an intercepting proxy and I'm working on adding a feature to it wherein it removes all JavaScript (and VBScript and any plugin content such as Flash, Silverlight, ActiveX components, and Java Applets which can run arbitrary, if sandboxed, code which interacts with the page) from the webpages which are received through it. If removing the page content is \"the easy part\", getting an exhaustive list of places where such things can hide might be the \"hard part\".</p>\n\n<p>Of course, JavaScript can include other JavaScript in various ways such as adding a new script element to the dom. This doesn't concern me because if I head off all ways in which the HTML and/or CSS can pull in JavaScript, I don't need to be concerned that JavaScript can pull in other JavaScript. (Or that Flash can pull in JavaScript or that JavaScript can pull in Flash content etc.)</p>\n\n<p>The ways I've identified in which a page can include JavaScript (or VBScript) are:</p>\n\n<ol>\n<li>A script tag, either inline or with a \"src=\" attribute for an external file.</li>\n<li>An \"onload=\", \"onclick=\", \"onmouseover=\", or other \"on_event_=\" attribute.</li>\n<li>\"javascript:\" urls in \"href=\" attributes on a tags.</li>\n<li>There's the CSS 'background-image: url(\"javascript: ...\")' trick (though it doesn't work in all browsers).</li>\n</ol>\n\n<p>One question I have is whether I need to worry about \"javascript:\" urls in places other than \"href=\" attributes on a tags. I know some older browsers (such as IE6) execute the JavaScript in a \"javascript:\" url in a \"src=\" attributes in img tags. That doesn't concern me simply because I'm not writing my intercepting proxy for use with browsers as old as IE6. But if there are other \"tricky\" places in which \"javascript:\" urls might be executed, that would be good to know. (Maybe in frame and iframe \"src=\" attributes?)</p>\n\n<p>And, of course, any other ways JavaScript might be executed that I haven't considered.</p>\n\n<p>The ways I've identifid in which a page can include other (sandboxed) code are:</p>\n\n<ol>\n<li>embed tags.</li>\n<li>object tags.</li>\n<li>applet tags.</li>\n</ol>\n\n<p>One question I have here (and this may be considered \"future-proofing\") regards how WebAssembly bytecode is loaded. Just my cursory googling hasn't determined how that works exactly.</p>\n\n<p>While PDF's can be loaded in most modern browsers without extensions or anything, I consider PDF's to be outside of the scope of this question because while they can include arbitrary (sandboxed) code, this code cannot interact with the webpage.</p>\n\n<p>I also consider things such as HTML5 video to be outside the scope of this question because they don't run arbitrary code.</p>\n\n<p>I'm also not concerned with any ways in which JavaScript or plugins might execute which require the presence of browser extensions unless said extensions are extremely widely used.</p>\n\n<p>I do, however, desire for this script and plugin stripping feature to be ironclad. If somebody were able to use tricky measures to slip code by this feature, the tricky measures which might be employed are relevant to this question as far as I'm concerned.</p>\n\n<p>And, ways to include code which only work in some browsers and not others are also in-scope.</p>\n\n<p>Are there any other kinds of plugins or languages that can be included in a webpage that I haven't considered above?</p>\n"
+}

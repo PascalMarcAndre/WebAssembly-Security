@@ -1,0 +1,30 @@
+{
+    "tags": [
+        "c#",
+        "asp.net-core",
+        "design-patterns",
+        "azure-storage",
+        "blazor"
+    ],
+    "owner": {
+        "reputation": 1040,
+        "user_id": 2969412,
+        "user_type": "registered",
+        "accept_rate": 57,
+        "profile_image": "https://www.gravatar.com/avatar/2400c042e8661dccb01771f598b8acf0?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Morten_564834",
+        "link": "https://stackoverflow.com/users/2969412/morten-564834"
+    },
+    "is_answered": true,
+    "view_count": 1019,
+    "accepted_answer_id": 60650854,
+    "answer_count": 1,
+    "score": 1,
+    "last_activity_date": 1584005367,
+    "creation_date": 1582448511,
+    "question_id": 60360640,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/60360640/best-practice-of-using-tableentity-azure-table-storage-decoupling-of-classes",
+    "title": "Best practice of using TableEntity (Azure table storage) - decoupling of classes",
+    "body": "<p>I'm prototyping right now on a bigger project and need to make some design decisions.. </p>\n\n<p>My VS Solution consists (for now, might separate it further later) of 4 projects:</p>\n\n<ul>\n<li>A .NET Standard 2.1 project with all my entities (e.g. a Customer class), containing mostly simple properties, but some also contains enumerations and lists. I want this be simple with no dependencies.</li>\n<li>A Web project using ASP.NET Core 3.1 and Blazor WebAssembly (client-side only)</li>\n<li>An Application project containing the infrastructure and services (e.g. this is where <code>AzureTableStorage&lt;T&gt;</code> resides) </li>\n<li>An Azure Function layer that is the 'mediator' between web and application, which depends on Application layer (injects the CustomerService)</li>\n</ul>\n\n<p>For storage I'm using Azure storage table, and my problem is to find an elegant decoupled way of implementing this. </p>\n\n<p>I'm using this example more or less: <a href=\"https://www.c-sharpcorner.com/article/single-page-application-in-blazor-with-azure-table-storage/\" rel=\"nofollow noreferrer\">https://www.c-sharpcorner.com/article/single-page-application-in-blazor-with-azure-table-storage/</a> for CRUD operations to the tables.</p>\n\n<p>But in order to use this I'm relying on inheriting <code>TableEntity</code>, which is annoying. Also my WebUI is using Blazor, so it takes in a bunch of Azure Cosmos dll to the browser that is not needed if I choose to inherit <code>TableEntity</code>.</p>\n\n<p>So I can't decide if I just need to pursue decoupling my poco classes and get rid <code>TableEntity</code>.. I saw something about using <code>TableEntityAdapter</code>, but can't find any example using it?</p>\n\n<p>Another approach might be to have Dto \"duplicate\" classes of my POCO classes, which then could inherit the TableEntity. But then I would need to maintain these classes. But might be needed since I don't think the methods in Azure Storage library can handle lists, enumeration etc. out of the box. But then again if I can make some generic adapter that takes care of more complex types, a Dto class could be redundant.</p>\n\n<p>Looking for input and inspiration basically :)</p>\n\n<p>Thanks</p>\n"
+}

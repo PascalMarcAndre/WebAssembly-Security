@@ -1,0 +1,28 @@
+{
+    "tags": [
+        "rust",
+        "webassembly"
+    ],
+    "owner": {
+        "reputation": 2001,
+        "user_id": 2707195,
+        "user_type": "registered",
+        "accept_rate": 82,
+        "profile_image": "https://i.stack.imgur.com/RlRWZ.jpg?s=128&g=1",
+        "display_name": "Andrei CACIO",
+        "link": "https://stackoverflow.com/users/2707195/andrei-cacio"
+    },
+    "is_answered": true,
+    "view_count": 905,
+    "accepted_answer_id": 50419599,
+    "answer_count": 1,
+    "score": 5,
+    "last_activity_date": 1527449945,
+    "creation_date": 1526660718,
+    "last_edit_date": 1526672360,
+    "question_id": 50415623,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/50415623/cant-get-imageload-from-memory-to-work-when-compiled-to-webassembly",
+    "title": "Can&#39;t get image::load_from_memory() to work when compiled to WebAssembly",
+    "body": "<p>I am trying to load an image from JavaScript to WebAssembly with Rust using the <a href=\"https://crates.io/crates/image\" rel=\"noreferrer\">image crate</a>.</p>\n\n<p>I have the following Rust code:</p>\n\n<pre><code>extern crate image;\nextern crate libc;\n\nuse libc::c_void;\nuse std::mem;\n\n#[no_mangle]\npub extern \"C\" fn alloc(size: usize) -&gt; *mut c_void {\n    let mut buf = Vec::with_capacity(size);\n    let ptr = buf.as_mut_ptr();\n    mem::forget(buf);\n\n    return ptr as *mut c_void;\n}\n\n#[no_mangle]\npub extern \"C\" fn read_img(buff_ptr: *mut u8, buff_len: usize) -&gt; *mut i32 {\n    let mut img: Vec&lt;u8&gt; = unsafe { Vec::from_raw_parts(buff_ptr, buff_len, buff_len) };\n    let ok = Box::new([333]);\n    let err = Box::new([331]);\n\n    return match image::load_from_memory(&amp;img) {\n        Ok(img) =&gt; Box::into_raw(ok) as *mut i32,\n        Err(_) =&gt; Box::into_raw(err) as *mut i32,\n    };\n}\n\nfn main() {}\n</code></pre>\n\n<p>which I compile using the following tools:</p>\n\n<pre class=\"lang-none prettyprint-override\"><code>cargo +nightly build --target wasm32-unknown-unknown --release\n</code></pre>\n\n<p>In the <code>read_img()</code> function, I naively handle errors via two vectors: <code>[333]</code> for OK and <code>[331]</code> for any error. I read these vectors on the JavaScript side to know if the image was loaded successfully.</p>\n\n<p>The <code>load_from_memory</code> method fails because I get the <code>[331]</code> vector. If I replace the <code>load_from_memory</code> method with the <code>guess_format</code> method, I get the <code>[333]</code> vector. I also did some pattern matching for PNG and JPG and it reads the buffer correctly.</p>\n\n<p>I couldn't find how can I more thoroughly debug such behaviour.</p>\n\n<p>On the JavaScript part, I simply load up the image's <code>arrayBuffer</code> into WASM's shared memory.</p>\n\n<p>Here is what I am doing on the JavaScript side:</p>\n\n<pre><code>function compile(wasmFile = 'distil_wasm.gc.wasm') {\n    return fetch(wasmFile)\n        .then(r =&gt; r.arrayBuffer())\n        .then(r =&gt; {\n            let module = new WebAssembly.Module(r);\n            let importObject = {}\n            for (let imp of WebAssembly.Module.imports(module)) {\n                if (typeof importObject[imp.module] === \"undefined\")\n                    importObject[imp.module] = {};\n                switch (imp.kind) {\n                case \"function\": importObject[imp.module][imp.name] = () =&gt; {}; break;\n                case \"table\": importObject[imp.module][imp.name] = new WebAssembly.Table({ initial: 256, maximum: 256, element: \"anyfunc\" }); break;\n                case \"memory\": importObject[imp.module][imp.name] = new WebAssembly.Memory({ initial: 256 }); break;\n                case \"global\": importObject[imp.module][imp.name] = 0; break;\n                }\n            }\n\n            return WebAssembly.instantiate(r, importObject);\n        });\n}\n\nfunction loadImgIntoMem(img, memory, alloc) {\n    return new Promise(resolve =&gt; {\n        fetch(img)\n            .then(r =&gt; r.arrayBuffer())\n            .then(buff =&gt; {\n                const imgPtr = alloc(buff.byteLength);\n                const imgHeap = new Uint8Array(memory.buffer, imgPtr, buff.byteLength);\n\n                imgHeap.set(new Uint8Array(buff));\n\n                resolve({ imgPtr, len: buff.byteLength });\n            });\n    });\n}\n\n\nfunction run(img) {\n    return compile().then(m =&gt; {\n        return loadImgIntoMem(img, m.instance.exports.memory, m.instance.exports.alloc).then(r =&gt; {\n            window.WASM = m;\n            return m.instance.exports.read_img(r.imgPtr, r.len);\n        });\n    });\n}\n\nrun('img-2.jpg')\n   .then(ptr =&gt; console.log(new Int32Array(WASM.instance.exports.memory.buffer, ptr, 1)))\n</code></pre>\n\n<p>This console logs:</p>\n\n<pre class=\"lang-none prettyprint-override\"><code>Int32Array [ 331 ]\n</code></pre>\n"
+}

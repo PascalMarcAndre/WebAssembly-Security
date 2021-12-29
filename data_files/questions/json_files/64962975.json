@@ -1,0 +1,29 @@
+{
+    "tags": [
+        "c#",
+        "asp.net-core",
+        "asp.net-mvc-3",
+        "asp.net-identity",
+        "hangfire"
+    ],
+    "owner": {
+        "reputation": 3074,
+        "user_id": 391918,
+        "user_type": "registered",
+        "accept_rate": 50,
+        "profile_image": "https://i.stack.imgur.com/sJzpJ.png?s=128&g=1",
+        "display_name": "Ajit Goel",
+        "link": "https://stackoverflow.com/users/391918/ajit-goel"
+    },
+    "is_answered": false,
+    "view_count": 65,
+    "answer_count": 0,
+    "score": 0,
+    "last_activity_date": 1606109270,
+    "creation_date": 1606109270,
+    "question_id": 64962975,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/64962975/configure-identityserverjwt-authentication-with-authorization",
+    "title": "Configure IdentityServerJwt Authentication with Authorization",
+    "body": "<p>I have an Blazor webassembly application which uses IdentityServerJwt AddAuthentication and is working with Hangfire. I am trying to configure Hangfire to <code>allow only users who are admins</code> authorization based on the article <a href=\"https://sahansera.dev/securing-hangfire-dashboard-with-endpoint-routing-auth-policy-aspnetcore/\" rel=\"nofollow noreferrer\">here</a> but I am getting an <code>No authentication handler is registered for the scheme 'Bearer'</code> error. What should I add as an <code>AuthenticationSchemes</code>. JwtBearerDefaults.AuthenticationScheme` does not work.</p>\n<p>What am I missing?</p>\n<pre><code>    public partial class Startup\n        {\n            public Startup(IConfiguration configuration)\n            {\n                Configuration = configuration;\n            }    \n            public IConfiguration Configuration { get; }\n            string handfirepolicyname=&quot;HangfirePolicyName&quot;;\n            public void ConfigureServices(IServiceCollection services)\n            {\n...Code removed for brevity\n    services.AddAuthentication().AddIdentityServerJwt();\n                services.AddAuthorization(options =&gt;\n                {\n                  options.AddPolicy(handfirepolicyname, builder =&gt;\n                  {                    builder.AddAuthenticationSchemes(JwtBearerDefaults.AuthenticationScheme).RequireAuthenticatedUser();\n                    builder.RequireRole(&quot;admin&quot;);\n                  });\n                });        \n                var hangfireConnectionstring = &quot;SomeHangfireDatabaseConnectionString&quot;;\n                var mySqlStorageOptions = new MySqlStorageOptions();\n                var mySqlStorage = new MySqlStorage(hangfireConnectionstring, mySqlStorageOptions);\n                services.AddHangfire(config =&gt; config.UseStorage(mySqlStorage));\n                services.AddHangfireServer();\n    }        \n    public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ApplicationIdentityDbContext identityDbContext)\n            {\n...Code removed for brevity\n                app.UseIdentityServer();\n                app.UseAuthentication();\n                app.UseAuthorization();\n                //UseAuthentication, UseAuthorization should be before UseHangfireDashboard\n                app.UseHangfireDashboard();    \n                app.UseEndpoints(endpoints =&gt;\n                {\n                  endpoints.MapHangfireDashboard(&quot;/hangfire&quot;, new DashboardOptions()\n                  {\n                    Authorization = new List&lt;IDashboardAuthorizationFilter&gt; { }\n                  }).RequireAuthorization(handfirepolicyname);\n                });\n    \n    }\n</code></pre>\n<p><strong>Error:</strong></p>\n<pre><code>No authentication handler is registered for the scheme 'Bearer'. The registered schemes are: Identity.Application, Identity.External, Identity.TwoFactorRememberMe, Identity.TwoFactorUserId, idsrv, idsrv.external, IdentityServerJwt, IdentityServerJwtBearer. Did you forget to call AddAuthentication().Add[SomeAuthHandler](&quot;Bearer&quot;,...)?\n</code></pre>\n"
+}

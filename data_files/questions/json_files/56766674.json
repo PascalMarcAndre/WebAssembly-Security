@@ -1,0 +1,26 @@
+{
+    "tags": [
+        "webassembly"
+    ],
+    "owner": {
+        "reputation": 165,
+        "user_id": 9537752,
+        "user_type": "registered",
+        "profile_image": "https://lh3.googleusercontent.com/-XdUIqdMkCWA/AAAAAAAAAAI/AAAAAAAAAAA/4252rscbv5M/photo.jpg?sz=128",
+        "display_name": "Ask P",
+        "link": "https://stackoverflow.com/users/9537752/ask-p"
+    },
+    "is_answered": true,
+    "view_count": 624,
+    "accepted_answer_id": 56766887,
+    "answer_count": 2,
+    "score": 3,
+    "last_activity_date": 1563200323,
+    "creation_date": 1561531380,
+    "last_edit_date": 1563200323,
+    "question_id": 56766674,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/56766674/how-does-web-assembly-facilitate-less-hackable-more-trustless-in-browser-code-ex",
+    "title": "How does Web Assembly facilitate less hackable/more trustless in-browser code execution?",
+    "body": "<p>i.e. for one, precompiled code is harder to read therefore making it more difficult to meaningfully alter browser code.</p>\n\n<p>How is it more 'sandboxed' than JS, and does this make it less hackable? </p>\n\n<p>\"WebAssembly is specified to be run in a safe, sandboxed execution environment.\" - <a href=\"https://developer.mozilla.org/en-US/docs/WebAssembly/Concepts\" rel=\"nofollow noreferrer\">https://developer.mozilla.org/en-US/docs/WebAssembly/Concepts</a></p>\n\n<p>Are there properties of the WASM VM memory format that make it more client-side-hack-resistant?</p>\n\n<p>Anything else?</p>\n"
+}

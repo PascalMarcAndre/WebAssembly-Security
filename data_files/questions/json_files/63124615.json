@@ -1,0 +1,28 @@
+{
+    "tags": [
+        "c#",
+        "azure-ad-b2c",
+        "asp.net-core-3.1",
+        "blazor-client-side",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 1,
+        "user_id": 12476636,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/8ac78350de041d51b9036cb6dbc3b58c?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Thomas N",
+        "link": "https://stackoverflow.com/users/12476636/thomas-n"
+    },
+    "is_answered": false,
+    "view_count": 201,
+    "answer_count": 0,
+    "score": 0,
+    "last_activity_date": 1595889479,
+    "creation_date": 1595889479,
+    "question_id": 63124615,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/63124615/blazor-webassembly-azure-ad-b2c-connect-to-webapi-on-other-port-domain-does-not",
+    "title": "Blazor WebAssembly Azure AD B2C Connect to WebAPI on other port/domain does not work",
+    "body": "<p>I have followed the sample below and it works just fine:\n<a href=\"https://docs.microsoft.com/en-us/aspnet/core/blazor/security/webassembly/hosted-with-azure-active-directory-b2c?view=aspnetcore-3.1\" rel=\"nofollow noreferrer\">https://docs.microsoft.com/en-us/aspnet/core/blazor/security/webassembly/hosted-with-azure-active-directory-b2c?view=aspnetcore-3.1</a></p>\n<p>I now want to simulate calling a separate API that is protected by Azure B2C that will be on an other domain.</p>\n<p>I therefore set up two startup projects in the solution, one for the Client project and one for the Server project with two different ports (to simulate different URLs).</p>\n<p>I have set Debug on both projects launch &quot;Project&quot; (i.e. the built in Web Server in .NET Core 3.1).</p>\n<p><strong>Server Project:</strong></p>\n<p>Is set to run on https://localhost:5002.</p>\n<p>I changed these lines in &quot;Startup.cs&quot;:</p>\n<pre><code> app.UseEndpoints(endpoints =&gt;\n            {\n                endpoints.MapRazorPages();\n                endpoints.MapControllers();\n                endpoints.MapFallbackToFile(&quot;index.html&quot;);\n            });\n</code></pre>\n<p>To:</p>\n<pre><code> app.UseEndpoints(endpoints =&gt;\n            {\n                //endpoints.MapRazorPages();\n                endpoints.MapControllers();\n                //endpoints.MapFallbackToFile(&quot;index.html&quot;);\n            });\n</code></pre>\n<p>Since I do not want to start the Blazor WebAssembly application on this port.</p>\n<p>I have also added these lines to void Configure in Startup.cs:</p>\n<pre><code>//Add and Activate CORS Policy.\n            app.UseCors(policy =&gt; policy\n                    .WithOrigins(&quot;https://localhost:50002&quot;)\n                    .AllowAnyMethod()\n                    .AllowAnyHeader()\n                    .AllowCredentials());\n</code></pre>\n<p>To configure CORS policy.</p>\n<p><strong>Client project:</strong></p>\n<p>Is set up to run on: https://localhost:50002.</p>\n<p>I have changed these lines in Program.cs</p>\n<pre><code>builder.Services.AddHttpClient(&quot;{AssemblyName}.ServerAPI&quot;, client =&gt; client.BaseAddress = new Uri(builder.HostEnvironment.BaseAddress))\n            .AddHttpMessageHandler&lt;BaseAddressAuthorizationMessageHandler&gt;();\n</code></pre>\n<p>To</p>\n<pre><code>builder.Services.AddHttpClient(&quot;{AssemblyName}.ServerAPI&quot;, client =&gt; client.BaseAddress = new Uri(&quot;https://localhost:5002/&quot;))\n                .AddHttpMessageHandler&lt;BaseAddressAuthorizationMessageHandler&gt;();\n</code></pre>\n<p>So that the httpClient's base URL will point to the Server.</p>\n<p>I now receive this error:</p>\n<pre><code>Failed to load resource: the server responded with a status of 401 ()\n</code></pre>\n<p>When trying to access the Server.</p>\n<p><strong>Can anybody help me with this?</strong></p>\n<p>My guess is that the authorization tokens are not sent to the Server when the Client and the Server does not run on the same port.</p>\n<p>I have verified that the Client project can get data from the server by commenting out the line &quot;[Authorize]&quot;</p>\n<pre><code> //[Authorize]\n [ApiController]\n [Route(&quot;[controller]&quot;)]\n public class WeatherForecastController : ControllerBase\n</code></pre>\n<p>In the file WeatherForecastController.cs in the Server project.</p>\n"
+}

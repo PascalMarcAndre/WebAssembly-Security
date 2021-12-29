@@ -1,0 +1,28 @@
+{
+    "tags": [
+        "rust",
+        "webassembly"
+    ],
+    "owner": {
+        "reputation": 2001,
+        "user_id": 2707195,
+        "user_type": "registered",
+        "accept_rate": 82,
+        "profile_image": "https://i.stack.imgur.com/RlRWZ.jpg?s=128&g=1",
+        "display_name": "Andrei CACIO",
+        "link": "https://stackoverflow.com/users/2707195/andrei-cacio"
+    },
+    "is_answered": false,
+    "view_count": 319,
+    "closed_date": 1526583738,
+    "answer_count": 0,
+    "score": 1,
+    "last_activity_date": 1526633181,
+    "creation_date": 1526582098,
+    "last_edit_date": 1526633181,
+    "question_id": 50398348,
+    "link": "https://stackoverflow.com/questions/50398348/cant-read-rust-vector-from-javascript-with-webassembly",
+    "closed_reason": "Duplicate",
+    "title": "Can&#39;t read Rust vector from JavaScript with WebAssembly",
+    "body": "<p>This code worked a few months back but now it stopped working and I can't figure out why:</p>\n\n<pre class=\"lang-rust prettyprint-override\"><code>#[no_mangle]\npub fn simple_arr() -&gt; *mut i32 {\n    let vec = &amp;mut [111, 222, 333, 444];\n\n    return vec.as_mut_ptr();\n}\n\nfn main() {\n    println!(\"Hello, world!\");\n}\n</code></pre>\n\n<p>I am compiling the code using the following tools:</p>\n\n<pre class=\"lang-none prettyprint-override\"><code>$ cargo +nightly build --target wasm32-unknown-unknown --release\n$ wasm-gc target/wasm32-unknown-unknown/release/wasm-examples.wasm m.wasm\n</code></pre>\n\n<p>I then fire up a HTTP server and I run the following code in the browser:</p>\n\n<pre><code>fetch('m.wasm')\n   .then(r =&gt; r.arrayBuffer())\n   .then(r =&gt; WebAssembly.instantiate(r))\n   .then(m =&gt; window.m = m);\n\nvar HEAP32 = new Int32Array(m.instance.exports.memory.buffer);\nvar arrayPtr = m.instance.exports.simple_arr();\n\nconsole.log(HEAP32[arrayPtr / Int32Array.BYTES_PER_ELEMENT]);\n</code></pre>\n\n<p>and I get 0. I keep getting 0 or random numbers even if I keep incrementing the offset/pointer.</p>\n\n<p>I can't figure out what am I missing.</p>\n\n<p>I also tried this form:</p>\n\n<pre class=\"lang-rust prettyprint-override\"><code>use std::os::raw::c_void;\n\n#[no_mangle]\npub fn simple_arr() -&gt; *mut c_void {\n    let mut vec = vec![100, 200, 300, 400];\n\n    vec.as_mut_ptr() \n}\n\nfn main() {\n    println!(\"Hello, world!\");\n}\n</code></pre>\n\n<p>but I still get the same result.</p>\n\n<p>I also tried compiling it with Emscripten and still the same result. </p>\n\n<p>Update:</p>\n\n<p>I tried exposing a static string and that works (via <a href=\"https://stackoverflow.com/questions/47529643/how-to-return-a-string-or-similar-from-rust-in-webassembly\">How to return a string (or similar) from Rust in WebAssembly?</a>). However exposing a vector seems different and I don't think this result applies to me. </p>\n\n<p>I tried declaring the vector static</p>\n\n<pre><code>#[no_mangle]\npub fn simple_arr() -&gt; *mut c_void {\n    static mut vec: &amp;'static [i32] = &amp;[100, 200, 300, 400];\n\n    unsafe { vec.as_mut_ptr() as *mut c_void }\n}\n</code></pre>\n\n<p>but I can't get it to compile.</p>\n\n<p>Update: I got it to work!!</p>\n\n<pre><code>#[no_mangle]\npub fn simple_arr() -&gt; *const i32 {\n    let vec = &amp;[100, 200, 300, 400];\n\n    vec.as_ptr() as *const i32\n}\n</code></pre>\n\n<p>As far as I understand, the pointer lifetime ended right after the function was executed. So with const we extend the lifetime of that pointer.</p>\n\n<p>Final update:</p>\n\n<p>ok so the final final version is to expose a wrapped pointer from a Boxed vector:</p>\n\n<pre><code>#[no_mangle]\npub fn simple_arr() -&gt; *mut i32 {\n    let vec = Box::new([100, 200, 300, 400]);\n\n    Box::into_raw(vec) as *mut i32\n}\n</code></pre>\n\n<p>I hope this is the \"non accidental\" version. If not so please leave a comment. </p>\n\n<p>Thanks everybody!</p>\n"
+}

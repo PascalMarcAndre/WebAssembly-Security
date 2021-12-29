@@ -1,0 +1,29 @@
+{
+    "tags": [
+        "access-token",
+        "blazor",
+        "bearer-token",
+        "refresh-token",
+        "asp.net-blazor"
+    ],
+    "owner": {
+        "reputation": 77,
+        "user_id": 40418,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/74fbcc33a0452da0bb3d638e268bf6df?s=128&d=identicon&r=PG",
+        "display_name": "rickthehat",
+        "link": "https://stackoverflow.com/users/40418/rickthehat"
+    },
+    "is_answered": false,
+    "view_count": 295,
+    "answer_count": 0,
+    "score": 0,
+    "last_activity_date": 1590189063,
+    "creation_date": 1590180794,
+    "last_edit_date": 1590189063,
+    "question_id": 61963701,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/61963701/blazor-webassembly-was-released-with-token-auth-for-the-client-side-does-anyone",
+    "title": "Blazor WebAssembly was released with token auth for the client side, does anyone know the REST URLs for login, register etc.?",
+    "body": "<p>Blazor WebAssembly officially shipped and the project includes token  authentication with identity on the client side.</p>\n\n<p>Does anyone know the  Rest URLS to register, login and get tokens? I'm trying to test with postman but can't seem to track the Rest URLS down for the project.</p>\n"
+}

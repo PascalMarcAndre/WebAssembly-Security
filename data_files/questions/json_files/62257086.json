@@ -1,0 +1,28 @@
+{
+    "tags": [
+        "c#",
+        "asp.net-core",
+        "entity-framework-core",
+        "blazor"
+    ],
+    "owner": {
+        "reputation": 29,
+        "user_id": 8354469,
+        "user_type": "registered",
+        "profile_image": "https://lh5.googleusercontent.com/-cOVBbCjGE0I/AAAAAAAAAAI/AAAAAAAAByE/DyikG0xH8A8/photo.jpg?sz=128",
+        "display_name": "Idan Fanous",
+        "link": "https://stackoverflow.com/users/8354469/idan-fanous"
+    },
+    "is_answered": false,
+    "view_count": 155,
+    "answer_count": 0,
+    "score": 0,
+    "last_activity_date": 1591607301,
+    "creation_date": 1591601466,
+    "last_edit_date": 1591607301,
+    "question_id": 62257086,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/62257086/ef-core-connection-string-dynamically-by-selected-value",
+    "title": "EF Core connection string dynamically by selected value",
+    "body": "<p><br/>\nI have a project that  would serve many businesses. <br/>\nThe databases I have looks like </p>\n\n<pre><code>DatabaseControl\nDatabase1\nDatabase2\nDatabase3\n.\n.\nDatabasen\n</code></pre>\n\n<p>When the number is ID of the business (each business has a database) <br/>\nThe site login page looks like</p>\n\n<pre><code>Business: [dropdownlist]\nEmail: [input]\nPassword: [input]\n[LoginButton]\n</code></pre>\n\n<p>The businesses dropdownlist values are loaded from DatabaseControl and the user validation is performed in the business database itself.</p>\n\n<p>I'm using Blazor WebAssembly and EF Core so the connection string is in the appsetings.json\nand is loaded on the Startup file <br/></p>\n\n<pre><code>            services.AddDbContext&lt;ApplicationDbContext&gt;(options =&gt;\n        {\n            options.UseSqlServer(\n                Configuration.GetConnectionString(\"DefaultConnection\"));\n        });\n</code></pre>\n\n<p>How can I use a dynamically connection string that is built after the user select a business ? </p>\n"
+}

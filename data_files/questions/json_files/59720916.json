@@ -1,0 +1,27 @@
+{
+    "tags": [
+        "javascript",
+        "websocket"
+    ],
+    "owner": {
+        "reputation": 3106,
+        "user_id": 1541397,
+        "user_type": "registered",
+        "accept_rate": 81,
+        "profile_image": "https://www.gravatar.com/avatar/991c4e6d0872e18880e3e0ff51cdf5a2?s=128&d=identicon&r=PG",
+        "display_name": "David Callanan",
+        "link": "https://stackoverflow.com/users/1541397/david-callanan"
+    },
+    "is_answered": false,
+    "view_count": 32,
+    "answer_count": 0,
+    "score": 1,
+    "last_activity_date": 1578936346,
+    "creation_date": 1578934784,
+    "last_edit_date": 1578936346,
+    "question_id": 59720916,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/59720916/websocket-ip-connection",
+    "title": "WebSocket IP Connection",
+    "body": "<p>I am creating an online game.</p>\n\n<p>My game will dynamically create servers (websockets) using hourly server hosting, and the amount of servers / lobbies will expand / shrink depending on the number of players online. It is not very feasible to have pre-created servers constantly running. I then have an IP address for each server.</p>\n\n<ol>\n<li><p>The problem comes when I want to connect to the game IP from my website. I can't connect unless I disable CORS protection and also disable HTTPS on my website. I could do this to begin with but isn't great in the longterm for security reasons and because the browser shows that a page is insecure if it is in HTTP.</p></li>\n<li><p>The other option is to create a subdomain on my domain for each game server IP and setup HTTPS. The problem with this is that the DNS could take hours to update, which is a problem because I am dynamically creating and destroying servers.</p></li>\n<li><p>The final option is to create a single server proxy (could be spread across multiple nodes using load balancing) that forward messages from the client to the actual individual game servers. The problem with this is there will be a lot of extra latency, obviously being a problem for games.</p></li>\n</ol>\n\n<p>How can I achieve a secure IP websocket connection in the browser, or is there a better compromise than what I've come up with? With webassembly and browser openGL on the way I would expect that something like this was thought through and there is some solution.</p>\n"
+}

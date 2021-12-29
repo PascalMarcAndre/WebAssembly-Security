@@ -1,0 +1,28 @@
+{
+    "tags": [
+        "blazor",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 25297,
+        "user_id": 6152891,
+        "user_type": "registered",
+        "accept_rate": 75,
+        "profile_image": "https://www.gravatar.com/avatar/b45b7f89429f8766cdbf6c776c0a9d41?s=128&d=identicon&r=PG",
+        "display_name": "enet",
+        "link": "https://stackoverflow.com/users/6152891/enet"
+    },
+    "is_answered": true,
+    "view_count": 237,
+    "accepted_answer_id": 65058338,
+    "answer_count": 2,
+    "score": 0,
+    "last_activity_date": 1606641844,
+    "creation_date": 1606579911,
+    "last_edit_date": 1606581610,
+    "question_id": 65051706,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/65051706/how-can-i-make-my-timer-leaking-proof-in-blazor-app",
+    "title": "How can I make my Timer leaking proof in Blazor App?",
+    "body": "<p>I've posted an answer to a question in stackoverflow <a href=\"https://stackoverflow.com/a/65029752/6152891\">C# counter to count up to a target number</a>. Here's the answer:</p>\n<p>You can create a timer service that can serve you on many occasions:</p>\n<p>Create the service class:</p>\n<pre><code>public class BlazorTimer\n    {\n        private Timer _timer;\n\n        internal void SetTimer(double interval)\n        {\n            _timer = new Timer(interval);\n            _timer.Elapsed += NotifyTimerElapsed;\n            _timer.Enabled = true;\n            _timer.Start();\n        }\n\n        private void NotifyTimerElapsed(object sender, ElapsedEventArgs e)\n        {\n            OnElapsed?.Invoke();\n        }\n\n        public event Action OnElapsed;\n    }\n</code></pre>\n<p>Add the service to the DI container, in the Program.Main method, as transient:</p>\n<pre><code>builder.Services.AddTransient(config =&gt;\n        {\n            var blazorTimer = new BlazorTimer();\n            blazorTimer.SetTimer(1000);\n            return blazorTimer;\n        });\n</code></pre>\n<h2>Usage</h2>\n<pre><code>@page &quot;/&quot;\n\n@implements IDisposable\n@inject BlazorTimer Timer\n\n@count.ToString()\n\n\n@code{\nprivate int count = 0;\n\nprotected override void OnInitialized()\n{\n    Timer.OnElapsed += NotifyTimerElapsed;\n\n    base.OnInitialized();\n}\n\nprivate void NotifyTimerElapsed()\n{\n    // Note: WebAssembly Apps are currently supporting a single thread, which \n    // is why you don't have to call\n    // the StateHasChanged method from within the InvokeAsync method. But it \n    // is a good practice to do so in consideration of future changes, such as \n    // ability to run WebAssembly Apps in more than one thread.\n    InvokeAsync(() =&gt; { count++; StateHasChanged(); });\n}\n\npublic void Dispose()\n{\n    Timer.OnElapsed -= NotifyTimerElapsed;\n}\n\n}\n</code></pre>\n<p>However, I'm told that</p>\n<blockquote>\n<p>the BlazorTimer is leaking the _timer. Timer is IDisposable</p>\n</blockquote>\n<p>Does unsubscribing the event handler in the Dispose method implemented in a Blazor component causes the\nBlazorTimer leaking the _timer. Actually I do not entirely understand &quot;the BlazorTimer is leaking the _timer. Timer is IDisposable&quot; , so let me ask, how can I prevent the leaking of the timer, and yet use code to unsubscribe the event handler in the Dispose method implemented in a Blazor component ? Is there any way to prevent this leaking other than skipping the un-subscription of the event handler.</p>\n"
+}

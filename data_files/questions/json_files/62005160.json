@@ -1,0 +1,29 @@
+{
+    "tags": [
+        "asp.net-core",
+        "nginx",
+        "identityserver4",
+        "blazor",
+        "blazor-client-side"
+    ],
+    "owner": {
+        "reputation": 9778,
+        "user_id": 1804027,
+        "user_type": "registered",
+        "accept_rate": 44,
+        "profile_image": "https://i.stack.imgur.com/iQtNF.jpg?s=128&g=1",
+        "display_name": "Piotrek",
+        "link": "https://stackoverflow.com/users/1804027/piotrek"
+    },
+    "is_answered": true,
+    "view_count": 525,
+    "answer_count": 1,
+    "score": 5,
+    "last_activity_date": 1599550506,
+    "creation_date": 1590418927,
+    "question_id": 62005160,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/62005160/blocked-loading-mixed-active-content-in-blazor-webassembly-app-which-uses-iden",
+    "title": "&quot;Blocked loading mixed active content&quot; in Blazor WebAssembly app which uses IdentityServer4",
+    "body": "<p>I'm trying to run default Blazor WebAssembly project template on my web server. Project, when ran locally, works without any problems. Problem appears after I deploy it to server.</p>\n\n<p>I can successfully navigate to any page that doesn't require authentication. However, when I try to enter the one requiring login, I can see such message:</p>\n\n<blockquote>\n  <p>There was an error trying to log you in: 'Network Error'</p>\n</blockquote>\n\n<p><a href=\"https://i.stack.imgur.com/2aFev.png\" rel=\"noreferrer\"><img src=\"https://i.stack.imgur.com/2aFev.png\" alt=\"enter image description here\"></a></p>\n\n<p>In web browser console I can see:</p>\n\n<blockquote>\n  <p>Blocked loading mixed active content \u201c<a href=\"http://[subdomain.domain.com]/.well-known/openid-configuration\" rel=\"noreferrer\">http://[subdomain.domain.com]/.well-known/openid-configuration</a>\u201d</p>\n</blockquote>\n\n<p>In Firefox's \"Network\" tab, request is marked as \"Blocked\".</p>\n\n<p>My webserver runs on Nginx which acts as reverse proxy. I planned to keep HTTPS encryption configured between internet and Nginx. Communication between Nginx and other services were meant to be over plain HTTP. Here is my Nginx config:</p>\n\n<pre><code>server {\n        listen 80;\n\n        location / {\n            return 301 https://$host$request_uri;\n        }\n    }\n\n[...]\nserver {\n        listen 443 ssl http2;\n        listen [::]:443 ssl http2;\n        server_name subdomain.domain.com;\n\n        ssl_certificate /etc/nginx_ssl/live/fullchain.pem;\n        ssl_certificate_key /etc/nginx_ssl/live/privkey.pem;\n        ssl_session_cache builtin:1000 shared:SSL:10m;\n        ssl_protocols TLSv1 TLSv1.1 TLSv1.2;\n        ssl_ciphers HIGH:!aNULL:!eNULL:!EXPORT:!CAMELLIA:!DES:!MD5:!PSK:!RC4;\n        ssl_prefer_server_ciphers on;\n\n        location / {\n            proxy_pass http://blazorapp:80;\n            proxy_redirect off;\n            proxy_set_header X-Real-IP $remote_addr;\n            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;\n            proxy_set_header X-Forwarded-Proto $scheme;\n            proxy_set_header X-Forwarded-Host $server_name;\n\n            proxy_http_version 1.1;\n            proxy_set_header Upgrade $http_upgrade;\n            proxy_set_header Connection $connection_upgrade;\n            proxy_set_header Host $host;\n            proxy_cache_bypass $http_upgrade;\n        }\n    }\n</code></pre>\n\n<h3>My guesses</h3>\n\n<p>As you can see from browser error message, browser tries to access <code>.well-known/openid-configuration</code> over HTTP, not HTTPS. The problem possibly lays here.</p>\n\n<p>Do you have any ideas what could be wrong?</p>\n"
+}

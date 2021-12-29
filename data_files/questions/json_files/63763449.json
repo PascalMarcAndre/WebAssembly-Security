@@ -1,0 +1,26 @@
+{
+    "tags": [
+        "authentication",
+        ".net-core",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 161,
+        "user_id": 13621424,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/ea425b2c39c31b95764ad0d29bafdbcd?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Smith5727",
+        "link": "https://stackoverflow.com/users/13621424/smith5727"
+    },
+    "is_answered": false,
+    "view_count": 72,
+    "answer_count": 0,
+    "score": 2,
+    "last_activity_date": 1599390506,
+    "creation_date": 1599390506,
+    "question_id": 63763449,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/63763449/blazor-webassembly-third-party-authentication",
+    "title": "Blazor WebAssembly third party authentication",
+    "body": "<p>I think this has been asked before but slightly different and without any answers. Does anyone know of a source code example of user authentication using many options of authentications combined (typically user select which to sign in with) such as Google, Facebook, Twitch and traditional email in Blazor WebAssembly? Preferably using latest .NET Core or even .NET 5 Preview. Is JWT used for such scenarios or how does it work? I am trying to figure out what is the mainstream way of doing this, I searched a lot but hard to figure out what is outdated methods and what is best practice today.</p>\n"
+}

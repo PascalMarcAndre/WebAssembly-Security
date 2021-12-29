@@ -1,0 +1,27 @@
+{
+    "tags": [
+        "asp.net-core",
+        "authentication",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 14881,
+        "user_id": 1123020,
+        "user_type": "registered",
+        "accept_rate": 60,
+        "profile_image": "https://www.gravatar.com/avatar/78465afdabcd3781cf060e74fd28cfab?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Yoda",
+        "link": "https://stackoverflow.com/users/1123020/yoda"
+    },
+    "is_answered": false,
+    "view_count": 31,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1616973022,
+    "creation_date": 1616849796,
+    "question_id": 66831584,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/66831584/how-to-edit-login-page-in-webassembly-project-with-individual-user-accounts",
+    "title": "How to edit login page in WebAssembly project with Individual User Accounts?",
+    "body": "<p>I have selected Individual User Accounts while creating Blazor application. I have no idea where I can modify the Login page that was created, the file with source dode is not available anywhere.</p>\n<p>How to modify Login page in that scenario?</p>\n<p><a href=\"https://i.stack.imgur.com/KPQbR.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/KPQbR.png\" alt=\"enter image description here\" /></a></p>\n"
+}

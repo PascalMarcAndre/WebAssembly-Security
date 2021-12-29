@@ -1,0 +1,29 @@
+{
+    "tags": [
+        "authentication",
+        "asp.net-core",
+        "blazor",
+        "webassembly",
+        "claims-authentication"
+    ],
+    "owner": {
+        "reputation": 1,
+        "user_id": 9642370,
+        "user_type": "registered",
+        "profile_image": "https://lh3.googleusercontent.com/-XdUIqdMkCWA/AAAAAAAAAAI/AAAAAAAAAAA/4252rscbv5M/photo.jpg?sz=128",
+        "display_name": "julie71638",
+        "link": "https://stackoverflow.com/users/9642370/julie71638"
+    },
+    "is_answered": false,
+    "view_count": 401,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1586870404,
+    "creation_date": 1586867628,
+    "last_edit_date": 1586867735,
+    "question_id": 61207786,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/61207786/authorizing-by-updating-claim-with-data-from-database-blazor-webassembly-asp-ne",
+    "title": "Authorizing by updating Claim with data from database (Blazor WebAssembly ASP.NET Core hosted)",
+    "body": "<p>I have a question regarding authentication in my web-app using Blazor WebAssembly ASP.NET Core hosted. The database used is Azure SQL.</p>\n\n<p>I want to avoid storing passwords in the database and the users are therefore restricted to having a Microsoft-account (relevant to the project).</p>\n\n<p>As of now, the user logs in with Azure AD as the third-party authentication provider. When redirected back to the web-app, a user is created with a claim which only consists of the Email from Azure. The user is directed to a registration page where the Email-input is set to the current user-claim email. When the user clicks the register button, the information provided is now stored in the database. </p>\n\n<p>The problem is that I now have a user in the db, but the claim is still just the Email. I want to be able to use the <code>AuthorizeView role</code> tag on the different pages, and therefore wondered if its possible to update the claim with a role that the user specified in the registration-page? This data is at this point only stored in the database. </p>\n\n<p>If this is a bad practice, is there any other similar way I could make this work?</p>\n"
+}

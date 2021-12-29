@@ -1,0 +1,28 @@
+{
+    "tags": [
+        "c#",
+        "asp.net",
+        "dependency-injection",
+        "blazor",
+        "webassembly"
+    ],
+    "owner": {
+        "reputation": 261,
+        "user_id": 12393792,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/061b4453a944fafa89ad09f0837ef459?s=128&d=identicon&r=PG&f=1",
+        "display_name": "brstkr",
+        "link": "https://stackoverflow.com/users/12393792/brstkr"
+    },
+    "is_answered": false,
+    "view_count": 56,
+    "answer_count": 0,
+    "score": 0,
+    "last_activity_date": 1592415731,
+    "creation_date": 1592415731,
+    "question_id": 62435181,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/62435181/how-can-i-update-the-state-of-a-resolver-in-client-side-blazor-wasm",
+    "title": "How can I update the state of a resolver in client-side blazor wasm?",
+    "body": "<p>In my project there will be the feature for the multi-usage of databases, like SQLite and SQLServer. The database can be switched by runtime with a Resolver-class which I added recently. This will call the right DbContext for actual porpuse. Therefore I am building the dependency Injection in the <code>Startup.cs</code> like so:</p>\n\n<pre class=\"lang-cs prettyprint-override\"><code>// ... code above ...\npublic void ConfigureServices(IServiceCollection services)\n        {\n            services.AddMvc();\n            services.AddResponseCompression(opts =&gt;\n            {\n                opts.MimeTypes = ResponseCompressionDefaults.MimeTypes.Concat(\n                    new[] { \"application/octet-stream\" });\n            });\n\n\n            //****** FIRST OPTION TO SOLVE THE PROBLEM ******//\n            services\n                .AddDbContext&lt;SQLServerDbContext&gt;(options =&gt;\n                    options.UseSqlServer(_configuration[\"ConnectionStrings:SQLServerConnection\"]))\n                .AddDbContext&lt;SQLiteTestDbContext&gt;(options =&gt;\n                    options.UseSqlite(_configuration[\"ConnectionStrings:SQLiteTestConnection\"]))\n                .AddScoped&lt;DbContextResolver&gt;()\n                .AddScoped&lt;IDbContext&gt;(p =&gt;\n                {\n                    var resolver = p.GetRequiredService&lt;DbContextResolver&gt;();\n                    if (!resolver.isTest)\n                    {\n                        return p.GetRequiredService&lt;SQLiteTestDbContext&gt;();\n                    }\n                    return p.GetRequiredService&lt;SQLServerDbContext&gt;();\n                });\n...\n</code></pre>\n\n<p>So there is a resolver class with the only property <code>public bool IsTest { get; set; }</code> and this one should be set in the client side (Blazor.Client) project. So my problem is I dont know how to set the state of this property, I have build in the <code>Startup.cs</code> of my Blazor.Server project this middleware-function:</p>\n\n<pre class=\"lang-cs prettyprint-override\"><code>public void Configure(IApplicationBuilder app, IWebHostEnvironment env)\n{\n    app.Use((context, next) =&gt; \n    {\n        var resolver = context.RequestServices.GetRequiredService&lt;DbContextResolver&gt;();\n        resolver.IsTest = context.Request.Query.Containskey(\"test);\n        return next();\n    });\n\n    //.... code\n}\n</code></pre>\n\n<p>Can I just simply inject the DbContextResolver in the Blazor.Client project in a razor view and do like a on button click function where the property is set to true ? Or isnt that possible that way. I'm still new to ASP.NET Core and Blazor WebAssembly and need help :)</p>\n"
+}

@@ -1,0 +1,27 @@
+{
+    "tags": [
+        "logging",
+        "blazor-client-side",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 780,
+        "user_id": 7349864,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/b5bf7797b638f8ab345456be096bd62d?s=128&d=identicon&r=PG",
+        "display_name": "Sourcerer",
+        "link": "https://stackoverflow.com/users/7349864/sourcerer"
+    },
+    "is_answered": true,
+    "view_count": 98,
+    "accepted_answer_id": 64872176,
+    "answer_count": 1,
+    "score": 3,
+    "last_activity_date": 1612948596,
+    "creation_date": 1602065483,
+    "question_id": 64241884,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/64241884/blazor-webassembly-logging-is-not-honoring-setminimumlevel",
+    "title": "Blazor WebAssembly Logging is not honoring SetMinimumLevel",
+    "body": "<p>I have a Blazor WebAssembly application created directly from template, and I have added logging procedures as described in <a href=\"https://docs.microsoft.com/es-es/aspnet/core/blazor/fundamentals/logging?view=aspnetcore-3.1#blazor-webassembly\" rel=\"nofollow noreferrer\">Blazor WebAssembly Logging</a></p>\n<p>I have added the line builder.Logging.SetMinimumLevel in my class Program, method Main</p>\n<pre><code>public class Program\n{\n    const string serverHttpClientName = &quot;GoodSales.ServerAccessApi&quot;;\n\n    public static async Task Main(string[] args)\n    {\n        var builder = WebAssemblyHostBuilder.CreateDefault(args);\n        IConfiguration configuration = builder.Configuration;\n\n        // JMA: Configure logging\n        builder.Logging.SetMinimumLevel(LogLevel.Debug);\n</code></pre>\n<p>NOTICE: I have no added specific logger, because navigator console log is enough for me.</p>\n<p>Then, I have added logging in my razor component</p>\n<pre><code>@using Microsoft.AspNetCore.SignalR.Client\n@using GoodSales.Services\n@inject NavigationManager NavigationManager\n@using Microsoft.Extensions.Logging;\n@inject ILogger&lt;NavMenu&gt; logger;\n@inject ILoggerProvider LoggerProvider\n</code></pre>\n<p>And added testing line in the initialization method</p>\n<pre><code>protected override async Task OnInitializedAsync()\n  {\n\n      logger.LogDebug(&quot;LogDebug test&quot;);\n      logger.LogInformation(&quot;LogInformation test&quot;);\n      logger.LogWarning(&quot;LogWarning test&quot;);\n</code></pre>\n<p>But, in the navigator console I only see the LogInformation and the LogWarning, but not the LogDebug.</p>\n<p>What am I missing?</p>\n"
+}

@@ -1,0 +1,28 @@
+{
+    "tags": [
+        "blazor",
+        "blazor-client-side"
+    ],
+    "owner": {
+        "reputation": 6900,
+        "user_id": 7453,
+        "user_type": "registered",
+        "accept_rate": 93,
+        "profile_image": "https://www.gravatar.com/avatar/9221ab436283d74b2f9980004df83c1c?s=128&d=identicon&r=PG",
+        "display_name": "Patrick Szalapski",
+        "link": "https://stackoverflow.com/users/7453/patrick-szalapski"
+    },
+    "is_answered": true,
+    "view_count": 1055,
+    "accepted_answer_id": 61393934,
+    "answer_count": 2,
+    "score": 0,
+    "last_activity_date": 1587728650,
+    "creation_date": 1585774222,
+    "last_edit_date": 1585777033,
+    "question_id": 60980081,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/60980081/in-blazor-webassembly-how-to-write-a-warning-or-an-info",
+    "title": "In Blazor WebAssembly, how to write a warning or an info?",
+    "body": "<p>In Blazor WebAssembly, <code>Console.WriteLine</code> writes a log to the Javascript console, and <code>Console.Error.WriteLine</code> writes an error.  Is there any way to write a warning or an info without using Javascript--what is the Blazor equivalent of Javascript <code>console.warn</code> or <code>console.info</code>?</p>\n\n<p>(In general, how can one find out if there is a Blazor alternative to Javascript interop for any given function call?)</p>\n"
+}

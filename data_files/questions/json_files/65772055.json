@@ -1,0 +1,30 @@
+{
+    "tags": [
+        "asp.net",
+        "azure",
+        "local-storage",
+        "blazor",
+        "blazor-client-side"
+    ],
+    "owner": {
+        "reputation": 13,
+        "user_id": 11881375,
+        "user_type": "registered",
+        "profile_image": "https://lh6.googleusercontent.com/-8PIOV3maF3s/AAAAAAAAAAI/AAAAAAAACW4/sd01xFkdTQM/photo.jpg?sz=128",
+        "display_name": "Mees van Straten",
+        "link": "https://stackoverflow.com/users/11881375/mees-van-straten"
+    },
+    "is_answered": true,
+    "view_count": 145,
+    "accepted_answer_id": 65780041,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1610994127,
+    "creation_date": 1610962939,
+    "last_edit_date": 1610983024,
+    "question_id": 65772055,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/65772055/blazor-webassembly-pwa-session-storage-not-persisting-after-deployment-to-azure",
+    "title": "Blazor webassembly pwa session storage not persisting after deployment to Azure",
+    "body": "<p>I am developing a Blazor webassembly pwa, locally running the project will store the user in the session storage and keep them there.</p>\n<p>But when I deploy to Azure (linux app service) the session/local storage is not persisting. So when navigating to a different page (within my application) or refreshing the page the oidc.user variable is removed from the session storage and therefor my user is logged out.</p>\n<p><a href=\"https://i.stack.imgur.com/5zFMj.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/5zFMj.png\" alt=\"local working session storage\" /></a></p>\n<ul>\n<li>Locally it's working and the key pair will persist.</li>\n</ul>\n<p><a href=\"https://i.stack.imgur.com/lcMQx.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/lcMQx.png\" alt=\"enter image description here\" /></a></p>\n<ul>\n<li>When deployed to Azure the same key will be added after loggin in succesfully but after a redirect it's removed.</li>\n</ul>\n<p>So the real question is: <strong>Why is my session storage working locally but does it remove the oidc.user key pair after a redirect, Causing the user to be logged out.</strong></p>\n"
+}

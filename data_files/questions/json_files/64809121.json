@@ -1,0 +1,29 @@
+{
+    "tags": [
+        "azure-active-directory",
+        "blazor",
+        "blazor-client-side",
+        "azure-function-app"
+    ],
+    "owner": {
+        "reputation": 23,
+        "user_id": 11879499,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/07935076fb6084a285b7977d0881eb00?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Christian Meurrens",
+        "link": "https://stackoverflow.com/users/11879499/christian-meurrens"
+    },
+    "is_answered": true,
+    "view_count": 585,
+    "accepted_answer_id": 64851383,
+    "answer_count": 1,
+    "score": 2,
+    "last_activity_date": 1605487833,
+    "creation_date": 1605203369,
+    "last_edit_date": 1605233529,
+    "question_id": 64809121,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/64809121/blazor-client-side-get-cors-error-when-accessing-azure-function-using-azure-acti",
+    "title": "Blazor Client side get CORS error when accessing Azure Function using Azure Active directory",
+    "body": "<p>I've been trying to deploy my Blazor PWA for 2 days without any success so far, if someone has an idea of what I\u2019m doing wrong I would be really grateful.\nhello\nI could resolve most of my issues by myself but I'm now stuck on a CORS problem using AAD.</p>\n<p>Here's my project setup:</p>\n<ul>\n<li>Blazor webassembly client hosted on Static Website Storage (works\ngreat), Net 5</li>\n<li>AzureFunctions connected to an Azure Sql Server database (works great\nwith anonymous authentication in Blazor)</li>\n<li>Azure Active Directory I want to use to authenticate the users.\n(protecting both the blazor app and the functions)</li>\n</ul>\n<p>So I\u2019ve created an App registration, added my static web site address as SPA uri and uncheck both implicit.\nIn my blazor client, program.cs, I\u2019ve added the following code to connect to AAD:</p>\n<pre><code>builder.Services.AddMsalAuthentication(options =&gt;\n{\n    builder.Configuration.Bind(&quot;AzureAd&quot;, options.ProviderOptions.Authentication); //contains clientId, Authority\n    options.ProviderOptions.DefaultAccessTokenScopes.Add(&quot;https://graph.microsoft.com/User.Read&quot;);\n    options.ProviderOptions.LoginMode = &quot;redirect&quot;;\n});\n</code></pre>\n<p>That works great too, I can login, authorize view works as expected.</p>\n<p>The problem is when I try to authenticate Azure functions with \u00abLogin with Azure Active Directory\u00bb,\nI' tried with both express and advanced configurations (using clientId, tenantId) but when I</p>\n<p>Access to fetch at 'https://login.windows.net/tenantid/oauth2/authorize ... (redirected from 'https://myfunctionstorage.azurewebsites.net/api/client/list') from origin 'https://*****9.web.core.windows.net' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. If an opaque response serves your needs, set the request's mode to 'no-cors' to fetch the resource with CORS disabled.</p>\n<p>I have of course enabled CORS for my Blazor Client Address on Azure Functions configuration but the problem seems to be about the login windows uri...</p>\n<p>Also, if I enable the token id implicit flow in the App registration and access the login url in the browser it works perfectly fine.</p>\n<p>All the examples I could find so far are about msal 1.0 and App registration using implicit flow instead of SPA so it doesn't help...</p>\n<p>Thank you for your time and your help.</p>\n<p>UPDATE:\nI\u2019ve done more researches since yesterday and I think it could by related to my HTTPClient, currently I use the basic one (with just a base adress).</p>\n<p>But I\u2019ve seen on some example that when using the Client using AAD it needs more parameters, for example:</p>\n<pre><code>builder.Services.AddHttpClient(&quot;companiesAPI&quot;, cl =&gt; { cl.BaseAddress = new Uri(&quot;https://localhost:5001/api/&quot;); }) .AddHttpMessageHandler(sp =&gt; { var handler = sp.GetService&lt;AuthorizationMessageHandler&gt;() .ConfigureHandler( authorizedUrls: new[] { &quot;https://localhost:5001&quot; }, scopes: new[] { &quot;companyApi&quot; } ); return handler; });\n</code></pre>\n<p>Is that AuthorizationMessageHandler needed ?\nAlso I see some references to the need of using the \u00abuse_impersonation\u00bb scope.</p>\n<p>Are those changes (on HttpClient and the use_impersonation scope) also required when using msal2/SPA app registration ?</p>\n<p>Thank you</p>\n"
+}

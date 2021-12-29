@@ -1,0 +1,27 @@
+{
+    "tags": [
+        "blazor",
+        "blazor-webassembly",
+        "blazor-client-side"
+    ],
+    "owner": {
+        "reputation": 224,
+        "user_id": 5141561,
+        "user_type": "registered",
+        "accept_rate": 80,
+        "profile_image": "https://graph.facebook.com/926750996976/picture?type=large",
+        "display_name": "JoeyD",
+        "link": "https://stackoverflow.com/users/5141561/joeyd"
+    },
+    "is_answered": false,
+    "view_count": 19,
+    "answer_count": 0,
+    "score": 0,
+    "last_activity_date": 1617210702,
+    "creation_date": 1617210702,
+    "question_id": 66892292,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/66892292/navigate-to-page-on-server-from-blazor-webassembly-in-hosted-solution",
+    "title": "Navigate to page on Server from Blazor WebAssembly in Hosted Solution",
+    "body": "<p>I have a Blazor WebAssembly Hosted Solution using the built in Identity. I have scaffolded out the Identity views which are in the Server project (Areas/Identity/Pages/Account).</p>\n<p>When in the Blazor Client WebAssembly project I have a link that will navigate to Manage the account</p>\n<pre><code>&lt;NavLink class=&quot;nav-link sideMenu-nav-item-link&quot; href=&quot;authentication/profile&quot;&gt;Account - @context.User.Identity.Name&lt;/NavLink&gt;\n</code></pre>\n<p>So this calls the Authentication component which contains the RemoteAuthenticatorView</p>\n<pre><code>&lt;RemoteAuthenticatorView Action=&quot;@Action&quot;&gt;\n    &lt;LoggingIn&gt;\n        &lt;Loading /&gt;\n    &lt;/LoggingIn&gt;\n    &lt;CompletingLoggingIn&gt;\n        &lt;Loading /&gt;\n    &lt;/CompletingLoggingIn&gt;\n    &lt;LogOutSucceeded&gt;\n        &lt;RedirectToHome /&gt;\n    &lt;/LogOutSucceeded&gt;\n&lt;/RemoteAuthenticatorView&gt;\n</code></pre>\n<p>So the action passed is profile.  How does RemoteAuthenticatorView know where to route on the Server?  I want to add some additional pages like Subscription to the Server where the user can manage their subscription.  How can I navigate from the Blazor WebAssembly to a page on the Server? Will it go through the RemoteAuthenticatorView?</p>\n"
+}

@@ -1,0 +1,29 @@
+{
+    "tags": [
+        "asp.net-core",
+        "blazor",
+        "asp.net-core-identity",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 394,
+        "user_id": 9181182,
+        "user_type": "registered",
+        "profile_image": "https://i.stack.imgur.com/vIOji.jpg?s=128&g=1",
+        "display_name": "Kaan Taze",
+        "link": "https://stackoverflow.com/users/9181182/kaan-taze"
+    },
+    "is_answered": true,
+    "view_count": 275,
+    "accepted_answer_id": 63579655,
+    "answer_count": 1,
+    "score": 1,
+    "last_activity_date": 1599410976,
+    "creation_date": 1598360707,
+    "last_edit_date": 1599410976,
+    "question_id": 63579489,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/63579489/authentication-and-authorization-in-blazor-webassembly-with-database-first-appro",
+    "title": "Authentication and Authorization in Blazor WebAssembly with Database First Approach",
+    "body": "<h1>Summary of my problem</h1>\n<p>My project is more complex but here is my problem at very basic level. I have a Blazor WebAssembly project where I do just basic CRUD operations.</p>\n<p>I also have a small database and lets say I have two tables <code>Users</code> and <code>Roles</code>. What I do is to create their classes in Database-First fashion, by using <code>Scaffold-DbContext</code> and I run this command on the <code>Shared</code> project because I also want to reach to these classes from both <code>Server</code> and <code>Client</code> projects.</p>\n<p>When I try to used <code>Individual User Accounts</code> on Authentication tab when creating a Blazor WebAssembly project, it creates the data models in the server. Which means I cannot access to my tables from <code>Client</code> Project. They need to be in <code>Shared</code>. Also it is Code-First based. I don't want to use migrations.</p>\n<hr />\n<h2>What I tried</h2>\n<p>What I tried to do is to create an identical -almost- project with <code>Individual User Accounts</code> projects but my <code>Users</code> class inherits <code>IdentityUser</code> and my DbContext inherits <code>ApiAuthorizationDbContext</code> but problem starts here.</p>\n<p>I cannot add <code>ApiAuthorization</code> package from NuGet because it says Shared project does not compatible with .NetStandard 2.1.</p>\n<p>Also changing Shared project's standard didn't work.</p>\n<hr />\n<h3>Some Questions</h3>\n<ul>\n<li><p>Can't I just add my users table on the Shared and use Identity from that table? (Since it's just a single table of rather larger database)</p>\n</li>\n<li><p>Do I need two databases for this? One for Identity, one for rest of the application?</p>\n</li>\n<li><p>Do I need to use Identity for Authentication &amp; Authorization? What else can I use? Or Can I use a custom one where I can use it as I described earlier (Having models in Shared project)</p>\n</li>\n</ul>\n<hr />\nMy Goal\n<p>I want to authorize users with <code>[Authorize]</code> property. Since I cannot accomplish the registration, I cannot proceed.</p>\n"
+}

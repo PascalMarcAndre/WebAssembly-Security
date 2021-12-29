@@ -1,0 +1,26 @@
+{
+    "tags": [
+        "blazor-client-side",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 1347,
+        "user_id": 1764116,
+        "user_type": "registered",
+        "accept_rate": 42,
+        "profile_image": "https://www.gravatar.com/avatar/8dd1910dd49d37bbbf91815b33f3325a?s=128&d=identicon&r=PG",
+        "display_name": "NSS",
+        "link": "https://stackoverflow.com/users/1764116/nss"
+    },
+    "is_answered": false,
+    "view_count": 888,
+    "answer_count": 0,
+    "score": 1,
+    "last_activity_date": 1599080619,
+    "creation_date": 1594179361,
+    "question_id": 62787148,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/62787148/how-to-protect-encrypt-data-stored-in-session-local-storage-in-blazor-webassembl",
+    "title": "How to protect/encrypt data stored in session/local storage in Blazor WebAssembly",
+    "body": "<p>I am creating Blazor WebAssembly App and trying to figure how can i Encrypt/Protect data stored in Session Storage/ Local Storage ?</p>\n"
+}

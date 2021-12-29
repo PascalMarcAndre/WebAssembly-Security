@@ -1,0 +1,29 @@
+{
+    "tags": [
+        "asp.net-core",
+        "blazor",
+        "azure-ad-b2c",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 757,
+        "user_id": 3034366,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/05333214b131564ad1d3e56bcb745cd5?s=128&d=identicon&r=PG",
+        "display_name": "Craig Brown",
+        "link": "https://stackoverflow.com/users/3034366/craig-brown"
+    },
+    "is_answered": true,
+    "view_count": 266,
+    "accepted_answer_id": 64044618,
+    "answer_count": 1,
+    "score": 1,
+    "last_activity_date": 1600944723,
+    "creation_date": 1600803762,
+    "last_edit_date": 1600885137,
+    "question_id": 64016688,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/64016688/how-can-i-use-azure-ad-b2c-to-authenticate-users-on-the-server-before-serving-a",
+    "title": "How can I use Azure AD B2C to authenticate users on the server before serving a hosted Blazor WebAssembly app?",
+    "body": "<p>I have a Blazor WebAssembly app. It's self contained and doesn't use any web API calls. I'd like to add authentication using my existing Azure AD B2C tenant so that only registered users can access the app.</p>\n<p>Microsoft <a href=\"https://docs.microsoft.com/en-us/aspnet/core/blazor/security/webassembly#authorization\" rel=\"nofollow noreferrer\">says that</a>:</p>\n<blockquote>\n<p>In Blazor WebAssembly apps, authorization checks can be bypassed because all client-side code can be modified by users.</p>\n</blockquote>\n<p>So rather than host my Blazor app statically (the standalone model), I'd like to use the ASP.NET Core hosted model (so an <a href=\"https://docs.microsoft.com/en-us/aspnet/core/blazor/hosting-models\" rel=\"nofollow noreferrer\">ASP.NET Core app serves the Blazor app to clients</a>). That way I can do the authentication/authorization on the server - if the user is registered and is allowed access to the app, the ASP.NET Core app serves them the Blazor app. If they aren't, they can be shown an error page or be redirected.</p>\n<p>The issue is that I'm not sure how to implement this.</p>\n<p>When I create a new Blazor WebAssembly Hosted app from the template in Visual Studio 2019, it creates three projects. A shared project, the Blazor project, and a Server project. The Server project has a reference to the Blazor project. This line appears at the end of the <code>Configure</code> method of <code>Startup.cs</code>:</p>\n<pre class=\"lang-cs prettyprint-override\"><code>endpoints.MapFallbackToFile(&quot;index.html&quot;);\n</code></pre>\n<p>This seems to be the thing that makes it serve the Blazor app to the client. I'm not sure how I can add authentication/authorization to this. I tried modifying this line to look like this:</p>\n<pre class=\"lang-cs prettyprint-override\"><code>endpoints.MapFallbackToFile(&quot;index.html&quot;).RequireAuthorization();\n</code></pre>\n<p>But the app still loads without redirecting to a login screen first.</p>\n<p>There is some Microsoft documentation called &quot;<a href=\"https://docs.microsoft.com/en-us/aspnet/core/blazor/security/webassembly/hosted-with-azure-active-directory-b2c\" rel=\"nofollow noreferrer\">Secure an ASP.NET Core Blazor WebAssembly hosted app with Azure Active Directory B2C</a>&quot; which sounds like it's what I need, but it's actually still doing the authentication in the Client app while also securing API calls to the Server app (which I don't need).</p>\n<p>Is there any way to accomplish what I'm trying to do - authenticating the user on the server before serving the Blazor app, rather than doing that authentication in the Blazor app itself?</p>\n"
+}

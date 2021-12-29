@@ -1,0 +1,27 @@
+{
+    "tags": [
+        "c++",
+        "compilation",
+        "sandbox"
+    ],
+    "owner": {
+        "reputation": 151,
+        "user_id": 997351,
+        "user_type": "registered",
+        "accept_rate": 0,
+        "profile_image": "https://www.gravatar.com/avatar/01fe1702d92c39ee9fa7bb5258e7b2cc?s=128&d=identicon&r=PG",
+        "display_name": "topspin",
+        "link": "https://stackoverflow.com/users/997351/topspin"
+    },
+    "is_answered": true,
+    "view_count": 61,
+    "answer_count": 1,
+    "score": 3,
+    "last_activity_date": 1598961139,
+    "creation_date": 1598809542,
+    "question_id": 63660356,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/63660356/need-to-sandbox-application-that-compiles-c-modules-from-untrusted-sources-onl",
+    "title": "Need to sandbox application that compiles C++ modules from untrusted sources online",
+    "body": "<p>I\u2019m developing a C++ application where I want to compile C++ modules from potentially untrusted sources online, and have them operate on a specific bank of data within a single process. I\u2019d like to sandbox these somehow.  This is obviously a complex issue, but hoping to discover if there\u2019s any potential approach or tool/library I haven\u2019t yet thought of. The app will run on Windows &amp; OSX at minimum, and (hopefully) Linux, iOS, Android.</p>\n<p>My app would locally compile the C++ modules it downloads, and dynamically link the object code to a process in the app (not necessarily the \u201cmain\u201d app process). The C++ modules would only have access to my API via the headers I provide, however the API (and any dependent libraries) need to be linked into the same process. The API\u2019s dependent libraries are compute-based only, such as native SIMD-based math and possibly memory allocation. I don\u2019t expect they will need to call any network, disk, or any other OS functionality, for that matter \u2013 except for needing to communicate their input data and computed results to the main process (maybe over shared memory ?)</p>\n<p>I don\u2019t care if the sandboxed process\u2019 memory is corrupted or hollowed, as long as it\u2019s contained in that process. I also want to avoid having any system API call addresses linked into in the process memory space, to prevent compromised code from finding them.</p>\n<p>I\u2019ve done a review of the basic security issues (stack crashes, return oriented programming hacks, etc.). Also looked at some related projects:</p>\n<ol>\n<li>I see Google has a sandbox subproject within the Chromium repo which might be useful, but unsure of it\u2019s utility in my case.</li>\n<li>Windows Sandbox is a Microsoft tool for Windows only, and isn\u2019t available on some versions anyway. Moreover. there are big performance issues with using it. The app runs in real time, with frame rate requirements similar to a video game.</li>\n<li>considered compiling to WebAssembly, but at the moment it seems too immature (no SIMD, hard to debug, and potentially vulnerable to hacks in the wrapping host or browser.)</li>\n<li>I thought there might be some kind of wrapper library already out there to intercept all OS calls and allow custom configuration of what calls get passed through (in my case, anything except what\u2019s needed for the inter-process communication would be denied)</li>\n</ol>\n<p>Any other ideas, architectural suggestions, or promising open source projects on the horizon for this ?</p>\n<p>Thanks,\nC</p>\n"
+}

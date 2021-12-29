@@ -1,0 +1,29 @@
+{
+    "tags": [
+        "c#",
+        "asp.net-core",
+        "cookies",
+        "blazor",
+        "asp.net-core-signalr"
+    ],
+    "owner": {
+        "reputation": 1955,
+        "user_id": 2137483,
+        "user_type": "registered",
+        "accept_rate": 91,
+        "profile_image": "https://i.stack.imgur.com/zH7ZS.jpg?s=128&g=1",
+        "display_name": "Luke T O&#39;Brien",
+        "link": "https://stackoverflow.com/users/2137483/luke-t-obrien"
+    },
+    "is_answered": false,
+    "view_count": 228,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1602333201,
+    "creation_date": 1602321540,
+    "question_id": 64291881,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/64291881/signalr-core-not-sending-cookies",
+    "title": "SignalR Core not sending cookies",
+    "body": "<blockquote>\n<p>Cookies are the BIGGEST frustration I have with web development, they have plagued me for many years. I would just like to say that &quot;I hate Cookies&quot;... and CORS. (Note I understand that they are important security features there to protect us.)</p>\n</blockquote>\n<p>I am developing a Blazor WebAssembly app, I sign the user in with Cookie authentication at a controller and I can see that that cookie is being sent on all subsequent requests.<br />\nBut the cookie is not being sent on the connection request to the SignalR Hub.</p>\n<p>My goal is to group all connections to the Hub by a claim that should be present when the user logs in.<br />\nBut of course I cannot go any further because I cannot see any claims.</p>\n<p>This is my <code>TeamHub</code> on the server:</p>\n<pre class=\"lang-cs prettyprint-override\"><code>[Authorize]\npublic class TeamHub : Hub\n{\n    public async override Task OnConnectedAsync()\n    {\n        await base.OnConnectedAsync();\n\n        var key = Context.User.Claims.FirstOrDefault(c =&gt; c.Type == IdentityUserClaims.ClientKey)?.Type;\n        if (!string.IsNullOrWhiteSpace(key))\n        {\n            await Clients.Groups(key).SendAsync(&quot;memberConnected&quot;, new ConnectedMemberResult()\n            {\n                Id = Context.User.Claims.FirstOrDefault(c =&gt; c.Type == ClaimTypes.NameIdentifier)?.Value,\n                FirstName = Context.User.Claims.FirstOrDefault(c =&gt; c.Type == IdentityUserClaims.FirstName)?.Value,\n                LastName = Context.User.Claims.FirstOrDefault(c =&gt; c.Type == IdentityUserClaims.LastName)?.Value,\n                OnlineStatus = OnlineStatus.Online\n            });\n            await Groups.AddToGroupAsync(Context.ConnectionId, key);\n        }\n    }\n</code></pre>\n<p>Here is my code for connection to the hub:<br />\nThere are some delegates here to allow me to configure the request, but I don't know what to put in here to set cookies on every request:</p>\n<pre class=\"lang-cs prettyprint-override\"><code>hubConnection = new HubConnectionBuilder()\n    .WithUrl($&quot;{Global.Api}teamhub&quot;, configure =&gt;\n    {\n        configure.WebSocketConfiguration = opt =&gt;\n        {\n\n        };\n    })\n    .Build();\n</code></pre>\n<p><a href=\"https://i.stack.imgur.com/2BSBv.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/2BSBv.png\" alt=\"Not Authenticated and no Cookies\" /></a></p>\n"
+}

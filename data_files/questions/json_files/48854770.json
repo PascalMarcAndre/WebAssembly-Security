@@ -1,0 +1,30 @@
+{
+    "tags": [
+        "javascript",
+        "google-chrome",
+        "compilation",
+        "v8"
+    ],
+    "owner": {
+        "reputation": 2100,
+        "user_id": 931409,
+        "user_type": "registered",
+        "accept_rate": 70,
+        "profile_image": "https://www.gravatar.com/avatar/597e6c69fda7baf00dde0c2e181efb69?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Tomov",
+        "link": "https://stackoverflow.com/users/931409/tomov"
+    },
+    "is_answered": true,
+    "view_count": 760,
+    "accepted_answer_id": 61708171,
+    "answer_count": 3,
+    "score": 2,
+    "last_activity_date": 1589093087,
+    "creation_date": 1518976147,
+    "last_edit_date": 1518978134,
+    "question_id": 48854770,
+    "content_license": "CC BY-SA 3.0",
+    "link": "https://stackoverflow.com/questions/48854770/can-you-compile-js-code-using-v8-and-feed-that-directly-to-chrome",
+    "title": "Can you compile JS code using V8 and feed that directly to Chrome?",
+    "body": "<p>I'm looking for a way to protect some javascript code from reading/modifying. I know many people consider that impossible, but still...</p>\n\n<p>From what I see the Chrome's V8 engine does a number of optimizations when it sees JS code, probably compiles it (?) and then runs it.</p>\n\n<p>So I'm wondering is it possible to use V8's C++ api to compile the JS code into machinecode/chromecode and then feed that directly into Chrome (I don't care about other browsers)?\nSupposedly it will not only be faster, but also non-humanly readable, something like ASM.</p>\n\n<p>Is this possible?</p>\n\n<p>WebAssembly is doing this thing so I don't understand why we can't do it with JS code.\nThere's also EncloseJS and pkg that are doing a very similar thing.</p>\n"
+}

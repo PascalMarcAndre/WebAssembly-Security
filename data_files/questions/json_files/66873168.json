@@ -1,0 +1,28 @@
+{
+    "tags": [
+        "c#",
+        "blazor",
+        "identityserver4",
+        "blazor-webassembly",
+        "user-management"
+    ],
+    "owner": {
+        "reputation": 161,
+        "user_id": 13621424,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/ea425b2c39c31b95764ad0d29bafdbcd?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Smith5727",
+        "link": "https://stackoverflow.com/users/13621424/smith5727"
+    },
+    "is_answered": true,
+    "view_count": 68,
+    "answer_count": 2,
+    "score": 4,
+    "last_activity_date": 1617176620,
+    "creation_date": 1617115314,
+    "question_id": 66873168,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/66873168/blazor-webassembly-best-practices-for-user-accounts-and-identity-server",
+    "title": "Blazor WebAssembly - Best practices for User Accounts and Identity Server",
+    "body": "<p>I am trying to create a basic User Management module in my software and I have followed this guide to create the module:</p>\n<p><a href=\"https://docs.microsoft.com/en-us/aspnet/core/blazor/security/webassembly/hosted-with-identity-server?view=aspnetcore-5.0&amp;tabs=visual-studio\" rel=\"nofollow noreferrer\">https://docs.microsoft.com/en-us/aspnet/core/blazor/security/webassembly/hosted-with-identity-server?view=aspnetcore-5.0&amp;tabs=visual-studio</a></p>\n<p>I suppose this is the best practice recommended by Microsoft. However, I do not understand the following:</p>\n<ol>\n<li>Are parts of the Authorization Server-Side handled? I want to make sure no parts (or minimum) are server side rendered and authorization should mainly take place in the API calls since I am using Blazor WebAssembly. So I am wondering why we can specify .cshtml files etc, as I thought that was server-side rendered code.</li>\n<li>In the guide they are making several references to IdentityServer (seems to be a third party software component). The application I am building is a commercial one. Am I obliged to buy a license for IdentityServer? If yes, is there an Microsoft recommended free way to do the same thing?</li>\n<li>What is the difference between IdentityServer and IdentityServer4?</li>\n<li>What I am trying to do in the end is a Microsoft best practice module that lets an Admin creates and handle users that has different roles and that access to different part of the Blazor WebAssembly project. Maybe there is some other straight forward way to do this? What is the best practice today?</li>\n</ol>\n"
+}

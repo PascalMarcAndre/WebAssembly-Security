@@ -1,0 +1,27 @@
+{
+    "tags": [
+        "api",
+        "authorization",
+        "blazor",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 67,
+        "user_id": 11571138,
+        "user_type": "registered",
+        "profile_image": "https://lh3.googleusercontent.com/-NM0jK0PtiLo/AAAAAAAAAAI/AAAAAAAAANw/Je9KbUiia5w/photo.jpg?sz=128",
+        "display_name": "novfal haq",
+        "link": "https://stackoverflow.com/users/11571138/novfal-haq"
+    },
+    "is_answered": false,
+    "view_count": 38,
+    "answer_count": 0,
+    "score": 0,
+    "last_activity_date": 1609847904,
+    "creation_date": 1609847904,
+    "question_id": 65578438,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/65578438/how-use-blazor-webassembly-custom-authentication-in-apcontroller-authoraizei",
+    "title": "How use Blazor webAssembly Custom Authentication in APController AuthoraizeI",
+    "body": "<p>I use the separate basic authentication to api controller but while login to exception shown</p>\n<p>The authentication handler registered for scheme 'BasicAuthentication' is 'BasicAuthenticationHandler' which cannot be used for SignInAsync. The registered sign-in schemes are: Cookies.</p>\n<p>server startup.cs</p>\n<pre><code>services.AddAuthentication(options =&gt;\n      {\n        options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;\n      }\n                ).AddCookie();\n     // configure basic authentication \n      services.AddAuthentication(&quot;BasicAuthentication&quot;)\n          .AddScheme&lt;AuthenticationSchemeOptions, BasicAuthenticationHandler&gt;(&quot;BasicAuthentication&quot;, null);\n\n      // configure DI for application services\n      services.AddScoped&lt;IUserService, UserService&gt;();\n</code></pre>\n<p>client program.cs</p>\n<pre><code>builder.Services.AddAuthorizationCore();\n      builder.Services.AddScoped&lt;AuthenticationStateProvider, CustomAuthenticationStateProvider&gt;();\n</code></pre>\n"
+}

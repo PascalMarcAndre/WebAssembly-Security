@@ -1,0 +1,30 @@
+{
+    "tags": [
+        "architecture",
+        "microservices",
+        "blazor",
+        "blazor-server-side",
+        "api-gateway"
+    ],
+    "owner": {
+        "reputation": 1024,
+        "user_id": 296059,
+        "user_type": "registered",
+        "accept_rate": 76,
+        "profile_image": "https://www.gravatar.com/avatar/73bbeee82753815129afecac2af26494?s=128&d=identicon&r=PG",
+        "display_name": "MylesRip",
+        "link": "https://stackoverflow.com/users/296059/mylesrip"
+    },
+    "is_answered": true,
+    "view_count": 351,
+    "accepted_answer_id": 66686572,
+    "answer_count": 1,
+    "score": 4,
+    "last_activity_date": 1616052762,
+    "creation_date": 1588959536,
+    "question_id": 61684831,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/61684831/guidance-for-blazor-server-with-api-gateway-and-microservices",
+    "title": "Guidance for Blazor Server with API Gateway and Microservices",
+    "body": "<p>So far I have had no luck finding guidance on using Blazor Server (<em>not</em> WebAssembly) with an API Gateway and Microservices. Articles discussing these Blazor together with API gateways and microservices invariably refer to Blazor WebAssembly (Wasm). (Is it assumed that a Blazor Server app won't use microservices? Also, for what it's worth, the reason for choosing Blazor Server over Blazor WebAssembly is to better protect intellectual property.) </p>\n\n<p><em>Anyway...</em> What I'm wondering is whether the Blazor Server app should sit in front of the gateway, sending its internal API calls through the gateway to microservices behind the gateway, like so\u2026 </p>\n\n<p>[Browser] ----(SignalR)--- [Blazor Server App] ----(https)---- [API Gateway] ----(http)---- [Microservices] </p>\n\n<p>Or does it make more sense to put the app behind the gateway, having the SignalR connection tunnel through the gateway, like this\u2026 </p>\n\n<p>[Browser] ----(SignalR)----  [API Gateway] ----(SignalR)---- [Blazor Server App] ----(http)---- [Microservices] </p>\n\n<p>Keep in mind the initial load of the application in the browser prior to establishing the SignalR connection. Does that need to be handled separately? Does it impact the choice of options given above? Is there a better solution that I'm missing?  </p>\n"
+}

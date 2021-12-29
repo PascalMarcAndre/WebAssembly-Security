@@ -1,0 +1,28 @@
+{
+    "tags": [
+        "javascript",
+        "web-worker",
+        "webassembly",
+        "onunload"
+    ],
+    "owner": {
+        "reputation": 179,
+        "user_id": 770632,
+        "user_type": "registered",
+        "accept_rate": 50,
+        "profile_image": "https://www.gravatar.com/avatar/b1dc7fb13a51ca01f7c81450d2914001?s=128&d=identicon&r=PG",
+        "display_name": "kamulos",
+        "link": "https://stackoverflow.com/users/770632/kamulos"
+    },
+    "is_answered": false,
+    "view_count": 69,
+    "answer_count": 0,
+    "score": 1,
+    "last_activity_date": 1531829256,
+    "creation_date": 1531829041,
+    "question_id": 51380920,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/51380920/cleanup-in-webworker-when-page-is-closed",
+    "title": "Cleanup in WebWorker when page is closed",
+    "body": "<p>I have a WebAssembly module running in a WebWorker. This module contains a session key for encryption and other sensitive data I want to memzero before the page is closed.</p>\n\n<p>Is there any way to reliably do this for different Browsers?</p>\n\n<p>If not are there any good alternatives? I could intercept onbeforeunload to encourage the user to use the logout button, but as I understand it not all browsers will allow me to send the user a custom message.</p>\n"
+}

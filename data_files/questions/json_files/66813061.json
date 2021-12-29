@@ -1,0 +1,28 @@
+{
+    "tags": [
+        "google-oauth",
+        "blazor",
+        "openid-connect"
+    ],
+    "owner": {
+        "reputation": 1864,
+        "user_id": 4675770,
+        "user_type": "registered",
+        "accept_rate": 100,
+        "profile_image": "https://www.gravatar.com/avatar/3f03c96e787ca2330d89c2e3c6b8d2cb?s=128&d=identicon&r=PG",
+        "display_name": "Jinjinov",
+        "link": "https://stackoverflow.com/users/4675770/jinjinov"
+    },
+    "is_answered": true,
+    "view_count": 64,
+    "accepted_answer_id": 66814951,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1616753797,
+    "creation_date": 1616745840,
+    "question_id": 66813061,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/66813061/using-blazor-oidc-authentication-with-google-oauth-only-for-google-drive",
+    "title": "Using Blazor OIDC authentication with Google OAuth only for Google Drive",
+    "body": "<p>In my Blazor WASM app I am using OIDC authentication to log in to Google Drive as described here:</p>\n<p><a href=\"https://docs.microsoft.com/en-us/aspnet/core/blazor/security/webassembly/standalone-with-authentication-library?view=aspnetcore-5.0&amp;tabs=visual-studio\" rel=\"nofollow noreferrer\">Secure an ASP.NET Core Blazor WebAssembly standalone app with the Authentication library</a></p>\n<p><a href=\"https://stackoverflow.com/questions/66083740/google-auth-error-getting-access-token-in-blazor\">Google Auth error getting access token in Blazor</a></p>\n<p><a href=\"https://stackoverflow.com/questions/66540754/cannot-log-in-or-get-access-token-with-google-authorization-on-blazor-wasm-stand\">Cannot log in or get access token with Google Authorization on Blazor WASM Standalone app</a></p>\n<p>But I don't want to use</p>\n<pre><code>&lt;AuthorizeRouteView RouteData=&quot;@routeData&quot; DefaultLayout=&quot;@typeof(MainLayout)&quot;&gt;\n    &lt;NotAuthorized&gt;\n        @if (!context.User.Identity.IsAuthenticated)\n        {\n            &lt;RedirectToLogin /&gt;\n        }\n    &lt;/NotAuthorized&gt;\n&lt;/AuthorizeRouteView&gt;\n</code></pre>\n<p>because I don't want to restrict user access to my Blazor page.</p>\n<p><strong>Most importantly:</strong> I don't want the user to see the &quot;Authorizing...&quot; message for several seconds when they aren't logged in - logging in is optional.</p>\n<p>I only need the Google OAuth login if the user decides to use Google Drive, so I can get the access token.</p>\n<h3>How can I use OIDC authentication only to get the access token for Google Drive?</h3>\n<p>If that isn't possible, can I use C# to login to Google as seen here in JavaScript?</p>\n<p><a href=\"https://developers.google.com/identity/protocols/oauth2/javascript-implicit-flow#oauth-2.0-endpoints\" rel=\"nofollow noreferrer\">OAuth 2.0 for Client-side Web Applications</a></p>\n"
+}

@@ -1,0 +1,28 @@
+{
+    "tags": [
+        "dependency-injection",
+        "blazor",
+        "dotnet-httpclient",
+        "blazor-client-side"
+    ],
+    "owner": {
+        "reputation": 444,
+        "user_id": 2150271,
+        "user_type": "registered",
+        "accept_rate": 53,
+        "profile_image": "https://graph.facebook.com/100006874473434/picture?type=large",
+        "display_name": "Jesse",
+        "link": "https://stackoverflow.com/users/2150271/jesse"
+    },
+    "is_answered": false,
+    "view_count": 411,
+    "answer_count": 0,
+    "score": 0,
+    "last_activity_date": 1590595052,
+    "creation_date": 1590595052,
+    "question_id": 62047475,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/62047475/blazor-httpclient-singleton-not-working-correctly",
+    "title": "Blazor HttpClient singleton not working correctly",
+    "body": "<p>I have a client-side Blazor WebAssembly project that connects to an existing API. Logging in stores the JWT token in the local storage. </p>\n\n<p>I use NSwag to generate a client for my API which gets injected and changed HttpClient to be a singleton.</p>\n\n<pre><code>builder.Services.AddSingleton(sp =&gt; new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });\nbuilder.Services.AddSingleton&lt;Client&gt;();\n</code></pre>\n\n<p>I assume the Client (my generated NSwag client) uses the HttpClient from the DI.\nSince after the login I do a call to get additional user information with the token. Which works.</p>\n\n<p>I added the token like this:</p>\n\n<pre><code>@inject Client MambaClient\n@inject HttpClient HttpClient\n\n....\n\nHttpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(\"Bearer\", result.Token);\n</code></pre>\n\n<p>However if I try to do a request on another page I now get a 401 Unauthorized  so the auth header is gone from the request and I'm not sure why.</p>\n\n<p>Any advice?</p>\n\n<p>Constructor of client looks like this:</p>\n\n<pre><code>public Client(System.Net.Http.HttpClient httpClient)\n{\n    _httpClient = httpClient;\n    _settings = new System.Lazy&lt;Newtonsoft.Json.JsonSerializerSettings&gt;(() =&gt;\n    {\n        var settings = new Newtonsoft.Json.JsonSerializerSettings();\n        UpdateJsonSerializerSettings(settings);\n        return settings;\n    });\n}\n</code></pre>\n"
+}

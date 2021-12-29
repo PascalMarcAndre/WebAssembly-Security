@@ -1,0 +1,29 @@
+{
+    "tags": [
+        "javascript",
+        "typescript",
+        "typescript-typings",
+        "webassembly",
+        "assemblyscript"
+    ],
+    "owner": {
+        "reputation": 11,
+        "user_id": 11006618,
+        "user_type": "registered",
+        "profile_image": "https://lh6.googleusercontent.com/-p14kug4YbMc/AAAAAAAAAAI/AAAAAAAAAAA/ACevoQODf8rZrS-lFqM-i5cWWbD2_ZWaXw/mo/photo.jpg?sz=128",
+        "display_name": "Aya Choo",
+        "link": "https://stackoverflow.com/users/11006618/aya-choo"
+    },
+    "is_answered": false,
+    "view_count": 124,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1570261278,
+    "creation_date": 1570121845,
+    "last_edit_date": 1570125205,
+    "question_id": 58223739,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/58223739/in-typescirpt-is-there-a-way-to-check-the-type-of-a-value-in-wasm-which-has-been",
+    "title": "In typescirpt,Is there a way to check the type of a value in wasm which has been loaded by typescirpt, example:i32?",
+    "body": "<p>In WebAssembly,we have i32 A 32-bit signed integer,if we load this wasm ,so we can check the type of i32?If cannot check i32 by javascirpt/typescirpt ,is there another way to check the value of wasm ?</p>\n\n<p>So I try to build the wasm,the typeof return a \"number\"</p>\n\n<p><a href=\"https://i.stack.imgur.com/H9Ze9.png\" rel=\"nofollow noreferrer\">enter image description here</a></p>\n\n<p>main.js</p>\n\n<pre><code>WebAssembly.instantiateStreaming(fetch(\"../out/main.wasm\"), {\n  main: {\n    sayHello() {\n      console.log(\"Hello from WebAssembly!\");\n    }\n  },\n  env: {\n    abort(_msg, _file, line, column) {\n      console.error(\"abort called at main.ts:\" + line + \":\" + column);\n    }\n  },\n}).then(result =&gt; {\n  const exports = result.instance.exports;\n  const addResult = exports.add(19, 23);\n  document.getElementById(\"container\").textContent = \"Result: \" + exports.add(19, 23) + \"Type:\" + (typeof addResult);\n}).catch(console.error);\n</code></pre>\n\n<p>So,is there another way to check the value of wasm ?</p>\n"
+}

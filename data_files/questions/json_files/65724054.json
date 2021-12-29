@@ -1,0 +1,28 @@
+{
+    "tags": [
+        "dependency-injection",
+        "blazor",
+        "main",
+        "webassembly"
+    ],
+    "owner": {
+        "reputation": 75,
+        "user_id": 1154898,
+        "user_type": "registered",
+        "profile_image": "https://i.stack.imgur.com/arVfz.png?s=128&g=1",
+        "display_name": "andreat",
+        "link": "https://stackoverflow.com/users/1154898/andreat"
+    },
+    "is_answered": true,
+    "view_count": 37,
+    "accepted_answer_id": 65724744,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1610648447,
+    "creation_date": 1610645740,
+    "question_id": 65724054,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/65724054/blazor-wasm-inject-ijsruntime-in-program-cs-main",
+    "title": "blazor wasm inject IJSRuntime in program.cs Main",
+    "body": "<p>in Blazor Webassembly,\nis it possible to inject IJSRuntime in program.cs, to Main method ?</p>\n<p>Thank you</p>\n"
+}

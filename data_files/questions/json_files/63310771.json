@@ -1,0 +1,24 @@
+{
+    "tags": [
+        "blazor-client-side"
+    ],
+    "owner": {
+        "reputation": 11,
+        "user_id": 3910034,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/356dc2c8f5302cceefa0c8db63cbea67?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Jagdriver",
+        "link": "https://stackoverflow.com/users/3910034/jagdriver"
+    },
+    "is_answered": false,
+    "view_count": 397,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1598397202,
+    "creation_date": 1596847704,
+    "question_id": 63310771,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/63310771/blazor-webassembly-custom-http-response-headers",
+    "title": "Blazor Webassembly, custom http response headers",
+    "body": "<p>I'm creating Blazor Webassembly app, which call my Dotnet web API. I'm using the injected http client, and the api call itself run without problems, Postmann &amp; WireShark confirms that my custom response headers from the API is returned correctly. But in the Blazor Webassembly app, there is only one header &quot;content-type&quot;. I know that the Blazor Http client is a wrapper around some Javascript, but are there anyone out there that can help with some knowledge or examples on how to get custom response headers thru to the Blazor app.\nI'm using Visual Studio 2019 Community and also Visual Studio Code, and normally I develop on a Mac, but due to problems with debugging Blazor apps on Mac I changed to Windows 10.</p>\n"
+}

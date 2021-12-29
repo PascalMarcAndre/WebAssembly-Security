@@ -1,0 +1,29 @@
+{
+    "tags": [
+        "c#",
+        "authentication",
+        "events",
+        "blazor",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 581,
+        "user_id": 9475977,
+        "user_type": "registered",
+        "profile_image": "https://lh3.googleusercontent.com/-XdUIqdMkCWA/AAAAAAAAAAI/AAAAAAAAAAA/4252rscbv5M/photo.jpg?sz=128",
+        "display_name": "Gur Galler",
+        "link": "https://stackoverflow.com/users/9475977/gur-galler"
+    },
+    "is_answered": true,
+    "view_count": 30,
+    "accepted_answer_id": 66975278,
+    "answer_count": 2,
+    "score": 2,
+    "last_activity_date": 1617737206,
+    "creation_date": 1617732276,
+    "question_id": 66974094,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/66974094/how-to-run-code-on-login-in-blazor-webassembly",
+    "title": "How to run code on login in Blazor WebAssembly?",
+    "body": "<p>I'm trying to run a function every time a user logs in. What I tried is to obtain an instance of <code>AuthenticationStateProvider</code> from the DI container and subscribe to its <code>AuthenticationStateChanged</code> event. The problem is that my login pages are implemented using server-rendered Razor Pages so the page refreshes after a successful login. This means that my code subscribes to the event after it is fired, so my handler function never runs. Can anybody see a way to run custom code upon successful login?</p>\n"
+}

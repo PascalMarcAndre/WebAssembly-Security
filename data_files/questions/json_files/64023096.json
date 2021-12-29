@@ -1,0 +1,28 @@
+{
+    "tags": [
+        "asp.net",
+        "asp.net-mvc",
+        "iis",
+        "windows-server-2016",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 33,
+        "user_id": 9047246,
+        "user_type": "registered",
+        "profile_image": "https://lh4.googleusercontent.com/-oh5gDC3WdOk/AAAAAAAAAAI/AAAAAAAAAAs/p2vgNt747ag/photo.jpg?sz=128",
+        "display_name": "jayx",
+        "link": "https://stackoverflow.com/users/9047246/jayx"
+    },
+    "is_answered": false,
+    "view_count": 90,
+    "answer_count": 0,
+    "score": 0,
+    "last_activity_date": 1600846349,
+    "creation_date": 1600846349,
+    "question_id": 64023096,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/64023096/access-denied-exception-deployment-of-asp-net-core-hosted-blazor-webassembly-a",
+    "title": "Access denied exception | Deployment of ASP.NET Core hosted Blazor Webassembly Application",
+    "body": "<p>I am trying to deploy ASP.NET Core Hosted Blazor Webassembly Application in a Windows Server 2016 (in AWS).\nThe application gets hosted without any error in IIS. But while the application reaches the code section related to verifying a certificate instance I get the following exception:</p>\n<p><code>One or more errors occurred. (Access is denied.)</code></p>\n<p>I have also tried the same in Windows 10 Pro and the exception is not thrown. In Windows server 2016, I have tried running the application directly using executable and it works as expected and exception is not thrown in this approach.</p>\n<p>I have also launched the IIS with administrative privileges and still the issue persists. Does this problem arise due to Windows user access privileges? How can I resolve the above mentioned exception?</p>\n"
+}

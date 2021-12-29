@@ -1,0 +1,29 @@
+{
+    "tags": [
+        "asp.net-core",
+        ".net-core",
+        "blazor",
+        "azure-ad-b2c",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 203,
+        "user_id": 5004920,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/1ef4952641dba5749d1992edfe786b6c?s=128&d=identicon&r=PG",
+        "display_name": "Eduardo Fonseca",
+        "link": "https://stackoverflow.com/users/5004920/eduardo-fonseca"
+    },
+    "is_answered": true,
+    "view_count": 98,
+    "accepted_answer_id": 63105508,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1595796278,
+    "creation_date": 1595770878,
+    "question_id": 63100932,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/63100932/blazor-web-assembly-app-with-azure-b2c-is-always-trying-to-authenticate-as-soon",
+    "title": "Blazor Web Assembly App with Azure B2C is always trying to authenticate as soon as page is loaded",
+    "body": "<p>I am adding support for Azure AD B2C to a Blazor WebAssembly App, I followed the instructions here\n<a href=\"https://docs.microsoft.com/en-us/aspnet/core/blazor/security/webassembly/hosted-with-azure-active-directory-b2c?view=aspnetcore-3.1#client-app-configuration\" rel=\"nofollow noreferrer\">https://docs.microsoft.com/en-us/aspnet/core/blazor/security/webassembly/hosted-with-azure-active-directory-b2c?view=aspnetcore-3.1#client-app-configuration</a></p>\n<p>however, the application is always trying to authenticate as soon as I load the page,\nwhich does not allow for a public anonymous section of the site.\nIs there any solution to this problem?</p>\n"
+}

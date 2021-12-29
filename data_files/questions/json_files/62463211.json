@@ -1,0 +1,28 @@
+{
+    "tags": [
+        "fluentvalidation",
+        "blazor-client-side",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 1347,
+        "user_id": 1764116,
+        "user_type": "registered",
+        "accept_rate": 42,
+        "profile_image": "https://www.gravatar.com/avatar/8dd1910dd49d37bbbf91815b33f3325a?s=128&d=identicon&r=PG",
+        "display_name": "NSS",
+        "link": "https://stackoverflow.com/users/1764116/nss"
+    },
+    "is_answered": false,
+    "view_count": 60,
+    "answer_count": 0,
+    "score": 0,
+    "last_activity_date": 1592667597,
+    "creation_date": 1592540504,
+    "last_edit_date": 1592667597,
+    "question_id": 62463211,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/62463211/how-to-pass-dependency-injection-in-generic-class",
+    "title": "How to pass Dependency injection in Generic class",
+    "body": "<p>I intend to pass the HttpClient into the validator, not sure how to achieve it.</p>\n<pre><code>public class FluentValidator&lt;TValidator&gt; : ComponentBase \n        where TValidator : IValidator, new() \n        \n    {\n       \n        private readonly static char[] separators = new[] { '.', '[' };\n        private TValidator validator;\n       \n\n        [CascadingParameter] private EditContext EditContext { get; set; }\n     \n\n    protected override void OnInitialized()\n        {\n            validator = new TValidator();\n            \n            var messages = new ValidationMessageStore(EditContext);\n        .\n        .\n        .\n    }\n}\n</code></pre>\n<p>Here is my Fluent Validator, for which i need to inject the HTTP client from blazor webassembly page.</p>\n<pre><code>public class EditProfileValidator : AbstractValidator&lt;EditProfileModel&gt;\n    {\n        private HttpClient _Http;\n       \n        public EditProfileValidator(HttpClient Http)\n        {\n           _Http = Http;\n        }\n}\n</code></pre>\n<p>in Blazor Pages</p>\n<p>I want to Pass HTTP variable as shown hereunder down to the validator.</p>\n<p>The problem is that i get over 200+ error when i include the Http variable as argument.</p>\n\n<pre><code>@inject HttpClient Http\n\n &lt;EditForm EditContext=&quot;@profileEditContext&quot; OnSubmit=&quot;UpdateProfile&quot;&gt;\n            &lt;FluentValidator TValidator=&quot;EditProfileValidator(Http)&quot; /&gt;\n            &lt;ValidationSummary /&gt;\n</code></pre>\n<p>NOTE: The following works fine if i remove the Http and remove it from class as well.</p>\n<pre><code>&lt;EditForm EditContext=&quot;@profileEditContext&quot; OnSubmit=&quot;UpdateProfile&quot;&gt;\n                &lt;FluentValidator TValidator=&quot;EditProfileValidator&quot; /&gt;\n                &lt;ValidationSummary /&gt;\n</code></pre>\n"
+}

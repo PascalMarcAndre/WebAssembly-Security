@@ -1,0 +1,28 @@
+{
+    "tags": [
+        "blazor",
+        "stackexchange.redis",
+        "blazor-client-side",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 46,
+        "user_id": 13748014,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/f88311f6cac88a7140bbf03f86a66965?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Kubus",
+        "link": "https://stackoverflow.com/users/13748014/kubus"
+    },
+    "is_answered": false,
+    "view_count": 345,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1592226518,
+    "creation_date": 1592206752,
+    "last_edit_date": 1592226518,
+    "question_id": 62383514,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/62383514/how-to-use-stackexchange-redis-in-a-blazor-webassembly-app",
+    "title": "How to use StackExchange.Redis in a Blazor WebAssembly app?",
+    "body": "<p>I tried to call <code>ConnectionMultiplexer.ConnectAsync</code> in a Blazor client-side component in the following way: </p>\n\n<pre><code>protected override async Task OnInitializedAsync()\n{\n  var configuration = new ConfigurationOptions\n  {\n    AbortOnConnectFail = false,\n    ConnectTimeout = 3000,\n    SyncTimeout = 5000,\n    KeepAlive = 180,\n    EndPoints =\n    {\n      {\n        \"localhost\", 6379\n      }\n    }\n  };\n\n  await ConnectionMultiplexer.ConnectAsync(configuration);\n\n  await base.OnInitializedAsync();\n}\n</code></pre>\n\n<p>This throws an exception:</p>\n\n<blockquote>\n  <p>children could not be evaluated</p>\n</blockquote>\n\n<p>How Is it possible to use <code>StackExchange.Redis</code> in a <code>Blazor WebAssembly</code> app? </p>\n\n<p><strong>Edit:</strong></p>\n\n<p>I found a more verbose error message in the VS output:</p>\n\n<blockquote>\n<pre><code>  Unhandled exception rendering component: Cannot start threads on this runtime.\n</code></pre>\n  \n  <p>System.NotSupportedException: Cannot start threads on this runtime.\n    at (wrapper managed-to-native) System.Threading.Thread.Thread_internal(System.Threading.Thread,System.MulticastDelegate)\n    at System.Threading.Thread.StartInternal (System.Object principal, System.Threading.StackCrawlMark&amp; stackMark) &lt;0x3b02590 + 0x00008> in :0 \n    at System.Threading.Thread.Start (System.Threading.StackCrawlMark&amp; stackMark) &lt;0x3b02450 + 0x0004e> in :0 \n    at System.Threading.Thread.Start (System.Object parameter) &lt;0x3b022d0 + 0x0003a> in :0 \n    at Pipelines.Sockets.Unofficial.DedicatedThreadPoolPipeScheduler.StartWorker (System.Int32 id) [0x0003a] in C:\\Code\\Pipelines.Sockets.Unofficial\\src\\Pipelines.Sockets.Unofficial\\DedicatedThreadPoolPipeScheduler.cs:112 \n    at Pipelines.Sockets.Unofficial.DedicatedThreadPoolPipeScheduler..ctor (System.String name, System.Int32 workerCount, System.Int32 useThreadPoolQueueLength, System.Threading.ThreadPriority priority) [0x00072] in C:\\Code\\Pipelines.Sockets.Unofficial\\src\\Pipelines.Sockets.Unofficial\\DedicatedThreadPoolPipeScheduler.cs:74 \n    at StackExchange.Redis.SocketManager..ctor (System.String name, System.Int32 workerCount, StackExchange.Redis.SocketManager+SocketManagerOptions options) [0x0006e] in /<em>/src/StackExchange.Redis/SocketManager.cs:98 \n    at StackExchange.Redis.SocketManager..ctor (System.String name, System.Int32 workerCount, System.Boolean useHighPrioritySocketThreads) [0x00000] in /</em>/src/StackExchange.Redis/SocketManager.cs:44 \n    at StackExchange.Redis.SocketManager.get_Shared () [0x0000c] in /<em>/src/StackExchange.Redis/SocketManager.cs:132 \n    at StackExchange.Redis.ConnectionMultiplexer.OnCreateReaderWriter (StackExchange.Redis.ConfigurationOptions configuration) [0x00000] in /</em>/src/StackExchange.Redis/ConnectionMultiplexer.ReaderWriter.cs:9 \n    at StackExchange.Redis.ConnectionMultiplexer..ctor (StackExchange.Redis.ConfigurationOptions configuration) [0x000d6] in /<em>/src/StackExchange.Redis/ConnectionMultiplexer.cs:1150 \n    at StackExchange.Redis.ConnectionMultiplexer.CreateMultiplexer (System.Object configuration, StackExchange.Redis.ConnectionMultiplexer+LogProxy log, System.EventHandler`1[StackExchange.Redis.ConnectionFailedEventArgs]&amp; connectHandler) [0x0000d] in /</em>/src/StackExchange.Redis/ConnectionMultiplexer.cs:957 \n    at StackExchange.Redis.ConnectionMultiplexer.ConnectImplAsync (System.Object configuration, System.IO.TextWriter log) [0x0003a] in /_/src/StackExchange.Redis/ConnectionMultiplexer.cs:854 \n    at Joker.BlazorApp.Sample.Pages.ProductsComponentBase.OnInitializedAsync () [0x0007c] in C:\\Users\\tomas.fabian\\source\\repos\\Joker.BlazorApp.Sample\\Joker.BlazorApp.Sample\\Pages\\ProductsComponentBase.cs:52 \n    at Microsoft.AspNetCore.Components.ComponentBase.RunInitAndSetParametersAsync () &lt;0x37da140 + 0x0013a> in :0 </p>\n</blockquote>\n"
+}

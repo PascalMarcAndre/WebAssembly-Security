@@ -1,0 +1,29 @@
+{
+    "tags": [
+        "c#",
+        "azure",
+        "azure-web-app-service",
+        "identityserver4"
+    ],
+    "owner": {
+        "reputation": 173,
+        "user_id": 848967,
+        "user_type": "registered",
+        "accept_rate": 40,
+        "profile_image": "https://i.stack.imgur.com/IFUsG.png?s=128&g=1",
+        "display_name": "Robert Sundstr&#246;m",
+        "link": "https://stackoverflow.com/users/848967/robert-sundstr%c3%b6m"
+    },
+    "is_answered": true,
+    "view_count": 158,
+    "answer_count": 2,
+    "score": 0,
+    "last_activity_date": 1610091108,
+    "creation_date": 1609952025,
+    "last_edit_date": 1609953117,
+    "question_id": 65599957,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/65599957/accessing-certificate-in-azure-keyvault-from-asp-net-core-app",
+    "title": "Accessing certificate in Azure KeyVault from ASP.NET Core app",
+    "body": "<p>I have created a Blazor WebAssembly app with a server backend using Identity Server out-of-box (from the template).</p>\n<p>I want to publish it to Azure but I don't get it working with loading the certificate from Azure KeyVault.</p>\n<p>I have used the wizards in Visual Studio to generate the boilerplate code. Everything has been configured too.</p>\n<p>And I read this guide too: <a href=\"https://docs.microsoft.com/en-us/aspnet/core/blazor/security/webassembly/hosted-with-identity-server?view=aspnetcore-5.0&amp;tabs=visual-studio#host-in-azure-app-service-with-a-custom-domain\" rel=\"nofollow noreferrer\">https://docs.microsoft.com/en-us/aspnet/core/blazor/security/webassembly/hosted-with-identity-server?view=aspnetcore-5.0&amp;tabs=visual-studio#host-in-azure-app-service-with-a-custom-domain</a></p>\n<p>And I have created a certificate in the Key Vault named <em>IdentityServerSigning</em> with  <code>CN=IdentityServerSigning</code>.</p>\n<p>When I then run the app I get 500.30.</p>\n<p>Opening the Web-based Console from the Portal, I launch the app and get that it <code>could not find a valid certificate 'CN=IdentityServerSigning' on the 'CurrentUser/My'</code>.</p>\n<p>What am I missing?</p>\n"
+}

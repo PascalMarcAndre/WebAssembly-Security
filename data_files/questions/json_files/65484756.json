@@ -1,0 +1,25 @@
+{
+    "tags": [
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 1255,
+        "user_id": 675203,
+        "user_type": "registered",
+        "accept_rate": 42,
+        "profile_image": "https://www.gravatar.com/avatar/c2f27062d5781ee50aefa4e76e10a60b?s=128&d=identicon&r=PG",
+        "display_name": "Steven Lemmens",
+        "link": "https://stackoverflow.com/users/675203/steven-lemmens"
+    },
+    "is_answered": false,
+    "view_count": 79,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1609216301,
+    "creation_date": 1609193548,
+    "question_id": 65484756,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/65484756/how-does-blazor-webassembly-app-know-which-user-has-been-logged-in-server-side",
+    "title": "How does Blazor Webassembly app know which user has been logged in server side?",
+    "body": "<p>I have created a new Blazor WebAssembly project with a separate API project. My WebAssembly project will\nquery this WebAPI for data.</p>\n<p>I have included <code>Identity</code> in my app and this seems to work. I can register a new user and use the below code to log in a user on my Web API.</p>\n<p>Code used to log someone in:</p>\n<pre><code>    var result = await _signInManager.PasswordSignInAsync(model.UserName, model.Password, false, lockoutOnFailure: false);\n\n     if (result.Succeeded)\n     {\n         //I arrive here, so login was succesful\n         return true;\n     }\n</code></pre>\n<p>So Identity seems to be working.</p>\n<p>What I'm wondering now is:</p>\n<ol>\n<li>my user logs on in the web assembly app</li>\n<li>this app uses HttpClient to send a request to my server to authenticate the user, using a username and password</li>\n<li>the server checks the username and password and uses <code>_signInManager.PasswordSignInAsync(username, password)</code> which works</li>\n<li>How does my client know which user has been authenticated? How can I display more information about this user, check his roles, ...</li>\n</ol>\n<p>Does anyone have any guidance or best practices on this please?</p>\n"
+}

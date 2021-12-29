@@ -1,0 +1,27 @@
+{
+    "tags": [
+        "webassembly",
+        "fault",
+        "isolation"
+    ],
+    "owner": {
+        "reputation": 33,
+        "user_id": 14940254,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/9a0f91b8914d997e99a0287e968ff0fa?s=128&d=identicon&r=PG&f=1",
+        "display_name": "capstonene",
+        "link": "https://stackoverflow.com/users/14940254/capstonene"
+    },
+    "is_answered": true,
+    "view_count": 11,
+    "accepted_answer_id": 66923823,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1617388934,
+    "creation_date": 1616571764,
+    "question_id": 66776662,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/66776662/how-webassembly-provides-software-fault-isolation",
+    "title": "how webassembly provides software fault isolation",
+    "body": "<p>everywhere you listen about isolation that webassembly provides. they told webassembly provides software fault isolation with fine-grain. but how does it provide isolation? with linear memory? how linear memory is isolated? i can't find resources on how webassembly provides SFI (software fault isolation).</p>\n"
+}

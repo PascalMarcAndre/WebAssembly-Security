@@ -1,0 +1,30 @@
+{
+    "tags": [
+        "javascript",
+        "c",
+        "security",
+        "emscripten",
+        "webassembly"
+    ],
+    "owner": {
+        "reputation": 11118,
+        "user_id": 1115237,
+        "user_type": "registered",
+        "accept_rate": 76,
+        "profile_image": "https://www.gravatar.com/avatar/a5b371929b9ddad5e22fc6997e5aab49?s=128&d=identicon&r=PG",
+        "display_name": "Shlomi Schwartz",
+        "link": "https://stackoverflow.com/users/1115237/shlomi-schwartz"
+    },
+    "is_answered": true,
+    "view_count": 429,
+    "answer_count": 2,
+    "score": 14,
+    "last_activity_date": 1526136259,
+    "creation_date": 1525333666,
+    "last_edit_date": 1525598373,
+    "question_id": 50149603,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/50149603/could-wasm-be-used-to-check-integrity-of-a-js-method",
+    "title": "Could WASM be used to check integrity of a JS method?",
+    "body": "<p>I'm experimenting with webAssembly and trying to figure out a way of validating the integrity of a JS method used by the webAssembly module.</p>\n\n<p>For the purpose of the discussion, let's assume that the binary module is not hackable (I know it is not the case), but the JS side is.</p>\n\n<p>Given the following C code:</p>\n\n<pre><code>#include &lt;emscripten.h&gt;\n\n//js method to validate\nvoid validateMe();\n\nint validateMethods(){\n    // check validateMe integrity.\n    // return 1 if validation succeeded.\n}\n\nEMSCRIPTEN_KEEPALIVE\nvoid doStuff(){\n    if (validateMethods()){\n       // do stuff\n    }\n}\n</code></pre>\n\n<p>I would like to call <code>doStuff()</code> from the JS side, and <code>doStuff()</code> will operate only if the integrity check succeeded.\nI thought of doing some sort of integrity check, similar to <a href=\"https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity\" rel=\"noreferrer\">Subresource</a>, checking the toString representation of the method. However, If I want to get the current (in-memory) JS method toString, I'll have to call JS which can be compromised.</p>\n\n<p><strong>Q:</strong> Can I somehow get the toString in a different way? Any other approach would also be appreciated.</p>\n\n<p><strong>Update:</strong> after digging a bit deeper, reading <a href=\"https://hacks.mozilla.org/2017/07/memory-in-webassembly-and-why-its-safer-than-you-think/\" rel=\"noreferrer\">this article</a>, it seems that there is no way to access the JS memory other than the shared array. So any validation technic would be appreciated.</p>\n\n<hr>\n\n<p><strong>Update 2 (Goal):</strong> My ultimate goal is to make sure the WASM part will only work with a specific JS, or at least make it harder to interact with manipulated JS.</p>\n\n<p><strong>Fiddle Example:</strong> The <a href=\"https://wasdk.github.io/WasmFiddle//?1bt7qi\" rel=\"noreferrer\">following fiddle</a>, is a naive function validation, comparing the toString of the function char by char. If you alter the validateMe function, the validation fails. I'm trying to \"bulletproof\" it.</p>\n"
+}

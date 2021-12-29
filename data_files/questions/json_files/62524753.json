@@ -1,0 +1,30 @@
+{
+    "tags": [
+        "c#",
+        "azure",
+        "asp.net-core",
+        "http-status-code-400",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 93,
+        "user_id": 12027484,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/1751cf197ecd4b3e4ad9be37065331a2?s=128&d=identicon&r=PG&f=1",
+        "display_name": "amdorsey12",
+        "link": "https://stackoverflow.com/users/12027484/amdorsey12"
+    },
+    "is_answered": true,
+    "view_count": 908,
+    "accepted_answer_id": 62566565,
+    "answer_count": 1,
+    "score": 2,
+    "last_activity_date": 1593049121,
+    "creation_date": 1592866434,
+    "last_edit_date": 1593023420,
+    "question_id": 62524753,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/62524753/azure-asp-net-core-post-400-bad-request-blazor-webassembly",
+    "title": "Azure ASP.NET Core POST 400 bad request Blazor Webassembly",
+    "body": "<p>I have been trying to deploy my asp.net core hosted blazor webassembly app on Azure App Service, however, I am having trouble getting the api to work. When I try and save a user's data in the database, I get a 400 bad request error. It works fine on localhost. I looked around and found advice that suggested that I use the Log Stream in Azure to get a more detailed error message, and here it is although I'm not sure the details really help.</p>\n<pre><code>2020-06-22 22:24:54 MYPROJECT POST /api/Register/Post X-ARR-LOG-ID=ef27263e-dead-417a-b136-89a217a6f931 443 - MYIP Mozilla/5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/83.0.4103.97+Safari/537.36 ARRAffinity=7f74b113b9ae575a087ae1fa07a63858e6e34f27224b7aa1a957b06074e65ffd https://myproject.azurewebsites.net/Register\n</code></pre>\n<p>Here is the relevant application code:</p>\n<pre class=\"lang-cs prettyprint-override\"><code>//Register.razor in client project\n@code {\n    private RegisterModel Model = new RegisterModel();\n    private bool ShowErrors;\n\n    private List&lt;string&gt; Errors = new List&lt;string&gt;();\n    private async Task HandleValidSubmit()\n    {\n        ShowErrors = false;\n        Errors.Clear();\n        if (Model.Password.Length &gt;= 6 &amp;&amp; Model.Password == Model.ConfirmPassword)\n        {\n            await HttpClient.PostAsJsonAsync&lt;RegisterModel&gt;(&quot;api/Register/Post&quot;, Model);\n            NavigationManager.NavigateTo(&quot;/&quot;);\n        }\n        else \n        {\n            if (Model.Password.Length &gt; 100 || Model.Password.Length &lt; 6)\n            {\n                Errors.Add(&quot;Password must be between 6 and 100 characters in length.&quot;);\n            }\n            if (Model.Password != Model.ConfirmPassword)\n            {\n                Errors.Add(&quot;Passwords do not match.&quot;);\n            }\n            ShowErrors = true;\n        }\n    }\n}\n\n//RegisterController.cs in server project\n[Route(&quot;api/Register&quot;)]\n    public class RegisterController : Controller\n    {\n        private UserContext UserContext { get; set; }\n        private IHasher Hasher = new Pbkdf2Hasher();\n        public RegisterController (UserContext userContext)\n        {\n            UserContext = userContext;\n        }\n\n        [RequireHttps]\n        [HttpPost]\n        [Route(&quot;Post&quot;)]\n        public async Task Post([FromBody]RegisterModel model)\n        {\n            var user = new UserModel\n            {\n                Email = model.Email,\n                Password = Hasher.Hash(model.Password)\n            };\n            await UserContext.AddAsync(user);\n            await UserContext.SaveChangesAsync();\n        }\n    }\n\n//Startup.cs in Server project\n            public void ConfigureServices(IServiceCollection services)\n                services.AddDbContext&lt;UserContext&gt;(options =&gt;\n                    options.UseSqlServer(Configuration.GetConnectionString(&quot;UsersConnection&quot;),\n                    sqlServerOptionsAction: sqlOptions =&gt;\n                    {\n                        sqlOptions.EnableRetryOnFailure();\n                    }));\n\n</code></pre>\n<p>On publishing the project, I configured an Azure SQL Database for 'users', checked the checkboxes to use the UsersConnection string at runtime, and apply the UserContext Entity Framework Migration on publish.</p>\n<p>I am using visual studio 2019, and the target framework is netcoreapp3.1. I'd appreciate any guidance. Thanks!</p>\n<p><strong>Edit</strong></p>\n<p>After looking at the detailed logs, apparently the database isn't even being made?</p>\n<pre><code>INSERT INTO [Users] ([Email], [Password])\nVALUES (@p0, @p1);\n2020-06-22 22:19:47.208 +00:00 [Error] Microsoft.EntityFrameworkCore.Update: An exception occurred in the database while saving changes for context type 'BlazorTodos.Server.Data.UserContext'.\nMicrosoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.\n ---&gt; Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'Users'.\n</code></pre>\n"
+}

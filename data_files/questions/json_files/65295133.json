@@ -1,0 +1,27 @@
+{
+    "tags": [
+        "identityserver4",
+        "blazor"
+    ],
+    "owner": {
+        "reputation": 1894,
+        "user_id": 2936204,
+        "user_type": "registered",
+        "accept_rate": 83,
+        "profile_image": "https://www.gravatar.com/avatar/b8f5a181db5efda6b5d98bd511a6d908?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Neil W",
+        "link": "https://stackoverflow.com/users/2936204/neil-w"
+    },
+    "is_answered": true,
+    "view_count": 42,
+    "accepted_answer_id": 65295775,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1608377951,
+    "creation_date": 1607973528,
+    "question_id": 65295133,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/65295133/blazor-entityserver4-routing-to-login",
+    "title": "Blazor, EntityServer4 routing to login",
+    "body": "<p>In the Blazor WebAssembly (hosted) with Authentication template, the Login button on the header is</p>\n<pre><code>&lt;a href=&quot;authentication/login&quot;&gt;Log in&lt;/a&gt;\n</code></pre>\n<p>However, on the server the login page is at:</p>\n<p>/Areas/Identity/Pages/Account/Login (.cshtml)</p>\n<p><b>Note:</b> The cshtml page has @page directive but does not specify a roue.</p>\n<p>So, how does the system resolve &quot;authentication/login&quot; to &quot;/Areas/Identity/Pages/Account/Login?</p>\n"
+}

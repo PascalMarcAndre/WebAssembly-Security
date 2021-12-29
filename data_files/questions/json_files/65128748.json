@@ -1,0 +1,25 @@
+{
+    "tags": [
+        "identityserver4",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 21,
+        "user_id": 5649726,
+        "user_type": "registered",
+        "profile_image": "https://lh4.googleusercontent.com/-rytF2fzwLwE/AAAAAAAAAAI/AAAAAAAAFBM/CbQN-fCSp84/photo.jpg?sz=128",
+        "display_name": "Vasyl Kovalisko",
+        "link": "https://stackoverflow.com/users/5649726/vasyl-kovalisko"
+    },
+    "is_answered": false,
+    "view_count": 66,
+    "answer_count": 0,
+    "score": 0,
+    "last_activity_date": 1607008480,
+    "creation_date": 1607008480,
+    "question_id": 65128748,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/65128748/invalidoperationexception-user-security-stamp-cannot-be-nul-getsecuritystampas",
+    "title": "InvalidOperationException: User security stamp cannot be nul (GetSecurityStampAsync)",
+    "body": "<p>I have setup my Blazor Webassembly app to use IdentityServer.</p>\n<pre><code>        private void SetupIdentity(IServiceCollection services)\n        {\n            services.AddDbContext&lt;AuthDbContext&gt;();\n            // ASP.NET Core Identity. By default, Identity makes use of an Entity Framework (EF) Core data model. \n            services.AddDefaultIdentity&lt;AuthIdentityUser&gt;()\n                .AddEntityFrameworkStores&lt;AuthDbContext&gt;();\n                //.AddSignInManager&lt;AuthSignInManager&gt;();\n                //.AddUserManager&lt;AuthUserManager&gt;();\n            // IdentityServer with an additional AddApiAuthorization helper method that sets up default ASP.NET Core conventions on top of IdentityServer.\n            services.AddIdentityServer().AddApiAuthorization&lt;AuthIdentityUser, AuthDbContext&gt;();\n            // Authentication with an additional AddIdentityServerJwt helper method that configures the app to validate JWT tokens produced by IdentityServer.\n            services.AddAuthentication().AddIdentityServerJwt();\n            // Registration user claims.\n            //services.AddTransient&lt;IProfileService, AuthProfileService&gt;();\n            services.AddTransient&lt;IPasswordHasher&lt;AuthIdentityUser&gt;, AuthPasswordHasher&gt;();\n            services.Configure&lt;IdentityOptions&gt;(options =&gt;\n            {\n                // Password settings.\n                options.Password.RequiredLength = 0;\n                // User settings.\n                options.User.RequireUniqueEmail = false;\n                // ClaimsIdentity settings.\n                //options.ClaimsIdentity.UserIdClaimType = ClaimTypes.NameIdentifier;\n            });\n        }\n</code></pre>\n<p>I am using my own DB, so this changes were applied:</p>\n<pre><code>        protected override void OnModelCreating(ModelBuilder modelBuilder)\n        {\n            base.OnModelCreating(modelBuilder);\n\n            modelBuilder.Entity&lt;AuthIdentityUser&gt;()\n                .Ignore(iu =&gt; iu.AccessFailedCount)\n                .Ignore(u =&gt; u.ConcurrencyStamp)\n                .Ignore(u =&gt; u.Email)\n                .Ignore(iu =&gt; iu.EmailConfirmed)\n                .Ignore(u =&gt; u.LockoutEnabled)\n                .Ignore(u =&gt; u.LockoutEnd)\n                .Ignore(iu =&gt; iu.NormalizedEmail)\n                .Ignore(iu =&gt; iu.PhoneNumber)\n                .Ignore(u =&gt; u.PhoneNumberConfirmed)\n                .Ignore(u =&gt; u.SecurityStamp)\n                .Ignore(u =&gt; u.TwoFactorEnabled);\n            modelBuilder.Entity&lt;AuthIdentityUser&gt;(entity =&gt;\n            {\n                entity.Property(e =&gt; e.Id).HasColumnName(&quot;USERKEYID&quot;).ValueGeneratedNever();\n                entity.Property(e =&gt; e.NormalizedUserName).HasColumnName(&quot;USERINITIALS&quot;);\n                entity.Property(e =&gt; e.PasswordHash).HasColumnName(&quot;USERPASSWORD&quot;);\n                entity.Property(e =&gt; e.Email).HasColumnName(&quot;USEREMAIL&quot;);\n                entity.ToTable(&quot;TUSER&quot;);\n            });\n</code></pre>\n<p>So as a result login window is shown where I can enter my UserName and Password, that are successfully  validated. But then this &quot;security stamp&quot; issue occured. Can you advice what I am missing?</p>\n<p><a href=\"https://i.stack.imgur.com/VvARB.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/VvARB.png\" alt=\"an issue with security stamp cannot be null\" /></a></p>\n"
+}

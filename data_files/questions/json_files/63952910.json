@@ -1,0 +1,28 @@
+{
+    "tags": [
+        "javascript",
+        "webassembly",
+        "emscripten"
+    ],
+    "owner": {
+        "reputation": 4509,
+        "user_id": 11942268,
+        "user_type": "registered",
+        "profile_image": "https://i.stack.imgur.com/DtFEd.png?s=128&g=1",
+        "display_name": "Thomas",
+        "link": "https://stackoverflow.com/users/11942268/thomas"
+    },
+    "is_answered": true,
+    "view_count": 58,
+    "accepted_answer_id": 64021522,
+    "answer_count": 1,
+    "score": 4,
+    "last_activity_date": 1611746357,
+    "creation_date": 1600420784,
+    "last_edit_date": 1611746357,
+    "question_id": 63952910,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/63952910/how-do-i-access-the-file-system-api-of-emscripten-when-compiled-with-modularize",
+    "title": "How do I access the File System API of emscripten when compiled with MODULARIZE option?",
+    "body": "<p>If I compile my C++ code with <code>emcc</code> without <code>-s MODULARIZE=1 -s 'EXPORT_NAME=&quot;createMyModule&quot;'</code>, I can load my WebAssembly and access the <a href=\"https://emscripten.org/docs/api_reference/Filesystem-API.html\" rel=\"nofollow noreferrer\">File System API</a> like this:</p>\n<p>HTML:</p>\n<pre class=\"lang-html prettyprint-override\"><code>&lt;script type=&quot;text/javascript&quot;&gt;\n  var Module = {\n    onRuntimeInitialized: function() {\n      console.log('Module loaded!');\n      if (FS.mkdir) {\n        console.log('File System API available!');\n      }\n    }\n  };\n&lt;/script&gt;\n&lt;script type=&quot;text/javascript&quot; src=&quot;myWebAssemblyModule.js&quot;&gt;&lt;/script&gt;\n&lt;script type=&quot;module&quot; src=&quot;my.js&quot;&gt;&lt;/script&gt;\n</code></pre>\n<p>Log:</p>\n<pre class=\"lang-none prettyprint-override\"><code>Module loaded!\nFile System API available!\n</code></pre>\n<p>But if I add <code>-s MODULARIZE=1 -s 'EXPORT_NAME=&quot;createMyModule&quot;'</code> as compiler options, and try to access the File System API based on a Promise, it doesn't work:</p>\n<p>HTML:</p>\n<pre class=\"lang-html prettyprint-override\"><code>&lt;script type=&quot;text/javascript&quot; src=&quot;myWebAssemblyModule.js&quot;&gt;&lt;/script&gt;\n&lt;script type=&quot;module&quot; src=&quot;my.js&quot;&gt;&lt;/script&gt;\n</code></pre>\n<p>my.js:</p>\n<pre class=\"lang-js prettyprint-override\"><code>createMyModule().then(MyModule =&gt; {\n  console.log('Module loaded!');\n  if (MyModule.FS.mkdir) {\n    console.log('File System API available!');\n  }\n});\n</code></pre>\n<p>Log:</p>\n<pre class=\"lang-none prettyprint-override\"><code>Module loaded!\n</code></pre>\n<p>So how can I access the File System API with the &quot;MODULARIZED/Promise based&quot; approach?</p>\n<p><code>MyModule.FS</code> is accessible btw., but not <code>MyModule.FS.mkdir</code>.</p>\n"
+}

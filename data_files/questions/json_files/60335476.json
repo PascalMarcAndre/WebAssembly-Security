@@ -1,0 +1,29 @@
+{
+    "tags": [
+        "c#",
+        "dependency-injection",
+        "blazor",
+        "blazor-client-side",
+        "asp.net-blazor"
+    ],
+    "owner": {
+        "reputation": 47,
+        "user_id": 2035254,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/4a695d59e45a651ff4ce23c0453ad570?s=128&d=identicon&r=PG",
+        "display_name": "Guy",
+        "link": "https://stackoverflow.com/users/2035254/guy"
+    },
+    "is_answered": true,
+    "view_count": 684,
+    "accepted_answer_id": 60337632,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1582284102,
+    "creation_date": 1582276704,
+    "question_id": 60335476,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/60335476/accessing-routedata-in-blazor-client-side-authorizationhandler",
+    "title": "Accessing RouteData in Blazor Client Side AuthorizationHandler",
+    "body": "<p>I am currently learning about Blazor Client Side (WebAssembly) and while looking at Authorization I was trying to validate that a user has access to a path in the URI.</p>\n\n<p>Given a URI like <a href=\"http://localhost:1234/\" rel=\"nofollow noreferrer\">http://localhost:1234/</a>{route}/resource</p>\n\n<p>On a page I can map route to a property but how can I get access to this value within an AuthorizationHandler to validate that the JWT has a claim with this value?</p>\n\n<p>I have tried to inject RouteData and I have tried to access the HttpContext via IHttpContextAccessor but that is null.</p>\n\n<p>This is the class I am trying to get working</p>\n\n<pre><code>public class RouteDataAccessor : IRouteDataAccessor\n{\n    private readonly RouteData _routeData;\n    public RouteDataAccessor(IHttpContextAccessor httpContextAccessor)\n    {\n        httpContextAccessor.NullCheck(nameof(httpContextAccessor));\n        httpContextAccessor.HttpContext.NullCheck(nameof(httpContextAccessor.HttpContext));\n\n        _routeData = httpContextAccessor.HttpContext.GetRouteData();\n    }\n\n    public bool TryGetData(string key, out string value)\n    {\n        value = null;\n        if (_routeData == null || !_routeData.Values.TryGetValue(key, out value))\n        {\n            return false;\n        }\n\n        return true;\n    }\n}\n</code></pre>\n"
+}

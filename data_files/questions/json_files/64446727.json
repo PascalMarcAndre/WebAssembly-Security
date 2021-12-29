@@ -1,0 +1,26 @@
+{
+    "tags": [
+        "c#",
+        "blazor"
+    ],
+    "owner": {
+        "reputation": 67,
+        "user_id": 13879957,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/8bc46ac20bc360a6355708e202440724?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Dev",
+        "link": "https://stackoverflow.com/users/13879957/dev"
+    },
+    "is_answered": true,
+    "view_count": 377,
+    "accepted_answer_id": 64448967,
+    "answer_count": 1,
+    "score": 1,
+    "last_activity_date": 1603230711,
+    "creation_date": 1603202287,
+    "question_id": 64446727,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/64446727/blazor-javascript-interop-no-net-call-dispatcher-has-been-set",
+    "title": "Blazor - JavaScript Interop - No .NET call dispatcher has been set",
+    "body": "<p>I am experimenting with a <a href=\"https://docs.microsoft.com/en-us/aspnet/core/blazor/hosting-models?view=aspnetcore-3.1#blazor-webassembly\" rel=\"nofollow noreferrer\">Blazor WebAssembly app</a>. When my page (i.e. index.html) loads, I want to pass a JavaScript array to the Blazor app when it loads. While trying to <a href=\"https://docs.microsoft.com/en-us/aspnet/core/blazor/call-dotnet-from-javascript?view=aspnetcore-3.1\" rel=\"nofollow noreferrer\">call a method from JavaScript</a>, I've run into an error that says:</p>\n<pre><code>Uncaught (in promise) Error: No .NET call dispatcher has been set\n</code></pre>\n<p>My code looks like this:</p>\n<p><strong>index.html</strong></p>\n<pre><code>&lt;body&gt;\n    &lt;app&gt;Loading...&lt;/app&gt;\n\n    &lt;div id=&quot;blazor-error-ui&quot;&gt;\n        An unhandled error has occurred.\n        &lt;a href=&quot;&quot; class=&quot;reload&quot;&gt;Reload&lt;/a&gt;\n        &lt;a class=&quot;dismiss&quot;&gt;\ud83d\uddd9&lt;/a&gt;\n    &lt;/div&gt;\n    &lt;script src=&quot;_framework/blazor.webassembly.js&quot;&gt;&lt;/script&gt;\n\n    &lt;script&gt;\n        let items = [\n            { name:'Item 1', description:'This is a description of the first item' },\n            { name:'Item 2', description:'This is a description of the second item' },\n            { name:'Item 3', description:'This is a description of the third item' },\n        ];\n\n        try\n        {\n            DotNet\n                .invokeMethodAsync('MyOrg.MyApp.Index', 'LoadItems')\n                .then(results =&gt; {\n                    console.log(results);\n                })\n            ;\n        }\n        catch (ex)\n        {\n            console.log(ex);\n        }\n    &lt;/script&gt;\n&lt;/body&gt;\n</code></pre>\n<p><strong>Index.razor</strong></p>\n<pre><code>@page &quot;/&quot;\n\n@using System.Threading.Tasks;    \n@using Microsoft.Extensions.Logging;\n\n@inject ILogger&lt;Index&gt; logger;\n\n&lt;p&gt;\n    Items loaded: &lt;span&gt;@items.Count&lt;/span&gt;\n&lt;/p&gt;\n\n@code {\n    List&lt;object&gt; items = new List&lt;object&gt;();\n\n    [JSInvokable]\n    private Task LoadSnippets() \n    {\n        try \n        {\n            logger.LogInformation(&quot;Loading items...&quot;);\n            items = new List&lt;object&gt;();\n        }\n        catch (Exception ex)\n        {\n            logger.LogError(ex, $&quot;Failed to load items.&quot;);\n        }\n        return Task.CompletedTask;\n    }\n}\n</code></pre>\n<p>The first difference I noticed was that the example shown in the docs relied on a <code>static</code> method. Is this a requirement? If so, that would imply there's not a way to perform logging for example. Logging aside, even if I add <code>static</code> to the <code>LoadItems</code> method, I still get the error listed above. I don't understand why.</p>\n<p>In short, I'm trying to create a &quot;headless&quot; Blazor app. I'd like to use the richness of C# to work with the data, I need to pass the results to the UI, which relies on HTML/CSS. Thank you!</p>\n"
+}

@@ -1,0 +1,28 @@
+{
+    "tags": [
+        "c#",
+        "asp.net-web-api",
+        "blazor-webassembly",
+        ".net-5"
+    ],
+    "owner": {
+        "reputation": 386,
+        "user_id": 1584725,
+        "user_type": "registered",
+        "accept_rate": 67,
+        "profile_image": "https://www.gravatar.com/avatar/3b4af23cd0ebfb961c3ab01ffd884073?s=128&d=identicon&r=PG",
+        "display_name": "Brett JB",
+        "link": "https://stackoverflow.com/users/1584725/brett-jb"
+    },
+    "is_answered": false,
+    "view_count": 17,
+    "answer_count": 0,
+    "score": 0,
+    "last_activity_date": 1602061731,
+    "creation_date": 1602061731,
+    "question_id": 64240840,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/64240840/net-5-rc1-api-controller-constructor-issue",
+    "title": ".NET 5 RC1 API Controller constructor issue",
+    "body": "<p>I am working moving a Blazor WebAssembly project (Net Core 3.1) over to .NET 5 RC1 but I am having issues with a controller.\nThis code:</p>\n<pre><code>        [Authorize]\n        [Route(&quot;[controller]&quot;)]\n        [ApiController]\n        public class ApplicationUserController : ControllerBase\n        {\n            private readonly RGDbContext _context;\n            // Create a field to store the mapper object\n            private readonly IMapper _mapper;\n            private readonly UserManager&lt;ApplicationUser&gt; _userManager;\n            private readonly SignInManager&lt;ApplicationUser&gt; _signInManager;\n            // Field for DBContext\n\n            // Assign the object in the constructor for dependency injection\n            public ApplicationUserController(RGDbContext context, IMapper mapper, UserManager&lt;ApplicationUser&gt; userManager, SignInManager&lt;ApplicationUser&gt; signInManager)\n            {\n                _context = context;\n                _mapper = mapper;\n                _userManager = userManager;\n                _signInManager = signInManager;\n            }\n</code></pre>\n<p>Works fine under Core 3.1, but now is crashing out as soon as the controller is invoked - sorry I cant be more specific than that, but there is no exception, the calling blazor app just gets a 500 error, and no breakpoints are hit in the controller.</p>\n<p>If I comment out the constructor code so I effectively just have:</p>\n<pre><code>                public ApplicationUserController()\n            {\n            }\n</code></pre>\n<p>It works, at least to the extent that I can successfully call in to the controller and hit a break point, and return 'stuff' - I pasted in the 'WeatherController' template code...</p>\n<p>My question is should the dependency injection still work in .NET 5  - see that there is this:</p>\n<p><a href=\"https://www.nuget.org/packages/Microsoft.Extensions.DependencyInjection/5.0.0-rc.1.20451.14\" rel=\"nofollow noreferrer\">Microsoft.Extensions.DependencyInjection</a></p>\n<p>But that looks like something for .Net Framework, as it lists .NET Framework 4.6.1 as one of its dependencies.</p>\n<p>Besides, Dependency injection IS working in my project, I use it in the Startup.Cs to pass user and role managers to my config code...</p>\n<pre><code>                public void Configure(IApplicationBuilder app, IWebHostEnvironment env,\n                     UserManager&lt;ApplicationUser&gt; userManager, RoleManager&lt;IdentityRole&gt; roleManager)\n            {\n</code></pre>\n<p>Do controllers behave differently, do I have to go back to a more .Net Framework centric way of initialising/passing these objects, is it broken (fully aware that this is bleeding edge), or am I just barking up the wrong tree?</p>\n"
+}

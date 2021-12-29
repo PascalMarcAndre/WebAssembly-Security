@@ -1,0 +1,29 @@
+{
+    "tags": [
+        "asp.net-mvc",
+        "blazor",
+        "blazor-client-side"
+    ],
+    "owner": {
+        "reputation": 1755,
+        "user_id": 62147,
+        "user_type": "registered",
+        "accept_rate": 86,
+        "profile_image": "https://www.gravatar.com/avatar/477cd07d5ea8bf65c508dc26a3412226?s=128&d=identicon&r=PG",
+        "display_name": "TallGuy",
+        "link": "https://stackoverflow.com/users/62147/tallguy"
+    },
+    "is_answered": true,
+    "view_count": 828,
+    "accepted_answer_id": 58817046,
+    "answer_count": 2,
+    "score": 3,
+    "last_activity_date": 1574019599,
+    "creation_date": 1573545364,
+    "last_edit_date": 1574019599,
+    "question_id": 58814284,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/58814284/what-exactly-triggers-a-blazor-component-to-redraw-itself",
+    "title": "What exactly triggers a Blazor component to redraw itself?",
+    "body": "<p>I have Blazor WebAssembly application. I have a parent and child component that share a model class. When the child updates a value on the model, the child redraws itself, but the parent does not. So what <em>exactly</em> triggers a Blazor component to redraw itself? I can't find any documentation on this particular aspect of Blazor.</p>\n\n<p>I have an POCO model class. In the real application this comes from a separate assembly. Models/AwesomenessModel.cs:</p>\n\n<pre class=\"lang-cs prettyprint-override\"><code>namespace BlazorApp.Models {\n    public class AwesomenessModel {\n        public int? Level { get; set; }\n    }\n}\n</code></pre>\n\n<p>My index page. Pages/Index.razor:</p>\n\n<pre><code>@page \"/\"\n\n@using BlazorApp.Components\n@using BlazorApp.Models\n\n&lt;Awesomeness AwesomenessModel=\"@AwesomenessModel\"&gt;&lt;/Awesomeness&gt;\n\n@code {\n    private AwesomenessModel AwesomenessModel = new AwesomenessModel();\n}\n</code></pre>\n\n<p>The parent class. I have added a redraw button to verify that the content should have changed. Components/Awesomeness.razor:</p>\n\n<pre><code>@using BlazorApp.Models\n\n@if (AwesomenessModel.Level.HasValue) {\n    &lt;div&gt;Awesomeness is @AwesomenessModel.Level.Value&lt;/div&gt;\n} else {\n    for (int i = 0; i &lt; 10; i++) {\n        &lt;AwesomenessSelector AwesomenessModel=\"@AwesomenessModel\" Level=\"@i\"&gt;&lt;/AwesomenessSelector&gt;\n    }\n}\n&lt;div&gt;&lt;button class=\"btn btn-link\" @onclick=\"RedrawClick\"&gt;Redraw&lt;/button&gt;&lt;/div&gt;\n\n@code {\n    [Parameter]\n    public AwesomenessModel AwesomenessModel { get; set; }\n\n    private void RedrawClick() {\n        this.StateHasChanged();\n    }\n}\n</code></pre>\n\n<p>The child component that does the actual change to the Awesomeness model. Components/AwesomenessSelector.razor:</p>\n\n<pre><code>@using BlazorApp.Models\n\n@if (!AwesomenessModel.Level.HasValue) {\n    &lt;div&gt;&lt;button class=\"btn btn-link\" @onclick=\"LevelClick\"&gt;@Level&lt;/button&gt;&lt;/div&gt;\n}\n\n@code {\n    [Parameter]\n    public AwesomenessModel AwesomenessModel { get; set; }\n\n    [Parameter]\n    public int Level { get; set; }\n\n    private void LevelClick() {\n        AwesomenessModel.Level = Level;\n    }\n}\n</code></pre>\n\n<p>When I run the application and click on an awesomeness level, that level disappears (the AwesomenessSelector component redraws), but the rest are still visible and there is no 'Awesomeness is...' message (the Awesomeness component does not update). If I then click the Redraw button to force the Awesomeness component to redraw, I get the correct 'Awesomeness is...' message.</p>\n\n<p>I'm probably not structuring the code in the correct way to get the parent component to redraw automatically. How should I structure it in this scenario?</p>\n"
+}

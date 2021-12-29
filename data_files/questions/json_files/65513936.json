@@ -1,0 +1,30 @@
+{
+    "tags": [
+        "azure-active-directory",
+        "azure-functions",
+        "msal",
+        "blazor-client-side",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 981,
+        "user_id": 1200984,
+        "user_type": "registered",
+        "accept_rate": 50,
+        "profile_image": "https://i.stack.imgur.com/VVBzu.jpg?s=128&g=1",
+        "display_name": "phil",
+        "link": "https://stackoverflow.com/users/1200984/phil"
+    },
+    "is_answered": false,
+    "view_count": 174,
+    "answer_count": 1,
+    "score": 1,
+    "last_activity_date": 1609683205,
+    "creation_date": 1609364481,
+    "last_edit_date": 1609683205,
+    "question_id": 65513936,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/65513936/blazor-wasm-calling-azure-aad-secured-functions-api",
+    "title": "Blazor WASM calling Azure AAD secured Functions API",
+    "body": "<p>I have an Azure Functions API which uses Azure Active Directory authentication. I can test locally and deployed using a browser and curl calls in a process of:</p>\n<ol>\n<li>Get a code</li>\n<li>Use the code to get a token</li>\n<li>Pass the token to authenticate and get the function result.</li>\n</ol>\n<p>I now want to call this API from my Blazor WASM app but I'm sure there must be a nice MSAL call to do all the authentication but I cannot find any documentation on what that might be.</p>\n<p>Does anyone have a code snippet to illustrate what needs to happen?</p>\n<h3>Further Information</h3>\n<p>My Azure Functions App and Blazor WASM client are not part of the same project and are hosted on different sub-domains of Azure <code>hypotheticalapi.azurewebsites.net</code> and <code>hypotheticalweb.azurewebsites.net</code>.</p>\n<p>The web client application registration has API Permissions for the API and the API has an application registration which exposes itself with the scope that the client app has permissions for.</p>\n<p>Again, the API and Web app work individually. I just don't seem able to get them to talk.</p>\n<p>I have been following the &quot;<a href=\"https://docs.microsoft.com/en-us/aspnet/core/blazor/security/webassembly/additional-scenarios?view=aspnetcore-5.0\" rel=\"nofollow noreferrer\">ASP.NET Core Blazor WebAssembly additional security scenarios</a>&quot; documentation but after several attempts I keep coming back to the error:</p>\n<pre>Microsoft.JSInterop.JSException: invalid_grant: AADSTS65001: \nThe user or administrator has not consented to use the application with ID 'e40aabb0-8ed5-4833-b50d-ec7ca4e07996' named 'BallerinaBlazor5Wasm'. \nSend an interactive authorization request for this user and resource.\n\n</pre> \n<p>Even though I have revoked/deleted the client's permissions on the API, it has never repeated asking for consent. Is there a way I should <em>clear</em> the consent I previously gave? No idea how I might do that.</p>\n<p>This <a href=\"https://github.com/dotnet/aspnetcore/issues/23572\" rel=\"nofollow noreferrer\">GitHub Issue</a> appears to be relevant.</p>\n"
+}

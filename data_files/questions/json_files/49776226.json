@@ -1,0 +1,31 @@
+{
+    "tags": [
+        "c",
+        "jwt",
+        "sha256",
+        "emscripten",
+        "webassembly"
+    ],
+    "owner": {
+        "reputation": 1809,
+        "user_id": 1116068,
+        "user_type": "registered",
+        "accept_rate": 76,
+        "profile_image": "https://www.gravatar.com/avatar/833e391c99c8405d4ee64f9528584fc4?s=128&d=identicon&r=PG",
+        "display_name": "Roni Gadot",
+        "link": "https://stackoverflow.com/users/1116068/roni-gadot"
+    },
+    "is_answered": true,
+    "view_count": 891,
+    "accepted_answer_id": 49862020,
+    "answer_count": 3,
+    "score": 15,
+    "last_activity_date": 1524447778,
+    "creation_date": 1523452786,
+    "last_edit_date": 1523609496,
+    "question_id": 49776226,
+    "content_license": "CC BY-SA 3.0",
+    "link": "https://stackoverflow.com/questions/49776226/hmacsha256-in-webassembly-compiled-with-emscripten",
+    "title": "HmacSHA256 in WebAssembly compiled with Emscripten",
+    "body": "<p>I'm trying to implement JWT token (encoding only) in WebAssembly, the goal is to have a <strong>very light weight</strong> wasm module. As a web developer my C knowledge is limited. For now I've implemented the following function (ported from JS) to encode url-safe Base64 encoder, which works perfectly.</p>\n\n<pre><code>char _keyStr[] = \"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_=\";\nchar ret_val[200];\n\nchar* encode (char *data){\n    int len = strlen(data);\n    int i = 0;\n    int j = 0;\n\n    while(i&lt;len){\n        char chr1 = data[i++];\n        int chr2Out = (i &gt; len - 1)? 1:0;\n        char chr2 = data[i++];\n        int chr3Out = (i &gt; len - 1)? 1:0;;\n        char chr3 = data[i++];\n\n\n        char enc1 = chr1 &gt;&gt; 2;\n        char enc2 = ((chr1 &amp; 3) &lt;&lt; 4) | (chr2 &gt;&gt; 4);\n        char enc3 = ((chr2 &amp; 15) &lt;&lt; 2) | (chr3 &gt;&gt; 6);\n        char enc4 = chr3 &amp; 63;\n\n        if (chr2Out) {\n            enc3 = enc4 = 64;\n        } else if (chr3Out) {\n            enc4 = 64;\n        }\n\n        ret_val[j++] = _keyStr[enc1];\n        ret_val[j++] = _keyStr[enc2];\n        ret_val[j++] = _keyStr[enc3];\n        ret_val[j++] = _keyStr[enc4];\n\n    }\n    ret_val[j] = '\\0';\n    return ret_val;\n}\n</code></pre>\n\n<p>My next challenge is to be able to sign my JWT payload with HmacSHA256.\nThe following JS fiddle, describes what I want to accomplish with C.\n<a href=\"https://jsfiddle.net/gm7boy2p/813/\" rel=\"noreferrer\">https://jsfiddle.net/gm7boy2p/813/</a></p>\n\n<p>I'm struggling with integrating a 3rd party code and complie it with emcc.\nI'm looking for a light weight library or a snippet.</p>\n\n<p>Example code or any help would be appreciated.</p>\n\n<hr>\n\n<p><strong>Update:</strong> After extra research, reading <a href=\"https://stackoverflow.com/questions/45974738/how-to-link-openssl-with-emscripten?answertab=active#tab-top\">this</a> stackoverflow question and <a href=\"https://developers.google.com/web/updates/2018/03/emscripting-a-c-library\" rel=\"noreferrer\">this</a> article, it looks like using openssl or any other external library with WebAssembly is far from trivial. So what I'm looking for now is a standalone C function that I could integrate to my existing code.</p>\n"
+}

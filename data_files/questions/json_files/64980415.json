@@ -1,0 +1,30 @@
+{
+    "tags": [
+        "c#",
+        "asp.net-core",
+        "asp.net-identity",
+        "hangfire",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 3074,
+        "user_id": 391918,
+        "user_type": "registered",
+        "accept_rate": 50,
+        "profile_image": "https://i.stack.imgur.com/sJzpJ.png?s=128&g=1",
+        "display_name": "Ajit Goel",
+        "link": "https://stackoverflow.com/users/391918/ajit-goel"
+    },
+    "is_answered": false,
+    "view_count": 109,
+    "answer_count": 0,
+    "score": 0,
+    "last_activity_date": 1606193601,
+    "creation_date": 1606193275,
+    "last_edit_date": 1606193601,
+    "question_id": 64980415,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/64980415/configure-asp-net-core-application-with-hangfire-authorization",
+    "title": "Configure ASP.Net core application with Hangfire authorization",
+    "body": "<p>I have an ASP.Net Core Blazor WebAssembly application which is working with Hangfire. I am now trying to configure Authorization with Hangfire in production based on the documentation <a href=\"https://docs.hangfire.io/en/latest/configuration/using-dashboard.html#id2\" rel=\"nofollow noreferrer\">here</a> but I am getting a 403 error in production.\nWhat am I missing?</p>\n<pre><code>public void ConfigureServices(IServiceCollection services)\n        {\n            services.AddHttpContextAccessor();\n            services.AddCors(options =&gt;\n            {\n                options.AddPolicy(\n                    &quot;AllowAny&quot;,\n                    x =&gt;\n                    {\n                        x.AllowAnyHeader()\n                        .AllowAnyMethod()\n                        .SetIsOriginAllowed(isOriginAllowed: _ =&gt; true)\n                        .AllowCredentials();\n                    });\n            });\n            services.AddOData();\n            services.AddODataQueryFilter();\n            services.AddDbContext&lt;ApplicationIdentityDbContext&gt;(options =&gt;\n            {\n                options.UseMySql(Configuration.GetConnectionString(&quot;InstaTranscribeDBConnection&quot;));\n            });\n            services.AddIdentity&lt;ApplicationUser, IdentityRole&gt;()\n                .AddRoles&lt;IdentityRole&gt;()\n                .AddRoleStore&lt;RoleStore&lt;IdentityRole, ApplicationIdentityDbContext, string&gt;&gt;()\n                .AddRoleManager&lt;RoleManager&lt;IdentityRole&gt;&gt;()\n                .AddDefaultTokenProviders()\n                .AddEntityFrameworkStores&lt;ApplicationIdentityDbContext&gt;();\n            services.AddIdentityServer().AddApiAuthorization&lt;ApplicationUser, ApplicationIdentityDbContext&gt;();\n            services.AddTransient&lt;IdentityServer4.Services.IProfileService, ProfileService&gt;();\n            services.AddAuthentication().AddIdentityServerJwt();\n            services.AddDbContext&lt;InstaTranscribe.Data.InstaTranscribeDbContext&gt;(options =&gt;\n            {\n              options.UseMySql(Configuration.GetConnectionString(&quot;InstaTranscribeDBConnection&quot;));\n            });\n            services.AddControllersWithViews();\n            services.AddRazorPages();\n            #region Add Hangfire services\n            var connectionstring=Configuration.GetConnectionString(&quot;InstaTranscribeDBConnection&quot;);\n            var hangfireConnectionstring = $&quot;{connectionstring};Allow User Variables=true&quot;;\n            var mySqlStorageOptions = new MySqlStorageOptions\n            {\n              TransactionIsolationLevel = (System.Transactions.IsolationLevel?)IsolationLevel.ReadCommitted,\n              QueuePollInterval = TimeSpan.FromSeconds(15),\n              JobExpirationCheckInterval = TimeSpan.FromHours(1),\n              CountersAggregateInterval = TimeSpan.FromMinutes(5),\n              PrepareSchemaIfNecessary = true,\n              DashboardJobListLimit = 50000,\n              TransactionTimeout = TimeSpan.FromMinutes(1),\n              TablesPrefix = &quot;Hangfire&quot;\n            };\n            var mySqlStorage = new MySqlStorage(hangfireConnectionstring, mySqlStorageOptions);\n            services.AddHangfire(config =&gt; config.UseStorage(mySqlStorage));\n            services.AddHangfireServer();\n            #endregion\n\n        }\npublic void Configure(IApplicationBuilder app, IWebHostEnvironment env, ApplicationIdentityDbContext identityDbContext)\n        {\n.........code edited for brevity\n            app.UseHttpsRedirection();\n            app.UseBlazorFrameworkFiles();\n            app.UseStaticFiles();            \n            app.UseRouting();\n            app.UseIdentityServer();\n            app.UseAuthentication();\n            app.UseAuthorization();\n            //UseAuthentication, UseAuthorization should be before UseHangfireDashboard\n            var dashboardOptions=new DashboardOptions()\n            {\n              Authorization = new[] { new HangFireJwtAuthorizationFilter() }\n            };\n            app.UseHangfireDashboard();\n            IServiceProvider provider = app.ApplicationServices.GetRequiredService&lt;IServiceProvider&gt;();\n            app.UseCors(&quot;AllowAny&quot;);\n            app.UseEndpoints(endpoints =&gt;\n            {\n.........code edited for brevity\n              endpoints.MapHangfireDashboard(&quot;/hangfire&quot;, dashboardOptions);\n            });\n        }\n\npublic class HangFireJwtAuthorizationFilter : IDashboardAuthorizationFilter\n  {\npublic HangFireJwtAuthorizationFilter()\n{\n}\npublic bool Authorize([NotNull] DashboardContext dashboardContext)\n{      \n  return true;\n}\n  }\n</code></pre>\n<p><a href=\"https://i.stack.imgur.com/bJATI.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/bJATI.png\" alt=\"![image|690x351](upload://moodKE6PTlTQXYiAwUFz5cXRpXE.png)\" /></a></p>\n"
+}

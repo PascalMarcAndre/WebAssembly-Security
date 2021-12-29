@@ -1,0 +1,28 @@
+{
+    "tags": [
+        "javascript",
+        "browser",
+        "virtual-machine",
+        "webassembly",
+        "isolation"
+    ],
+    "owner": {
+        "reputation": 33,
+        "user_id": 14940254,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/9a0f91b8914d997e99a0287e968ff0fa?s=128&d=identicon&r=PG&f=1",
+        "display_name": "capstonene",
+        "link": "https://stackoverflow.com/users/14940254/capstonene"
+    },
+    "is_answered": false,
+    "view_count": 30,
+    "answer_count": 0,
+    "score": 0,
+    "last_activity_date": 1616334590,
+    "creation_date": 1616334590,
+    "question_id": 66733106,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/66733106/javascript-virual-machine-vs-javascript-runtime-vs-webassembly-virtual-machine",
+    "title": "javascript virual machine vs javascript runtime vs webassembly virtual machine",
+    "body": "<p>i'm very new to web and browsers. and i'm very confused. i'm recently studying on webassembly and i read that wasm is run in a virtual machine that provides isolation:\n&quot;Wasm run on a virtual machine. This VM can be embedded into other programs (especially browsers). The wasm VM Is carefully isolated from the rest of the program or system, and is only able to communicate with its host program via specially Enumerated imports and exports&quot;\nand then i search a lot to know more about this virtual machine and how it works and how provide isolation. and i read that javascript is also run in virtual machines in browsers and wasm is also run on the same virtual machine. is it true? and then i search a lot on javascript virtual machines and how it provides isolation. but i only find javascript engines, like V8. are javascript engine and javascript virtual machines are the same? i mean i thinked javascript engine is different from javascript virtual machine and i thinked javascript virtual machine provides isolation but javascript engine don't provide isolation. is it false? are they same? so V8 also provide isolation? webassembly virtual machine which is embedded in browsers is V8? if webassembly run in the same virtual machine that runs also javascript, so why they emphasize on this that webassembly runs in virtual machines and provide isolation security? well, it seems javascript also runs in virtual machine and provide isolation. so how webassembly provides more security about isolation? i'm very very confused.</p>\n"
+}

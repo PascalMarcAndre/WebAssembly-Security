@@ -1,0 +1,27 @@
+{
+    "tags": [
+        "jwt",
+        "authorization",
+        "blazor",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 1,
+        "user_id": 10902111,
+        "user_type": "registered",
+        "profile_image": "https://i.stack.imgur.com/BGbNX.jpg?s=128&g=1",
+        "display_name": "Dmitry",
+        "link": "https://stackoverflow.com/users/10902111/dmitry"
+    },
+    "is_answered": false,
+    "view_count": 31,
+    "answer_count": 0,
+    "score": 0,
+    "last_activity_date": 1599216957,
+    "creation_date": 1599216957,
+    "question_id": 63739801,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/63739801/how-to-authorize-jwt-bearer-tokens-as-an-authorization-system-to-use-authorize-t",
+    "title": "how to authorize JWT Bearer tokens as an authorization system to use Authorize tags and attributes in Blazor WASM?",
+    "body": "<p>I have a Blazor Webassembly application in which I use JWT tokens to authorize a user. Blazor has an Authorize tag for displaying content to users who are authorized, as well as the same attribute for accessing methods that are on the server. But in order to use them, you need to register JWT as an authorization method. How can I do that?</p>\n"
+}

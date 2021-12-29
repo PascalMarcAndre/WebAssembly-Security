@@ -1,0 +1,31 @@
+{
+    "tags": [
+        "asp.net",
+        "asp.net-core",
+        "asp.net-web-api",
+        "blazor",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 2935,
+        "user_id": 2427359,
+        "user_type": "registered",
+        "accept_rate": 62,
+        "profile_image": "https://i.stack.imgur.com/MMrrm.png?s=128&g=1",
+        "display_name": "Simon",
+        "link": "https://stackoverflow.com/users/2427359/simon"
+    },
+    "is_answered": true,
+    "view_count": 456,
+    "accepted_answer_id": 63240652,
+    "answer_count": 2,
+    "score": 1,
+    "last_activity_date": 1596529296,
+    "creation_date": 1596198283,
+    "last_edit_date": 1596529296,
+    "question_id": 63191785,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/63191785/how-can-i-return-403-forbidden-instead-redirect-in-blazor-web-assembly-app",
+    "title": "How can I return 403 Forbidden instead redirect in Blazor Web Assembly app?",
+    "body": "<p>We have an Blazor WebAssembly-App which works with an ASP.NET Core API-Controller (V3.1). The Authentication Cookie which works well with <code>[Authorize]</code> attribute in our Api-Controller:</p>\n<pre><code>namespace BlazorWebAssemblyApp.Server.Controllers\n{\n    [Route(&quot;[controller]&quot;)]\n    [ApiController]\n    public class ClientsController : ControllerBase\n    {          \n        private const string AuthSchemes = CookieAuthenticationDefaults.AuthenticationScheme;\n\n        [HttpGet(&quot;search&quot;)]\n        [Authorize(AuthenticationSchemes = AuthSchemes)]\n        public ActionResult&lt;List&lt;Shared.Client&gt;&gt; Search(Shared.Client.SearchProperty pProperty, string pText)\n        {\n            // [...]\n        }\n    }\n}\n</code></pre>\n<p>We are using the solution described <a href=\"https://stackoverflow.com/questions/54461127/how-to-return-403-instead-of-redirect-to-access-denied-when-authorizefilter-fail\">here</a> to return an HTTP-Status Code <code>403 Forbidden</code> instead routing to the login page.</p>\n<pre><code>namespace BlazorWebAssemblyApp.Server\n{\n    public class Startup\n    {\n        // [...]\n\n        public void ConfigureServices(IServiceCollection services)\n        {\n            // [...]\n            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(options =&gt; {\n                options.Events.OnRedirectToAccessDenied = context =&gt; {\n                    context.Response.StatusCode = 403;\n                    return Task.CompletedTask;\n                };\n            });\n        }\n    }\n}\n</code></pre>\n<p>But the Solution is not working. The app still redirects to default path <code>/Account/Login</code>:</p>\n<p><a href=\"https://i.stack.imgur.com/1Jv9Z.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/1Jv9Z.png\" alt=\"enter image description here\" /></a></p>\n<p>How can I return the http-status code 403 Forbidden instead redirect in Blazor Web Assembly app?</p>\n"
+}

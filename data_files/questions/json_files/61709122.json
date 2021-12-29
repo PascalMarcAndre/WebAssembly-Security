@@ -1,0 +1,27 @@
+{
+    "tags": [
+        "javascript",
+        "webassembly"
+    ],
+    "owner": {
+        "reputation": 932,
+        "user_id": 6629874,
+        "user_type": "registered",
+        "accept_rate": 80,
+        "profile_image": "https://i.stack.imgur.com/3SUbo.jpg?s=128&g=1",
+        "display_name": "5ndG",
+        "link": "https://stackoverflow.com/users/6629874/5ndg"
+    },
+    "is_answered": true,
+    "view_count": 221,
+    "accepted_answer_id": 61715011,
+    "answer_count": 2,
+    "score": 3,
+    "last_activity_date": 1589127083,
+    "creation_date": 1589099180,
+    "question_id": 61709122,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/61709122/can-i-use-webassembly-to-safely-execute-untrusted-user-code-within-my-web-app",
+    "title": "Can I use WebAssembly to safely execute untrusted user code within my web app?",
+    "body": "<p>In a web app I am building, I have a need to execute untrusted user code within the app (in the browser). The untrusted code is given a string from Javascript, and should do its stuff and produce a new string. So I want to make sure it can't do any IO, like modifying the DOM, making HTTP requests, or accessing the local cache. To be clear, one user would upload some untrusted code, which would be executed in other users' browsers.</p>\n\n<p>I clearly don't want to run some Javascript using eval, since that could do anything. My idea is that a user could upload some WebAssembly, created with Emscripten and C or Rust or whatever. The Javascript would initialise a memory buffer containing the input string, and the WebAssembly would read this and then write its output back to the buffer, which could then be used in JS.</p>\n\n<p>This is what the <a href=\"https://webassembly.github.io/spec/core/intro/introduction.html\" rel=\"nofollow noreferrer\">Webassembly spec</a> says:</p>\n\n<blockquote>\n  <p>WebAssembly provides no ambient access to the computing environment in which code is executed. Any interaction with the environment, such as I/O, access to resources, or operating system calls, can only be performed by invoking functions provided by the embedder and imported into a WebAssembly module. An embedder can establish security policies suitable for a respective environment by controlling or limiting which functional capabilities it makes available for import. Such considerations are an embedder\u2019s responsibility and the subject of API\n  definitions for a specific environment.</p>\n</blockquote>\n\n<p>My understanding is that WebAssembly is guaranteeing that it can only do dangerous things if I explicitly pass them in when initializing the module, which of course I wouldn't do.</p>\n\n<p>So my question is: is there any way someone could make some WASM code that could do some IO under these circumstances? Or any other nasty things?</p>\n"
+}

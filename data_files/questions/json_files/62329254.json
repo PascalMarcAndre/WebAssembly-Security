@@ -1,0 +1,28 @@
+{
+    "tags": [
+        "node.js",
+        "unit-testing",
+        "testing",
+        "jestjs",
+        "babel-jest"
+    ],
+    "owner": {
+        "reputation": 31,
+        "user_id": 11996622,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/eff58204c3430dc3c1d36d0fff130ff9?s=128&d=identicon&r=PG&f=1",
+        "display_name": "naro",
+        "link": "https://stackoverflow.com/users/11996622/naro"
+    },
+    "is_answered": false,
+    "view_count": 372,
+    "answer_count": 0,
+    "score": 1,
+    "last_activity_date": 1591893642,
+    "creation_date": 1591893642,
+    "question_id": 62329254,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/62329254/jest-mocking-with-mock-prefix-not-working",
+    "title": "Jest - mocking with &#39;mock&#39; prefix not working",
+    "body": "<p>I want to mock a function of some module, but even after reading here <a href=\"https://github.com/facebook/jest/issues/9730#issuecomment-606512664\" rel=\"nofollow noreferrer\">https://github.com/facebook/jest/issues/9730#issuecomment-606512664</a>, i'm still getting errors:</p>\n\n<p>the code:</p>\n\n<pre><code>const mockGetPermissions = {getPermissions: jest.fn()}\njest.mock('./MyModule', () =&gt; mockGetPermissions)\n</code></pre>\n\n<p>the console:</p>\n\n<pre><code>The module factory of `jest.mock()` is not allowed to reference any out-of-scope variables.\n    Invalid variable access: _get__\n    Whitelisted objects: Array, ArrayBuffer, Boolean, DataView, Date, Error, EvalError, Float32Array, Float64Array, Function, Generator, GeneratorFunction, Infinity, Int16Array, Int32Array, Int8Array, InternalError, Intl, JSON, Map, Math, NaN, Number, Object, Promise, Proxy, RangeError, ReferenceError, Reflect, RegExp, Set, String, Symbol, SyntaxError, TypeError, URIError, Uint16Array, Uint32Array, Uint8Array, Uint8ClampedArray, WeakMap, WeakSet, arguments, console, expect, isNaN, jest, parseFloat, parseInt, require, undefined, globalThis, BigUint64Array, BigInt64Array, BigInt, decodeURI, decodeURIComponent, encodeURI, encodeURIComponent, escape, unescape, eval, isFinite, SharedArrayBuffer, Atomics, WebAssembly, global, process, GLOBAL, root, Buffer, URL, URLSearchParams, TextEncoder, TextDecoder, clearInterval, clearTimeout, setInterval, setTimeout, queueMicrotask, clearImmediate, setImmediate, __core-js_shared__.\n    Note: This is a precaution to guard against uninitialized mock variables. If it is ensured that the mock is required lazily, variable names prefixed with `mock` (case insensitive) are permitted.\n</code></pre>\n\n<p>But i'm putting the 'mock' prefix..Why it's not working?</p>\n"
+}

@@ -1,0 +1,26 @@
+{
+    "tags": [
+        "webassembly"
+    ],
+    "owner": {
+        "reputation": 43,
+        "user_id": 12838749,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/2e53e9dff81b083a0ac5c128f6a8ea26?s=128&d=identicon&r=PG&f=1",
+        "display_name": "HolcombSimons",
+        "link": "https://stackoverflow.com/users/12838749/holcombsimons"
+    },
+    "is_answered": true,
+    "view_count": 104,
+    "accepted_answer_id": 60057368,
+    "answer_count": 1,
+    "score": 4,
+    "last_activity_date": 1580839355,
+    "creation_date": 1580815952,
+    "last_edit_date": 1580839355,
+    "question_id": 60056483,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/60056483/does-it-matter-what-language-is-used-when-converting-to-webassembly",
+    "title": "Does it matter what language is used when converting to WebAssembly?",
+    "body": "<p>For example, C doesn't have the same solutions for security as Rust, but does  WebAssembly written in Rust have the advantages of Rust?</p>\n\n<p>Would a program written in Rust and converted to WebAssembly be \"safer\" than  one written in C? </p>\n"
+}

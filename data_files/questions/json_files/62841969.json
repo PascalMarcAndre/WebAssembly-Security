@@ -1,0 +1,29 @@
+{
+    "tags": [
+        "c#",
+        "asp.net-core",
+        "asp.net-identity",
+        "blazor",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 261,
+        "user_id": 12393792,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/061b4453a944fafa89ad09f0837ef459?s=128&d=identicon&r=PG&f=1",
+        "display_name": "brstkr",
+        "link": "https://stackoverflow.com/users/12393792/brstkr"
+    },
+    "is_answered": true,
+    "view_count": 1151,
+    "accepted_answer_id": 62842888,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1594419053,
+    "creation_date": 1594413563,
+    "question_id": 62841969,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/62841969/blazor-webassembly-401-unauthorized-even-when-i-am-authorized",
+    "title": "Blazor WebAssembly 401 Unauthorized even when I am authorized",
+    "body": "<p>I am using <code>Blazor WebAssembly Asp.Net Core hosted PWA</code>and integrated the <code>AspNetCore.Identity</code> into it. I created the <code>AuthenticationStateProvider</code> in the Client-Side and now I want to allow the user access to a controller where he needs to be authorized.</p>\n<p>I have tested via postman, the users were been created and stored in DB as <code>aspnetusers</code> with the right credentials. The Login/Account Controller work as I wanted it.</p>\n<p>When the user is authorized it tells this exception in the browser when accessing the authorized controller request:</p>\n<blockquote>\n<p>Microsoft.AspNetCore.Components.WebAssembly.Rendering.WebAssemblyRenderer[100]\nUnhandled exception rendering component: Response status code does not indicate success: 401 (Unauthorized).\nSystem.Net.Http.HttpRequestException: Response status code does not\nindicate success: 401 (Unauthorized).</p>\n</blockquote>\n<p>Startup.cs (<code>ConfigureServices</code>-Method):</p>\n<pre class=\"lang-cs prettyprint-override\"><code>...\n    serviceCollection.AddDbContext&lt;SQLiteTestDbContext&gt;(options =&gt;\n                {\n                    options.UseSqlite(config[&quot;ConnectionStrings:SQLiteTestConnection&quot;]);\n                });\n                serviceCollection.AddDefaultIdentity&lt;IdentityUser&gt;()\n                    .AddEntityFrameworkStores&lt;SQLiteTestDbContext&gt;()\n                    .AddDefaultTokenProviders();\n\n    services.AddAuthentication(x =&gt;\n                    {\n                        x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;\n                    })\n                    .AddJwtBearer(options =&gt;\n                    {\n                        options.TokenValidationParameters = new TokenValidationParameters\n                        {\n                            ValidateIssuer = true,\n                            ValidateAudience = true,\n                            ValidateLifetime = true,\n                            ValidateIssuerSigningKey = true,\n                            ValidIssuer = Configuration[&quot;JwtIssuer&quot;],\n                            ValidAudience = Configuration[&quot;JwtAudience&quot;],\n                            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration[&quot;JwtSecurityKey&quot;]))\n                        };\n                    });\n\n    services.AddHttpContextAccessor();\n                services.Configure&lt;IdentityOptions&gt;(options =&gt;\n                    options.ClaimsIdentity.UserIdClaimType = ClaimTypes.NameIdentifier);\n...\n\n \n\n    public void Configure(IApplicationBuilder app, IWebHostEnvironment env)\n    {\n      \n    ...\n        app.UseAuthentication();\n        app.UseAuthorization();\n    ...\n    }\n\n</code></pre>\n<p>Program.cs Client-Side</p>\n<pre class=\"lang-cs prettyprint-override\"><code>\n    public static async Task Main(string[] args)\n            {\n                var builder = WebAssemblyHostBuilder.CreateDefault(args);\n                builder.RootComponents.Add&lt;App&gt;(&quot;app&quot;);\n                builder.Logging.SetMinimumLevel(LogLevel.Warning);\n    \n                //Registering Shared-Library models\n                builder.Services.AddScoped&lt;ObjectModel&gt;();\n\n                builder.Services.AddBlazoredLocalStorage();\n                builder.Services.AddAuthorizationCore();\n                builder.Services.AddScoped&lt;AuthenticationStateProvider, ApiAuthenticationStateProvider&gt;();\n                builder.Services.AddScoped&lt;IAuthService, AuthService&gt;();\n    \n                //Registered BlazorContextMenu Service\n                builder.Services.AddBlazorContextMenu();\n    \n                //Registering FileReader service, for image upload -&gt; Azure\n                builder.Services.AddFileReaderService(options =&gt; options.UseWasmSharedBuffer = true);\n                builder.Services.AddTransient(sp =&gt; new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });\n    \n                await builder.Build().RunAsync();\n            }\n\n</code></pre>\n<p>My Controller with authorize attribute:</p>\n<pre class=\"lang-cs prettyprint-override\"><code>\n    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]\n        [Route(&quot;api/[controller]&quot;)]\n        [ApiController]\n        public class ObjectController : ControllerBase\n        {\n....\n    \n</code></pre>\n"
+}

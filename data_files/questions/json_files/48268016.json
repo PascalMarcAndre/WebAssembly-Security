@@ -1,0 +1,29 @@
+{
+    "tags": [
+        "permissions",
+        "rust",
+        "webassembly"
+    ],
+    "owner": {
+        "reputation": 89,
+        "user_id": 3326762,
+        "user_type": "registered",
+        "accept_rate": 50,
+        "profile_image": "https://www.gravatar.com/avatar/ed9896105833a26bfb62c7cadf7c37b9?s=128&d=identicon&r=PG&f=1",
+        "display_name": "compasses",
+        "link": "https://stackoverflow.com/users/3326762/compasses"
+    },
+    "is_answered": false,
+    "view_count": 735,
+    "closed_date": 1516084310,
+    "answer_count": 0,
+    "score": 0,
+    "last_activity_date": 1516041324,
+    "creation_date": 1516037524,
+    "last_edit_date": 1516041324,
+    "question_id": 48268016,
+    "link": "https://stackoverflow.com/questions/48268016/how-do-i-read-a-file-from-the-local-disk-from-webassembly",
+    "closed_reason": "Duplicate",
+    "title": "How do I read a file from the local disk from WebAssembly?",
+    "body": "<p>My main.rs:</p>\n\n<pre><code>use std::fs::File;\nuse std::io::prelude::*;\n\nfn read_file(file_name: &amp;str, file_path: &amp;str) -&gt; Vec&lt;String&gt; {\n    let file_open_error = format!(\"File {} by path {} not found!\", file_name, file_path);\n    let file_read_error = format!(\n        \"Can't read the file {}\\\\{}, the error:{}\",\n        file_path, file_name\n    );\n\n    let mut file = File::open(format!(\"{}\\\\{}\", file_path, file_name)).expect(&amp;*file_open_error);\n\n    let mut content = String::new();\n    file.read_to_string(&amp;mut content).expect(&amp;*file_read_error);\n\n    content\n        .split_whitespace()\n        .map(|s| s.to_string())\n        .collect::&lt;Vec&lt;String&gt;&gt;()\n}\n\nfn get_random_value&lt;'a&gt;(vec: &amp;'a Vec&lt;String&gt;) -&gt; &amp;'a String {\n    let mut rng = rand::thread_rng();\n    rng.choose(&amp;vec).unwrap()\n}\n\nfn main() {\n    let names_file_name = \"names.txt\";\n    let adjectives_file_name = \"adjectives.txt\";\n    let file_path = \"D:\\\\nameadj\";\n\n    let names = read_file(names_file_name, file_path);\n    let adjectives = read_file(adjectives_file_name, file_path);\n\n    let name = get_random_value(&amp;names);\n    let adjective = get_random_value(&amp;adjectives);\n    println!(\"name={};adjective={}\", name, adjective);\n}\n</code></pre>\n\n<p>I've compiled it:</p>\n\n<pre class=\"lang-none prettyprint-override\"><code>cargo build --release --target wasm32-unknown-emscripten\n</code></pre>\n\n<p>I've created a simple HTML file where I call the JavaScript file, which I saved here:</p>\n\n<pre class=\"lang-none prettyprint-override\"><code>target\\wasm32-unknown-emscripten\\release\n</code></pre>\n\n<p>When I run it</p>\n\n<pre class=\"lang-none prettyprint-override\"><code>emrun --browser firefox --port 8080 tryrustwebasm.html\n</code></pre>\n\n<p>There is an error in the console log of my browser:</p>\n\n<pre class=\"lang-none prettyprint-override\"><code>thread 'main' panicked at 'File names.txt by path D:\\nameadj not found!: Error { repr: Os { code: 2, message: \"No such file or directory\" } }', /checkout/src/libcore/result.rs:906:4\n</code></pre>\n\n<p>When I run the program without <code>emrun</code>:</p>\n\n<pre class=\"lang-none prettyprint-override\"><code>cargo run\n</code></pre>\n\n<p>the program works fine.</p>\n\n<p>What am I doing wrong? Is this a permissions problem? How do I fix it?</p>\n"
+}

@@ -1,0 +1,30 @@
+{
+    "tags": [
+        "c#",
+        "mvvm",
+        "dependency-injection",
+        "blazor",
+        "reactiveui"
+    ],
+    "owner": {
+        "reputation": 1815,
+        "user_id": 3581643,
+        "user_type": "registered",
+        "accept_rate": 42,
+        "profile_image": "https://i.stack.imgur.com/bn4s3.png?s=128&g=1",
+        "display_name": "Rahul",
+        "link": "https://stackoverflow.com/users/3581643/rahul"
+    },
+    "is_answered": false,
+    "view_count": 205,
+    "answer_count": 0,
+    "score": 0,
+    "last_activity_date": 1608680003,
+    "creation_date": 1608389134,
+    "last_edit_date": 1608680003,
+    "question_id": 65370987,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/65370987/blazor-reactiveui-mvvm-resolving-the-dependency-in-viewmodel",
+    "title": "Blazor ReactiveUI MVVM - Resolving the dependency in ViewModel",
+    "body": "<p>I'm using Blazor WebAssembly and ReactiveUI MVVM in an application and trying to invoke a JavaScript function from the ViewModel. I'm getting runtime null exception because the JsRuntime property is not injected.</p>\n<pre><code>public class TestViewModel : ReactiveObject\n{\n    [Inject]\n    IJSRuntime JsRuntime { get; set; }\n\n    public TestViewModel()\n    {\n        AlertCommand = ReactiveCommand.Create(ShowAlertMessage);\n    }\n\n    public ReactiveCommand&lt;Unit, Unit&gt; PopulateCommand { get; }\n\n\n    public void ShowAlertMessage()\n    {\n        JsRuntime.InvokeAsync&lt;bool&gt;(&quot;showAlert&quot;, &quot;Hello World!&quot;);\n    }\n}\n</code></pre>\n<p>I tried with the constructor injection as well a no success.\nHow can I call a JavaScript function from the ViewModel?</p>\n"
+}

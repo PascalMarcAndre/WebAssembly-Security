@@ -1,0 +1,29 @@
+{
+    "tags": [
+        "javascript",
+        "c#",
+        "asp.net-core",
+        "blazor",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 115,
+        "user_id": 3175734,
+        "user_type": "registered",
+        "profile_image": "https://lh6.googleusercontent.com/-Vt3mlSr2wXU/AAAAAAAAAAI/AAAAAAAAFlk/ZShizRXscmo/photo.jpg?sz=128",
+        "display_name": "WALEED",
+        "link": "https://stackoverflow.com/users/3175734/waleed"
+    },
+    "is_answered": true,
+    "view_count": 747,
+    "accepted_answer_id": 63436153,
+    "answer_count": 1,
+    "score": 1,
+    "last_activity_date": 1597576327,
+    "creation_date": 1597573302,
+    "question_id": 63435686,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/63435686/secure-file-download-using-blazor-webassembly-and-asp-net-core",
+    "title": "Secure File Download Using Blazor Webassembly and ASP.NET Core",
+    "body": "<p>I've managed to find a solution here that shows how to create a controller and download files using JS injection:\n<a href=\"https://stackoverflow.com/questions/52683706/how-can-one-generate-and-save-a-file-client-side-using-blazor/53822526#53822526\">How can one generate and save a file client side using Blazor?</a></p>\n<p>However, adding the [Authorize] attribute to the controller blocks any attempts (even if logged in) to download the file. I want authorized people only to have access to download files.</p>\n<p>The rest of the website is using JWT without issues.</p>\n<p>My question is how do I add JWT authentication to this file download feature? Or is there an alternative way? The files are in the file system of the server and the approach above is very kind to the memory so I prefer to stay away from blobs.</p>\n<p>Note: I'm using in-application user accounts.</p>\n"
+}

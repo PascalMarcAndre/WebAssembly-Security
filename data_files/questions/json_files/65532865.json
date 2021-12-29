@@ -1,0 +1,27 @@
+{
+    "tags": [
+        "azure-active-directory",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 14705,
+        "user_id": 13442,
+        "user_type": "registered",
+        "accept_rate": 73,
+        "profile_image": "https://www.gravatar.com/avatar/25587d7aa1b58792968c1a07514635bb?s=128&d=identicon&r=PG",
+        "display_name": "Mathias F",
+        "link": "https://stackoverflow.com/users/13442/mathias-f"
+    },
+    "is_answered": false,
+    "view_count": 261,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1609828669,
+    "creation_date": 1609528505,
+    "last_edit_date": 1609534560,
+    "question_id": 65532865,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/65532865/call-api-from-blazor-and-pass-auth-token",
+    "title": "Call Api from blazor and pass Auth token",
+    "body": "<p>I have a blazor webassembly project that gets created from <a href=\"https://github.com/Azure-Samples/ms-identity-blazor-wasm/tree/main/WebApp-graph-user/Call-MSGraph\" rel=\"nofollow noreferrer\">https://github.com/Azure-Samples/ms-identity-blazor-wasm/tree/main/WebApp-graph-user/Call-MSGraph</a>.</p>\n<p>Its basically the project that gets created when you use the .net core template for a Blazor application that uses authentication via AD B2B</p>\n<pre><code>dotnet new blazorwasm -au SingleOrg --client-id &quot;{CLIENT ID}&quot; -o {APP NAME} --tenant-id &quot;{TENANT ID}&quot;\n</code></pre>\n<p>I was then able to call graph.api when the user logged in. I then tried to call my own Api with that authentication as described in <a href=\"https://docs.microsoft.com/en-us/aspnet/core/blazor/security/webassembly/additional-scenarios?view=aspnetcore-3.1\" rel=\"nofollow noreferrer\">https://docs.microsoft.com/en-us/aspnet/core/blazor/security/webassembly/additional-scenarios?view=aspnetcore-3.1</a>.</p>\n<p>I used</p>\n<pre><code>   builder.Services.AddHttpClient&lt;ITestDataService, TestDataService&gt;(\n      client =&gt; client.BaseAddress = new Uri(&quot;https://localhost:44342/&quot;))\n        .AddHttpMessageHandler(x =&gt;\n        {\n            var handler = x.GetRequiredService&lt;AuthorizationMessageHandler&gt;()\n                .ConfigureHandler(new[] { &quot;https://localhost:44342/&quot; },\n                    scopes: new[] { &quot;https://graph.microsoft.com/User.Read&quot; });\n\n            return handler;\n        });\n</code></pre>\n<p>I can see that a token is attached when calling the Api but authentication fails (401). The api is generated from Visual Studio templates for B2B AD and uses the configuration that is also used for the Blazor application.</p>\n<p>This is its Startup.cs</p>\n<pre><code>public void ConfigureServices(IServiceCollection services)\n{\n    services.AddAuthentication(AzureADDefaults.BearerAuthenticationScheme)\n        .AddAzureADBearer(options =&gt; Configuration.Bind(&quot;AzureAd&quot;, options));\n    services.AddControllers();\n}\n\n\n        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)\n    {\n        if (env.IsDevelopment())\n        {\n            app.UseDeveloperExceptionPage();\n        }\n\n        app.UseHttpsRedirection();\n\n        app.UseRouting();\n\n        app.UseAuthentication();\n        app.UseAuthorization();\n\n        app.UseCors(policy =&gt;\n            policy.WithOrigins(&quot;http://localhost:5000&quot;, \n                &quot;https://localhost:5001&quot;)\n            .AllowAnyMethod()\n            .WithHeaders(HeaderNames.ContentType,\n                HeaderNames.Authorization,\n                &quot;x-custom-header&quot;)\n            .AllowCredentials());\n\n        app.UseEndpoints(endpoints =&gt;\n        {\n            endpoints.MapControllers();\n        });\n    }\n</code></pre>\n<p>Do you have any idea what is missing?</p>\n<p>The complete source is available at github <a href=\"https://github.com/mathiasfritsch/blazor-calls-api\" rel=\"nofollow noreferrer\">https://github.com/mathiasfritsch/blazor-calls-api</a></p>\n"
+}

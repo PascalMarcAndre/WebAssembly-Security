@@ -1,0 +1,29 @@
+{
+    "tags": [
+        "iis",
+        "blazor",
+        "blazor-webassembly",
+        "asp.net-core-hosted-services"
+    ],
+    "owner": {
+        "reputation": 107,
+        "user_id": 2587822,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/1217659cff71804549faf1d8596ab27f?s=128&d=identicon&r=PG",
+        "display_name": "David Bowser",
+        "link": "https://stackoverflow.com/users/2587822/david-bowser"
+    },
+    "is_answered": true,
+    "view_count": 1996,
+    "closed_date": 1597733144,
+    "answer_count": 1,
+    "score": 1,
+    "last_activity_date": 1597763191,
+    "creation_date": 1597700837,
+    "last_edit_date": 1597763191,
+    "question_id": 63459073,
+    "link": "https://stackoverflow.com/questions/63459073/how-do-i-deploy-blazor-webassembly-core-hosted-self-contained-app-to-iis",
+    "closed_reason": "Duplicate",
+    "title": "How do I deploy Blazor WebAssembly Core Hosted Self-Contained App to IIS",
+    "body": "<p>I have developed a Blazor WebAssembly App that will be used on a Server running Windows 2012 on our Intranet. This is targeting .Net 5.0 Core Hosted and Self-Contained. I need to deploy to IIS 8.5 and have some questions.</p>\n<p>When I add the website in IIS, do I point to the root deploy directory with the executable and web.config?\nIs there anything else I need to do so that IIS will find the index file in the wwwroot sub-directory?\nIs is appropriate to put the deploy directory for this app directly under inetpub?\nThe publish task created a rather large BlaorDebugProxy directory. This is for release so I don't understand why this was created. Is there a way to prevent this from happening?\nI want to access the app using ServerName\\AppName. If I create the site with 'AppName' for the host name, will that work or is there something else I need to do?\nWhen I try to browse to the site from IIS, I get a 500.19 'The requested page cannot be accessed because the related configuration data for the page is invalid.' I have not made changes to the file as it was created by the publish process. It is:</p>\n<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;\n&lt;configuration&gt;\n  &lt;location path=&quot;.&quot; inheritInChildApplications=&quot;false&quot;&gt;\n    &lt;system.webServer&gt;\n      &lt;handlers&gt;\n        &lt;add name=&quot;aspNetCore&quot; path=&quot;*&quot; verb=&quot;*&quot; modules=&quot;AspNetCoreModuleV2&quot; resourceType=&quot;Unspecified&quot; /&gt;\n      &lt;/handlers&gt;\n      &lt;aspNetCore processPath=&quot;.\\AppName.Server.exe&quot; stdoutLogEnabled=&quot;false&quot; stdoutLogFile=&quot;.\\logs\\stdout&quot; hostingModel=&quot;inprocess&quot; /&gt;\n    &lt;/system.webServer&gt;\n  &lt;/location&gt;\n&lt;/configuration&gt;\n&lt;!--ProjectGuid: 60862cf1-bea8-48f4-8ae9-270f2f537927--&gt;\n</code></pre>\n<p>Any ideas why this is not working?</p>\n<p>PLEASE NOTE that this is using the SELF-CONTAINED model.\nAlso, I have made sure that the directory has granted full permissions to the App Pool Identity for this App.</p>\n<p>The answer below and the supposed duplicate all refer to installing the framework. However, I thought that the whole point of the self-contained model is that it does not rely on an installed framework.</p>\n<p>I have searched extensively and see many references that touch on these issues but nothing that says specifically how to get IIS (especially an older version) to host the self-contained model. The Microsoft pages talk about advantages and disadvantages and how to create the files but no details about how to host them or the other questions I listed above.</p>\n<p>Has anyone done this successfully who can provide some guidance?</p>\n<p>Thanks !</p>\n"
+}

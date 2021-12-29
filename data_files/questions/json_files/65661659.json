@@ -1,0 +1,31 @@
+{
+    "tags": [
+        "asp.net-core",
+        "asp.net-core-webapi",
+        "blazor",
+        "blazor-client-side",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 2024,
+        "user_id": 2816057,
+        "user_type": "registered",
+        "accept_rate": 87,
+        "profile_image": "https://graph.facebook.com/1585677544/picture?type=large",
+        "display_name": "Michael Tranchida",
+        "link": "https://stackoverflow.com/users/2816057/michael-tranchida"
+    },
+    "is_answered": true,
+    "view_count": 93,
+    "accepted_answer_id": 65710496,
+    "answer_count": 1,
+    "score": 1,
+    "last_activity_date": 1610575721,
+    "creation_date": 1610342237,
+    "last_edit_date": 1610344870,
+    "question_id": 65661659,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/65661659/make-anonymous-call-to-server-in-asp-net-core-hosted-blazor-app",
+    "title": "Make anonymous call to Server in ASP.NET Core hosted Blazor App",
+    "body": "<p>I created a Blazor Webassembly app from the included template in VS with Authorization and ASP.NET Core hosted options as shown here:</p>\n<p><a href=\"https://i.stack.imgur.com/XpCM7.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/XpCM7.png\" alt=\"Create Blazor dialog\" /></a></p>\n<p>I want to be able to make http requests to the server without being authenticated. I changed the code in the <code>WeatherForecastController</code>by commenting out the <code>[Authorize]</code> attribute (and even added an <code>[AllowAnonymous]</code> attribute):</p>\n<pre><code>//[Authorize] CHANGED\n[AllowAnonymous] //CHANGED\n[ApiController]\n[Route(&quot;[controller]&quot;)]\npublic class WeatherForecastController : ControllerBase\n{\n    private static readonly string[] Summaries = new[]\n    {\n        &quot;Freezing&quot;, &quot;Bracing&quot;, &quot;Chilly&quot;, &quot;Cool&quot;, &quot;Mild&quot;, &quot;Warm&quot;, &quot;Balmy&quot;, &quot;Hot&quot;, &quot;Sweltering&quot;, &quot;Scorching&quot;\n    };\n\n    private readonly ILogger&lt;WeatherForecastController&gt; _logger;\n\n    public WeatherForecastController(ILogger&lt;WeatherForecastController&gt; logger)\n    {\n        _logger = logger;\n    }\n\n    [HttpGet]\n    public IEnumerable&lt;WeatherForecast&gt; Get()\n    {\n        var rng = new Random();\n        return Enumerable.Range(1, 5).Select(index =&gt; new WeatherForecast\n        {\n            Date = DateTime.Now.AddDays(index),\n            TemperatureC = rng.Next(-20, 55),\n            Summary = Summaries[rng.Next(Summaries.Length)]\n        })\n        .ToArray();\n    }\n}\n</code></pre>\n<p>In the <code>FetchData.razor</code> page, along with other changes noted in the code, I commented out <code>@attribute [Authorize]</code>:</p>\n<pre><code>@page &quot;/fetchdata&quot;\n@using Microsoft.AspNetCore.Authorization\n@using Microsoft.AspNetCore.Components.WebAssembly.Authentication\n@using StackOverflowAuthProblem.Shared\n@*@attribute [Authorize]*@ @*CHANGED*@\n@inject HttpClient Http\n\n@*CHANGED Html removed for brevity*@\n\n&lt;div&gt;Exception message: @exceptionMessage&lt;/div&gt;\n\n@code {\n    private WeatherForecast[] forecasts;\n\n    string exceptionMessage; //CHANGED\n\n    protected override async Task OnInitializedAsync()\n    {\n        try\n        {\n            forecasts = await Http.GetFromJsonAsync&lt;WeatherForecast[]&gt;(&quot;WeatherForecast&quot;);\n        }\n        catch (AccessTokenNotAvailableException exception)\n        {\n            exceptionMessage = exception.Message; //CHANGED returns an empty string\n\n            exceptionMessage = exception.ToString(); //CHANGED returns\n                //Microsoft.AspNetCore.Components.WebAssembly.Authentication.AccessTokenNotAvailableException: '' at\n                //Microsoft.AspNetCore.Components.WebAssembly.Authentication.AuthorizationMessageHandler.SendAsync(HttpRequestMessage request,\n                //CancellationToken cancellationToken) at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.SendAsync(\n                //    HttpRequestMessage request, CancellationToken cancellationToken)\n                //at System.Net.Http.HttpClient.SendAsyncCore(HttpRequestMessage request,\n                //HttpCompletionOption completionOption, Boolean async, Boolean emitTelemetryStartStop,\n                //CancellationToken cancellationToken) \n                //at System.Net.Http.Json.HttpClientJsonExtensions.&lt;GetFromJsonAsyncCore&gt;d__9`1[[StackOverflowAuthProblem.Shared.WeatherForecast[],\n                //StackOverflowAuthProblem.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]].MoveNext()\n                //at StackOverflowAuthProblem.Client.Pages.FetchData.OnInitializedAsync()\n                //in E:\\StackOverflow\\StackOverflowAuthProblem\\StackOverflowAuthProblem\\Client\\Pages\\FetchData.razor:line 53\n\n            //exception.Redirect(); CHANGE\n        }\n    }\n}\n</code></pre>\n<p>The exception I get is in the code above. I suspect the problem is in the <code>App.razor</code> page, but can't figure it out.</p>\n<p>Any help?</p>\n"
+}

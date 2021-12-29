@@ -1,0 +1,29 @@
+{
+    "tags": [
+        "blazor",
+        "blazor-client-side",
+        "blazor-webassembly",
+        "asp.net-blazor"
+    ],
+    "owner": {
+        "reputation": 2142,
+        "user_id": 3552217,
+        "user_type": "registered",
+        "accept_rate": 73,
+        "profile_image": "https://www.gravatar.com/avatar/d11502ba69350424586cbc8c89e6893e?s=128&d=identicon&r=PG",
+        "display_name": "pitaridis",
+        "link": "https://stackoverflow.com/users/3552217/pitaridis"
+    },
+    "is_answered": true,
+    "view_count": 498,
+    "accepted_answer_id": 64707260,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1604665611,
+    "creation_date": 1604615892,
+    "question_id": 64706336,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/64706336/create-claims-for-a-blazor-webassembly-project",
+    "title": "Create claims for a Blazor WebAssembly project",
+    "body": "<p>I use the default Blazor WebAssembly template to create a project using the \u201cindividual user accounts option\u201d and I try to create a custom claim when the user login and access it from the Blazor client side but I have not managed to make it work.</p>\n<p>I know that I will have to create a custom authentication state provider for the Blazor client project but after several hours trying to make it work, I have not found a solution to my problem.</p>\n<p>Can someone give me some tips of how to implement it?</p>\n"
+}

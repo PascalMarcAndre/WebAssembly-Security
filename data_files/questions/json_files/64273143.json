@@ -1,0 +1,30 @@
+{
+    "tags": [
+        "assembly",
+        "sse",
+        "simd",
+        "webassembly",
+        "sse2"
+    ],
+    "owner": {
+        "reputation": 351,
+        "user_id": 3900123,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/0c2a43adeac7bb506c17a4db01444423?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Dan Weber",
+        "link": "https://stackoverflow.com/users/3900123/dan-weber"
+    },
+    "is_answered": true,
+    "view_count": 93,
+    "accepted_answer_id": 64273440,
+    "answer_count": 2,
+    "score": 0,
+    "last_activity_date": 1602216615,
+    "creation_date": 1602210744,
+    "last_edit_date": 1602216615,
+    "question_id": 64273143,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/64273143/how-do-you-do-signed-32bit-widening-multiplication-on-sse2",
+    "title": "How do you do signed 32bit widening multiplication on SSE2?",
+    "body": "<p>This question came up when reviewing the WebAssembly SIMD proposal for extended multiplication.</p>\n<p>To support older hardware, we need to support SSE2 and the only vector multiplication operation for 32 bit integers is <a href=\"https://www.felixcloutier.com/x86/pmuludq\" rel=\"nofollow noreferrer\"><code>pmuludq</code></a>.  (Signed <a href=\"https://www.felixcloutier.com/x86/pmuldq\" rel=\"nofollow noreferrer\"><code>pmuldq</code></a> was only added in SSE4.1)</p>\n<p>(non-widening is relatively easy; shuffle to feed 2x <code>pmuludq</code> and take the low halves of the 4 results to emulate SSE4.1 <code>pmulld</code>).</p>\n"
+}

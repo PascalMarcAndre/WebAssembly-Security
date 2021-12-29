@@ -1,0 +1,28 @@
+{
+    "tags": [
+        "c#",
+        "unity3d",
+        "emscripten",
+        "webassembly"
+    ],
+    "owner": {
+        "reputation": 13911,
+        "user_id": 298036,
+        "user_type": "registered",
+        "accept_rate": 91,
+        "profile_image": "https://www.gravatar.com/avatar/b13bd434508326b99170047c67991444?s=128&d=identicon&r=PG",
+        "display_name": "Derek Thurn",
+        "link": "https://stackoverflow.com/users/298036/derek-thurn"
+    },
+    "is_answered": true,
+    "view_count": 385,
+    "answer_count": 1,
+    "score": 1,
+    "last_activity_date": 1603785253,
+    "creation_date": 1562526711,
+    "question_id": 56925313,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/56925313/returning-a-byte-array-from-javascript-to-emscripten-unity-web-assembly",
+    "title": "Returning a byte array from JavaScript to Emscripten/Unity Web Assembly",
+    "body": "<p>I have some JavaScript data which I am serializing so that Unity can consume it as a byte[] array, as <a href=\"https://docs.unity3d.com/Manual/webgl-interactingwithbrowserscripting.html\" rel=\"nofollow noreferrer\">generally described here</a>. I want to expose this data to Unity via a jslib interface like this:</p>\n\n<pre class=\"lang-cs prettyprint-override\"><code>[DllImport(\"__Internal\")]\nprivate static extern byte[] GetByteArray();\n</code></pre>\n\n<p>I attempted to bridge my values from JavaScript using the built-in methods in emscripten:</p>\n\n<pre class=\"lang-js prettyprint-override\"><code>  GetByteArray: function () {\n    var myTypedArray = new Uint8Array([10, 20, 30, 40, 50]);\n    var buf = _malloc(myTypedArray.length * myTypedArray.BYTES_PER_ELEMENT);\n    writeArrayToMemory(myTypedArray, buf);\n    return buf;\n  },\n</code></pre>\n\n<p>Unfortunately, this does not work -- the webassembly C# just sees a 0-length array as the return type. I also tried stuff like <code>HEAPU8.set(myTypedArray, buf)</code>.</p>\n\n<p>Questions:</p>\n\n<ol>\n<li>What is the correct way to do this?</li>\n<li>Failing that, am I at least doing this correctly from a JavaScript-to-C perspective? Is the problem more likely with how C# represents byte arrays?</li>\n</ol>\n"
+}

@@ -1,0 +1,30 @@
+{
+    "tags": [
+        "asp.net",
+        "blazor",
+        "auth0",
+        "blazor-client-side"
+    ],
+    "owner": {
+        "reputation": 3641,
+        "user_id": 634420,
+        "user_type": "registered",
+        "accept_rate": 98,
+        "profile_image": "https://www.gravatar.com/avatar/b621fa5c7d9bee541c13980daa057928?s=128&d=identicon&r=PG",
+        "display_name": "James Mundy",
+        "link": "https://stackoverflow.com/users/634420/james-mundy"
+    },
+    "is_answered": true,
+    "view_count": 935,
+    "accepted_answer_id": 62994581,
+    "answer_count": 1,
+    "score": 1,
+    "last_activity_date": 1595245175,
+    "creation_date": 1590331573,
+    "last_edit_date": 1590403167,
+    "question_id": 61987616,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/61987616/login-prompt-after-logout-using-auth0-in-asp-net-blazor-web-assembly-client-side",
+    "title": "Login prompt after logout using Auth0 in ASP.NET Blazor Web Assembly client-side app",
+    "body": "<p>I've just begun constructing a simple web assembly ASP.NET client-side web app with authentication powered by Auth0.</p>\n\n<p>There are a few articles I've found walking you through the steps needed to do this, like this one: <a href=\"https://auth0.com/blog/what-is-blazor-tutorial-on-building-webapp-with-authentication/\" rel=\"nofollow noreferrer\">https://auth0.com/blog/what-is-blazor-tutorial-on-building-webapp-with-authentication/</a></p>\n\n<p>Unfortunately since many of them were written it seems that Blazor client-side projects were ported from targeting .NET Core to .NET Standard and as a result it's not possible to install the NuGet Package needed: <code>Microsoft.AspNetCore.Authentication.OpenIdConnect</code></p>\n\n<p>Instead I found a tutorial from Microsoft that uses <code>Microsoft.AspNetCore.Components.WebAssembly.Authentication</code> which wraps some Javascript code needed to handle the authentication flow:\n<a href=\"https://docs.microsoft.com/en-us/aspnet/core/security/blazor/webassembly/standalone-with-authentication-library?view=aspnetcore-3.1\" rel=\"nofollow noreferrer\">https://docs.microsoft.com/en-us/aspnet/core/security/blazor/webassembly/standalone-with-authentication-library?view=aspnetcore-3.1</a> </p>\n\n<p>I managed to get it working but when I log out and go to log in again the app automatically authenticates without taking me to the Auth0 login page. According to the <a href=\"https://openid.net/specs/openid-connect-core-1_0.html#AuthRequest\" rel=\"nofollow noreferrer\">OpenID Connect specification</a> I need to send an optional <code>prompt</code> parameter set to <code>login</code> to force the showing of a login screen (what I would expect as a user after logging out).</p>\n\n<p>The aforementioned <code>Microsoft.AspNetCore.Authentication.OpenIdConnect</code> library has the ability to set this parameter: <a href=\"https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.authentication.openidconnect.openidconnectoptions.prompt?view=aspnetcore-3.0\" rel=\"nofollow noreferrer\">https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.authentication.openidconnect.openidconnectoptions.prompt?view=aspnetcore-3.0</a></p>\n\n<p>The WebAssembly library from what I can tell does not: <a href=\"https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.components.webassembly.authentication.oidcprovideroptions?view=aspnetcore-3.1\" rel=\"nofollow noreferrer\">https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.components.webassembly.authentication.oidcprovideroptions?view=aspnetcore-3.1</a></p>\n\n<p>Does anyone know a workaround?</p>\n\n<p>My <code>Program.cs</code> is as follows:</p>\n\n<pre><code>public class Program\n    {\n        public static async Task Main(string[] args)\n        {\n            var builder = WebAssemblyHostBuilder.CreateDefault(args);\n            builder.RootComponents.Add&lt;App&gt;(\"app\");\n\n            builder.Services.AddTransient(sp =&gt; new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });\n\n            builder.Services.AddOidcAuthentication(options =&gt;\n            {\n                options.ProviderOptions.Authority = $\"https://{builder.Configuration[\"Auth0:Domain\"]}\";\n                options.ProviderOptions.ClientId = builder.Configuration[\"Auth0:ClientId\"];\n                options.ProviderOptions.ResponseType = builder.Configuration[\"Auth0:ResponseType\"];\n                options.ProviderOptions.PostLogoutRedirectUri = \"/\";\n            });\n\n            await builder.Build().RunAsync();\n        }\n    }\n</code></pre>\n"
+}

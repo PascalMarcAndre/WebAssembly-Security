@@ -1,0 +1,28 @@
+{
+    "tags": [
+        "javascript",
+        "rest",
+        "fetch",
+        "emscripten",
+        "webassembly"
+    ],
+    "owner": {
+        "reputation": 175,
+        "user_id": 4134910,
+        "user_type": "registered",
+        "profile_image": "https://i.stack.imgur.com/kjLMo.jpg?s=128&g=1",
+        "display_name": "Sven0567",
+        "link": "https://stackoverflow.com/users/4134910/sven0567"
+    },
+    "is_answered": false,
+    "view_count": 768,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1547672286,
+    "creation_date": 1547575969,
+    "question_id": 54204650,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/54204650/webassembly-is-it-possible-to-get-fetch-json-data-from-an-api-and-manipulate-i",
+    "title": "Webassembly - Is it possible to GET/Fetch JSON data from an API and manipulate in JS?",
+    "body": "<p>I'm new to webassembly, and trying to manipulate JSON data that is fetched from a file or url in a Webassembly compiled module, and getting that JSON in Javascript so I can read and manipulate it there.</p>\n\n<p>The only example I found was from <a href=\"https://kripken.github.io/emscripten-site/docs/api_reference/fetch.html\" rel=\"nofollow noreferrer\">https://kripken.github.io/emscripten-site/docs/api_reference/fetch.html</a> on dling from a file and saving it to the browser IndexedDB, but the result is unreadable bytes, not the JSON</p>\n\n<p>fetch.c :</p>\n\n<pre><code>void downloadSucceeded(emscripten_fetch_t *fetch) {\nprintf(\"Finished downloading %llu bytes from URL %s.\\n\", fetch-&gt;numBytes, fetch-&gt;url);\n// The data is now available at fetch-&gt;data[0] through fetch-&gt;data[fetch-&gt;numBytes-1];\nemscripten_fetch_close(fetch); // Free data associated with the fetch.\n}\n\nvoid downloadFailed(emscripten_fetch_t *fetch) {\nprintf(\"Downloading %s failed, HTTP failure status code: %d.\\n\", fetch-&gt;url, fetch-&gt;status);\nemscripten_fetch_close(fetch); // Also free data on failure.\n}\n\nint main() {\nemscripten_fetch_attr_t attr;\nemscripten_fetch_attr_init(&amp;attr);\nstrcpy(attr.requestMethod, \"GET\");\nattr.attributes = EMSCRIPTEN_FETCH_LOAD_TO_MEMORY | EMSCRIPTEN_FETCH_PERSIST_FILE;\nattr.onsuccess = downloadSucceeded;\nattr.onerror = downloadFailed;\nemscripten_fetch(&amp;attr, \"./json/bol_list1.json\");\n}\n</code></pre>\n\n<p>Compiling this to .js works, the console logs it downloaded 16507 bytes from the JSON file, and it is inserted into IndexedDB but the result is not readable as it doesn't resemble the JSON\nJSON file : <a href=\"https://pastebin.com/WBJrYgPR\" rel=\"nofollow noreferrer\">https://pastebin.com/WBJrYgPR</a></p>\n\n<p>IndexDB result: \n<a href=\"https://i.stack.imgur.com/2LmBv.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/2LmBv.png\" alt=\"IndexedDB result screenshot\"></a></p>\n"
+}

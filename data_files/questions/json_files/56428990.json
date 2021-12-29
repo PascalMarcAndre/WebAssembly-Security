@@ -1,0 +1,31 @@
+{
+    "tags": [
+        "javascript",
+        "c++",
+        "v8",
+        "webassembly",
+        "embedded-v8"
+    ],
+    "owner": {
+        "reputation": 516,
+        "user_id": 4380801,
+        "user_type": "registered",
+        "accept_rate": 60,
+        "profile_image": "https://www.gravatar.com/avatar/5533ec4eab0c78c84b547bc38ff74de5?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Jian Guo",
+        "link": "https://stackoverflow.com/users/4380801/jian-guo"
+    },
+    "is_answered": true,
+    "view_count": 366,
+    "accepted_answer_id": 59755379,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1579104621,
+    "creation_date": 1559570631,
+    "last_edit_date": 1559575747,
+    "question_id": 56428990,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/56428990/webassembly-instantiate-didnt-call-then-nor-catch-in-v8-embedded",
+    "title": "WebAssembly.instantiate didn&#39;t call then nor catch in v8 embedded",
+    "body": "<p>I tried to ship WebAssembly feature in <code>v8 7.2</code> for my Android Project. I have successfully imported <code>v8</code> as a static library. But I came across an issue that WebAssembly didn't call either <code>then</code> nor <code>catch</code> callback.\nHere is my code below:</p>\n\n<pre class=\"lang-cpp prettyprint-override\"><code>std::unique_ptr&lt;v8::Platform&gt; platform;\nv8::Isolate *isolate;\nv8::Persistent&lt;v8::Context&gt; persistentContext;\nvoid runMain();\nvoid runScript();\nvoid _log(const v8::FunctionCallbackInfo&lt;v8::Value&gt;&amp; info) {\n  v8::String::Utf8Value utf(isolate, info[0].As&lt;v8::String&gt;());\n  __android_log_print(ANDROID_LOG_DEBUG, \"V8Native\", \"%s\",*utf);\n}\n\nvoid JNICALL\nJava_com_hustunique_v8demoapplication_MainActivity_initV8(JNIEnv *env, jobject /* this */) {\n  // Initialize V8.\n  v8::V8::InitializeICU();\n  platform = v8::platform::NewDefaultPlatform();\n  v8::V8::InitializePlatform(&amp;(*platform.get()));\n  v8::V8::Initialize();\n  runMain();\n}\n\nvoid runMain() {\n  // Create a new Isolate and make it the current one.\n\n  v8::Isolate::CreateParams create_params;\n  create_params.array_buffer_allocator = v8::ArrayBuffer::Allocator::NewDefaultAllocator();\n  isolate = v8::Isolate::New(create_params);\n//  isolate-&gt;Enter();\n  v8::Isolate::Scope isolate_scope(isolate);\n  v8::HandleScope scope(isolate);\n\n\n  auto global_template = v8::ObjectTemplate::New(isolate);\n  global_template-&gt;Set(v8::String::NewFromUtf8(isolate, \"log\"), v8::FunctionTemplate::New(isolate, _log));   // set log function here, as it is used in my sample javascript code\n  // Enter the context for compiling and running the sample script.\n  v8::Local&lt;v8::Context&gt; context = v8::Context::New(isolate, nullptr, global_template);\n  persistentContext.Reset(isolate, context);\n\n  // Run the script to get the result.\n  runScript();\n\n}\n\nvoid runScript() {\n  // sample wasm javascript code here.\n  const char *csource = R\"(\n    WebAssembly.instantiate(new Uint8Array([0,97,115,109,1,0,0,0,1,8,2,96,1,127,0,96,0,0,2,8,1,2,106,\n      115,1,95,0,0,3,2,1,1,8,1,1,10,9,1,7,0,65,185,10,16,0,11]),\n      {js:{_:console.log('Called from WebAssembly Hello world')}}).then(function(obj) {\n        log('Called with instance ' + obj);\n      }).catch(function(err) {\n        log('Called with error ' + err);\n      });\n  )\"; // should call my Hello World log and trigger the error or return the instance successfully\n\n  v8::HandleScope handle_scope(isolate);\n  auto ctx = persistentContext.Get(isolate);\n  v8::Context::Scope context_scope(ctx);\n  v8::TryCatch try_catch(isolate);\n  v8::Local&lt;v8::String&gt; source = v8::String::NewFromUtf8(isolate, csource,\n                                                         v8::NewStringType::kNormal).ToLocalChecked();\n\n  v8::Local&lt;v8::Script&gt; script =\n      v8::Script::Compile(ctx, source).ToLocalChecked();\n  v8::Local&lt;v8::Value&gt; result;\n  if (!script-&gt;Run(ctx).ToLocal(&amp;result)) {\n    ReportException(isolate, &amp;try_catch); // report exception, ignore the implementation here\n    return;\n  }\n  // Convert the result to an UTF8 string and print it.\n  v8::String::Utf8Value utf8(isolate, result);\n  __android_log_print(ANDROID_LOG_INFO, \"V8Native\", \"%s\\n\", *utf8);\n\n}\n\n</code></pre>\n\n<p>In the demo above, I got the output with <code>Called from WebAssembly Hello world</code> as excepted, but I couldn't get the error message nor the instance info.</p>\n\n<p>I made a simple example on the <a href=\"https://webassembly.studio/?f=kwaxhg1bkbs\" rel=\"nofollow noreferrer\">website</a> comparing with my demo above, here is the output in the website, which can be reproduced easily I think:</p>\n\n<pre><code>Called from WebAssembly Hello world\nCalled with error LinkError: WebAssembly.instantiate(): Import #0 module=\"js\" function=\"_\" error: function import requires a callable\n</code></pre>\n\n<p>It seems that in my demo, neither <code>resolve</code> nor <code>reject</code> was called from WebAssembly's returning promise. After checking the type of <code>v8::Local&lt;v8::Value&gt; result</code> in <code>runScript</code> method, v8 runtime confirms that it is a promise object.</p>\n\n<p>I have tried several things here but none of them works:</p>\n\n<ol>\n<li>call v8::Isolate::RunMicroTasks(). Nothing happened</li>\n<li>cast <code>result</code> to <code>v8::Local&lt;v8::Promise&gt;</code> at the end of <code>runScript</code> method, then run with:</li>\n</ol>\n\n<pre class=\"lang-cpp prettyprint-override\"><code>auto resolver = v8::Resolver::New(context)-&gt;toLocalChecked();\nwhile (promise-&gt;State() == v8::PromiseState::kPending) {\n    isolate-&gt;RunMicroTasks();\n}\nif (promise-&gt;State() == v8::PromiseState::kFullfilled) {\n    resolver-&gt;Resolve(context, promise-&gt;Result());\n}\nif (promise-&gt;State() == v8::PromiseState::kRejected) {\n    resolver-&gt;Reject(context, promise-&gt;Result());\n}\n</code></pre>\n\n<p>This snippet didn't work either, besides, it stuck at the <code>kPending</code> status.</p>\n\n<p>I searched for something like <code>flush the promise queue</code>, but didn't get any solutions. What am I missing here?</p>\n"
+}

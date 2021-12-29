@@ -1,0 +1,26 @@
+{
+    "tags": [
+        "azure-active-directory",
+        "blazor",
+        "webassembly"
+    ],
+    "owner": {
+        "reputation": 13,
+        "user_id": 13681455,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/453183c305fffd9afd8f28701f9adba1?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Mohammed Rubeesh ",
+        "link": "https://stackoverflow.com/users/13681455/mohammed-rubeesh"
+    },
+    "is_answered": false,
+    "view_count": 87,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1606700259,
+    "creation_date": 1606495307,
+    "question_id": 65040872,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/65040872/blazor-webassembly-azure-ad-authentication-issue-after-migration-to-net5",
+    "title": "Blazor webassembly azure ad authentication issue after migration to .net5",
+    "body": "<p>Blazor webassembly azure ad authentication issue after migration to .net5</p>\n<p>Error:\nAADSTS28000: Provided value for the input parameter scope is not valid because it contains more than one resource.\nScope <a href=\"https://graph.microsoft.com/User.Read\" rel=\"nofollow noreferrer\">https://graph.microsoft.com/User.Read</a> api://861be009-5e73-4c6c-a095-b6e193522222/API.\nAccess openid profile is not valid.</p>\n<p>Scope Code(web assembly):</p>\n<pre><code>    builder.Configuration.Bind(&quot;AzureAd&quot;, options.ProviderOptions.Authentication);\n    options.ProviderOptions.DefaultAccessTokenScopes.Add(&quot;https://graph.microsoft.com/User.Read&quot;);\n    options.ProviderOptions.DefaultAccessTokenScopes.Add(&quot;api://861be009-5e73-4c6c-a095-b6e193522222/API.Access&quot;);\n</code></pre>\n"
+}

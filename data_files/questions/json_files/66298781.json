@@ -1,0 +1,30 @@
+{
+    "tags": [
+        "c#",
+        ".net",
+        "gzip",
+        "blazor",
+        "gzipinputstream"
+    ],
+    "owner": {
+        "reputation": 545,
+        "user_id": 1762453,
+        "user_type": "registered",
+        "accept_rate": 85,
+        "profile_image": "https://www.gravatar.com/avatar/28068e61a850f22e8d2c36e2d6536573?s=128&d=identicon&r=PG",
+        "display_name": "Codefun64",
+        "link": "https://stackoverflow.com/users/1762453/codefun64"
+    },
+    "is_answered": true,
+    "view_count": 57,
+    "answer_count": 1,
+    "score": -1,
+    "last_activity_date": 1613880826,
+    "creation_date": 1613877047,
+    "last_edit_date": 1613878403,
+    "question_id": 66298781,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/66298781/cant-decompress-data-with-gzipstream-without-running-into-exceptions-cant-det",
+    "title": "Can&#39;t decompress data with GZipStream without running into exceptions, can&#39;t determine cause",
+    "body": "<p>In a Blazor WebAssembly project I'm working on, I am compressing data at a back-end WebAPI server and passing it up to the front-end Blazor server (running Blazor WebAssembly, not &quot;Blazor Server,&quot; yay for confusing terminology), to be delivered to the user who then decompresses it. I'm running into the following exception:</p>\n<blockquote>\n<p>System.IO.IOException: Corrupted data ReadInternal at\nSystem.IO.Compression.DeflateStreamNative.CheckResult (System.Int32\nresult, System.String where) &lt;0x34fa860 + 0x000f0&gt; in :0 at System.IO.Compression.DeflateStreamNative.ReadZStream\n(System.IntPtr buffer, System.Int32 length) &lt;0x34f9c60 + 0x00024&gt; in\n:0 at\nSystem.IO.Compression.DeflateStream.ReadInternal (System.Byte[] array,\nSystem.Int32 offset, System.Int32 count) &lt;0x34f9a90 + 0x00066&gt; in\n:0 at System.IO.Compression.DeflateStream.Read\n(System.Byte[] array, System.Int32 offset, System.Int32 count)\n&lt;0x34f96e8 + 0x000cc&gt; in :0 at\nSystem.IO.Compression.GZipStream.Read (System.Byte[] array,\nSystem.Int32 offset, System.Int32 count) &lt;0x34f33b0 + 0x0001e&gt; in\n:0 at\nOptionalyticsFrontend.Shared.Services.Compression.DecompressString\n(System.Byte[] input) [0x0001b] in\nC:\\Users\\codef\\source\\repos\\OptionalyticsFrontend\\OptionalyticsFrontend\\Shared\\Services\\Compression.cs:24\nat OptionalyticsFrontend.Client.Pages.Application.GetFilteredOptions\n() [0x00183] in\nC:\\Users\\codef\\source\\repos\\OptionalyticsFrontend\\OptionalyticsFrontend\\Client\\Pages\\Application.razor:310</p>\n</blockquote>\n<p>I've looked at the specified lines over and over, and looked at Google and Stack Overflow for a while, and can't figure it out. The following are the compression/decompression methods used on both back and front end:</p>\n<pre><code>public static string DecompressString(this byte[] input)\n{\n    var result = new byte[input.Length];\n    using (var source = new MemoryStream(input))\n    {\n        using (var decompressionStream = new GZipStream(source,\n            CompressionMode.Decompress))\n        {\n            decompressionStream.Read(result, 0, input.Length); // &lt;---------- THIS IS THE ERROR LINE\n        }\n    }\n    return Encoding.UTF8.GetString(result);\n}\n\npublic static byte[] CompressString(this string inputString)\n{\n    byte[] input = Encoding.UTF8.GetBytes(inputString);\n    using (var result = new MemoryStream())\n    {\n        using (var compressionStream = new GZipStream(result,\n            CompressionMode.Compress))\n        {\n            compressionStream.Write(input, 0, input.Length);\n            compressionStream.Flush();\n\n        }\n        return result.ToArray();\n    }\n}\n</code></pre>\n<p>The following line is where the decompression is called, in my Razor component:</p>\n<pre><code>var responseString = OptionalyticsFrontend.Shared.Services.Compression.DecompressString(responseBytes);\n</code></pre>\n<p>I have looked at, and tried implementing, the following Stack Overflow answers, and none of them worked, I still get the same exception every time.</p>\n<p><a href=\"https://stackoverflow.com/questions/271260/gzipstream-and-deflatestream-will-not-decompress-all-bytes\">GZipStream And DeflateStream will not decompress all bytes</a></p>\n<p><a href=\"https://stackoverflow.com/questions/38902654/gzipstream-does-gzipping-but-ungzipping-file-end-up-with-unexpected-end-of-data\">GZipStream does gzipping but ungzipping file end up with &quot;Unexpected end of data&quot;</a></p>\n<p><a href=\"https://stackoverflow.com/questions/1327997/gzipstream-zip-file-invalid-or-corrupted\">GZipStream zip file invalid or corrupted</a></p>\n<p><a href=\"https://stackoverflow.com/questions/25134897/gzip-compression-and-decompression-in-c-sharp\">Gzip compression and decompression in C#</a></p>\n<p>What is going on here? I am running the front-end Blazor server as .NET Standard and .NET Core (the actual client and shared codes are .NET Standard, server-side is .NET Core)</p>\n<p>EDIT: As Andy's comment asked, I added a new stream and tried copying to the new stream, but this results in the same error.</p>\n<pre><code>public static string DecompressString(byte[] input)\n{\n    var result = new byte[input.Length];\n    using (var newStream = new MemoryStream())\n    {\n        using (var source = new MemoryStream(input))\n        {\n            using (var decompressionStream = new GZipStream(source,\n                CompressionMode.Decompress))\n            {\n                decompressionStream.CopyTo(newStream);\n            }\n        }\n        newStream.Position = 0;\n        return Encoding.UTF8.GetString(newStream.ToArray());\n    }\n}\n</code></pre>\n"
+}

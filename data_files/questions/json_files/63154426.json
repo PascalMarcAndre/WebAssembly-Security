@@ -1,0 +1,30 @@
+{
+    "tags": [
+        "asp.net-core",
+        "asp.net-core-webapi",
+        "blazor",
+        "asp.net-core-3.1",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 2935,
+        "user_id": 2427359,
+        "user_type": "registered",
+        "accept_rate": 62,
+        "profile_image": "https://i.stack.imgur.com/MMrrm.png?s=128&g=1",
+        "display_name": "Simon",
+        "link": "https://stackoverflow.com/users/2427359/simon"
+    },
+    "is_answered": false,
+    "view_count": 33,
+    "answer_count": 0,
+    "score": 0,
+    "last_activity_date": 1596031840,
+    "creation_date": 1596028332,
+    "last_edit_date": 1596031840,
+    "question_id": 63154426,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/63154426/how-to-pass-the-data-from-the-authcookie-to-the-claimsprincipal-in-the-custom-cu",
+    "title": "How to pass the data from the AuthCookie to the ClaimsPrincipal in the custom CustomAuthStateProvider?",
+    "body": "<p>We are using the latest <strong>Blazor WebAssembly</strong> in combination with API-Controllers. We want to use Forms Authentication to validate the login against the Active Directory. When validation is successful, then we create an AuthCooki. The Problem: We don\u00b4t know how to process the AuthCookie in the custom <code>AuthenticationStateProvider</code>:</p>\n<p>The AuthenticationStateProvider (client-side):</p>\n<pre><code>public class CustomAuthStateProvider : AuthenticationStateProvider\n{\n    public override Task&lt;AuthenticationState&gt; GetAuthenticationStateAsync()\n    {\n        // How to get the data from the Authcookie here (SamAccountName or Token) and pass them to the lClaimsPrincipal?\n\n        var lClaimsPrincipal = new ClaimsPrincipal(new ClaimsIdentity { /*  ???  */});\n        return Task.FromResult(new AuthenticationState(lClaimsPrincipal));\n    }\n\n}\n</code></pre>\n<p>The user sends his credentials via an Form to an controller. The contoller validates the credentails against the active directory and sets an authentication cookie:</p>\n<pre><code>[Route(&quot;[controller]&quot;)]\n[ApiController]\npublic class AuthController : ControllerBase\n{\n    [HttpPost]\n    public async Task&lt;AdUser&gt; Login(Credentials pCredentials)\n    {\n        // [...] Authentication validation against active directory here here [...]\n\n        var lClaims = new List&lt;Claim&gt;\n        {\n            new Claim(ClaimTypes.Name, &quot;MySamAccountName&quot;),\n        };\n        \n        // set cookie\n        var lClaimsIdentity = new ClaimsIdentity(lClaims, CookieAuthenticationDefaults.AuthenticationScheme);\n        await HttpContext.SignInAsync(\n        CookieAuthenticationDefaults.AuthenticationScheme,\n        new ClaimsPrincipal(lClaimsIdentity),\n        new AuthenticationProperties\n        {\n            IsPersistent = true,\n            ExpiresUtc = DateTime.UtcNow.AddYears(1),\n            RedirectUri = this.Request.Host.Value\n        });\n\n        // [...]\n    }\n}\n</code></pre>\n<p>File App.razor (Client-Side):</p>\n<pre><code>&lt;CascadingAuthenticationState&gt;\n    &lt;Router AppAssembly=&quot;@typeof(Program).Assembly&quot;&gt;\n        &lt;Found Context=&quot;routeData&quot;&gt;\n            &lt;AuthorizeRouteView RouteData=&quot;@routeData&quot;\n                                DefaultLayout=&quot;@typeof(MainLayout)&quot; /&gt;\n        &lt;/Found&gt;\n        &lt;NotFound&gt;\n            &lt;LayoutView Layout=&quot;@typeof(MainLayout)&quot;&gt;\n                &lt;p&gt;Sorry, there's nothing at this address.&lt;/p&gt;\n            &lt;/LayoutView&gt;\n        &lt;/NotFound&gt;\n    &lt;/Router&gt;\n&lt;/CascadingAuthenticationState&gt;\n</code></pre>\n<p>Register cookie authentication in startup.cs (server-side)</p>\n<pre><code>public class Startup\n{\n    [...]\n\n    public void ConfigureServices(IServiceCollection services)\n    {\n        // [...]\n        services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(); // This line is required for the authentication cookie\n        // [...]\n    }\n}\n</code></pre>\n<p>Index.razor (client-side)</p>\n<pre><code>@code {\n    [CascadingParameter]\n    private Task&lt;AuthenticationState&gt; authenticationStateTask { get; set; }\n\n    private async Task LogUsername()\n    {\n        var authState = await authenticationStateTask;\n        var user = authState.User;\n    }\n}\n\n&lt;AuthorizeView&gt;\n&lt;Authorized&gt;\n    &lt;h1&gt;Hello, @context.User.Identity.Name!&lt;/h1&gt;\n    &lt;p&gt;You can only see this content if you're authenticated.&lt;/p&gt;\n&lt;/Authorized&gt;\n&lt;NotAuthorized&gt;\n    &lt;h1&gt;Authentication Failure!&lt;/h1&gt;\n    &lt;p&gt;You're not signed in.&lt;/p&gt;\n&lt;/NotAuthorized&gt;\n&lt;/AuthorizeView&gt;\n</code></pre>\n<p>Program.cs (client-side)</p>\n<pre><code>public class Program\n{\n    public static async Task Main(string[] args)\n    {\n        // [...]\n\n        // authentication / authorization\n        builder.Services.AddScoped&lt;AuthenticationStateProvider, CustomAuthStateProvider&gt;();\n        builder.Services.AddOptions();\n        builder.Services.AddAuthorizationCore();\n\n        // [...]\n    }\n}\n</code></pre>\n"
+}

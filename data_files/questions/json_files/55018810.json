@@ -1,0 +1,30 @@
+{
+    "tags": [
+        "javascript",
+        "webpack",
+        "emscripten",
+        "webassembly"
+    ],
+    "owner": {
+        "reputation": 3188,
+        "user_id": 3440266,
+        "user_type": "registered",
+        "accept_rate": 77,
+        "profile_image": "https://www.gravatar.com/avatar/9d37ddb4e007bfd22023d6d5b95f0a45?s=128&d=identicon&r=PG&f=1",
+        "display_name": "macabeus",
+        "link": "https://stackoverflow.com/users/3440266/macabeus"
+    },
+    "is_answered": true,
+    "view_count": 831,
+    "accepted_answer_id": 55051426,
+    "answer_count": 2,
+    "score": 1,
+    "last_activity_date": 1551986825,
+    "creation_date": 1551861734,
+    "last_edit_date": 1551986603,
+    "question_id": 55018810,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/55018810/how-to-get-a-filename-renamed-by-webpack",
+    "title": "How to get a filename renamed by Webpack?",
+    "body": "<p>I'm using a webassembly file compiled by Emscripten in my project.\nAnd since my project uses Webpack, it renames all files, then the Emscripten module can't find more the webassembly file.</p>\n\n<p>Then I need to get the new filename of the webassembly file to can load it.</p>\n\n<p>I found <a href=\"https://gist.github.com/surma/b2705b6cca29357ebea1c9e6e15684cc\" rel=\"nofollow noreferrer\">this workaround</a>, but I want a better solution, because I don't want do change the <code>webpack.config.js</code> with configurations about the <code>.wasm</code> files.</p>\n\n<p>Explain the context: I have a project called <code>bursh</code> that it uses Webpack and imports a module called <code>scissors</code> which it has the webassembly files. So I'm looking for a solution which doesn't need to update the configurations, because of the isolation of responsibilities - doesn't make sense to set configurations at <code>brush</code> for some reason by <code>scissors</code></p>\n"
+}

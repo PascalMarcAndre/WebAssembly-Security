@@ -1,0 +1,29 @@
+{
+    "tags": [
+        "javascript",
+        "c++",
+        "node.js",
+        "webassembly",
+        "emscripten"
+    ],
+    "owner": {
+        "reputation": 525,
+        "user_id": 5156141,
+        "user_type": "registered",
+        "accept_rate": 33,
+        "profile_image": "https://www.gravatar.com/avatar/564c3f87f87780a0e3dd405813fe0601?s=128&d=identicon&r=PG&f=1",
+        "display_name": "user5156141",
+        "link": "https://stackoverflow.com/users/5156141/user5156141"
+    },
+    "is_answered": false,
+    "view_count": 71,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1611877625,
+    "creation_date": 1611875437,
+    "question_id": 65946529,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/65946529/emscripten-webassembly-exporting-class-import-13-module-got-func-error-mod",
+    "title": "Emscripten WebAssembly: Exporting Class &quot;Import #13 module=&quot;GOT.func&quot; error: module is not an object or function&quot;",
+    "body": "<p>I've been toying with the usage of WebAssembly in a project as an importable function module (with hope to eventually use in a React/Electron app), so I've set myself up with Emscripten and got to work using C++.</p>\n<p>No issues implementing functions, but I have been unsuccessful with classes. I want to be able to expose and instantiate a class in JS and call the methods on it, persisting until the &quot;task&quot; is complete.</p>\n<p>Below is an <a href=\"https://emscripten.org/docs/porting/connecting_cpp_and_javascript/embind.html#classes\" rel=\"nofollow noreferrer\">example from Emscripten's own website</a>, which builds but throws an error when trying to run (likely due to my build command and JS importing process)</p>\n<p>The error message is <code>[TypeError: WebAssembly.instantiate(): Import #13 module=&quot;GOT.func&quot; error: module is not an object or function]</code>.</p>\n<p>Is what I'm trying to achieve sensible and possible?</p>\n<pre class=\"lang-cpp prettyprint-override\"><code>#include &lt;stdio.h&gt;\n#include &lt;string&gt;\n#include &lt;iostream&gt;\n#include &lt;emscripten/emscripten.h&gt;\n#include &lt;emscripten/bind.h&gt;\n\nusing namespace emscripten;\n\nclass MyClass\n{\npublic:\n    MyClass(int x, std::string y)\n        : x(x), y(y)\n    {\n    }\n\n    void incrementX()\n    {\n        ++x;\n    }\n\n    int getX() const { return x; }\n    void setX(int x_) { x = x_; }\n\n    static std::string getStringFromInstance(const MyClass &amp;instance)\n    {\n        return instance.y;\n    }\n\nprivate:\n    int x;\n    std::string y;\n};\n\n// Binding code\nEMSCRIPTEN_BINDINGS(my_class_example)\n{\n    class_&lt;MyClass&gt;(&quot;MyClass&quot;)\n        .constructor&lt;int, std::string&gt;()\n        .function(&quot;incrementX&quot;, &amp;MyClass::incrementX)\n        .property(&quot;x&quot;, &amp;MyClass::getX, &amp;MyClass::setX)\n        .class_function(&quot;getStringFromInstance&quot;, &amp;MyClass::getStringFromInstance);\n};\n</code></pre>\n<pre class=\"lang-js prettyprint-override\"><code>const util = require('util');\nconst fs = require('fs');\nvar source = fs.readFileSync('./dist/module.wasm');\nconst env = {\n    memoryBase: 0,\n    tableBase: 0,\n    memory: new WebAssembly.Memory({\n        initial: 256\n    }),\n    table: new WebAssembly.Table({\n        initial: 0,\n        element: 'anyfunc'\n    }),\n}\n\n\n\nvar typedArray = new Uint8Array(source);\n\nWebAssembly.instantiate(typedArray, {\n    env: env\n}).then(result =&gt; {\n    console.log('MODULE: ', result.instance.exports)\n\n}).catch(e =&gt; {\n    // error caught\n    console.log(e);\n});\n</code></pre>\n<pre class=\"lang-json prettyprint-override\"><code>{\n  &quot;name&quot;: &quot;wasm-js-test&quot;,\n  &quot;version&quot;: &quot;1.0.0&quot;,\n  &quot;description&quot;: &quot;&quot;,\n  &quot;main&quot;: &quot;main.js&quot;,\n  &quot;scripts&quot;: {\n    &quot;build-test&quot;: &quot;rm -rf ./dist &amp;&amp; mkdir ./dist &amp;&amp; em++ ./src/module.cpp -O2 -s WASM=1 -s SIDE_MODULE=1 --no-entry --bind -o ./dist/module.wasm &amp;&amp; node test.js&quot;\n  },\n  &quot;author&quot;: &quot;&quot;,\n  &quot;license&quot;: &quot;ISC&quot;\n}\n\n</code></pre>\n"
+}

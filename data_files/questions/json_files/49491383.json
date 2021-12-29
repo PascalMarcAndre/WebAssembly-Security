@@ -1,0 +1,28 @@
+{
+    "tags": [
+        "javascript",
+        "google-chrome-extension",
+        "cors",
+        "sandbox",
+        "webassembly"
+    ],
+    "owner": {
+        "reputation": 452,
+        "user_id": 7677042,
+        "user_type": "registered",
+        "profile_image": "https://lh6.googleusercontent.com/-sImS78WECF4/AAAAAAAAAAI/AAAAAAAAGv0/jFZhqIYLltY/photo.jpg?sz=128",
+        "display_name": "Nagmon",
+        "link": "https://stackoverflow.com/users/7677042/nagmon"
+    },
+    "is_answered": true,
+    "view_count": 948,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1522071562,
+    "creation_date": 1522066882,
+    "question_id": 49491383,
+    "content_license": "CC BY-SA 3.0",
+    "link": "https://stackoverflow.com/questions/49491383/using-webassembly-inside-chrome-sandbox",
+    "title": "Using WebAssembly inside chrome sandbox",
+    "body": "<p>I have a chrome extension that includes a complicated function <code>comp_func(data)</code> which takes a lot of CPU by performing many bitwise operations. Because of that, I'm trying to use WebAssembly.\nAfter many tries I came to a conclusion that due to permissions issues I need to use this function inside a sandbox.</p>\n\n<p>Right now I'm trying to follow <a href=\"https://tutorialzine.com/2017/06/getting-started-with-web-assembly\" rel=\"nofollow noreferrer\">this WebAssembly tutorial</a> and <a href=\"https://developer.chrome.com/apps/sandboxingEval\" rel=\"nofollow noreferrer\">this Sandbox example</a>  as an \"hello world\" example for my problem.</p>\n\n<p>The WebAssembly files includes: <code>index.js</code> and <code>index.wasm</code>,\nThe sandbox files is: <code>sandbox.html</code>,\n<code>page.js</code> is the code of the extension that need to perform <code>comp_func(data)</code> and is using <code>postMessage</code> as a way to communicate to <code>sandbox.html</code>.\n<code>background.html</code> is the background file of the extension. </p>\n\n<p>This is what I have so far:</p>\n\n<p><strong>manifest.json</strong></p>\n\n<pre><code>   \"sandbox\": {\n     \"pages\": [\"sandbox.html\"]\n   },\n</code></pre>\n\n<p><strong>background.js</strong></p>\n\n<pre><code>&lt;script src=\"page.js\"&gt;&lt;/script&gt;\n&lt;iframe id=\"theFrame\" src=\"sandbox.html\" style=\"display: none;\"&gt;&lt;/iframe&gt;\n</code></pre>\n\n<p><strong>sandbox.html</strong></p>\n\n<pre><code>&lt;html&gt;\n      &lt;body&gt;\n        &lt;script src=\"index.js\"&gt;&lt;/script&gt;\n        &lt;script&gt;\n        var result = _roll_dice(); //the function of the WebAssembly\n        console.log('results! ', result);\n        &lt;/script&gt;\n      &lt;/body&gt;\n    &lt;/html&gt;\n</code></pre>\n\n<p>So, right now the extension is calling <code>sandbox.html</code> who in turn loading <code>index.js</code>, but then I get the error:</p>\n\n<blockquote>\n  <p>Failed to load\n  chrome-extension://<strong>index.wasm</strong>: No\n  'Access-Control-Allow-Origin' header is present on the requested\n  resource. Origin 'null' is therefore not allowed access. If an opaque\n  response serves your needs, set the request's mode to 'no-cors' to\n  fetch the resource with CORS disabled.</p>\n</blockquote>\n\n<p>From what I understand, <code>index.js</code> is calling <code>index.wasm</code> and because I'm inside a sandbox there is a problem with <strong>CORS</strong> permissions.\nIs someone know what is the solution in this case?</p>\n"
+}

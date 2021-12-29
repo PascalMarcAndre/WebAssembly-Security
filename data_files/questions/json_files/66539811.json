@@ -1,0 +1,29 @@
+{
+    "tags": [
+        "blazor",
+        "openid",
+        "webassembly",
+        ".net-5"
+    ],
+    "owner": {
+        "reputation": 197,
+        "user_id": 215015,
+        "user_type": "registered",
+        "accept_rate": 75,
+        "profile_image": "https://www.gravatar.com/avatar/528a66df3b23809bdf196043eb02ca91?s=128&d=identicon&r=PG",
+        "display_name": "Robie",
+        "link": "https://stackoverflow.com/users/215015/robie"
+    },
+    "is_answered": false,
+    "view_count": 28,
+    "answer_count": 0,
+    "score": 0,
+    "last_activity_date": 1615340733,
+    "creation_date": 1615255694,
+    "last_edit_date": 1615340733,
+    "question_id": 66539811,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/66539811/how-to-do-blazor-openid-connect-authentication-workflow-in-webassembly",
+    "title": "How to do Blazor OpenID Connect authentication workflow in WebAssembly",
+    "body": "<p>In my Blazor .net 5 web assembly application which is using an external Identity Provider, I am trying to call an API after successful login. Is there any way I can hook in the OpenID Connect authentication workflow in Blazor WebAssembly like this Microsoft.AspNetCore.Authentication.OpenIdConnect nuget which has server-side example <a href=\"https://docs.microsoft.com/en-us/aspnet/core/blazor/security/server/additional-scenarios?view=aspnetcore-5.0\" rel=\"nofollow noreferrer\">https://docs.microsoft.com/en-us/aspnet/core/blazor/security/server/additional-scenarios?view=aspnetcore-5.0</a></p>\n<p>I would appreciate it if anyone can point me in the right direction.</p>\n<p>Thanks</p>\n"
+}

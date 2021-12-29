@@ -1,0 +1,26 @@
+{
+    "tags": [
+        "c#",
+        "blazor"
+    ],
+    "owner": {
+        "reputation": 15,
+        "user_id": 13971084,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/da155201719657217c52a4ca2569c1cc?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Drdoomsalot",
+        "link": "https://stackoverflow.com/users/13971084/drdoomsalot"
+    },
+    "is_answered": true,
+    "view_count": 308,
+    "accepted_answer_id": 63046595,
+    "answer_count": 2,
+    "score": 0,
+    "last_activity_date": 1595476095,
+    "creation_date": 1595459797,
+    "question_id": 63044501,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/63044501/how-do-i-get-the-access-token-that-was-returned-through-microsoft-aspnetcore-com",
+    "title": "How do I get the access token that was returned through Microsoft.AspNetCore.Components.Authorization",
+    "body": "<p>I am using Microsoft.AspNetCore.Components.Authorization to call my app registration and log in using my credentials. Everything works fine, but I can't figure out how to access my access token after logging in. I have an extremely simple app.</p>\n<p>I followed the instructions here: <a href=\"https://docs.microsoft.com/en-us/aspnet/core/blazor/security/webassembly/standalone-with-azure-active-directory?view=aspnetcore-3.1\" rel=\"nofollow noreferrer\">Secure an ASP.NET Core Blazor WebAssembly standalone app with Azure Active Directory</a></p>\n<p>I crteated the app and it looks pretty much exactly like the one on that page. However, I can't find any information on how to get the Token after logging in.</p>\n<p>Thanks for any help.</p>\n"
+}

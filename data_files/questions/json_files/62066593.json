@@ -1,0 +1,28 @@
+{
+    "tags": [
+        "azure-ad-b2c",
+        "blazor",
+        "blazor-client-side"
+    ],
+    "owner": {
+        "reputation": 16012,
+        "user_id": 1768,
+        "user_type": "registered",
+        "accept_rate": 92,
+        "profile_image": "https://i.stack.imgur.com/6arep.png?s=128&g=1",
+        "display_name": "mattruma",
+        "link": "https://stackoverflow.com/users/1768/mattruma"
+    },
+    "is_answered": true,
+    "view_count": 54,
+    "accepted_answer_id": 62406375,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1592303327,
+    "creation_date": 1590674422,
+    "question_id": 62066593,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/62066593/responding-to-login-succeeded-for-blazor-web-assembly-app-and-azure-ad-b2c",
+    "title": "Responding to Login Succeeded for Blazor Web Assembly App and Azure AD B2C",
+    "body": "<p>I have a Blazor Web Assembly App that successfully authenticates against Azure AD B2C. Whenever the user successfully authenticates, or logs in, I want to fetch some additional profile information from another service/database.</p>\n\n<p>I feel/think the answer is somewhere in this article <a href=\"https://docs.microsoft.com/en-us/aspnet/core/security/blazor/webassembly/additional-scenarios?view=aspnetcore-3.1\" rel=\"nofollow noreferrer\">https://docs.microsoft.com/en-us/aspnet/core/security/blazor/webassembly/additional-scenarios?view=aspnetcore-3.1</a>, but for the life of me, everything I try fails.</p>\n\n<p>Wondering if anyone else has tried this and has been successful?</p>\n\n<p>Thanks in advance!</p>\n"
+}

@@ -1,0 +1,27 @@
+{
+    "tags": [
+        "qt",
+        "conan"
+    ],
+    "owner": {
+        "reputation": 18,
+        "user_id": 10995320,
+        "user_type": "registered",
+        "profile_image": "https://i.stack.imgur.com/6TrBn.png?s=128&g=1",
+        "display_name": "Sebastian Kaupe",
+        "link": "https://stackoverflow.com/users/10995320/sebastian-kaupe"
+    },
+    "is_answered": true,
+    "view_count": 525,
+    "accepted_answer_id": 57112940,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1568718010,
+    "creation_date": 1563455270,
+    "last_edit_date": 1563535462,
+    "question_id": 57095229,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/57095229/conan-based-qt-installation-uses-wrong-home-dir-for-linking",
+    "title": "Conan-based Qt installation uses wrong home dir for linking",
+    "body": "<p>I'm trying to build our application using Qt 5.13.0 installed via Conan/Artifactory. We run our own Artifactory server and the Qt version there is self-build (and statically linked) in our CI solution. We use the <a href=\"https://github.com/bincrafters/conan-qt\" rel=\"nofollow noreferrer\">Conan recipe for Qt written by the bincrafters</a>, slightly modified to apply some patches for known Qt bugs and set some flags for building properly on Android and WebAssembly.</p>\n\n<p>When trying to build the application, the linker fails to find the necessary dependencies for Qt itself because it tries to look them up in the home folder of the user who build the Qt package, not the user who's running the build.</p>\n\n<p>Here's an excerpt from the build log, showing the attempt at linking all previously compiled object files together:</p>\n\n<pre><code>       application folder-------v        subproject of the application----v-------v       dependency of the application, correct user home dir---------v                                             Qt library installed via Conan, correct user home dir-------v                                                            dependency of Qt, WRONG user home dir------------v\ng++ -Wl,--gc-sections -o ../../fah [--&gt; all the .o files &lt;--] -L../lib -lmodel -lcore [--&gt; more linked libraries and application parts &lt;--] -L/home/kaupes/.conan/data/libsodium/1.0.18/bje/stable/package/d1efe3774eed76670888f919621e7c4e1b52efa9/lib  /home/kaupes/.conan/data/qt/5.13.0/bje/stable/package/d6b3f512e1a5607061462f94e3271dc8af3dd516/lib/libQt5Gui.a /home/dev/.conan/data/harfbuzz/2.4.0/bje/stable/package/c68551ae35bf5d62e66263379d58a38416eb84a9/lib/libharfbuzz.a [--&gt; many, many more libraries &lt;--]\ng++: error: /home/dev/.conan/data/harfbuzz/2.4.0/bje/stable/package/c68551ae35bf5d62e66263379d58a38416eb84a9/lib/libharfbuzz.a: No such file or directory\nmany, many more errors...\n</code></pre>\n\n<p>As you can see, the user running the build is <code>kaupes</code>, but the <code>g++</code> invocation attempts to look for the dependencies in <code>/home/dev/</code>, the home folder of the CI user who build the Qt Conan package.</p>\n\n<p>Only dependencies of Qt itself have the problem. Dependencies of the application (also installed via Conan) are found at the correct place.</p>\n\n<p>The Qt package has been build in the CI using the following Conan invocation:</p>\n\n<pre><code>conan create --profile .conan/profiles/linux -s compiler=gcc -s compiler.version=9 . fah/stable\n</code></pre>\n\n<p>Compiler and version are explicitly set because I'm also build for another GCC version. The <code>linux</code> profile file also doesn't do anything interesting (as far as I can see):</p>\n\n<pre><code>include(default)\n\n[settings]\nbuild_type=Release\ncompiler.libcxx=libstdc++11\n\n[options]\nOpenSSL:shared=False\nOpenSSL:no_asm=True\nOpenSSL:no_asm=True\nOpenSSL:no_weak_ssl_ciphers=True\nOpenSSL:no_ssl2=True\nOpenSSL:no_ssl3=True\nOpenSSL:no_engine=True\nlibcurl:shared=False\nlibxml2:shared=False\nlibxml2:fPIC=True\nlibsodium:shared=False\n\npcre2:shared=False\nlibpng:shared=False\nfreetype:shared=False\nbzip2:shared=False\nlibjpeg:shared=False\nharfbuzz:shared=False\nxkbcommon:shared=False\nqt:shared=False\nqt:with_glib=False\nqt:with_sqlite3=False\nqt:with_mysql=False\nqt:with_pq=False\nqt:with_odbc=False\nqt:with_sdl2=False\nqt:with_openal=False\nqt:with_libalsa=False\nqt:openssl=True\nqt:commercial=False\nqt:qtsvg=True\nqt:qtdeclarative=True\nqt:qtactiveqt=False\nqt:qtscript=False\nqt:qtmultimedia=False\nqt:qttools=True\nqt:qtxmlpatterns=False\nqt:qttranslations=True\nqt:qtdoc=False\nqt:qtrepotools=False\nqt:qtqa=False\nqt:qtlocation=True\nqt:qtsensors=True\nqt:qtwayland=True\nqt:qt3d=False\nqt:qtimageformats=False\nqt:qtgraphicaleffects=True\nqt:qtquickcontrols=True\nqt:qtserialbus=False\nqt:qtserialport=False\nqt:qtx11extras=True\nqt:qtmacextras=False\nqt:qtwinextras=False\nqt:qtandroidextras=False\nqt:qtwebsockets=True\nqt:qtwebchannel=False\nqt:qtwebengine=False\nqt:qtwebview=False\nqt:qtquickcontrols2=True\nqt:qtpurchasing=False\nqt:qtcharts=True\nqt:qtdatavis3d=False\nqt:qtvirtualkeyboard=True\nqt:qtgamepad=False\nqt:qtscxml=False\nqt:qtspeech=False\nqt:qtnetworkauth=False\nqt:qtremoteobjects=False\nqt:qtwebglplugin=False\nqt:qtlottie=False\nqt:qtconnectivity=True\n</code></pre>\n\n<p>Is there something I'm doing wrong during the Conan package creation or installation or is this caused by something different?</p>\n"
+}

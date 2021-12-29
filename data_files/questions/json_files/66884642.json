@@ -1,0 +1,25 @@
+{
+    "tags": [
+        "identityserver4"
+    ],
+    "owner": {
+        "reputation": 1,
+        "user_id": 15520578,
+        "user_type": "registered",
+        "profile_image": "https://lh3.googleusercontent.com/-xM8uacSFZtA/AAAAAAAAAAI/AAAAAAAAAAA/AMZuucmkeoJeZ-JJgMPF3BdGhPg3zI-rGw/s96-c/photo.jpg?sz=128",
+        "display_name": "Karunanidhi Kumar",
+        "link": "https://stackoverflow.com/users/15520578/karunanidhi-kumar"
+    },
+    "is_answered": false,
+    "view_count": 31,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1617431683,
+    "creation_date": 1617181361,
+    "last_edit_date": 1617274170,
+    "question_id": 66884642,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/66884642/getting-cors-error-on-connect-token-endpoint",
+    "title": "Getting CORS error on /connect/token endpoint",
+    "body": "<p>Using IdentityServer4 to secure my Blazor WebAssembly Application. Hosted the Blazor application and Identity server on two servers using IIS. Configured Client-based CORS Configuration for two origins as follows.</p>\n<pre><code>    public static IEnumerable&lt;Client&gt; Clients =&gt;\n        new Client[]\n        {\n            new Client\n            {\n                ClientId = &quot;Client Id of the Application&quot;,\n                AllowedGrantTypes = GrantTypes.Code,\n                RequirePkce = true,\n                RequireClientSecret = false,\n                AllowedCorsOrigins = { &quot;https://subdomain1.domain1.com&quot;,\n                                       &quot;https://subdomain2.domain2.com&quot;},\n                AllowedScopes = { &quot;openid&quot;, &quot;profile&quot;, &quot;customscope&quot; },\n                RedirectUris = { &quot;https://subdomain1.frontend1.com/authentication/login-callback&quot;,\n                                 &quot;https://subdomain2.frontend2.com/authentication/login-callback&quot;},\n                PostLogoutRedirectUris = { &quot;https://subdomain1.frontend1.com/&quot;,\n                                           &quot;https://subdomain2.frontend2.com/&quot;},\n                Enabled = true\n            },\n        };\n</code></pre>\n<p>After successful signing using the username and password, the frontend application trying to get the token using AuthenticationService.js the endpoint is <a href=\"https://identityserver.com/connect/token\" rel=\"nofollow noreferrer\">https://identityserver.com/connect/token</a>.</p>\n<p>Application1 is working fine which is hosted in server1, whereas application 2 hosted in server 2 failed with CORS error (MissingAllowOriginHeader).</p>\n"
+}

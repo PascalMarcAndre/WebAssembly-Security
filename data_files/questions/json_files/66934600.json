@@ -1,0 +1,28 @@
+{
+    "tags": [
+        "authentication",
+        "jwt",
+        "blazor",
+        "blazor-webassembly",
+        "blazor-client-side"
+    ],
+    "owner": {
+        "reputation": 1,
+        "user_id": 14142035,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/6c64b0d3e08f01724034fdb154f88b8c?s=128&d=identicon&r=PG",
+        "display_name": "rento41",
+        "link": "https://stackoverflow.com/users/14142035/rento41"
+    },
+    "is_answered": false,
+    "view_count": 16,
+    "answer_count": 0,
+    "score": 0,
+    "last_activity_date": 1617474649,
+    "creation_date": 1617474649,
+    "question_id": 66934600,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/66934600/blazor-webassembly-jwt-authorization-first-steps",
+    "title": "Blazor Webassembly JWT Authorization first steps",
+    "body": "<p>I have created a small .NET 5.0 Web API where a users can register/login to create/add/delete notes. The API is working fine, after the login I receive the JWT token in the response back.</p>\n<p>Now I want to create a Blazor Webassembly website which will communicate with the API.\nThe problem I have is that I don't know where to start and what do I need to get the web page take the Token from the response and how to work with it to be authorized when doing API calls.</p>\n<p>In the API i have used the IHttppAccesor to get access to the user data from the JWT token, is it similar to work with the token for the authorization.</p>\n<p>Any suggestions what to use or where to start would be greatly appreciated!</p>\n"
+}

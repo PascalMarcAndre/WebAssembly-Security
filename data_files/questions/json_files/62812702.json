@@ -1,0 +1,29 @@
+{
+    "tags": [
+        "c#",
+        "asp.net-core",
+        "authentication",
+        "roles",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 115,
+        "user_id": 3175734,
+        "user_type": "registered",
+        "profile_image": "https://lh6.googleusercontent.com/-Vt3mlSr2wXU/AAAAAAAAAAI/AAAAAAAAFlk/ZShizRXscmo/photo.jpg?sz=128",
+        "display_name": "WALEED",
+        "link": "https://stackoverflow.com/users/3175734/waleed"
+    },
+    "is_answered": true,
+    "view_count": 519,
+    "accepted_answer_id": 63435794,
+    "answer_count": 1,
+    "score": 2,
+    "last_activity_date": 1597573985,
+    "creation_date": 1594290043,
+    "question_id": 62812702,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/62812702/cant-get-blazor-wasm-aad-app-roles-to-work",
+    "title": "Can&#39;t Get Blazor WASM AAD App Roles To Work",
+    "body": "<p>So I've kicked things off by following Microsoft docs:</p>\n<p><a href=\"https://docs.microsoft.com/en-us/aspnet/core/blazor/security/webassembly/hosted-with-azure-active-directory?view=aspnetcore-3.1\" rel=\"nofollow noreferrer\">Secure an ASP.NET Core Blazor WebAssembly hosted app with Azure Active Directory</a></p>\n<p><a href=\"https://docs.microsoft.com/en-us/aspnet/core/blazor/security/webassembly/azure-active-directory-groups-and-roles?view=aspnetcore-3.1\" rel=\"nofollow noreferrer\">Azure AD Groups, Administrative Roles, and user-defined roles</a></p>\n<p>It seems to be setup fine on Azure's side of things:</p>\n<p>This works fine:</p>\n<pre><code>@page &quot;/clients&quot;\n@inject NavigationManager navigationManager\n@inject HttpClient Http\n@inject AppData appData\n@inject AuthenticationStateProvider AuthenticationStateProvider\n@attribute [Authorize]\n</code></pre>\n<p>I've printed the claims to see what's happening:</p>\n<pre><code>protected async override Task OnInitializedAsync()\n{\n    var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();\n    var user = authState.User;\n\n    foreach (var claim in user.Claims)\n    {\n            System.Diagnostics.Debug.WriteLine(claim.Type + &quot;:&quot; + claim.ValueType + &quot;:&quot; + claim.Value);\n    }\n}\n</code></pre>\n<p>This is one of lines printed:</p>\n<pre><code>roles:http://www.w3.org/2001/XMLSchema#string:[&quot;Admin&quot;]\n</code></pre>\n<p>So I can see that the appRole I added in the app manifest on Azure got here. (GUIDs Hidden below for privacy)</p>\n<pre><code>&quot;appRoles&quot;: [\n        {\n            &quot;allowedMemberTypes&quot;: [\n                &quot;User&quot;\n            ],\n            &quot;description&quot;: &quot;Can view everything.&quot;,\n            &quot;displayName&quot;: &quot;Global Viewer&quot;,\n            &quot;id&quot;: &quot;IDGOESHERE&quot;,\n            &quot;isEnabled&quot;: true,\n            &quot;lang&quot;: null,\n            &quot;origin&quot;: &quot;Application&quot;,\n            &quot;value&quot;: &quot;GlobalViewer&quot;\n        },\n        {\n            &quot;allowedMemberTypes&quot;: [\n                &quot;User&quot;\n            ],\n            &quot;description&quot;: &quot;Admins can access restricted areas.&quot;,\n            &quot;displayName&quot;: &quot;Admin&quot;,\n            &quot;id&quot;: &quot;IDGOESHERE&quot;,\n            &quot;isEnabled&quot;: true,\n            &quot;lang&quot;: null,\n            &quot;origin&quot;: &quot;Application&quot;,\n            &quot;value&quot;: &quot;Admin&quot;\n        }\n    ],\n</code></pre>\n<p>Also added my user to the Admin role on Enterprise Applications.</p>\n<p>However adding the role in [Authorize] attribute directive makes me lose access to page: (You are not authorized to access this resource.)</p>\n<pre><code>attribute [Authorize(Roles = &quot;Admin&quot;)]\n</code></pre>\n<p>This is in Program.cs (I have actual GUIDs in &quot;GUIDGOESHERE&quot;)</p>\n<pre><code>builder.Services.AddMsalAuthentication(options =&gt;\n{\n    builder.Configuration.Bind(&quot;AzureAd&quot;, options.ProviderOptions.Authentication);\n    options.ProviderOptions.DefaultAccessTokenScopes.Add(&quot;GUIDGOESHERE/EmployeesAccess&quot;);\n    options.ProviderOptions.DefaultAccessTokenScopes.Add(&quot;GUIDGOESHERE/AdminAccess&quot;);\n    options.UserOptions.RoleClaim = &quot;roles&quot;;\n});\n</code></pre>\n<p>The problem may be in my role claim. Maybe the problem is this claim looks like an array? If so how do I fix it?</p>\n"
+}

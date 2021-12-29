@@ -1,0 +1,28 @@
+{
+    "tags": [
+        "qt",
+        "qt5",
+        "webassembly",
+        "emscripten"
+    ],
+    "owner": {
+        "reputation": 81,
+        "user_id": 8009864,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/e215a8d84e3958aaf5caf9b49d05ebdf?s=128&d=identicon&r=PG",
+        "display_name": "Ronak SHAH",
+        "link": "https://stackoverflow.com/users/8009864/ronak-shah"
+    },
+    "is_answered": false,
+    "view_count": 164,
+    "answer_count": 0,
+    "score": 2,
+    "last_activity_date": 1595399853,
+    "creation_date": 1595263398,
+    "last_edit_date": 1595399853,
+    "question_id": 63000069,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/63000069/cross-origin-error-with-qnetwork-webassembly",
+    "title": "Cross origin error with QNetwork webassembly",
+    "body": "<p>I am trying to make a post/get call using QNetworkAccessManager in my c++ code which is exposed to webassembly using emscripten.</p>\n<p>When the exposed function is compiled and loaded in Javascript, the requests are getting blocked due to cross-origin request.</p>\n<p>I am running the local server from the folder that contains wasm, js and html files.</p>\n<p>[Edited]: After some reading on CORS, I tried by adding additional header parameters to request:\n<code>request.setRawHeader(&quot;Access-Control-Request-Origin&quot;, &quot;*&quot;);</code></p>\n<p>But this also didn't work.</p>\n<pre class=\"lang-cpp prettyprint-override\"><code>QNetworkRequest request(this-&gt;server);\nrequest.setHeader(QNetworkRequest::ContentTypeHeader, &quot;application/json&quot;);\nrequest.setRawHeader(&quot;Access-Control-Allow-Origin&quot;, &quot;*&quot;);    request.setRawHeader(&quot;Access-Control-Allow-Methods&quot;, &quot;POST&quot;);\n\n// building the json and network request object\nQByteArray byte_payload = QJsonDocument(payload).toJson();\nQEventLoop loop;\nQObject::connect(&amp;manager, &amp;QNetworkAccessManager::finished, &amp;loop, &amp;QEventLoop::quit);\nloop.exec();\n\nstd::cout &lt;&lt; &quot;Request completed&quot; &lt;&lt; std::endl;\n\nQByteArray reponse = reply-&gt;readAll();\nstd::cout &lt;&lt; reponse.toStdString() &lt;&lt; std:: endl;\n</code></pre>\n<p>Could you let me know how to resolve this?</p>\n<p><a href=\"https://i.stack.imgur.com/Yo4Al.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/Yo4Al.png\" alt=\"Cross origin error on browser\" /></a></p>\n<p>[Edited]:\nI tried to enable the node server for cros by using <code>cors</code> package. This enables the first <code>OPTIONS</code> call to succeed but the actual <code>POST</code> call that happens is send with incorrect payload.</p>\n<p><a href=\"https://i.stack.imgur.com/J8TBD.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/J8TBD.png\" alt=\"OPTIONS\" /></a></p>\n<p><a href=\"https://i.stack.imgur.com/3g7vM.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/3g7vM.png\" alt=\"Post\" /></a></p>\n"
+}

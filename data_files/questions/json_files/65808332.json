@@ -1,0 +1,28 @@
+{
+    "tags": [
+        "file-upload",
+        "azure-storage-blobs",
+        "blazor",
+        "shared-access-signatures"
+    ],
+    "owner": {
+        "reputation": 314,
+        "user_id": 9492526,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/f5ae9c4bea20fd09464b6bf2ac62a754?s=128&d=identicon&r=PG&f=1",
+        "display_name": "godlypython",
+        "link": "https://stackoverflow.com/users/9492526/godlypython"
+    },
+    "is_answered": true,
+    "view_count": 327,
+    "accepted_answer_id": 65822497,
+    "answer_count": 2,
+    "score": 0,
+    "last_activity_date": 1611214131,
+    "creation_date": 1611140874,
+    "question_id": 65808332,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/65808332/uploading-file-from-blazor-webassembly-app-directly-to-blob-storage",
+    "title": "Uploading file from Blazor WebAssembly App directly to Blob storage",
+    "body": "<p>I've been trying to develop a Blazor WebAssembly app (I'm trying with both .NET Standard 2.1 and .NET 5.0) and my goal is to allow the user to select a file using <code>InputFile</code>and for that file to be uploaded to an Azure Blob Storage Container. I've been looking around a lot and following different guides here and there but with no success. The issues I was obtaining were usually related to security for example CORS (Although it had been fully set up), Authorization fails and System.PlatformNotSupportedException: System.Security.Cryptography.Algorithms is not supported on this platform.</p>\n<p>Regardless of whether it is good practice or not; is it possible to directly upload to a blob storage from a blazor app? One method i tried was via a <strong>SAS</strong> token. It works via a CONSOLE APP but not a BLAZOR APP.</p>\n<pre><code>&lt;label for=&quot;browseData&quot;&gt;&lt;b&gt;Browse File&lt;/b&gt;&lt;/label&gt;\n&lt;p&gt;&lt;InputFile id=&quot;browseData&quot; OnChange=&quot;@OnInputFileChange&quot; /&gt;&lt;/p&gt;\n\nprivate async Task OnInputFileChange(InputFileChangeEventArgs e)\n{\n    var maxAllowedFiles = 1;\n\n    var inputFile = e.GetMultipleFiles(maxAllowedFiles).First();\n\n    var stream = inputFile.OpenReadStream();\n\n    await StorageService.UploadFileToStorage(stream, &quot;sftp-server&quot;, inputFile.Name);\n}\n</code></pre>\n<p><strong>Storage Service</strong></p>\n<pre><code>public class AzureStorageService\n\n{\n    private readonly IAzureStorageKeyService _azureStorageKeyService;\n\n    public AzureStorageService(IAzureStorageKeyService azureStorageKeyService)\n    {\n        _azureStorageKeyService = azureStorageKeyService;\n    }\n\n    public async Task&lt;Uri&gt; UploadFileToStorage(Stream stream, string container, string fileName)\n    {\n        try\n        {\n            const string REPLACE_THIS_ACCOUNT = &quot;test&quot;;\n\n            var blobUri = new Uri(&quot;https://&quot;\n                                  + REPLACE_THIS_ACCOUNT +\n                                  &quot;.blob.core.windows.net/&quot; +\n                                  container + &quot;/&quot; + fileName);\n            // Create the blob client.\n\n            AzureSasCredential azureSasCredential = new AzureSasCredential(\n                &quot;?sv=2019-12-12&amp;ss=bfqt&amp;srt=sco&amp;sp=rwdlacupx&amp;se=2021-01-20T04:21:45Z&amp;st=2021-01-19T20:21:45Z&amp;spr=https&amp;sig=OIkLePYDcF2AChtYUKs0VxUajs4KmwSyOXpQkFLvN2M%3D&quot;);\n\n            var blobClient = new BlobClient(blobUri, azureSasCredential);\n\n            // Upload the file\n            var response = await blobClient.UploadAsync(stream, true);\n\n            return blobUri;\n        }\n        catch (Exception ex)\n        {\n            Console.WriteLine(ex);\n            return null;\n        }\n\n    }\n}\n</code></pre>\n<p>Like I was mentioning this will work via a console app but not a blazor app due to CORS..is this a security feature that just cannot be bypassed and just has to be done via the server side through a function -&gt; blob?</p>\n"
+}

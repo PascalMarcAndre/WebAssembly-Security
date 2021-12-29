@@ -1,0 +1,30 @@
+{
+    "tags": [
+        "javascript",
+        "rust",
+        "streaming",
+        "fetch",
+        "webassembly"
+    ],
+    "owner": {
+        "reputation": 1569,
+        "user_id": 7268968,
+        "user_type": "registered",
+        "accept_rate": 27,
+        "profile_image": "https://graph.facebook.com/10107185465206940/picture?type=large",
+        "display_name": "Peter Weyand",
+        "link": "https://stackoverflow.com/users/7268968/peter-weyand"
+    },
+    "is_answered": true,
+    "view_count": 9789,
+    "answer_count": 3,
+    "score": 10,
+    "last_activity_date": 1563653171,
+    "creation_date": 1536446113,
+    "last_edit_date": 1536456458,
+    "question_id": 52239924,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/52239924/webassembly-instantiatestreaming-wrong-mime-type",
+    "title": "WebAssembly InstantiateStreaming Wrong MIME type",
+    "body": "<p>I am attempting to get this tutorial (here: <a href=\"https://www.hellorust.com/demos/add/index.html\" rel=\"noreferrer\">https://www.hellorust.com/demos/add/index.html</a>) to work, and it seems that whatever I do, I cannot get the WebAssembly MDN reserved function to properly work. </p>\n\n<p>So, I followed the instructions on the link above and got an <code>add.wasm</code> file. As far as I can tell this should be fairly simple and should work. After a little digging I found that the newest WebAssembly module is to instantiate streaming - the documentation for which can be found here: (<a href=\"https://developer.mozilla.org/en-US/docs/WebAssembly/Using_the_JavaScript_API\" rel=\"noreferrer\">https://developer.mozilla.org/en-US/docs/WebAssembly/Using_the_JavaScript_API</a>). </p>\n\n<p>The MDN example says to do the following: </p>\n\n<pre><code>var importObject = {\n  imports: { imported_func: arg =&gt; console.log(arg) }\n};\n</code></pre>\n\n<p>then </p>\n\n<pre><code>WebAssembly.instantiateStreaming(fetch('simple.wasm'), importObject)\n.then(obj =&gt; obj.instance.exports.exported_func());\n</code></pre>\n\n<p>According to MDN the importObject is to unwrap the nested argument. Weird, but OK. </p>\n\n<p>To make this as simple as possible I put the <code>add.wasm</code> file and the <code>js</code> file that would import it in the same directory and then did then following (<strong>NOTE</strong>: I am using Vue.js, but for anyone familiar with SPA like libraries this should be similar):</p>\n\n<pre><code>window.WebAssembly.instantiateStreaming(fetch('./add.wasm', {\n  headers: {\n    \"Content-Type\": \"application/wasm\",\n  },\n}), importObject)\n.then(obj =&gt; {\n  console.log('inside return obj from WebAssembly initiateStreaming')\n  obj =&gt; obj.instance.exports.exported_func() \n})\n.catch(error=&gt;{\n  console.log('there was some error; ', error)\n});\n</code></pre>\n\n<p>The error I get back is: </p>\n\n<pre><code>there was some error;  TypeError: \"Response has unsupported MIME type\"\n</code></pre>\n\n<p>I've tried not adding the header to the fetch request, using <code>fetch(add.wasm)</code>, dropping the <code>window.</code>, dropping the <code>importObject</code> entirely and simple logging <code>obj</code> to console. Nothing appears to work. </p>\n\n<p>It may be that I have to add the <code>application/wasm</code> field to webpack somehow if it is not widely supported, but I'm not sure and I haven't seen any examples online. </p>\n\n<p>Does anyone know how to get this to work?</p>\n\n<p>EDIT: </p>\n\n<p>Someone suggested that since this was a fetch request it had to be making the request from a backend server. This made sense to me, so I did the following: </p>\n\n<pre><code>    WebAssembly.instantiateStreaming(fetch('http://localhost:8000/files/add.wasm'), importObject)\n    .then(obj =&gt; {\n      console.log('inside return obj from WebAssembly initiateStreaming')\n      obj =&gt; obj.instance.exports.exported_func()\n    })\n    .catch(error=&gt;{\n      console.log('there was some error; ', error)\n    });\n</code></pre>\n\n<p>Where <code>http://localhost:8000/files/{someFile}</code> is a backend route that serves my files (which I made sure to put <code>add.wasm</code> in of course). Unfortunately, I get the same error (i.e. <code>unrecognized MIME type</code>) and I'm not sure why.</p>\n"
+}

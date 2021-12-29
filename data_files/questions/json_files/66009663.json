@@ -1,0 +1,29 @@
+{
+    "tags": [
+        "c#",
+        "authentication",
+        "blazor",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 191,
+        "user_id": 11305308,
+        "user_type": "registered",
+        "profile_image": "https://lh5.googleusercontent.com/-6ngjOvC-MJg/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3re_89HQkpZPWEmysqG9Xfpghhs9Dg/mo/photo.jpg?sz=128",
+        "display_name": "d00lar",
+        "link": "https://stackoverflow.com/users/11305308/d00lar"
+    },
+    "is_answered": true,
+    "view_count": 69,
+    "accepted_answer_id": 66222248,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1613490182,
+    "creation_date": 1612268624,
+    "last_edit_date": 1612273748,
+    "question_id": 66009663,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/66009663/blazor-webassembly-windows-authentication-netcore-hosted",
+    "title": "blazor webassembly windows authentication + .netcore hosted",
+    "body": "<p>Im still learning blazor and would like to make some solution in it,\nbut requirment would be to use windows something like windows auth (user login is enough)\ni known that windows auth is not implemented/availible by now - will be in future?</p>\n<p>So scenario would be:</p>\n<p>-run wasm in browser</p>\n<p>-implement</p>\n<pre><code>  public class MyAuthStateProvider: AuthenticationStateProvider\n</code></pre>\n<p>in</p>\n<pre><code>  Task&lt;AuthenticationState&gt; GetAuthenticationStateAsync()\n</code></pre>\n<p>-get windows username there(how!?)</p>\n<p>-make some post to api with this username, get from api all userinfo from existing DB + token for next api calls</p>\n<p>-return it to wasm and go.</p>\n<p>Can someone please point me direction ? i searched alot but most of solutions was due to serwer-side blazor - i need it wasm.\nI found also alot with implementing new custom authorization on server-side , custom registration etc - i already have database with my users..</p>\n<p>or should it be made totally different way?</p>\n<p>thanks and regards</p>\n"
+}

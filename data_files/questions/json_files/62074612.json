@@ -1,0 +1,28 @@
+{
+    "tags": [
+        "authentication",
+        "signalr",
+        "blazor",
+        "webassembly"
+    ],
+    "owner": {
+        "reputation": 51,
+        "user_id": 3957991,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/beb3289a314d65e7d3cf63012769c4c6?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Andrew",
+        "link": "https://stackoverflow.com/users/3957991/andrew"
+    },
+    "is_answered": true,
+    "view_count": 984,
+    "answer_count": 2,
+    "score": 4,
+    "last_activity_date": 1604585193,
+    "creation_date": 1590700378,
+    "last_edit_date": 1590789419,
+    "question_id": 62074612,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/62074612/blazor-webassembly-signalr-authentication",
+    "title": "Blazor WebAssembly SignalR Authentication",
+    "body": "<p>I would love to see an example on how to add authentication to a SignalR hub connection using the WebAssembly flavor of Blazor. My dotnet version is 3.1.300.</p>\n\n<p>I can follow these steps to get an open, unauthenticated SignalR connection working: <a href=\"https://docs.microsoft.com/en-us/aspnet/core/tutorials/signalr-blazor-webassembly?view=aspnetcore-3.1&amp;tabs=visual-studio\" rel=\"nofollow noreferrer\">https://docs.microsoft.com/en-us/aspnet/core/tutorials/signalr-blazor-webassembly?view=aspnetcore-3.1&amp;tabs=visual-studio</a></p>\n\n<p>All the tutorials I find seem older or are for a server-hosted type, and don't use the built-in template.</p>\n\n<p>I have added authentication to the rest of the back-end, using the appropriate template and these instructions, including the database:\n<a href=\"https://docs.microsoft.com/en-us/aspnet/core/security/blazor/?view=aspnetcore-3.1\" rel=\"nofollow noreferrer\">https://docs.microsoft.com/en-us/aspnet/core/security/blazor/?view=aspnetcore-3.1</a></p>\n\n<p>But every time I add [Authenticate] to the chat hub, I get an error returned. Is there any way, extending the first tutorial, that we can authenticate the hub that is created there? It would be great to hitch on to the built-in ASP.NET system, but I am fine just passing a token in as an additional parameter and doing it myself, if that is best. In that case I would need to learn how to get the token out of the Blazor WebAssembly, and then look it up somewhere on the server. This seems wrong, but it would basically fill my needs, as an alternative.</p>\n\n<p>There are all sorts of half-solutions out there, or designed for an older version, but nothing to build off the stock tutorial that MS presents.</p>\n\n<p>Update:\nFollowing the hints in this news release <a href=\"https://devblogs.microsoft.com/aspnet/blazor-webassembly-3-2-0-preview-2-release-now-available/\" rel=\"nofollow noreferrer\">https://devblogs.microsoft.com/aspnet/blazor-webassembly-3-2-0-preview-2-release-now-available/</a>, I now can get a token from inside the razor page, and inject it into the header. I guess this is good?? But then how do I get it and make use of it on the server?</p>\n\n<p>Here is a snippet of the razor code:</p>\n\n<pre><code>protected override async Task OnInitializedAsync()\n{\n    var httpClient = new HttpClient();\n    httpClient.BaseAddress = new Uri(UriHelper.BaseUri);\n\n    var tokenResult = await AuthenticationService.RequestAccessToken();\n\n    if (tokenResult.TryGetToken(out var token))\n    {\n        httpClient.DefaultRequestHeaders.Add(\"Authorization\", $\"Bearer {token.Value}\");\n\n        hubConnection = new HubConnectionBuilder()\n            .WithUrl(UriHelper.ToAbsoluteUri(\"/chatHub\"), options =&gt;\n            {\n                options.AccessTokenProvider = () =&gt; Task.FromResult(token.Value);\n            })\n            .Build();\n    }\n}\n</code></pre>\n\n<p>Update 2:\nI tried the tip in here: <a href=\"https://github.com/dotnet/aspnetcore/issues/18697\" rel=\"nofollow noreferrer\">https://github.com/dotnet/aspnetcore/issues/18697</a></p>\n\n<p>And changed my code to:</p>\n\n<pre><code>        hubConnection = new HubConnectionBuilder()\n            .WithUrl(NavigationManager.ToAbsoluteUri(\"/chatHub?access_token=\" + token.Value))\n            .Build();\n</code></pre>\n\n<p>But no joy.</p>\n"
+}

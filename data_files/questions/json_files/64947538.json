@@ -1,0 +1,26 @@
+{
+    "tags": [
+        "identityserver4",
+        "asp.net-core-identity",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 63,
+        "user_id": 11944161,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/0d0027adcefce9f959f4e851326a9d65?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Crztean",
+        "link": "https://stackoverflow.com/users/11944161/crztean"
+    },
+    "is_answered": true,
+    "view_count": 361,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1606947018,
+    "creation_date": 1605989144,
+    "question_id": 64947538,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/64947538/blazor-webassembly-with-identityserver-4-customize-identity",
+    "title": "Blazor WebAssembly with IdentityServer 4 Customize Identity",
+    "body": "<p>I created a Blazor WebAssembly Hosted App with Identity Server4 and ASP.Net Core Identity using this Template:</p>\n<pre><code>dotnet new blazorwasm -au Individual -ho -o {APP NAME}\n</code></pre>\n<p>I followed and read this documentation:\n<a href=\"https://docs.microsoft.com/en-us/aspnet/core/blazor/security/webassembly/hosted-with-identity-server?view=aspnetcore-5.0&amp;tabs=visual-studio-code\" rel=\"nofollow noreferrer\">https://docs.microsoft.com/en-us/aspnet/core/blazor/security/webassembly/hosted-with-identity-server?view=aspnetcore-5.0&amp;tabs=visual-studio-code</a></p>\n<p>Can somebody explain how to customize Identity Login and Register Pages and Logic?\nIn MVC you scaffold the Identity Pages you want and they replace those from the dll.\nIf I try to add some Pages on the Server project, how do I have to serve them? Do I need to create\na Pages/Shared/_Layout like in a normal Razor Pages App or can I serve them with BlazorServer SignalR ?\nThe Layout from the Client App should be the same for Identity. Or is this something you have to configure with IdentityServer4 ? Maybe somebody can explain how exactly IdentityServer4 and ASP.NET Core Identity are coupled in this template scenario. I also read some blogs about using only Core Identity for securing BlazorWasm Hosted, can you tell me the difference?</p>\n"
+}

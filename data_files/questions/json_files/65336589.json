@@ -1,0 +1,28 @@
+{
+    "tags": [
+        "identityserver4",
+        "blazor",
+        "blazor-webassembly",
+        "asp.net-core-5.0"
+    ],
+    "owner": {
+        "reputation": 11,
+        "user_id": 14842076,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/fc06ae93da30a23da61df31d01654057?s=128&d=identicon&r=PG&f=1",
+        "display_name": "rayder2007",
+        "link": "https://stackoverflow.com/users/14842076/rayder2007"
+    },
+    "is_answered": false,
+    "view_count": 89,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1608367809,
+    "creation_date": 1608191632,
+    "last_edit_date": 1608367809,
+    "question_id": 65336589,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/65336589/401-how-to-configure-the-simultaneous-operation-of-the-site-by-domain-name-and-i",
+    "title": "401 How to configure the simultaneous operation of the site by domain name and IP address in blazor wasm + identityserver?",
+    "body": "<p>We launch the site, go to the ip address, log in and everything works. If you then go to this site using the domain name, the authorization works, but an error occurs when sending get / post requests to the server: &quot;<strong>Failed to load resource: the server responded with a status of 401 (unauthorized)</strong>&quot;</p>\n<p>Please note that authorization in both cases is successful.  The error occurs when the HttpClient sends a request.</p>\n<p>The same problem occurs if the server has several network interfaces with different networks (for example, local and work). The site will work correctly only for one network.</p>\n<p>The project was created based on a standard template: Blazor WebAssembly App (Core hosted) and Identity server.\n<img src=\"https://i.stack.imgur.com/QkjMD.jpg\" alt=\"enter image description here\" /></p>\n<p>Configuring Kestrel in a file appsettings.json</p>\n<pre><code>{\n  ...\n  &quot;IdentityServer&quot;: {\n    &quot;Clients&quot;: {\n      &quot;BlazorAppCore5.Client&quot;: {\n        &quot;Profile&quot;: &quot;IdentityServerSPA&quot;\n      }\n    },\n    &quot;Key&quot;: {\n      &quot;Type&quot;: &quot;Development&quot;\n    }\n  },\n  &quot;Kestrel&quot;: {\n    &quot;Endpoints&quot;: {\n      &quot;Http&quot;: {\n        &quot;Url&quot;: &quot;https://*:5001&quot;\n      }\n    }\n  },\n  &quot;AllowedHosts&quot;: &quot;*&quot;\n}\n</code></pre>\n<p>We publish the project and run.</p>\n<p><img src=\"https://i.stack.imgur.com/3T7bo.jpg\" alt=\"enter image description here\" /></p>\n<p>We go to the site by computer name and log in: &quot;https://desktop-9thm5hg:5001/&quot;</p>\n<p><img src=\"https://i.stack.imgur.com/5aVZi.jpg\" alt=\"enter image description here\" /></p>\n<p>Works!\nAnd now we go to 127.0.0.1 or localhost: &quot;https://127.0.0.1:5001/&quot;</p>\n<p><img src=\"https://i.stack.imgur.com/DSmzh.jpg\" alt=\"enter image description here\" /></p>\n<p>Authorization works, pages &quot;Home&quot; and &quot;Counter&quot; are working. They don't use the HttpClient.</p>\n<p>Now go to page fetchdata.</p>\n<p><img src=\"https://i.stack.imgur.com/xmDRT.jpg\" alt=\"enter image description here\" /></p>\n<p>Attention! If you restart the site and go to &quot;https://127.0.0.1:5001/&quot; for the first time, it will not work on &quot;https://desktop-9thm5hg:5001/&quot;.</p>\n<p>Checked on ASP.NET Core version 3.1, 5.0</p>\n"
+}

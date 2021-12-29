@@ -1,0 +1,29 @@
+{
+    "tags": [
+        "authorization",
+        "blazor",
+        "policy",
+        "webassembly"
+    ],
+    "owner": {
+        "reputation": 13,
+        "user_id": 13681455,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/453183c305fffd9afd8f28701f9adba1?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Mohammed Rubeesh ",
+        "link": "https://stackoverflow.com/users/13681455/mohammed-rubeesh"
+    },
+    "is_answered": true,
+    "view_count": 198,
+    "accepted_answer_id": 62209206,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1591347164,
+    "creation_date": 1591288589,
+    "last_edit_date": 1591347164,
+    "question_id": 62199777,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/62199777/policy-base-authoriraztion-in-blazor-wasm",
+    "title": "Policy base authoriraztion in blazor wasm",
+    "body": "<p>I am trying to implement policy based authorization with roles from database.</p>\n\n<p><strong>Server side:</strong></p>\n\n<pre class=\"lang-cs prettyprint-override\"><code>services.AddAuthorizationCore(config =&gt;\n{\n    var context = services\n        .BuildServiceProvider()\n        .GetService&lt;DbContext&gt;();\n\n    var policies = context.ApplicationPolicies\n        .Include(x =&gt; x.PolicyRoles)\n        .ThenInclude(x =&gt; x.Role)\n        .ToList();\n\n    foreach (var policy in policies)\n    {\n        config.AddPolicy(policy.Name, policyBuilder =&gt;\n        {\n            policyBuilder.RequireRole(policy.PolicyRoles.Select(x =&gt; x.Role.Name));\n        });\n    }\n});\n</code></pre>\n\n<p><strong>Client Side:</strong></p>\n\n<pre class=\"lang-cs prettyprint-override\"><code>public class Program\n{\n    public static async Task Main(string[] args)\n    {\n        var builder = WebAssemblyHostBuilder.CreateDefault(args);\n        builder.RootComponents.Add&lt;App&gt;(\"app\");\n\n        builder.Services.AddHttpClient(\"MyApp.ServerAPI\",\n            client =&gt; client.BaseAddress = new\n            Uri(builder.HostEnvironment.BaseAddress)) \n            .AddHttpMessageHandler&lt;BaseAddressAuthorizationMessageHandler&gt;();\n\n        builder.Services.AddTransient(sp =&gt; \n            sp.GetRequiredService&lt;IHttpClientFactory&gt;()\n            .CreateClient(\"MyApp.ServerAPI\"));\n\n        builder.Services.AddScoped&lt;Radzen.NotificationService&gt;();\n\n        builder.Services.AddApiAuthorization()\n            .AddAccountClaimsPrincipalFactory&lt;ExtendedAccountClaimsFactory&gt;();\n\n\n        builder.Services.AddAuthorizationCore(config =&gt;\n        {\n            var httpClient = builder\n                .Services.BuildServiceProvider()\n                .GetService&lt;HttpClient&gt;();\n\n            var policies =  await httpClient\n                .GetFromJsonAsync&lt;List&lt;ApplicationPolicies&gt;&gt;  \n                (\"ApplicationPolicies\");\n\n            foreach (var policy in policies)\n            {\n                config.AddPolicy(policy.Name, policyBuilder =&gt;\n                {\n                    policyBuilder.RequireRole(\n                        policy.PolicyRoles.Select(x =&gt; x.Role.Name)\n                    );\n                });\n            }\n        });\n\n        await builder.Build().RunAsync();\n    }\n}\n</code></pre>\n\n<p>Here the server side code works fine, but the client side throws <strong>AccessTokenNotAvailableException</strong>:</p>\n\n<p>Am I missing something. </p>\n"
+}

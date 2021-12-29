@@ -1,0 +1,29 @@
+{
+    "tags": [
+        "sandbox",
+        "webassembly",
+        "blazor-webassembly",
+        "isolation",
+        "wasmtime"
+    ],
+    "owner": {
+        "reputation": 33,
+        "user_id": 14940254,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/9a0f91b8914d997e99a0287e968ff0fa?s=128&d=identicon&r=PG&f=1",
+        "display_name": "capstonene",
+        "link": "https://stackoverflow.com/users/14940254/capstonene"
+    },
+    "is_answered": false,
+    "view_count": 12,
+    "answer_count": 0,
+    "score": 0,
+    "last_activity_date": 1617604678,
+    "creation_date": 1617603958,
+    "last_edit_date": 1617604678,
+    "question_id": 66949040,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/66949040/host-can-choose-which-system-calls-pass-to-each-webassembly-module",
+    "title": "host can choose which system calls pass to each webassembly module",
+    "body": "<p>part of the talk of Lin Clark in <a href=\"https://hacks.mozilla.org/2019/03/standardizing-wasi-a-webassembly-system-interface/\" rel=\"nofollow noreferrer\">https://hacks.mozilla.org/2019/03/standardizing-wasi-a-webassembly-system-interface/</a>:</p>\n<blockquote>\n<p>It also gives us sandboxing because the host can choose which wasi-core functions to pass in\u200a\u2014\u200aso, which system calls to allow\u200a\u2014\u200aon a program-by-program basis. This preserves security.</p>\n</blockquote>\n<p>she says host can choose which system calls pass to each <code>wasm</code> module. for example <code>read()</code> system call passes to <code>module A</code> and <code>write()</code> system call to <code>module B</code>.</p>\n<p>is it implemented in <code>wasmtime</code> or <code>lucet</code> or other runtimes? or is it just a dream without implementation in real world?</p>\n"
+}

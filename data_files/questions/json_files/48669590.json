@@ -1,0 +1,28 @@
+{
+    "tags": [
+        "javascript",
+        "typescript",
+        "ecmascript-6",
+        "parceljs"
+    ],
+    "owner": {
+        "reputation": 13555,
+        "user_id": 547365,
+        "user_type": "registered",
+        "accept_rate": 79,
+        "profile_image": "https://www.gravatar.com/avatar/ddefbca930fdd39846b698bab7ac3146?s=128&d=identicon&r=PG",
+        "display_name": "w.brian",
+        "link": "https://stackoverflow.com/users/547365/w-brian"
+    },
+    "is_answered": false,
+    "view_count": 116,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1518035688,
+    "creation_date": 1518023541,
+    "question_id": 48669590,
+    "content_license": "CC BY-SA 3.0",
+    "link": "https://stackoverflow.com/questions/48669590/how-can-i-import-a-typescript-generated-module-by-name-from-within-javascript",
+    "title": "How can I import a typescript-generated module by name from within Javascript?",
+    "body": "<p>I want to import a function from a typescript-generated module into javascript's global namespace. Here is my typescript module <code>foo.ts</code>:</p>\n\n<pre><code>export const fooFn = (): string =&gt; {\n  return \"hello\";\n};\n</code></pre>\n\n<p>Here is my HTML file:</p>\n\n<pre><code>&lt;html&gt;\n&lt;body&gt;\n    &lt;script src=\"foo.ts\"&gt;&lt;/script&gt;\n    &lt;script type=\"application/javascript\"&gt;\n        window.fooFn = require(\"./foo.ts\").fooFn;\n        alert(fooFn());\n    &lt;/script&gt;\n&lt;/body&gt;\n&lt;/html&gt;\n</code></pre>\n\n<p>This is giving me the error <code>Cannot find module './foo.ts'</code>. After messing around a bit, I've found I can import it using a parcel-generated index (eg, <code>window.fooFn = require(7).fooFn</code>) but obviously this is not a workable solution, and the index changes every time I restart the parcel dev server.</p>\n\n<p>So, my question is, how can I import this module by name?</p>\n\n<p>Here is my <code>tsconfig.json</code> for reference:</p>\n\n<pre><code>{\n  \"compilerOptions\": {\n    \"strict\": true,\n    \"target\": \"es2015\",\n    \"jsx\": \"react\",\n  }\n}\n</code></pre>\n\n<p>If you're wondering why I want to expose this function on the global namespace, it's so that I can easily access it from within a WebAssembly application.</p>\n"
+}

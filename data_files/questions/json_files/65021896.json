@@ -1,0 +1,28 @@
+{
+    "tags": [
+        "asp.net-core",
+        "blazor",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 509,
+        "user_id": 3419211,
+        "user_type": "registered",
+        "accept_rate": 64,
+        "profile_image": "https://graph.facebook.com/100000859618233/picture?type=large",
+        "display_name": "user3419211",
+        "link": "https://stackoverflow.com/users/3419211/user3419211"
+    },
+    "is_answered": false,
+    "view_count": 37,
+    "answer_count": 0,
+    "score": 0,
+    "last_activity_date": 1606393152,
+    "creation_date": 1606392931,
+    "last_edit_date": 1606393152,
+    "question_id": 65021896,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/65021896/how-can-i-make-my-asp-net-core-website-with-blazor-webassembly-load-faster",
+    "title": "How can I make my ASP.NET Core website with Blazor webassembly load faster?",
+    "body": "<p>I created a website <a href=\"https://bluecodes.azurewebsites.net/\" rel=\"nofollow noreferrer\">enter link description here</a> in ASP.NET Core with Blazor webassembly, but loading and authentication is taking about 7 seconds to finish.</p>\n<p>Can anyone tell me how I can make the website faster?</p>\n"
+}

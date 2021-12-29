@@ -1,0 +1,27 @@
+{
+    "tags": [
+        "c#",
+        "asp.net-web-api",
+        "blazor"
+    ],
+    "owner": {
+        "reputation": 1,
+        "user_id": 12311336,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/781547aabfe125f3d5b9cdc025de3f90?s=128&d=identicon&r=PG&f=1",
+        "display_name": "smarteez",
+        "link": "https://stackoverflow.com/users/12311336/smarteez"
+    },
+    "is_answered": false,
+    "view_count": 113,
+    "answer_count": 0,
+    "score": 0,
+    "last_activity_date": 1598351648,
+    "creation_date": 1598340092,
+    "last_edit_date": 1598351648,
+    "question_id": 63573877,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/63573877/blazor-webassembly-calling-api-windows-auth",
+    "title": "blazor webassembly calling Api windows Auth",
+    "body": "<p>I have an API which has windows auth on all endpoints. I want to call that endpoint in my blazor webassembly (client side) application. How do I do this passing windows auth?</p>\n<p>If I comment the  [Authorize] in the api controller my code works. What do I need to add to make it work with windows auth?</p>\n<pre><code>public async Task&lt;List&lt;Menu&gt;&gt; GetAllMenu()\n{\n\n        var response = await _httpClient.GetAsync(&quot;https://localhost:44372/api/user/get&quot;);\n        var content = await response.Content.ReadAsStringAsync();\n\n        var obj = JsonSerializer.Deserialize&lt;User&gt;(content, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });\n\n        return obj .menus;\n}\n</code></pre>\n"
+}

@@ -1,0 +1,28 @@
+{
+    "tags": [
+        "rust",
+        "closures",
+        "webassembly",
+        "wasm-bindgen"
+    ],
+    "owner": {
+        "reputation": 2003,
+        "user_id": 457586,
+        "user_type": "registered",
+        "accept_rate": 78,
+        "profile_image": "https://www.gravatar.com/avatar/8fced1b618d6b8a714c598d3f8f7d9fe?s=128&d=identicon&r=PG",
+        "display_name": "dynamitereed",
+        "link": "https://stackoverflow.com/users/457586/dynamitereed"
+    },
+    "is_answered": true,
+    "view_count": 473,
+    "answer_count": 1,
+    "score": 8,
+    "last_activity_date": 1579609637,
+    "creation_date": 1579590740,
+    "question_id": 59835844,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/59835844/whats-a-better-way-to-deal-with-closures-in-webassembly-with-rust-instead-of-us",
+    "title": "What&#39;s a better way to deal with closures in WebAssembly with Rust instead of using forget and leaking memory?",
+    "body": "<p>When providing callbacks to JavaScript using <a href=\"https://rustwasm.github.io/wasm-bindgen/api/wasm_bindgen/closure/struct.Closure.html\" rel=\"noreferrer\">Closures</a>, what's a better way to deal with avoiding freeing them?  The <a href=\"https://rustwasm.github.io/docs/wasm-bindgen/examples/closures.html\" rel=\"noreferrer\">wasm-bindgen guide</a> suggests using <code>.forget</code>, but admits that that is essentially leaking memory.</p>\n\n<blockquote>\n  <p>Normally we'd store the handle to later get dropped at an appropriate time but for now we want it to be a global handler so we use the <code>forget</code> method to drop it without invalidating the closure. Note that this is leaking memory in Rust, so this should be done judiciously!</p>\n</blockquote>\n\n<p>It hints at storing the closure until a time when it's appropriate to be dropped.  In <a href=\"https://stackoverflow.com/a/53219594/457586\">alexcrichton's answer</a> to <a href=\"https://stackoverflow.com/q/53214434/457586\">a previous question</a>, he mentions...</p>\n\n<blockquote>\n  <p>[...] if it's [...] only invoked once, then you can use <code>Rc</code>/<code>RefCell</code> to drop the <code>Closure</code> inside the the closure itself (using some interior mutability shenanigans)</p>\n</blockquote>\n\n<p>But he doesn't provide an example of this method.</p>\n\n<p>The <a href=\"https://rustwasm.github.io/wasm-bindgen/api/wasm_bindgen/closure/struct.Closure.html\" rel=\"noreferrer\">Closure documentation</a> also gives an example of returning the reference to the closure to the JavaScript context to let it handle when to free the reference.</p>\n\n<blockquote>\n  <p>If we were to drop <code>cb</code> here it would cause an exception to be raised whenever the interval elapses. Instead we <em>return</em> our handle back to JS so JS can decide when to cancel the interval and deallocate the closure.</p>\n</blockquote>\n\n<p>I'd also imagine there are ways to use features like lifetimes or the <code>#[wasm_bindgen]</code> macro on a public function to avoid this issue as well, but I'm having trouble figuring out how to do it that way.</p>\n\n<p>My question is, what are the alternatives to using <code>.forget</code> with closures that are being passed back to JavaScript from Rust, and can I please see some simple examples of each option in use?</p>\n"
+}

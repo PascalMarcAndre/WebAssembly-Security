@@ -1,0 +1,27 @@
+{
+    "tags": [
+        "c++",
+        "webassembly",
+        "emscripten"
+    ],
+    "owner": {
+        "reputation": 383,
+        "user_id": 5799347,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/760081ded945a140e7897370389a2974?s=128&d=identicon&r=PG",
+        "display_name": "TonyB",
+        "link": "https://stackoverflow.com/users/5799347/tonyb"
+    },
+    "is_answered": true,
+    "view_count": 172,
+    "accepted_answer_id": 61696510,
+    "answer_count": 1,
+    "score": 2,
+    "last_activity_date": 1589026211,
+    "creation_date": 1589023997,
+    "question_id": 61696080,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/61696080/access-current-url-in-wasm-c-c",
+    "title": "Access current URL in WASM (c/c++)",
+    "body": "<p>I need to secure my C++ WebAssembly script for stealing and using on other domains than mine.</p>\n\n<p>Is there some way how to access URL of current window in directly WASM script, where I can check it?</p>\n\n<p>I could send domain as parameter from JS to WASM, but it could be easy overwritten there.</p>\n"
+}

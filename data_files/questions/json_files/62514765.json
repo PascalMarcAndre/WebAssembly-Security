@@ -1,0 +1,29 @@
+{
+    "tags": [
+        "c#",
+        "asp.net-core",
+        "visual-studio-2019",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 1505,
+        "user_id": 1793353,
+        "user_type": "registered",
+        "accept_rate": 51,
+        "profile_image": "https://www.gravatar.com/avatar/0fd322aa5dddd61040b8be1fdaa7d8d3?s=128&d=identicon&r=PG",
+        "display_name": "amplifier",
+        "link": "https://stackoverflow.com/users/1793353/amplifier"
+    },
+    "is_answered": true,
+    "view_count": 184,
+    "accepted_answer_id": 62522152,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1592854436,
+    "creation_date": 1592829901,
+    "question_id": 62514765,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/62514765/wrong-redirect-when-login-in-blazor-application",
+    "title": "Wrong redirect when login in blazor application",
+    "body": "<p>I use ASP.NET Core 3.1 Blazor webassembly application (the default one created by Visual Studio 2019).</p>\n<p>I hooked up ASP.NET Identity for user management, added scaffolded Identity item (login, registration etc)</p>\n<p>When I click <strong>Register</strong>, the application correctly redirects to</p>\n<pre><code>https://localhost:44349/Identity/Account/Register\n</code></pre>\n<p>but if I click <strong>Login</strong>, the application redirects to</p>\n<pre><code>https://localhost:44349/Account/Login\n</code></pre>\n<p>which is wrong (I expect <code>https://localhost:44349/Identity/Account/Login</code>)</p>\n<p>LoginDisplay.razor:</p>\n<pre><code>&lt;AuthorizeView&gt;\n    &lt;Authorized&gt;\n        &lt;a href=&quot;authentication/profile&quot;&gt;Hello, @context.User.Identity.Name!&lt;/a&gt;\n        &lt;button class=&quot;nav-link btn btn-link&quot; @onclick=&quot;BeginSignOut&quot;&gt;Log out&lt;/button&gt;\n    &lt;/Authorized&gt;\n    &lt;NotAuthorized&gt;\n        &lt;a href=&quot;authentication/register&quot;&gt;Register&lt;/a&gt;\n        &lt;a href=&quot;authentication/login&quot;&gt;Log in&lt;/a&gt;\n    &lt;/NotAuthorized&gt;\n&lt;/AuthorizeView&gt;\n</code></pre>\n<p>What did I miss?</p>\n"
+}

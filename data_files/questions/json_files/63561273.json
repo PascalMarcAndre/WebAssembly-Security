@@ -1,0 +1,29 @@
+{
+    "tags": [
+        "javascript",
+        "html",
+        "angular",
+        "content-security-policy",
+        "webassembly"
+    ],
+    "owner": {
+        "reputation": 89,
+        "user_id": 9604989,
+        "user_type": "registered",
+        "profile_image": "https://lh4.googleusercontent.com/-J2_EcWw-_e8/AAAAAAAAAAI/AAAAAAAAIdY/GAS8VUVFrAk/photo.jpg?sz=128",
+        "display_name": "tobias hassebrock",
+        "link": "https://stackoverflow.com/users/9604989/tobias-hassebrock"
+    },
+    "is_answered": false,
+    "view_count": 623,
+    "answer_count": 0,
+    "score": 0,
+    "last_activity_date": 1598273662,
+    "creation_date": 1598272894,
+    "last_edit_date": 1598273662,
+    "question_id": 63561273,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/63561273/refused-to-compile-or-instantiate-webassembly-module-because-wasm-eval-is-not",
+    "title": "Refused to compile or instantiate WebAssembly module because &#39;wasm-eval&#39; is not an allowed source of script",
+    "body": "<p>I try to include an Adobe xD Prototype in an Iframe in an Angular app and by doing so I receive this error:</p>\n<pre><code>[Report Only] \nRefused to compile or instantiate WebAssembly \nmodule because 'wasm-eval' is not an allowed source of script in the following Content Security Policy \ndirective: \n&quot;\nscript-src \nhttps://static.adobelogin.com/imslib/imslib.min.js \nhttps://prod.adobeccstatic.com/ \n\n'self' 'unsafe-eval'\n\nhttps://bam.nr-data.net/ \nhttps://api.demandbase.com/ \nhttps://js-agent.newrelic.com/ \nhttps://www.gstatic.com/recaptcha/ \nhttps://c.evidon.com/geo/country.js \nhttps://assets.adobedtm.com/ \nhttps://use.typekit.net/ \nhttps://www.google.com/recaptcha/api.js \nhttps://*.adobe.com \nhttps://*.cookielaw.org/ \nhttps://*.onetrust.com/ 'nonce-a5e5d635-4062-43de-b73a-04a9599d3d1a'\n&quot;.\n</code></pre>\n<p>I don't even have created a content policy so far. The error appears as soon as I include the src-link:</p>\n<p><div class=\"snippet\" data-lang=\"js\" data-hide=\"false\" data-console=\"true\" data-babel=\"false\">\r\n<div class=\"snippet-code\">\r\n<pre class=\"snippet-code-html lang-html prettyprint-override\"><code>&lt;iframe \n  src=\"https://xd.adobe.com/embed/9e081b15-b13d-4217-4cf9-8838d58e1ce9-e839/\"&gt;\n&lt;/iframe&gt;</code></pre>\r\n</div>\r\n</div>\r\n</p>\n<p>How could I solve it? Is it related to content security policies?</p>\n<p>You can also check out the error if you open this <a href=\"https://stackblitz.com/edit/iframe-issue-web-assembly?file=src/app/app.component.css\" rel=\"nofollow noreferrer\">Stackblitz app</a> and inspect the preview with the browser development tools.</p>\n"
+}

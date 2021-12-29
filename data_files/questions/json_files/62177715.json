@@ -1,0 +1,29 @@
+{
+    "tags": [
+        "c++",
+        "memory-leaks",
+        "webassembly"
+    ],
+    "owner": {
+        "reputation": 1792,
+        "user_id": 1816260,
+        "user_type": "registered",
+        "accept_rate": 46,
+        "profile_image": "https://i.stack.imgur.com/PiN0u.jpg?s=128&g=1",
+        "display_name": "Tito",
+        "link": "https://stackoverflow.com/users/1816260/tito"
+    },
+    "is_answered": true,
+    "view_count": 155,
+    "accepted_answer_id": 62222522,
+    "answer_count": 2,
+    "score": 1,
+    "last_activity_date": 1592292617,
+    "creation_date": 1591201284,
+    "last_edit_date": 1591337971,
+    "question_id": 62177715,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/62177715/webassemly-memory-management-and-pointers",
+    "title": "Webassemly memory management and pointers",
+    "body": "<p>I am using webassembly in order to do some calculation using a standard library. In webassembly we can pass only 32bit integers and 64 bits integers. That means that we can pass pointers to arrays as well. That's how we are able to return strings as an array of characters i.e. example</p>\n\n<pre><code>char* EMSCRIPTEN_KEEPALIVE returnStringCharacterArray()\n{\n  string stringToReturn = \"I am learning web assembly\";\n\n   char* char_array = new char [stringToReturn.length()+1];\n   strcpy (char_array, stringToReturn.c_str());\n\n   char* arrayPtr = &amp;char_array[0];\n   // delete [] char_array;\n   return arrayPtr;\n\n}\n</code></pre>\n\n<p>Notice the operator \"new\" in that function. And notice how \"  <code>delete [] char_array;</code>\" is never called there.  Does that mean that if i forget to call a delete here there is memory leak here? I notice a very strange thing here. If i do call delete on the array then this example is still working!!! That means i am able to consume the string (in bought scenarios i.e. with delete and without) in java script like that:</p>\n\n<pre><code> var ptr = Module._returnStringCharacterArray();\n var ptr = new Uint8Array(Module.HEAPU8.buffer, ptr, length);\n var theStringObj = new TextDecoder('utf8').decode(ptr);\n console.log(newstring)\n</code></pre>\n\n<p>What happens with \"char_array\" during the next function call if delete is call on it and if not? Why i am still able to consume the string even when \"  <code>delete [] char_array;</code>\" was called?  </p>\n\n<p>The reason i am asking this is because i have very similar situation with a vector i.e. but instead of pointer of to chars i have pointer to uint8_t i.e.:</p>\n\n<pre><code>const vector&lt;uint8_t&gt;&amp;  someString;\n</code></pre>\n\n<p>and when i try to send the pointer, poiting to the first value of the vector back to java script i.e. like this</p>\n\n<pre><code>const uint8_t* wasmVectorArrayRecostructedPtr = &amp;someString[0];\nuint8_t* nonConstBufferReconstructed = const_cast&lt;uint8_t*&gt;(wasmVectorArrayRecostructedPtr);\nchar* charArrayPtrCasted = (char*) nonConstBufferReconstructed;\n</code></pre>\n\n<p>then i get some random garbage instead of the string. At first I was thinking that this is because the vector is \"automatically\" cleaned since it is \"living\" on the stack, in contrary to the \"char_array\" which is \"living\" on the heap (free store).  But that does not seems to be the case. What i am missing here.  </p>\n\n<p>How can i manually free the memory that was dynamically allocated here with the new operator after it has been consumed by javaScript .</p>\n\n<pre><code>Module._free(ptr); \n</code></pre>\n\n<p>does not seems to be working. \nHow can i make sure that the \"char_array\" object is cleaned and it's memory is freed after being consumed by JavaScript?</p>\n"
+}

@@ -1,0 +1,29 @@
+{
+    "tags": [
+        "c#",
+        "asp.net-core",
+        "blazor",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 1701,
+        "user_id": 826402,
+        "user_type": "registered",
+        "accept_rate": 80,
+        "profile_image": "https://i.stack.imgur.com/ZPWp8.jpg?s=128&g=1",
+        "display_name": "nAviD",
+        "link": "https://stackoverflow.com/users/826402/navid"
+    },
+    "is_answered": true,
+    "view_count": 37,
+    "accepted_answer_id": 65982570,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1612116523,
+    "creation_date": 1612100803,
+    "question_id": 65979821,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/65979821/set-a-separate-layout-for-public-users",
+    "title": "Set a separate layout for public users",
+    "body": "<p>In Blazor WebAssembly how to have separate layouts for logged-in users and users that are not logged-in?</p>\n<pre><code>&lt;CascadingAuthenticationState&gt;\n    &lt;Router AppAssembly=&quot;@typeof(Program).Assembly&quot;&gt;\n        &lt;Found Context=&quot;routeData&quot;&gt;\n               &lt;AuthorizeRouteView RouteData=&quot;@routeData&quot; DefaultLayout=&quot;@typeof(MainLayout)&quot;&gt;\n                    &lt;Authorizing&gt;\n                        &lt;text&gt; Authotizing ...&lt;/text&gt;\n                    &lt;/Authorizing&gt;\n                &lt;/AuthorizeRouteView&gt;\n          \n           /*Something like this:*/\n             &lt;NotAuthorizeRouteView RouteData=&quot;@routeData&quot; DefaultLayout=&quot;@typeof(NotAuthorizedLayout)&quot;&gt;\n                    &lt;Authorizing&gt;\n                        &lt;text&gt; Authotizing ...&lt;/text&gt;\n                    &lt;/Authorizing&gt;\n                    &lt;NotAuthorized&gt;\n                        &lt;text&gt;&lt;/text&gt;\n                    &lt;/NotAuthorized&gt;\n                &lt;/NotAuthorizeRouteView&gt;\n        &lt;/Found&gt;\n        &lt;NotFound&gt;\n\n            &lt;LayoutView Layout=&quot;@typeof(MainLayout)&quot;&gt;\n                &lt;p&gt;Sorry, there's nothing at this address.&lt;/p&gt;\n            &lt;/LayoutView&gt;\n\n        &lt;/NotFound&gt;\n        \n    &lt;/Router&gt;\n</code></pre>\n\n<p>or in another words how to switch between different layouts in Blazor?</p>\n"
+}

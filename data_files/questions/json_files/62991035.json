@@ -1,0 +1,28 @@
+{
+    "tags": [
+        "dependency-injection",
+        "blazor",
+        "blazor-client-side"
+    ],
+    "owner": {
+        "reputation": 1245,
+        "user_id": 1283836,
+        "user_type": "registered",
+        "accept_rate": 79,
+        "profile_image": "https://www.gravatar.com/avatar/34645c57fa1b5f0791a006b86a9aa10c?s=128&d=identicon&r=PG",
+        "display_name": "wiki",
+        "link": "https://stackoverflow.com/users/1283836/wiki"
+    },
+    "is_answered": true,
+    "view_count": 292,
+    "accepted_answer_id": 62991156,
+    "answer_count": 2,
+    "score": 0,
+    "last_activity_date": 1595241648,
+    "creation_date": 1595232032,
+    "question_id": 62991035,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/62991035/blazor-webassembly-using-constructor-injection-for-injecting-blazored-localstor",
+    "title": "Blazor WebAssembly: using Constructor injection for injecting Blazored.LocalStorage into a service",
+    "body": "<p>The package <a href=\"https://github.com/Blazored/LocalStorage\" rel=\"nofollow noreferrer\">Blazored.LocalStorage</a> is:</p>\n<blockquote>\n<p>a library to provide access to local storage in Blazor applications</p>\n</blockquote>\n<p>Injecting the service into a component is easy:</p>\n<pre><code>@inject Blazored.LocalStorage.ILocalStorageService localStorage\n</code></pre>\n<p>and if we want to inject it into the code behind:</p>\n<pre><code>[Inject]\nprivate ILocalStorageService localStorage { get; set; }\n</code></pre>\n<p>But suppose I want to inject it into another service (let say for centralizing the control):</p>\n<pre><code>public class StorageManagement\n{\n    public StorageManagement(LocalStorageService localStorage)\n    {\n        //How to initialize it here?\n    }\n}\n</code></pre>\n<p>I do not know how to initialize an instance of the service in the constructor of <code>StorageManagement</code> and also how to set the parameters of constructor of <code>StorageManagement</code> in Program.cs :</p>\n<pre><code>builder.Services.AddSingleton(e =&gt; new StorageManagement(//?));\n</code></pre>\n"
+}

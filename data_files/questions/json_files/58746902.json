@@ -1,0 +1,25 @@
+{
+    "tags": [
+        "blazor"
+    ],
+    "owner": {
+        "reputation": 4735,
+        "user_id": 487291,
+        "user_type": "registered",
+        "accept_rate": 68,
+        "profile_image": "https://www.gravatar.com/avatar/bdcca15155be237d5faf68ddc18cb33b?s=128&d=identicon&r=PG",
+        "display_name": "mko",
+        "link": "https://stackoverflow.com/users/487291/mko"
+    },
+    "is_answered": true,
+    "view_count": 152,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1573125571,
+    "creation_date": 1573123089,
+    "question_id": 58746902,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/58746902/what-is-the-valid-procedure-to-secure-blazor-client-side-app",
+    "title": "What is the valid procedure to secure blazor client side app?",
+    "body": "<p>I am trying to secure my blazor client-side app and have followed instructions from here\n<a href=\"https://docs.microsoft.com/en-us/aspnet/core/security/blazor/?view=aspnetcore-3.0&amp;tabs=visual-studio\" rel=\"nofollow noreferrer\">https://docs.microsoft.com/en-us/aspnet/core/security/blazor/?view=aspnetcore-3.0&amp;tabs=visual-studio</a></p>\n\n<p>What confuses me is this section</p>\n\n<pre><code>public override Task&lt;AuthenticationState&gt; GetAuthenticationStateAsync()\n        {\n            var identity = new ClaimsIdentity(new[]\n            {\n                new Claim(ClaimTypes.Name, \"mrfibuli\"),\n            }, \"Fake authentication type\");\n\n            var user = new ClaimsPrincipal(identity);\n\n            return Task.FromResult(new AuthenticationState(user));\n        }\n</code></pre>\n\n<p>Since authorization is only used to determine which UI options to show and client-side checks can be modified or bypassed by a user a Blazor WebAssembly app can't enforce authorization access rules.</p>\n\n<p>So if I got it right, this is the valid procedure</p>\n\n<ul>\n<li>user sends credentials via page/form</li>\n<li>api returns a token</li>\n<li>token is stored locally</li>\n<li>reverse mechanism is implemented in GetAuthenticationStateAsync where a token is exchanged for user info</li>\n</ul>\n"
+}

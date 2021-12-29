@@ -1,0 +1,29 @@
+{
+    "tags": [
+        "c#",
+        "asp.net-core",
+        "blazor",
+        "blazor-client-side",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 2409,
+        "user_id": 10851213,
+        "user_type": "registered",
+        "profile_image": "https://i.stack.imgur.com/r7MgN.jpg?s=128&g=1",
+        "display_name": "fingers10",
+        "link": "https://stackoverflow.com/users/10851213/fingers10"
+    },
+    "is_answered": true,
+    "view_count": 149,
+    "accepted_answer_id": 65011795,
+    "answer_count": 1,
+    "score": 3,
+    "last_activity_date": 1606337132,
+    "creation_date": 1606333568,
+    "question_id": 65011727,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/65011727/calling-statehaschanged-every-second-is-optimal-in-blazor-web-assembly",
+    "title": "Calling StateHasChanged() every second is optimal in blazor web assembly?",
+    "body": "<p>I'm developing a <code>blazor webassembly</code> app. I have the requirement to show current <code>DateTime</code> in my app. Here is how I achieved my requirement with pure <code>C#</code>.</p>\n<pre><code>@using System.Threading\n\n&lt;p&gt;@CurrentDateTime&lt;/p&gt;\n\n@code {\n    protected override void OnAfterRender(bool firstRender)\n    {\n        if (firstRender)\n        {\n            new Timer(DateTimeCallback, null, TimeSpan.FromSeconds(1), TimeSpan.FromSeconds(1));\n        }\n    }\n\n    private void DateTimeCallback(object state)\n    {\n        CurrentDateTime = DateTimeOffset.UtcNow.ToString(&quot;dd MMM yyyy hh:mm:ss tt&quot;);\n        StateHasChanged();\n    }\n}\n</code></pre>\n<p>This gives the exact current time and gets updated every second. But I'm little bit worried on calling <code>StateHasChanged()</code> every second. Does it impact performance in long run? or I need to fallback to <code>javascript</code> to achieve this functionality? Please suggest your inputs.</p>\n"
+}

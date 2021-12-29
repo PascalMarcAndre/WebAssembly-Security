@@ -1,0 +1,30 @@
+{
+    "tags": [
+        "c#",
+        "asp.net-core",
+        "signalr",
+        "blazor"
+    ],
+    "owner": {
+        "reputation": 2579,
+        "user_id": 195965,
+        "user_type": "registered",
+        "accept_rate": 82,
+        "profile_image": "https://www.gravatar.com/avatar/aec177aa3bc73958600e3c37d266b3ee?s=128&d=identicon&r=PG",
+        "display_name": "Jonas Arcangel",
+        "link": "https://stackoverflow.com/users/195965/jonas-arcangel"
+    },
+    "is_answered": true,
+    "view_count": 1122,
+    "accepted_answer_id": 63120607,
+    "answer_count": 1,
+    "score": 4,
+    "last_activity_date": 1596917467,
+    "creation_date": 1595639414,
+    "last_edit_date": 1596917467,
+    "question_id": 63083267,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/63083267/signalr-hub-authorization-for-blazor-webassembly-with-identity",
+    "title": "SignalR Hub Authorization for Blazor WebAssembly with Identity",
+    "body": "<p>I have set up a SignalR Blazor WebAssembly app with JWT authentication, configured to send the token through query field access_token.</p>\n<p>At the server, I see that it is assigning the context.Token from this value.</p>\n<p>However, for the hub, annotated with [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)], I am getting 401.</p>\n<p>Why is it not authorizing?</p>\n<p>This is the code for the hub: <a href=\"https://github.com/jonasarcangel/SignalRAuthTest/blob/master/SignalRAuthTest/Server/SignalR/MessagesHub.cs\" rel=\"nofollow noreferrer\">https://github.com/jonasarcangel/SignalRAuthTest/blob/master/SignalRAuthTest/Server/SignalR/MessagesHub.cs</a></p>\n<p>This is what I have in Startup.cs: <a href=\"https://github.com/jonasarcangel/SignalRAuthTest/blob/master/SignalRAuthTest/Server/Startup.cs\" rel=\"nofollow noreferrer\">https://github.com/jonasarcangel/SignalRAuthTest/blob/master/SignalRAuthTest/Server/Startup.cs</a></p>\n<p>And this is client:\n<a href=\"https://github.com/jonasarcangel/SignalRAuthTest/blob/master/SignalRAuthTest/Client/Pages/SignalR.razor.cs\" rel=\"nofollow noreferrer\">https://github.com/jonasarcangel/SignalRAuthTest/blob/master/SignalRAuthTest/Client/Pages/SignalR.razor.cs</a></p>\n"
+}

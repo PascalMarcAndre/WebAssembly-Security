@@ -1,0 +1,30 @@
+{
+    "tags": [
+        ".net",
+        "azure",
+        "azure-functions",
+        "blazor",
+        "webassembly"
+    ],
+    "owner": {
+        "reputation": 174,
+        "user_id": 1227445,
+        "user_type": "registered",
+        "accept_rate": 50,
+        "profile_image": "https://www.gravatar.com/avatar/258b21cb64d360f84617ef2ae72633b5?s=128&d=identicon&r=PG",
+        "display_name": "user1227445",
+        "link": "https://stackoverflow.com/users/1227445/user1227445"
+    },
+    "is_answered": true,
+    "view_count": 41,
+    "accepted_answer_id": 66287332,
+    "answer_count": 1,
+    "score": 1,
+    "last_activity_date": 1613787170,
+    "creation_date": 1613781211,
+    "question_id": 66286744,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/66286744/cant-access-azure-function-api-locally-from-blazor-webassembly-app",
+    "title": "Can&#39;t access Azure Function Api locally from Blazor WebAssembly app",
+    "body": "<p>I have a Blazor WebAssembly project in Visual Studio. I have now just added an Azure Function project to the solution. I intend to publish this to the new Azure Static Web App.</p>\n<p>I have been following the instructions in this Microsoft documentation.</p>\n<p><a href=\"https://docs.microsoft.com/en-us/learn/modules/publish-app-service-static-web-app-api-dotnet/8-exercise-function-app\" rel=\"nofollow noreferrer\">Publish a Blazor WebAssembly app and .NET API with Azure Static Web Apps</a></p>\n<p>According to the documentation I just need to set up CORS locally using launchSettings.json and then run both the Api and the Client projects at the same time in Visual Studio. I should then be able to make calls to the Api like this for example.</p>\n<pre><code>string test = await Http.GetStringAsync(&quot;api/Test&quot;);\n</code></pre>\n<p>Upon testing this, the string variable &quot;test&quot; just returns the following.</p>\n<pre><code>&lt;!DOCTYPE html&gt; &lt;html&gt; &lt;head&gt; &lt;meta charset=&quot;utf-8&quot; /&gt; &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no&quot; /&gt; &lt;title&gt;Client&lt;/title&gt; &lt;base href=&quot;/&quot; /&gt; &lt;link href=&quot;css/bootstrap/bootstrap.min.css&quot; rel=&quot;stylesheet&quot; /&gt; &lt;link href=&quot;css/app.css&quot; rel=&quot;stylesheet&quot; /&gt; &lt;link href=&quot;Client.styles.css&quot; rel=&quot;stylesheet&quot; /&gt; &lt;link href=&quot;manifest.json&quot; rel=&quot;manifest&quot; /&gt; &lt;link rel=&quot;apple-touch-icon&quot; sizes=&quot;512x512&quot; href=&quot;icon-512.png&quot; /&gt; &lt;/head&gt; &lt;body&gt; &lt;div id=&quot;app&quot;&gt;Loading...&lt;/div&gt; &lt;div id=&quot;blazor-error-ui&quot;&gt; An unhandled error has occurred. &lt;a href=&quot;&quot; class=&quot;reload&quot;&gt;Reload&lt;/a&gt; &lt;a class=&quot;dismiss&quot;&gt;\ud83d\uddd9&lt;/a&gt; &lt;/div&gt; &lt;script src=&quot;_framework/blazor.webassembly.js&quot;&gt;&lt;/script&gt; &lt;script&gt;navigator.serviceWorker.register('service-worker.js');&lt;/script&gt; &lt;/body&gt; &lt;/html&gt;\n</code></pre>\n<p>This appears to just be the HTML of the same page, but with the, &quot;An unhandled error has occurred.&quot; message that you would normally see along the bottom of the page along with the Reload link. However that is not happening, I'm just getting the HTML for it instead. So clearly something is going wrong and the error isn't being displayed.</p>\n<p>In addition, inspecting the browser console log shows no errors, which is very strange. Normally when receiving an error like this, there is something in the browser log.</p>\n<p>If I change the Api call in the code to the following, then it works fine.</p>\n<pre><code>string test = await Http.GetStringAsync(&quot;http://localhost:7071/api/Test&quot;);\n</code></pre>\n<p>Obviously I can't keep it like that because I would have to change every call back before publishing to the live site. However, this shows that it is working, the client just can't see the api when using just &quot;api/Test&quot; for some reason.</p>\n<p>I can't see anything else in the documentation that I'm missing. Why does the documentation say it should work when it isn't for me? What could I be missing?</p>\n"
+}

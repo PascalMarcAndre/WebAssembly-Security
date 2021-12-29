@@ -1,0 +1,30 @@
+{
+    "tags": [
+        "c#",
+        "asp.net-web-api",
+        "blazor",
+        "blazor-webassembly",
+        "usermanager"
+    ],
+    "owner": {
+        "reputation": 15,
+        "user_id": 14307252,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/e54a11089a3f3c3c95c64e358aaa82eb?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Enrique",
+        "link": "https://stackoverflow.com/users/14307252/enrique"
+    },
+    "is_answered": true,
+    "view_count": 639,
+    "accepted_answer_id": 65397622,
+    "answer_count": 1,
+    "score": 1,
+    "last_activity_date": 1608595995,
+    "creation_date": 1608572126,
+    "last_edit_date": 1608595995,
+    "question_id": 65397419,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/65397419/how-to-use-usermanager-on-a-blazor-page",
+    "title": "how to use usermanager on a blazor page?",
+    "body": "<p>hello community I have a question how can I use <code>usermanager</code> in a <code>blazor</code> page webassembly ? by injecting this:</p>\n<pre><code>@inject UserManager&lt;ApplicationUser&gt; UserManager;\n</code></pre>\n<p>I get the indication that a usage directive is missing as the class the ApplicationUser class is on the server and the client does not have access to the server.</p>\n<p>this is my code in blazor page:</p>\n<pre><code>@page &quot;/index&quot;\n@inject AuthenticationStateProvider AuthenticationStateProvider\n@using Microsoft.AspNetCore.Identity;\n@inject UserManager&lt;ApplicationUser&gt; UserManager;\n\n&lt;button @onclick=&quot;@LogUsername&quot;&gt;Write user info to console&lt;/button&gt;\n&lt;br /&gt;\n&lt;br /&gt;\n@Message\n\n@code {\n    string Message = &quot;&quot;;\n\n    private async Task LogUsername()\n    {\n        var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();\n        var user = authState.User;\n\n        if (user.Identity.IsAuthenticated)\n        {\n            var currentUser = await UserManager.GetUserAsync(user);\n            Message = ($&quot;{user.Identity.Name} is authenticated.{ currentUser.Nombre }&quot;);\n        }\n        else\n        {\n            Message = (&quot;The user is NOT authenticated.&quot;);\n        }\n    }\n}\n</code></pre>\n<p>This is my class ApplicationUser:</p>\n<pre class=\"lang-cs prettyprint-override\"><code>    public class ApplicationUser: IdentityUser\n        {\n            public string Nombre { get; set; }\n            public string ApellidoPaterno { get; set; }\n            public string ApellidoMaterno { get; set; }\n            public virtual Cliente InquilinoActual { get; set; }\n        }\n</code></pre>\n<p><a href=\"https://i.stack.imgur.com/rsuuE.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/rsuuE.png\" alt=\"Image of an SQL Query\" /></a></p>\n"
+}

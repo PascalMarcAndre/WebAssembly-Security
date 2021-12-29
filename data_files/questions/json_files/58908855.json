@@ -1,0 +1,29 @@
+{
+    "tags": [
+        "javascript",
+        "language-lawyer",
+        "stack-overflow",
+        "webassembly"
+    ],
+    "owner": {
+        "reputation": 31168,
+        "user_id": 211160,
+        "user_type": "registered",
+        "accept_rate": 92,
+        "profile_image": "https://i.stack.imgur.com/Z2fk7.png?s=128&g=1",
+        "display_name": "HostileFork says dont trust SE",
+        "link": "https://stackoverflow.com/users/211160/hostilefork-says-dont-trust-se"
+    },
+    "is_answered": true,
+    "view_count": 122,
+    "answer_count": 1,
+    "score": 3,
+    "last_activity_date": 1574066406,
+    "creation_date": 1574057444,
+    "last_edit_date": 1574063979,
+    "question_id": 58908855,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/58908855/what-if-any-javascript-operations-are-guaranteed-not-to-cause-stackoverflow-ra",
+    "title": "What (if any) JavaScript operations are guaranteed not to cause stackoverflow RangeErrors?",
+    "body": "<p>In C programming, stack overflow errors are outside of the language spec.  They represent a <em>fundamental violation of the \"contract\" of what a function call means</em>.  You can overflow the stack halfway through pushing arguments to a function.  Or you can overflow it mid-way through a library routine like <code>malloc()</code> (internally to its own implementation might make several function calls that grow the stack, any one of which could overflow).  An overflow could happen halfway through the bookkeeping it is doing for the allocation...leaving the heap in a corrupted state that would crash the next <code>malloc()</code> or <code>free()</code> if you tried to keep running.</p>\n\n<p><strong>In <em>theory</em>, it seems JavaScript could do better.</strong>  It is not running on bare metal...so it <em>could</em> offer some kind of guarantees about operations that would not overflow the stack in mid-run (e.g. by preallocating memory for usermode recursions, vs. making every JS call trigger some C-level recursion in the interpreter).  A JS interpreter <em>could</em> give you enough atomic building blocks for making a kind of transaction...where all of a set of operations would run (with no stack overflow) or none of them would (pre-emptively triggering a stack overflow).  These transactions could be a wedge for monitoring what you would need to roll back at the moment of catching a RangeError exception upon running out of stack.</p>\n\n<p><strong>In practice, it seems to me that you're not much better off than C.</strong>  So I think this answer is correct (2 upvotes at time of writing):</p>\n\n<blockquote>\n  <p><a href=\"https://stackoverflow.com/a/35685545/211160\"><em>\"you would have no indication on where your code broke so anything you tried to run would be severely buggy at best.\"</em></a></p>\n</blockquote>\n\n<p>...and I think this answer is--at minimum--misleading in a generic sense (6 upvotes at time of writing):</p>\n\n<blockquote>\n  <p><a href=\"https://stackoverflow.com/a/44733190/211160\"><em>\"Maximum call stack size exceeded errors can be caught just like any other errors\"</em></a></p>\n</blockquote>\n\n<p>As an example, imagine I have this routine, and I wish to maintain the invariant that you never end up in a situation where the two named collections don't each have a value for a given key:</p>\n\n<pre><code> function addToBothCollections(key, n) {\n     collection1[key] = n\n     n = n + Math.random()  // what if Math.random() overflows?\n     collection2[key] = n\n }\n</code></pre>\n\n<p>If I had a \"wedge\" of guaranteed operations that would not overflow the stack, I could come up with a protocol where those operations were used to build some kind of transaction log.  Then if an overflow occurred, I could tailor operations like this addToBothCollections() to take advantage of it.</p>\n\n<p>e.g. imagine that negative numbers aren't allowed, so I could say:</p>\n\n<pre><code> function addToBothCollections(key, n) {\n     collection1[key] = n\n     collection2[key] = -1\n     n = n + Math.random()\n     collection2[key] = n\n }\n\n try {\n     /* ...code that makes a bunch of addToBothCollections() calls */ \n }\n catch (e) {\n     for (let key in collection2) {\n         if (collection2[key] == -1) {\n             delete collection1[key]\n             delete collection2[key]\n         }\n     }\n }\n</code></pre>\n\n<p>But thinking along these lines can only work if you have guarantees, such as that this sequence will either atomically execute both operations or neither:</p>\n\n<pre><code>collection1[key] = n\ncollection2[key] = -1\n</code></pre>\n\n<p>If there's any way that <code>collection2[key] = -1</code> might do something like trigger a GC that causes a stack overflow, you're back to square one.  Some atomicity rules are needed.</p>\n\n<p>So is there anything at a language level--current or future--that articulates this kind of problem?  I'm actually curious about how this would apply to mixed JavaScript and WebAssembly programs...so if there's any way that you could cook up the atomicity I speak of in Wasm I'd be fine with that as well.</p>\n"
+}

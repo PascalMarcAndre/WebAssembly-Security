@@ -1,0 +1,28 @@
+{
+    "tags": [
+        "c#",
+        "asp.net-core",
+        "blazor",
+        "asp.net-core-identity"
+    ],
+    "owner": {
+        "reputation": 1,
+        "user_id": 14357185,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/40481f6084945f6f73c2ac35416b8ec0?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Dennis",
+        "link": "https://stackoverflow.com/users/14357185/dennis"
+    },
+    "is_answered": false,
+    "view_count": 62,
+    "answer_count": 0,
+    "score": 0,
+    "last_activity_date": 1601397555,
+    "creation_date": 1601325524,
+    "last_edit_date": 1601397555,
+    "question_id": 64109316,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/64109316/asp-net-core-how-to-change-policy-requirements-based-on-user-selection",
+    "title": "ASP.NET Core how to change policy requirements based on user selection",
+    "body": "<p>In my Blazor webassembly project I can see all roles, delete and add new ones. I can also assign a role to a user and authenticate the user based on that.</p>\n<p>Now I have for example my <code>RolesController.cs</code>:</p>\n<pre class=\"lang-cs prettyprint-override\"><code>// GET: api/Persons\n[Authorize(Policy = &quot;SeeAllRoles&quot;)]\n[HttpGet]\npublic async Task&lt;ActionResult&lt;IEnumerable&lt;IdentityRole&gt;&gt;&gt; GetRoles()\n{\n     return await _roleManager.Roles.ToListAsync();\n}\n\n// GET api/&lt;RolesController&gt;/5\n[Authorize(Policy = &quot;GetRole&quot;)]\n[HttpGet(&quot;{id}&quot;)]\npublic async Task&lt;ActionResult&lt;IdentityRole&gt;&gt; GetRole(string id)\n{\n    var role = await _roleManager.Roles.FirstOrDefaultAsync(r =&gt; r.Id == id);\n    if (role == null)\n    {\n        return NotFound();\n    }\n    return role;\n}\n</code></pre>\n<p>Every controller has a unique policy for each action. So that I can restrict each action individually. Normally I would just define the policy in <code>Startup.cs</code>, add <code>.RequireRole(&quot;Admin&quot;)</code> or something to it and now every user in this role would have access to the policy I specified.</p>\n<p>To the question: I want to have a list of roles, as I have now, with the ability to select which policy should be included in this role. So that I can login to my application go to <code>Roles</code> and add a new role <code>NewsDisplay</code> and only select policies necessary to view the news feed. Then I can add users for my various displays and put all of them in the newly created <code>NewsDisplay</code> role.</p>\n<p>I guess this is possible but can\u00b4t find a sufficient solution to this. Would be nice if someone could give me examples, links, ideas.</p>\n"
+}

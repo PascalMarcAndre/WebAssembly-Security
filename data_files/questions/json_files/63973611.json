@@ -1,0 +1,27 @@
+{
+    "tags": [
+        "asp.net-core",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 1684,
+        "user_id": 2396264,
+        "user_type": "registered",
+        "accept_rate": 100,
+        "profile_image": "https://www.gravatar.com/avatar/423ea1e7faf341fbc2a08cc48c1d5886?s=128&d=identicon&r=PG",
+        "display_name": "MarengoHue",
+        "link": "https://stackoverflow.com/users/2396264/marengohue"
+    },
+    "is_answered": true,
+    "view_count": 86,
+    "accepted_answer_id": 64025188,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1600854162,
+    "creation_date": 1600551637,
+    "question_id": 63973611,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/63973611/webassemblys-iauthenticationtokenprovider-crashes-when-requesting-a-token",
+    "title": "WebAssembly&#39;s IAuthenticationTokenProvider crashes when requesting a token",
+    "body": "<p>I am trying to authenticate the user in my WASM Blazor app using google's OIDC.\nI have managed to retrieve the token by following this article: <a href=\"https://docs.microsoft.com/en-gb/aspnet/core/blazor/security/webassembly/standalone-with-authentication-library?view=aspnetcore-3.1&amp;tabs=visual-studio\" rel=\"nofollow noreferrer\">https://docs.microsoft.com/en-gb/aspnet/core/blazor/security/webassembly/standalone-with-authentication-library?view=aspnetcore-3.1&amp;tabs=visual-studio</a></p>\n<p>I am trying to retrieve the AccessToken to pass it to the SignalR hub using the injected instance of <code>IAccessTokenProvider</code> when building an instance of HubConnection:</p>\n<pre class=\"lang-cs prettyprint-override\"><code>public RemoteCombatListener(ITokenCache tokenCache)\n{\n    _connection = new HubConnectionBuilder()\n        .WithUrl(&quot;https://localhost:44364/combat&quot;, opts =&gt; {\n            opts.AccessTokenProvider = tokenCache.GetToken;\n        })\n        .Build();\n}\n\n</code></pre>\n<p>Here is the implementation of my TokenCache:</p>\n<pre class=\"lang-cs prettyprint-override\"><code>public class TokenCache : ITokenCache\n{\n    private readonly IAccessTokenProvider _tokenProvider;\n    private readonly NavigationManager _navManager;\n    public string CachedToken { get; private set; }\n\n    public TokenCache(IAccessTokenProvider tokenProvider, NavigationManager navManager)\n    {\n        _tokenProvider = tokenProvider;\n        _navManager = navManager;\n    }\n\n    public async Task&lt;string&gt; GetToken()\n    {\n        if (string.IsNullOrEmpty(CachedToken))\n        {\n            var requestedToken = await _tokenProvider.RequestAccessToken();\n            if (requestedToken.TryGetToken(out var accessToken))\n            {\n                CachedToken = accessToken.Value;\n            }\n            else\n            {\n                throw new AccessTokenNotAvailableException(_navManager, requestedToken, Enumerable.Empty&lt;string&gt;());\n            }\n        }\n\n        return CachedToken;\n    }\n}\n\n</code></pre>\n<p>The problem I am facing right now is that when calling the <code>_tokenProvider.RequestAccessToken()</code> method, I get the following exception:</p>\n<pre><code>An exception occurred executing JS interop: The JSON value could not be converted to System.DateTimeOffset. Path: $.token.expires | LineNumber: 0 | BytePositionInLine: 80.. See InnerException for more details.\n</code></pre>\n<p>I am unable to figure out what is wrong with my setup as debugging stopped working for me randomly and the only option I have is Console.Log debugging.</p>\n"
+}

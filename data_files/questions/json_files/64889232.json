@@ -1,0 +1,27 @@
+{
+    "tags": [
+        ".net-core",
+        "blazor",
+        "blazor-client-side"
+    ],
+    "owner": {
+        "reputation": 33,
+        "user_id": 14629230,
+        "user_type": "registered",
+        "profile_image": "https://lh6.googleusercontent.com/-x8R-wirZ-qA/AAAAAAAAAAI/AAAAAAAAAAA/AMZuuclVnStqrQpmXvXNi-1pRsYRtrIsyg/s96-c/photo.jpg?sz=128",
+        "display_name": "Serenity Pond",
+        "link": "https://stackoverflow.com/users/14629230/serenity-pond"
+    },
+    "is_answered": true,
+    "view_count": 57,
+    "accepted_answer_id": 64890511,
+    "answer_count": 1,
+    "score": 1,
+    "last_activity_date": 1605692436,
+    "creation_date": 1605686943,
+    "question_id": 64889232,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/64889232/how-do-i-restrict-page-access-on-user-properties",
+    "title": "How do I restrict page access on user properties",
+    "body": "<p>I have a blazor page I need to restrict access to by age. I am using hosted webassembly. I would like to use [Authorize] attribute but I can not figure out how to make it work on a calculation from date of birth. I'm storing the date of birth in DateTimeOffset format.</p>\n"
+}

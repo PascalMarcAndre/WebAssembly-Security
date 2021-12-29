@@ -1,0 +1,26 @@
+{
+    "tags": [
+        "blazor",
+        "blazor-client-side"
+    ],
+    "owner": {
+        "reputation": 1070,
+        "user_id": 2202062,
+        "user_type": "registered",
+        "accept_rate": 68,
+        "profile_image": "https://www.gravatar.com/avatar/9d373645b729af8b768a9de78a7e1269?s=128&d=identicon&r=PG",
+        "display_name": "Assassinbeast",
+        "link": "https://stackoverflow.com/users/2202062/assassinbeast"
+    },
+    "is_answered": true,
+    "view_count": 2086,
+    "answer_count": 1,
+    "score": 2,
+    "last_activity_date": 1590160451,
+    "creation_date": 1590156599,
+    "question_id": 61956919,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/61956919/how-to-run-blazor-webassembly-locally-with-https-and-custom-domain",
+    "title": "How to run Blazor WebAssembly locally with https and custom domain?",
+    "body": "<p>How can i run Blazor WebAssembly (client side) locally with a custom domain in https if i have a pfx certificate?</p>\n\n<p>In Blazor ServerSide its easy to setup, because like a normal asp.net core application, because we have the IHostBuilder, and there we can set the https certificate path.</p>\n\n<p>But what about Blazor WebAssembly ClientSide?</p>\n"
+}

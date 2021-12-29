@@ -1,0 +1,27 @@
+{
+    "tags": [
+        "javascript",
+        "webassembly",
+        "webcrypto-api"
+    ],
+    "owner": {
+        "reputation": 23,
+        "user_id": 7019826,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/bff410fa303e7980f3be4d2e86998cac?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Alvai",
+        "link": "https://stackoverflow.com/users/7019826/alvai"
+    },
+    "is_answered": true,
+    "view_count": 1943,
+    "accepted_answer_id": 48892136,
+    "answer_count": 2,
+    "score": 1,
+    "last_activity_date": 1519408498,
+    "creation_date": 1519149963,
+    "question_id": 48891593,
+    "content_license": "CC BY-SA 3.0",
+    "link": "https://stackoverflow.com/questions/48891593/webcryptoapi-vs-webassembly-encryption-module",
+    "title": "WebCryptoAPI vs WebAssembly Encryption module",
+    "body": "<p>One of the main benefits of WebCrypto API was that it is <a href=\"https://webkit.org/blog/7790/update-on-web-cryptography/\" rel=\"nofollow noreferrer\">much</a> faster than <a href=\"https://medium.com/@encryb/comparing-performance-of-javascript-cryptography-libraries-42fb138116f3\" rel=\"nofollow noreferrer\">JS crypto libraries</a> . Now that WebAssembly is out there, would a WASM module of an efficient C++ implementation outperform, say WebCrypto's AES ?</p>\n"
+}

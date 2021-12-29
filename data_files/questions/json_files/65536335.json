@@ -1,0 +1,27 @@
+{
+    "tags": [
+        "visual-studio",
+        "docker",
+        "nginx"
+    ],
+    "owner": {
+        "reputation": 442,
+        "user_id": 4060301,
+        "user_type": "registered",
+        "accept_rate": 60,
+        "profile_image": "https://lh6.googleusercontent.com/-Ji1QRW4mlUQ/AAAAAAAAAAI/AAAAAAAAADc/A8faHlBAitM/photo.jpg?sz=128",
+        "display_name": "Lee Stevens",
+        "link": "https://stackoverflow.com/users/4060301/lee-stevens"
+    },
+    "is_answered": false,
+    "view_count": 28,
+    "answer_count": 0,
+    "score": 0,
+    "last_activity_date": 1609565778,
+    "creation_date": 1609565778,
+    "question_id": 65536335,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/65536335/docker-compose-and-visual-studio-build-differences-vs-docker-cmd",
+    "title": "Docker Compose and Visual Studio Build Differences vs Docker CMD",
+    "body": "<p>I have an issue when using <code>docker-compose</code> in Visual Studio</p>\n<pre><code>  blazor-customer:\n    image: ${REGISTRY:-leestevens318}/blazor-customer:${PLATFORM:-linux}-${TAG:-latest}\n    container_name: blazor-customer\n    networks:\n      - nginx_network\n    environment:\n      - ASPNETCORE_ENVIRONMENT=Development\n      - ASPNETCORE_URLS=http://+:80\n      - TZ=Australia/Sydney\n    ports:\n      - &quot;8090:80&quot;\n    #depends_on:\n    #  - identity\n    build:\n      context: ./Client.Customer.Blazor\n      dockerfile: Dockerfile\n    restart: on-failure\n</code></pre>\n<p>Dockerfile:</p>\n<pre><code>FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build-env\nWORKDIR /app\nCOPY . ./\nRUN dotnet publish -c Release -o output\n\nFROM nginx:alpine\nWORKDIR /var/www/web\nCOPY --from=build-env /app/output/wwwroot .\nCOPY nginx.conf /etc/nginx/nginx.conf\nEXPOSE 80\n</code></pre>\n<p>When building in Visual Studio here's the output:</p>\n<pre><code>Building blazor-customer\nStep 1/6 : FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build-env\n ---&gt; b8769fe1925c\nStep 2/6 : WORKDIR /app\n ---&gt; Using cache\n ---&gt; 14cc7251b510\nStep 3/6 : COPY . ./\n ---&gt; 8bf3e8a5e2d7\nStep 4/6 : RUN dotnet publish -c Release -o output\n ---&gt; Running in 5dc617144f52\nMicrosoft (R) Build Engine version 16.8.0+126527ff1 for .NET\nCopyright (C) Microsoft Corporation. All rights reserved.\n  Determining projects to restore...\n  Restored /app/Client.Customer.Blazor.csproj (in 6.79 sec).\n  Client.Customer.Blazor -&gt; /app/bin/Release/net5.0/Client.Customer.Blazor.dll\n  Client.Customer.Blazor (Blazor output) -&gt; /app/bin/Release/net5.0/wwwroot\n  Optimizing assemblies for size, which may change the behavior of the app. Be sure to test after publishing. See: https://aka.ms/dotnet-illink\n  Compressing Blazor WebAssembly publish artifacts. This may take a while...\n  Client.Customer.Blazor -&gt; /app/output/\nRemoving intermediate container 5dc617144f52\n ---&gt; 148a36ad3c05\nStep 5/6 : LABEL com.microsoft.created-by=visual-studio\n ---&gt; Running in 28b7975ed37f\nRemoving intermediate container 28b7975ed37f\n ---&gt; 4e8a62fd6653\nStep 6/6 : LABEL com.microsoft.visual-studio.project-name=Client.Customer.Blazor\n ---&gt; Running in bc2291d88cf8\nRemoving intermediate container bc2291d88cf8\n ---&gt; 8bf17a0cbe3d\nSuccessfully built 8bf17a0cbe3d\n</code></pre>\n<p>You can see it skips the last <code>FROM</code> in the <code>Dockerfile</code></p>\n<p>If i build from CMD:</p>\n<pre><code>docker build -t leestevens318/blazor-customer:latest .\n</code></pre>\n<p>I get the correct output (step 5 &gt;):</p>\n<pre><code>Step 1/9 : FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build-env\n ---&gt; b8769fe1925c\nStep 2/9 : WORKDIR /app\n ---&gt; Using cache\n ---&gt; 7841686380cf\nStep 3/9 : COPY . ./\n ---&gt; 351e0fd905db\nStep 4/9 : RUN dotnet publish -c Release -o output\n ---&gt; Running in a83c2dc1928f\nMicrosoft (R) Build Engine version 16.8.0+126527ff1 for .NET\nCopyright (C) Microsoft Corporation. All rights reserved.\n\n  Determining projects to restore...\n  Restored /app/Client.Customer.Blazor.csproj (in 6.02 sec).\n  Client.Customer.Blazor -&gt; /app/bin/Release/net5.0/Client.Customer.Blazor.dll\n  Client.Customer.Blazor (Blazor output) -&gt; /app/bin/Release/net5.0/wwwroot\n  Optimizing assemblies for size, which may change the behavior of the app. Be sure to test after publishing. See: https://aka.ms/dotnet-illink\n  Compressing Blazor WebAssembly publish artifacts. This may take a while...\n  Client.Customer.Blazor -&gt; /app/output/\nRemoving intermediate container a83c2dc1928f\n ---&gt; 03528af0c0c5\nStep 5/9 : FROM nginx:alpine\n ---&gt; 629df02b47c8\nStep 6/9 : WORKDIR /var/www/web\n ---&gt; Using cache\n ---&gt; 19608552d0c0\nStep 7/9 : COPY --from=build-env /app/output/wwwroot .\n ---&gt; 658c6e381f9c\nStep 8/9 : COPY nginx.conf /etc/nginx/nginx.conf\n ---&gt; 606423b6ad6f\nStep 9/9 : EXPOSE 80\n ---&gt; Running in 86cd4ef9cc41\nRemoving intermediate container 86cd4ef9cc41\n ---&gt; 6f1d1d8185cf\nSuccessfully built 6f1d1d8185cf\n</code></pre>\n<p>I can't work out why the build is different from Visual Studio vs Command Line.</p>\n"
+}

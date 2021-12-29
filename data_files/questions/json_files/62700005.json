@@ -1,0 +1,27 @@
+{
+    "tags": [
+        "blazor",
+        "blazor-webassembly",
+        "secret-manager"
+    ],
+    "owner": {
+        "reputation": 51,
+        "user_id": 3860630,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/02f624ae24cf9dc2527b81894c2bb99e?s=128&d=identicon&r=PG&f=1",
+        "display_name": "user3860630",
+        "link": "https://stackoverflow.com/users/3860630/user3860630"
+    },
+    "is_answered": true,
+    "view_count": 849,
+    "answer_count": 2,
+    "score": 3,
+    "last_activity_date": 1596614028,
+    "creation_date": 1593704130,
+    "last_edit_date": 1593708816,
+    "question_id": 62700005,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/62700005/safe-storage-of-app-secrets-for-blazor-webassembly-app",
+    "title": "Safe storage of app secrets for Blazor Webassembly app",
+    "body": "<p>I am searching on the way for safe storage of app secrets in blazor webassembly application. We can find details for Server Side application as in below MSDN documentation.</p>\n<p><a href=\"https://docs.microsoft.com/en-us/aspnet/core/security/app-secrets?view=aspnetcore-3.1&amp;tabs=windows\" rel=\"nofollow noreferrer\">https://docs.microsoft.com/en-us/aspnet/core/security/app-secrets?view=aspnetcore-3.1&amp;tabs=windows</a></p>\n<p>How can we use these kind of secrets for Blazor WebAssembly application which completely runs in client browser?</p>\n<p>My basic scenario is, need to keep the passwords, product key (licensing key) information out of application code. For example, we load license inside the static main method of Program.cs.</p>\n<p><a href=\"https://i.stack.imgur.com/kCrV1.png\" rel=\"nofollow noreferrer\">https://i.stack.imgur.com/kCrV1.png</a></p>\n<pre><code> public class Program\n    {\n        public static async Task Main(string[] args)\n        {\n            //want to access the product key here and need to avoid hardcoding\n            SomeThirdPartyLibrary.RegisterLicense(&quot;product-key&quot;);\n            var builder = WebAssemblyHostBuilder.CreateDefault(args);\n            builder.RootComponents.Add&lt;App&gt;(&quot;app&quot;);\n\n            builder.Services.AddTransient(sp =&gt; new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });\n\n            await builder.Build().RunAsync();\n        }\n</code></pre>\n<p>I have searched in documentation of blazor and not able to find any details for this. Please help me to find the recommended way resolving this in Blazor webassembly.</p>\n<p>(for server-side, we have variety of option but for client-side what might be the recommended way)</p>\n"
+}

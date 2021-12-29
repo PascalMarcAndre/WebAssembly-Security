@@ -1,0 +1,29 @@
+{
+    "tags": [
+        "filesystems",
+        "sandbox",
+        "webassembly",
+        "emscripten",
+        "wasi"
+    ],
+    "owner": {
+        "reputation": 184,
+        "user_id": 6348841,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/1018076303083f804ef1d43d2c24fd98?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Asanka",
+        "link": "https://stackoverflow.com/users/6348841/asanka"
+    },
+    "is_answered": true,
+    "view_count": 39,
+    "accepted_answer_id": 66532743,
+    "answer_count": 1,
+    "score": 1,
+    "last_activity_date": 1615217992,
+    "creation_date": 1615170954,
+    "question_id": 66523662,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/66523662/wasi-vs-emscripten-fs-sand-boxed-file-system",
+    "title": "WASI vs Emscripten FS, sand-boxed file system",
+    "body": "<p>As I know,  WASI gives sand-boxed WebAssembly applications access to the underlying operating system and also Emscripten FS provides several file systems such, NODEFS. My question is both WASI and EMscriptenFS stands for same objective to provide sand-boxed file systems or these two has different usage? can some one help me out the understand both?</p>\n"
+}

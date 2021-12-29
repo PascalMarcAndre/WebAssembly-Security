@@ -1,0 +1,29 @@
+{
+    "tags": [
+        "c#",
+        "azure",
+        "asp.net-core",
+        "azure-ad-b2c",
+        "blazor"
+    ],
+    "owner": {
+        "reputation": 3024,
+        "user_id": 3546760,
+        "user_type": "registered",
+        "accept_rate": 91,
+        "profile_image": "https://www.gravatar.com/avatar/2c8d9f9e461f5a1acfba19e9d59996c1?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Almis",
+        "link": "https://stackoverflow.com/users/3546760/almis"
+    },
+    "is_answered": false,
+    "view_count": 522,
+    "answer_count": 0,
+    "score": 5,
+    "last_activity_date": 1588680206,
+    "creation_date": 1588463349,
+    "question_id": 61567836,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/61567836/only-login-and-logout-flow-works-in-azure-active-directory-b2c",
+    "title": "Only login and logout flow works in Azure Active Directory B2C",
+    "body": "<p>I followed the official guide from Microsoft to setup <a href=\"https://docs.microsoft.com/en-us/aspnet/core/security/blazor/webassembly/standalone-with-azure-active-directory-b2c?view=aspnetcore-3.1\" rel=\"noreferrer\">ASP.NET Core Blazor WebAssembly standalone app with Azure Active Directory B2C</a> which worked perfectly, login opens a new window that asks for credential and logout refresh the page and logs me out. I checked the code and it seems that in order to do login or logout you just need to set the action in</p>\n\n<pre><code>@page \"/authentication/{action}\"\n@using Microsoft.AspNetCore.Components.WebAssembly.Authentication\n&lt;RemoteAuthenticatorView Action=\"@Action\" /&gt;\n\n@code{\n    [Parameter] public string Action { get; set; }\n}\n</code></pre>\n\n<p>and based on the <a href=\"https://docs.microsoft.com/en-us/aspnet/core/security/blazor/webassembly/additional-scenarios?view=aspnetcore-3.1#customize-app-routes\" rel=\"noreferrer\">Microsoft docs</a> the available routes are</p>\n\n<pre><code>+--------------------------------+----------------------------------------------------------------------------+\n|             Route              |                                  Purpose                                   |\n+--------------------------------+----------------------------------------------------------------------------+\n| authentication/login           | Triggers a sign-in operation.                                              |\n| authentication/login-callback  | Handles the result of any sign-in operation.                               |\n| authentication/login-failed    | Displays error messages when the sign-in operation fails for some reason.  |\n| authentication/logout          | Triggers a sign-out operation.                                             |\n| authentication/logout-callback | Handles the result of a sign-out operation.                                |\n| authentication/logout-failed   | Displays error messages when the sign-out operation fails for some reason. |\n| authentication/logged-out      | Indicates that the user has successfully logout.                           |\n| authentication/profile         | Triggers an operation to edit the user profile.                            |\n| authentication/register        | Triggers an operation to register a new user.                              |\n+--------------------------------+----------------------------------------------------------------------------+\n</code></pre>\n\n<p>So I tried to use actions <strong>profile</strong> and <strong>register</strong>. </p>\n\n<ul>\n<li><strong>profile</strong> shows me <code>Editing the profile is not supported.</code> message</li>\n<li><strong>register</strong> redirects me back to homepage with a <code>?returnUrl=%2Fauthentication%2Flogin</code> query parameter</li>\n</ul>\n\n<p>I want to do both register and update profile.</p>\n"
+}

@@ -1,0 +1,27 @@
+{
+    "tags": [
+        "blazor",
+        "blazor-server-side"
+    ],
+    "owner": {
+        "reputation": 25429,
+        "user_id": 425823,
+        "user_type": "registered",
+        "accept_rate": 86,
+        "profile_image": "https://www.gravatar.com/avatar/00d813f85062c23d43043e6132278610?s=128&d=identicon&r=PG",
+        "display_name": "Greg Gum",
+        "link": "https://stackoverflow.com/users/425823/greg-gum"
+    },
+    "is_answered": true,
+    "view_count": 163,
+    "accepted_answer_id": 64762850,
+    "answer_count": 2,
+    "score": 1,
+    "last_activity_date": 1604982104,
+    "creation_date": 1604862369,
+    "question_id": 64742018,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/64742018/blazor-shared-ui-toaster-component",
+    "title": "Blazor Shared UI Toaster Component",
+    "body": "<p>I am just getting up to speed on Server side Blazor (not webassembly), so forgive me if this is a silly question.</p>\n<p>What I am trying to do is have service which can be used to display a toast.  The component Library I am using is from Syncfusion.  I can use this just fine in the usual way where it is embedded on each component where it is needed.</p>\n<pre><code>&lt;SfToast ID=&quot;toast_default&quot; @ref=&quot;Toaster&quot; CssClass=&quot;e-toast-success&quot; content=&quot;@ViewModel.ToastMessage&quot; Timeout=&quot;2000&quot; Icon=&quot;e-meeting&quot;&gt;\n     &lt;ToastPosition X=&quot;Right&quot; &gt;&lt;/ToastPosition&gt;\n&lt;/SfToast&gt;\n</code></pre>\n<p>I can use this in the code behind and it displays a toast as expected.</p>\n<p>But I have many pages that use this code and would like to not repeat myself.  I would like to be able to use the above once in app.razor, and then get a reference to it, and then it throughout the app.  For example, in the <code>onIntializedAsync</code>, I get a reference to the Toaster, save it to an injected service.  Then I use the same service throughout the app.</p>\n<p>I coded the above, but Toaster is always null in the service.</p>\n<pre><code>    public class MessageService\n    {\n        public SfToast Toaster { get; set; }\n\n        public async Task SendMessage(string message)\n        {\n            if(this.Toaster!= null)\n            {\n                await this.Toaster.Show(new ToastModel() { Content = message });\n            }\n        }\n    }\n</code></pre>\n<p>This is the code in App.razor. I have stepped through the code and it sets the reference to Toaster correctly, but when the message service tries to get it to use it, it is null.</p>\n<pre><code>@code {\n\n    public SfToast Toaster { get; set; }\n\n    protected override Task OnInitializedAsync()\n    {\n        this.MessageService.Toaster = this.Toaster;\n        return base.OnInitializedAsync();\n    }\n}\n</code></pre>\n<p>Is there another way to do this?  Or am I making some mistake?</p>\n"
+}

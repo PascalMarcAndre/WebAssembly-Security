@@ -1,0 +1,28 @@
+{
+    "tags": [
+        "identityserver4",
+        "openid-connect",
+        "blazor-client-side",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 1122,
+        "user_id": 1475874,
+        "user_type": "registered",
+        "accept_rate": 54,
+        "profile_image": "https://i.stack.imgur.com/1Nml0.png?s=128&g=1",
+        "display_name": "Mitch Dart",
+        "link": "https://stackoverflow.com/users/1475874/mitch-dart"
+    },
+    "is_answered": false,
+    "view_count": 35,
+    "answer_count": 0,
+    "score": 0,
+    "last_activity_date": 1611237357,
+    "creation_date": 1611237357,
+    "question_id": 65828954,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/65828954/blazor-webassembly-with-identityserver4-logout-missing-id-token-hint",
+    "title": "Blazor Webassembly with IdentityServer4 logout missing id_token_hint",
+    "body": "<p>I am trying to logout using Blazor Webassebly Authentication from my IdentityServer4 provider. The end_session endpoint is called however the id_token_hint is missing:</p>\n<pre><code>http://identity/connect/endsession?post_logout_redirect_uri=http%3A%2F%2Flocalhost%3A5000%2Fauthentication%2Flogout-callback&amp;state=3157802cb37d41e18da4ee690aca416d\n</code></pre>\n<p>It seems that this causes the post_logout_redirect_uri to be ignored as described in the identityserver4 <a href=\"https://identityserver4.readthedocs.io/en/latest/endpoints/endsession.html\" rel=\"nofollow noreferrer\">documentation</a>:</p>\n<blockquote>\n<p>post_logout_redirect_uri</p>\n</blockquote>\n<blockquote>\n<p>If a valid id_token_hint is passed, then the client may also send a post_logout_redirect_uri parameter. This can be used to allow the user to redirect back to the client after sign-out. The value must match one of the client\u2019s pre-configured PostLogoutRedirectUris (client docs).</p>\n</blockquote>\n<p>Since the id_token_hint is missing the post_logout_redirect_uri is forgotten and thus the user is not redirected back after logout.</p>\n<pre><code> await interaction.GetLogoutContextAsync(logoutId);\n</code></pre>\n<p>On IdentityServer4 shows that the PostLogoutRedriectUri is infact null which proves my hypothesis.</p>\n<p>Since the call to the end_session endpoint is handled by Blazor Webassembly Authentication I have no idea where to look as to why its missing.</p>\n<p>I have made sure that identityserver4 is configured correctly with matching PostLogoutRedirectURIs.</p>\n"
+}

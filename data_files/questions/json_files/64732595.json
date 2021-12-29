@@ -1,0 +1,26 @@
+{
+    "tags": [
+        "c#",
+        "asp.net-core"
+    ],
+    "owner": {
+        "reputation": 8167,
+        "user_id": 472966,
+        "user_type": "registered",
+        "accept_rate": 85,
+        "profile_image": "https://www.gravatar.com/avatar/678037dc2eaafe79c801cc62483077f6?s=128&d=identicon&r=PG",
+        "display_name": "Brad",
+        "link": "https://stackoverflow.com/users/472966/brad"
+    },
+    "is_answered": false,
+    "view_count": 42,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1604791206,
+    "creation_date": 1604784345,
+    "question_id": 64732595,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/64732595/sharing-http-api-interface-between-server-and-client-c-asp-core-and-validatin",
+    "title": "Sharing HTTP API interface between Server and Client (C# Asp Core) and validating at compile time",
+    "body": "<p>I'm building an application which uses ASP Core Blazor WebAssembly and ASP Core MVC for the backend. This allows for a lot of code re-use, however I'm a bit lost when it comes to sharing API specifics (routes, HTTP method and return values). gRPC solves this perfectly but has some drawbacks. Is there anyway to solve this with pure C#?</p>\n<p>Consider this following basic controller:</p>\n<pre><code>[ApiController]\n[Route(&quot;[controller]&quot;)]\npublic class PostController : ControllerBase\n{\n\n    private readonly ILogger&lt;PostController&gt; logger;\n    private ApplicationDbContext context;\n\n    public PostController(ILogger&lt;PostController&gt; logger, ApplicationDbContext dbContext)\n    {\n        this.logger = logger;\n        context = dbContext;\n    }\n\n    [HttpGet(&quot;list&quot;)]\n    [AllowAnonymous]\n    public async Task&lt;ActionResult&lt;IEnumerable&lt;SelectListOption&lt;int&gt;&gt;&gt;&gt; List()\n    {\n        var posts = await context.Posts.ToListAsync();\n        return posts.OrderBy(e =&gt; e.Name == &quot;Other&quot;).ThenBy(e =&gt; e.Name).Select(e =&gt; new SelectListOption&lt;int&gt; { Id = e.Id, Name = e.Name });\n    }\n}\n</code></pre>\n<p>On the WebAssembly (client) side, I have a basic class which calls the corresponding Apis:</p>\n<pre><code>public class PostClient : IPostClient\n    {\n        private readonly HttpClient client;\n        private const string endpoint = &quot;Post&quot;;\n        public PostClient(HttpClient client)\n        {\n            this.client = client;\n        }\n\n        public async Task&lt;IList&lt;SelectListOption&lt;int&gt;&gt;&gt; ListPostsAsync()\n        {\n            try\n            {\n                var result = await client.GetFromJsonAsync&lt;List&lt;SelectListOption&lt;int&gt;&gt;&gt;($&quot;{endpoint}/list&quot;);\n                if (result == null) throw new Exception();\n                return result;\n            }\n            catch (AccessTokenNotAvailableException exception)\n            {\n                exception.Redirect();\n            }\n\n            return new List&lt;SelectListOption&lt;int&gt;&gt;();\n\n\n        }\n    }\n</code></pre>\n<p>There are a couple of problems with this:</p>\n<p>The string &quot;Post&quot; is hardcoded. There is no guarantee that this controller exists on the backend. Similarly, the path for the specific action (/lists) is also hardcoded. There is no guarantee this path is actually defined and would not be apparent until runtime. I'm looking for a solution that can guarantee that all api paths in the client are defined correctly on the backend during compile-time, run-time (during startup), or in unit tests.</p>\n<p>My first thought was adding an interface (in a shared assembly) which is implemented by <code>PostController</code>, it would just define the endpoint and return values.</p>\n<pre><code>interface IPostApi\n{\n    Task&lt;IEnumerable&lt;SelectListOption&lt;int&gt;&gt;&gt; List();\n}\nclass PostController : IPostApi\n{\n    //...\n}\n</code></pre>\n<p>However this does not work because <code>PostController.List</code> needs to implement ActionResult which is not compatible with <code>IPostApi</code> which does not have <code>ActionResult</code>.</p>\n<p>It seems like the only way to do this is to use integration tests or other tests which iterate through all the clients and apis and verify the routes and data types match up. Is there anyway to have this sort of stuff checked at compile time?</p>\n"
+}

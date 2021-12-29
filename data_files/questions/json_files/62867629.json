@@ -1,0 +1,28 @@
+{
+    "tags": [
+        "asp.net-core",
+        "openid-connect",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 197,
+        "user_id": 215015,
+        "user_type": "registered",
+        "accept_rate": 75,
+        "profile_image": "https://www.gravatar.com/avatar/528a66df3b23809bdf196043eb02ca91?s=128&d=identicon&r=PG",
+        "display_name": "Robie",
+        "link": "https://stackoverflow.com/users/215015/robie"
+    },
+    "is_answered": true,
+    "view_count": 146,
+    "accepted_answer_id": 62872562,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1594630934,
+    "creation_date": 1594598629,
+    "question_id": 62867629,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/62867629/sending-additional-query-string-when-triggering-a-sign-in-operation-in-webassemb",
+    "title": "Sending additional query string when triggering a sign-in operation in WebAssembly",
+    "body": "<p>I am building a webassembly app with the latest Blazor WebAssembly 3.2.0. I am using Auth0 for the identity provider and I need to pass additional parameters (email address) along with the required parameters defined in OidcProviderOptions when triggering a sign-in operation.</p>\n<p>Is there any way to add this additional field so that it goes to the identity provider alongside the existing query-string parameters such as the returnUrl?</p>\n<p>The idea is that the Identity provider will read this additional querying (email address) and populate the user-id field when generating the login screen.\nI am using the below extension to register the provider</p>\n<pre><code>builder.Services.AddOidcAuthentication(options =&gt;\n            {\n                builder.Configuration.Bind(&quot;Local&quot;, options.ProviderOptions);\n            })\n</code></pre>\n"
+}

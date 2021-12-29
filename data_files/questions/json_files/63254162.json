@@ -1,0 +1,29 @@
+{
+    "tags": [
+        "performance",
+        "blazor",
+        "blazor-client-side",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 6900,
+        "user_id": 7453,
+        "user_type": "registered",
+        "accept_rate": 93,
+        "profile_image": "https://www.gravatar.com/avatar/9221ab436283d74b2f9980004df83c1c?s=128&d=identicon&r=PG",
+        "display_name": "Patrick Szalapski",
+        "link": "https://stackoverflow.com/users/7453/patrick-szalapski"
+    },
+    "is_answered": true,
+    "view_count": 712,
+    "answer_count": 1,
+    "score": 2,
+    "last_activity_date": 1596704204,
+    "creation_date": 1596570694,
+    "last_edit_date": 1596640465,
+    "question_id": 63254162,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/63254162/blazor-webassembly-deserializing-is-much-slower-than-even-the-download-what-is",
+    "title": "Blazor WebAssembly deserializing is much slower than even the download? What is wrong?",
+    "body": "<p>In my Blazor app, I have a component that has a method like this. (I've replaced GetFromJsonAsync call with code from inside it, to narrow down the slow part.)</p>\n<pre><code>  private async Task GetData()\n  {\n      IsLoading = true;\n      string url = $&quot;.../api/v1/Foo&quot;;  // will return a 1.5 MB JSON array\n      var client = clientFactory.CreateClient(&quot;MyNamedClient&quot;);\n\n      Console.WriteLine($&quot;starting&quot;);\n\n      List&lt;Foo&gt; results;\n\n      Task&lt;HttpResponseMessage&gt; taskResponse = client.GetAsync(url, HttpCompletionOption.ResponseContentRead, default);\n\n      var sw = Stopwatch.StartNew();\n      using (HttpResponseMessage response = await taskResponse)\n      {\n        \n        response.EnsureSuccessStatusCode();\n        var content = response.Content!;\n\n        if (content == null)\n        {\n          throw new ArgumentNullException(nameof(content));\n        }\n        \n        string contentString = await content.ReadAsStringAsync();\n\n        sw.Stop();\n        Console.WriteLine($&quot;Read string: {sw.Elapsed}&quot;);\n        sw.Restart();\n\n        results = System.Text.Json.JsonSerializer.Deserialize&lt;List&lt;Foo&gt;&gt;(contentString);\n\n      }\n\n      sw.Stop();\n      Console.WriteLine($&quot;Deserialize: {sw.Elapsed}&quot;);\n      \n      StateHasChanged();\n      IsLoading = false;\n</code></pre>\n<p>My download of 1.5 MB takes 1-6 seconds, but the rest of the operation (during which the UI is blocked) takes 10-30 seconds.  <strong>Is this just slow</strong> deserialization in <code>ReadFromJsonAsync</code> (which calls <code>System.Text.Json.JsonSerializer.Deserialize</code> internally), or is there <strong>something else going on here</strong>?  <strong>How can I improve the efficiency</strong> of getting this large set of data (though it isn't all that big, I think!)</p>\n<p>I have commented out anything bound to <code>Results</code> to simplify, and instead I just have an indicator bound to <code>IsLoading</code>. This tells me there's no problem in updating the DOM or rendering.</p>\n<p>When I attempt the same set of code in an automated integration test, it only takes 3 seconds or so. Is WebAssembly really that slow at deserializing?  If so, is the only solution to retrieve very small data sets everywhere on my site?  This doesn't seem right to me.</p>\n<p>Here's the resulting browser console log from running the above code:</p>\n<pre><code>VM1131:1 Fetch finished loading: GET &quot;https://localhost:5001/api/v1/Foo&quot;.\nread string 00:00:05.5464300\nDeserialize: 00:00:15.4109950\nL: GC_MAJOR_SWEEP: major size: 3232K in use: 28547K\nL: GC_MAJOR: (LOS overflow) time 18.49ms, stw 18.50ms los size: 2048K in use: 187K\nL: GC_MINOR: (LOS overflow) time 0.33ms, stw 0.37ms promoted 0K major size: 3232K in use: 2014K los size: 2048K in use: 187K\n</code></pre>\n<p>For what it's worth, here's the Chrome performance graph. The green is the download and the orange is &quot;perform microtasks&quot;, which I assume means WebAssembly work.</p>\n<p><a href=\"https://i.stack.imgur.com/3u0gw.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/3u0gw.png\" alt=\"enter image description here\" /></a></p>\n"
+}

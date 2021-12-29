@@ -1,0 +1,26 @@
+{
+    "tags": [
+        "cdn",
+        "webassembly"
+    ],
+    "owner": {
+        "reputation": 53,
+        "user_id": 2023347,
+        "user_type": "registered",
+        "profile_image": "https://i.stack.imgur.com/TxYFe.jpg?s=128&g=1",
+        "display_name": "MichaelBolton",
+        "link": "https://stackoverflow.com/users/2023347/michaelbolton"
+    },
+    "is_answered": true,
+    "view_count": 91,
+    "accepted_answer_id": 61823456,
+    "answer_count": 1,
+    "score": 1,
+    "last_activity_date": 1589558170,
+    "creation_date": 1589551758,
+    "question_id": 61821267,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/61821267/curated-webassembly-cdn",
+    "title": "Curated WebAssembly CDN",
+    "body": "<p>I'm considering webassembly for a new project, and this got me wondering:</p>\n\n<p>Is anyone aware of a consortium that is curating a CDN for webassembly libraries?  Ideally, such an offering would improve load times with caching, allow for the benefits of dependency injection, and centralize encryption/security behaviors so that new algorithms can be rolled out quickly when the crap hits the fan with quantum computing.</p>\n\n<p>If there isn't one, does anyone know how to lobby to get one started?</p>\n\n<p>I realize that many libraries can be recompiled into webassembly downloads, but that would bloat the application size, and put extra strain on each shop to manage their library consumption.</p>\n\n<p>Additional (but less critical) benefits to a curated CDN would include shared performance increases for libraries that support data warehousing, shared performance increases for database access, forcible separation of concerns when coding, significantly smaller project sizes, simplified interface contracts via nuget, etc.  The list of benefits is pretty huge.</p>\n\n<p>Also, if webassembly containers gain enough adoption, such shared libraries could serve as a vehicle to allow for a much more seamless transition to/from different technology stacks (possibly unifying the JAVA stream and .NET linq libraries for example) under the expressed goal of being language agnostic.  Webassembly is meant to be language agnostic.  It seems like it would be a shame if each technology platform/shop built their own redundant libraries, which would serve to be slower and less reliable than libraries forged under the scrutiny of open sourcing.</p>\n"
+}

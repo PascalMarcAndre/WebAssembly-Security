@@ -1,0 +1,27 @@
+{
+    "tags": [
+        "rust",
+        "webassembly"
+    ],
+    "owner": {
+        "reputation": 385,
+        "user_id": 5577384,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/d7265224a43bec8e07c971f2b11273e9?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Adam R",
+        "link": "https://stackoverflow.com/users/5577384/adam-r"
+    },
+    "is_answered": true,
+    "view_count": 1440,
+    "accepted_answer_id": 51544868,
+    "answer_count": 2,
+    "score": 14,
+    "last_activity_date": 1611885199,
+    "creation_date": 1532625152,
+    "last_edit_date": 1532627898,
+    "question_id": 51544240,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/51544240/how-can-i-free-memory-allocated-by-rust-code-exposed-in-webassembly",
+    "title": "How can I free memory allocated by Rust code exposed in WebAssembly?",
+    "body": "<p>I have a web application written in Rust and wasm-bindgen that needs to store state. The state is stored like this:</p>\n\n<pre><code>lazy_static! {\n    static ref ID_TO_DATA: Mutex&lt;HashMap&lt;u32, Data&gt;&gt; = Mutex::new(HashMap::new());\n}\n\npub struct Data {\n    pub coder_id: u16,\n    pub bools: Vec&lt;bool&gt;,\n    pub ints: Vec&lt;i32&gt;,\n    pub strings: Vec&lt;String&gt;,\n}\n</code></pre>\n\n<p>I attempted the following to remove the data and free the memory, and the data is removed from the <code>HashMap</code> and no errors are reported:</p>\n\n<pre><code>#[wasm_bindgen]\npub fn remove_data(id: u32) {\n    match ID_TO_DATA.lock().unwrap().remove(&amp;id) {\n        Some(data) =&gt; {\n            std::mem::drop(data);\n        }\n        None =&gt; {}\n    }\n}\n</code></pre>\n\n<p>However, the memory used by the browser tab never drops (using Chrome 67). I used Windows' Task Manager and watched the memory grow to almost 2GB for the relevant process/tab, and then after my program removed all the entries, I waited a minute and the memory was still at almost 2GB.</p>\n\n<p>I also tried the following, but got this error: <code>RuntimeError: memory access out of bounds</code></p>\n\n<pre><code>#[wasm_bindgen]\npub fn remove_data(id: u32) {\n    match ID_TO_DATA.lock().unwrap().remove(&amp;id) {\n        Some(mut data) =&gt; {\n            unsafe {\n                std::ptr::drop_in_place(&amp;mut data);\n            }\n        }\n        None =&gt; {}\n    }\n}\n</code></pre>\n\n<p>How can I successfully free this memory?</p>\n"
+}

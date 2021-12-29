@@ -1,0 +1,28 @@
+{
+    "tags": [
+        "asp.net-core",
+        "identity",
+        "blazor",
+        "scaffold"
+    ],
+    "owner": {
+        "reputation": 3,
+        "user_id": 13146767,
+        "user_type": "registered",
+        "profile_image": "https://lh3.googleusercontent.com/a-/AOh14GgJyqQ4b9E-EXg1THHZAmEyWR2Li9VxspV3nGjj=k-s128",
+        "display_name": "Dima ddk",
+        "link": "https://stackoverflow.com/users/13146767/dima-ddk"
+    },
+    "is_answered": true,
+    "view_count": 1282,
+    "accepted_answer_id": 60925229,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1585550209,
+    "creation_date": 1585503543,
+    "question_id": 60918264,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/60918264/an-unhandled-error-has-occurred-when-using-identity-scaffold-elements-in-a-bl",
+    "title": "\u201cAn unhandled error has occurred.\u201d when using Identity scaffold elements in a Blazor application",
+    "body": "<ol>\n<li>Created a <em>Blazor WebAssembly 3.2.0 Preview 3</em> application template using <em>Individual User Accounts</em> and the <em>ASP.NET Core hosted</em> parameter</li>\n<li>At this point, everything starts up correctly and the standard Blazor application is displayed.</li>\n<li>Added scaffold <em>Registration</em> and <em>Login</em> pages</li>\n<li>The application starts without errors, but the display template stops working and a message appears the message <em>\u201cAn unhandled error has occurred\"</em>.</li>\n</ol>\n"
+}

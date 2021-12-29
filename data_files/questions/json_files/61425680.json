@@ -1,0 +1,29 @@
+{
+    "tags": [
+        "javascript",
+        "webassembly",
+        "isolation",
+        "javascript-injection"
+    ],
+    "owner": {
+        "reputation": 5694,
+        "user_id": 51841,
+        "user_type": "registered",
+        "accept_rate": 42,
+        "profile_image": "https://www.gravatar.com/avatar/c9efbc8ac5c88d7c9389276af0bc53a0?s=128&d=identicon&r=PG",
+        "display_name": "maxfridbe",
+        "link": "https://stackoverflow.com/users/51841/maxfridbe"
+    },
+    "is_answered": true,
+    "view_count": 175,
+    "accepted_answer_id": 61426364,
+    "answer_count": 1,
+    "score": 4,
+    "last_activity_date": 1587821241,
+    "creation_date": 1587817954,
+    "question_id": 61425680,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/61425680/is-there-a-javascript-runtime-in-webassembly",
+    "title": "Is there a Javascript runtime in WebAssembly",
+    "body": "<p>I am trying to isolate user JavaScript code for security.\nI can do this via Iframe security and message passing.</p>\n\n<p>Is there a JavaScript runtime that can be loaded via webassembly to which i can pass something simple like '5+3' and read the result.</p>\n\n<p>If this was c# etc I could new up and manage a V8 engine and have it execute the javascript and pass back to the host.</p>\n"
+}

@@ -1,0 +1,27 @@
+{
+    "tags": [
+        "local-storage",
+        "blazor",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 411,
+        "user_id": 11023699,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/d02a3ca4d9eefe8d3133ece3dc68e0d3?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Franky",
+        "link": "https://stackoverflow.com/users/11023699/franky"
+    },
+    "is_answered": true,
+    "view_count": 34,
+    "accepted_answer_id": 66846341,
+    "answer_count": 2,
+    "score": 0,
+    "last_activity_date": 1616966674,
+    "creation_date": 1616965867,
+    "question_id": 66846249,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/66846249/question-about-local-db-used-by-blazingpizza-blazor-app",
+    "title": "Question about local db used by BlazingPizza Blazor app",
+    "body": "<p>I am studying the demo Blazor WebAssembly project located here <a href=\"https://github.com/dotnet-presentations/blazor-workshop\" rel=\"nofollow noreferrer\">BlazingPizza</a></p>\n<p>This project uses a local SqlLite database called &quot;Pizza.db&quot; for authentication and app-related data storage. I am trying to understand how will this db file be downloaded to the browser? Is it a hidden resource file and user has no access to it? If so, would such db file be a good solution to use instead of localStorage since user can easily manipulate localStorage values? Thanks for any advice.</p>\n"
+}

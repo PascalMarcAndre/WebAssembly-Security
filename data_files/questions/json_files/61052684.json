@@ -1,0 +1,28 @@
+{
+    "tags": [
+        "javascript",
+        "browser",
+        "webassembly"
+    ],
+    "owner": {
+        "reputation": 2481,
+        "user_id": 1106456,
+        "user_type": "registered",
+        "accept_rate": 93,
+        "profile_image": "https://www.gravatar.com/avatar/60b23f3de35058180807f35b623fcf83?s=128&d=identicon&r=PG",
+        "display_name": "GolDDranks",
+        "link": "https://stackoverflow.com/users/1106456/golddranks"
+    },
+    "is_answered": true,
+    "view_count": 977,
+    "accepted_answer_id": 61450335,
+    "answer_count": 2,
+    "score": 5,
+    "last_activity_date": 1608278522,
+    "creation_date": 1586145123,
+    "question_id": 61052684,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/61052684/how-to-load-a-wasm-module-locally",
+    "title": "How to load a wasm module locally?",
+    "body": "<p>I'm trying to make a simple, self-contained (only an .html file and a .wasm file) offline data visualization that uses JavaScript and WebAssembly. However, I'm having troubles loading the WASM module from a local file.</p>\n\n<p>The first trouble is CORS. Trying to load any JS module with a relative or a <code>file://</code> URL gets me security errors. On Firefox, I managed to disable local CORS, but that's icky and overly permissive. On Chrome, I'd need to start the browser with flags. Those are both non-starters from user perspective. Is there any way to load JS or WASM modules from a local file without running into CORS troubles?</p>\n\n<p>Getting around CORS, the second trouble is that although Firefox is able to load JS modules, it fails with the WASM module: (my actual error message is in Japanese, but I think this is the English one) 'Loading failed for the \".wasm\" with source'. No further info is shown. On Chrome, the error message is 'Failed to load module script: The server responded with a non-JavaScript MIME type of \"\". Strict MIME type checking is enforced for module scripts per HTML spec.', which suggests that both browsers might be suffering from not being able to guess the MIME type.</p>\n\n<p>These both issues would be solved by setting up a HTTP server, but that entirely defeats the purpose of having a simple, self-contained file/files that need only the browser to run.</p>\n\n<p>Is there a way to load and call WASM with only local files?</p>\n"
+}

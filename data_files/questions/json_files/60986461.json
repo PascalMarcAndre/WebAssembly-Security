@@ -1,0 +1,31 @@
+{
+    "tags": [
+        "javascript",
+        "google-chrome",
+        "permissions",
+        "local-storage",
+        "quota"
+    ],
+    "owner": {
+        "reputation": 12633,
+        "user_id": 653457,
+        "user_type": "registered",
+        "accept_rate": 89,
+        "profile_image": "https://www.gravatar.com/avatar/8870f099add93fa56421a87532ea0fe3?s=128&d=identicon&r=PG",
+        "display_name": "Luke Vo",
+        "link": "https://stackoverflow.com/users/653457/luke-vo"
+    },
+    "is_answered": true,
+    "view_count": 284,
+    "accepted_answer_id": 65363278,
+    "answer_count": 1,
+    "score": 2,
+    "last_activity_date": 1608321945,
+    "creation_date": 1585813164,
+    "last_edit_date": 1585813497,
+    "question_id": 60986461,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/60986461/anyway-to-ask-for-permission-for-higher-localstorage-limit-in-chrome-without-mak",
+    "title": "Anyway to ask for permission for higher localStorage limit in Chrome without making an extension (from Javascript or manually from Chrome UI by user)?",
+    "body": "<p>I am making an inhouse solution deployed on a private web (<a href=\"https://www.example.com/\" rel=\"nofollow noreferrer\">https://www.example.com/</a>). It's frontend only using WebAssembly (from .NET Blazor if relevant) and have full access to everything including environment that may need.</p>\n\n<p>We cache the report data using <code>localStorage</code> however problem arise as the cache is too big for operation and exceed the limit.</p>\n\n<p>If there is no other solution, we will have to modify the code to change to another storage that allows higher limit, but is there any config and/or Javascript solution that can request browser permission for higher <code>localStorage</code> limit? We have full control of the environment so browser is not a problem. However, we want to avoid Chrome extension if possible since we don't want to deploy them to the Chrome Store and it's complicated to use WebAssembly in Chrome extension (unless they changed it recently).</p>\n"
+}

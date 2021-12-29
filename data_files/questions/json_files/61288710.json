@@ -1,0 +1,27 @@
+{
+    "tags": [
+        "unity3d",
+        "webassembly",
+        "unity-webgl"
+    ],
+    "owner": {
+        "reputation": 1,
+        "user_id": 13346866,
+        "user_type": "registered",
+        "profile_image": "https://graph.facebook.com/10221998367005212/picture?type=large",
+        "display_name": "K.1234512",
+        "link": "https://stackoverflow.com/users/13346866/k-1234512"
+    },
+    "is_answered": false,
+    "view_count": 156,
+    "answer_count": 0,
+    "score": 0,
+    "last_activity_date": 1587211344,
+    "creation_date": 1587211143,
+    "last_edit_date": 1587211344,
+    "question_id": 61288710,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/61288710/my-unity-game-has-bugs-when-builded-to-webgl",
+    "title": "My unity game has bugs when builded to webgl",
+    "body": "<p>My game has a very simple structure. It is an interactive film (like Black Mirror Bandersnatch) where you can choose between 3 scenes. By pressing 1, 2 or 3 it leads you to a new unity scene that is playing a video (URL link). \nThere is also a \"secret\" scene that appears when you press any other button (from 4 to 9). And here is my problem:\nThe game is working fine on unity! It shows the right video when pressing 4-9 button. But when building the game and uploading it to my server, pressing 4-9 leads you to the wrong video (back to the loading scene instead of the \"secret\" scene). \nSo I guess the error occurs when webassembly.\nDoes anyone know how to fix that problem?</p>\n\n<p>Here is the link to the interactive film : <a href=\"https://lonelyrobot.club\" rel=\"nofollow noreferrer\">lonelyrobot.club</a></p>\n\n<p>And here is the script that I use in every scene:</p>\n\n<pre><code>using UnityEngine;\nusing UnityEngine.SceneManagement;\nusing System.Collections;\n\npublic class street : MonoBehaviour\n{\n\nvoid Update()\n{\n    if ((Input.GetKeyDown(KeyCode.Alpha1)))\n    {\n        SceneManager.LoadScene(\"hotel_hall\");\n    }\n    if ((Input.GetKeyDown(KeyCode.Alpha2)))\n    {\n        SceneManager.LoadScene(\"walk1\");\n    }\n    if ((Input.GetKeyDown(KeyCode.Alpha3)))\n    {\n        SceneManager.LoadScene(\"taxi1\");\n    }\n    if ((Input.GetKeyDown(KeyCode.Alpha4)))\n    {\n        SceneManager.LoadScene(\"lost\");\n    }\n    if ((Input.GetKeyDown(KeyCode.Alpha5)))\n    {\n        SceneManager.LoadScene(\"lost\");\n    }\n    if ((Input.GetKeyDown(KeyCode.Alpha6)))\n    {\n        SceneManager.LoadScene(\"lost\");\n    }\n    if ((Input.GetKeyDown(KeyCode.Alpha7)))\n    {\n        SceneManager.LoadScene(\"lost\");\n    }\n    if ((Input.GetKeyDown(KeyCode.Alpha8)))\n    {\n        SceneManager.LoadScene(\"lost\");\n    }\n    if ((Input.GetKeyDown(KeyCode.Alpha9)))\n    {\n        SceneManager.LoadScene(\"lost\");\n    }\n    if ((Input.GetKeyDown(KeyCode.Alpha0)))\n    {\n        SceneManager.LoadScene(\"lost\");\n    }\n}\n}\n</code></pre>\n"
+}

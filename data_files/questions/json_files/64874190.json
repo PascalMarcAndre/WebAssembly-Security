@@ -1,0 +1,28 @@
+{
+    "tags": [
+        "c#",
+        "authentication",
+        "asp.net-web-api",
+        "asp.net-identity",
+        "blazor"
+    ],
+    "owner": {
+        "reputation": 85,
+        "user_id": 14308072,
+        "user_type": "registered",
+        "profile_image": "https://lh4.googleusercontent.com/-XBD02FVdSWI/AAAAAAAAAAI/AAAAAAAAAAA/AMZuucm1Rn7jdyFPNGzzfQt4lWnfOrWOzw/photo.jpg?sz=128",
+        "display_name": "GAC",
+        "link": "https://stackoverflow.com/users/14308072/gac"
+    },
+    "is_answered": false,
+    "view_count": 823,
+    "answer_count": 0,
+    "score": 1,
+    "last_activity_date": 1609800151,
+    "creation_date": 1605611759,
+    "question_id": 64874190,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/64874190/adding-a-identity-authentication-in-an-existing-blazor-project-and-a-separate-we",
+    "title": "Adding a Identity Authentication in an EXISTING Blazor project and a SEPARATE WebApi project",
+    "body": "<p>I am a beginner, and I chose to learn Blazor and WebApi by <strong>NOT</strong> using the Blazor WebAssembly App with ASP.NET Core hosted (<em>I know I could have just used the template where there is a Client, Server, and Shared projects, but I feel that I can learn better when I understand how they operate separately</em>). Anyway, instead I did the following:</p>\n<ol>\n<li><p>Created an <strong>empty</strong> Solution</p>\n</li>\n<li><p>Added a <strong>Server.WebApi</strong> project using an <em>ASP.NET Core Web Application (API)</em> - this is where I placed all my <strong>WebApi Controllers</strong></p>\n</li>\n<li><p>Added a <strong>Lib.DataAccess</strong> project using a <em>Class Library (.NET Standard) Targeting Framework 2.1</em> - this is where I placed my <strong>ApplicationDbContext.cs</strong> and <strong>Migrations</strong> Folder</p>\n</li>\n<li><p>Added a <strong>Lib.Entities</strong> project using a <em>Class Library (.NET Standard) Targeting Framework 2.1</em> - this is where I placed my <strong>Models</strong> and <strong>ViewModels</strong></p>\n</li>\n<li><p>Added a <strong>Client.Blazor</strong> project using a <em>Blazor Web Assembly App</em> but not ASP.NET Core hosted, and with <em>No Authentication</em></p>\n</li>\n</ol>\n<p>So far, I was able to make everything work properly.</p>\n<p>But now, I'd like to learn how to <strong>Add Identity Authentication</strong> in my existing solution...but I don't know how or where to begin...because I also don't really understand the concepts behind or how it works..</p>\n<p>Inquiries:</p>\n<ol>\n<li>Can somebody please help add this to my existing project? Do I install packages on Client.Blazor and Server.WebApi? or install in Server.WebApi only?</li>\n<li>Can I use a separate DbContext and separate Database Schema for the Identity Authentication? Or is it proper to use a different DbContext but use the same Database Schema?</li>\n<li>In relation to #2, I do not know how to implement either...</li>\n<li>When I implement Identity Authentication, is there a way for me to select User Roles (<em>such as System Admin, Encoder, Guest, etc...</em>)?</li>\n<li>When a user is logged in (<em>I'm kinda assuming that the user account logged in data is in the Server.WebApi</em>), is it possible for me to retrieve user account data in the Client.Blazor project?</li>\n</ol>\n<p>I apologize for asking too much here, but there's just too much information in the internet and I am kind of getting lost already...Thanks in advance for the help!</p>\n"
+}

@@ -1,0 +1,26 @@
+{
+    "tags": [
+        "blazor",
+        "blazor-client-side"
+    ],
+    "owner": {
+        "reputation": 1019,
+        "user_id": 11084254,
+        "user_type": "registered",
+        "profile_image": "https://i.stack.imgur.com/pgJcX.jpg?s=128&g=1",
+        "display_name": "Leonardo Lurci",
+        "link": "https://stackoverflow.com/users/11084254/leonardo-lurci"
+    },
+    "is_answered": true,
+    "view_count": 7905,
+    "answer_count": 5,
+    "score": 9,
+    "last_activity_date": 1611359742,
+    "creation_date": 1585093346,
+    "last_edit_date": 1585095727,
+    "question_id": 60840986,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/60840986/blazor-redirect-to-login-if-user-is-not-authenticated",
+    "title": "Blazor redirect to login if user is not authenticated",
+    "body": "<p>I am trying to develop an app using Blazor WebAssembly and I am wondering about how I can protect my whole application if the user is not authenticated. The behavior I would implement is:</p>\n\n<ul>\n<li><em>If an anonymous user asks for any page, then he will be redirected to the login page</em></li>\n</ul>\n\n<p>Better</p>\n\n<ul>\n<li><em>a user <strong>must</strong> be authenticated for using this app</em></li>\n</ul>\n\n<p>At the moment I've implemented this behavior applying the <code>[Authorize]</code> attribute to every page, but I would like to centralize it.</p>\n\n<p>I've achieved this goal on Blazor Server Side applying the <code>[Authorize]</code> attribute inside the <code>_host.razor</code> component.</p>\n\n<p>Is there a solution even for Blazor Client Side?</p>\n"
+}

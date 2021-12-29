@@ -1,0 +1,30 @@
+{
+    "tags": [
+        "c#",
+        "macos",
+        "visual-studio",
+        "blazor",
+        "visual-studio-mac"
+    ],
+    "owner": {
+        "reputation": 568,
+        "user_id": 1415454,
+        "user_type": "registered",
+        "accept_rate": 67,
+        "profile_image": "https://www.gravatar.com/avatar/6ff55239f069e204b22596b14e1e63e6?s=128&d=identicon&r=PG",
+        "display_name": "Chris Simeone",
+        "link": "https://stackoverflow.com/users/1415454/chris-simeone"
+    },
+    "is_answered": true,
+    "view_count": 1383,
+    "accepted_answer_id": 62051295,
+    "answer_count": 3,
+    "score": 5,
+    "last_activity_date": 1590608040,
+    "creation_date": 1582215858,
+    "question_id": 60324442,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/60324442/missing-blazor-webassembly-app-template-for-visual-studio-for-mac",
+    "title": "Missing Blazor WebAssembly app template for Visual Studio for Mac",
+    "body": "<p>I am trying to create a Blazor WebAssembly app using the latest build of Visual Studio for Mac (v8.4.6 build 36). </p>\n\n<p>I have .NET Core 3.1 SDK installed. </p>\n\n<p>I also installed the latest Blazor WebAssembly 3.2.0 Preview 1 by running:</p>\n\n<p><code>dotnet new -i Microsoft.AspNetCore.Blazor.Templates::3.2.0-preview1.20073.1</code>. </p>\n\n<p>The output log shows it installed successfully:</p>\n\n<pre><code>Templates                                         Short Name               Language          Tags                                 \n----------------------------------------------------------------------------------------------------------------------------------\nBlazor Server App                                 blazorserver             [C#]              Web/Blazor                           \nBlazor WebAssembly App                            blazorwasm               [C#]              Web/Blazor/WebAssembly\n\n</code></pre>\n\n<p>However, the Blazor WebAssembly App template does not show up in Visual Studio for Mac, even after restarting:</p>\n\n<p><a href=\"https://i.stack.imgur.com/NOvVS.png\" rel=\"noreferrer\"><img src=\"https://i.stack.imgur.com/NOvVS.png\" alt=\"enter image description here\"></a>\nAnd if I create a Blazor WebAssembly app from the CLI as follows, it builds but does not run:</p>\n\n<pre><code>dotnet new blazorwasm\ndotnet build\ndotnet run\n</code></pre>\n\n<p>And if I try to run it in Visual Studio for Mac I get this error:\n<code>Cannot open assembly '/Users/my.username/projects/blazor/BlazerWasm/bin/Debug/netstandard2.1/BlazerWasm.exe': No such file or directory.</code></p>\n\n<p>Is Visual Studio for Mac not able to build or run Blazor WebAssembly apps, or am I missing something?</p>\n"
+}

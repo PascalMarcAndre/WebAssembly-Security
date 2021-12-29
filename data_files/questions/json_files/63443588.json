@@ -1,0 +1,29 @@
+{
+    "tags": [
+        "asp.net",
+        "asp.net-identity",
+        "identityserver4",
+        "blazor",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 13,
+        "user_id": 3505417,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/d0c7c6bad8925304f613d716b5ef42dc?s=128&d=identicon&r=PG&f=1",
+        "display_name": "145a32",
+        "link": "https://stackoverflow.com/users/3505417/145a32"
+    },
+    "is_answered": false,
+    "view_count": 125,
+    "answer_count": 0,
+    "score": 0,
+    "last_activity_date": 1597638275,
+    "creation_date": 1597628759,
+    "last_edit_date": 1597638275,
+    "question_id": 63443588,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/63443588/blazor-webassembly-with-identityserver4-hangs-on-navigating-to-the-login-registe",
+    "title": "Blazor WebAssembly with IdentityServer4 hangs on navigating to the login/register pages",
+    "body": "<p>Using the default settings from the Blazor WebAssembly template project (.NET Core 5 preview, core hosted) in Visual Studio, with Individual User Accounts enabled, IdentityServer4 hangs when attempting to login or register. It doesn't hang every single time, but 100% of the time the first time I navigate to the login page, and then at least 50-75% of the time for subsequent attempts, causing a delay on the order of 5-30 seconds before the 'email' and 'password' fields are clickable.</p>\n<p>This doesn't happen when using IS4 in a standalone project with a separate Blazor WebAssembly client and separate Web API, or in a Blazor Server starter project with Individual User Accounts created from the VS template. I've tried with both PostgreSQL and Sqlite, and this happens with both.</p>\n<p>Is there any setting that can be adjusted to get around this? Could this possibly have something to do with refresh tokens? Sadly, IdentityServer4 is not currently usable out of the box with Blazor WebAssembly in this state.</p>\n<p>Edit: For the original question, I was using .NET Core 5 preview. Since then, I've tried a new project using version 3.1. The issue still happens, but not nearly as often, maybe 5% of the time, and the delay is shorter as well. There seems to be something happening between the two .NET Core versions that brings this to the surface.</p>\n"
+}

@@ -1,0 +1,29 @@
+{
+    "tags": [
+        "c#",
+        "visual-studio",
+        "asp.net-core",
+        "blazor",
+        "blazor-webassembly"
+    ],
+    "owner": {
+        "reputation": 32323,
+        "user_id": 3728901,
+        "user_type": "registered",
+        "accept_rate": 58,
+        "profile_image": "https://i.stack.imgur.com/u3jKU.jpg?s=128&g=1",
+        "display_name": "Do Nhu Vy",
+        "link": "https://stackoverflow.com/users/3728901/do-nhu-vy"
+    },
+    "is_answered": true,
+    "view_count": 68,
+    "answer_count": 1,
+    "score": 1,
+    "last_activity_date": 1606675979,
+    "creation_date": 1606665936,
+    "question_id": 65062180,
+    "content_license": "CC BY-SA 4.0",
+    "link": "https://stackoverflow.com/questions/65062180/blazor-webassembly-how-to-inject-controller-from-foo-sever-to-foo-client",
+    "title": "Blazor webassembly: How to inject controller from `foo.Sever` to `foo.Client`?",
+    "body": "<p>Development environment: I am using .NET 5 official release, Visual Studio 2019 preview (latest). As you known, creating new project by Visual Studio 2019 use Blazor webassembly project. When we named project <code>foo</code>, Visual Studio scaffolding 3 projects</p>\n<ul>\n<li><code>foo.Shared</code></li>\n<li><code>foo.Client</code> (has dependency with <code>foo.Shared</code>)</li>\n<li><code>foo.Server</code> (has dependency with <code>foo.Shared</code>)</li>\n</ul>\n<p>In Blazor server-side, I did like this</p>\n<p><a href=\"https://i.stack.imgur.com/WiFdP.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/WiFdP.png\" alt=\"enter image description here\" /></a></p>\n<p>I put controller inside <code>foo.Sever</code> ,  As you know, <code>foo.Client</code> did not use dependency <code>foo.Server</code> . How to call controller from <code>foo.Client</code> by injecting?</p>\n<p>I need some extend ideal for this reality problem (guide me best practice call controller from <code>foo.Client</code> (Razor pages)).</p>\n"
+}
