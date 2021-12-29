@@ -1,0 +1,137 @@
+[
+    {
+        "owner": {
+            "reputation": 240386,
+            "user_id": 60761,
+            "user_type": "registered",
+            "accept_rate": 91,
+            "profile_image": "https://www.gravatar.com/avatar/5bf43bae0431d8f4a062234b5e3a0cb9?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Henk Holterman",
+            "link": "https://stackoverflow.com/users/60761/henk-holterman"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1582490996,
+        "post_id": 60360640,
+        "comment_id": 106786623,
+        "content_license": "CC BY-SA 4.0",
+        "body": "My understanding is that it will be problematic when MyEntityClass has complex or nav properties. But I&#39;d like to hear your results. Note that you can add a self-answer."
+    },
+    {
+        "owner": {
+            "reputation": 1180,
+            "user_id": 2969412,
+            "user_type": "registered",
+            "accept_rate": 57,
+            "profile_image": "https://www.gravatar.com/avatar/2400c042e8661dccb01771f598b8acf0?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Morten_564834",
+            "link": "https://stackoverflow.com/users/2969412/morten-564834"
+        },
+        "reply_to_user": {
+            "reputation": 240386,
+            "user_id": 60761,
+            "user_type": "registered",
+            "accept_rate": 91,
+            "profile_image": "https://www.gravatar.com/avatar/5bf43bae0431d8f4a062234b5e3a0cb9?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Henk Holterman",
+            "link": "https://stackoverflow.com/users/60761/henk-holterman"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1582490755,
+        "post_id": 60360640,
+        "comment_id": 106786555,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Ok seems like I just pass in TableEntityAdapter&lt;MyEntityClass&gt;(myEntitity&gt; to the repository which inherits TableEntity. I will pursue that for now.  More here: <a href=\"https://stackoverflow.com/questions/47044207/sample-writing-a-generic-object-to-azure-storage\" title=\"sample writing a generic object to azure storage\">stackoverflow.com/questions/47044207/&hellip;</a>"
+    },
+    {
+        "owner": {
+            "reputation": 1180,
+            "user_id": 2969412,
+            "user_type": "registered",
+            "accept_rate": 57,
+            "profile_image": "https://www.gravatar.com/avatar/2400c042e8661dccb01771f598b8acf0?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Morten_564834",
+            "link": "https://stackoverflow.com/users/2969412/morten-564834"
+        },
+        "reply_to_user": {
+            "reputation": 240386,
+            "user_id": 60761,
+            "user_type": "registered",
+            "accept_rate": 91,
+            "profile_image": "https://www.gravatar.com/avatar/5bf43bae0431d8f4a062234b5e3a0cb9?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Henk Holterman",
+            "link": "https://stackoverflow.com/users/60761/henk-holterman"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1582471981,
+        "post_id": 60360640,
+        "comment_id": 106781110,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Ok found this blogpost, where he creates a dynamic dto (guess it&#39;s equivalent to DAO), that converts Poco to dto on the fly. Seems like a lot of work though, I was hoping the TableEntity adapter could help out   <a href=\"https://bretthargreaves.wordpress.com/2014/01/11/azure-table-storage-with-repository-pattern/\" rel=\"nofollow noreferrer\">bretthargreaves.wordpress.com/2014/01/11/&hellip;</a>"
+    },
+    {
+        "owner": {
+            "reputation": 240386,
+            "user_id": 60761,
+            "user_type": "registered",
+            "accept_rate": 91,
+            "profile_image": "https://www.gravatar.com/avatar/5bf43bae0431d8f4a062234b5e3a0cb9?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Henk Holterman",
+            "link": "https://stackoverflow.com/users/60761/henk-holterman"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1582465889,
+        "post_id": 60360640,
+        "comment_id": 106779423,
+        "content_license": "CC BY-SA 4.0",
+        "body": "NO, a DAO ususally doesn&#39;t contain any methods orlogic (except maybe some for conversion/formatting). CRUD methods belong in a Repository."
+    },
+    {
+        "owner": {
+            "reputation": 1180,
+            "user_id": 2969412,
+            "user_type": "registered",
+            "accept_rate": 57,
+            "profile_image": "https://www.gravatar.com/avatar/2400c042e8661dccb01771f598b8acf0?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Morten_564834",
+            "link": "https://stackoverflow.com/users/2969412/morten-564834"
+        },
+        "reply_to_user": {
+            "reputation": 240386,
+            "user_id": 60761,
+            "user_type": "registered",
+            "accept_rate": 91,
+            "profile_image": "https://www.gravatar.com/avatar/5bf43bae0431d8f4a062234b5e3a0cb9?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Henk Holterman",
+            "link": "https://stackoverflow.com/users/60761/henk-holterman"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1582464653,
+        "post_id": 60360640,
+        "comment_id": 106779119,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Ok, but I&#39;m already using a repository pattern (from example - check PersonService.cs)), and it seems like DAO&#39;s contain Get, Update, Create methods as well, so seems like same-same. E.g. PersonService(IAzureTableStorage &lt; Person &gt; repository) in which Person is the POCO class that needs to inherit from TableEntity (that I want to get rid of)"
+    },
+    {
+        "owner": {
+            "reputation": 240386,
+            "user_id": 60761,
+            "user_type": "registered",
+            "accept_rate": 91,
+            "profile_image": "https://www.gravatar.com/avatar/5bf43bae0431d8f4a062234b5e3a0cb9?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Henk Holterman",
+            "link": "https://stackoverflow.com/users/60761/henk-holterman"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1582451428,
+        "post_id": 60360640,
+        "comment_id": 106776116,
+        "content_license": "CC BY-SA 4.0",
+        "body": "&quot;Dto &#39;duplicate&#39; classes of my POCO classes&quot; are called DAO&#39;s (Data Access Objects). It would be the way to go."
+    }
+]

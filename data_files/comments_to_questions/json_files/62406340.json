@@ -1,0 +1,173 @@
+[
+    {
+        "owner": {
+            "reputation": 233,
+            "user_id": 1227445,
+            "user_type": "registered",
+            "accept_rate": 50,
+            "profile_image": "https://www.gravatar.com/avatar/258b21cb64d360f84617ef2ae72633b5?s=128&d=identicon&r=PG",
+            "display_name": "user1227445",
+            "link": "https://stackoverflow.com/users/1227445/user1227445"
+        },
+        "edited": false,
+        "score": 2,
+        "creation_date": 1597584635,
+        "post_id": 62406340,
+        "comment_id": 112174689,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Seems odd that this isn&#39;t possible. I too find the popup to be a bad way of doing it and would prefer a redirect instead."
+    },
+    {
+        "owner": {
+            "reputation": 16144,
+            "user_id": 1768,
+            "user_type": "registered",
+            "accept_rate": 92,
+            "profile_image": "https://i.stack.imgur.com/6arep.png?s=128&g=1",
+            "display_name": "mattruma",
+            "link": "https://stackoverflow.com/users/1768/mattruma"
+        },
+        "reply_to_user": {
+            "reputation": 13400,
+            "user_id": 2940908,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://i.stack.imgur.com/E79WU.jpg?s=128&g=1",
+            "display_name": "agua from mars",
+            "link": "https://stackoverflow.com/users/2940908/agua-from-mars"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1592486988,
+        "post_id": 62406340,
+        "comment_id": 110447490,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I think you are correct, <code>AddOidcAuthentication</code> would work. Did hear back from the product team, and their response was &quot;We do pop-up by default and redirect if the popup is blocked. We don&#39;t have an option to do redirect only.&quot;"
+    },
+    {
+        "owner": {
+            "reputation": 13400,
+            "user_id": 2940908,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://i.stack.imgur.com/E79WU.jpg?s=128&g=1",
+            "display_name": "agua from mars",
+            "link": "https://stackoverflow.com/users/2940908/agua-from-mars"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1592482082,
+        "post_id": 62406340,
+        "comment_id": 110444705,
+        "content_license": "CC BY-SA 4.0",
+        "body": "You can also try using <code>AddOidcAuthentication</code> with same authority, clientId, scopes. It can work as AzureAd is an OAuth server."
+    },
+    {
+        "owner": {
+            "reputation": 13400,
+            "user_id": 2940908,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://i.stack.imgur.com/E79WU.jpg?s=128&g=1",
+            "display_name": "agua from mars",
+            "link": "https://stackoverflow.com/users/2940908/agua-from-mars"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1592335484,
+        "post_id": 62406340,
+        "comment_id": 110388120,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Yes, but did you try ?"
+    },
+    {
+        "owner": {
+            "reputation": 16144,
+            "user_id": 1768,
+            "user_type": "registered",
+            "accept_rate": 92,
+            "profile_image": "https://i.stack.imgur.com/6arep.png?s=128&g=1",
+            "display_name": "mattruma",
+            "link": "https://stackoverflow.com/users/1768/mattruma"
+        },
+        "reply_to_user": {
+            "reputation": 13400,
+            "user_id": 2940908,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://i.stack.imgur.com/E79WU.jpg?s=128&g=1",
+            "display_name": "agua from mars",
+            "link": "https://stackoverflow.com/users/2940908/agua-from-mars"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1592329785,
+        "post_id": 62406340,
+        "comment_id": 110385346,
+        "content_license": "CC BY-SA 4.0",
+        "body": "K ... I don&#39;t think that it was I was looking for ... right now the Login works, it displays in a pop-up ... want it to display in a full page."
+    },
+    {
+        "owner": {
+            "reputation": 13400,
+            "user_id": 2940908,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://i.stack.imgur.com/E79WU.jpg?s=128&g=1",
+            "display_name": "agua from mars",
+            "link": "https://stackoverflow.com/users/2940908/agua-from-mars"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1592320299,
+        "post_id": 62406340,
+        "comment_id": 110380220,
+        "content_license": "CC BY-SA 4.0",
+        "body": "In <code>options.ProviderOptions.Authentication</code> <a href=\"https://docs.microsoft.com/en-us/dotnet/api/microsoft.authentication.webassembly.msal.msalauthenticationoptions?view=aspnetcore-3.1\" rel=\"nofollow noreferrer\">docs.microsoft.com/en-us/dotnet/api/&hellip;</a>"
+    },
+    {
+        "owner": {
+            "reputation": 16144,
+            "user_id": 1768,
+            "user_type": "registered",
+            "accept_rate": 92,
+            "profile_image": "https://i.stack.imgur.com/6arep.png?s=128&g=1",
+            "display_name": "mattruma",
+            "link": "https://stackoverflow.com/users/1768/mattruma"
+        },
+        "reply_to_user": {
+            "reputation": 13400,
+            "user_id": 2940908,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://i.stack.imgur.com/E79WU.jpg?s=128&g=1",
+            "display_name": "agua from mars",
+            "link": "https://stackoverflow.com/users/2940908/agua-from-mars"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1592319962,
+        "post_id": 62406340,
+        "comment_id": 110380033,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Hi @aguafrommars, where would that be done at?"
+    },
+    {
+        "owner": {
+            "reputation": 13400,
+            "user_id": 2940908,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://i.stack.imgur.com/E79WU.jpg?s=128&g=1",
+            "display_name": "agua from mars",
+            "link": "https://stackoverflow.com/users/2940908/agua-from-mars"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1592309816,
+        "post_id": 62406340,
+        "comment_id": 110374008,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Did you try to set <code>NavigateToLoginRequestUrl</code> to true ?"
+    }
+]

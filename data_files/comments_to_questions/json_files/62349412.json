@@ -1,0 +1,385 @@
+[
+    {
+        "owner": {
+            "reputation": 15504,
+            "user_id": 93356,
+            "user_type": "registered",
+            "accept_rate": 85,
+            "profile_image": "https://i.stack.imgur.com/vD4W3.jpg?s=128&g=1",
+            "display_name": "Sergi Papaseit",
+            "link": "https://stackoverflow.com/users/93356/sergi-papaseit"
+        },
+        "reply_to_user": {
+            "reputation": 2908,
+            "user_id": 1515307,
+            "user_type": "registered",
+            "accept_rate": 52,
+            "profile_image": "https://www.gravatar.com/avatar/064bc5f5c10efcafceedce2f0868a3ec?s=128&d=identicon&r=PG",
+            "display_name": "James Hancock",
+            "link": "https://stackoverflow.com/users/1515307/james-hancock"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1592749715,
+        "post_id": 62349412,
+        "comment_id": 110529871,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@JamesHancock, you are right, that works for me too. Just removing the <code>IIS Express</code> section from <code>launchSettings.json</code> on the Server project seems to be enough. VS will then start Kestrel up, apparently, and that works as expected. Good enough workaround for now; you can write this as an answer, if you want..."
+    },
+    {
+        "owner": {
+            "reputation": 2908,
+            "user_id": 1515307,
+            "user_type": "registered",
+            "accept_rate": 52,
+            "profile_image": "https://www.gravatar.com/avatar/064bc5f5c10efcafceedce2f0868a3ec?s=128&d=identicon&r=PG",
+            "display_name": "James Hancock",
+            "link": "https://stackoverflow.com/users/1515307/james-hancock"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1592585896,
+        "post_id": 62349412,
+        "comment_id": 110488357,
+        "content_license": "CC BY-SA 4.0",
+        "body": "So I can repro this issue if I remove the iisSettings and IIS express from profiles. If i put them back it works. (Even if I&#39;m debugging against the project instead)"
+    },
+    {
+        "owner": {
+            "reputation": 15504,
+            "user_id": 93356,
+            "user_type": "registered",
+            "accept_rate": 85,
+            "profile_image": "https://i.stack.imgur.com/vD4W3.jpg?s=128&g=1",
+            "display_name": "Sergi Papaseit",
+            "link": "https://stackoverflow.com/users/93356/sergi-papaseit"
+        },
+        "reply_to_user": {
+            "reputation": 14814,
+            "user_id": 12450747,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/W1PE9.png?s=128&g=1",
+            "display_name": "Mr Qian",
+            "link": "https://stackoverflow.com/users/12450747/mr-qian"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1592390095,
+        "post_id": 62349412,
+        "comment_id": 110406120,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@PerryQian-MSFT i\u2019ve tried with brand new projects, several new projects, several times"
+    },
+    {
+        "owner": {
+            "reputation": 14814,
+            "user_id": 12450747,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/W1PE9.png?s=128&g=1",
+            "display_name": "Mr Qian",
+            "link": "https://stackoverflow.com/users/12450747/mr-qian"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1592389737,
+        "post_id": 62349412,
+        "comment_id": 110405945,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Did your project is from the old version VS? Or you could try to create a new Blazor WebAssembly app in vs2019 and then migrate the old one into it."
+    },
+    {
+        "owner": {
+            "reputation": 15504,
+            "user_id": 93356,
+            "user_type": "registered",
+            "accept_rate": 85,
+            "profile_image": "https://i.stack.imgur.com/vD4W3.jpg?s=128&g=1",
+            "display_name": "Sergi Papaseit",
+            "link": "https://stackoverflow.com/users/93356/sergi-papaseit"
+        },
+        "reply_to_user": {
+            "reputation": 14814,
+            "user_id": 12450747,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/W1PE9.png?s=128&g=1",
+            "display_name": "Mr Qian",
+            "link": "https://stackoverflow.com/users/12450747/mr-qian"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1592215092,
+        "post_id": 62349412,
+        "comment_id": 110334862,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@PerryQian-MSFT, thanks, just tried it all; it makes no difference unfortunately."
+    },
+    {
+        "owner": {
+            "reputation": 14814,
+            "user_id": 12450747,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/W1PE9.png?s=128&g=1",
+            "display_name": "Mr Qian",
+            "link": "https://stackoverflow.com/users/12450747/mr-qian"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1592214226,
+        "post_id": 62349412,
+        "comment_id": 110334418,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Please try to close VS Instance, delete <code>bin</code> and <code>obj</code> folder, close any Chrome and Edge  instance in Task Manager and then restart your blazor project to test again. Besides, change another port for your local Url."
+    },
+    {
+        "owner": {
+            "reputation": 15504,
+            "user_id": 93356,
+            "user_type": "registered",
+            "accept_rate": 85,
+            "profile_image": "https://i.stack.imgur.com/vD4W3.jpg?s=128&g=1",
+            "display_name": "Sergi Papaseit",
+            "link": "https://stackoverflow.com/users/93356/sergi-papaseit"
+        },
+        "reply_to_user": {
+            "reputation": 3445,
+            "user_id": 2658697,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/1d9486e90f5e906e38a06aa76bf5fa0b?s=128&d=identicon&r=PG",
+            "display_name": "Mister Magoo",
+            "link": "https://stackoverflow.com/users/2658697/mister-magoo"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1592208580,
+        "post_id": 62349412,
+        "comment_id": 110331625,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@MisterMagoo, I had already tried it, and have done it again for good measure just after reading your comment. Same result. I wonder, why would Firefox and old Edge start up the app, but the Chromium browsers not? Probably because the Chromium browsers try to register the in-broswer debugging of wasm, I guess?"
+    },
+    {
+        "owner": {
+            "reputation": 3445,
+            "user_id": 2658697,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/1d9486e90f5e906e38a06aa76bf5fa0b?s=128&d=identicon&r=PG",
+            "display_name": "Mister Magoo",
+            "link": "https://stackoverflow.com/users/2658697/mister-magoo"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1592208435,
+        "post_id": 62349412,
+        "comment_id": 110331553,
+        "content_license": "CC BY-SA 4.0",
+        "body": "One more thing to try, which sounds odd but has worked on other projects that wouldn&#39;t debug is to close VS, delete the .vs folder inside the project/solution folders and then retry"
+    },
+    {
+        "owner": {
+            "reputation": 15504,
+            "user_id": 93356,
+            "user_type": "registered",
+            "accept_rate": 85,
+            "profile_image": "https://i.stack.imgur.com/vD4W3.jpg?s=128&g=1",
+            "display_name": "Sergi Papaseit",
+            "link": "https://stackoverflow.com/users/93356/sergi-papaseit"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1592208423,
+        "post_id": 62349412,
+        "comment_id": 110331548,
+        "content_license": "CC BY-SA 4.0",
+        "body": "No problem, I do appreciate you (or indeed anyone) trying to help"
+    },
+    {
+        "owner": {
+            "reputation": 3445,
+            "user_id": 2658697,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/1d9486e90f5e906e38a06aa76bf5fa0b?s=128&d=identicon&r=PG",
+            "display_name": "Mister Magoo",
+            "link": "https://stackoverflow.com/users/2658697/mister-magoo"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1592208340,
+        "post_id": 62349412,
+        "comment_id": 110331498,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Oh you&#39;re right I misread"
+    },
+    {
+        "owner": {
+            "reputation": 15504,
+            "user_id": 93356,
+            "user_type": "registered",
+            "accept_rate": 85,
+            "profile_image": "https://i.stack.imgur.com/vD4W3.jpg?s=128&g=1",
+            "display_name": "Sergi Papaseit",
+            "link": "https://stackoverflow.com/users/93356/sergi-papaseit"
+        },
+        "reply_to_user": {
+            "reputation": 3445,
+            "user_id": 2658697,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/1d9486e90f5e906e38a06aa76bf5fa0b?s=128&d=identicon&r=PG",
+            "display_name": "Mister Magoo",
+            "link": "https://stackoverflow.com/users/2658697/mister-magoo"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1592208067,
+        "post_id": 62349412,
+        "comment_id": 110331362,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@MisterMagoo, I think you misread my comment. The tempate I&#39;m using <i>does already</i> contain <code>inpsectUri</code> on both &quot;BlazorApp1.Client&quot; and &quot;BlazorApp1.Server&quot; <code>launchSettings.json</code> files: <code>&quot;inspectUri&quot;: &quot;{wsProtocol}:&#47;&#47;{url.hostname}:{url.port}&#47;_framework&#47;debug&#47;w&zwnj;&#8203;s-proxy?browser={bro&zwnj;&#8203;wserInspectUri}&quot;,</code>"
+    },
+    {
+        "owner": {
+            "reputation": 3445,
+            "user_id": 2658697,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/1d9486e90f5e906e38a06aa76bf5fa0b?s=128&d=identicon&r=PG",
+            "display_name": "Mister Magoo",
+            "link": "https://stackoverflow.com/users/2658697/mister-magoo"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1592207914,
+        "post_id": 62349412,
+        "comment_id": 110331295,
+        "content_license": "CC BY-SA 4.0",
+        "body": "That is your problem then. inspecturl is required for debugging. Try updating your Blazor wasm template and create another new project, then check for that setting"
+    },
+    {
+        "owner": {
+            "reputation": 15504,
+            "user_id": 93356,
+            "user_type": "registered",
+            "accept_rate": 85,
+            "profile_image": "https://i.stack.imgur.com/vD4W3.jpg?s=128&g=1",
+            "display_name": "Sergi Papaseit",
+            "link": "https://stackoverflow.com/users/93356/sergi-papaseit"
+        },
+        "reply_to_user": {
+            "reputation": 3445,
+            "user_id": 2658697,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/1d9486e90f5e906e38a06aa76bf5fa0b?s=128&d=identicon&r=PG",
+            "display_name": "Mister Magoo",
+            "link": "https://stackoverflow.com/users/2658697/mister-magoo"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1592206989,
+        "post_id": 62349412,
+        "comment_id": 110330871,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@MisterMagoo, When I say Firefox and els Edge work, I mean that the application actually starts when I press F5. That&#39;s all I&#39;m asking for atm. I want to be able to hit breakpoints in VS2019; browser debugging is a problem for later. <code>launchSettings.json</code> does contain <code>inspectUri</code>, and I&#39;m on the latest (non-preview) version of VS and the SDK"
+    },
+    {
+        "owner": {
+            "reputation": 3445,
+            "user_id": 2658697,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/1d9486e90f5e906e38a06aa76bf5fa0b?s=128&d=identicon&r=PG",
+            "display_name": "Mister Magoo",
+            "link": "https://stackoverflow.com/users/2658697/mister-magoo"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1592174891,
+        "post_id": 62349412,
+        "comment_id": 110323058,
+        "content_license": "CC BY-SA 4.0",
+        "body": "You said old Edge and Firefox work &quot;as expected&quot; but they won&#39;t work as the F5 debug uses the chrome debug protocol... You are not trying to use the old Shift-Alt-D debugging are you? You are correct when you say you should be able to create a new blazorwasm project and F5 debug it - as long as your Visual studio is on the correct version and you are using the latest project template. Does the launchsettings.json file contain an &quot;inspectUri&quot; setting?"
+    },
+    {
+        "owner": {
+            "reputation": 15504,
+            "user_id": 93356,
+            "user_type": "registered",
+            "accept_rate": 85,
+            "profile_image": "https://i.stack.imgur.com/vD4W3.jpg?s=128&g=1",
+            "display_name": "Sergi Papaseit",
+            "link": "https://stackoverflow.com/users/93356/sergi-papaseit"
+        },
+        "reply_to_user": {
+            "reputation": 240386,
+            "user_id": 60761,
+            "user_type": "registered",
+            "accept_rate": 91,
+            "profile_image": "https://www.gravatar.com/avatar/5bf43bae0431d8f4a062234b5e3a0cb9?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Henk Holterman",
+            "link": "https://stackoverflow.com/users/60761/henk-holterman"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1592155289,
+        "post_id": 62349412,
+        "comment_id": 110317121,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@HenkHolterman, I did, several times. It works for that very moment, only until the <code>Failed to launch debug adapter</code> error comes up. But the next time I F5, I&#39;m back to the <code>about:blank</code> page. In short, it doesn&#39;t solve the problem"
+    },
+    {
+        "owner": {
+            "reputation": 240386,
+            "user_id": 60761,
+            "user_type": "registered",
+            "accept_rate": 91,
+            "profile_image": "https://www.gravatar.com/avatar/5bf43bae0431d8f4a062234b5e3a0cb9?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Henk Holterman",
+            "link": "https://stackoverflow.com/users/60761/henk-holterman"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1592147746,
+        "post_id": 62349412,
+        "comment_id": 110314292,
+        "content_license": "CC BY-SA 4.0",
+        "body": "And did you do the Win+R thing?"
+    },
+    {
+        "owner": {
+            "reputation": 15504,
+            "user_id": 93356,
+            "user_type": "registered",
+            "accept_rate": 85,
+            "profile_image": "https://i.stack.imgur.com/vD4W3.jpg?s=128&g=1",
+            "display_name": "Sergi Papaseit",
+            "link": "https://stackoverflow.com/users/93356/sergi-papaseit"
+        },
+        "reply_to_user": {
+            "reputation": 3445,
+            "user_id": 2658697,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/1d9486e90f5e906e38a06aa76bf5fa0b?s=128&d=identicon&r=PG",
+            "display_name": "Mister Magoo",
+            "link": "https://stackoverflow.com/users/2658697/mister-magoo"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1592126327,
+        "post_id": 62349412,
+        "comment_id": 110307608,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@MisterMagoo, I&#39;ve tried with both Chrome and Edge 84 (Edgium). Same result."
+    },
+    {
+        "owner": {
+            "reputation": 3445,
+            "user_id": 2658697,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/1d9486e90f5e906e38a06aa76bf5fa0b?s=128&d=identicon&r=PG",
+            "display_name": "Mister Magoo",
+            "link": "https://stackoverflow.com/users/2658697/mister-magoo"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1592092425,
+        "post_id": 62349412,
+        "comment_id": 110301081,
+        "content_license": "CC BY-SA 4.0",
+        "body": "use Chrome for debugging Blazor - it is more reliable"
+    }
+]

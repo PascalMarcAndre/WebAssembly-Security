@@ -1,0 +1,44 @@
+[
+    {
+        "owner": {
+            "reputation": 33,
+            "user_id": 14629230,
+            "user_type": "registered",
+            "profile_image": "https://lh6.googleusercontent.com/-x8R-wirZ-qA/AAAAAAAAAAI/AAAAAAAAAAA/AMZuuclVnStqrQpmXvXNi-1pRsYRtrIsyg/s96-c/photo.jpg?sz=128",
+            "display_name": "Serenity Pond",
+            "link": "https://stackoverflow.com/users/14629230/serenity-pond"
+        },
+        "reply_to_user": {
+            "reputation": 5178,
+            "user_id": 1492496,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/dO7to.png?s=128&g=1",
+            "display_name": "Brian Parker",
+            "link": "https://stackoverflow.com/users/1492496/brian-parker"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1605690561,
+        "post_id": 64889232,
+        "comment_id": 114725788,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Yes  &quot;public DateTimeOffset DoB { get; set; }&quot;"
+    },
+    {
+        "owner": {
+            "reputation": 5178,
+            "user_id": 1492496,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/dO7to.png?s=128&g=1",
+            "display_name": "Brian Parker",
+            "link": "https://stackoverflow.com/users/1492496/brian-parker"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1605687884,
+        "post_id": 64889232,
+        "comment_id": 114724663,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Is the DoB a property of the ApplicationUser class?"
+    }
+]

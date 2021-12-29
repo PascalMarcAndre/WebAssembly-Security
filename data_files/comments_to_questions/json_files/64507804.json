@@ -1,0 +1,46 @@
+[
+    {
+        "owner": {
+            "reputation": 37,
+            "user_id": 2870553,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/80b8f1fc68df76e5e69ac6549e11e899?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Zero",
+            "link": "https://stackoverflow.com/users/2870553/zero"
+        },
+        "reply_to_user": {
+            "reputation": 4020,
+            "user_id": 69433,
+            "user_type": "registered",
+            "accept_rate": 87,
+            "profile_image": "https://www.gravatar.com/avatar/5ea646ff4c1c89f3d68c546e37582c9a?s=128&d=identicon&r=PG",
+            "display_name": "adopilot",
+            "link": "https://stackoverflow.com/users/69433/adopilot"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1603524606,
+        "post_id": 64507804,
+        "comment_id": 114069807,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Well the problem is in the Weatherforecasecontroller.cs. I need the username there. When I look at the Httpcontext.User.Name it\u2019s empty. The only thing that I see is: IsAuthenticated = true. What I\u2019m trying to do is: get a username in the controller and then use the usermanager.findasync(username); \u2013"
+    },
+    {
+        "owner": {
+            "reputation": 4020,
+            "user_id": 69433,
+            "user_type": "registered",
+            "accept_rate": 87,
+            "profile_image": "https://www.gravatar.com/avatar/5ea646ff4c1c89f3d68c546e37582c9a?s=128&d=identicon&r=PG",
+            "display_name": "adopilot",
+            "link": "https://stackoverflow.com/users/69433/adopilot"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1603523276,
+        "post_id": 64507804,
+        "comment_id": 114069565,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Take look at this blog <a href=\"https://www.google.com/amp/s/code-maze.com/refresh-token-with-blazor-webassembly-and-asp-net-core-web-api/amp/\" rel=\"nofollow noreferrer\">google.com/amp/s/code-maze.com/&hellip;</a>  there is explaned how to store and retrive user claims in token and how to extend user"
+    }
+]

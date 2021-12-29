@@ -1,0 +1,166 @@
+[
+    {
+        "owner": {
+            "reputation": 153048,
+            "user_id": 264697,
+            "user_type": "registered",
+            "accept_rate": 100,
+            "profile_image": "https://www.gravatar.com/avatar/53813b7dc989271bf45d1a047db31a1f?s=128&d=identicon&r=PG",
+            "display_name": "Steven",
+            "link": "https://stackoverflow.com/users/264697/steven"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1604997259,
+        "post_id": 64723643,
+        "comment_id": 114510879,
+        "content_license": "CC BY-SA 4.0",
+        "body": "You are caching the <code>GrpcChannel</code> indefinitely. This means that it will be reused for all users of the application? Is that correct, considering that you are creating the channel using a specific security token?"
+    },
+    {
+        "owner": {
+            "reputation": 153048,
+            "user_id": 264697,
+            "user_type": "registered",
+            "accept_rate": 100,
+            "profile_image": "https://www.gravatar.com/avatar/53813b7dc989271bf45d1a047db31a1f?s=128&d=identicon&r=PG",
+            "display_name": "Steven",
+            "link": "https://stackoverflow.com/users/264697/steven"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1604905720,
+        "post_id": 64723643,
+        "comment_id": 114478797,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Instead of injecting a <code>Task&lt;Channel&gt;</code> create an abstraction that gives access to it (e.g. <code>interface IChannelProvider { Task&lt;Channel&gt; GetChannel(); }</code>) and inject that into the view. This allows you to postpone IO until after resolution."
+    },
+    {
+        "owner": {
+            "reputation": 193,
+            "user_id": 2631623,
+            "user_type": "registered",
+            "profile_image": "https://graph.facebook.com/1188276998/picture?type=large",
+            "display_name": "Michael Kossin",
+            "link": "https://stackoverflow.com/users/2631623/michael-kossin"
+        },
+        "reply_to_user": {
+            "reputation": 153048,
+            "user_id": 264697,
+            "user_type": "registered",
+            "accept_rate": 100,
+            "profile_image": "https://www.gravatar.com/avatar/53813b7dc989271bf45d1a047db31a1f?s=128&d=identicon&r=PG",
+            "display_name": "Steven",
+            "link": "https://stackoverflow.com/users/264697/steven"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1604873573,
+        "post_id": 64723643,
+        "comment_id": 114472772,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@Steven thank you but I don&#39;t understand how I can resolve the object before performing the I/O in this case.  That is essentially what I am asking.  Is the &quot;object&quot; you are referring to here the class?  How do I &quot;resolve&quot; it in this case, given that it is declared as the type argument of a Task?"
+    },
+    {
+        "owner": {
+            "reputation": 153048,
+            "user_id": 264697,
+            "user_type": "registered",
+            "accept_rate": 100,
+            "profile_image": "https://www.gravatar.com/avatar/53813b7dc989271bf45d1a047db31a1f?s=128&d=identicon&r=PG",
+            "display_name": "Steven",
+            "link": "https://stackoverflow.com/users/264697/steven"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1604829289,
+        "post_id": 64723643,
+        "comment_id": 114461147,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Prevent doing anything that involves I/O during object resolution. This makes resolution fragile and untestable. Instead, you should be able to <a href=\"https://blog.ploeh.dk/2011/03/04/Composeobjectgraphswithconfidence/\" rel=\"nofollow noreferrer\">compose your object graphs with con confidence</a>."
+    },
+    {
+        "owner": {
+            "reputation": 193,
+            "user_id": 2631623,
+            "user_type": "registered",
+            "profile_image": "https://graph.facebook.com/1188276998/picture?type=large",
+            "display_name": "Michael Kossin",
+            "link": "https://stackoverflow.com/users/2631623/michael-kossin"
+        },
+        "reply_to_user": {
+            "reputation": 506,
+            "user_id": 8062149,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/f255be472fc1a569e93cb50d0d38f98e?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Dan",
+            "link": "https://stackoverflow.com/users/8062149/dan"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1604762606,
+        "post_id": 64723643,
+        "comment_id": 114448626,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@Dan I have added the dependency from Program.cs."
+    },
+    {
+        "owner": {
+            "reputation": 193,
+            "user_id": 2631623,
+            "user_type": "registered",
+            "profile_image": "https://graph.facebook.com/1188276998/picture?type=large",
+            "display_name": "Michael Kossin",
+            "link": "https://stackoverflow.com/users/2631623/michael-kossin"
+        },
+        "reply_to_user": {
+            "reputation": 1863,
+            "user_id": 8212196,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/0035d2b02f5b7ebd3916dc9ac227bee1?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Lukasz Szczygielek",
+            "link": "https://stackoverflow.com/users/8212196/lukasz-szczygielek"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1604762155,
+        "post_id": 64723643,
+        "comment_id": 114448499,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@Hostel No, that is where the question I have comes from.  The second answer there stops right before explaining how to use the class."
+    },
+    {
+        "owner": {
+            "reputation": 506,
+            "user_id": 8062149,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/f255be472fc1a569e93cb50d0d38f98e?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Dan",
+            "link": "https://stackoverflow.com/users/8062149/dan"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1604714514,
+        "post_id": 64723643,
+        "comment_id": 114439684,
+        "content_license": "CC BY-SA 4.0",
+        "body": "can you post your dependency in the startup.cs that you are using?"
+    },
+    {
+        "owner": {
+            "reputation": 1863,
+            "user_id": 8212196,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/0035d2b02f5b7ebd3916dc9ac227bee1?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Lukasz Szczygielek",
+            "link": "https://stackoverflow.com/users/8212196/lukasz-szczygielek"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1604713623,
+        "post_id": 64723643,
+        "comment_id": 114439544,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Does this answer your question? <a href=\"https://stackoverflow.com/questions/61146743/grpc-web-channel-authentication-with-blazor-webassembly-via-dependency-injection\">gRPC-Web Channel Authentication with Blazor Webassembly via Dependency Injection</a>"
+    }
+]

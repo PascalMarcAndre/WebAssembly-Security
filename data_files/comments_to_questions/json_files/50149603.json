@@ -1,0 +1,92 @@
+[
+    {
+        "owner": {
+            "reputation": 10072,
+            "user_id": 1115237,
+            "user_type": "registered",
+            "accept_rate": 76,
+            "profile_image": "https://www.gravatar.com/avatar/a5b371929b9ddad5e22fc6997e5aab49?s=128&d=identicon&r=PG",
+            "display_name": "Shlomi Schwartz",
+            "link": "https://stackoverflow.com/users/1115237/shlomi-schwartz"
+        },
+        "reply_to_user": {
+            "reputation": 17894,
+            "user_id": 7076153,
+            "user_type": "registered",
+            "accept_rate": 50,
+            "profile_image": "https://i.stack.imgur.com/erPUC.png?s=128&g=1",
+            "display_name": "Stargateur",
+            "link": "https://stackoverflow.com/users/7076153/stargateur"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1525595496,
+        "post_id": 50149603,
+        "comment_id": 87412277,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Please check my updates"
+    },
+    {
+        "owner": {
+            "reputation": 10072,
+            "user_id": 1115237,
+            "user_type": "registered",
+            "accept_rate": 76,
+            "profile_image": "https://www.gravatar.com/avatar/a5b371929b9ddad5e22fc6997e5aab49?s=128&d=identicon&r=PG",
+            "display_name": "Shlomi Schwartz",
+            "link": "https://stackoverflow.com/users/1115237/shlomi-schwartz"
+        },
+        "reply_to_user": {
+            "reputation": 17894,
+            "user_id": 7076153,
+            "user_type": "registered",
+            "accept_rate": 50,
+            "profile_image": "https://i.stack.imgur.com/erPUC.png?s=128&g=1",
+            "display_name": "Stargateur",
+            "link": "https://stackoverflow.com/users/7076153/stargateur"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1525589880,
+        "post_id": 50149603,
+        "comment_id": 87410965,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Thank you for your reply. The WASM is compiled from C code. The purpose is raising the bar higher for malicious users, IE: WASM code is harder to manipulate/debug, and JS is visible to anyone with a minimum debugging knowledge. My goal is to make sure the WASM works with a specific JS."
+    },
+    {
+        "owner": {
+            "reputation": 17894,
+            "user_id": 7076153,
+            "user_type": "registered",
+            "accept_rate": 50,
+            "profile_image": "https://i.stack.imgur.com/erPUC.png?s=128&g=1",
+            "display_name": "Stargateur",
+            "link": "https://stackoverflow.com/users/7076153/stargateur"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1525554825,
+        "post_id": 50149603,
+        "comment_id": 87405305,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Actually your question could be split into two one with the C part, and the other &quot;Could WASM be used to check integrity of a JS method?&quot;. I don&#39;t understand why you add C in your question that make it broad and unclear."
+    },
+    {
+        "owner": {
+            "reputation": 17894,
+            "user_id": 7076153,
+            "user_type": "registered",
+            "accept_rate": 50,
+            "profile_image": "https://i.stack.imgur.com/erPUC.png?s=128&g=1",
+            "display_name": "Stargateur",
+            "link": "https://stackoverflow.com/users/7076153/stargateur"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1525554654,
+        "post_id": 50149603,
+        "comment_id": 87405279,
+        "content_license": "CC BY-SA 4.0",
+        "body": "This is unclear why do you mix javascript and wasm and C? So you want use wasm generate from a c file to check the integrity of a JS method? Plus, &quot;For the purpose of the discussion, let&#39;s assume that the binary module is not hackable (I know it is not the case), but the JS side is.&quot; is unclear what do you mean by &quot;but the JS side is&quot; ? <b>Everything</b> in client side can&#39;t be trust."
+    }
+]

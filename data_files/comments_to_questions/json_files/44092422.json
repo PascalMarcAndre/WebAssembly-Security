@@ -1,0 +1,38 @@
+[
+    {
+        "owner": {
+            "reputation": 201594,
+            "user_id": 707111,
+            "user_type": "moderator",
+            "accept_rate": 100,
+            "profile_image": "https://i.stack.imgur.com/oXZkh.jpg?s=128&g=1",
+            "display_name": "Ry-",
+            "link": "https://stackoverflow.com/users/707111/ry"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1495414951,
+        "post_id": 44092422,
+        "comment_id": 75226657,
+        "content_license": "CC BY-SA 3.0",
+        "body": "Oh, and you should make sure, for each whitelisted object, that there\u2019s no way to force an HTML context (because otherwise it\u2019s impossible to tell what to filter). And make sure no software on the devices can force an HTML context. Might be better just to check that JavaScript is disabled in-browser if possible\u2026"
+    },
+    {
+        "owner": {
+            "reputation": 201594,
+            "user_id": 707111,
+            "user_type": "moderator",
+            "accept_rate": 100,
+            "profile_image": "https://i.stack.imgur.com/oXZkh.jpg?s=128&g=1",
+            "display_name": "Ry-",
+            "link": "https://stackoverflow.com/users/707111/ry"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1495331572,
+        "post_id": 44092422,
+        "comment_id": 75206405,
+        "content_license": "CC BY-SA 3.0",
+        "body": "Use a whitelist of tags, attributes, and protocols instead of a blacklist, first off - and be very careful with it. (Comments, for example, aren&#39;t safe; IE has conditional comments. <code>data:</code> isn&#39;t safe either.)"
+    }
+]

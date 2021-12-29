@@ -1,0 +1,19 @@
+[
+    {
+        "owner": {
+            "reputation": 26125,
+            "user_id": 804385,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/f600efe82b7f3a1614af15cf3f833215?s=128&d=identicon&r=PG",
+            "display_name": "Dmitry Pavlov",
+            "link": "https://stackoverflow.com/users/804385/dmitry-pavlov"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1614451581,
+        "post_id": 62175805,
+        "comment_id": 117391965,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Does this answer your question? <a href=\"https://stackoverflow.com/questions/57140861/can-blazor-asp-net-core-hostd-use-windows-authentication\">Can &quot;Blazor (ASP.NET Core hostd)&quot; use windows authentication?</a>"
+    }
+]

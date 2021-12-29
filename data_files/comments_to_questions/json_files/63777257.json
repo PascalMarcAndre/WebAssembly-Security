@@ -1,0 +1,46 @@
+[
+    {
+        "owner": {
+            "reputation": 21,
+            "user_id": 14066253,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/85511ab11a8d175ab8f5224d1d63030b?s=128&d=identicon&r=PG&f=1",
+            "display_name": "rkits",
+            "link": "https://stackoverflow.com/users/14066253/rkits"
+        },
+        "reply_to_user": {
+            "reputation": 7321,
+            "user_id": 68490,
+            "user_type": "registered",
+            "accept_rate": 20,
+            "profile_image": "https://www.gravatar.com/avatar/b3c70bbc491ede87ae5682c561af07d2?s=128&d=identicon&r=PG",
+            "display_name": "Tore Nestenius",
+            "link": "https://stackoverflow.com/users/68490/tore-nestenius"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1599939854,
+        "post_id": 63777257,
+        "comment_id": 112933219,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Thank you - actually i did not manage to get the log working with the description on the identity server page - could not find out how to apply this to the webassembly. -- But EventViewer revealed to me that i forgot to give permissions to the IIS_IUSR on the certificate I&#39;m using... - login is working again."
+    },
+    {
+        "owner": {
+            "reputation": 7321,
+            "user_id": 68490,
+            "user_type": "registered",
+            "accept_rate": 20,
+            "profile_image": "https://www.gravatar.com/avatar/b3c70bbc491ede87ae5682c561af07d2?s=128&d=identicon&r=PG",
+            "display_name": "Tore Nestenius",
+            "link": "https://stackoverflow.com/users/68490/tore-nestenius"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1599486038,
+        "post_id": 63777257,
+        "comment_id": 112781685,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Try to get access to the Identityserver logs and see what error you get."
+    }
+]

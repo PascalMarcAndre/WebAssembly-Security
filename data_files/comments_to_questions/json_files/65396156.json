@@ -1,0 +1,82 @@
+[
+    {
+        "owner": {
+            "reputation": 374,
+            "user_id": 5141561,
+            "user_type": "registered",
+            "accept_rate": 80,
+            "profile_image": "https://graph.facebook.com/926750996976/picture?type=large",
+            "display_name": "JoeyD",
+            "link": "https://stackoverflow.com/users/5141561/joeyd"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1608759480,
+        "post_id": 65396156,
+        "comment_id": 115679729,
+        "content_license": "CC BY-SA 4.0",
+        "body": "The API is called from the ICountryService which uses DI for an HttpClient."
+    },
+    {
+        "owner": {
+            "reputation": 488,
+            "user_id": 1807542,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/2c4d94a78189c198f834dc1ff93c11cf?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Michel Jansson",
+            "link": "https://stackoverflow.com/users/1807542/michel-jansson"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1608748507,
+        "post_id": 65396156,
+        "comment_id": 115675936,
+        "content_license": "CC BY-SA 4.0",
+        "body": "How are you calling your API from the client - using the <code>ICountryService</code>-client or the <code>XXX.ServerAPI</code>-named client?"
+    },
+    {
+        "owner": {
+            "reputation": 374,
+            "user_id": 5141561,
+            "user_type": "registered",
+            "accept_rate": 80,
+            "profile_image": "https://graph.facebook.com/926750996976/picture?type=large",
+            "display_name": "JoeyD",
+            "link": "https://stackoverflow.com/users/5141561/joeyd"
+        },
+        "reply_to_user": {
+            "reputation": 1,
+            "user_id": 6152891,
+            "user_type": "registered",
+            "accept_rate": 75,
+            "profile_image": "https://www.gravatar.com/avatar/b45b7f89429f8766cdbf6c776c0a9d41?s=128&d=identicon&r=PG",
+            "display_name": "enet",
+            "link": "https://stackoverflow.com/users/6152891/enet"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1608571314,
+        "post_id": 65396156,
+        "comment_id": 115618752,
+        "content_license": "CC BY-SA 4.0",
+        "body": "You did.  Any ideas as to why im receiving unauthorized from the API?"
+    },
+    {
+        "owner": {
+            "reputation": 1,
+            "user_id": 6152891,
+            "user_type": "registered",
+            "accept_rate": 75,
+            "profile_image": "https://www.gravatar.com/avatar/b45b7f89429f8766cdbf6c776c0a9d41?s=128&d=identicon&r=PG",
+            "display_name": "enet",
+            "link": "https://stackoverflow.com/users/6152891/enet"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1608570715,
+        "post_id": 65396156,
+        "comment_id": 115618451,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Told you your issue merits a new question , didn&#39;t I ;)"
+    }
+]

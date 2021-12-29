@@ -1,0 +1,44 @@
+[
+    {
+        "owner": {
+            "reputation": 12769,
+            "user_id": 10521739,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/6459b077561be67082b7c27faed22fb2?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Allen Wu",
+            "link": "https://stackoverflow.com/users/10521739/allen-wu"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1613974342,
+        "post_id": 65960547,
+        "comment_id": 117231542,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Hi did you have a chance to confirm my answer? Is there any update?"
+    },
+    {
+        "owner": {
+            "reputation": 21,
+            "user_id": 10723369,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/d7b59a98354a23c0d778634c7c4a7784?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Bob N",
+            "link": "https://stackoverflow.com/users/10723369/bob-n"
+        },
+        "reply_to_user": {
+            "reputation": 12769,
+            "user_id": 10521739,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/6459b077561be67082b7c27faed22fb2?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Allen Wu",
+            "link": "https://stackoverflow.com/users/10521739/allen-wu"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1612366604,
+        "post_id": 65960547,
+        "comment_id": 116745599,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I have been diverted off to other things, but will revisit this later this week.  Thank you for your detailed reply, I shall accept as answer upon confirming."
+    }
+]

@@ -1,0 +1,44 @@
+[
+    {
+        "owner": {
+            "reputation": 103,
+            "user_id": 9047246,
+            "user_type": "registered",
+            "profile_image": "https://lh4.googleusercontent.com/-oh5gDC3WdOk/AAAAAAAAAAI/AAAAAAAAAAs/p2vgNt747ag/photo.jpg?sz=128",
+            "display_name": "jayx",
+            "link": "https://stackoverflow.com/users/9047246/jayx"
+        },
+        "reply_to_user": {
+            "reputation": 16573,
+            "user_id": 7609093,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/lwHJH.png?s=128&g=1",
+            "display_name": "Brando Zhang",
+            "link": "https://stackoverflow.com/users/7609093/brando-zhang"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1600869708,
+        "post_id": 64023096,
+        "comment_id": 113225154,
+        "content_license": "CC BY-SA 4.0",
+        "body": "The exception is from my application and it is not from IIS."
+    },
+    {
+        "owner": {
+            "reputation": 16573,
+            "user_id": 7609093,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/lwHJH.png?s=128&g=1",
+            "display_name": "Brando Zhang",
+            "link": "https://stackoverflow.com/users/7609093/brando-zhang"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1600866759,
+        "post_id": 64023096,
+        "comment_id": 113223412,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Since we don&#39;t know which codes throw this error, we couldn&#39;t know this is related with IIS or not. Is there any more details error message that shows which lines throw the access denied error?"
+    }
+]

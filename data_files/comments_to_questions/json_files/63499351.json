@@ -1,0 +1,163 @@
+[
+    {
+        "owner": {
+            "reputation": 9443,
+            "user_id": 41403,
+            "user_type": "registered",
+            "accept_rate": 88,
+            "profile_image": "https://www.gravatar.com/avatar/476b1c3cf22e774b835403adc9af6a59?s=128&d=identicon&r=PG",
+            "display_name": "Quango",
+            "link": "https://stackoverflow.com/users/41403/quango"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1600772559,
+        "post_id": 63499351,
+        "comment_id": 113187014,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Another recommendation for you to try: <a href=\"https://jasperfx.github.io/alba/\" rel=\"nofollow noreferrer\">Alba</a> is a testing library for ASP.NET Core - it runs the web project and can test request/responses. It requires a lot less work that Selenium to get working. I use it for testing APIs"
+    },
+    {
+        "owner": {
+            "reputation": 273,
+            "user_id": 5574962,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/EmmZL.png?s=128&g=1",
+            "display_name": "3per",
+            "link": "https://stackoverflow.com/users/5574962/3per"
+        },
+        "reply_to_user": {
+            "reputation": 9301,
+            "user_id": 2018357,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/l8gp3.jpg?s=128&g=1",
+            "display_name": "Grx70",
+            "link": "https://stackoverflow.com/users/2018357/grx70"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1598597223,
+        "post_id": 63499351,
+        "comment_id": 112516062,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@Grx70 I have tried <code>WebApplicationFactory&lt;Startup&gt;().CreateClient()</code>. All tests passed."
+    },
+    {
+        "owner": {
+            "reputation": 273,
+            "user_id": 5574962,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/EmmZL.png?s=128&g=1",
+            "display_name": "3per",
+            "link": "https://stackoverflow.com/users/5574962/3per"
+        },
+        "reply_to_user": {
+            "reputation": 9301,
+            "user_id": 2018357,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/l8gp3.jpg?s=128&g=1",
+            "display_name": "Grx70",
+            "link": "https://stackoverflow.com/users/2018357/grx70"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1598596882,
+        "post_id": 63499351,
+        "comment_id": 112515946,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@Grx70. &quot;For testing SPAs, we recommended a tool such as Selenium, which can automate a browser.&quot; a phrase from your link. Selenium would be my next step to test Blazor SPA, if the home page responses from NUnit. <code>CreateClient()</code> is not what I need."
+    },
+    {
+        "owner": {
+            "reputation": 9301,
+            "user_id": 2018357,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/l8gp3.jpg?s=128&g=1",
+            "display_name": "Grx70",
+            "link": "https://stackoverflow.com/users/2018357/grx70"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1598591430,
+        "post_id": 63499351,
+        "comment_id": 112514254,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Also, <a href=\"https://docs.microsoft.com/en-us/aspnet/core/test/integration-tests?view=aspnetcore-3.1#basic-tests-with-the-default-webapplicationfactory\" rel=\"nofollow noreferrer\">here&#39;s a good read</a> on testing web applications."
+    },
+    {
+        "owner": {
+            "reputation": 9301,
+            "user_id": 2018357,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/l8gp3.jpg?s=128&g=1",
+            "display_name": "Grx70",
+            "link": "https://stackoverflow.com/users/2018357/grx70"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1598591207,
+        "post_id": 63499351,
+        "comment_id": 112514186,
+        "content_license": "CC BY-SA 4.0",
+        "body": "From the top of my head - did you try using <a href=\"https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.testhost.testserver\" rel=\"nofollow noreferrer\">TestServer</a>? It takes an <code>IWebHostBuilder</code> as a constructor parameter, and has a <code>CreateClient()</code> method which returns a <code>HttpClient</code>."
+    },
+    {
+        "owner": {
+            "reputation": 2122,
+            "user_id": 8825020,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/d61e64c415e8098b3905191beba3dd28?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Dilshod K",
+            "link": "https://stackoverflow.com/users/8825020/dilshod-k"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1598583828,
+        "post_id": 63499351,
+        "comment_id": 112512609,
+        "content_license": "CC BY-SA 4.0",
+        "body": "It is working on me. Can you share your project on Github?"
+    },
+    {
+        "owner": {
+            "reputation": 273,
+            "user_id": 5574962,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/EmmZL.png?s=128&g=1",
+            "display_name": "3per",
+            "link": "https://stackoverflow.com/users/5574962/3per"
+        },
+        "reply_to_user": {
+            "reputation": 2122,
+            "user_id": 8825020,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/d61e64c415e8098b3905191beba3dd28?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Dilshod K",
+            "link": "https://stackoverflow.com/users/8825020/dilshod-k"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1598516007,
+        "post_id": 63499351,
+        "comment_id": 112485827,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@DIlshodK. If I launch backend project &quot;BlazorApp.Server&quot; directly it works perfectly. If I would run tests in debug mode, and go to <b><a href=\"https://localhost:50200\" rel=\"nofollow noreferrer\">localhost:50200</a></b> I will get  the browser 404 message. If I go to <b><a href=\"https://localhost:50200/WeatherForecast\" rel=\"nofollow noreferrer\">localhost:50200/WeatherForecast</a></b> I will see the json result."
+    },
+    {
+        "owner": {
+            "reputation": 2122,
+            "user_id": 8825020,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/d61e64c415e8098b3905191beba3dd28?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Dilshod K",
+            "link": "https://stackoverflow.com/users/8825020/dilshod-k"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1598511392,
+        "post_id": 63499351,
+        "comment_id": 112483541,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Is it working from the browser?"
+    }
+]

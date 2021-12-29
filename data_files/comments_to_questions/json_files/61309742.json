@@ -1,0 +1,63 @@
+[
+    {
+        "owner": {
+            "reputation": 17,
+            "user_id": 5743147,
+            "user_type": "registered",
+            "profile_image": "https://lh4.googleusercontent.com/-xZV2Iz670HY/AAAAAAAAAAI/AAAAAAAAAEQ/BfDYio0hXrU/photo.jpg?sz=128",
+            "display_name": "Alamdar Khan",
+            "link": "https://stackoverflow.com/users/5743147/alamdar-khan"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1592130446,
+        "post_id": 61309742,
+        "comment_id": 110308689,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Yes, use the code below for each page you are getting error <code>&lt;div class=&quot;content px-4&quot;&gt;         @RenderBody()         @{             @if (IsSectionDefined(&quot;Scripts&quot;))             {                 IgnoreSection(&quot;Scripts&quot;);             }           }     &lt;&#47;div&gt;</code>"
+    },
+    {
+        "owner": {
+            "reputation": 436,
+            "user_id": 1584725,
+            "user_type": "registered",
+            "accept_rate": 67,
+            "profile_image": "https://www.gravatar.com/avatar/3b4af23cd0ebfb961c3ab01ffd884073?s=128&d=identicon&r=PG",
+            "display_name": "Brett JB",
+            "link": "https://stackoverflow.com/users/1584725/brett-jb"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1592037823,
+        "post_id": 61309742,
+        "comment_id": 110284866,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Did you solve this @AlamdarKhan? I am facing exactly the same issue, but I&#39;m afraid the selected answer doesn&#39;t look good  as it will break all the scripts won&#39;t it? Strangely, I did this same exercise with the pre release code back in Feb (Ish) and it worked fine then. Its obviously a scaffolding issue, but I really don&#39;t like it when scaffolding (something thats meant to help) breaks the app.."
+    },
+    {
+        "owner": {
+            "reputation": 17,
+            "user_id": 5743147,
+            "user_type": "registered",
+            "profile_image": "https://lh4.googleusercontent.com/-xZV2Iz670HY/AAAAAAAAAAI/AAAAAAAAAEQ/BfDYio0hXrU/photo.jpg?sz=128",
+            "display_name": "Alamdar Khan",
+            "link": "https://stackoverflow.com/users/5743147/alamdar-khan"
+        },
+        "reply_to_user": {
+            "reputation": 1,
+            "user_id": 6152891,
+            "user_type": "registered",
+            "accept_rate": 75,
+            "profile_image": "https://www.gravatar.com/avatar/b45b7f89429f8766cdbf6c776c0a9d41?s=128&d=identicon&r=PG",
+            "display_name": "enet",
+            "link": "https://stackoverflow.com/users/6152891/enet"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1587329785,
+        "post_id": 61309742,
+        "comment_id": 108463342,
+        "content_license": "CC BY-SA 4.0",
+        "body": "i did it but no luck"
+    }
+]

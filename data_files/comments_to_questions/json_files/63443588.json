@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 13400,
+            "user_id": 2940908,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://i.stack.imgur.com/E79WU.jpg?s=128&g=1",
+            "display_name": "agua from mars",
+            "link": "https://stackoverflow.com/users/2940908/agua-from-mars"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1597645264,
+        "post_id": 63443588,
+        "comment_id": 112189289,
+        "content_license": "CC BY-SA 4.0",
+        "body": "You should <a href=\"https://github.com/dotnet/aspnetcore/issues\" rel=\"nofollow noreferrer\">open an issue on ASP.Net Core Github repo</a>"
+    }
+]

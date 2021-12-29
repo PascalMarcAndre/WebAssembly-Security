@@ -1,0 +1,110 @@
+[
+    {
+        "owner": {
+            "reputation": 3771,
+            "user_id": 634420,
+            "user_type": "registered",
+            "accept_rate": 98,
+            "profile_image": "https://www.gravatar.com/avatar/b621fa5c7d9bee541c13980daa057928?s=128&d=identicon&r=PG",
+            "display_name": "James Mundy",
+            "link": "https://stackoverflow.com/users/634420/james-mundy"
+        },
+        "reply_to_user": {
+            "reputation": 866,
+            "user_id": 2911649,
+            "user_type": "registered",
+            "accept_rate": 100,
+            "profile_image": "https://i.stack.imgur.com/r4puh.png?s=128&g=1",
+            "display_name": "BigTallJosh",
+            "link": "https://stackoverflow.com/users/2911649/bigtalljosh"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1595325119,
+        "post_id": 61987616,
+        "comment_id": 111428675,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@BigTallJosh see the answer below that might help. I added a comment on the Auth0 forums but the guy that wrote the ASP.NET articles wasn&#39;t able to help right now as he hadn&#39;t looked into it yet. Sadly I went another route and put off using Blazer for now."
+    },
+    {
+        "owner": {
+            "reputation": 866,
+            "user_id": 2911649,
+            "user_type": "registered",
+            "accept_rate": 100,
+            "profile_image": "https://i.stack.imgur.com/r4puh.png?s=128&g=1",
+            "display_name": "BigTallJosh",
+            "link": "https://stackoverflow.com/users/2911649/bigtalljosh"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1595237337,
+        "post_id": 61987616,
+        "comment_id": 111394311,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Hey @JamesMundy did you get anywhere with this? I&#39;m coming up against the same thing myself now."
+    },
+    {
+        "owner": {
+            "reputation": 13400,
+            "user_id": 2940908,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://i.stack.imgur.com/E79WU.jpg?s=128&g=1",
+            "display_name": "agua from mars",
+            "link": "https://stackoverflow.com/users/2940908/agua-from-mars"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1590407177,
+        "post_id": 61987616,
+        "comment_id": 109659138,
+        "content_license": "CC BY-SA 4.0",
+        "body": "IMO you should configure the provider options RedirectUri with an absolute URI like <code>options.ProviderOptions.RedirectUri = &quot;https:&#47;&#47;localhost:5443&#47;authentication&#47;login-callback</code>. The PostLogoutRedirectUri should also be an absolute URI <code>https:&#47;&#47;localhost:5443&#47;authentication&#47;logout-callback</code> and you should set <code>ProviderOptions.DefaultScopes</code>. More, thoses URL should be configured as alowed redirect URI on your OIDC provider side"
+    },
+    {
+        "owner": {
+            "reputation": 3771,
+            "user_id": 634420,
+            "user_type": "registered",
+            "accept_rate": 98,
+            "profile_image": "https://www.gravatar.com/avatar/b621fa5c7d9bee541c13980daa057928?s=128&d=identicon&r=PG",
+            "display_name": "James Mundy",
+            "link": "https://stackoverflow.com/users/634420/james-mundy"
+        },
+        "reply_to_user": {
+            "reputation": 13400,
+            "user_id": 2940908,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://i.stack.imgur.com/E79WU.jpg?s=128&g=1",
+            "display_name": "agua from mars",
+            "link": "https://stackoverflow.com/users/2940908/agua-from-mars"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1590403221,
+        "post_id": 61987616,
+        "comment_id": 109657266,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@aguafrommars thanks, I&#39;ve added it now."
+    },
+    {
+        "owner": {
+            "reputation": 13400,
+            "user_id": 2940908,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://i.stack.imgur.com/E79WU.jpg?s=128&g=1",
+            "display_name": "agua from mars",
+            "link": "https://stackoverflow.com/users/2940908/agua-from-mars"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1590337022,
+        "post_id": 61987616,
+        "comment_id": 109636649,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Can you post the Program.cs ? I guess you are not really logged out your app"
+    }
+]

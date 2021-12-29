@@ -1,0 +1,105 @@
+[
+    {
+        "owner": {
+            "reputation": 3484,
+            "user_id": 12865944,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/USww0.png?s=128&g=1",
+            "display_name": "granty",
+            "link": "https://stackoverflow.com/users/12865944/granty"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1613137199,
+        "post_id": 66149707,
+        "comment_id": 116990211,
+        "content_license": "CC BY-SA 4.0",
+        "body": "You can test on Blazor WASM - without <code>&#39;unsafe-eval&#39;</code> Chrome blocks methods: <code>Module()</code>, &#39;compile()&#39;, <code>compileStreaming()</code>, <code>instantiate()</code>, <code>instantiateStreaming()</code> <a href=\"https://github.com/WebAssembly/content-security-policy/blob/master/proposals/CSP.md#user-content-behavior-of-current-implementations\" rel=\"nofollow noreferrer\">will be blocked</a>. Chrome should show error: <i>WebAssembly.CompileError: Wasm code generation disallowed in this context</i>. WASM <a href=\"https://github.com/WebAssembly/content-security-policy/issues/7\" rel=\"nofollow noreferrer\">should fails</a> without <code>&#39;unsafe-eval&#39;</code>."
+    },
+    {
+        "owner": {
+            "reputation": 345,
+            "user_id": 6081178,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://lh6.googleusercontent.com/-dHQYpZeJV3w/AAAAAAAAAAI/AAAAAAAABlM/4Ym3ORwgYRI/photo.jpg?sz=128",
+            "display_name": "Kasbolat Kumakhov",
+            "link": "https://stackoverflow.com/users/6081178/kasbolat-kumakhov"
+        },
+        "reply_to_user": {
+            "reputation": 3484,
+            "user_id": 12865944,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/USww0.png?s=128&g=1",
+            "display_name": "granty",
+            "link": "https://stackoverflow.com/users/12865944/granty"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1613126012,
+        "post_id": 66149707,
+        "comment_id": 116985663,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Perhaps you are right, however I wanted to make sure, since the tab says &quot;blocked&quot; in red. Scary. Is there any way to test that nothing is actually broken?"
+    },
+    {
+        "owner": {
+            "reputation": 3484,
+            "user_id": 12865944,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/USww0.png?s=128&g=1",
+            "display_name": "granty",
+            "link": "https://stackoverflow.com/users/12865944/granty"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1613122378,
+        "post_id": 66149707,
+        "comment_id": 116984037,
+        "content_license": "CC BY-SA 4.0",
+        "body": "If console is clear - nothing is really blocked. Console is primary, Issues tab is secondary. Just falsepositive violation."
+    },
+    {
+        "owner": {
+            "reputation": 345,
+            "user_id": 6081178,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://lh6.googleusercontent.com/-dHQYpZeJV3w/AAAAAAAAAAI/AAAAAAAABlM/4Ym3ORwgYRI/photo.jpg?sz=128",
+            "display_name": "Kasbolat Kumakhov",
+            "link": "https://stackoverflow.com/users/6081178/kasbolat-kumakhov"
+        },
+        "reply_to_user": {
+            "reputation": 3484,
+            "user_id": 12865944,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/USww0.png?s=128&g=1",
+            "display_name": "granty",
+            "link": "https://stackoverflow.com/users/12865944/granty"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1613106679,
+        "post_id": 66149707,
+        "comment_id": 116979520,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Actually the only thing I see is the issues message. There is nothing in console. I know the message you are talking about, seen it before in some other cases. But this time it&#39;s only the issues tab (updated the question with index.html)."
+    },
+    {
+        "owner": {
+            "reputation": 3484,
+            "user_id": 12865944,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/USww0.png?s=128&g=1",
+            "display_name": "granty",
+            "link": "https://stackoverflow.com/users/12865944/granty"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1613104737,
+        "post_id": 66149707,
+        "comment_id": 116979192,
+        "content_license": "CC BY-SA 4.0",
+        "body": "What is the real violation message in the Console tab(not Issues). It should looks like &quot;<i>Refused to evaluate a string as JavaScript because &#39;unsafe-eval&#39; is not an allowed source of script in the following Content Security Policy directive: ...</i>&quot; and show real directive and rules. Maybe you have <code>&lt;meta http-equiv=&quot;Content-Security-Policy&quot; ...&gt;</code> in the HTML code."
+    }
+]

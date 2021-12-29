@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 271,
+            "user_id": 103668,
+            "user_type": "registered",
+            "accept_rate": 29,
+            "profile_image": "https://i.stack.imgur.com/SxjA7.jpg?s=128&g=1",
+            "display_name": "mireille raad",
+            "link": "https://stackoverflow.com/users/103668/mireille-raad"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1608133521,
+        "post_id": 61821267,
+        "comment_id": 115490542,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Did you end up lobbying to start one? (for the other side benefits mentioned). I think the curation by itself would be useful."
+    }
+]

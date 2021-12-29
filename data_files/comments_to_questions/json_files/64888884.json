@@ -1,0 +1,44 @@
+[
+    {
+        "owner": {
+            "reputation": 1,
+            "user_id": 7762046,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/CHFMZ.png?s=128&g=1",
+            "display_name": "H Sande",
+            "link": "https://stackoverflow.com/users/7762046/h-sande"
+        },
+        "reply_to_user": {
+            "reputation": 5178,
+            "user_id": 1492496,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/dO7to.png?s=128&g=1",
+            "display_name": "Brian Parker",
+            "link": "https://stackoverflow.com/users/1492496/brian-parker"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1605702165,
+        "post_id": 64888884,
+        "comment_id": 114730966,
+        "content_license": "CC BY-SA 4.0",
+        "body": "It is a WebAssembly self hosted, which is communicating with a separate REST Api that has the identity store. The Api issues bearer tokens, which are used by the wasm app for authentication (using asymmetric cryptography). It is working fine with basic credentials, now I would like to enable social provider auth as well, in the same architecture"
+    },
+    {
+        "owner": {
+            "reputation": 5178,
+            "user_id": 1492496,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/dO7to.png?s=128&g=1",
+            "display_name": "Brian Parker",
+            "link": "https://stackoverflow.com/users/1492496/brian-parker"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1605688373,
+        "post_id": 64888884,
+        "comment_id": 114724886,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Is this is a WebAssembly self hosted with Identity option, created project?"
+    }
+]

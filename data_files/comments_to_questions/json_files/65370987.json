@@ -1,0 +1,65 @@
+[
+    {
+        "owner": {
+            "reputation": 2401,
+            "user_id": 3167364,
+            "user_type": "registered",
+            "accept_rate": 100,
+            "profile_image": "https://www.gravatar.com/avatar/9bb4ab7fad5b0f64dd01f64235dbd6d6?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Glenn Watson",
+            "link": "https://stackoverflow.com/users/3167364/glenn-watson"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1608400787,
+        "post_id": 65370987,
+        "comment_id": 115575031,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Use a Interaction <a href=\"https://www.reactiveui.net/docs/handbook/interactions/\" rel=\"nofollow noreferrer\">reactiveui.net/docs/handbook/interactions</a> to run that JavaScript on the view."
+    },
+    {
+        "owner": {
+            "reputation": 1873,
+            "user_id": 3581643,
+            "user_type": "registered",
+            "accept_rate": 42,
+            "profile_image": "https://i.stack.imgur.com/bn4s3.png?s=128&g=1",
+            "display_name": "Rahul",
+            "link": "https://stackoverflow.com/users/3581643/rahul"
+        },
+        "reply_to_user": {
+            "reputation": 2401,
+            "user_id": 3167364,
+            "user_type": "registered",
+            "accept_rate": 100,
+            "profile_image": "https://www.gravatar.com/avatar/9bb4ab7fad5b0f64dd01f64235dbd6d6?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Glenn Watson",
+            "link": "https://stackoverflow.com/users/3167364/glenn-watson"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1608399215,
+        "post_id": 65370987,
+        "comment_id": 115574508,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@GlennWatson you mean writing the code in view instead view model? can you please elaborate your comment?"
+    },
+    {
+        "owner": {
+            "reputation": 2401,
+            "user_id": 3167364,
+            "user_type": "registered",
+            "accept_rate": 100,
+            "profile_image": "https://www.gravatar.com/avatar/9bb4ab7fad5b0f64dd01f64235dbd6d6?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Glenn Watson",
+            "link": "https://stackoverflow.com/users/3167364/glenn-watson"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1608398746,
+        "post_id": 65370987,
+        "comment_id": 115574373,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I would use a Interaction then use a page view to show the massage personally. The Inject stuff would want a page where it knows the lifetime"
+    }
+]

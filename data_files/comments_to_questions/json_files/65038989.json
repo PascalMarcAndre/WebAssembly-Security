@@ -1,0 +1,47 @@
+[
+    {
+        "owner": {
+            "reputation": 1352,
+            "user_id": 2663033,
+            "user_type": "registered",
+            "accept_rate": 100,
+            "profile_image": "https://i.stack.imgur.com/8RJho.jpg?s=128&g=1",
+            "display_name": "TheMagnificent11",
+            "link": "https://stackoverflow.com/users/2663033/themagnificent11"
+        },
+        "reply_to_user": {
+            "reputation": 1972,
+            "user_id": 4018304,
+            "user_type": "registered",
+            "accept_rate": 75,
+            "profile_image": "https://i.stack.imgur.com/El5bg.jpg?s=128&g=1",
+            "display_name": "Hari Krishna",
+            "link": "https://stackoverflow.com/users/4018304/hari-krishna"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1606788679,
+        "post_id": 65038989,
+        "comment_id": 115062585,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Thanks @HariKrishna--MSFTIdentity, I&#39;ve updated the images"
+    },
+    {
+        "owner": {
+            "reputation": 1972,
+            "user_id": 4018304,
+            "user_type": "registered",
+            "accept_rate": 75,
+            "profile_image": "https://i.stack.imgur.com/El5bg.jpg?s=128&g=1",
+            "display_name": "Hari Krishna",
+            "link": "https://stackoverflow.com/users/4018304/hari-krishna"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1606493961,
+        "post_id": 65038989,
+        "comment_id": 114985778,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Can you please share us the B2c url?Also, please mask the clientid/secrets with stars(**) as it is public channel"
+    }
+]

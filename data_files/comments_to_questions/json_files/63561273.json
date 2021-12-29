@@ -1,0 +1,46 @@
+[
+    {
+        "owner": {
+            "reputation": 109,
+            "user_id": 9604989,
+            "user_type": "registered",
+            "profile_image": "https://lh4.googleusercontent.com/-J2_EcWw-_e8/AAAAAAAAAAI/AAAAAAAAIdY/GAS8VUVFrAk/photo.jpg?sz=128",
+            "display_name": "tobias hassebrock",
+            "link": "https://stackoverflow.com/users/9604989/tobias-hassebrock"
+        },
+        "reply_to_user": {
+            "reputation": 7391,
+            "user_id": 5784924,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://i.stack.imgur.com/LC3Oq.png?s=128&g=1",
+            "display_name": "Nicolas",
+            "link": "https://stackoverflow.com/users/5784924/nicolas"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1598273420,
+        "post_id": 63561273,
+        "comment_id": 112395891,
+        "content_license": "CC BY-SA 4.0",
+        "body": "The error does not appear in the StackBlitz console but appears if you open the development tools by inspecting the preview."
+    },
+    {
+        "owner": {
+            "reputation": 7391,
+            "user_id": 5784924,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://i.stack.imgur.com/LC3Oq.png?s=128&g=1",
+            "display_name": "Nicolas",
+            "link": "https://stackoverflow.com/users/5784924/nicolas"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1598273101,
+        "post_id": 63561273,
+        "comment_id": 112395682,
+        "content_license": "CC BY-SA 4.0",
+        "body": "It seams to be working fine in the <code>StackBlitz</code> you&#39;ve provided."
+    }
+]

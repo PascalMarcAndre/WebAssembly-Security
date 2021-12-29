@@ -1,0 +1,38 @@
+[
+    {
+        "owner": {
+            "reputation": 1287,
+            "user_id": 5225435,
+            "user_type": "registered",
+            "accept_rate": 22,
+            "profile_image": "https://i.stack.imgur.com/iaj9R.jpg?s=128&g=1",
+            "display_name": "Tom",
+            "link": "https://stackoverflow.com/users/5225435/tom"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1580295365,
+        "post_id": 54778592,
+        "comment_id": 106048016,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I&#39;m interested in this use of WebAssembly too. You&#39;d think it might be possible to provide api key security via a wasm implementation, but in the end Chrome debugging tools will work for wasm as well as anything else, won&#39;t they?"
+    },
+    {
+        "owner": {
+            "reputation": 385,
+            "user_id": 2776935,
+            "user_type": "registered",
+            "accept_rate": 75,
+            "profile_image": "https://www.gravatar.com/avatar/1490f6b94b4483db00bc5e596b37700e?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Yen",
+            "link": "https://stackoverflow.com/users/2776935/yen"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1550635449,
+        "post_id": 54778592,
+        "comment_id": 96336426,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Because we receive response in javascript side. However client may modify the javascript to set the auth response to always ok. So we want to verify if the response has been modified."
+    }
+]

@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 34576,
+            "user_id": 3728901,
+            "user_type": "registered",
+            "accept_rate": 58,
+            "profile_image": "https://i.stack.imgur.com/gZscJ.png?s=128&g=1",
+            "display_name": "Do Nhu Vy",
+            "link": "https://stackoverflow.com/users/3728901/do-nhu-vy"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1600317335,
+        "post_id": 63782028,
+        "comment_id": 113050636,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Your question need closing. Let&#39;s ask something specific, a specific question is necessary for a specific answer."
+    }
+]

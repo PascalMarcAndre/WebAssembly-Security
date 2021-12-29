@@ -1,0 +1,100 @@
+[
+    {
+        "owner": {
+            "reputation": 509,
+            "user_id": 3419211,
+            "user_type": "registered",
+            "accept_rate": 64,
+            "profile_image": "https://graph.facebook.com/100000859618233/picture?type=large",
+            "display_name": "user3419211",
+            "link": "https://stackoverflow.com/users/3419211/user3419211"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1606741998,
+        "post_id": 65021896,
+        "comment_id": 115044597,
+        "content_license": "CC BY-SA 4.0",
+        "body": "6 of the elements that take most of the time, are images. I can make those abit smaller, but my issue is also the authentication before loading the contents."
+    },
+    {
+        "owner": {
+            "reputation": 1272,
+            "user_id": 9822401,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/e5fa63a04daa021f18c426c2e09428b8?s=128&d=identicon&r=PG&f=1",
+            "display_name": "A_kat",
+            "link": "https://stackoverflow.com/users/9822401/a-kat"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1606394143,
+        "post_id": 65021896,
+        "comment_id": 114954060,
+        "content_license": "CC BY-SA 4.0",
+        "body": "This could be a ton of issues and usually the front-end lets say shouldnt be the first. Have you validated that this time is not due to your backend or your authentication mechanism? I would start looking at the backend making sure that the database and API are performant and then look at the front end. It&#39;s also a matter of where they are published. Check everything in local host to see the actual computational cost."
+    },
+    {
+        "owner": {
+            "reputation": 240386,
+            "user_id": 60761,
+            "user_type": "registered",
+            "accept_rate": 91,
+            "profile_image": "https://www.gravatar.com/avatar/5bf43bae0431d8f4a062234b5e3a0cb9?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Henk Holterman",
+            "link": "https://stackoverflow.com/users/60761/henk-holterman"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1606393933,
+        "post_id": 65021896,
+        "comment_id": 114953977,
+        "content_license": "CC BY-SA 4.0",
+        "body": "OK, open the Dev Tools in your browser and do a refresh. Which request takes up most time?"
+    },
+    {
+        "owner": {
+            "reputation": 509,
+            "user_id": 3419211,
+            "user_type": "registered",
+            "accept_rate": 64,
+            "profile_image": "https://graph.facebook.com/100000859618233/picture?type=large",
+            "display_name": "user3419211",
+            "link": "https://stackoverflow.com/users/3419211/user3419211"
+        },
+        "reply_to_user": {
+            "reputation": 240386,
+            "user_id": 60761,
+            "user_type": "registered",
+            "accept_rate": 91,
+            "profile_image": "https://www.gravatar.com/avatar/5bf43bae0431d8f4a062234b5e3a0cb9?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Henk Holterman",
+            "link": "https://stackoverflow.com/users/60761/henk-holterman"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1606393714,
+        "post_id": 65021896,
+        "comment_id": 114953901,
+        "content_license": "CC BY-SA 4.0",
+        "body": "It is already published: <a href=\"https://bluecodes.co/\" rel=\"nofollow noreferrer\">bluecodes.co</a>"
+    },
+    {
+        "owner": {
+            "reputation": 240386,
+            "user_id": 60761,
+            "user_type": "registered",
+            "accept_rate": 91,
+            "profile_image": "https://www.gravatar.com/avatar/5bf43bae0431d8f4a062234b5e3a0cb9?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Henk Holterman",
+            "link": "https://stackoverflow.com/users/60761/henk-holterman"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1606393427,
+        "post_id": 65021896,
+        "comment_id": 114953788,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Is that 7 seconds in Develop mode or after it&#39;s Published ?"
+    }
+]

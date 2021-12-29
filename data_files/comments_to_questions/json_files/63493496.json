@@ -1,0 +1,46 @@
+[
+    {
+        "owner": {
+            "reputation": 154,
+            "user_id": 9028374,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/e5cd0b8950b5831de518ed53b45638a6?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Tacot",
+            "link": "https://stackoverflow.com/users/9028374/tacot"
+        },
+        "reply_to_user": {
+            "reputation": 809,
+            "user_id": 1303737,
+            "user_type": "registered",
+            "accept_rate": 80,
+            "profile_image": "https://i.stack.imgur.com/86YgG.jpg?s=128&g=1",
+            "display_name": "Loul G.",
+            "link": "https://stackoverflow.com/users/1303737/loul-g"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1600102038,
+        "post_id": 63493496,
+        "comment_id": 112975690,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I tried that with no success, I think role is the right one since in the end of the CustomUserFactory i do a forloop of the roles and I add it with the claim of &quot;role&quot; which is what it said to do in this docs <a href=\"https://docs.microsoft.com/en-us/aspnet/core/blazor/security/webassembly/azure-active-directory-groups-and-roles?view=aspnetcore-3.1#user-defined-roles\" rel=\"nofollow noreferrer\">docs.microsoft.com/en-us/aspnet/core/blazor/security/&hellip;</a>"
+    },
+    {
+        "owner": {
+            "reputation": 809,
+            "user_id": 1303737,
+            "user_type": "registered",
+            "accept_rate": 80,
+            "profile_image": "https://i.stack.imgur.com/86YgG.jpg?s=128&g=1",
+            "display_name": "Loul G.",
+            "link": "https://stackoverflow.com/users/1303737/loul-g"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1600012422,
+        "post_id": 63493496,
+        "comment_id": 112947434,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Aren&#39;t you missing a &quot;s&quot; to &quot;role&quot; ? The <a href=\"https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-add-app-roles-in-azure-ad-apps#receive-roles-in-tokens\" rel=\"nofollow noreferrer\">documentation</a> states that the authenticated users will receive their assigned roles in the <code>roles</code> claim."
+    }
+]

@@ -1,0 +1,186 @@
+[
+    {
+        "owner": {
+            "reputation": 77,
+            "user_id": 10229906,
+            "user_type": "registered",
+            "profile_image": "https://lh4.googleusercontent.com/-Apbpadfhkd0/AAAAAAAAAAI/AAAAAAAAEAI/QLCFL4EnJWg/photo.jpg?sz=128",
+            "display_name": "Luiz Eug&#234;nio Barbieri",
+            "link": "https://stackoverflow.com/users/10229906/luiz-eug%c3%aanio-barbieri"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1585832329,
+        "post_id": 60932702,
+        "comment_id": 107905420,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I solved the problem (I answered the question with the solution), thanks for the tips."
+    },
+    {
+        "owner": {
+            "reputation": 240386,
+            "user_id": 60761,
+            "user_type": "registered",
+            "accept_rate": 91,
+            "profile_image": "https://www.gravatar.com/avatar/5bf43bae0431d8f4a062234b5e3a0cb9?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Henk Holterman",
+            "link": "https://stackoverflow.com/users/60761/henk-holterman"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1585769532,
+        "post_id": 60932702,
+        "comment_id": 107883161,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Then debug (trace) it when deployed."
+    },
+    {
+        "owner": {
+            "reputation": 77,
+            "user_id": 10229906,
+            "user_type": "registered",
+            "profile_image": "https://lh4.googleusercontent.com/-Apbpadfhkd0/AAAAAAAAAAI/AAAAAAAAEAI/QLCFL4EnJWg/photo.jpg?sz=128",
+            "display_name": "Luiz Eug&#234;nio Barbieri",
+            "link": "https://stackoverflow.com/users/10229906/luiz-eug%c3%aanio-barbieri"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1585769186,
+        "post_id": 60932702,
+        "comment_id": 107882991,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Debugging the code it works. It just doesn&#39;t work when I publish it and host it."
+    },
+    {
+        "owner": {
+            "reputation": 240386,
+            "user_id": 60761,
+            "user_type": "registered",
+            "accept_rate": 91,
+            "profile_image": "https://www.gravatar.com/avatar/5bf43bae0431d8f4a062234b5e3a0cb9?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Henk Holterman",
+            "link": "https://stackoverflow.com/users/60761/henk-holterman"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1585758448,
+        "post_id": 60932702,
+        "comment_id": 107877270,
+        "content_license": "CC BY-SA 4.0",
+        "body": "In that case your problem is not client-side and not Blazor related. Debug your service."
+    },
+    {
+        "owner": {
+            "reputation": 77,
+            "user_id": 10229906,
+            "user_type": "registered",
+            "profile_image": "https://lh4.googleusercontent.com/-Apbpadfhkd0/AAAAAAAAAAI/AAAAAAAAEAI/QLCFL4EnJWg/photo.jpg?sz=128",
+            "display_name": "Luiz Eug&#234;nio Barbieri",
+            "link": "https://stackoverflow.com/users/10229906/luiz-eug%c3%aanio-barbieri"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1585677832,
+        "post_id": 60932702,
+        "comment_id": 107844946,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Yes. Using Postman, when I make a request for my test GET service (<a href=\"http://localhost:91/api/Account\" rel=\"nofollow noreferrer\">localhost:91/api/Account</a>), the response is successful, code 200. When I make the request for the login POST service, I get a 404 error, not found."
+    },
+    {
+        "owner": {
+            "reputation": 240386,
+            "user_id": 60761,
+            "user_type": "registered",
+            "accept_rate": 91,
+            "profile_image": "https://www.gravatar.com/avatar/5bf43bae0431d8f4a062234b5e3a0cb9?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Henk Holterman",
+            "link": "https://stackoverflow.com/users/60761/henk-holterman"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1585630967,
+        "post_id": 60932702,
+        "comment_id": 107821259,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Have you tried PostMan to test/investigate your API ?"
+    },
+    {
+        "owner": {
+            "reputation": 77,
+            "user_id": 10229906,
+            "user_type": "registered",
+            "profile_image": "https://lh4.googleusercontent.com/-Apbpadfhkd0/AAAAAAAAAAI/AAAAAAAAEAI/QLCFL4EnJWg/photo.jpg?sz=128",
+            "display_name": "Luiz Eug&#234;nio Barbieri",
+            "link": "https://stackoverflow.com/users/10229906/luiz-eug%c3%aanio-barbieri"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1585587701,
+        "post_id": 60932702,
+        "comment_id": 107807202,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Development mode is when I&#39;m running the code through Visual Studio using IIS Express and debugging the code. For production mode, I published the application in a folder and created a website using the local IIS, following the tips that Microsoft has in its documentation here -&gt; <a href=\"https://docs.microsoft.com/pt-br/aspnet/core/host-and-deploy/iis/?view=aspnetcore-3.1#create-the-iis-site\" rel=\"nofollow noreferrer\">docs.microsoft.com/pt-br/aspnet/core/host-and-deploy/iis/&hellip;</a>."
+    },
+    {
+        "owner": {
+            "reputation": 240386,
+            "user_id": 60761,
+            "user_type": "registered",
+            "accept_rate": 91,
+            "profile_image": "https://www.gravatar.com/avatar/5bf43bae0431d8f4a062234b5e3a0cb9?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Henk Holterman",
+            "link": "https://stackoverflow.com/users/60761/henk-holterman"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1585584562,
+        "post_id": 60932702,
+        "comment_id": 107805559,
+        "content_license": "CC BY-SA 4.0",
+        "body": "As you state yourself it&#39;s the difference between &quot;development&quot; and &quot;production&quot;. You did not elaborate on that. What do you call &quot;production&quot; ?  How do you run it in development?  What profile?"
+    },
+    {
+        "owner": {
+            "reputation": 77,
+            "user_id": 10229906,
+            "user_type": "registered",
+            "profile_image": "https://lh4.googleusercontent.com/-Apbpadfhkd0/AAAAAAAAAAI/AAAAAAAAEAI/QLCFL4EnJWg/photo.jpg?sz=128",
+            "display_name": "Luiz Eug&#234;nio Barbieri",
+            "link": "https://stackoverflow.com/users/10229906/luiz-eug%c3%aanio-barbieri"
+        },
+        "reply_to_user": {
+            "reputation": 16558,
+            "user_id": 38024,
+            "user_type": "registered",
+            "accept_rate": 50,
+            "profile_image": "https://i.stack.imgur.com/MGNH5.jpg?s=128&g=1",
+            "display_name": "Anuraj",
+            "link": "https://stackoverflow.com/users/38024/anuraj"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1585579217,
+        "post_id": 60932702,
+        "comment_id": 107802638,
+        "content_license": "CC BY-SA 4.0",
+        "body": "GET - <a href=\"http://localhost:91/api/Account\" rel=\"nofollow noreferrer\">localhost:91/api/Account</a> POST - <a href=\"http://localhost:91/api/Account/Login\" rel=\"nofollow noreferrer\">localhost:91/api/Account/Login</a>"
+    },
+    {
+        "owner": {
+            "reputation": 16558,
+            "user_id": 38024,
+            "user_type": "registered",
+            "accept_rate": 50,
+            "profile_image": "https://i.stack.imgur.com/MGNH5.jpg?s=128&g=1",
+            "display_name": "Anuraj",
+            "link": "https://stackoverflow.com/users/38024/anuraj"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1585578935,
+        "post_id": 60932702,
+        "comment_id": 107802470,
+        "content_license": "CC BY-SA 4.0",
+        "body": "How you&#39;re calling your GET and Login methods?"
+    }
+]

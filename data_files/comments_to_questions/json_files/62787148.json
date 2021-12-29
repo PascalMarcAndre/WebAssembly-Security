@@ -1,0 +1,185 @@
+[
+    {
+        "owner": {
+            "reputation": 240386,
+            "user_id": 60761,
+            "user_type": "registered",
+            "accept_rate": 91,
+            "profile_image": "https://www.gravatar.com/avatar/5bf43bae0431d8f4a062234b5e3a0cb9?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Henk Holterman",
+            "link": "https://stackoverflow.com/users/60761/henk-holterman"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1604475450,
+        "post_id": 62787148,
+        "comment_id": 114355517,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Yes, it is server-side. I didn&#39;t realize that then."
+    },
+    {
+        "owner": {
+            "reputation": 757,
+            "user_id": 365335,
+            "user_type": "registered",
+            "accept_rate": 33,
+            "profile_image": "https://i.stack.imgur.com/IDe6T.png?s=128&g=1",
+            "display_name": "silverfox1948",
+            "link": "https://stackoverflow.com/users/365335/silverfox1948"
+        },
+        "reply_to_user": {
+            "reputation": 240386,
+            "user_id": 60761,
+            "user_type": "registered",
+            "accept_rate": 91,
+            "profile_image": "https://www.gravatar.com/avatar/5bf43bae0431d8f4a062234b5e3a0cb9?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Henk Holterman",
+            "link": "https://stackoverflow.com/users/60761/henk-holterman"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1604251265,
+        "post_id": 62787148,
+        "comment_id": 114283829,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@HenkHolterman In my reading about MS&#39;s protectedlocalstorage, you must do that on the server side. It seeems to rely on building your app using the blazor server app template."
+    },
+    {
+        "owner": {
+            "reputation": 240386,
+            "user_id": 60761,
+            "user_type": "registered",
+            "accept_rate": 91,
+            "profile_image": "https://www.gravatar.com/avatar/5bf43bae0431d8f4a062234b5e3a0cb9?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Henk Holterman",
+            "link": "https://stackoverflow.com/users/60761/henk-holterman"
+        },
+        "edited": false,
+        "score": 2,
+        "creation_date": 1599112878,
+        "post_id": 62787148,
+        "comment_id": 112673444,
+        "content_license": "CC BY-SA 4.0",
+        "body": "There is a package for that and it was integrated into Blazor 5 preview8. But you have to think carefully about for who you want to hide information. A SPA runs in the client browser, you can&#39;t keep it from the regular user."
+    },
+    {
+        "owner": {
+            "reputation": 1,
+            "user_id": 5954138,
+            "user_type": "registered",
+            "profile_image": "https://graph.facebook.com/592537750902313/picture?type=large",
+            "display_name": "F&#225;bio Marcos Euz&#233;bio",
+            "link": "https://stackoverflow.com/users/5954138/f%c3%a1bio-marcos-euz%c3%a9bio"
+        },
+        "edited": false,
+        "score": 5,
+        "creation_date": 1599080018,
+        "post_id": 62787148,
+        "comment_id": 112671515,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Come on folks! He can make use of some obfuscate tools in order to protect the code from being decompiled. So, I think it worth while having some way do encrypt the data, right ? Well friend, take a look at this post: <a href=\"https://www.npmjs.com/package/secure-web-storage\" rel=\"nofollow noreferrer\">npmjs.com/package/secure-web-storage</a> And here: <a href=\"https://stackoverflow.com/questions/17280390/can-local-storage-ever-be-considered-secure\" title=\"can local storage ever be considered secure\">stackoverflow.com/questions/17280390/&hellip;</a> You can find some solutions. Hope it helps. Let me know if is enough."
+    },
+    {
+        "owner": {
+            "reputation": 16533,
+            "user_id": 211672,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/JCQwB.jpg?s=128&g=1",
+            "display_name": "C. Augusto Proiete",
+            "link": "https://stackoverflow.com/users/211672/c-augusto-proiete"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1594514006,
+        "post_id": 62787148,
+        "comment_id": 111152904,
+        "content_license": "CC BY-SA 4.0",
+        "body": "No, it&#39;s like saying &quot;<i><a href=\"https://en.wikipedia.org/wiki/Security_through_obscurity\" rel=\"nofollow noreferrer\">Security by obscurity</a> is not a good strategy</i>&quot; and it&#39;s not worth your time and effort (IMO). If the information must be secured, it should be stored on the server-side instead"
+    },
+    {
+        "owner": {
+            "reputation": 1387,
+            "user_id": 1764116,
+            "user_type": "registered",
+            "accept_rate": 42,
+            "profile_image": "https://www.gravatar.com/avatar/8dd1910dd49d37bbbf91815b33f3325a?s=128&d=identicon&r=PG",
+            "display_name": "NSS",
+            "link": "https://stackoverflow.com/users/1764116/nss"
+        },
+        "reply_to_user": {
+            "reputation": 16533,
+            "user_id": 211672,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/JCQwB.jpg?s=128&g=1",
+            "display_name": "C. Augusto Proiete",
+            "link": "https://stackoverflow.com/users/211672/c-augusto-proiete"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1594499906,
+        "post_id": 62787148,
+        "comment_id": 111149879,
+        "content_license": "CC BY-SA 4.0",
+        "body": "it like saying because thieves can break the locks, it is better to leave doors open no need to put locks."
+    },
+    {
+        "owner": {
+            "reputation": 16533,
+            "user_id": 211672,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/JCQwB.jpg?s=128&g=1",
+            "display_name": "C. Augusto Proiete",
+            "link": "https://stackoverflow.com/users/211672/c-augusto-proiete"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1594248585,
+        "post_id": 62787148,
+        "comment_id": 111063741,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Better for what? What are you trying to do/stop people from doing? People that are technical enough to read data from the local storage, most likely can also decompile a .NET assembly..."
+    },
+    {
+        "owner": {
+            "reputation": 1387,
+            "user_id": 1764116,
+            "user_type": "registered",
+            "accept_rate": 42,
+            "profile_image": "https://www.gravatar.com/avatar/8dd1910dd49d37bbbf91815b33f3325a?s=128&d=identicon&r=PG",
+            "display_name": "NSS",
+            "link": "https://stackoverflow.com/users/1764116/nss"
+        },
+        "reply_to_user": {
+            "reputation": 16533,
+            "user_id": 211672,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/JCQwB.jpg?s=128&g=1",
+            "display_name": "C. Augusto Proiete",
+            "link": "https://stackoverflow.com/users/211672/c-augusto-proiete"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1594238994,
+        "post_id": 62787148,
+        "comment_id": 111060464,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Well i get your point but isn&#39;t making it harder  a better than leaving it plain text ?"
+    },
+    {
+        "owner": {
+            "reputation": 16533,
+            "user_id": 211672,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/JCQwB.jpg?s=128&g=1",
+            "display_name": "C. Augusto Proiete",
+            "link": "https://stackoverflow.com/users/211672/c-augusto-proiete"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1594180168,
+        "post_id": 62787148,
+        "comment_id": 111032664,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Why would you do that? The .NET assemblies are being downloaded to the client, so the code that decrypts (as well as the key) can easily be decompiled anyway..."
+    }
+]

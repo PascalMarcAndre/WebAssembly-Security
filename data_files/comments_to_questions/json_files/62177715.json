@@ -1,0 +1,47 @@
+[
+    {
+        "owner": {
+            "reputation": 1874,
+            "user_id": 1816260,
+            "user_type": "registered",
+            "accept_rate": 46,
+            "profile_image": "https://i.stack.imgur.com/PiN0u.jpg?s=128&g=1",
+            "display_name": "Tito",
+            "link": "https://stackoverflow.com/users/1816260/tito"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1591217793,
+        "post_id": 62177715,
+        "comment_id": 109976465,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I think i found the answer here <a href=\"https://stackoverflow.com/questions/51544240/how-can-i-free-memory-allocated-by-rust-code-exposed-in-webassembly\" title=\"how can i free memory allocated by rust code exposed in webassembly\">stackoverflow.com/questions/51544240/&hellip;</a> i.e. WebAssembly does not offer any instructions to deallocate memory., does that mean that delete is not working in this example?"
+    },
+    {
+        "owner": {
+            "reputation": 1874,
+            "user_id": 1816260,
+            "user_type": "registered",
+            "accept_rate": 46,
+            "profile_image": "https://i.stack.imgur.com/PiN0u.jpg?s=128&g=1",
+            "display_name": "Tito",
+            "link": "https://stackoverflow.com/users/1816260/tito"
+        },
+        "reply_to_user": {
+            "reputation": 386803,
+            "user_id": 734069,
+            "user_type": "registered",
+            "accept_rate": 80,
+            "profile_image": "https://www.gravatar.com/avatar/a356923f858fbe363dad1dc566837fc6?s=128&d=identicon&r=PG",
+            "display_name": "Nicol Bolas",
+            "link": "https://stackoverflow.com/users/734069/nicol-bolas"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1591207290,
+        "post_id": 62177715,
+        "comment_id": 109971231,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@NicolBolas sorry i posted the second method with delete i fixed that"
+    }
+]

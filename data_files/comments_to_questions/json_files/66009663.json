@@ -1,0 +1,86 @@
+[
+    {
+        "owner": {
+            "reputation": 321,
+            "user_id": 11305308,
+            "user_type": "registered",
+            "profile_image": "https://lh5.googleusercontent.com/-6ngjOvC-MJg/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3re_89HQkpZPWEmysqG9Xfpghhs9Dg/mo/photo.jpg?sz=128",
+            "display_name": "d00lar",
+            "link": "https://stackoverflow.com/users/11305308/d00lar"
+        },
+        "reply_to_user": {
+            "reputation": 93083,
+            "user_id": 134204,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/vwnA5.jpg?s=128&g=1",
+            "display_name": "Panagiotis Kanavos",
+            "link": "https://stackoverflow.com/users/134204/panagiotis-kanavos"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1612272540,
+        "post_id": 66009663,
+        "comment_id": 116710248,
+        "content_license": "CC BY-SA 4.0",
+        "body": "this is not for blazor wasm for blazor wasm option for windows auth is even grayed out when creating new project."
+    },
+    {
+        "owner": {
+            "reputation": 93083,
+            "user_id": 134204,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/vwnA5.jpg?s=128&g=1",
+            "display_name": "Panagiotis Kanavos",
+            "link": "https://stackoverflow.com/users/134204/panagiotis-kanavos"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1612271277,
+        "post_id": 66009663,
+        "comment_id": 116709675,
+        "content_license": "CC BY-SA 4.0",
+        "body": "On the contrary, you can use Windows Authentication in all cases. The docs <a href=\"https://docs.microsoft.com/en-us/aspnet/core/security/authentication/windowsauth?view=aspnetcore-5.0&amp;tabs=visual-studio\" rel=\"nofollow noreferrer\">show how to enable Windows Authentication</a> for IIS, IIS Express or Kestrel."
+    },
+    {
+        "owner": {
+            "reputation": 321,
+            "user_id": 11305308,
+            "user_type": "registered",
+            "profile_image": "https://lh5.googleusercontent.com/-6ngjOvC-MJg/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3re_89HQkpZPWEmysqG9Xfpghhs9Dg/mo/photo.jpg?sz=128",
+            "display_name": "d00lar",
+            "link": "https://stackoverflow.com/users/11305308/d00lar"
+        },
+        "reply_to_user": {
+            "reputation": 93083,
+            "user_id": 134204,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/vwnA5.jpg?s=128&g=1",
+            "display_name": "Panagiotis Kanavos",
+            "link": "https://stackoverflow.com/users/134204/panagiotis-kanavos"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1612270777,
+        "post_id": 66009663,
+        "comment_id": 116709445,
+        "content_license": "CC BY-SA 4.0",
+        "body": "so only in debug it is imposible but on real iis i can take windows username from IHttpContextAccessor as usual?"
+    },
+    {
+        "owner": {
+            "reputation": 93083,
+            "user_id": 134204,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/vwnA5.jpg?s=128&g=1",
+            "display_name": "Panagiotis Kanavos",
+            "link": "https://stackoverflow.com/users/134204/panagiotis-kanavos"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1612269631,
+        "post_id": 66009663,
+        "comment_id": 116708907,
+        "content_license": "CC BY-SA 4.0",
+        "body": "The <i>host</i> is just an ASP.NET Core site. If you enable Windows authentication on IIS or the ASP.NET Core site,  all calls will be authenticated by the OS itself and IIS will allow permitted accounts to call. There&#39;s no need for any tokens"
+    }
+]

@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 9869,
+            "user_id": 345716,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://www.gravatar.com/avatar/07f86ee9fbdc7b247c49a6894b46a455?s=128&d=identicon&r=PG",
+            "display_name": "Peter V. M&#248;rch",
+            "link": "https://stackoverflow.com/users/345716/peter-v-m%c3%b8rch"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1579732027,
+        "post_id": 42186728,
+        "comment_id": 105869223,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Great question! The promise of WASM + DRM could be that copyright holders can control what can be done with their content, but it would allow one to create fully open source browsers that support all DRM even if the copyright holders are too lazy to support them, as long as these browsers support WASM."
+    }
+]

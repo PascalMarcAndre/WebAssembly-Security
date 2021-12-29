@@ -1,0 +1,44 @@
+[
+    {
+        "owner": {
+            "reputation": 21,
+            "user_id": 13805084,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/2c064102c4a0a4e8fb1d6d3d11e30fd6?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Humberto",
+            "link": "https://stackoverflow.com/users/13805084/humberto"
+        },
+        "reply_to_user": {
+            "reputation": 15911,
+            "user_id": 6870228,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/13425c63b585e3bba05d30509e9e2b00?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Keith",
+            "link": "https://stackoverflow.com/users/6870228/keith"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1593014700,
+        "post_id": 62553391,
+        "comment_id": 110633320,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I also thought of streams as an option, but I cannot picture how to translate from JS stream into C stream"
+    },
+    {
+        "owner": {
+            "reputation": 15911,
+            "user_id": 6870228,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/13425c63b585e3bba05d30509e9e2b00?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Keith",
+            "link": "https://stackoverflow.com/users/6870228/keith"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1592996987,
+        "post_id": 62553391,
+        "comment_id": 110623473,
+        "content_license": "CC BY-SA 4.0",
+        "body": "WASI -&gt; run WebAssembly outside the web..    Your best approach is maybe using Streams.."
+    }
+]

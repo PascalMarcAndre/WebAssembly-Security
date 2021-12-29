@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 10580,
+            "user_id": 1043380,
+            "user_type": "registered",
+            "accept_rate": 80,
+            "profile_image": "https://www.gravatar.com/avatar/2388aa1beb9ac75029a5b4fafec11eec?s=128&d=identicon&r=PG",
+            "display_name": "gunr2171",
+            "link": "https://stackoverflow.com/users/1043380/gunr2171"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1617115779,
+        "post_id": 66873168,
+        "comment_id": 118209925,
+        "content_license": "CC BY-SA 4.0",
+        "body": "You may want to focus on one question at a time."
+    }
+]

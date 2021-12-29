@@ -1,0 +1,45 @@
+[
+    {
+        "owner": {
+            "reputation": 496,
+            "user_id": 871821,
+            "user_type": "registered",
+            "accept_rate": 67,
+            "profile_image": "https://www.gravatar.com/avatar/86745c80ad5a0974e23d540abdfe5b02?s=128&d=identicon&r=PG",
+            "display_name": "user3673",
+            "link": "https://stackoverflow.com/users/871821/user3673"
+        },
+        "reply_to_user": {
+            "reputation": 6105,
+            "user_id": 3983557,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/01A0D.jpg?s=128&g=1",
+            "display_name": "JF Bastien",
+            "link": "https://stackoverflow.com/users/3983557/jf-bastien"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1458150700,
+        "post_id": 36042935,
+        "comment_id": 59735425,
+        "content_license": "CC BY-SA 3.0",
+        "body": "It is a feature request for the V8 team IFF the feature is not already available in V8.  So my question is whether this feature already exists -- as it seems it should.  I&#39;m not sure how to be clearer in what I said.  The technical terms I used are well defined.  Which of them do you have a question about?  <code>node --v8-options</code> presents a bewildering array."
+    },
+    {
+        "owner": {
+            "reputation": 6105,
+            "user_id": 3983557,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/01A0D.jpg?s=128&g=1",
+            "display_name": "JF Bastien",
+            "link": "https://stackoverflow.com/users/3983557/jf-bastien"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1458150162,
+        "post_id": 36042935,
+        "comment_id": 59735094,
+        "content_license": "CC BY-SA 3.0",
+        "body": "Could you clarify what you mean? This sounds more like a feature request for the V8 team than an SO question, but I&#39;m not sure what the request is :-)"
+    }
+]

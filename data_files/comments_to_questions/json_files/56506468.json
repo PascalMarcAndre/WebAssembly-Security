@@ -1,0 +1,64 @@
+[
+    {
+        "owner": {
+            "reputation": 723,
+            "user_id": 1508479,
+            "user_type": "registered",
+            "accept_rate": 64,
+            "profile_image": "https://i.stack.imgur.com/K8WcV.jpg?s=128&g=1",
+            "display_name": "Vinay",
+            "link": "https://stackoverflow.com/users/1508479/vinay"
+        },
+        "reply_to_user": {
+            "reputation": 12381,
+            "user_id": 1121249,
+            "user_type": "registered",
+            "accept_rate": 86,
+            "profile_image": "https://i.stack.imgur.com/LkDcL.png?s=128&g=1",
+            "display_name": "rkosegi",
+            "link": "https://stackoverflow.com/users/1121249/rkosegi"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1560135477,
+        "post_id": 56506468,
+        "comment_id": 99624938,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@rkosegi no my assumption is wrong as stated in the answer below."
+    },
+    {
+        "owner": {
+            "reputation": 3731,
+            "user_id": 2742189,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/fa2038e19735e13bf3e2be52a12eea8c?s=128&d=identicon&r=PG&f=1",
+            "display_name": "OJ Kwon",
+            "link": "https://stackoverflow.com/users/2742189/oj-kwon"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1560027602,
+        "post_id": 56506468,
+        "comment_id": 99607135,
+        "content_license": "CC BY-SA 4.0",
+        "body": "pretty much well explained in below answer and above comment. 1. native binary is not <i>secure</i>, it can be also reverse engineered. 2. it does not matter of what target of binary you are aiming (native, wasm, or even js) it doesn&#39;t guarantee security."
+    },
+    {
+        "owner": {
+            "reputation": 12381,
+            "user_id": 1121249,
+            "user_type": "registered",
+            "accept_rate": 86,
+            "profile_image": "https://i.stack.imgur.com/LkDcL.png?s=128&g=1",
+            "display_name": "rkosegi",
+            "link": "https://stackoverflow.com/users/1121249/rkosegi"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1559998016,
+        "post_id": 56506468,
+        "comment_id": 99600490,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<code>as the module is a compiled binary it can not be reverse engineered and no one can access my secret salt</code> - are you sure about that?"
+    }
+]

@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 8509,
+            "user_id": 472966,
+            "user_type": "registered",
+            "accept_rate": 85,
+            "profile_image": "https://www.gravatar.com/avatar/678037dc2eaafe79c801cc62483077f6?s=128&d=identicon&r=PG",
+            "display_name": "Brad",
+            "link": "https://stackoverflow.com/users/472966/brad"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1604788958,
+        "post_id": 64732595,
+        "comment_id": 114455177,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Just want to point out that validation here seems to be done pretty cleanly with integration tests. I just swap out the HttpClient calls with the proxy which simultaneously tests the proxy endpoint and parameters, etc. I&#39;m still interested if there is a way to do this at compile time though"
+    }
+]

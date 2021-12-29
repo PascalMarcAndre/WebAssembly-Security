@@ -1,0 +1,19 @@
+[
+    {
+        "owner": {
+            "reputation": 2407,
+            "user_id": 6442841,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/e4add0edfa1b5a7e88e9c9c2906f8aee?s=128&d=identicon&r=PG",
+            "display_name": "StPaulis",
+            "link": "https://stackoverflow.com/users/6442841/stpaulis"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1599465395,
+        "post_id": 63739801,
+        "comment_id": 112772509,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I recommend you to take a look at the official docs: <a href=\"https://docs.microsoft.com/en-us/aspnet/core/blazor/security/?view=aspnetcore-3.1\" rel=\"nofollow noreferrer\">docs.microsoft.com/en-us/aspnet/core/blazor/security/&hellip;</a>"
+    }
+]

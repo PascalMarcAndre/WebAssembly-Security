@@ -1,0 +1,46 @@
+[
+    {
+        "owner": {
+            "reputation": 175,
+            "user_id": 9537752,
+            "user_type": "registered",
+            "profile_image": "https://lh3.googleusercontent.com/-XdUIqdMkCWA/AAAAAAAAAAI/AAAAAAAAAAA/4252rscbv5M/photo.jpg?sz=128",
+            "display_name": "Ask P",
+            "link": "https://stackoverflow.com/users/9537752/ask-p"
+        },
+        "reply_to_user": {
+            "reputation": 4031,
+            "user_id": 4661625,
+            "user_type": "registered",
+            "accept_rate": 67,
+            "profile_image": "https://www.gravatar.com/avatar/c3cd0caf54e0766c83f04f51f881303b?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Bumsik Kim",
+            "link": "https://stackoverflow.com/users/4661625/bumsik-kim"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1561533097,
+        "post_id": 56766674,
+        "comment_id": 100090219,
+        "content_license": "CC BY-SA 4.0",
+        "body": "All else being equal: Code that&#39;s harder to read = code that&#39;s more difficult to hack &#39;...&#39;"
+    },
+    {
+        "owner": {
+            "reputation": 4031,
+            "user_id": 4661625,
+            "user_type": "registered",
+            "accept_rate": 67,
+            "profile_image": "https://www.gravatar.com/avatar/c3cd0caf54e0766c83f04f51f881303b?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Bumsik Kim",
+            "link": "https://stackoverflow.com/users/4661625/bumsik-kim"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1561532988,
+        "post_id": 56766674,
+        "comment_id": 100090158,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Being harder to read does not make it less hackable in any way..."
+    }
+]

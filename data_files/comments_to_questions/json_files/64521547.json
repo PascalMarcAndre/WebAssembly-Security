@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 91,
+            "user_id": 959478,
+            "user_type": "registered",
+            "accept_rate": 25,
+            "profile_image": "https://graph.facebook.com/763530815/picture?type=large",
+            "display_name": "Cristovao Morgado",
+            "link": "https://stackoverflow.com/users/959478/cristovao-morgado"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1606949397,
+        "post_id": 64521547,
+        "comment_id": 115122276,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Where in the file system is your pfx located?"
+    }
+]

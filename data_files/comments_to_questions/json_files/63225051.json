@@ -1,0 +1,38 @@
+[
+    {
+        "owner": {
+            "reputation": 240386,
+            "user_id": 60761,
+            "user_type": "registered",
+            "accept_rate": 91,
+            "profile_image": "https://www.gravatar.com/avatar/5bf43bae0431d8f4a062234b5e3a0cb9?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Henk Holterman",
+            "link": "https://stackoverflow.com/users/60761/henk-holterman"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1596449637,
+        "post_id": 63225051,
+        "comment_id": 111805038,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Still quite a few details are missing: Where is Translations defined (ns &amp; asm), what is the folderstructure?  What is the exact name of the resx files?"
+    },
+    {
+        "owner": {
+            "reputation": 3810,
+            "user_id": 224667,
+            "user_type": "registered",
+            "accept_rate": 92,
+            "profile_image": "https://www.gravatar.com/avatar/ade416da0b8ca1efddd2c3fb50ff01ac?s=128&d=identicon&r=PG",
+            "display_name": "mynkow",
+            "link": "https://stackoverflow.com/users/224667/mynkow"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1596447453,
+        "post_id": 63225051,
+        "comment_id": 111804120,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Shooting blindly... Does the 3rd party have <code>AddRazorSupportForMvc</code> in the project file? ref: <a href=\"https://docs.microsoft.com/en-us/aspnet/core/migration/22-to-30?view=aspnetcore-3.1&amp;tabs=visual-studio#razor-class-library\" rel=\"nofollow noreferrer\">docs.microsoft.com/en-us/aspnet/core/migration/&hellip;</a>"
+    }
+]

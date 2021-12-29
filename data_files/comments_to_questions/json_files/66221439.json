@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 6999,
+            "user_id": 6717178,
+            "user_type": "registered",
+            "accept_rate": 100,
+            "profile_image": "https://i.stack.imgur.com/QbOLx.jpg?s=128&g=1",
+            "display_name": "JHBonarius",
+            "link": "https://stackoverflow.com/users/6717178/jhbonarius"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1613467993,
+        "post_id": 66221439,
+        "comment_id": 117077317,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Are they running an adblocker? noscript? etc? <a href=\"https://github.com/dotnet/aspnetcore/issues/28692\" rel=\"nofollow noreferrer\">This seems to indicate it&#39;s a Blazor bug</a>"
+    }
+]

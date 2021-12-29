@@ -1,0 +1,36 @@
+[
+    {
+        "owner": {
+            "reputation": 93083,
+            "user_id": 134204,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/vwnA5.jpg?s=128&g=1",
+            "display_name": "Panagiotis Kanavos",
+            "link": "https://stackoverflow.com/users/134204/panagiotis-kanavos"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1610717544,
+        "post_id": 65735822,
+        "comment_id": 116227220,
+        "content_license": "CC BY-SA 4.0",
+        "body": "The docs you linked to don&#39;t mention anything about web.config. If you use Kestrel to host your WASM application, <code>web.config</code> has no effect"
+    },
+    {
+        "owner": {
+            "reputation": 93083,
+            "user_id": 134204,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/vwnA5.jpg?s=128&g=1",
+            "display_name": "Panagiotis Kanavos",
+            "link": "https://stackoverflow.com/users/134204/panagiotis-kanavos"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1610717424,
+        "post_id": 65735822,
+        "comment_id": 116227169,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Blazor WASM runs in the browser, it has no responses. What you refer to is the ASP.NET Core site you use to host it.  That&#39;s the same kind of site as your ASP.NET Core MVC site and most likely <i>already</i> configured for STS."
+    }
+]

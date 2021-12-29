@@ -1,0 +1,19 @@
+[
+    {
+        "owner": {
+            "reputation": 1138,
+            "user_id": 14625593,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/o6RMg.png?s=128&g=1",
+            "display_name": "Just the benno",
+            "link": "https://stackoverflow.com/users/14625593/just-the-benno"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1613019763,
+        "post_id": 66147554,
+        "comment_id": 116948457,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I think it is related to your authentication procedure. What type of authentication does your application use? The redirect is usually an indication that your <code>context.User</code> is null, hence no authentication has been done."
+    }
+]

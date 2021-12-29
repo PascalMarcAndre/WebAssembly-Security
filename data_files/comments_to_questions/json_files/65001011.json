@@ -1,0 +1,90 @@
+[
+    {
+        "owner": {
+            "reputation": 164,
+            "user_id": 11205109,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/6cf7cbf06d2f40fc956b7eb78da3a1a1?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Raymond A.",
+            "link": "https://stackoverflow.com/users/11205109/raymond-a"
+        },
+        "reply_to_user": {
+            "reputation": 240386,
+            "user_id": 60761,
+            "user_type": "registered",
+            "accept_rate": 91,
+            "profile_image": "https://www.gravatar.com/avatar/5bf43bae0431d8f4a062234b5e3a0cb9?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Henk Holterman",
+            "link": "https://stackoverflow.com/users/60761/henk-holterman"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1606676989,
+        "post_id": 65001011,
+        "comment_id": 115026718,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I set up a new project, and I cannot find the AADSTS7000218 error."
+    },
+    {
+        "owner": {
+            "reputation": 240386,
+            "user_id": 60761,
+            "user_type": "registered",
+            "accept_rate": 91,
+            "profile_image": "https://www.gravatar.com/avatar/5bf43bae0431d8f4a062234b5e3a0cb9?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Henk Holterman",
+            "link": "https://stackoverflow.com/users/60761/henk-holterman"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1606341944,
+        "post_id": 65001011,
+        "comment_id": 114939315,
+        "content_license": "CC BY-SA 4.0",
+        "body": "For what it&#39;s worth, I could reproduce this. Not my area, but the response contains: AADSTS7000218: The request body must contain the following parameter: &#39;client_assertion&#39; or &#39;client_secret&#39;. Which seems to be a familiar error."
+    },
+    {
+        "owner": {
+            "reputation": 164,
+            "user_id": 11205109,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/6cf7cbf06d2f40fc956b7eb78da3a1a1?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Raymond A.",
+            "link": "https://stackoverflow.com/users/11205109/raymond-a"
+        },
+        "reply_to_user": {
+            "reputation": 240386,
+            "user_id": 60761,
+            "user_type": "registered",
+            "accept_rate": 91,
+            "profile_image": "https://www.gravatar.com/avatar/5bf43bae0431d8f4a062234b5e3a0cb9?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Henk Holterman",
+            "link": "https://stackoverflow.com/users/60761/henk-holterman"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1606341687,
+        "post_id": 65001011,
+        "comment_id": 114939220,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Yes, the Template registered both. Demo3 (the Blazor Webassembly) and Demo3_Server (Rest Api). Tried various changes, no luck. Gave the wasm app permission to the server app also... In previous apps I had problem with v1 and v2 auth points, and that is my best quess right now."
+    },
+    {
+        "owner": {
+            "reputation": 240386,
+            "user_id": 60761,
+            "user_type": "registered",
+            "accept_rate": 91,
+            "profile_image": "https://www.gravatar.com/avatar/5bf43bae0431d8f4a062234b5e3a0cb9?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Henk Holterman",
+            "link": "https://stackoverflow.com/users/60761/henk-holterman"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1606338911,
+        "post_id": 65001011,
+        "comment_id": 114938212,
+        "content_license": "CC BY-SA 4.0",
+        "body": "You did notify AzAD about your App?"
+    }
+]

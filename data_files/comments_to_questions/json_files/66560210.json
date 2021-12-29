@@ -1,0 +1,46 @@
+[
+    {
+        "owner": {
+            "reputation": 431,
+            "user_id": 14201840,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/4e05d4fd94801927852066255854d2c6?s=128&d=identicon&r=PG&f=1",
+            "display_name": "TheNoobProgrammer",
+            "link": "https://stackoverflow.com/users/14201840/thenoobprogrammer"
+        },
+        "reply_to_user": {
+            "reputation": 7321,
+            "user_id": 68490,
+            "user_type": "registered",
+            "accept_rate": 20,
+            "profile_image": "https://www.gravatar.com/avatar/b3c70bbc491ede87ae5682c561af07d2?s=128&d=identicon&r=PG",
+            "display_name": "Tore Nestenius",
+            "link": "https://stackoverflow.com/users/68490/tore-nestenius"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1615366123,
+        "post_id": 66560210,
+        "comment_id": 117665631,
+        "content_license": "CC BY-SA 4.0",
+        "body": "no, but the claims is shown in the frontend and it only show the IDs neccessary but didn&#39;t show the profile and email info similar to the output identity server is showing . I&#39;ll update the post to include the image"
+    },
+    {
+        "owner": {
+            "reputation": 7321,
+            "user_id": 68490,
+            "user_type": "registered",
+            "accept_rate": 20,
+            "profile_image": "https://www.gravatar.com/avatar/b3c70bbc491ede87ae5682c561af07d2?s=128&d=identicon&r=PG",
+            "display_name": "Tore Nestenius",
+            "link": "https://stackoverflow.com/users/68490/tore-nestenius"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1615363987,
+        "post_id": 66560210,
+        "comment_id": 117664734,
+        "content_license": "CC BY-SA 4.0",
+        "body": "You ask &quot; i only show the OpenID scope &quot;, where? Consent screen?"
+    }
+]

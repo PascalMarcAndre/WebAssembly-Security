@@ -1,0 +1,227 @@
+[
+    {
+        "owner": {
+            "reputation": 2265,
+            "user_id": 3960200,
+            "user_type": "registered",
+            "accept_rate": 41,
+            "profile_image": "https://graph.facebook.com/726296462/picture?type=large",
+            "display_name": "Etienne Charland",
+            "link": "https://stackoverflow.com/users/3960200/etienne-charland"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1602704557,
+        "post_id": 64322973,
+        "comment_id": 113808250,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I &quot;almost&quot; succeeded but got stuck at calling IJsRuntime from the Identity Framework pipeline... and Microsoft says that it&#39;s not supported. Anything else to be done here? <a href=\"https://github.com/dotnet/aspnetcore/issues/26898\" rel=\"nofollow noreferrer\">github.com/dotnet/aspnetcore/issues/26898</a>"
+    },
+    {
+        "owner": {
+            "reputation": 2265,
+            "user_id": 3960200,
+            "user_type": "registered",
+            "accept_rate": 41,
+            "profile_image": "https://graph.facebook.com/726296462/picture?type=large",
+            "display_name": "Etienne Charland",
+            "link": "https://stackoverflow.com/users/3960200/etienne-charland"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1602646743,
+        "post_id": 64322973,
+        "comment_id": 113783572,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Unfortunately, calling SignInAsync throws &quot;System.InvalidOperationException: &#39;The response headers cannot be modified because the response has already started.&#39;&quot; so CookieAuthenticationEvents won&#39;t be reached."
+    },
+    {
+        "owner": {
+            "reputation": 2265,
+            "user_id": 3960200,
+            "user_type": "registered",
+            "accept_rate": 41,
+            "profile_image": "https://graph.facebook.com/726296462/picture?type=large",
+            "display_name": "Etienne Charland",
+            "link": "https://stackoverflow.com/users/3960200/etienne-charland"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1602642576,
+        "post_id": 64322973,
+        "comment_id": 113782747,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I dug through the code and found pretty cool stuff. SignInManager leads to HttpContext.SignInAsync extension method, then IAuthenticationService, then IAuthenticationHandler, then CookieAuthenticationHandler, then... CookieAuthenticationEvents. Look at this: &quot;Use cookie authentication without ASP.NET Core Identity&quot;, could also do the reverse &quot;Use ASP.NET Core Identity without cookie authentication&quot; <a href=\"https://docs.microsoft.com/en-us/aspnet/core/security/authentication/cookie?view=aspnetcore-3.1\" rel=\"nofollow noreferrer\">docs.microsoft.com/en-us/aspnet/core/security/authentication&zwnj;&#8203;/&hellip;</a>"
+    },
+    {
+        "owner": {
+            "reputation": 2265,
+            "user_id": 3960200,
+            "user_type": "registered",
+            "accept_rate": 41,
+            "profile_image": "https://graph.facebook.com/726296462/picture?type=large",
+            "display_name": "Etienne Charland",
+            "link": "https://stackoverflow.com/users/3960200/etienne-charland"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1602605617,
+        "post_id": 64322973,
+        "comment_id": 113770864,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Wolle, having a controller handle Login/Logout is what they did in a link in the main post with Blazor WebAssembly. None of that is required for Web Server scenario; but apparently setting the cookie works natively in WebAssembly and not in Web Server."
+    },
+    {
+        "owner": {
+            "reputation": 2265,
+            "user_id": 3960200,
+            "user_type": "registered",
+            "accept_rate": 41,
+            "profile_image": "https://graph.facebook.com/726296462/picture?type=large",
+            "display_name": "Etienne Charland",
+            "link": "https://stackoverflow.com/users/3960200/etienne-charland"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1602605393,
+        "post_id": 64322973,
+        "comment_id": 113770746,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<a href=\"https://github.com/dotnet/aspnetcore/issues/23417\" rel=\"nofollow noreferrer\">github.com/dotnet/aspnetcore/issues/23417</a>"
+    },
+    {
+        "owner": {
+            "reputation": 20103,
+            "user_id": 1879019,
+            "user_type": "registered",
+            "accept_rate": 65,
+            "profile_image": "https://i.stack.imgur.com/otzDQ.jpg?s=128&g=1",
+            "display_name": "tomRedox",
+            "link": "https://stackoverflow.com/users/1879019/tomredox"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1602599582,
+        "post_id": 64322973,
+        "comment_id": 113767573,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Could you add a link for this bit &quot;Microsoft&#39;s official statement is that it&#39;s not supported and to use a Razor login page instead&quot;?  I&#39;d like to read what they have to say about that"
+    },
+    {
+        "owner": {
+            "reputation": 6764,
+            "user_id": 1865613,
+            "user_type": "registered",
+            "accept_rate": 64,
+            "profile_image": "https://i.stack.imgur.com/4qBtA.png?s=128&g=1",
+            "display_name": "W\u2126LLE - \u02c8v\u0254l\u0259",
+            "link": "https://stackoverflow.com/users/1865613/w%e2%84%a6lle-%cb%88v%c9%94l%c9%99"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1602577659,
+        "post_id": 64322973,
+        "comment_id": 113757121,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Why don&#39;t you just use an ASP.NET Core MVC AuthenticationController to handle the login / logout? Works like a charm for us in Blazor Server-Side. Maybe there will be nice implementation in the future for Blazor-Only authentication, who knows."
+    },
+    {
+        "owner": {
+            "reputation": 2265,
+            "user_id": 3960200,
+            "user_type": "registered",
+            "accept_rate": 41,
+            "profile_image": "https://graph.facebook.com/726296462/picture?type=large",
+            "display_name": "Etienne Charland",
+            "link": "https://stackoverflow.com/users/3960200/etienne-charland"
+        },
+        "reply_to_user": {
+            "reputation": 6764,
+            "user_id": 1865613,
+            "user_type": "registered",
+            "accept_rate": 64,
+            "profile_image": "https://i.stack.imgur.com/4qBtA.png?s=128&g=1",
+            "display_name": "W\u2126LLE - \u02c8v\u0254l\u0259",
+            "link": "https://stackoverflow.com/users/1865613/w%e2%84%a6lle-%cb%88v%c9%94l%c9%99"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1602561187,
+        "post_id": 64322973,
+        "comment_id": 113751608,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Still no answer on this but I&#39;ve been thinking about it. Posting the cookie via JS interop shouldn&#39;t be a problem, but storing the state server-side can be a problem. Plus, querying the client for token info is not an option because the state will be requested before loading the page where JS is not available. What <i>could</i> work, however, is sending the cookie via Interop and then immediately reloading the page, sending the cookie back to the server. The only thing that would need to be changed is the way the cookie is written in SignInManager."
+    },
+    {
+        "owner": {
+            "reputation": 2265,
+            "user_id": 3960200,
+            "user_type": "registered",
+            "accept_rate": 41,
+            "profile_image": "https://graph.facebook.com/726296462/picture?type=large",
+            "display_name": "Etienne Charland",
+            "link": "https://stackoverflow.com/users/3960200/etienne-charland"
+        },
+        "reply_to_user": {
+            "reputation": 6764,
+            "user_id": 1865613,
+            "user_type": "registered",
+            "accept_rate": 64,
+            "profile_image": "https://i.stack.imgur.com/4qBtA.png?s=128&g=1",
+            "display_name": "W\u2126LLE - \u02c8v\u0254l\u0259",
+            "link": "https://stackoverflow.com/users/1865613/w%e2%84%a6lle-%cb%88v%c9%94l%c9%99"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1602530072,
+        "post_id": 64322973,
+        "comment_id": 113744335,
+        "content_license": "CC BY-SA 4.0",
+        "body": "For AuthenticationStateProvider, I would not want a round-trip for every check. It would keep the standard cookie look-up, but needs to additionally detect a login that happened since... where would that login be stored meanwhile? If noone has done it, I&#39;ll put this on the back-burner to try it later on."
+    },
+    {
+        "owner": {
+            "reputation": 2265,
+            "user_id": 3960200,
+            "user_type": "registered",
+            "accept_rate": 41,
+            "profile_image": "https://graph.facebook.com/726296462/picture?type=large",
+            "display_name": "Etienne Charland",
+            "link": "https://stackoverflow.com/users/3960200/etienne-charland"
+        },
+        "reply_to_user": {
+            "reputation": 6764,
+            "user_id": 1865613,
+            "user_type": "registered",
+            "accept_rate": 64,
+            "profile_image": "https://i.stack.imgur.com/4qBtA.png?s=128&g=1",
+            "display_name": "W\u2126LLE - \u02c8v\u0254l\u0259",
+            "link": "https://stackoverflow.com/users/1865613/w%e2%84%a6lle-%cb%88v%c9%94l%c9%99"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1602527360,
+        "post_id": 64322973,
+        "comment_id": 113743286,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Not yet. Storing elsewhere would require creating a custom AuthenticationStateProvider to get the state... and other code elsewhere to set the authentication state. There might be a lot of complex details involved. We might need to also create a custom SignInManager and override SignInAsync."
+    },
+    {
+        "owner": {
+            "reputation": 6764,
+            "user_id": 1865613,
+            "user_type": "registered",
+            "accept_rate": 64,
+            "profile_image": "https://i.stack.imgur.com/4qBtA.png?s=128&g=1",
+            "display_name": "W\u2126LLE - \u02c8v\u0254l\u0259",
+            "link": "https://stackoverflow.com/users/1865613/w%e2%84%a6lle-%cb%88v%c9%94l%c9%99"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1602525984,
+        "post_id": 64322973,
+        "comment_id": 113742744,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Have you tried to set the cookie using the JavaScript interop?"
+    }
+]

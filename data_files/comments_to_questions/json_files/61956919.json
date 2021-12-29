@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 13400,
+            "user_id": 2940908,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://i.stack.imgur.com/E79WU.jpg?s=128&g=1",
+            "display_name": "agua from mars",
+            "link": "https://stackoverflow.com/users/2940908/agua-from-mars"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1590163694,
+        "post_id": 61956919,
+        "comment_id": 109585828,
+        "content_license": "CC BY-SA 4.0",
+        "body": "You can host you app in a ASP.Net core project. this can help you : <a href=\"https://stackoverflow.com/a/61012208/2940908\">stackoverflow.com/a/61012208/2940908</a>"
+    }
+]

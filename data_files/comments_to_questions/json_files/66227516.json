@@ -1,0 +1,44 @@
+[
+    {
+        "owner": {
+            "reputation": 1,
+            "user_id": 2260740,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/172a1d96f5c1dd33a1d7865c6c2a3c73?s=128&d=identicon&r=PG&f=1",
+            "display_name": "MhD hN",
+            "link": "https://stackoverflow.com/users/2260740/mhd-hn"
+        },
+        "reply_to_user": {
+            "reputation": 93083,
+            "user_id": 134204,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/vwnA5.jpg?s=128&g=1",
+            "display_name": "Panagiotis Kanavos",
+            "link": "https://stackoverflow.com/users/134204/panagiotis-kanavos"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1613603166,
+        "post_id": 66227516,
+        "comment_id": 117129465,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I just created my project from the template and started running it without changing a word at all"
+    },
+    {
+        "owner": {
+            "reputation": 93083,
+            "user_id": 134204,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/vwnA5.jpg?s=128&g=1",
+            "display_name": "Panagiotis Kanavos",
+            "link": "https://stackoverflow.com/users/134204/panagiotis-kanavos"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1613546097,
+        "post_id": 66227516,
+        "comment_id": 117104177,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Post your code. The problem is caused because SSL was <b>disabled</b> by changes in the code. All Blazor projects have SSL enabled by default, so whatever the problem is, it wasn&#39;t caused by <i>enabling</i> SSL. That&#39;s why two ports are used when you run it, 5000 and 5001 with the cleartext one redirecting to the SSL port. Perhaps, when you added the Identity Server code you removed the redirection code"
+    }
+]

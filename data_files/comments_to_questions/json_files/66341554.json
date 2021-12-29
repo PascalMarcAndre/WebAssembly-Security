@@ -1,0 +1,44 @@
+[
+    {
+        "owner": {
+            "reputation": 1,
+            "user_id": 13157126,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/aa4e0dfe815067b38caffb99914303e1?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Garett Cooper",
+            "link": "https://stackoverflow.com/users/13157126/garett-cooper"
+        },
+        "reply_to_user": {
+            "reputation": 5178,
+            "user_id": 1492496,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/dO7to.png?s=128&g=1",
+            "display_name": "Brian Parker",
+            "link": "https://stackoverflow.com/users/1492496/brian-parker"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1614213243,
+        "post_id": 66341554,
+        "comment_id": 117320394,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@BrianParker Thanks for taking a look Brian, based on your comment I did some testing and discovered that this issue didn&#39;t occur when I ran the client on its own outside of the Asp.NET core hosted environment. I realized that I still have scaffolding auth code from the original project template on the server, which seems to have been causing the issue."
+    },
+    {
+        "owner": {
+            "reputation": 5178,
+            "user_id": 1492496,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/dO7to.png?s=128&g=1",
+            "display_name": "Brian Parker",
+            "link": "https://stackoverflow.com/users/1492496/brian-parker"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1614133886,
+        "post_id": 66341554,
+        "comment_id": 117290344,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Hi Garett I am currently working on something very similar (ID4, WasmPWA Client stand alone, and separate gateway). I am not seeing this behaviour at all. I think we need to see a bit more of the code base."
+    }
+]

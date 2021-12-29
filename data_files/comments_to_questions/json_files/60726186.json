@@ -1,0 +1,222 @@
+[
+    {
+        "owner": {
+            "reputation": 609,
+            "user_id": 4250126,
+            "user_type": "registered",
+            "profile_image": "https://graph.facebook.com/100000650157504/picture?type=large",
+            "display_name": "John Dover",
+            "link": "https://stackoverflow.com/users/4250126/john-dover"
+        },
+        "reply_to_user": {
+            "reputation": 13400,
+            "user_id": 2940908,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://i.stack.imgur.com/E79WU.jpg?s=128&g=1",
+            "display_name": "agua from mars",
+            "link": "https://stackoverflow.com/users/2940908/agua-from-mars"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1584471997,
+        "post_id": 60726186,
+        "comment_id": 107445771,
+        "content_license": "CC BY-SA 4.0",
+        "body": "That&#39;s my thoughts as well at this point."
+    },
+    {
+        "owner": {
+            "reputation": 13400,
+            "user_id": 2940908,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://i.stack.imgur.com/E79WU.jpg?s=128&g=1",
+            "display_name": "agua from mars",
+            "link": "https://stackoverflow.com/users/2940908/agua-from-mars"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1584471802,
+        "post_id": 60726186,
+        "comment_id": 107445690,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I don&#39;t think it work with base href other than /"
+    },
+    {
+        "owner": {
+            "reputation": 609,
+            "user_id": 4250126,
+            "user_type": "registered",
+            "profile_image": "https://graph.facebook.com/100000650157504/picture?type=large",
+            "display_name": "John Dover",
+            "link": "https://stackoverflow.com/users/4250126/john-dover"
+        },
+        "reply_to_user": {
+            "reputation": 13400,
+            "user_id": 2940908,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://i.stack.imgur.com/E79WU.jpg?s=128&g=1",
+            "display_name": "agua from mars",
+            "link": "https://stackoverflow.com/users/2940908/agua-from-mars"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1584470580,
+        "post_id": 60726186,
+        "comment_id": 107445228,
+        "content_license": "CC BY-SA 4.0",
+        "body": "to answer your question above, yes Microsoft.AspNetCore.Components.WebAssembly.Authentication is included in client project -v 3.2.0-preview2.20160.5"
+    },
+    {
+        "owner": {
+            "reputation": 609,
+            "user_id": 4250126,
+            "user_type": "registered",
+            "profile_image": "https://graph.facebook.com/100000650157504/picture?type=large",
+            "display_name": "John Dover",
+            "link": "https://stackoverflow.com/users/4250126/john-dover"
+        },
+        "reply_to_user": {
+            "reputation": 13400,
+            "user_id": 2940908,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://i.stack.imgur.com/E79WU.jpg?s=128&g=1",
+            "display_name": "agua from mars",
+            "link": "https://stackoverflow.com/users/2940908/agua-from-mars"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1584470457,
+        "post_id": 60726186,
+        "comment_id": 107445179,
+        "content_license": "CC BY-SA 4.0",
+        "body": "strangely enough, I decided to delete the .vs folder and reload project and I do not receive error anymore, but now dealing with another issue altogether. I can log in locally but Authorize fails with a 401. Either I&#39;m doing something completly wrong or web assembly blazor is incomplete."
+    },
+    {
+        "owner": {
+            "reputation": 609,
+            "user_id": 4250126,
+            "user_type": "registered",
+            "profile_image": "https://graph.facebook.com/100000650157504/picture?type=large",
+            "display_name": "John Dover",
+            "link": "https://stackoverflow.com/users/4250126/john-dover"
+        },
+        "reply_to_user": {
+            "reputation": 13400,
+            "user_id": 2940908,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://i.stack.imgur.com/E79WU.jpg?s=128&g=1",
+            "display_name": "agua from mars",
+            "link": "https://stackoverflow.com/users/2940908/agua-from-mars"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1584470361,
+        "post_id": 60726186,
+        "comment_id": 107445141,
+        "content_license": "CC BY-SA 4.0",
+        "body": "No I did not upgrade any project. I downloaded web assembly blazor template from <a href=\"https://devblogs.microsoft.com/aspnet/blazor-webassembly-3-2-0-preview-2-release-now-available/\" rel=\"nofollow noreferrer\">devblogs.microsoft.com/aspnet/&hellip;</a> , created a new project, change connection string to a local database, and updated projects to use new base path &#39;client-side-server&#39;. I already have a server-side blazor project that works seperate from this, but I am trying to re-create it using web assembly blazor."
+    },
+    {
+        "owner": {
+            "reputation": 13400,
+            "user_id": 2940908,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://i.stack.imgur.com/E79WU.jpg?s=128&g=1",
+            "display_name": "agua from mars",
+            "link": "https://stackoverflow.com/users/2940908/agua-from-mars"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1584468893,
+        "post_id": 60726186,
+        "comment_id": 107444531,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Did you add a reference to Microsoft.AspNetCore.Components.WebAssembly.Authentication package ?"
+    },
+    {
+        "owner": {
+            "reputation": 13400,
+            "user_id": 2940908,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://i.stack.imgur.com/E79WU.jpg?s=128&g=1",
+            "display_name": "agua from mars",
+            "link": "https://stackoverflow.com/users/2940908/agua-from-mars"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1584468853,
+        "post_id": 60726186,
+        "comment_id": 107444516,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Did you upgrade to 3.2.0-preview2.20160.5 and follow : <a href=\"https://devblogs.microsoft.com/aspnet/blazor-webassembly-3-2-0-preview-2-release-now-available/\" rel=\"nofollow noreferrer\">Upgrade an existing project</a>"
+    },
+    {
+        "owner": {
+            "reputation": 609,
+            "user_id": 4250126,
+            "user_type": "registered",
+            "profile_image": "https://graph.facebook.com/100000650157504/picture?type=large",
+            "display_name": "John Dover",
+            "link": "https://stackoverflow.com/users/4250126/john-dover"
+        },
+        "reply_to_user": {
+            "reputation": 13400,
+            "user_id": 2940908,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://i.stack.imgur.com/E79WU.jpg?s=128&g=1",
+            "display_name": "agua from mars",
+            "link": "https://stackoverflow.com/users/2940908/agua-from-mars"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1584468670,
+        "post_id": 60726186,
+        "comment_id": 107444447,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Ok. Thats what I thought.  Also yes, the js file gives 200 result."
+    },
+    {
+        "owner": {
+            "reputation": 13400,
+            "user_id": 2940908,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://i.stack.imgur.com/E79WU.jpg?s=128&g=1",
+            "display_name": "agua from mars",
+            "link": "https://stackoverflow.com/users/2940908/agua-from-mars"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1584467250,
+        "post_id": 60726186,
+        "comment_id": 107443846,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Publishing: you need to publish the server project, it contains the client app"
+    },
+    {
+        "owner": {
+            "reputation": 13400,
+            "user_id": 2940908,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://i.stack.imgur.com/E79WU.jpg?s=128&g=1",
+            "display_name": "agua from mars",
+            "link": "https://stackoverflow.com/users/2940908/agua-from-mars"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1584467107,
+        "post_id": 60726186,
+        "comment_id": 107443782,
+        "content_license": "CC BY-SA 4.0",
+        "body": "did you add the js script in your index.html : <a href=\"https://docs.microsoft.com/en-us/aspnet/core/security/blazor/webassembly/hosted-with-identity-server?view=aspnetcore-3.1#index-page\" rel=\"nofollow noreferrer\">Index page</a>"
+    }
+]

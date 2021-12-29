@@ -1,0 +1,131 @@
+[
+    {
+        "owner": {
+            "reputation": 31436,
+            "user_id": 211160,
+            "user_type": "registered",
+            "accept_rate": 92,
+            "profile_image": "https://i.stack.imgur.com/Z2fk7.png?s=128&g=1",
+            "display_name": "HostileFork says dont trust SE",
+            "link": "https://stackoverflow.com/users/211160/hostilefork-says-dont-trust-se"
+        },
+        "reply_to_user": {
+            "reputation": 1303,
+            "user_id": 3623566,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/TbMBs.png?s=128&g=1",
+            "display_name": "Lee",
+            "link": "https://stackoverflow.com/users/3623566/lee"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1574078827,
+        "post_id": 58908855,
+        "comment_id": 104090258,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@Lee In addition to there being no such thing in the C standard as a &quot;forced fully inline&quot; function...the compiler is free to implement any seemingly simple operations (even something like <code>+</code>) using function calls.  And while it&#39;s very unlikely to do so with simple platform integers or bytes, it can be common when working with types not native to the processor architecture.  But that&#39;s to say nothing of its freedom to make whatever optimizations it sees fit based on a stack in a dynamic fashion."
+    },
+    {
+        "owner": {
+            "reputation": 1303,
+            "user_id": 3623566,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/TbMBs.png?s=128&g=1",
+            "display_name": "Lee",
+            "link": "https://stackoverflow.com/users/3623566/lee"
+        },
+        "reply_to_user": {
+            "reputation": 526892,
+            "user_id": 1048572,
+            "user_type": "registered",
+            "accept_rate": 77,
+            "profile_image": "https://www.gravatar.com/avatar/7f2c4de95e8f4f8f5a71c3aaf0ed312a?s=128&d=identicon&r=PG",
+            "display_name": "Bergi",
+            "link": "https://stackoverflow.com/users/1048572/bergi"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1574071381,
+        "post_id": 58908855,
+        "comment_id": 104086076,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@Bergi Yes only when the inline function is an real inline function recursion for example makes you inline function non inline. Never said that the inline keyword would help to find out if function inline or not."
+    },
+    {
+        "owner": {
+            "reputation": 526892,
+            "user_id": 1048572,
+            "user_type": "registered",
+            "accept_rate": 77,
+            "profile_image": "https://www.gravatar.com/avatar/7f2c4de95e8f4f8f5a71c3aaf0ed312a?s=128&d=identicon&r=PG",
+            "display_name": "Bergi",
+            "link": "https://stackoverflow.com/users/1048572/bergi"
+        },
+        "reply_to_user": {
+            "reputation": 1303,
+            "user_id": 3623566,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/TbMBs.png?s=128&g=1",
+            "display_name": "Lee",
+            "link": "https://stackoverflow.com/users/3623566/lee"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1574068990,
+        "post_id": 58908855,
+        "comment_id": 104084754,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@Lee I thought C doesn&#39;t guarantee to inline an <code>inline</code> function though?"
+    },
+    {
+        "owner": {
+            "reputation": 1303,
+            "user_id": 3623566,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/TbMBs.png?s=128&g=1",
+            "display_name": "Lee",
+            "link": "https://stackoverflow.com/users/3623566/lee"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1574062299,
+        "post_id": 58908855,
+        "comment_id": 104081811,
+        "content_license": "CC BY-SA 4.0",
+        "body": "By the way the inline functions in c are guaranteed to not exceed call stack."
+    },
+    {
+        "owner": {
+            "reputation": 1303,
+            "user_id": 3623566,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/TbMBs.png?s=128&g=1",
+            "display_name": "Lee",
+            "link": "https://stackoverflow.com/users/3623566/lee"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1574061884,
+        "post_id": 58908855,
+        "comment_id": 104081632,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Some BASIC variants that have functions have no call stack because recursion is not permitted. So there is not possibility of stack overflow. Some others allow recursion and have call stack. So stack overflow is possible unless the system has infinity memory. So lets say stack safe are all functions that are non recursive   and that call no functions that may call end up in recursion. So you need loop detection for your call tree which can consume time and because of JavaScripts dynamic nature the call tree may change often."
+    },
+    {
+        "owner": {
+            "reputation": 19928,
+            "user_id": 3689450,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/SXuSR.png?s=128&g=1",
+            "display_name": "VLAZ",
+            "link": "https://stackoverflow.com/users/3689450/vlaz"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1574059271,
+        "post_id": 58908855,
+        "comment_id": 104080644,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I do find this an interesting question. I&#39;ve no information to offer but I&#39;m curious what (if anything) can others say. With this aside, I think judging the linked answers as &quot;correct&quot; and &quot;incorrect&quot; is both not relevant and probably not very accurate. The inaccurate answer directly relates to the question which is &quot;can I catch this error&quot; and then further elaborates that even catching it as proposed isn&#39;t the correct way to handle this. So, to me this is the correct answer <i>for that question</i>. The accepted answer is also correct but in a more general case."
+    }
+]

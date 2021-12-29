@@ -1,0 +1,46 @@
+[
+    {
+        "owner": {
+            "reputation": 71,
+            "user_id": 3957991,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/beb3289a314d65e7d3cf63012769c4c6?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Andrew",
+            "link": "https://stackoverflow.com/users/3957991/andrew"
+        },
+        "reply_to_user": {
+            "reputation": 9443,
+            "user_id": 41403,
+            "user_type": "registered",
+            "accept_rate": 88,
+            "profile_image": "https://www.gravatar.com/avatar/476b1c3cf22e774b835403adc9af6a59?s=128&d=identicon&r=PG",
+            "display_name": "Quango",
+            "link": "https://stackoverflow.com/users/41403/quango"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1590777754,
+        "post_id": 62074612,
+        "comment_id": 109820094,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I have looked at that, and it was useful, but ultimately I am unsuccessful. I appear to have grabbed the token in the client properly.. I can print it out, and a big long string appears. I can add it to options.AccessTokenProvider, but the server still seems misconfigured. I get a null reference exception in app.UseIdentityServer() on start-up. I mean, this is all on me, of course, but if the example was extended, even a rookie like me could get it."
+    },
+    {
+        "owner": {
+            "reputation": 9443,
+            "user_id": 41403,
+            "user_type": "registered",
+            "accept_rate": 88,
+            "profile_image": "https://www.gravatar.com/avatar/476b1c3cf22e774b835403adc9af6a59?s=128&d=identicon&r=PG",
+            "display_name": "Quango",
+            "link": "https://stackoverflow.com/users/41403/quango"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1590747566,
+        "post_id": 62074612,
+        "comment_id": 109803971,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Have you looked at <a href=\"https://docs.microsoft.com/en-us/aspnet/core/signalr/authn-and-authz?view=aspnetcore-3.1\" rel=\"nofollow noreferrer\">docs.microsoft.com/en-us/aspnet/core/signalr/&hellip;</a> ?"
+    }
+]

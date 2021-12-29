@@ -1,0 +1,178 @@
+[
+    {
+        "owner": {
+            "reputation": 1684,
+            "user_id": 1786007,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/c6bfb48152374c6833ec10ecf0574e0b?s=128&d=identicon&r=PG",
+            "display_name": "Venson",
+            "link": "https://stackoverflow.com/users/1786007/venson"
+        },
+        "reply_to_user": {
+            "reputation": 535,
+            "user_id": 1784280,
+            "user_type": "registered",
+            "accept_rate": 69,
+            "profile_image": "https://www.gravatar.com/avatar/0ca4b22a383f1c2dfb0173f2601c350c?s=128&d=identicon&r=PG",
+            "display_name": "Paul",
+            "link": "https://stackoverflow.com/users/1784280/paul"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1597666978,
+        "post_id": 59343706,
+        "comment_id": 112199001,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@paul sure, there is no (Not literally) limit in what you can download from a site, but this post in particular asks for the problem in webassembly when you create a file in webassembly code and then &quot;move&quot; the data through the Js Interopt."
+    },
+    {
+        "owner": {
+            "reputation": 535,
+            "user_id": 1784280,
+            "user_type": "registered",
+            "accept_rate": 69,
+            "profile_image": "https://www.gravatar.com/avatar/0ca4b22a383f1c2dfb0173f2601c350c?s=128&d=identicon&r=PG",
+            "display_name": "Paul",
+            "link": "https://stackoverflow.com/users/1784280/paul"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1597576987,
+        "post_id": 59343706,
+        "comment_id": 112172615,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Yes I haven&#39;t tried web assembly yet. Is it not possible to create a new asset to download from a Web assembly project from the server side services? My idea is to just do this and set up a hangfire task to clean up after an expiry date and redirect to a download link to the phisical file"
+    },
+    {
+        "owner": {
+            "reputation": 1684,
+            "user_id": 1786007,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/c6bfb48152374c6833ec10ecf0574e0b?s=128&d=identicon&r=PG",
+            "display_name": "Venson",
+            "link": "https://stackoverflow.com/users/1786007/venson"
+        },
+        "reply_to_user": {
+            "reputation": 535,
+            "user_id": 1784280,
+            "user_type": "registered",
+            "accept_rate": 69,
+            "profile_image": "https://www.gravatar.com/avatar/0ca4b22a383f1c2dfb0173f2601c350c?s=128&d=identicon&r=PG",
+            "display_name": "Paul",
+            "link": "https://stackoverflow.com/users/1784280/paul"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1597487139,
+        "post_id": 59343706,
+        "comment_id": 112152379,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@paul Are you talking about server side blazor? My problem involves only WebAssembly Blazor. And no, not yet."
+    },
+    {
+        "owner": {
+            "reputation": 535,
+            "user_id": 1784280,
+            "user_type": "registered",
+            "accept_rate": 69,
+            "profile_image": "https://www.gravatar.com/avatar/0ca4b22a383f1c2dfb0173f2601c350c?s=128&d=identicon&r=PG",
+            "display_name": "Paul",
+            "link": "https://stackoverflow.com/users/1784280/paul"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1597398050,
+        "post_id": 59343706,
+        "comment_id": 112125735,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I am facing the same problem. Did  you find a good solution for this in the end? Im thinking maybe just save these as an asset in the wwwRoot and navigate to the url and then make sure the file is cleaned up after its downloaded. The problem I expect to face with this is knowing if the download has completed"
+    },
+    {
+        "owner": {
+            "reputation": 1684,
+            "user_id": 1786007,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/c6bfb48152374c6833ec10ecf0574e0b?s=128&d=identicon&r=PG",
+            "display_name": "Venson",
+            "link": "https://stackoverflow.com/users/1786007/venson"
+        },
+        "reply_to_user": {
+            "reputation": 13360,
+            "user_id": 987509,
+            "user_type": "registered",
+            "accept_rate": 90,
+            "profile_image": "https://i.stack.imgur.com/gTtzl.png?s=128&g=1",
+            "display_name": "Charleh",
+            "link": "https://stackoverflow.com/users/987509/charleh"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1577883761,
+        "post_id": 59343706,
+        "comment_id": 105273956,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@Charleh After i did some further research, there is no obvious &quot;blazor&quot; way how to handle this case. I guess i have to wait for <a href=\"https://developer.mozilla.org/en-US/docs/Web/API/File_and_Directory_Entries_API\" rel=\"nofollow noreferrer\">developer.mozilla.org/en-US/docs/Web/API/&hellip;</a> to become standard, or any blazor improvements in the interopt with the js vm."
+    },
+    {
+        "owner": {
+            "reputation": 13360,
+            "user_id": 987509,
+            "user_type": "registered",
+            "accept_rate": 90,
+            "profile_image": "https://i.stack.imgur.com/gTtzl.png?s=128&g=1",
+            "display_name": "Charleh",
+            "link": "https://stackoverflow.com/users/987509/charleh"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1576419287,
+        "post_id": 59343706,
+        "comment_id": 104886067,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Yeah but the point is, you can&#39;t stitch the files together in the vm because that&#39;s what&#39;s causing your memory issues. There&#39;s no option to stitch the files on disk because it has to go through the browser, and the whole thing is a hack in the first place where the bytes are just sent to the vm. That&#39;s why I mentioned the manual stitching (i.e. download 4 files and manually concatenate them with another program external from the blazor app). Until there&#39;s support for streaming directly from the blazor app I think it will be very tricky to make work"
+    },
+    {
+        "owner": {
+            "reputation": 1684,
+            "user_id": 1786007,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/c6bfb48152374c6833ec10ecf0574e0b?s=128&d=identicon&r=PG",
+            "display_name": "Venson",
+            "link": "https://stackoverflow.com/users/1786007/venson"
+        },
+        "reply_to_user": {
+            "reputation": 13360,
+            "user_id": 987509,
+            "user_type": "registered",
+            "accept_rate": 90,
+            "profile_image": "https://i.stack.imgur.com/gTtzl.png?s=128&g=1",
+            "display_name": "Charleh",
+            "link": "https://stackoverflow.com/users/987509/charleh"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1576416321,
+        "post_id": 59343706,
+        "comment_id": 104885327,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@Charleh in fact, thats exactly what i have done. <a href=\"https://gist.github.com/JPVenson/8eb2686b2f07d28014d0f4098d0e04c4\" rel=\"nofollow noreferrer\">gist.github.com/JPVenson/8eb2686b2f07d28014d0f4098d0e04c4</a>  The stiching of the parts included. That is my &quot;Modified&quot; version of the mentioned post. But still its sucks up that much memory in the process (and afaik) does not free the Memory from the interopt in a certain time even if i produce multiple files, there is a point (around 400mb) where the VM just throws this exception"
+    },
+    {
+        "owner": {
+            "reputation": 13360,
+            "user_id": 987509,
+            "user_type": "registered",
+            "accept_rate": 90,
+            "profile_image": "https://i.stack.imgur.com/gTtzl.png?s=128&g=1",
+            "display_name": "Charleh",
+            "link": "https://stackoverflow.com/users/987509/charleh"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1576413885,
+        "post_id": 59343706,
+        "comment_id": 104884805,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Quick read up suggests not, the only other option that comes to mind is to break the zip up into multiple files. You could also split the file into multiple base 64 strings, but the problem is going to be piecing it back together on the client side... Those strings are going to eat memory and you can&#39;t exactly stream it to the browser. It would have to be chunks that download one by one, make a call back to blazor from js interop to get the next chunk, but the stitching together would have to be manual"
+    }
+]

@@ -1,0 +1,54 @@
+[
+    {
+        "owner": {
+            "reputation": 1,
+            "user_id": 15520578,
+            "user_type": "registered",
+            "profile_image": "https://lh3.googleusercontent.com/-xM8uacSFZtA/AAAAAAAAAAI/AAAAAAAAAAA/AMZuucmkeoJeZ-JJgMPF3BdGhPg3zI-rGw/s96-c/photo.jpg?sz=128",
+            "display_name": "Karunanidhi Kumar",
+            "link": "https://stackoverflow.com/users/15520578/karunanidhi-kumar"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1617431569,
+        "post_id": 66884642,
+        "comment_id": 118305647,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Tried as specified. but did not help. Thanks."
+    },
+    {
+        "owner": {
+            "reputation": 1825,
+            "user_id": 3486567,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/3e554e74f28210f5f84aef154ffd5f72?s=128&d=identicon&r=PG",
+            "display_name": "nahidf",
+            "link": "https://stackoverflow.com/users/3486567/nahidf"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1617217689,
+        "post_id": 66884642,
+        "comment_id": 118246205,
+        "content_license": "CC BY-SA 4.0",
+        "body": "You should list your frontend origin on <code>AllowedCorsOrigins</code>, based on the code above add  <code>https:&#47;&#47;frontend1.com</code> and <code>https:&#47;&#47;frontend2.com</code>"
+    },
+    {
+        "owner": {
+            "reputation": 7321,
+            "user_id": 68490,
+            "user_type": "registered",
+            "accept_rate": 20,
+            "profile_image": "https://www.gravatar.com/avatar/b3c70bbc491ede87ae5682c561af07d2?s=128&d=identicon&r=PG",
+            "display_name": "Tore Nestenius",
+            "link": "https://stackoverflow.com/users/68490/tore-nestenius"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1617190787,
+        "post_id": 66884642,
+        "comment_id": 118233763,
+        "content_license": "CC BY-SA 4.0",
+        "body": "What does the CORS error in the IdentityServer log fil say?"
+    }
+]

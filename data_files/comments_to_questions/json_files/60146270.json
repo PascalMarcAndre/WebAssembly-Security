@@ -1,0 +1,131 @@
+[
+    {
+        "owner": {
+            "reputation": 15154,
+            "user_id": 736518,
+            "user_type": "registered",
+            "accept_rate": 77,
+            "profile_image": "https://www.gravatar.com/avatar/1254365f8c7b7af893a73fb937799afe?s=128&d=identicon&r=PG",
+            "display_name": "timaschew",
+            "link": "https://stackoverflow.com/users/736518/timaschew"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1581422637,
+        "post_id": 60146270,
+        "comment_id": 106420322,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Okay I see. I found another wasm file under src/raw-wasm. I was able to decompile it with wabt2c. The output is not so helpful for me, but I&#39;m not an expert. I just want to ensure there was no network interaction. From node.js I only passed the file system module to the the library. In the decompiled output I don&#39;t see any suspicious headers, but please verify if my assumption is correct: <a href=\"https://pastebin.com/YYHecFAC\" rel=\"nofollow noreferrer\">pastebin.com/YYHecFAC</a> (first lines of the decompiled output)"
+    },
+    {
+        "owner": {
+            "reputation": 1591,
+            "user_id": 2770641,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/366fa9e0a1e8f82fddae1595ffc297d6?s=128&d=identicon&r=PG&f=1",
+            "display_name": "sbc100",
+            "link": "https://stackoverflow.com/users/2770641/sbc100"
+        },
+        "edited": false,
+        "score": 2,
+        "creation_date": 1581390608,
+        "post_id": 60146270,
+        "comment_id": 106408117,
+        "content_license": "CC BY-SA 4.0",
+        "body": "BYW, one of the nice features of wasm is that the wasm module can&#39;t actually make any system calls itself.  All it can do (in the context of node anyway) is call the JS functions that you give it.   If you want to see what its doing one way is to annotate all the imports you pass to it."
+    },
+    {
+        "owner": {
+            "reputation": 1591,
+            "user_id": 2770641,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/366fa9e0a1e8f82fddae1595ffc297d6?s=128&d=identicon&r=PG&f=1",
+            "display_name": "sbc100",
+            "link": "https://stackoverflow.com/users/2770641/sbc100"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1581390500,
+        "post_id": 60146270,
+        "comment_id": 106408100,
+        "content_license": "CC BY-SA 4.0",
+        "body": "wabt is indeed the tool you want to use.  From the output it looks like that file is not actual a wasm file.  If you run <code>file</code> on the file what type of file does your OS think it is?"
+    },
+    {
+        "owner": {
+            "reputation": 15154,
+            "user_id": 736518,
+            "user_type": "registered",
+            "accept_rate": 77,
+            "profile_image": "https://www.gravatar.com/avatar/1254365f8c7b7af893a73fb937799afe?s=128&d=identicon&r=PG",
+            "display_name": "timaschew",
+            "link": "https://stackoverflow.com/users/736518/timaschew"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1581326421,
+        "post_id": 60146270,
+        "comment_id": 106380633,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I didn&#39;t installed it globally. But even if locally: what would be the worst case? I run the command (on a mac) without sudo. So during that run any code could be executed right? So my user files could be scanned (not the system files), but enough to access my private RSA keys and send them somewhere, right?"
+    },
+    {
+        "owner": {
+            "reputation": 548,
+            "user_id": 12647099,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/6J6mt.png?s=128&g=1",
+            "display_name": "Maulik Parmar",
+            "link": "https://stackoverflow.com/users/12647099/maulik-parmar"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1581324113,
+        "post_id": 60146270,
+        "comment_id": 106379593,
+        "content_license": "CC BY-SA 4.0",
+        "body": "The binary is compiled on per project basis as long as you do not include it globally. And you can check it by going to vendors package directory dist folder. You would find compiled binary along with compiled node bindings which are loaded at runtime. This is a way of sandboxing packages and prevent them from abusing package managers privileges, breaking other projects and keep application under security context.  It does same  when you install node-sass or node-dart or any other package which has C library binding. It executes Cmake to compile binary for your platform and then includes it."
+    },
+    {
+        "owner": {
+            "reputation": 3043,
+            "user_id": 11204469,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/16b1be34bb82f28e14b12665d4b5df53?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Estradiaz",
+            "link": "https://stackoverflow.com/users/11204469/estradiaz"
+        },
+        "reply_to_user": {
+            "reputation": 548,
+            "user_id": 12647099,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/6J6mt.png?s=128&g=1",
+            "display_name": "Maulik Parmar",
+            "link": "https://stackoverflow.com/users/12647099/maulik-parmar"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1581323274,
+        "post_id": 60146270,
+        "comment_id": 106379219,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@MaulikParmar I am not sure if that is true - how can this undo the execution of commands?"
+    },
+    {
+        "owner": {
+            "reputation": 548,
+            "user_id": 12647099,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/6J6mt.png?s=128&g=1",
+            "display_name": "Maulik Parmar",
+            "link": "https://stackoverflow.com/users/12647099/maulik-parmar"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1581322439,
+        "post_id": 60146270,
+        "comment_id": 106378852,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Author mentions it&#39;s still a testing project. Anyways it should be as easy as removing any npm package from project as these compilations are done as per projects. Fire up npm uninstall openssl.js and it will remove any changes made by the package to your project."
+    }
+]

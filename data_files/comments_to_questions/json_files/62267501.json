@@ -1,0 +1,92 @@
+[
+    {
+        "owner": {
+            "reputation": 2653,
+            "user_id": 638311,
+            "user_type": "registered",
+            "accept_rate": 89,
+            "profile_image": "https://i.stack.imgur.com/zD4Ta.jpg?s=128&g=1",
+            "display_name": "INNVTV",
+            "link": "https://stackoverflow.com/users/638311/innvtv"
+        },
+        "reply_to_user": {
+            "reputation": 13855,
+            "user_id": 61311,
+            "user_type": "registered",
+            "accept_rate": 71,
+            "profile_image": "https://i.stack.imgur.com/EgbU7.jpg?s=128&g=1",
+            "display_name": "Peter Morris",
+            "link": "https://stackoverflow.com/users/61311/peter-morris"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1591713116,
+        "post_id": 62267501,
+        "comment_id": 110156369,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I&#39;m looking for a solution that ensures the CookieSettings class has completed it&#39;s initialization before the route loads. Similar to how a middleware pipeline would work in a .Net core web service project. Perhaps this is just not possible in Blazor WebAssembly especially since I am using JavaScript. But perhaps there is a way to route to an intermediary page between routes if this is a first load? I&#39;ll update my answer to include this!"
+    },
+    {
+        "owner": {
+            "reputation": 13855,
+            "user_id": 61311,
+            "user_type": "registered",
+            "accept_rate": 71,
+            "profile_image": "https://i.stack.imgur.com/EgbU7.jpg?s=128&g=1",
+            "display_name": "Peter Morris",
+            "link": "https://stackoverflow.com/users/61311/peter-morris"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1591655234,
+        "post_id": 62267501,
+        "comment_id": 110133490,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Sorry, I don&#39;t understand your response. Why is my suggestion a problem?"
+    },
+    {
+        "owner": {
+            "reputation": 2653,
+            "user_id": 638311,
+            "user_type": "registered",
+            "accept_rate": 89,
+            "profile_image": "https://i.stack.imgur.com/zD4Ta.jpg?s=128&g=1",
+            "display_name": "INNVTV",
+            "link": "https://stackoverflow.com/users/638311/innvtv"
+        },
+        "reply_to_user": {
+            "reputation": 13855,
+            "user_id": 61311,
+            "user_type": "registered",
+            "accept_rate": 71,
+            "profile_image": "https://i.stack.imgur.com/EgbU7.jpg?s=128&g=1",
+            "display_name": "Peter Morris",
+            "link": "https://stackoverflow.com/users/61311/peter-morris"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1591639871,
+        "post_id": 62267501,
+        "comment_id": 110127077,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I went down this path and it does work. But since I have many properties on the CookieSettings class (6-10 all from cookie data) I need a solution where it can be initialized and ready for any pages that need it. I have an internal function within this class that calls an API once any of the cookies expire in order to re-hydrate itself - so trying to keep everything within this DI object is crucial to keeping clean encapsulation throughout the project and making it easy for new developers to work on pages  without having to understand (or add code to manage) what it&#39;s doing under the hood."
+    },
+    {
+        "owner": {
+            "reputation": 13855,
+            "user_id": 61311,
+            "user_type": "registered",
+            "accept_rate": 71,
+            "profile_image": "https://i.stack.imgur.com/EgbU7.jpg?s=128&g=1",
+            "display_name": "Peter Morris",
+            "link": "https://stackoverflow.com/users/61311/peter-morris"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1591637226,
+        "post_id": 62267501,
+        "comment_id": 110125728,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Can you have a service to read/write the value? You could inject <code>IJSRuntime</code> into your service to manage the reading/writing, and then the value won&#39;t be read until components actually request the value."
+    }
+]

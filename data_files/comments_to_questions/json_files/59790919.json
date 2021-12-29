@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 414,
+            "user_id": 215263,
+            "user_type": "registered",
+            "accept_rate": 43,
+            "profile_image": "https://www.gravatar.com/avatar/2aa7638b045d1bfb5cc568748408d33d?s=128&d=identicon&r=PG&f=1",
+            "display_name": "b26",
+            "link": "https://stackoverflow.com/users/215263/b26"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1579278961,
+        "post_id": 59790919,
+        "comment_id": 105725148,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@Dan This is a C++ question as it is mentioned in the object itself, why you keep removing the C++ tag and downvoting the question? Webassembly can be generated from rust which is not what we want here.  Please look in the tags of this question: <a href=\"https://stackoverflow.com/questions/20421002/passing-a-c-function-to-a-javascript-function-in-emscripten\" title=\"passing a c function to a javascript function in emscripten\">stackoverflow.com/questions/20421002/&hellip;</a>"
+    }
+]

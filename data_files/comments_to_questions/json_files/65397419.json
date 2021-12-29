@@ -1,0 +1,19 @@
+[
+    {
+        "owner": {
+            "reputation": 5178,
+            "user_id": 1492496,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/dO7to.png?s=128&g=1",
+            "display_name": "Brian Parker",
+            "link": "https://stackoverflow.com/users/1492496/brian-parker"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1608579898,
+        "post_id": 65397419,
+        "comment_id": 115622224,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<a href=\"https://github.com/BrianLParker/AuthApp\" rel=\"nofollow noreferrer\">github.com/BrianLParker/AuthApp</a> customises Application user and passes them as claims...."
+    }
+]

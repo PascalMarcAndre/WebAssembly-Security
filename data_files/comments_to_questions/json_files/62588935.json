@@ -1,0 +1,46 @@
+[
+    {
+        "owner": {
+            "reputation": 51,
+            "user_id": 13740734,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/9445cb8c713f40b9a33ac09f1ca4f18d?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Don328",
+            "link": "https://stackoverflow.com/users/13740734/don328"
+        },
+        "reply_to_user": {
+            "reputation": 12013,
+            "user_id": 921054,
+            "user_type": "registered",
+            "accept_rate": 59,
+            "profile_image": "https://i.stack.imgur.com/BYYrP.jpg?s=128&g=1",
+            "display_name": "Pavel Voronin",
+            "link": "https://stackoverflow.com/users/921054/pavel-voronin"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1593191503,
+        "post_id": 62588935,
+        "comment_id": 110703356,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Thanks for the link. I had to disable <code>builder.Services.AddApiAuthorization()</code> in the (Client) Program file and add <code>.AddOidcAuthentication</code> and the error went away. Now, of course I have another error to deal with, but you&#39;ve put me back on the right path, I think. Thanks"
+    },
+    {
+        "owner": {
+            "reputation": 12013,
+            "user_id": 921054,
+            "user_type": "registered",
+            "accept_rate": 59,
+            "profile_image": "https://i.stack.imgur.com/BYYrP.jpg?s=128&g=1",
+            "display_name": "Pavel Voronin",
+            "link": "https://stackoverflow.com/users/921054/pavel-voronin"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1593158135,
+        "post_id": 62588935,
+        "comment_id": 110687121,
+        "content_license": "CC BY-SA 4.0",
+        "body": "This may be helpful <a href=\"https://github.com/dotnet/aspnetcore/issues/21327\" rel=\"nofollow noreferrer\">github.com/dotnet/aspnetcore/issues/21327</a>"
+    }
+]

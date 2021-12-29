@@ -1,0 +1,72 @@
+[
+    {
+        "owner": {
+            "reputation": 71,
+            "user_id": 3860630,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/02f624ae24cf9dc2527b81894c2bb99e?s=128&d=identicon&r=PG&f=1",
+            "display_name": "user3860630",
+            "link": "https://stackoverflow.com/users/3860630/user3860630"
+        },
+        "reply_to_user": {
+            "reputation": 240386,
+            "user_id": 60761,
+            "user_type": "registered",
+            "accept_rate": 91,
+            "profile_image": "https://www.gravatar.com/avatar/5bf43bae0431d8f4a062234b5e3a0cb9?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Henk Holterman",
+            "link": "https://stackoverflow.com/users/60761/henk-holterman"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1593707699,
+        "post_id": 62700005,
+        "comment_id": 110881227,
+        "content_license": "CC BY-SA 4.0",
+        "body": "If my requirement is wrong, then please suggest me the recommended way of keeping away the app secrets from the application code. Anyone, please help me."
+    },
+    {
+        "owner": {
+            "reputation": 71,
+            "user_id": 3860630,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/02f624ae24cf9dc2527b81894c2bb99e?s=128&d=identicon&r=PG&f=1",
+            "display_name": "user3860630",
+            "link": "https://stackoverflow.com/users/3860630/user3860630"
+        },
+        "reply_to_user": {
+            "reputation": 240386,
+            "user_id": 60761,
+            "user_type": "registered",
+            "accept_rate": 91,
+            "profile_image": "https://www.gravatar.com/avatar/5bf43bae0431d8f4a062234b5e3a0cb9?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Henk Holterman",
+            "link": "https://stackoverflow.com/users/60761/henk-holterman"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1593706527,
+        "post_id": 62700005,
+        "comment_id": 110880591,
+        "content_license": "CC BY-SA 4.0",
+        "body": "My scenario is like, want to get the password from the secret file in the static main method of Program.cs. For that, I am checking multiple ways but I can do it easily in server side but not in client side."
+    },
+    {
+        "owner": {
+            "reputation": 240386,
+            "user_id": 60761,
+            "user_type": "registered",
+            "accept_rate": 91,
+            "profile_image": "https://www.gravatar.com/avatar/5bf43bae0431d8f4a062234b5e3a0cb9?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Henk Holterman",
+            "link": "https://stackoverflow.com/users/60761/henk-holterman"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1593705114,
+        "post_id": 62700005,
+        "comment_id": 110879887,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Who do you want to keep it from? The user?"
+    }
+]

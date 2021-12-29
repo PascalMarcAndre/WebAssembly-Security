@@ -1,0 +1,248 @@
+[
+    {
+        "owner": {
+            "reputation": 240386,
+            "user_id": 60761,
+            "user_type": "registered",
+            "accept_rate": 91,
+            "profile_image": "https://www.gravatar.com/avatar/5bf43bae0431d8f4a062234b5e3a0cb9?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Henk Holterman",
+            "link": "https://stackoverflow.com/users/60761/henk-holterman"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1598852514,
+        "post_id": 63647552,
+        "comment_id": 112580608,
+        "content_license": "CC BY-SA 4.0",
+        "body": "&#39;routes&#39; are created by the <code>@page</code> lines in your app."
+    },
+    {
+        "owner": {
+            "reputation": 143,
+            "user_id": 10371377,
+            "user_type": "registered",
+            "profile_image": "https://lh3.googleusercontent.com/-9fgEldXjMGM/AAAAAAAAAAI/AAAAAAAAAKo/yqNgYYO8Wfs/photo.jpg?sz=128",
+            "display_name": "Nath Shivanand",
+            "link": "https://stackoverflow.com/users/10371377/nath-shivanand"
+        },
+        "reply_to_user": {
+            "reputation": 240386,
+            "user_id": 60761,
+            "user_type": "registered",
+            "accept_rate": 91,
+            "profile_image": "https://www.gravatar.com/avatar/5bf43bae0431d8f4a062234b5e3a0cb9?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Henk Holterman",
+            "link": "https://stackoverflow.com/users/60761/henk-holterman"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1598852401,
+        "post_id": 63647552,
+        "comment_id": 112580577,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@HenkHolterman your means this line <code>Failed to compare two elements in the array. ---&gt; System.InvalidOperationException: The following routes are ambiguous</code>"
+    },
+    {
+        "owner": {
+            "reputation": 143,
+            "user_id": 10371377,
+            "user_type": "registered",
+            "profile_image": "https://lh3.googleusercontent.com/-9fgEldXjMGM/AAAAAAAAAAI/AAAAAAAAAKo/yqNgYYO8Wfs/photo.jpg?sz=128",
+            "display_name": "Nath Shivanand",
+            "link": "https://stackoverflow.com/users/10371377/nath-shivanand"
+        },
+        "reply_to_user": {
+            "reputation": 240386,
+            "user_id": 60761,
+            "user_type": "registered",
+            "accept_rate": 91,
+            "profile_image": "https://www.gravatar.com/avatar/5bf43bae0431d8f4a062234b5e3a0cb9?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Henk Holterman",
+            "link": "https://stackoverflow.com/users/60761/henk-holterman"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1598852351,
+        "post_id": 63647552,
+        "comment_id": 112580553,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@HenkHolterman  see I change my code I am use the bind attribute  <a href=\"https://i.stack.imgur.com/ADQxi.png\" rel=\"nofollow noreferrer\">i.stack.imgur.com/ADQxi.png</a> again run the project give the same error"
+    },
+    {
+        "owner": {
+            "reputation": 240386,
+            "user_id": 60761,
+            "user_type": "registered",
+            "accept_rate": 91,
+            "profile_image": "https://www.gravatar.com/avatar/5bf43bae0431d8f4a062234b5e3a0cb9?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Henk Holterman",
+            "link": "https://stackoverflow.com/users/60761/henk-holterman"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1598852258,
+        "post_id": 63647552,
+        "comment_id": 112580525,
+        "content_license": "CC BY-SA 4.0",
+        "body": "And the line just before that."
+    },
+    {
+        "owner": {
+            "reputation": 143,
+            "user_id": 10371377,
+            "user_type": "registered",
+            "profile_image": "https://lh3.googleusercontent.com/-9fgEldXjMGM/AAAAAAAAAAI/AAAAAAAAAKo/yqNgYYO8Wfs/photo.jpg?sz=128",
+            "display_name": "Nath Shivanand",
+            "link": "https://stackoverflow.com/users/10371377/nath-shivanand"
+        },
+        "reply_to_user": {
+            "reputation": 240386,
+            "user_id": 60761,
+            "user_type": "registered",
+            "accept_rate": 91,
+            "profile_image": "https://www.gravatar.com/avatar/5bf43bae0431d8f4a062234b5e3a0cb9?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Henk Holterman",
+            "link": "https://stackoverflow.com/users/60761/henk-holterman"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1598852216,
+        "post_id": 63647552,
+        "comment_id": 112580515,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@HenkHolterman <code>&#39;DisplayEmployeeData&#39; in &#39;CrudBlazorClientApp.Pages.Login&#39;  &#39;DisplayEmployeeData&#39; in &#39;CrudBlazorClientApp.Pages.DisplayEmployeeData&#39;</code> your means this one?"
+    },
+    {
+        "owner": {
+            "reputation": 240386,
+            "user_id": 60761,
+            "user_type": "registered",
+            "accept_rate": 91,
+            "profile_image": "https://www.gravatar.com/avatar/5bf43bae0431d8f4a062234b5e3a0cb9?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Henk Holterman",
+            "link": "https://stackoverflow.com/users/60761/henk-holterman"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1598851701,
+        "post_id": 63647552,
+        "comment_id": 112580397,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Read the next 3 lines of the error."
+    },
+    {
+        "owner": {
+            "reputation": 143,
+            "user_id": 10371377,
+            "user_type": "registered",
+            "profile_image": "https://lh3.googleusercontent.com/-9fgEldXjMGM/AAAAAAAAAAI/AAAAAAAAAKo/yqNgYYO8Wfs/photo.jpg?sz=128",
+            "display_name": "Nath Shivanand",
+            "link": "https://stackoverflow.com/users/10371377/nath-shivanand"
+        },
+        "reply_to_user": {
+            "reputation": 240386,
+            "user_id": 60761,
+            "user_type": "registered",
+            "accept_rate": 91,
+            "profile_image": "https://www.gravatar.com/avatar/5bf43bae0431d8f4a062234b5e3a0cb9?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Henk Holterman",
+            "link": "https://stackoverflow.com/users/60761/henk-holterman"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1598848238,
+        "post_id": 63647552,
+        "comment_id": 112579640,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@Henk Holterman <code>Failed to compare two elements in the array.</code> can you give hint for how to solve this error"
+    },
+    {
+        "owner": {
+            "reputation": 143,
+            "user_id": 10371377,
+            "user_type": "registered",
+            "profile_image": "https://lh3.googleusercontent.com/-9fgEldXjMGM/AAAAAAAAAAI/AAAAAAAAAKo/yqNgYYO8Wfs/photo.jpg?sz=128",
+            "display_name": "Nath Shivanand",
+            "link": "https://stackoverflow.com/users/10371377/nath-shivanand"
+        },
+        "reply_to_user": {
+            "reputation": 240386,
+            "user_id": 60761,
+            "user_type": "registered",
+            "accept_rate": 91,
+            "profile_image": "https://www.gravatar.com/avatar/5bf43bae0431d8f4a062234b5e3a0cb9?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Henk Holterman",
+            "link": "https://stackoverflow.com/users/60761/henk-holterman"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1598847776,
+        "post_id": 63647552,
+        "comment_id": 112579563,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@HenkHolterman &quot;txtusername&quot;(which value need to compare means where user enter right or wrong value) with the database)"
+    },
+    {
+        "owner": {
+            "reputation": 143,
+            "user_id": 10371377,
+            "user_type": "registered",
+            "profile_image": "https://lh3.googleusercontent.com/-9fgEldXjMGM/AAAAAAAAAAI/AAAAAAAAAKo/yqNgYYO8Wfs/photo.jpg?sz=128",
+            "display_name": "Nath Shivanand",
+            "link": "https://stackoverflow.com/users/10371377/nath-shivanand"
+        },
+        "reply_to_user": {
+            "reputation": 240386,
+            "user_id": 60761,
+            "user_type": "registered",
+            "accept_rate": 91,
+            "profile_image": "https://www.gravatar.com/avatar/5bf43bae0431d8f4a062234b5e3a0cb9?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Henk Holterman",
+            "link": "https://stackoverflow.com/users/60761/henk-holterman"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1598846681,
+        "post_id": 63647552,
+        "comment_id": 112579382,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@HenkHolterman here I post the login page code in index.razor because I want to run first login page that is the reason I put the code in index.razor"
+    },
+    {
+        "owner": {
+            "reputation": 240386,
+            "user_id": 60761,
+            "user_type": "registered",
+            "accept_rate": 91,
+            "profile_image": "https://www.gravatar.com/avatar/5bf43bae0431d8f4a062234b5e3a0cb9?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Henk Holterman",
+            "link": "https://stackoverflow.com/users/60761/henk-holterman"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1598720850,
+        "post_id": 63647552,
+        "comment_id": 112553687,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Questions and answers here should also be useful for future users. The text in pictures cannot be googled."
+    },
+    {
+        "owner": {
+            "reputation": 240386,
+            "user_id": 60761,
+            "user_type": "registered",
+            "accept_rate": 91,
+            "profile_image": "https://www.gravatar.com/avatar/5bf43bae0431d8f4a062234b5e3a0cb9?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Henk Holterman",
+            "link": "https://stackoverflow.com/users/60761/henk-holterman"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1598720807,
+        "post_id": 63647552,
+        "comment_id": 112553674,
+        "content_license": "CC BY-SA 4.0",
+        "body": "The error has nothing to do with authentication. Read it carefully, if you can&#39;t find it then post the Login page (as text, not as picture)."
+    }
+]

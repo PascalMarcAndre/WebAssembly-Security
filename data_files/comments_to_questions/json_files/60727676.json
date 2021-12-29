@@ -1,0 +1,92 @@
+[
+    {
+        "owner": {
+            "reputation": 2030,
+            "user_id": 1121245,
+            "user_type": "registered",
+            "accept_rate": 80,
+            "profile_image": "https://www.gravatar.com/avatar/b9b01fb3b20f21cebcc7784fb4809abd?s=128&d=identicon&r=PG",
+            "display_name": "Michele mpp Marostica",
+            "link": "https://stackoverflow.com/users/1121245/michele-mpp-marostica"
+        },
+        "reply_to_user": {
+            "reputation": 42644,
+            "user_id": 1658906,
+            "user_type": "registered",
+            "accept_rate": 100,
+            "profile_image": "https://www.gravatar.com/avatar/4e4748ed2fb97e8a8d4dd6d439625135?s=128&d=identicon&r=PG",
+            "display_name": "juunas",
+            "link": "https://stackoverflow.com/users/1658906/juunas"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1584475143,
+        "post_id": 60727676,
+        "comment_id": 107446930,
+        "content_license": "CC BY-SA 4.0",
+        "body": "That makes sense, I got confused by this: <a href=\"http://blazorhelpwebsite.com/Blog/tabid/61/EntryId/4370/Client-Side-Blazor-Authentication-Using-Azure-AD-and-a-Custom-AuthenticationStateProvider.aspx\" rel=\"nofollow noreferrer\">blazorhelpwebsite.com/Blog/tabid/61/EntryId/4370/&hellip;</a>"
+    },
+    {
+        "owner": {
+            "reputation": 42644,
+            "user_id": 1658906,
+            "user_type": "registered",
+            "accept_rate": 100,
+            "profile_image": "https://www.gravatar.com/avatar/4e4748ed2fb97e8a8d4dd6d439625135?s=128&d=identicon&r=PG",
+            "display_name": "juunas",
+            "link": "https://stackoverflow.com/users/1658906/juunas"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1584470146,
+        "post_id": 60727676,
+        "comment_id": 107445048,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Yes, that&#39;s the typical approach with JS front-ends :) Blazor isn&#39;t different in that regard, it&#39;s a rich front-end app"
+    },
+    {
+        "owner": {
+            "reputation": 2030,
+            "user_id": 1121245,
+            "user_type": "registered",
+            "accept_rate": 80,
+            "profile_image": "https://www.gravatar.com/avatar/b9b01fb3b20f21cebcc7784fb4809abd?s=128&d=identicon&r=PG",
+            "display_name": "Michele mpp Marostica",
+            "link": "https://stackoverflow.com/users/1121245/michele-mpp-marostica"
+        },
+        "reply_to_user": {
+            "reputation": 42644,
+            "user_id": 1658906,
+            "user_type": "registered",
+            "accept_rate": 100,
+            "profile_image": "https://www.gravatar.com/avatar/4e4748ed2fb97e8a8d4dd6d439625135?s=128&d=identicon&r=PG",
+            "display_name": "juunas",
+            "link": "https://stackoverflow.com/users/1658906/juunas"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1584469917,
+        "post_id": 60727676,
+        "comment_id": 107444949,
+        "content_license": "CC BY-SA 4.0",
+        "body": "So, if I understood correctly, I should move the authentication to AAD from the server side to the client side on Blazor with MSAL?"
+    },
+    {
+        "owner": {
+            "reputation": 42644,
+            "user_id": 1658906,
+            "user_type": "registered",
+            "accept_rate": 100,
+            "profile_image": "https://www.gravatar.com/avatar/4e4748ed2fb97e8a8d4dd6d439625135?s=128&d=identicon&r=PG",
+            "display_name": "juunas",
+            "link": "https://stackoverflow.com/users/1658906/juunas"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1584469711,
+        "post_id": 60727676,
+        "comment_id": 107444870,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Looks like your API is redirecting your API calls to AAD. You should implement authentication in your front-end with MSAL. And your API needs to support JWTs as well as interactive authentication."
+    }
+]

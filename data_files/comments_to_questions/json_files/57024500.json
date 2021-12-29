@@ -1,0 +1,110 @@
+[
+    {
+        "owner": {
+            "reputation": 7592,
+            "user_id": 313175,
+            "user_type": "registered",
+            "accept_rate": 38,
+            "profile_image": "https://www.gravatar.com/avatar/17983e85ea926e9e985c00d1a771f24a?s=128&d=identicon&r=PG",
+            "display_name": "Alexander V",
+            "link": "https://stackoverflow.com/users/313175/alexander-v"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1563161774,
+        "post_id": 57024500,
+        "comment_id": 100594607,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Ok. I have a misconception with associating WebAssembly with WebGL too closely. I thought that thing improves WebGL but it is in container of web-browser. Hm."
+    },
+    {
+        "owner": {
+            "reputation": 58831,
+            "user_id": 131930,
+            "user_type": "registered",
+            "accept_rate": 91,
+            "profile_image": "https://www.gravatar.com/avatar/91536fe27d32713b8a154a0bf42f6748?s=128&d=identicon&r=PG",
+            "display_name": "Jeremy Friesner",
+            "link": "https://stackoverflow.com/users/131930/jeremy-friesner"
+        },
+        "reply_to_user": {
+            "reputation": 7592,
+            "user_id": 313175,
+            "user_type": "registered",
+            "accept_rate": 38,
+            "profile_image": "https://www.gravatar.com/avatar/17983e85ea926e9e985c00d1a771f24a?s=128&d=identicon&r=PG",
+            "display_name": "Alexander V",
+            "link": "https://stackoverflow.com/users/313175/alexander-v"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1563155588,
+        "post_id": 57024500,
+        "comment_id": 100593795,
+        "content_license": "CC BY-SA 4.0",
+        "body": "The restricted/sandboxed environment I was referring to is the environment in which JavaScript scripts (and their WebAssembly cousins) run in, when running inside a web browser.  AFAIK there are limits on what a JavaScript program can do, otherwise any web page you visit could start trying to scan your local network, etc.  Note that my program is (and will be) running inside the web browser, not on the web server."
+    },
+    {
+        "owner": {
+            "reputation": 7592,
+            "user_id": 313175,
+            "user_type": "registered",
+            "accept_rate": 38,
+            "profile_image": "https://www.gravatar.com/avatar/17983e85ea926e9e985c00d1a771f24a?s=128&d=identicon&r=PG",
+            "display_name": "Alexander V",
+            "link": "https://stackoverflow.com/users/313175/alexander-v"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1563155465,
+        "post_id": 57024500,
+        "comment_id": 100593773,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I read &quot;it is running in a restricted/sandboxed environment&quot;, &quot;beyond the clever-hack-demo stage&quot;, &quot;upgrading servers&quot;. Environment it is. Not much with Docker or other container is going on yet but otherwise how else many instances of such type of web app will be supported on the host?"
+    },
+    {
+        "owner": {
+            "reputation": 58831,
+            "user_id": 131930,
+            "user_type": "registered",
+            "accept_rate": 91,
+            "profile_image": "https://www.gravatar.com/avatar/91536fe27d32713b8a154a0bf42f6748?s=128&d=identicon&r=PG",
+            "display_name": "Jeremy Friesner",
+            "link": "https://stackoverflow.com/users/131930/jeremy-friesner"
+        },
+        "reply_to_user": {
+            "reputation": 7592,
+            "user_id": 313175,
+            "user_type": "registered",
+            "accept_rate": 38,
+            "profile_image": "https://www.gravatar.com/avatar/17983e85ea926e9e985c00d1a771f24a?s=128&d=identicon&r=PG",
+            "display_name": "Alexander V",
+            "link": "https://stackoverflow.com/users/313175/alexander-v"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1563155112,
+        "post_id": 57024500,
+        "comment_id": 100593720,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@AlexanderV nothing related to Docker is going on here; I&#39;ve never used Docker and everything is running directly on my Mac.  (where &quot;everything&quot; == Google Chrome, a bare-bones web server I&#39;m using to serve up the WebAssembly code to Google Chrome, and of course my Qt app, running inside the web page inside Google Chrome)"
+    },
+    {
+        "owner": {
+            "reputation": 7592,
+            "user_id": 313175,
+            "user_type": "registered",
+            "accept_rate": 38,
+            "profile_image": "https://www.gravatar.com/avatar/17983e85ea926e9e985c00d1a771f24a?s=128&d=identicon&r=PG",
+            "display_name": "Alexander V",
+            "link": "https://stackoverflow.com/users/313175/alexander-v"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1563155015,
+        "post_id": 57024500,
+        "comment_id": 100593708,
+        "content_license": "CC BY-SA 4.0",
+        "body": "No such sockets in the context of the browser but VM on the host, I presume. So, is this question is more of proper VM context? More of Docker-type question? <a href=\"https://docs.docker.com/config/containers/container-networking/\" rel=\"nofollow noreferrer\">docs.docker.com/config/containers/container-networking</a>"
+    }
+]

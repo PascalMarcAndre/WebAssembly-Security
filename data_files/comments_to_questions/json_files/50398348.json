@@ -1,0 +1,200 @@
+[
+    {
+        "owner": {
+            "reputation": 9837,
+            "user_id": 257568,
+            "user_type": "registered",
+            "accept_rate": 50,
+            "profile_image": "https://www.gravatar.com/avatar/6c736aafc7e3bfcf9f924d09bde3aa99?s=128&d=identicon&r=PG",
+            "display_name": "ArtemGr",
+            "link": "https://stackoverflow.com/users/257568/artemgr"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1526653433,
+        "post_id": 50398348,
+        "comment_id": 87842533,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<code>Box::into_raw</code> should work, by leaking memory."
+    },
+    {
+        "owner": {
+            "reputation": 2011,
+            "user_id": 2707195,
+            "user_type": "registered",
+            "accept_rate": 82,
+            "profile_image": "https://i.stack.imgur.com/RlRWZ.jpg?s=128&g=1",
+            "display_name": "Andrei CACIO",
+            "link": "https://stackoverflow.com/users/2707195/andrei-cacio"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1526629041,
+        "post_id": 50398348,
+        "comment_id": 87827484,
+        "content_license": "CC BY-SA 4.0",
+        "body": "also kinds thanks. I will try with a boxed vector and see how that goes :)"
+    },
+    {
+        "owner": {
+            "reputation": 2011,
+            "user_id": 2707195,
+            "user_type": "registered",
+            "accept_rate": 82,
+            "profile_image": "https://i.stack.imgur.com/RlRWZ.jpg?s=128&g=1",
+            "display_name": "Andrei CACIO",
+            "link": "https://stackoverflow.com/users/2707195/andrei-cacio"
+        },
+        "reply_to_user": {
+            "reputation": 4776,
+            "user_id": 1264974,
+            "user_type": "registered",
+            "accept_rate": 75,
+            "profile_image": "https://www.gravatar.com/avatar/6558cf06df3ccf1c49329f38fd843b7d?s=128&d=identicon&r=PG",
+            "display_name": "justinas",
+            "link": "https://stackoverflow.com/users/1264974/justinas"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1526626137,
+        "post_id": 50398348,
+        "comment_id": 87825940,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@justinas well whatever works for FFI should work form wasm. What would you recommend for a valid FFI?"
+    },
+    {
+        "owner": {
+            "reputation": 4776,
+            "user_id": 1264974,
+            "user_type": "registered",
+            "accept_rate": 75,
+            "profile_image": "https://www.gravatar.com/avatar/6558cf06df3ccf1c49329f38fd843b7d?s=128&d=identicon&r=PG",
+            "display_name": "justinas",
+            "link": "https://stackoverflow.com/users/1264974/justinas"
+        },
+        "edited": false,
+        "score": 2,
+        "creation_date": 1526593121,
+        "post_id": 50398348,
+        "comment_id": 87817534,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I think your &#39;fixed&#39; version only works by accident as well. You can not return a pointer to function&#39;s stack frame and expect it to be valid. Either return the array by value or heap allocated, whichever suits wasm better."
+    },
+    {
+        "owner": {
+            "reputation": 9837,
+            "user_id": 257568,
+            "user_type": "registered",
+            "accept_rate": 50,
+            "profile_image": "https://www.gravatar.com/avatar/6c736aafc7e3bfcf9f924d09bde3aa99?s=128&d=identicon&r=PG",
+            "display_name": "ArtemGr",
+            "link": "https://stackoverflow.com/users/257568/artemgr"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1526586606,
+        "post_id": 50398348,
+        "comment_id": 87814766,
+        "content_license": "CC BY-SA 4.0",
+        "body": "If you formulate the question a bit differently, as reading a <a href=\"https://doc.rust-lang.org/book/first-edition/const-and-static.html\" rel=\"nofollow noreferrer\">static array</a> instead of a <a href=\"https://doc.rust-lang.org/book/second-edition/ch08-01-vectors.html\" rel=\"nofollow noreferrer\">vector</a>, then yes, it will be a different question! (Might be easier to make a new question though, given that this one was already marked as a duplicate)."
+    },
+    {
+        "owner": {
+            "reputation": 2011,
+            "user_id": 2707195,
+            "user_type": "registered",
+            "accept_rate": 82,
+            "profile_image": "https://i.stack.imgur.com/RlRWZ.jpg?s=128&g=1",
+            "display_name": "Andrei CACIO",
+            "link": "https://stackoverflow.com/users/2707195/andrei-cacio"
+        },
+        "reply_to_user": {
+            "reputation": 9837,
+            "user_id": 257568,
+            "user_type": "registered",
+            "accept_rate": 50,
+            "profile_image": "https://www.gravatar.com/avatar/6c736aafc7e3bfcf9f924d09bde3aa99?s=128&d=identicon&r=PG",
+            "display_name": "ArtemGr",
+            "link": "https://stackoverflow.com/users/257568/artemgr"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1526586179,
+        "post_id": 50398348,
+        "comment_id": 87814548,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@ArtemGr I think this questions might deserve to be deduped because it solves the problem in a different way"
+    },
+    {
+        "owner": {
+            "reputation": 2011,
+            "user_id": 2707195,
+            "user_type": "registered",
+            "accept_rate": 82,
+            "profile_image": "https://i.stack.imgur.com/RlRWZ.jpg?s=128&g=1",
+            "display_name": "Andrei CACIO",
+            "link": "https://stackoverflow.com/users/2707195/andrei-cacio"
+        },
+        "reply_to_user": {
+            "reputation": 9837,
+            "user_id": 257568,
+            "user_type": "registered",
+            "accept_rate": 50,
+            "profile_image": "https://www.gravatar.com/avatar/6c736aafc7e3bfcf9f924d09bde3aa99?s=128&d=identicon&r=PG",
+            "display_name": "ArtemGr",
+            "link": "https://stackoverflow.com/users/257568/artemgr"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1526583155,
+        "post_id": 50398348,
+        "comment_id": 87813019,
+        "content_license": "CC BY-SA 4.0",
+        "body": "should I give it a `static lifetime maybe?"
+    },
+    {
+        "owner": {
+            "reputation": 2011,
+            "user_id": 2707195,
+            "user_type": "registered",
+            "accept_rate": 82,
+            "profile_image": "https://i.stack.imgur.com/RlRWZ.jpg?s=128&g=1",
+            "display_name": "Andrei CACIO",
+            "link": "https://stackoverflow.com/users/2707195/andrei-cacio"
+        },
+        "reply_to_user": {
+            "reputation": 9837,
+            "user_id": 257568,
+            "user_type": "registered",
+            "accept_rate": 50,
+            "profile_image": "https://www.gravatar.com/avatar/6c736aafc7e3bfcf9f924d09bde3aa99?s=128&d=identicon&r=PG",
+            "display_name": "ArtemGr",
+            "link": "https://stackoverflow.com/users/257568/artemgr"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1526582936,
+        "post_id": 50398348,
+        "comment_id": 87812884,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@ArtemGr can you point me into the right direction on how can I fix this? I don&#39;t know how to give ownership of that pointer"
+    },
+    {
+        "owner": {
+            "reputation": 9837,
+            "user_id": 257568,
+            "user_type": "registered",
+            "accept_rate": 50,
+            "profile_image": "https://www.gravatar.com/avatar/6c736aafc7e3bfcf9f924d09bde3aa99?s=128&d=identicon&r=PG",
+            "display_name": "ArtemGr",
+            "link": "https://stackoverflow.com/users/257568/artemgr"
+        },
+        "edited": false,
+        "score": 3,
+        "creation_date": 1526582544,
+        "post_id": 50398348,
+        "comment_id": 87812630,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Andrei, you&#39;re returning a dangling pointer. In order to be shared, the memory must be owned by someone."
+    }
+]

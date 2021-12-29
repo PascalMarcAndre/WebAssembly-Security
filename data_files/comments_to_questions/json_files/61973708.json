@@ -1,0 +1,90 @@
+[
+    {
+        "owner": {
+            "reputation": 43,
+            "user_id": 10291195,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/zasAB.jpg?s=128&g=1",
+            "display_name": "DebugMaster",
+            "link": "https://stackoverflow.com/users/10291195/debugmaster"
+        },
+        "reply_to_user": {
+            "reputation": 1,
+            "user_id": 6152891,
+            "user_type": "registered",
+            "accept_rate": 75,
+            "profile_image": "https://www.gravatar.com/avatar/b45b7f89429f8766cdbf6c776c0a9d41?s=128&d=identicon&r=PG",
+            "display_name": "enet",
+            "link": "https://stackoverflow.com/users/6152891/enet"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1590314723,
+        "post_id": 61973708,
+        "comment_id": 109628956,
+        "content_license": "CC BY-SA 4.0",
+        "body": "yes seems the logout is not finished?"
+    },
+    {
+        "owner": {
+            "reputation": 1,
+            "user_id": 6152891,
+            "user_type": "registered",
+            "accept_rate": 75,
+            "profile_image": "https://www.gravatar.com/avatar/b45b7f89429f8766cdbf6c776c0a9d41?s=128&d=identicon&r=PG",
+            "display_name": "enet",
+            "link": "https://stackoverflow.com/users/6152891/enet"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1590255767,
+        "post_id": 61973708,
+        "comment_id": 109614996,
+        "content_license": "CC BY-SA 4.0",
+        "body": "And when you navigate out of the app space, and then click the back button. .. Are you still able to access data as before ?"
+    },
+    {
+        "owner": {
+            "reputation": 43,
+            "user_id": 10291195,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/zasAB.jpg?s=128&g=1",
+            "display_name": "DebugMaster",
+            "link": "https://stackoverflow.com/users/10291195/debugmaster"
+        },
+        "reply_to_user": {
+            "reputation": 1,
+            "user_id": 6152891,
+            "user_type": "registered",
+            "accept_rate": 75,
+            "profile_image": "https://www.gravatar.com/avatar/b45b7f89429f8766cdbf6c776c0a9d41?s=128&d=identicon&r=PG",
+            "display_name": "enet",
+            "link": "https://stackoverflow.com/users/6152891/enet"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1590252475,
+        "post_id": 61973708,
+        "comment_id": 109613648,
+        "content_license": "CC BY-SA 4.0",
+        "body": "yes, the LoginDisplay still shows the user name and the logout link"
+    },
+    {
+        "owner": {
+            "reputation": 1,
+            "user_id": 6152891,
+            "user_type": "registered",
+            "accept_rate": 75,
+            "profile_image": "https://www.gravatar.com/avatar/b45b7f89429f8766cdbf6c776c0a9d41?s=128&d=identicon&r=PG",
+            "display_name": "enet",
+            "link": "https://stackoverflow.com/users/6152891/enet"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1590252331,
+        "post_id": 61973708,
+        "comment_id": 109613589,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Does the AuthenticationState object still contain the data of the logged out user ?"
+    }
+]

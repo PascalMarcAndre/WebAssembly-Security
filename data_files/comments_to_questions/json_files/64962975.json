@@ -1,0 +1,19 @@
+[
+    {
+        "owner": {
+            "reputation": 3111,
+            "user_id": 14491467,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/96272b82d1565cba6f19f1e7e738be44?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Karney.",
+            "link": "https://stackoverflow.com/users/14491467/karney"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1606205626,
+        "post_id": 64962975,
+        "comment_id": 114884929,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Do you forget to configure the authentication(add the bearer option)? Please refer to  <a href=\"https://github.com/GestionSystemesTelecom/fake-authentication-jwtbearer/issues/3\" rel=\"nofollow noreferrer\">link</a>"
+    }
+]

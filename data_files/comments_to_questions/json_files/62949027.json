@@ -1,0 +1,170 @@
+[
+    {
+        "owner": {
+            "reputation": 1115,
+            "user_id": 2906292,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/8379de4ed899e4383ea8145efed0cd6d?s=128&d=identicon&r=PG&f=1",
+            "display_name": "White hawk",
+            "link": "https://stackoverflow.com/users/2906292/white-hawk"
+        },
+        "reply_to_user": {
+            "reputation": 32597,
+            "user_id": 9455659,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/Albsq.jpg?s=128&g=1",
+            "display_name": "Joy Wang-MSFT",
+            "link": "https://stackoverflow.com/users/9455659/joy-wang-msft"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1623860563,
+        "post_id": 62949027,
+        "comment_id": 120200480,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I had the same issue and but @JoyWang&#39;s 2nd comment solved it (you need to specify <i>index.html</i> as the error document, too)."
+    },
+    {
+        "owner": {
+            "reputation": 32597,
+            "user_id": 9455659,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/Albsq.jpg?s=128&g=1",
+            "display_name": "Joy Wang-MSFT",
+            "link": "https://stackoverflow.com/users/9455659/joy-wang-msft"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1595214155,
+        "post_id": 62949027,
+        "comment_id": 111386540,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I mean the request url you used to get the token."
+    },
+    {
+        "owner": {
+            "reputation": 34,
+            "user_id": 8122676,
+            "user_type": "registered",
+            "profile_image": "https://lh4.googleusercontent.com/-3Q9uHUdDazk/AAAAAAAAAAI/AAAAAAAAAHc/2PjnC4pMVDQ/photo.jpg?sz=128",
+            "display_name": "Marek S\u0142owikowski",
+            "link": "https://stackoverflow.com/users/8122676/marek-s%c5%82owikowski"
+        },
+        "reply_to_user": {
+            "reputation": 32597,
+            "user_id": 9455659,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/Albsq.jpg?s=128&g=1",
+            "display_name": "Joy Wang-MSFT",
+            "link": "https://stackoverflow.com/users/9455659/joy-wang-msft"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1595022856,
+        "post_id": 62949027,
+        "comment_id": 111341875,
+        "content_license": "CC BY-SA 4.0",
+        "body": "(https://...web.core.windows.net/authentication/login)"
+    },
+    {
+        "owner": {
+            "reputation": 32597,
+            "user_id": 9455659,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/Albsq.jpg?s=128&g=1",
+            "display_name": "Joy Wang-MSFT",
+            "link": "https://stackoverflow.com/users/9455659/joy-wang-msft"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1595001685,
+        "post_id": 62949027,
+        "comment_id": 111333749,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Could you show your request url when user login?"
+    },
+    {
+        "owner": {
+            "reputation": 34,
+            "user_id": 8122676,
+            "user_type": "registered",
+            "profile_image": "https://lh4.googleusercontent.com/-3Q9uHUdDazk/AAAAAAAAAAI/AAAAAAAAAHc/2PjnC4pMVDQ/photo.jpg?sz=128",
+            "display_name": "Marek S\u0142owikowski",
+            "link": "https://stackoverflow.com/users/8122676/marek-s%c5%82owikowski"
+        },
+        "reply_to_user": {
+            "reputation": 32597,
+            "user_id": 9455659,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/Albsq.jpg?s=128&g=1",
+            "display_name": "Joy Wang-MSFT",
+            "link": "https://stackoverflow.com/users/9455659/joy-wang-msft"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1594999706,
+        "post_id": 62949027,
+        "comment_id": 111332775,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Original issue was not solved. Problem is the same: HTTP server cannot find landing place (Redirect URL) after user was logged. I have just read source code of authentication library. Everything looks fine so the problem is in other place."
+    },
+    {
+        "owner": {
+            "reputation": 32597,
+            "user_id": 9455659,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/Albsq.jpg?s=128&g=1",
+            "display_name": "Joy Wang-MSFT",
+            "link": "https://stackoverflow.com/users/9455659/joy-wang-msft"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1594986400,
+        "post_id": 62949027,
+        "comment_id": 111325916,
+        "content_license": "CC BY-SA 4.0",
+        "body": "If so, the original issue was solved, for the new issue, you need to specify an error document when you enabled the website, then a default 404 page is returned to the user, see <a href=\"https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blob-static-website#setting-up-a-static-website\" rel=\"nofollow noreferrer\">docs.microsoft.com/en-us/azure/storage/blobs/&hellip;</a>"
+    },
+    {
+        "owner": {
+            "reputation": 34,
+            "user_id": 8122676,
+            "user_type": "registered",
+            "profile_image": "https://lh4.googleusercontent.com/-3Q9uHUdDazk/AAAAAAAAAAI/AAAAAAAAAHc/2PjnC4pMVDQ/photo.jpg?sz=128",
+            "display_name": "Marek S\u0142owikowski",
+            "link": "https://stackoverflow.com/users/8122676/marek-s%c5%82owikowski"
+        },
+        "reply_to_user": {
+            "reputation": 32597,
+            "user_id": 9455659,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/Albsq.jpg?s=128&g=1",
+            "display_name": "Joy Wang-MSFT",
+            "link": "https://stackoverflow.com/users/9455659/joy-wang-msft"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1594982673,
+        "post_id": 62949027,
+        "comment_id": 111324176,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I have changed Redirect URL as you suggested and after clicking login link server answered &quot;The requested content does not exist.  HttpStatusCode: 404 ErrorCode: WebContentNotFound RequestId : 59d63c65-a01e-00d7-7827-5c8b94000000 TimeStamp : 2020-07-17T10:43:11.6487124Z&quot;"
+    },
+    {
+        "owner": {
+            "reputation": 32597,
+            "user_id": 9455659,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/Albsq.jpg?s=128&g=1",
+            "display_name": "Joy Wang-MSFT",
+            "link": "https://stackoverflow.com/users/9455659/joy-wang-msft"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1594974129,
+        "post_id": 62949027,
+        "comment_id": 111319917,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Navigate to your storage account in the portal -&gt; <code>Static website</code> -&gt; copy the <code>Primary endpoint</code>, then change the redirect url with <code>&lt;Primary endpoint&gt;&#47;authentication&#47;login-callback</code>, something like <code>https:&#47;&#47;xxxx.z13.web.core.windows.net&#47;authentication&#47;login-c&zwnj;&#8203;allback</code>, will it work?"
+    }
+]

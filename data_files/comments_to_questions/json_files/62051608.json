@@ -1,0 +1,38 @@
+[
+    {
+        "owner": {
+            "reputation": 603,
+            "user_id": 2195393,
+            "user_type": "registered",
+            "accept_rate": 69,
+            "profile_image": "https://www.gravatar.com/avatar/75d4b765f58dcf8f4e4d49cde877b319?s=128&d=identicon&r=PG",
+            "display_name": "Nick",
+            "link": "https://stackoverflow.com/users/2195393/nick"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1592908425,
+        "post_id": 62051608,
+        "comment_id": 110586818,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I created an issue on the AspNetCore GitHub <a href=\"https://github.com/dotnet/aspnetcore/issues/23253\" rel=\"nofollow noreferrer\">github.com/dotnet/aspnetcore/issues/23253</a>"
+    },
+    {
+        "owner": {
+            "reputation": 1,
+            "user_id": 6152891,
+            "user_type": "registered",
+            "accept_rate": 75,
+            "profile_image": "https://www.gravatar.com/avatar/b45b7f89429f8766cdbf6c776c0a9d41?s=128&d=identicon&r=PG",
+            "display_name": "enet",
+            "link": "https://stackoverflow.com/users/6152891/enet"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1590612579,
+        "post_id": 62051608,
+        "comment_id": 109749595,
+        "content_license": "CC BY-SA 4.0",
+        "body": "What about WebAssembly stand alone ? It is configured to use OpenID Connect..."
+    }
+]

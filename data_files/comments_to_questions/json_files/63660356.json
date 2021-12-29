@@ -1,0 +1,63 @@
+[
+    {
+        "owner": {
+            "reputation": 151,
+            "user_id": 997351,
+            "user_type": "registered",
+            "accept_rate": 0,
+            "profile_image": "https://www.gravatar.com/avatar/01fe1702d92c39ee9fa7bb5258e7b2cc?s=128&d=identicon&r=PG",
+            "display_name": "topspin",
+            "link": "https://stackoverflow.com/users/997351/topspin"
+        },
+        "reply_to_user": {
+            "reputation": 3366,
+            "user_id": 4641116,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/Gc52U.png?s=128&g=1",
+            "display_name": "Eljay",
+            "link": "https://stackoverflow.com/users/4641116/eljay"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1598810222,
+        "post_id": 63660356,
+        "comment_id": 112572213,
+        "content_license": "CC BY-SA 4.0",
+        "body": "update: Instead of compiling C++, considered running the code as LUA scripts, or some other reasonably fast language, but thought I&#39;d just be adding that language&#39;s own runtime vulnerabilities into the mix on top of my basic API."
+    },
+    {
+        "owner": {
+            "reputation": 3366,
+            "user_id": 4641116,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/Gc52U.png?s=128&g=1",
+            "display_name": "Eljay",
+            "link": "https://stackoverflow.com/users/4641116/eljay"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1598809761,
+        "post_id": 63660356,
+        "comment_id": 112572093,
+        "content_license": "CC BY-SA 4.0",
+        "body": "My company uses VMware to run images as sandboxes (within a VM), which can relatively easily be managed and restored in an automated fashion, and when needed in a manual fashion."
+    },
+    {
+        "owner": {
+            "reputation": 151,
+            "user_id": 997351,
+            "user_type": "registered",
+            "accept_rate": 0,
+            "profile_image": "https://www.gravatar.com/avatar/01fe1702d92c39ee9fa7bb5258e7b2cc?s=128&d=identicon&r=PG",
+            "display_name": "topspin",
+            "link": "https://stackoverflow.com/users/997351/topspin"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1598809704,
+        "post_id": 63660356,
+        "comment_id": 112572079,
+        "content_license": "CC BY-SA 4.0",
+        "body": "An update: to clarify, any memory allocation the process needs would be hooked with my own heap allocator to avoid having to call the OS."
+    }
+]

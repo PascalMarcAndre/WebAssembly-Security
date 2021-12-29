@@ -1,0 +1,64 @@
+[
+    {
+        "owner": {
+            "reputation": 630,
+            "user_id": 9475977,
+            "user_type": "registered",
+            "profile_image": "https://lh3.googleusercontent.com/-XdUIqdMkCWA/AAAAAAAAAAI/AAAAAAAAAAA/4252rscbv5M/photo.jpg?sz=128",
+            "display_name": "Gur Galler",
+            "link": "https://stackoverflow.com/users/9475977/gur-galler"
+        },
+        "reply_to_user": {
+            "reputation": 1,
+            "user_id": 6152891,
+            "user_type": "registered",
+            "accept_rate": 75,
+            "profile_image": "https://www.gravatar.com/avatar/b45b7f89429f8766cdbf6c776c0a9d41?s=128&d=identicon&r=PG",
+            "display_name": "enet",
+            "link": "https://stackoverflow.com/users/6152891/enet"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1617737005,
+        "post_id": 66974094,
+        "comment_id": 118387640,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@enet Thank you! that is exactly what I was looking for. If you&#39;ll post it as an answer I&#39;ll accept it (if you want the reputation points)."
+    },
+    {
+        "owner": {
+            "reputation": 1,
+            "user_id": 6152891,
+            "user_type": "registered",
+            "accept_rate": 75,
+            "profile_image": "https://www.gravatar.com/avatar/b45b7f89429f8766cdbf6c776c0a9d41?s=128&d=identicon&r=PG",
+            "display_name": "enet",
+            "link": "https://stackoverflow.com/users/6152891/enet"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1617734811,
+        "post_id": 66974094,
+        "comment_id": 118386700,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Up-voted your answer..."
+    },
+    {
+        "owner": {
+            "reputation": 1,
+            "user_id": 6152891,
+            "user_type": "registered",
+            "accept_rate": 75,
+            "profile_image": "https://www.gravatar.com/avatar/b45b7f89429f8766cdbf6c776c0a9d41?s=128&d=identicon&r=PG",
+            "display_name": "enet",
+            "link": "https://stackoverflow.com/users/6152891/enet"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1617734729,
+        "post_id": 66974094,
+        "comment_id": 118386670,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Not me...It&#39;s probably sb. disappointed with your question, perhaps because she can&#39;t answer it. Anyhow, If you&#39;re using the token based authentication (API), you can attach an event handler to the RemoteAuthenticatorView component located in the Authentication component. I think it has an event that is invoked immediately after a user log in. As far as I recall, I&#39;ve once answered a similar question that way, and then changed my answer to something more useful. Try this solution, and let us know if it&#39;s OK."
+    }
+]

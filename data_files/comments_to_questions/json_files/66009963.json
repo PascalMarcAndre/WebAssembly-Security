@@ -1,0 +1,44 @@
+[
+    {
+        "owner": {
+            "reputation": 13,
+            "user_id": 12491408,
+            "user_type": "registered",
+            "profile_image": "https://lh3.googleusercontent.com/a-/AAuE7mBKtG_g1TVQ5-eyNRv0_pjDegd4XMJQKLp8TvGH=k-s128",
+            "display_name": "Junior",
+            "link": "https://stackoverflow.com/users/12491408/junior"
+        },
+        "reply_to_user": {
+            "reputation": 45194,
+            "user_id": 3959875,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/wJdGu.png?s=128&g=1",
+            "display_name": "wOxxOm",
+            "link": "https://stackoverflow.com/users/3959875/woxxom"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1612271729,
+        "post_id": 66009963,
+        "comment_id": 116709860,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@wOxxOm could you please refer me one r two example links."
+    },
+    {
+        "owner": {
+            "reputation": 45194,
+            "user_id": 3959875,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/wJdGu.png?s=128&g=1",
+            "display_name": "wOxxOm",
+            "link": "https://stackoverflow.com/users/3959875/woxxom"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1612271009,
+        "post_id": 66009963,
+        "comment_id": 116709545,
+        "content_license": "CC BY-SA 4.0",
+        "body": "The best method is to create an <code>iframe</code> element and point it to an html file inside your extension. The html file should be listed in <a href=\"https://developer.chrome.com/extensions/manifest/web_accessible_resources\" rel=\"nofollow noreferrer\">web_accessible_resources</a>. Inside that iframe you will have a full extension environment just like inside browserAction. There are many examples, look for one yourself."
+    }
+]

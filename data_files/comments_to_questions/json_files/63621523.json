@@ -1,0 +1,19 @@
+[
+    {
+        "owner": {
+            "reputation": 2702,
+            "user_id": 12981120,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/1MG2Y.jpg?s=128&g=1",
+            "display_name": "Shiva Keshav Varma",
+            "link": "https://stackoverflow.com/users/12981120/shiva-keshav-varma"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1598878609,
+        "post_id": 63621523,
+        "comment_id": 112591622,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Please check this <a href=\"https://gist.github.com/SteveSandersonMS/175a08dcdccb384a52ba760122cd2eda#authorization\" rel=\"nofollow noreferrer\">Github Doc</a> and see if you have configured it properly or not."
+    }
+]

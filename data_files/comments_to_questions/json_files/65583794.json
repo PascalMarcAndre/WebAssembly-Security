@@ -1,0 +1,137 @@
+[
+    {
+        "owner": {
+            "reputation": 374,
+            "user_id": 5141561,
+            "user_type": "registered",
+            "accept_rate": 80,
+            "profile_image": "https://graph.facebook.com/926750996976/picture?type=large",
+            "display_name": "JoeyD",
+            "link": "https://stackoverflow.com/users/5141561/joeyd"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1622574576,
+        "post_id": 65583794,
+        "comment_id": 119829914,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Matt G im still having the same issue"
+    },
+    {
+        "owner": {
+            "reputation": 390,
+            "user_id": 269035,
+            "user_type": "registered",
+            "accept_rate": 57,
+            "profile_image": "https://www.gravatar.com/avatar/b469ca8d128134e1e692433ebaf33fd4?s=128&d=identicon&r=PG",
+            "display_name": "Matt G",
+            "link": "https://stackoverflow.com/users/269035/matt-g"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1622097041,
+        "post_id": 65583794,
+        "comment_id": 119693111,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Hey @JoeyD, did you solve this? I found in my case my Azure specific config was in my appsettings.Production.json - but the file props were set to BuildAction: None, so the file wasn&#39;t included in my app service deployment."
+    },
+    {
+        "owner": {
+            "reputation": 390,
+            "user_id": 269035,
+            "user_type": "registered",
+            "accept_rate": 57,
+            "profile_image": "https://www.gravatar.com/avatar/b469ca8d128134e1e692433ebaf33fd4?s=128&d=identicon&r=PG",
+            "display_name": "Matt G",
+            "link": "https://stackoverflow.com/users/269035/matt-g"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1622065819,
+        "post_id": 65583794,
+        "comment_id": 119686789,
+        "content_license": "CC BY-SA 4.0",
+        "body": "FYI, I have the same issue"
+    },
+    {
+        "owner": {
+            "reputation": 240386,
+            "user_id": 60761,
+            "user_type": "registered",
+            "accept_rate": 91,
+            "profile_image": "https://www.gravatar.com/avatar/5bf43bae0431d8f4a062234b5e3a0cb9?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Henk Holterman",
+            "link": "https://stackoverflow.com/users/60761/henk-holterman"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1610046090,
+        "post_id": 65583794,
+        "comment_id": 116015740,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Scroll to the bottom and decode the exception that is there. XML is supposed to be &quot;human readable&quot; (-:"
+    },
+    {
+        "owner": {
+            "reputation": 374,
+            "user_id": 5141561,
+            "user_type": "registered",
+            "accept_rate": 80,
+            "profile_image": "https://graph.facebook.com/926750996976/picture?type=large",
+            "display_name": "JoeyD",
+            "link": "https://stackoverflow.com/users/5141561/joeyd"
+        },
+        "reply_to_user": {
+            "reputation": 240386,
+            "user_id": 60761,
+            "user_type": "registered",
+            "accept_rate": 91,
+            "profile_image": "https://www.gravatar.com/avatar/5bf43bae0431d8f4a062234b5e3a0cb9?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Henk Holterman",
+            "link": "https://stackoverflow.com/users/60761/henk-holterman"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1609955842,
+        "post_id": 65583794,
+        "comment_id": 115984769,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Henk i went to the Advanced as described and in the Debug Console the eventlog.xml i have a 6700 line file. I dont know what to make of it honestly. This is far above my knowledge range"
+    },
+    {
+        "owner": {
+            "reputation": 240386,
+            "user_id": 60761,
+            "user_type": "registered",
+            "accept_rate": 91,
+            "profile_image": "https://www.gravatar.com/avatar/5bf43bae0431d8f4a062234b5e3a0cb9?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Henk Holterman",
+            "link": "https://stackoverflow.com/users/60761/henk-holterman"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1609885165,
+        "post_id": 65583794,
+        "comment_id": 115960947,
+        "content_license": "CC BY-SA 4.0",
+        "body": "You can acess the logs via the Azure Portal, iirc  WebApp &gt; Dev Tools &gt; Advanced."
+    },
+    {
+        "owner": {
+            "reputation": 374,
+            "user_id": 5141561,
+            "user_type": "registered",
+            "accept_rate": 80,
+            "profile_image": "https://graph.facebook.com/926750996976/picture?type=large",
+            "display_name": "JoeyD",
+            "link": "https://stackoverflow.com/users/5141561/joeyd"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1609877529,
+        "post_id": 65583794,
+        "comment_id": 115958008,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I actually was able to replicate the Errors listed above.  I believe that is my issue."
+    }
+]

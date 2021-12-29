@@ -1,0 +1,37 @@
+[
+    {
+        "owner": {
+            "reputation": 2973,
+            "user_id": 3036129,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/glLJ3.jpg?s=128&g=1",
+            "display_name": "jackdbd",
+            "link": "https://stackoverflow.com/users/3036129/jackdbd"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1612103681,
+        "post_id": 65950937,
+        "comment_id": 116656262,
+        "content_license": "CC BY-SA 4.0",
+        "body": "As for making HTTP calls, I have never used pyodide, but apparently you can use both the XMLHttpRequest and the Fetch web API directly from Python: <a href=\"https://stackoverflow.com/a/64804258/3036129\">stackoverflow.com/a/64804258/3036129</a>"
+    },
+    {
+        "owner": {
+            "reputation": 8711,
+            "user_id": 1791279,
+            "user_type": "registered",
+            "accept_rate": 83,
+            "profile_image": "https://www.gravatar.com/avatar/abcaa7d84748400f1557b2f91add969a?s=128&d=identicon&r=PG",
+            "display_name": "rth",
+            "link": "https://stackoverflow.com/users/1791279/rth"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1611910581,
+        "post_id": 65950937,
+        "comment_id": 116606817,
+        "content_license": "CC BY-SA 4.0",
+        "body": "With pyodide in the browser you can both modify DOM, and make HTTP requests via JS. So I imagine the same would apply when run on the server."
+    }
+]

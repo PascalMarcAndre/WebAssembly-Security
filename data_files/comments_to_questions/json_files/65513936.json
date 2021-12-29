@@ -1,0 +1,45 @@
+[
+    {
+        "owner": {
+            "reputation": 1171,
+            "user_id": 1200984,
+            "user_type": "registered",
+            "accept_rate": 50,
+            "profile_image": "https://i.stack.imgur.com/VVBzu.jpg?s=128&g=1",
+            "display_name": "phil",
+            "link": "https://stackoverflow.com/users/1200984/phil"
+        },
+        "reply_to_user": {
+            "reputation": 67,
+            "user_id": 3153528,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/d7a599a95b0fe4d2877982fd6f0b93a0?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Neits",
+            "link": "https://stackoverflow.com/users/3153528/neits"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1619181792,
+        "post_id": 65513936,
+        "comment_id": 118834172,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@Netis I always intended to do a blog post about this but work has not permitted and now I have forgotten most of what I did to get it working. One thing I do recall was that I HAD to use the <code>api:&#47;&#47;&lt;guid&gt;</code> form for the scope Uri. A host and domain text version wouldn&#39;t work."
+    },
+    {
+        "owner": {
+            "reputation": 67,
+            "user_id": 3153528,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/d7a599a95b0fe4d2877982fd6f0b93a0?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Neits",
+            "link": "https://stackoverflow.com/users/3153528/neits"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1618383687,
+        "post_id": 65513936,
+        "comment_id": 118581644,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Hi @phil, I wonder if you managed to solve this issue in the meantime because I an experiencing what seems to be the same problem."
+    }
+]

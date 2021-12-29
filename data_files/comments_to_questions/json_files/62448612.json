@@ -1,0 +1,90 @@
+[
+    {
+        "owner": {
+            "reputation": 26,
+            "user_id": 13658234,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/BuibQ.jpg?s=128&g=1",
+            "display_name": "H&#252;seyin KARACAO\u011eLU",
+            "link": "https://stackoverflow.com/users/13658234/h%c3%bcseyin-karacao%c4%9elu"
+        },
+        "reply_to_user": {
+            "reputation": 240386,
+            "user_id": 60761,
+            "user_type": "registered",
+            "accept_rate": 91,
+            "profile_image": "https://www.gravatar.com/avatar/5bf43bae0431d8f4a062234b5e3a0cb9?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Henk Holterman",
+            "link": "https://stackoverflow.com/users/60761/henk-holterman"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1592480817,
+        "post_id": 62448612,
+        "comment_id": 110444064,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I guess you are right. This can be fix that issue."
+    },
+    {
+        "owner": {
+            "reputation": 240386,
+            "user_id": 60761,
+            "user_type": "registered",
+            "accept_rate": 91,
+            "profile_image": "https://www.gravatar.com/avatar/5bf43bae0431d8f4a062234b5e3a0cb9?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Henk Holterman",
+            "link": "https://stackoverflow.com/users/60761/henk-holterman"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1592480228,
+        "post_id": 62448612,
+        "comment_id": 110443800,
+        "content_license": "CC BY-SA 4.0",
+        "body": "You need an API. Create a new project from the WebAsm+Hosted template and look at the WeatherForecast."
+    },
+    {
+        "owner": {
+            "reputation": 26,
+            "user_id": 13658234,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/BuibQ.jpg?s=128&g=1",
+            "display_name": "H&#252;seyin KARACAO\u011eLU",
+            "link": "https://stackoverflow.com/users/13658234/h%c3%bcseyin-karacao%c4%9elu"
+        },
+        "reply_to_user": {
+            "reputation": 240386,
+            "user_id": 60761,
+            "user_type": "registered",
+            "accept_rate": 91,
+            "profile_image": "https://www.gravatar.com/avatar/5bf43bae0431d8f4a062234b5e3a0cb9?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Henk Holterman",
+            "link": "https://stackoverflow.com/users/60761/henk-holterman"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1592479763,
+        "post_id": 62448612,
+        "comment_id": 110443550,
+        "content_license": "CC BY-SA 4.0",
+        "body": "No. Repositories in DataLayer. Only business layer referenced to WebAsm app. But if I resolve my business layer object in WebAsm, there is error. Because WebAsm want resolve IRepository too. But WebAsm should NOT access to Data layer."
+    },
+    {
+        "owner": {
+            "reputation": 240386,
+            "user_id": 60761,
+            "user_type": "registered",
+            "accept_rate": 91,
+            "profile_image": "https://www.gravatar.com/avatar/5bf43bae0431d8f4a062234b5e3a0cb9?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Henk Holterman",
+            "link": "https://stackoverflow.com/users/60761/henk-holterman"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1592478774,
+        "post_id": 62448612,
+        "comment_id": 110443024,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Is your business layer in the WebAsm app? That would be strange. The DataLayer can&#39;t be in WebAsm, so this question shouldn&#39;t even come up. What does MyRepository depend on?"
+    }
+]

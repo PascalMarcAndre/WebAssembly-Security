@@ -1,0 +1,95 @@
+[
+    {
+        "owner": {
+            "reputation": 101,
+            "user_id": 8009864,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/e215a8d84e3958aaf5caf9b49d05ebdf?s=128&d=identicon&r=PG",
+            "display_name": "Ronak SHAH",
+            "link": "https://stackoverflow.com/users/8009864/ronak-shah"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1614951192,
+        "post_id": 63000069,
+        "comment_id": 117549062,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I got server configured to accept the request from different origin i.e. through wasm and it has solved the problem."
+    },
+    {
+        "owner": {
+            "reputation": 193,
+            "user_id": 3643138,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/uEjPC.jpg?s=128&g=1",
+            "display_name": "Steven",
+            "link": "https://stackoverflow.com/users/3643138/steven"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1610734877,
+        "post_id": 63000069,
+        "comment_id": 116235152,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Did you manage to solve your issue ?"
+    },
+    {
+        "owner": {
+            "reputation": 687,
+            "user_id": 13836762,
+            "user_type": "registered",
+            "profile_image": "https://lh3.googleusercontent.com/a-/AOh14GhuHy8gk3YqL8a951Xo4GOjGignN2HcUOhL2InKtg=k-s128",
+            "display_name": "Pablo Yaggi",
+            "link": "https://stackoverflow.com/users/13836762/pablo-yaggi"
+        },
+        "edited": false,
+        "score": 3,
+        "creation_date": 1595437721,
+        "post_id": 63000069,
+        "comment_id": 111477098,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Probably you need to configure some policy, I&#39;m not familiar with python, it looks related to the server not Qt side."
+    },
+    {
+        "owner": {
+            "reputation": 101,
+            "user_id": 8009864,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/e215a8d84e3958aaf5caf9b49d05ebdf?s=128&d=identicon&r=PG",
+            "display_name": "Ronak SHAH",
+            "link": "https://stackoverflow.com/users/8009864/ronak-shah"
+        },
+        "reply_to_user": {
+            "reputation": 687,
+            "user_id": 13836762,
+            "user_type": "registered",
+            "profile_image": "https://lh3.googleusercontent.com/a-/AOh14GhuHy8gk3YqL8a951Xo4GOjGignN2HcUOhL2InKtg=k-s128",
+            "display_name": "Pablo Yaggi",
+            "link": "https://stackoverflow.com/users/13836762/pablo-yaggi"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1595392821,
+        "post_id": 63000069,
+        "comment_id": 111454727,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@PabloYaggi, I am using python http.server to server the html, wasm and js files locally. I have also tried using <code>http-server --cors</code> to enable CORS."
+    },
+    {
+        "owner": {
+            "reputation": 687,
+            "user_id": 13836762,
+            "user_type": "registered",
+            "profile_image": "https://lh3.googleusercontent.com/a-/AOh14GhuHy8gk3YqL8a951Xo4GOjGignN2HcUOhL2InKtg=k-s128",
+            "display_name": "Pablo Yaggi",
+            "link": "https://stackoverflow.com/users/13836762/pablo-yaggi"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1595354325,
+        "post_id": 63000069,
+        "comment_id": 111443794,
+        "content_license": "CC BY-SA 4.0",
+        "body": "What server are you using ? you need to setup you server to enable Cross Origin"
+    }
+]

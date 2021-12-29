@@ -1,0 +1,153 @@
+[
+    {
+        "owner": {
+            "reputation": 1649,
+            "user_id": 13323460,
+            "user_type": "registered",
+            "profile_image": "https://lh3.googleusercontent.com/a-/AOh14GizJOniaqwmj-aydCOstp9Ag7M3vAuQPeQQogLJAQ=k-s128",
+            "display_name": "Raghavendra beldona",
+            "link": "https://stackoverflow.com/users/13323460/raghavendra-beldona"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1601380861,
+        "post_id": 63623303,
+        "comment_id": 113384460,
+        "content_license": "CC BY-SA 4.0",
+        "body": "We have templates available <a href=\"https://github.com/AzureAD/microsoft-identity-web/wiki/web-app-template#use-of-the-blazor-web-assembly-template\" rel=\"nofollow noreferrer\">here</a> for blazorwasm. and <a href=\"https://github.com/AzureAD/microsoft-identity-web/wiki/web-app-template#download-or-build-the-nuget-package-containing-the-net-core-template\" rel=\"nofollow noreferrer\">directions</a> (note: we haven&#39;t released 1.0.0 yet, so you&#39;d use 0.1.4-preview)"
+    },
+    {
+        "owner": {
+            "reputation": 11,
+            "user_id": 10958435,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/657ed0f3e143ce412f82fc58526d0184?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Tim Daborn",
+            "link": "https://stackoverflow.com/users/10958435/tim-daborn"
+        },
+        "reply_to_user": {
+            "reputation": 1649,
+            "user_id": 13323460,
+            "user_type": "registered",
+            "profile_image": "https://lh3.googleusercontent.com/a-/AOh14GizJOniaqwmj-aydCOstp9Ag7M3vAuQPeQQogLJAQ=k-s128",
+            "display_name": "Raghavendra beldona",
+            "link": "https://stackoverflow.com/users/13323460/raghavendra-beldona"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1601048774,
+        "post_id": 63623303,
+        "comment_id": 113292778,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@Raghavendra- MSFT Identity So clearly my calling code is wrong, and I am struggling to find a good walkthrough or example to work out where I have gone wrong.  Tutorials like [<a href=\"https://docs.microsoft.com/en-us/azure/api-management/howto-protect-backend-frontend-azure-ad-b2c#configure-oauth2-for-api-management]\" rel=\"nofollow noreferrer\">docs.microsoft.com/en-us/azure/api-management/&hellip;</a> are not clear at all."
+    },
+    {
+        "owner": {
+            "reputation": 11,
+            "user_id": 10958435,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/657ed0f3e143ce412f82fc58526d0184?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Tim Daborn",
+            "link": "https://stackoverflow.com/users/10958435/tim-daborn"
+        },
+        "reply_to_user": {
+            "reputation": 1649,
+            "user_id": 13323460,
+            "user_type": "registered",
+            "profile_image": "https://lh3.googleusercontent.com/a-/AOh14GizJOniaqwmj-aydCOstp9Ag7M3vAuQPeQQogLJAQ=k-s128",
+            "display_name": "Raghavendra beldona",
+            "link": "https://stackoverflow.com/users/13323460/raghavendra-beldona"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1601048533,
+        "post_id": 63623303,
+        "comment_id": 113292653,
+        "content_license": "CC BY-SA 4.0",
+        "body": "In my function code    ` \t(!principal.Identity.IsAuthenticated) &#39; fails for my blazor app                   \tBut with Postman passing in the bearer token I can get beyond that statement"
+    },
+    {
+        "owner": {
+            "reputation": 11,
+            "user_id": 10958435,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/657ed0f3e143ce412f82fc58526d0184?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Tim Daborn",
+            "link": "https://stackoverflow.com/users/10958435/tim-daborn"
+        },
+        "reply_to_user": {
+            "reputation": 1649,
+            "user_id": 13323460,
+            "user_type": "registered",
+            "profile_image": "https://lh3.googleusercontent.com/a-/AOh14GizJOniaqwmj-aydCOstp9Ag7M3vAuQPeQQogLJAQ=k-s128",
+            "display_name": "Raghavendra beldona",
+            "link": "https://stackoverflow.com/users/13323460/raghavendra-beldona"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1601048013,
+        "post_id": 63623303,
+        "comment_id": 113292378,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Hi Raghavendra,  I am still struggling.  I turned off CORS and made some other changes so I have resolved the 404, but I still cannot pass in a bearer token from an authenticated user from the Blazor app to my function. But using postman I can."
+    },
+    {
+        "owner": {
+            "reputation": 1649,
+            "user_id": 13323460,
+            "user_type": "registered",
+            "profile_image": "https://lh3.googleusercontent.com/a-/AOh14GizJOniaqwmj-aydCOstp9Ag7M3vAuQPeQQogLJAQ=k-s128",
+            "display_name": "Raghavendra beldona",
+            "link": "https://stackoverflow.com/users/13323460/raghavendra-beldona"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1600768187,
+        "post_id": 63623303,
+        "comment_id": 113184950,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Hi @Tim Sorry for the delay in the response. Did the 404 issue got resolved or still looking for help?"
+    },
+    {
+        "owner": {
+            "reputation": 11,
+            "user_id": 10958435,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/657ed0f3e143ce412f82fc58526d0184?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Tim Daborn",
+            "link": "https://stackoverflow.com/users/10958435/tim-daborn"
+        },
+        "reply_to_user": {
+            "reputation": 1649,
+            "user_id": 13323460,
+            "user_type": "registered",
+            "profile_image": "https://lh3.googleusercontent.com/a-/AOh14GizJOniaqwmj-aydCOstp9Ag7M3vAuQPeQQogLJAQ=k-s128",
+            "display_name": "Raghavendra beldona",
+            "link": "https://stackoverflow.com/users/13323460/raghavendra-beldona"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1599488418,
+        "post_id": 63623303,
+        "comment_id": 112782848,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I have made some changes since my original post so now I no longer get 401, but 404."
+    },
+    {
+        "owner": {
+            "reputation": 1649,
+            "user_id": 13323460,
+            "user_type": "registered",
+            "profile_image": "https://lh3.googleusercontent.com/a-/AOh14GizJOniaqwmj-aydCOstp9Ag7M3vAuQPeQQogLJAQ=k-s128",
+            "display_name": "Raghavendra beldona",
+            "link": "https://stackoverflow.com/users/13323460/raghavendra-beldona"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1598863130,
+        "post_id": 63623303,
+        "comment_id": 112584511,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Ca you share the code you have tried and more details on where you are facing 401 error."
+    }
+]

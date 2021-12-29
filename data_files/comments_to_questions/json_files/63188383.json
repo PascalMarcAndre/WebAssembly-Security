@@ -1,0 +1,47 @@
+[
+    {
+        "owner": {
+            "reputation": 3093,
+            "user_id": 2427359,
+            "user_type": "registered",
+            "accept_rate": 62,
+            "profile_image": "https://www.gravatar.com/avatar/ab8c78d8270ab839f9461cf72cd20a57?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Simon",
+            "link": "https://stackoverflow.com/users/2427359/simon"
+        },
+        "reply_to_user": {
+            "reputation": 42644,
+            "user_id": 1658906,
+            "user_type": "registered",
+            "accept_rate": 100,
+            "profile_image": "https://www.gravatar.com/avatar/4e4748ed2fb97e8a8d4dd6d439625135?s=128&d=identicon&r=PG",
+            "display_name": "juunas",
+            "link": "https://stackoverflow.com/users/1658906/juunas"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1596186106,
+        "post_id": 63188383,
+        "comment_id": 111737508,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@juunas: Thank you for your help. I have added an section Startup.cs to my question."
+    },
+    {
+        "owner": {
+            "reputation": 42644,
+            "user_id": 1658906,
+            "user_type": "registered",
+            "accept_rate": 100,
+            "profile_image": "https://www.gravatar.com/avatar/4e4748ed2fb97e8a8d4dd6d439625135?s=128&d=identicon&r=PG",
+            "display_name": "juunas",
+            "link": "https://stackoverflow.com/users/1658906/juunas"
+        },
+        "edited": false,
+        "score": 2,
+        "creation_date": 1596184733,
+        "post_id": 63188383,
+        "comment_id": 111736882,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Can you show how your authentication scheme is configured?"
+    }
+]

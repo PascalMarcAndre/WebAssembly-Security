@@ -1,0 +1,37 @@
+[
+    {
+        "owner": {
+            "reputation": 315,
+            "user_id": 9855089,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/hMA6J.jpg?s=128&g=1",
+            "display_name": "Jaap",
+            "link": "https://stackoverflow.com/users/9855089/jaap"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1593339299,
+        "post_id": 61178681,
+        "comment_id": 110740156,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I&#39;ve made a github repo and got this working for Blazor WebAssembly 3.2.0. / .NET &amp; EF 5 Preview - Multiple Roles and Additional User Claims  See: <a href=\"https://github.com/JeepNL/Blazor-WASM-Identity-gRPC\" rel=\"nofollow noreferrer\">github.com/JeepNL/Blazor-WASM-Identity-gRPC</a>"
+    },
+    {
+        "owner": {
+            "reputation": 9184,
+            "user_id": 693560,
+            "user_type": "registered",
+            "accept_rate": 77,
+            "profile_image": "https://www.gravatar.com/avatar/e71609811ad09d2eba439b051790fbc7?s=128&d=identicon&r=PG",
+            "display_name": "Bronzato",
+            "link": "https://stackoverflow.com/users/693560/bronzato"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1587542403,
+        "post_id": 61178681,
+        "comment_id": 108548533,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I face the exact same issue. Did you find a solution ?"
+    }
+]

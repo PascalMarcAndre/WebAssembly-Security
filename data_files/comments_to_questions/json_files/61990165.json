@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 13400,
+            "user_id": 2940908,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://i.stack.imgur.com/E79WU.jpg?s=128&g=1",
+            "display_name": "agua from mars",
+            "link": "https://stackoverflow.com/users/2940908/agua-from-mars"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1590387592,
+        "post_id": 61990165,
+        "comment_id": 109650377,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Maybe you can split your app using <a href=\"https://github.com/dotnet/aspnetcore/issues/5465#issuecomment-624486350\" rel=\"nofollow noreferrer\">BlazorLazyLoading</a> lib as this is not yet available in the framework. And secure your file with a custom middleware"
+    }
+]

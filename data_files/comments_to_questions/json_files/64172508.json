@@ -1,0 +1,111 @@
+[
+    {
+        "owner": {
+            "reputation": 1,
+            "user_id": 14379922,
+            "user_type": "registered",
+            "profile_image": "https://lh4.googleusercontent.com/-cXGVB7TpHy8/AAAAAAAAAAI/AAAAAAAAAAA/AMZuucltSVPPaGr8Ey3Yg7WA4snRmFd88Q/photo.jpg?sz=128",
+            "display_name": "ricc vivio",
+            "link": "https://stackoverflow.com/users/14379922/ricc-vivio"
+        },
+        "reply_to_user": {
+            "reputation": 1,
+            "user_id": 5053002,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/ab6a9edfd2614014563162586c1b0697?s=128&d=identicon&r=PG",
+            "display_name": "Jaromanda X",
+            "link": "https://stackoverflow.com/users/5053002/jaromanda-x"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1602064895,
+        "post_id": 64172508,
+        "comment_id": 113599393,
+        "content_license": "CC BY-SA 4.0",
+        "body": "based on chrome"
+    },
+    {
+        "owner": {
+            "reputation": 1,
+            "user_id": 5053002,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/ab6a9edfd2614014563162586c1b0697?s=128&d=identicon&r=PG",
+            "display_name": "Jaromanda X",
+            "link": "https://stackoverflow.com/users/5053002/jaromanda-x"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1601687096,
+        "post_id": 64172508,
+        "comment_id": 113491809,
+        "content_license": "CC BY-SA 4.0",
+        "body": "was that with edge based on chrome or the old edge?"
+    },
+    {
+        "owner": {
+            "reputation": 1,
+            "user_id": 14379922,
+            "user_type": "registered",
+            "profile_image": "https://lh4.googleusercontent.com/-cXGVB7TpHy8/AAAAAAAAAAI/AAAAAAAAAAA/AMZuucltSVPPaGr8Ey3Yg7WA4snRmFd88Q/photo.jpg?sz=128",
+            "display_name": "ricc vivio",
+            "link": "https://stackoverflow.com/users/14379922/ricc-vivio"
+        },
+        "reply_to_user": {
+            "reputation": 1,
+            "user_id": 5053002,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/ab6a9edfd2614014563162586c1b0697?s=128&d=identicon&r=PG",
+            "display_name": "Jaromanda X",
+            "link": "https://stackoverflow.com/users/5053002/jaromanda-x"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1601649017,
+        "post_id": 64172508,
+        "comment_id": 113479797,
+        "content_license": "CC BY-SA 4.0",
+        "body": "just to let you know, i tried with microsoft edge and guess what... there is no memory leak. It&#39;s chrome...."
+    },
+    {
+        "owner": {
+            "reputation": 1,
+            "user_id": 14379922,
+            "user_type": "registered",
+            "profile_image": "https://lh4.googleusercontent.com/-cXGVB7TpHy8/AAAAAAAAAAI/AAAAAAAAAAA/AMZuucltSVPPaGr8Ey3Yg7WA4snRmFd88Q/photo.jpg?sz=128",
+            "display_name": "ricc vivio",
+            "link": "https://stackoverflow.com/users/14379922/ricc-vivio"
+        },
+        "reply_to_user": {
+            "reputation": 1,
+            "user_id": 5053002,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/ab6a9edfd2614014563162586c1b0697?s=128&d=identicon&r=PG",
+            "display_name": "Jaromanda X",
+            "link": "https://stackoverflow.com/users/5053002/jaromanda-x"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1601646303,
+        "post_id": 64172508,
+        "comment_id": 113478556,
+        "content_license": "CC BY-SA 4.0",
+        "body": "i m gonna do that thx."
+    },
+    {
+        "owner": {
+            "reputation": 1,
+            "user_id": 5053002,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/ab6a9edfd2614014563162586c1b0697?s=128&d=identicon&r=PG",
+            "display_name": "Jaromanda X",
+            "link": "https://stackoverflow.com/users/5053002/jaromanda-x"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1601646134,
+        "post_id": 64172508,
+        "comment_id": 113478464,
+        "content_license": "CC BY-SA 4.0",
+        "body": "try browsers - if it leaks everywhere, then it&#39;s the code - if it leaks only in Chrome, I wouldn&#39;t be surprised at all"
+    }
+]

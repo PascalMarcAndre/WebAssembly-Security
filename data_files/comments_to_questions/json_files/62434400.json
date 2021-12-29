@@ -1,0 +1,44 @@
+[
+    {
+        "owner": {
+            "reputation": 145,
+            "user_id": 11476545,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/439ded087dfb9e0529421b669d9914ca?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Bisjob",
+            "link": "https://stackoverflow.com/users/11476545/bisjob"
+        },
+        "reply_to_user": {
+            "reputation": 315,
+            "user_id": 9855089,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/hMA6J.jpg?s=128&g=1",
+            "display_name": "Jaap",
+            "link": "https://stackoverflow.com/users/9855089/jaap"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1593509752,
+        "post_id": 62434400,
+        "comment_id": 110799886,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Thanks it&#39;s not exactly what I needed but it&#39;s well interesting !!"
+    },
+    {
+        "owner": {
+            "reputation": 315,
+            "user_id": 9855089,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/hMA6J.jpg?s=128&g=1",
+            "display_name": "Jaap",
+            "link": "https://stackoverflow.com/users/9855089/jaap"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1593339381,
+        "post_id": 62434400,
+        "comment_id": 110740174,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I don&#39;t know if this exactly what you&#39;re looking for but maybe this helps: Blazor WebAssembly 3.2.0. / .NET &amp; EF 5 Preview - Multiple Roles and Additional User Claims  See: <a href=\"https://github.com/JeepNL/Blazor-WASM-Identity-gRPC\" rel=\"nofollow noreferrer\">github.com/JeepNL/Blazor-WASM-Identity-gRPC</a>"
+    }
+]

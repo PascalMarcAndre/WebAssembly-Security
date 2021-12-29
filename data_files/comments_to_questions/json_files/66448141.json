@@ -1,0 +1,325 @@
+[
+    {
+        "owner": {
+            "reputation": 321,
+            "user_id": 1273698,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/52119eacf0813bead3bacc18e48c0c65?s=128&d=identicon&r=PG",
+            "display_name": "candritzky",
+            "link": "https://stackoverflow.com/users/1273698/candritzky"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1619611180,
+        "post_id": 66448141,
+        "comment_id": 118956191,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Similar problem here. When I use a .pfx file, my Blazor app just replies with a 404 Not Found error. Path to .pfx and password are correct. If I change any of them to something wrong, the error changes to HTTP Error 500.30 - ASP.NET Core app failed to start. What is wrong?"
+    },
+    {
+        "owner": {
+            "reputation": 7321,
+            "user_id": 68490,
+            "user_type": "registered",
+            "accept_rate": 20,
+            "profile_image": "https://www.gravatar.com/avatar/b3c70bbc491ede87ae5682c561af07d2?s=128&d=identicon&r=PG",
+            "display_name": "Tore Nestenius",
+            "link": "https://stackoverflow.com/users/68490/tore-nestenius"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1614786809,
+        "post_id": 66448141,
+        "comment_id": 117492612,
+        "content_license": "CC BY-SA 4.0",
+        "body": "An alternative that I have used successfully is to use Azure Container Instances instead of AppServices, because then you do all the cert stuff your self and then it is easier to debug."
+    },
+    {
+        "owner": {
+            "reputation": 7321,
+            "user_id": 68490,
+            "user_type": "registered",
+            "accept_rate": 20,
+            "profile_image": "https://www.gravatar.com/avatar/b3c70bbc491ede87ae5682c561af07d2?s=128&d=identicon&r=PG",
+            "display_name": "Tore Nestenius",
+            "link": "https://stackoverflow.com/users/68490/tore-nestenius"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1614786755,
+        "post_id": 66448141,
+        "comment_id": 117492571,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Feel free to clarify your question a bit more specific details. I also personally prefer to do most of the config in code,instead of appsettings.json because then I know I don&#39;t do any stupid typo :-)"
+    },
+    {
+        "owner": {
+            "reputation": 41119,
+            "user_id": 3850405,
+            "user_type": "registered",
+            "accept_rate": 64,
+            "profile_image": "https://www.gravatar.com/avatar/b2b9eece8c493ba7ddcff82f845ff2af?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Ogglas",
+            "link": "https://stackoverflow.com/users/3850405/ogglas"
+        },
+        "reply_to_user": {
+            "reputation": 7321,
+            "user_id": 68490,
+            "user_type": "registered",
+            "accept_rate": 20,
+            "profile_image": "https://www.gravatar.com/avatar/b3c70bbc491ede87ae5682c561af07d2?s=128&d=identicon&r=PG",
+            "display_name": "Tore Nestenius",
+            "link": "https://stackoverflow.com/users/68490/tore-nestenius"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1614785776,
+        "post_id": 66448141,
+        "comment_id": 117492087,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@ToreNestenius Yes I think I will have to do that. Thanks for trying though!"
+    },
+    {
+        "owner": {
+            "reputation": 7321,
+            "user_id": 68490,
+            "user_type": "registered",
+            "accept_rate": 20,
+            "profile_image": "https://www.gravatar.com/avatar/b3c70bbc491ede87ae5682c561af07d2?s=128&d=identicon&r=PG",
+            "display_name": "Tore Nestenius",
+            "link": "https://stackoverflow.com/users/68490/tore-nestenius"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1614782037,
+        "post_id": 66448141,
+        "comment_id": 117490050,
+        "content_license": "CC BY-SA 4.0",
+        "body": "perhaps I don&#39;t get exactly where you problem is, I was looking at the &quot;Newtonsoft.Json.JsonReaderException: &#39;Unexpected character encountered while parsing number: \ufffd. Path &#39;&#39;, line 1, position 1.&#39;&quot; and that is typical a HTTP-&gt;HTTPS error.   For token signing, then that is a different ballpark and question. Step #1 is to get the discovery document downloaded... I would try to dig deeper and increase the log-level to Debug or Trace in the services , to better troubleshoot it."
+    },
+    {
+        "owner": {
+            "reputation": 41119,
+            "user_id": 3850405,
+            "user_type": "registered",
+            "accept_rate": 64,
+            "profile_image": "https://www.gravatar.com/avatar/b2b9eece8c493ba7ddcff82f845ff2af?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Ogglas",
+            "link": "https://stackoverflow.com/users/3850405/ogglas"
+        },
+        "reply_to_user": {
+            "reputation": 7321,
+            "user_id": 68490,
+            "user_type": "registered",
+            "accept_rate": 20,
+            "profile_image": "https://www.gravatar.com/avatar/b3c70bbc491ede87ae5682c561af07d2?s=128&d=identicon&r=PG",
+            "display_name": "Tore Nestenius",
+            "link": "https://stackoverflow.com/users/68490/tore-nestenius"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1614780891,
+        "post_id": 66448141,
+        "comment_id": 117489473,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@ToreNestenius If we assume that is the case: How come it works both locally and on Azure with the same certificate and code when the certificate is fetched from the store? That makes no sense in my experience with certificates and HTTPS. :)"
+    },
+    {
+        "owner": {
+            "reputation": 7321,
+            "user_id": 68490,
+            "user_type": "registered",
+            "accept_rate": 20,
+            "profile_image": "https://www.gravatar.com/avatar/b3c70bbc491ede87ae5682c561af07d2?s=128&d=identicon&r=PG",
+            "display_name": "Tore Nestenius",
+            "link": "https://stackoverflow.com/users/68490/tore-nestenius"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1614780444,
+        "post_id": 66448141,
+        "comment_id": 117489258,
+        "content_license": "CC BY-SA 4.0",
+        "body": "but for my experience, the App it self gets the traffic as HTTP  even if you use HTTPS exernally. That is common issue in Azure. also, do check the log files and I think its more a DNS/HTTPS vs HTTP issue. that the IdentitysErver is not really reachable between services. as a test, you could always try to use <a href=\"https://demo.identityserver.io/\" rel=\"nofollow noreferrer\">demo.identityserver.io</a> instead, as a identityserver, to see if that works."
+    },
+    {
+        "owner": {
+            "reputation": 41119,
+            "user_id": 3850405,
+            "user_type": "registered",
+            "accept_rate": 64,
+            "profile_image": "https://www.gravatar.com/avatar/b2b9eece8c493ba7ddcff82f845ff2af?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Ogglas",
+            "link": "https://stackoverflow.com/users/3850405/ogglas"
+        },
+        "reply_to_user": {
+            "reputation": 7321,
+            "user_id": 68490,
+            "user_type": "registered",
+            "accept_rate": 20,
+            "profile_image": "https://www.gravatar.com/avatar/b3c70bbc491ede87ae5682c561af07d2?s=128&d=identicon&r=PG",
+            "display_name": "Tore Nestenius",
+            "link": "https://stackoverflow.com/users/68490/tore-nestenius"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1614773645,
+        "post_id": 66448141,
+        "comment_id": 117486015,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@ToreNestenius I don&#39;t think that is the issue. It works on localhost and Azure if I pick up the same certificate from <code>Store</code> instead of <code>.pfx</code> <code>File</code>. Looking at what Microsoft says this should have no effect either as stated above:   There are no specific requirements for this certificate; it can be a self-signed certificate or a certificate provisioned through a CA authority.  It can be generated through standard tools like PowerShell or OpenSSL.  It can be installed into the certificate store on the target machines or deployed as a .pfx file with a strong password."
+    },
+    {
+        "owner": {
+            "reputation": 7321,
+            "user_id": 68490,
+            "user_type": "registered",
+            "accept_rate": 20,
+            "profile_image": "https://www.gravatar.com/avatar/b3c70bbc491ede87ae5682c561af07d2?s=128&d=identicon&r=PG",
+            "display_name": "Tore Nestenius",
+            "link": "https://stackoverflow.com/users/68490/tore-nestenius"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1614772259,
+        "post_id": 66448141,
+        "comment_id": 117485393,
+        "content_license": "CC BY-SA 4.0",
+        "body": "You should try to get a real cert, otherwise HTTPS won&#39;t connect properly. How can otherwise your AppService in production trust it?"
+    },
+    {
+        "owner": {
+            "reputation": 41119,
+            "user_id": 3850405,
+            "user_type": "registered",
+            "accept_rate": 64,
+            "profile_image": "https://www.gravatar.com/avatar/b2b9eece8c493ba7ddcff82f845ff2af?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Ogglas",
+            "link": "https://stackoverflow.com/users/3850405/ogglas"
+        },
+        "reply_to_user": {
+            "reputation": 7321,
+            "user_id": 68490,
+            "user_type": "registered",
+            "accept_rate": 20,
+            "profile_image": "https://www.gravatar.com/avatar/b3c70bbc491ede87ae5682c561af07d2?s=128&d=identicon&r=PG",
+            "display_name": "Tore Nestenius",
+            "link": "https://stackoverflow.com/users/68490/tore-nestenius"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1614767189,
+        "post_id": 66448141,
+        "comment_id": 117483302,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@ToreNestenius Self-signed. Created via Powershell like this: <code>New-SelfSignedCertificate -DnsName &quot;blazortest&quot; -CertStoreLocation &quot;cert:\\CurrentUser\\My&quot;</code>"
+    },
+    {
+        "owner": {
+            "reputation": 7321,
+            "user_id": 68490,
+            "user_type": "registered",
+            "accept_rate": 20,
+            "profile_image": "https://www.gravatar.com/avatar/b3c70bbc491ede87ae5682c561af07d2?s=128&d=identicon&r=PG",
+            "display_name": "Tore Nestenius",
+            "link": "https://stackoverflow.com/users/68490/tore-nestenius"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1614766144,
+        "post_id": 66448141,
+        "comment_id": 117482795,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Is the cert selfsigned or a real signed certificate?"
+    },
+    {
+        "owner": {
+            "reputation": 41119,
+            "user_id": 3850405,
+            "user_type": "registered",
+            "accept_rate": 64,
+            "profile_image": "https://www.gravatar.com/avatar/b2b9eece8c493ba7ddcff82f845ff2af?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Ogglas",
+            "link": "https://stackoverflow.com/users/3850405/ogglas"
+        },
+        "reply_to_user": {
+            "reputation": 7321,
+            "user_id": 68490,
+            "user_type": "registered",
+            "accept_rate": 20,
+            "profile_image": "https://www.gravatar.com/avatar/b3c70bbc491ede87ae5682c561af07d2?s=128&d=identicon&r=PG",
+            "display_name": "Tore Nestenius",
+            "link": "https://stackoverflow.com/users/68490/tore-nestenius"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1614761735,
+        "post_id": 66448141,
+        "comment_id": 117480756,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@ToreNestenius I get the same error locally so I don&#39;t think that is the culprit in this case. Locally the app is set to <code>Enable SSL</code> and automatically starts with the HTTPS port as usual on localhost. On Azure I got the same error on <a href=\"https://mysite.azurewebsites.net\" rel=\"nofollow noreferrer\">mysite.azurewebsites.net</a>."
+    },
+    {
+        "owner": {
+            "reputation": 7321,
+            "user_id": 68490,
+            "user_type": "registered",
+            "accept_rate": 20,
+            "profile_image": "https://www.gravatar.com/avatar/b3c70bbc491ede87ae5682c561af07d2?s=128&d=identicon&r=PG",
+            "display_name": "Tore Nestenius",
+            "link": "https://stackoverflow.com/users/68490/tore-nestenius"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1614760518,
+        "post_id": 66448141,
+        "comment_id": 117480240,
+        "content_license": "CC BY-SA 4.0",
+        "body": "but in deployment, you have different network topology, are sure sure the Identityserver is reachable inside Azure? If I am not wrong, you have some issues with HTTP vs HTTPS. AppServices terminate HTTPS outside , so your services only get HTTP traffic?"
+    },
+    {
+        "owner": {
+            "reputation": 41119,
+            "user_id": 3850405,
+            "user_type": "registered",
+            "accept_rate": 64,
+            "profile_image": "https://www.gravatar.com/avatar/b2b9eece8c493ba7ddcff82f845ff2af?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Ogglas",
+            "link": "https://stackoverflow.com/users/3850405/ogglas"
+        },
+        "reply_to_user": {
+            "reputation": 7321,
+            "user_id": 68490,
+            "user_type": "registered",
+            "accept_rate": 20,
+            "profile_image": "https://www.gravatar.com/avatar/b3c70bbc491ede87ae5682c561af07d2?s=128&d=identicon&r=PG",
+            "display_name": "Tore Nestenius",
+            "link": "https://stackoverflow.com/users/68490/tore-nestenius"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1614759971,
+        "post_id": 66448141,
+        "comment_id": 117480038,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@ToreNestenius Yes, the exact same code works when using <code>&quot;Type&quot;: &quot;Store&quot;</code> in <code>appsettings.json</code>."
+    },
+    {
+        "owner": {
+            "reputation": 7321,
+            "user_id": 68490,
+            "user_type": "registered",
+            "accept_rate": 20,
+            "profile_image": "https://www.gravatar.com/avatar/b3c70bbc491ede87ae5682c561af07d2?s=128&d=identicon&r=PG",
+            "display_name": "Tore Nestenius",
+            "link": "https://stackoverflow.com/users/68490/tore-nestenius"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1614758185,
+        "post_id": 66448141,
+        "comment_id": 117479318,
+        "content_license": "CC BY-SA 4.0",
+        "body": "the error &quot;Newtonsoft.Json.JsonReaderException: &#39;Unexpected character encountered while parsing number: \ufffd. Path &#39;&#39;, line 1, position 1.&#39;&quot; is typicall when your client can&#39;t reach the public discovery endpoint JSON document. are you sure that one is running? (/.well-known/openid-configuration)   and it is reachable from the client?"
+    }
+]

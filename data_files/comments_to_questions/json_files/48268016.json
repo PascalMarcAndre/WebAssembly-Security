@@ -1,0 +1,80 @@
+[
+    {
+        "owner": {
+            "reputation": 285606,
+            "user_id": 155423,
+            "user_type": "registered",
+            "accept_rate": 90,
+            "profile_image": "https://www.gravatar.com/avatar/419218774d04a581476ea1887a0921e0?s=128&d=identicon&r=PG",
+            "display_name": "Shepmaster",
+            "link": "https://stackoverflow.com/users/155423/shepmaster"
+        },
+        "edited": false,
+        "score": 3,
+        "creation_date": 1516041494,
+        "post_id": 48268016,
+        "comment_id": 83520951,
+        "content_license": "CC BY-SA 3.0",
+        "body": "Probably a duplicate of <a href=\"https://stackoverflow.com/q/45535301/155423\">Can I read files from the disk by using Webassembly?</a>"
+    },
+    {
+        "owner": {
+            "reputation": 138299,
+            "user_id": 785065,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/qAbxM.jpg?s=128&g=1",
+            "display_name": "loganfsmyth",
+            "link": "https://stackoverflow.com/users/785065/loganfsmyth"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1516038823,
+        "post_id": 48268016,
+        "comment_id": 83519707,
+        "content_license": "CC BY-SA 3.0",
+        "body": "I&#39;m not quite confident enough to answer this for the Rust and WASM case, but assuming it is similar to JS, you&#39;ll want to take a look at <a href=\"http://kripken.github.io/emscripten-site/docs/porting/emscripten-runtime-environment.html#file-systems\" rel=\"nofollow noreferrer\">kripken.github.io/emscripten-site/docs/porting/&hellip;</a> The filesystem you&#39;re accessing now is likely entirely in-memory, and not the user&#39;s actual filesystem."
+    },
+    {
+        "owner": {
+            "reputation": 89,
+            "user_id": 3326762,
+            "user_type": "registered",
+            "accept_rate": 50,
+            "profile_image": "https://www.gravatar.com/avatar/ed9896105833a26bfb62c7cadf7c37b9?s=128&d=identicon&r=PG&f=1",
+            "display_name": "compasses",
+            "link": "https://stackoverflow.com/users/3326762/compasses"
+        },
+        "reply_to_user": {
+            "reputation": 138299,
+            "user_id": 785065,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/qAbxM.jpg?s=128&g=1",
+            "display_name": "loganfsmyth",
+            "link": "https://stackoverflow.com/users/785065/loganfsmyth"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1516038450,
+        "post_id": 48268016,
+        "comment_id": 83519537,
+        "content_license": "CC BY-SA 3.0",
+        "body": "Oh. Here&#39;s how. I do not know JS, so it is suddenly for me. Can you tell me what I can do in my case?"
+    },
+    {
+        "owner": {
+            "reputation": 138299,
+            "user_id": 785065,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/qAbxM.jpg?s=128&g=1",
+            "display_name": "loganfsmyth",
+            "link": "https://stackoverflow.com/users/785065/loganfsmyth"
+        },
+        "edited": false,
+        "score": 4,
+        "creation_date": 1516038071,
+        "post_id": 48268016,
+        "comment_id": 83519364,
+        "content_license": "CC BY-SA 3.0",
+        "body": "Where are you expecting to load this file from? JS code can&#39;t load arbitrary files from a user&#39;s filesystem, so I wouldn&#39;t expect a WASM one to be able to either."
+    }
+]

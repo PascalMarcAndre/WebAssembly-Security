@@ -1,0 +1,64 @@
+[
+    {
+        "owner": {
+            "reputation": 141,
+            "user_id": 4329861,
+            "user_type": "registered",
+            "accept_rate": 71,
+            "profile_image": "https://www.gravatar.com/avatar/de727858d695404eef5e6fc4dff214bd?s=128&d=identicon&r=PG&f=1",
+            "display_name": "wallef",
+            "link": "https://stackoverflow.com/users/4329861/wallef"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1615741941,
+        "post_id": 64087065,
+        "comment_id": 117779646,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Any progress on the performance @williamg?"
+    },
+    {
+        "owner": {
+            "reputation": 83,
+            "user_id": 7813837,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/85f20cb92f15f7ffebedfb2da51aab33?s=128&d=identicon&r=PG&f=1",
+            "display_name": "WilliamG",
+            "link": "https://stackoverflow.com/users/7813837/williamg"
+        },
+        "reply_to_user": {
+            "reputation": 240386,
+            "user_id": 60761,
+            "user_type": "registered",
+            "accept_rate": 91,
+            "profile_image": "https://www.gravatar.com/avatar/5bf43bae0431d8f4a062234b5e3a0cb9?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Henk Holterman",
+            "link": "https://stackoverflow.com/users/60761/henk-holterman"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1601208087,
+        "post_id": 64087065,
+        "comment_id": 113328732,
+        "content_license": "CC BY-SA 4.0",
+        "body": "The loginresult only contain 3 properties so that shouldnt be the problem. I run everything local at the moment. And yes, it&#39;s a slow the second time i try o log in"
+    },
+    {
+        "owner": {
+            "reputation": 240386,
+            "user_id": 60761,
+            "user_type": "registered",
+            "accept_rate": 91,
+            "profile_image": "https://www.gravatar.com/avatar/5bf43bae0431d8f4a062234b5e3a0cb9?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Henk Holterman",
+            "link": "https://stackoverflow.com/users/60761/henk-holterman"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1601203949,
+        "post_id": 64087065,
+        "comment_id": 113327755,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Nothing stands out, how big is loginResult?  I think you should start profiling your server. And: is it just as slow when you login a second time?"
+    }
+]

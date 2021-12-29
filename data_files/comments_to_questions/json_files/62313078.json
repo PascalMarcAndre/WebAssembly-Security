@@ -1,0 +1,123 @@
+[
+    {
+        "owner": {
+            "reputation": 1648,
+            "user_id": 2648798,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/Vbzoy.png?s=128&g=1",
+            "display_name": "Robert Perry",
+            "link": "https://stackoverflow.com/users/2648798/robert-perry"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1603799754,
+        "post_id": 62313078,
+        "comment_id": 114145263,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I&#39;ve got exactly the same issue - was this ever resolved?"
+    },
+    {
+        "owner": {
+            "reputation": 21,
+            "user_id": 13723539,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/756fdad70b8f73ed3bbd18a40e3b3861?s=128&d=identicon&r=PG&f=1",
+            "display_name": "HStewart",
+            "link": "https://stackoverflow.com/users/13723539/hstewart"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1592000020,
+        "post_id": 62313078,
+        "comment_id": 110277543,
+        "content_license": "CC BY-SA 4.0",
+        "body": "System.Net.Http.HttpRequestException: No connection could be made because the target machine actively refused it.  ---&gt; System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.    at System.Net.Http.ConnectHelper.ConnectAsync(String host, Int32 port, CancellationToken cancellationToken)"
+    },
+    {
+        "owner": {
+            "reputation": 21,
+            "user_id": 13723539,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/756fdad70b8f73ed3bbd18a40e3b3861?s=128&d=identicon&r=PG&f=1",
+            "display_name": "HStewart",
+            "link": "https://stackoverflow.com/users/13723539/hstewart"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1591999827,
+        "post_id": 62313078,
+        "comment_id": 110277488,
+        "content_license": "CC BY-SA 4.0",
+        "body": "It is important to note this is in client code and not not the server code. The same problem even happens when executing a simple javascript.  This might not be important and it maybe best to use the Host servers to call others service API&#39;s  I believe that is was aqua from mars site does"
+    },
+    {
+        "owner": {
+            "reputation": 21,
+            "user_id": 13723539,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/756fdad70b8f73ed3bbd18a40e3b3861?s=128&d=identicon&r=PG&f=1",
+            "display_name": "HStewart",
+            "link": "https://stackoverflow.com/users/13723539/hstewart"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1591905812,
+        "post_id": 62313078,
+        "comment_id": 110241186,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I updated text issue and included a link for GitHub example"
+    },
+    {
+        "owner": {
+            "reputation": 21,
+            "user_id": 13723539,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/756fdad70b8f73ed3bbd18a40e3b3861?s=128&d=identicon&r=PG&f=1",
+            "display_name": "HStewart",
+            "link": "https://stackoverflow.com/users/13723539/hstewart"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1591900245,
+        "post_id": 62313078,
+        "comment_id": 110238620,
+        "content_license": "CC BY-SA 4.0",
+        "body": "This is a rather complicated idea with multiple servers - I  am most done with GitHub example - unfortunately when I debug it - the call for sending response bombs. It works from normal server calls only on Blazor Webassembly  razor page."
+    },
+    {
+        "owner": {
+            "reputation": 13400,
+            "user_id": 2940908,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://i.stack.imgur.com/E79WU.jpg?s=128&g=1",
+            "display_name": "agua from mars",
+            "link": "https://stackoverflow.com/users/2940908/agua-from-mars"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1591858340,
+        "post_id": 62313078,
+        "comment_id": 110216286,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Did you check the server response ? Is it return json or an unauthorized page ? Can you post the console and network log ?"
+    },
+    {
+        "owner": {
+            "reputation": 1,
+            "user_id": 6152891,
+            "user_type": "registered",
+            "accept_rate": 75,
+            "profile_image": "https://www.gravatar.com/avatar/b45b7f89429f8766cdbf6c776c0a9d41?s=128&d=identicon&r=PG",
+            "display_name": "enet",
+            "link": "https://stackoverflow.com/users/6152891/enet"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1591834347,
+        "post_id": 62313078,
+        "comment_id": 110210291,
+        "content_license": "CC BY-SA 4.0",
+        "body": "So location is the controller, right ? and what exactly is 2471217"
+    }
+]

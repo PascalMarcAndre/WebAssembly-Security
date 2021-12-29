@@ -1,0 +1,55 @@
+[
+    {
+        "owner": {
+            "reputation": 7965,
+            "user_id": 255966,
+            "user_type": "registered",
+            "accept_rate": 64,
+            "profile_image": "https://www.gravatar.com/avatar/00266ff14a605bf99cb6aed0518ad2ec?s=128&d=identicon&r=PG",
+            "display_name": "Stef Heyenrath",
+            "link": "https://stackoverflow.com/users/255966/stef-heyenrath"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1593852436,
+        "post_id": 58846314,
+        "comment_id": 110925913,
+        "content_license": "CC BY-SA 4.0",
+        "body": "See also my answer on this question: <a href=\"https://stackoverflow.com/questions/58983153/blazor-spa-authenticating-with-auth0-fails-on-callback\" title=\"blazor spa authenticating with auth0 fails on callback\">stackoverflow.com/questions/58983153/&hellip;</a>"
+    },
+    {
+        "owner": {
+            "reputation": 727,
+            "user_id": 8892051,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/wEowP.png?s=128&g=1",
+            "display_name": "Henry Rodriguez",
+            "link": "https://stackoverflow.com/users/8892051/henry-rodriguez"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1573695033,
+        "post_id": 58846314,
+        "comment_id": 103969567,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Correct <a href=\"https://auth0.com/blog/oauth2-implicit-grant-and-spa/\" rel=\"nofollow noreferrer\">Authorization Code Grant with Proof Key for Code Exchange (PKCE)</a> is the new standard recommendation"
+    },
+    {
+        "owner": {
+            "reputation": 100550,
+            "user_id": 213269,
+            "user_type": "registered",
+            "accept_rate": 98,
+            "profile_image": "https://www.gravatar.com/avatar/894e4c1f3bc33e5f9a5008d355287830?s=128&d=identicon&r=PG",
+            "display_name": "Jonas",
+            "link": "https://stackoverflow.com/users/213269/jonas"
+        },
+        "edited": false,
+        "score": 2,
+        "creation_date": 1573689058,
+        "post_id": 58846314,
+        "comment_id": 103968243,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Implicit flow should now be avoided: <a href=\"https://medium.com/oauth-2/why-you-should-stop-using-the-oauth-implicit-grant-2436ced1c926\" rel=\"nofollow noreferrer\">medium.com/oauth-2/&hellip;</a>"
+    }
+]

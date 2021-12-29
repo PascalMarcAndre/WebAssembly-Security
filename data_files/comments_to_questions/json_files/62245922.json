@@ -1,0 +1,54 @@
+[
+    {
+        "owner": {
+            "reputation": 1,
+            "user_id": 13259718,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/3d929f0ee668666c8789576f6e5fe3be?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Steve Pearson",
+            "link": "https://stackoverflow.com/users/13259718/steve-pearson"
+        },
+        "reply_to_user": {
+            "reputation": 13400,
+            "user_id": 2940908,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://i.stack.imgur.com/E79WU.jpg?s=128&g=1",
+            "display_name": "agua from mars",
+            "link": "https://stackoverflow.com/users/2940908/agua-from-mars"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1591606048,
+        "post_id": 62245922,
+        "comment_id": 110108862,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Yep, exactly the same with Azure B2C - resolves the slowness in the same way as auth0.  Logged a but with MS around this.  Will link this question to your linked one and add ref to the GitHub issue."
+    },
+    {
+        "owner": {
+            "reputation": 1,
+            "user_id": 13259718,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/3d929f0ee668666c8789576f6e5fe3be?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Steve Pearson",
+            "link": "https://stackoverflow.com/users/13259718/steve-pearson"
+        },
+        "reply_to_user": {
+            "reputation": 13400,
+            "user_id": 2940908,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://i.stack.imgur.com/E79WU.jpg?s=128&g=1",
+            "display_name": "agua from mars",
+            "link": "https://stackoverflow.com/users/2940908/agua-from-mars"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1591551447,
+        "post_id": 62245922,
+        "comment_id": 110093117,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Thanks for the link.  Yes, I&#39;d looked at that but switching from Cognito isn&#39;t desirable (but may end up being the only route).  I&#39;ve published a version too which shows the same behaviour as he also points out in the question.  I may try Azure B2C to see if this has the same issue.  Will come back, thanks"
+    }
+]

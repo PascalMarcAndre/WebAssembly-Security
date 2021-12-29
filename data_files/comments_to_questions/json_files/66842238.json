@@ -1,0 +1,44 @@
+[
+    {
+        "owner": {
+            "reputation": 17058,
+            "user_id": 1343851,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/75d334a32948bcbb10fd4c631ae79cee?s=128&d=identicon&r=PG",
+            "display_name": "Johannes Ewald",
+            "link": "https://stackoverflow.com/users/1343851/johannes-ewald"
+        },
+        "reply_to_user": {
+            "reputation": 28142,
+            "user_id": 5923139,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/dvoYw.png?s=128&g=1",
+            "display_name": "Aplet123",
+            "link": "https://stackoverflow.com/users/5923139/aplet123"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1618014181,
+        "post_id": 66842238,
+        "comment_id": 118482501,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Yes, enums would be great. When returning <code>JsValue</code> I would have to create the <code>Uint8Array</code>/<code>Unit16Array</code> manually, right?  Btw: I went with solution 2 now since it&#39;s way less error prone despite being more code duplicated."
+    },
+    {
+        "owner": {
+            "reputation": 28142,
+            "user_id": 5923139,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/dvoYw.png?s=128&g=1",
+            "display_name": "Aplet123",
+            "link": "https://stackoverflow.com/users/5923139/aplet123"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1616944305,
+        "post_id": 66842238,
+        "comment_id": 118155086,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I believe <a href=\"https://github.com/rustwasm/wasm-bindgen/issues/2088\" rel=\"nofollow noreferrer\">issue 2088</a> is relevant. Unfortunately, the issue seems pretty inactive, so the prettiest method right now is probably to just return a <code>JsValue</code>."
+    }
+]

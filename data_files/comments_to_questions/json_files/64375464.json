@@ -1,0 +1,36 @@
+[
+    {
+        "owner": {
+            "reputation": 93083,
+            "user_id": 134204,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/vwnA5.jpg?s=128&g=1",
+            "display_name": "Panagiotis Kanavos",
+            "link": "https://stackoverflow.com/users/134204/panagiotis-kanavos"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1602791066,
+        "post_id": 64375464,
+        "comment_id": 113839517,
+        "content_license": "CC BY-SA 4.0",
+        "body": "A viable option is one that&#39;s missing - use containers"
+    },
+    {
+        "owner": {
+            "reputation": 93083,
+            "user_id": 134204,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/vwnA5.jpg?s=128&g=1",
+            "display_name": "Panagiotis Kanavos",
+            "link": "https://stackoverflow.com/users/134204/panagiotis-kanavos"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1602790853,
+        "post_id": 64375464,
+        "comment_id": 113839439,
+        "content_license": "CC BY-SA 4.0",
+        "body": "None of the above. I don&#39;t think you understand what most of those things are. Silverlight is a browser plugin that was discontinued years ago. Webasm is a browser-only technology. Azure functions - that&#39;s just a remote service. And microservices are the fashionable name of services, ie the same as azure functions. In fact, people use Azure Functions or AWS Lambdas to create microservices."
+    }
+]

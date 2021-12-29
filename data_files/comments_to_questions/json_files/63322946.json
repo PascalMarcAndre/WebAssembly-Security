@@ -1,0 +1,47 @@
+[
+    {
+        "owner": {
+            "reputation": 1769,
+            "user_id": 4971859,
+            "user_type": "registered",
+            "accept_rate": 30,
+            "profile_image": "https://i.stack.imgur.com/C4KE3.png?s=128&g=1",
+            "display_name": "Steve",
+            "link": "https://stackoverflow.com/users/4971859/steve"
+        },
+        "reply_to_user": {
+            "reputation": 7321,
+            "user_id": 68490,
+            "user_type": "registered",
+            "accept_rate": 20,
+            "profile_image": "https://www.gravatar.com/avatar/b3c70bbc491ede87ae5682c561af07d2?s=128&d=identicon&r=PG",
+            "display_name": "Tore Nestenius",
+            "link": "https://stackoverflow.com/users/68490/tore-nestenius"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1596961927,
+        "post_id": 63322946,
+        "comment_id": 111974323,
+        "content_license": "CC BY-SA 4.0",
+        "body": "How do I access the discovery document?"
+    },
+    {
+        "owner": {
+            "reputation": 7321,
+            "user_id": 68490,
+            "user_type": "registered",
+            "accept_rate": 20,
+            "profile_image": "https://www.gravatar.com/avatar/b3c70bbc491ede87ae5682c561af07d2?s=128&d=identicon&r=PG",
+            "display_name": "Tore Nestenius",
+            "link": "https://stackoverflow.com/users/68490/tore-nestenius"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1596954348,
+        "post_id": 63322946,
+        "comment_id": 111972814,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Are you able from your browser to access the Auth0 discovery document?"
+    }
+]

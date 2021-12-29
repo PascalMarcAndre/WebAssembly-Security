@@ -1,0 +1,47 @@
+[
+    {
+        "owner": {
+            "reputation": 233,
+            "user_id": 1227445,
+            "user_type": "registered",
+            "accept_rate": 50,
+            "profile_image": "https://www.gravatar.com/avatar/258b21cb64d360f84617ef2ae72633b5?s=128&d=identicon&r=PG",
+            "display_name": "user1227445",
+            "link": "https://stackoverflow.com/users/1227445/user1227445"
+        },
+        "reply_to_user": {
+            "reputation": 71214,
+            "user_id": 189950,
+            "user_type": "registered",
+            "accept_rate": 79,
+            "profile_image": "https://www.gravatar.com/avatar/1c322903e59543003a482710cc4b5cda?s=128&d=identicon&r=PG",
+            "display_name": "Kirk Woll",
+            "link": "https://stackoverflow.com/users/189950/kirk-woll"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1613787243,
+        "post_id": 66286744,
+        "comment_id": 117192036,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Thanks, but I just stumbled across the solution. Unfortunately the Microsoft documentation does not show the complete picture. So I was in fact missing something."
+    },
+    {
+        "owner": {
+            "reputation": 71214,
+            "user_id": 189950,
+            "user_type": "registered",
+            "accept_rate": 79,
+            "profile_image": "https://www.gravatar.com/avatar/1c322903e59543003a482710cc4b5cda?s=128&d=identicon&r=PG",
+            "display_name": "Kirk Woll",
+            "link": "https://stackoverflow.com/users/189950/kirk-woll"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1613782414,
+        "post_id": 66286744,
+        "comment_id": 117191342,
+        "content_license": "CC BY-SA 4.0",
+        "body": "As a starting point I&#39;d use the developer console in your browser to examine your actual HTTP call (usually in the network tab) and compare that with the hardcoded version."
+    }
+]

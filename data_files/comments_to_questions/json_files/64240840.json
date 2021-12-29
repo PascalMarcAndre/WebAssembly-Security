@@ -1,0 +1,74 @@
+[
+    {
+        "owner": {
+            "reputation": 436,
+            "user_id": 1584725,
+            "user_type": "registered",
+            "accept_rate": 67,
+            "profile_image": "https://www.gravatar.com/avatar/3b4af23cd0ebfb961c3ab01ffd884073?s=128&d=identicon&r=PG",
+            "display_name": "Brett JB",
+            "link": "https://stackoverflow.com/users/1584725/brett-jb"
+        },
+        "reply_to_user": {
+            "reputation": 353954,
+            "user_id": 267,
+            "user_type": "registered",
+            "accept_rate": 87,
+            "profile_image": "https://www.gravatar.com/avatar/1b11262da6d1cd26b1b0bc99a2620cee?s=128&d=identicon&r=PG",
+            "display_name": "Lasse V. Karlsen",
+            "link": "https://stackoverflow.com/users/267/lasse-v-karlsen"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1602156027,
+        "post_id": 64240840,
+        "comment_id": 113634192,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Ok, I found my issue and am putting it out here anyway in case someone else has it. I had not correctly set up the AutoMapper in the project. That said, there was no indication in terms of the intellisense that there was any issue either and it all built fine. So &#39;blaming the tools&#39; ? yes, but as I said before I do realise I am at the bleeding edge, so I don&#39;t blame anyone."
+    },
+    {
+        "owner": {
+            "reputation": 436,
+            "user_id": 1584725,
+            "user_type": "registered",
+            "accept_rate": 67,
+            "profile_image": "https://www.gravatar.com/avatar/3b4af23cd0ebfb961c3ab01ffd884073?s=128&d=identicon&r=PG",
+            "display_name": "Brett JB",
+            "link": "https://stackoverflow.com/users/1584725/brett-jb"
+        },
+        "reply_to_user": {
+            "reputation": 353954,
+            "user_id": 267,
+            "user_type": "registered",
+            "accept_rate": 87,
+            "profile_image": "https://www.gravatar.com/avatar/1b11262da6d1cd26b1b0bc99a2620cee?s=128&d=identicon&r=PG",
+            "display_name": "Lasse V. Karlsen",
+            "link": "https://stackoverflow.com/users/267/lasse-v-karlsen"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1602063043,
+        "post_id": 64240840,
+        "comment_id": 113598560,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Yes, I did ... it fell over at the first one.. I am just trying an experiment - scaffolding a new controller with CRUD so it uses the DB context. Weirdly it added sqlite as a dependency (not sure why - yet) but the code it creates does use DI for the context so I tried it again with just the context and the mapper enabled and it has failed again. I am going to try and call the scaffolded controller - see what happens..."
+    },
+    {
+        "owner": {
+            "reputation": 353954,
+            "user_id": 267,
+            "user_type": "registered",
+            "accept_rate": 87,
+            "profile_image": "https://www.gravatar.com/avatar/1b11262da6d1cd26b1b0bc99a2620cee?s=128&d=identicon&r=PG",
+            "display_name": "Lasse V. Karlsen",
+            "link": "https://stackoverflow.com/users/267/lasse-v-karlsen"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1602062128,
+        "post_id": 64240840,
+        "comment_id": 113598079,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Have you tried doing what you said &quot;works&quot;, adding an empty constructor, and then adding back one dependency at a time until it breaks? Perhaps this might yield some insight into what might be wrong."
+    }
+]

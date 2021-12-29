@@ -1,0 +1,56 @@
+[
+    {
+        "owner": {
+            "reputation": 40858,
+            "user_id": 842935,
+            "user_type": "registered",
+            "accept_rate": 85,
+            "profile_image": "https://www.gravatar.com/avatar/2b3b9d4aa138cb30767b8b1a7a90f027?s=128&d=identicon&r=PG",
+            "display_name": "dani herrera",
+            "link": "https://stackoverflow.com/users/842935/dani-herrera"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1590350751,
+        "post_id": 61963701,
+        "comment_id": 109641964,
+        "content_license": "CC BY-SA 4.0",
+        "body": "no endpoints, just a redirect to identity pages with a callback <code>&#47;Identity&#47;Account&#47;Login</code> <code>&#47;Identity&#47;Account&#47;Logout</code> <code>&#47;Identity&#47;Account&#47;Manage</code>  info here: <a href=\"https://docs.microsoft.com/en-us/aspnet/core/security/authentication/identity?view=aspnetcore-3.1&amp;tabs=visual-studio#create-a-web-app-with-authentication\" rel=\"nofollow noreferrer\">docs.microsoft.com/en-us/aspnet/core/security/authentication&zwnj;&#8203;/&hellip;</a>"
+    },
+    {
+        "owner": {
+            "reputation": 13400,
+            "user_id": 2940908,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://i.stack.imgur.com/E79WU.jpg?s=128&g=1",
+            "display_name": "agua from mars",
+            "link": "https://stackoverflow.com/users/2940908/agua-from-mars"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1590220728,
+        "post_id": 61963701,
+        "comment_id": 109602708,
+        "content_license": "CC BY-SA 4.0",
+        "body": "An actually there isn&#39;t REST enpoints AFAIK"
+    },
+    {
+        "owner": {
+            "reputation": 13400,
+            "user_id": 2940908,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://i.stack.imgur.com/E79WU.jpg?s=128&g=1",
+            "display_name": "agua from mars",
+            "link": "https://stackoverflow.com/users/2940908/agua-from-mars"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1590220528,
+        "post_id": 61963701,
+        "comment_id": 109602663,
+        "content_license": "CC BY-SA 4.0",
+        "body": "That depends on your config. by examining network log on your browser developer tool you&#39;ll find them"
+    }
+]

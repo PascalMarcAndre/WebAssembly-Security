@@ -1,0 +1,19 @@
+[
+    {
+        "owner": {
+            "reputation": 5178,
+            "user_id": 1492496,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/dO7to.png?s=128&g=1",
+            "display_name": "Brian Parker",
+            "link": "https://stackoverflow.com/users/1492496/brian-parker"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1594415799,
+        "post_id": 62841969,
+        "comment_id": 111129592,
+        "content_license": "CC BY-SA 4.0",
+        "body": "You make no mention of configuring your client to send the tokens. I use the material here for reference:  <a href=\"https://docs.microsoft.com/en-us/aspnet/core/blazor/security/webassembly/hosted-with-identity-server?view=aspnetcore-3.1\" rel=\"nofollow noreferrer\">docs.microsoft.com/en-us/aspnet/core/blazor/security/&hellip;</a>"
+    }
+]

@@ -1,0 +1,123 @@
+[
+    {
+        "owner": {
+            "reputation": 138,
+            "user_id": 11080892,
+            "user_type": "registered",
+            "profile_image": "https://lh4.googleusercontent.com/--FtsbDs1DdA/AAAAAAAAAAI/AAAAAAAAABc/kpnXGBoIXwk/photo.jpg?sz=128",
+            "display_name": "Jeff Bacon",
+            "link": "https://stackoverflow.com/users/11080892/jeff-bacon"
+        },
+        "reply_to_user": {
+            "reputation": 546,
+            "user_id": 2066505,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/ee3045e54e1f882316f084de9b278915?s=128&d=identicon&r=PG",
+            "display_name": "HExit",
+            "link": "https://stackoverflow.com/users/2066505/hexit"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1603377749,
+        "post_id": 63063237,
+        "comment_id": 114023766,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@HExit did you try the code in my answer below? It parses the local storage data in the browser that is saved after a login to get the id_token and access_token."
+    },
+    {
+        "owner": {
+            "reputation": 546,
+            "user_id": 2066505,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/ee3045e54e1f882316f084de9b278915?s=128&d=identicon&r=PG",
+            "display_name": "HExit",
+            "link": "https://stackoverflow.com/users/2066505/hexit"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1603362684,
+        "post_id": 63063237,
+        "comment_id": 114016274,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Hi @JeffBacon, I have the same setup as you do.  I am able to login fine, but not able to get the access token.   with the following code.             TokenProvider.RequestAccessToken();               Because of the \u201cX-Frame-Options\u201c directive set to \u201cDENY\u201c error.  I have posted a question.  <a href=\"https://stackoverflow.com/questions/64480229\">stackoverflow.com/questions/64480229</a> Can you please help me with it.  Thank you."
+    },
+    {
+        "owner": {
+            "reputation": 1825,
+            "user_id": 3486567,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/3e554e74f28210f5f84aef154ffd5f72?s=128&d=identicon&r=PG",
+            "display_name": "nahidf",
+            "link": "https://stackoverflow.com/users/3486567/nahidf"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1595907822,
+        "post_id": 63063237,
+        "comment_id": 111629190,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Checkout this answer <a href=\"https://stackoverflow.com/a/63109855/3486567\">stackoverflow.com/a/63109855/3486567</a> I have not tried it myself yet but seems to be ok @JeffBacon"
+    },
+    {
+        "owner": {
+            "reputation": 217,
+            "user_id": 215015,
+            "user_type": "registered",
+            "accept_rate": 75,
+            "profile_image": "https://www.gravatar.com/avatar/528a66df3b23809bdf196043eb02ca91?s=128&d=identicon&r=PG",
+            "display_name": "Robie",
+            "link": "https://stackoverflow.com/users/215015/robie"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1595794156,
+        "post_id": 63063237,
+        "comment_id": 111590625,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I have got the same problem, it would be great if someone could help share their experience on how I can access the idToken instead of the accessToken which can be accessed from the IAccessTokenProvider. I do not see any IdTokenProvider"
+    },
+    {
+        "owner": {
+            "reputation": 138,
+            "user_id": 11080892,
+            "user_type": "registered",
+            "profile_image": "https://lh4.googleusercontent.com/--FtsbDs1DdA/AAAAAAAAAAI/AAAAAAAAABc/kpnXGBoIXwk/photo.jpg?sz=128",
+            "display_name": "Jeff Bacon",
+            "link": "https://stackoverflow.com/users/11080892/jeff-bacon"
+        },
+        "reply_to_user": {
+            "reputation": 1,
+            "user_id": 6152891,
+            "user_type": "registered",
+            "accept_rate": 75,
+            "profile_image": "https://www.gravatar.com/avatar/b45b7f89429f8766cdbf6c776c0a9d41?s=128&d=identicon&r=PG",
+            "display_name": "enet",
+            "link": "https://stackoverflow.com/users/6152891/enet"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1595596651,
+        "post_id": 63063237,
+        "comment_id": 111537890,
+        "content_license": "CC BY-SA 4.0",
+        "body": "In order for the token to get on the HTTP request via the HttpClient, there is setup in the Progam.cs:Main - which I have done. I used a custom handler to do logging for debuging mainly and to try and troubleshoot. Cognito requires a response type of &#39;code&#39; for the OpenId Connect setup - other values fail."
+    },
+    {
+        "owner": {
+            "reputation": 1,
+            "user_id": 6152891,
+            "user_type": "registered",
+            "accept_rate": 75,
+            "profile_image": "https://www.gravatar.com/avatar/b45b7f89429f8766cdbf6c776c0a9d41?s=128&d=identicon&r=PG",
+            "display_name": "enet",
+            "link": "https://stackoverflow.com/users/6152891/enet"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1595542561,
+        "post_id": 63063237,
+        "comment_id": 111519957,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Your AuthorizationMessageHandler does nothing...Ordinarily you perform an HTTP call, and the AuthorizationMessageHandler automatically and transparently add the access token to the request header, after calling the access token provider, but in your sample code you do that manually... I can&#39;t say much with such a meager context you provide: your setting...etc. However, I&#39;d like to direct you to the provider option that has an option named ResponseType which should be set to  &quot;id_token token&quot; in order to get an id_token."
+    }
+]

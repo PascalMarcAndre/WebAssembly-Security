@@ -1,0 +1,45 @@
+[
+    {
+        "owner": {
+            "reputation": 550,
+            "user_id": 1464438,
+            "user_type": "registered",
+            "accept_rate": 92,
+            "profile_image": "https://i.stack.imgur.com/CPxh2.jpg?s=128&g=1",
+            "display_name": "Taylor C. White",
+            "link": "https://stackoverflow.com/users/1464438/taylor-c-white"
+        },
+        "reply_to_user": {
+            "reputation": 5178,
+            "user_id": 1492496,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/dO7to.png?s=128&g=1",
+            "display_name": "Brian Parker",
+            "link": "https://stackoverflow.com/users/1492496/brian-parker"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1598016001,
+        "post_id": 63493753,
+        "comment_id": 112328526,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I did not, but that also wasn&#39;t called out as a requirement in that set up document. I figured out the cause, the client Id wasn&#39;t prepended with the scheme/protocol, which seems odd that it had this effect. This specific line is called out here: <a href=\"https://docs.microsoft.com/en-us/aspnet/core/blazor/security/webassembly/standalone-with-microsoft-accounts?view=aspnetcore-3.1#code-try-5\" rel=\"nofollow noreferrer\">docs.microsoft.com/en-us/aspnet/core/blazor/security/&hellip;</a>, but they describe it as &quot;try either one&quot; which I find odd.  Is there a tutorial doc/overview of the custom user factory to process roles/groups claims? I&#39;m really struggling to find an overview of this process."
+    },
+    {
+        "owner": {
+            "reputation": 5178,
+            "user_id": 1492496,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/dO7to.png?s=128&g=1",
+            "display_name": "Brian Parker",
+            "link": "https://stackoverflow.com/users/1492496/brian-parker"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1597870159,
+        "post_id": 63493753,
+        "comment_id": 112277646,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Did you create a custom user factory to process roles and groups claims?"
+    }
+]

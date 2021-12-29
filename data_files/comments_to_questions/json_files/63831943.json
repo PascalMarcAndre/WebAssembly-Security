@@ -1,0 +1,230 @@
+[
+    {
+        "owner": {
+            "reputation": 240386,
+            "user_id": 60761,
+            "user_type": "registered",
+            "accept_rate": 91,
+            "profile_image": "https://www.gravatar.com/avatar/5bf43bae0431d8f4a062234b5e3a0cb9?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Henk Holterman",
+            "link": "https://stackoverflow.com/users/60761/henk-holterman"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1599822607,
+        "post_id": 63831943,
+        "comment_id": 112900508,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Cookies are not really used or supported for API requests. Use normal JSON payloads and optionally set a Bearer token in the Headers.  Plenty of examples laying around for how to do that."
+    },
+    {
+        "owner": {
+            "reputation": 83,
+            "user_id": 9182405,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/aa60cfe3be6b12825c32eddc9aeced02?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Dumas.DED",
+            "link": "https://stackoverflow.com/users/9182405/dumas-ded"
+        },
+        "reply_to_user": {
+            "reputation": 814,
+            "user_id": 10955627,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/9eee353ec4ef387d51369ba414fbabcb?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Mihaimyh",
+            "link": "https://stackoverflow.com/users/10955627/mihaimyh"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1599751722,
+        "post_id": 63831943,
+        "comment_id": 112877459,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@Mihaimyh - I am not actually POST-ing to the server in this particular case - the <code>_HttpClient.GetFromJsonAsync&lt;User&gt;(&quot;api&#47;users&#47;MyUserInfo&quot;)</code> call is just a GET request to the server for the current user&#39;s info. I&#39;m expecting that request to include the cookie from the browser, but on the server side the cookie just isn&#39;t showing up at all."
+    },
+    {
+        "owner": {
+            "reputation": 814,
+            "user_id": 10955627,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/9eee353ec4ef387d51369ba414fbabcb?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Mihaimyh",
+            "link": "https://stackoverflow.com/users/10955627/mihaimyh"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1599751471,
+        "post_id": 63831943,
+        "comment_id": 112877326,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I am a little confused here, you are trying to include something in the header when you are POST-ing to the server or your are looking for something sent by the server in the response headers? <code>_HttpClient.DefaultRequestHeaders.Add(&quot;Test&quot;, &quot;ABC123&quot;);</code> should be followed by a POST request, not a GET, if your scope is to send it to the server."
+    },
+    {
+        "owner": {
+            "reputation": 83,
+            "user_id": 9182405,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/aa60cfe3be6b12825c32eddc9aeced02?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Dumas.DED",
+            "link": "https://stackoverflow.com/users/9182405/dumas-ded"
+        },
+        "reply_to_user": {
+            "reputation": 814,
+            "user_id": 10955627,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/9eee353ec4ef387d51369ba414fbabcb?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Mihaimyh",
+            "link": "https://stackoverflow.com/users/10955627/mihaimyh"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1599751259,
+        "post_id": 63831943,
+        "comment_id": 112877219,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@Mihaimyh - Gave it a try, but unfortunately the result is the same. The cookie doesn&#39;t come through at all. See my edit above for more detail."
+    },
+    {
+        "owner": {
+            "reputation": 83,
+            "user_id": 9182405,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/aa60cfe3be6b12825c32eddc9aeced02?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Dumas.DED",
+            "link": "https://stackoverflow.com/users/9182405/dumas-ded"
+        },
+        "reply_to_user": {
+            "reputation": 831,
+            "user_id": 5759850,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/vk3AW.jpg?s=128&g=1",
+            "display_name": "Matt Hensley",
+            "link": "https://stackoverflow.com/users/5759850/matt-hensley"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1599750237,
+        "post_id": 63831943,
+        "comment_id": 112876620,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Thanks so much, @MattHensley. Really do appreciate it. Both the API and the UI are using HTTPS, so that ought not to be the problem either. The plot thickens indeed. I guess we&#39;ll see where it leads."
+    },
+    {
+        "owner": {
+            "reputation": 831,
+            "user_id": 5759850,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/vk3AW.jpg?s=128&g=1",
+            "display_name": "Matt Hensley",
+            "link": "https://stackoverflow.com/users/5759850/matt-hensley"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1599750082,
+        "post_id": 63831943,
+        "comment_id": 112876532,
+        "content_license": "CC BY-SA 4.0",
+        "body": "The plot thickens. The only other thing catching my eye is the Secure = true. When that is set to true, both the UI &amp; the API must be utilizing HTTPS for all communications. You might double check that as well. If that doesn&#39;t work, I have upvoted to draw some attention to the question. Best of luck."
+    },
+    {
+        "owner": {
+            "reputation": 814,
+            "user_id": 10955627,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/9eee353ec4ef387d51369ba414fbabcb?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Mihaimyh",
+            "link": "https://stackoverflow.com/users/10955627/mihaimyh"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1599750066,
+        "post_id": 63831943,
+        "comment_id": 112876520,
+        "content_license": "CC BY-SA 4.0",
+        "body": "If I read correctly you are trying to send this cookie to the server, in this case it shouldn&#39;t be a <code>Request</code> not a <code>Response</code>? Can you try adding <code>httpclient.DefaultRequestHeaders.Add(&quot;MyCookie&quot;, &quot;SomeCokkieContent&quot;);</code>"
+    },
+    {
+        "owner": {
+            "reputation": 83,
+            "user_id": 9182405,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/aa60cfe3be6b12825c32eddc9aeced02?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Dumas.DED",
+            "link": "https://stackoverflow.com/users/9182405/dumas-ded"
+        },
+        "reply_to_user": {
+            "reputation": 831,
+            "user_id": 5759850,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/vk3AW.jpg?s=128&g=1",
+            "display_name": "Matt Hensley",
+            "link": "https://stackoverflow.com/users/5759850/matt-hensley"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1599749882,
+        "post_id": 63831943,
+        "comment_id": 112876410,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@MattHensley - Alas. Tried removing that entirely but the problem is still there. In fact it appears to be defaulting to the same value of &quot;/&quot; anyway."
+    },
+    {
+        "owner": {
+            "reputation": 831,
+            "user_id": 5759850,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/vk3AW.jpg?s=128&g=1",
+            "display_name": "Matt Hensley",
+            "link": "https://stackoverflow.com/users/5759850/matt-hensley"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1599749590,
+        "post_id": 63831943,
+        "comment_id": 112876243,
+        "content_license": "CC BY-SA 4.0",
+        "body": "It looks like setting your Path to &quot;/&quot; could be the issue. Looking at the docs, it sounds like that will only include your cookie if the request is to the root of the issued domain. Would you mind removing that property in your CookieOptions &amp; see if the problem persists?   <a href=\"https://docs.microsoft.com/en-us/dotnet/api/system.web.httpcookie.path?view=netframework-4.8\" rel=\"nofollow noreferrer\">docs.microsoft.com/en-us/dotnet/api/&hellip;</a>"
+    },
+    {
+        "owner": {
+            "reputation": 83,
+            "user_id": 9182405,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/aa60cfe3be6b12825c32eddc9aeced02?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Dumas.DED",
+            "link": "https://stackoverflow.com/users/9182405/dumas-ded"
+        },
+        "reply_to_user": {
+            "reputation": 831,
+            "user_id": 5759850,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/vk3AW.jpg?s=128&g=1",
+            "display_name": "Matt Hensley",
+            "link": "https://stackoverflow.com/users/5759850/matt-hensley"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1599749008,
+        "post_id": 63831943,
+        "comment_id": 112875882,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@MattHensley - done and done. Edited the original post to add it."
+    },
+    {
+        "owner": {
+            "reputation": 831,
+            "user_id": 5759850,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/vk3AW.jpg?s=128&g=1",
+            "display_name": "Matt Hensley",
+            "link": "https://stackoverflow.com/users/5759850/matt-hensley"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1599748672,
+        "post_id": 63831943,
+        "comment_id": 112875660,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Can you also include the code where the cookie is written or configured? Some settings could be affecting the ability of the browser to properly include it in your requests."
+    }
+]

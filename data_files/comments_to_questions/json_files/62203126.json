@@ -1,0 +1,29 @@
+[
+    {
+        "owner": {
+            "reputation": 1923,
+            "user_id": 3242154,
+            "user_type": "registered",
+            "accept_rate": 80,
+            "profile_image": "https://www.gravatar.com/avatar/3c368f3140571a8d9a652dcf4607d549?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Nicolas",
+            "link": "https://stackoverflow.com/users/3242154/nicolas"
+        },
+        "reply_to_user": {
+            "reputation": 240386,
+            "user_id": 60761,
+            "user_type": "registered",
+            "accept_rate": 91,
+            "profile_image": "https://www.gravatar.com/avatar/5bf43bae0431d8f4a062234b5e3a0cb9?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Henk Holterman",
+            "link": "https://stackoverflow.com/users/60761/henk-holterman"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1591303089,
+        "post_id": 62203126,
+        "comment_id": 110013345,
+        "content_license": "CC BY-SA 4.0",
+        "body": "what if you would want a navbar above the login form with buttons like more info or pricing (which is the marketingpage). Then there would be a partial page (the nav) in your login page (or something like that). The point is that you sometimes want some other component also being shown on the login page."
+    }
+]

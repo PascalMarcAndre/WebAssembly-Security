@@ -1,0 +1,82 @@
+[
+    {
+        "owner": {
+            "reputation": 7321,
+            "user_id": 68490,
+            "user_type": "registered",
+            "accept_rate": 20,
+            "profile_image": "https://www.gravatar.com/avatar/b3c70bbc491ede87ae5682c561af07d2?s=128&d=identicon&r=PG",
+            "display_name": "Tore Nestenius",
+            "link": "https://stackoverflow.com/users/68490/tore-nestenius"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1593062722,
+        "post_id": 62563174,
+        "comment_id": 110648765,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I think this link should be an absolute link with localhost and scheme: &quot;AllowedRedirectUris&quot;: [     &quot;/authentication/login-callback&quot;"
+    },
+    {
+        "owner": {
+            "reputation": 12013,
+            "user_id": 921054,
+            "user_type": "registered",
+            "accept_rate": 59,
+            "profile_image": "https://i.stack.imgur.com/BYYrP.jpg?s=128&g=1",
+            "display_name": "Pavel Voronin",
+            "link": "https://stackoverflow.com/users/921054/pavel-voronin"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1593032685,
+        "post_id": 62563174,
+        "comment_id": 110641792,
+        "content_license": "CC BY-SA 4.0",
+        "body": "So it is not about blazor, it is completely an issue with IS4. Could you try &quot;SPA&quot; profile instead of &quot;IdentityServerSPA&quot; ?"
+    },
+    {
+        "owner": {
+            "reputation": 21,
+            "user_id": 13808181,
+            "user_type": "registered",
+            "profile_image": "https://lh3.googleusercontent.com/-D8VFLyS_M4E/AAAAAAAAAAI/AAAAAAAAAAA/AMZuucka2m74IkgqtA25mXEGSnYYTKljIQ/photo.jpg?sz=128",
+            "display_name": "lkriz",
+            "link": "https://stackoverflow.com/users/13808181/lkriz"
+        },
+        "reply_to_user": {
+            "reputation": 12013,
+            "user_id": 921054,
+            "user_type": "registered",
+            "accept_rate": 59,
+            "profile_image": "https://i.stack.imgur.com/BYYrP.jpg?s=128&g=1",
+            "display_name": "Pavel Voronin",
+            "link": "https://stackoverflow.com/users/921054/pavel-voronin"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1593031961,
+        "post_id": 62563174,
+        "comment_id": 110641515,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Yes, it is accessible and returns 200 code and some HTML code."
+    },
+    {
+        "owner": {
+            "reputation": 12013,
+            "user_id": 921054,
+            "user_type": "registered",
+            "accept_rate": 59,
+            "profile_image": "https://i.stack.imgur.com/BYYrP.jpg?s=128&g=1",
+            "display_name": "Pavel Voronin",
+            "link": "https://stackoverflow.com/users/921054/pavel-voronin"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1593031532,
+        "post_id": 62563174,
+        "comment_id": 110641341,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Sorry for stupid question, but is this url accessible just from browser or postman?"
+    }
+]

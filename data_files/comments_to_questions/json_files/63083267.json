@@ -1,0 +1,53 @@
+[
+    {
+        "owner": {
+            "reputation": 1416,
+            "user_id": 12896555,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/7MDPX.jpg?s=128&g=1",
+            "display_name": "Nadeem Taj",
+            "link": "https://stackoverflow.com/users/12896555/nadeem-taj"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1595934347,
+        "post_id": 63083267,
+        "comment_id": 111639124,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<a href=\"https://github.com/Cular/SignalRJwtAuthTest/tree/ed0b2913876e90a75e0505f6dece95d10cba9ca1/SignalRAuthTest\" rel=\"nofollow noreferrer\">github.com/Cular/SignalRJwtAuthTest/tree/&hellip;</a>"
+    },
+    {
+        "owner": {
+            "reputation": 1354,
+            "user_id": 9175226,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/457b9be9bfde572fce557bd35c3af573?s=128&d=identicon&r=PG",
+            "display_name": "Brennan",
+            "link": "https://stackoverflow.com/users/9175226/brennan"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1595869179,
+        "post_id": 63083267,
+        "comment_id": 111617439,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I&#39;m not sure what the specific issue it here, but you should switch to using the AccessTokenProvider instead of manually creating the query string.  <code>var connection = new HubConnectionBuilder()     .WithUrl(&quot;https:&#47;&#47;example.com&#47;chathub&quot;, options =&gt;     {          options.AccessTokenProvider = () =&gt; Task.FromResult(_myAccessToken);     })     .Build();</code>"
+    },
+    {
+        "owner": {
+            "reputation": 2621,
+            "user_id": 10581132,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/XmD0q.jpg?s=128&g=1",
+            "display_name": "Kiril1512",
+            "link": "https://stackoverflow.com/users/10581132/kiril1512"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1595841284,
+        "post_id": 63083267,
+        "comment_id": 111602925,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Have you tried with <code>[Authorize(AuthenticationSchemes = &quot;Bearer&quot;)]</code>?"
+    }
+]

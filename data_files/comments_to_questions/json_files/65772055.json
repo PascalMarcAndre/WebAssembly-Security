@@ -1,0 +1,88 @@
+[
+    {
+        "owner": {
+            "reputation": 13,
+            "user_id": 11881375,
+            "user_type": "registered",
+            "profile_image": "https://lh6.googleusercontent.com/-8PIOV3maF3s/AAAAAAAAAAI/AAAAAAAACW4/sd01xFkdTQM/photo.jpg?sz=128",
+            "display_name": "Mees van Straten",
+            "link": "https://stackoverflow.com/users/11881375/mees-van-straten"
+        },
+        "reply_to_user": {
+            "reputation": 1,
+            "user_id": 6152891,
+            "user_type": "registered",
+            "accept_rate": 75,
+            "profile_image": "https://www.gravatar.com/avatar/b45b7f89429f8766cdbf6c776c0a9d41?s=128&d=identicon&r=PG",
+            "display_name": "enet",
+            "link": "https://stackoverflow.com/users/6152891/enet"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1610972437,
+        "post_id": 65772055,
+        "comment_id": 116293012,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@enet Exactly, that is my problem. It does get stored for about half a second something like oidc.user etc en then after a redirect or navigating to another page within my application its no longer there. Because of that my user now is logged out. This problem only is here after deploying, running it locally works."
+    },
+    {
+        "owner": {
+            "reputation": 1,
+            "user_id": 6152891,
+            "user_type": "registered",
+            "accept_rate": 75,
+            "profile_image": "https://www.gravatar.com/avatar/b45b7f89429f8766cdbf6c776c0a9d41?s=128&d=identicon&r=PG",
+            "display_name": "enet",
+            "link": "https://stackoverflow.com/users/6152891/enet"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1610970258,
+        "post_id": 65772055,
+        "comment_id": 116292106,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I don&#39;t see a value whose Key is something like this:  &quot;oidc.user:<a href=\"https://localhost:44308:BlazorApp1.Client\" rel=\"nofollow noreferrer\">localhost:44308:BlazorApp1.Client</a>&quot;"
+    },
+    {
+        "owner": {
+            "reputation": 13,
+            "user_id": 11881375,
+            "user_type": "registered",
+            "profile_image": "https://lh6.googleusercontent.com/-8PIOV3maF3s/AAAAAAAAAAI/AAAAAAAACW4/sd01xFkdTQM/photo.jpg?sz=128",
+            "display_name": "Mees van Straten",
+            "link": "https://stackoverflow.com/users/11881375/mees-van-straten"
+        },
+        "reply_to_user": {
+            "reputation": 1138,
+            "user_id": 14625593,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/o6RMg.png?s=128&g=1",
+            "display_name": "Just the benno",
+            "link": "https://stackoverflow.com/users/14625593/just-the-benno"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1610966217,
+        "post_id": 65772055,
+        "comment_id": 116290214,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@Justthebenno Yes a different   &#39;@page&#39; within the same application. The token is put in the local storage when logged in, but it is removed when navigating to a different &#39;@page&#39; or refreshing the browser window. The token being removed is my issue, and i do not know why this happens."
+    },
+    {
+        "owner": {
+            "reputation": 1138,
+            "user_id": 14625593,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/o6RMg.png?s=128&g=1",
+            "display_name": "Just the benno",
+            "link": "https://stackoverflow.com/users/14625593/just-the-benno"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1610965791,
+        "post_id": 65772055,
+        "comment_id": 116290015,
+        "content_license": "CC BY-SA 4.0",
+        "body": "You said that when you are running your app locally, the token is stored in the local storage. Your screenshot shows the session store. The <a href=\"https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage\" rel=\"nofollow noreferrer\">session store</a> is cleared on refresh. What do you mean by &quot;different page&quot;?. A different <code>@page</code> but within the same blazor application?  Is there a reason for not using local storage to persist the token?"
+    }
+]

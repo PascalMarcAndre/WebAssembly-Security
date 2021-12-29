@@ -1,0 +1,19 @@
+[
+    {
+        "owner": {
+            "reputation": 11802,
+            "user_id": 8816585,
+            "user_type": "registered",
+            "profile_image": "https://lh4.googleusercontent.com/-y06pOmxUtrA/AAAAAAAAAAI/AAAAAAAAAzA/ZWPuSHyPYDM/photo.jpg?sz=128",
+            "display_name": "kissu",
+            "link": "https://stackoverflow.com/users/8816585/kissu"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1611097211,
+        "post_id": 65799627,
+        "comment_id": 116340180,
+        "content_license": "CC BY-SA 4.0",
+        "body": "The linked article example is in french, will not be easy for people to help you here. But let&#39;s see if somebody can still help you or use a google translate."
+    }
+]

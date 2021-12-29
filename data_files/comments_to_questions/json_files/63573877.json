@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 13855,
+            "user_id": 61311,
+            "user_type": "registered",
+            "accept_rate": 71,
+            "profile_image": "https://i.stack.imgur.com/EgbU7.jpg?s=128&g=1",
+            "display_name": "Peter Morris",
+            "link": "https://stackoverflow.com/users/61311/peter-morris"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1598342307,
+        "post_id": 63573877,
+        "comment_id": 112419769,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Have you added a bearer token to your request headers?"
+    }
+]

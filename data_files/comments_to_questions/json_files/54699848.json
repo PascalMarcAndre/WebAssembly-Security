@@ -1,0 +1,90 @@
+[
+    {
+        "owner": {
+            "reputation": 2644,
+            "user_id": 4781312,
+            "user_type": "registered",
+            "accept_rate": 100,
+            "profile_image": "https://i.stack.imgur.com/eoPWj.png?s=128&g=1",
+            "display_name": "Asesh",
+            "link": "https://stackoverflow.com/users/4781312/asesh"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1550648997,
+        "post_id": 54699848,
+        "comment_id": 96341148,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Building desktop apps with Electron much more easier than dealing with Chromium&#39;s source code. You can use Node.js in Electron through which you will be able to access file system and even access clipboard too. I wouldn&#39;t use Chrome/Chromium for hosting desktop apps. Better use Electron"
+    },
+    {
+        "owner": {
+            "reputation": 184,
+            "user_id": 1109741,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/8ce3672a70f2aae96ff3da502ea58417?s=128&d=identicon&r=PG",
+            "display_name": "Matanya Cohen",
+            "link": "https://stackoverflow.com/users/1109741/matanya-cohen"
+        },
+        "reply_to_user": {
+            "reputation": 2644,
+            "user_id": 4781312,
+            "user_type": "registered",
+            "accept_rate": 100,
+            "profile_image": "https://i.stack.imgur.com/eoPWj.png?s=128&g=1",
+            "display_name": "Asesh",
+            "link": "https://stackoverflow.com/users/4781312/asesh"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1550645251,
+        "post_id": 54699848,
+        "comment_id": 96339498,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I try be more concrete. For my desktop app, I need ability to send data directly to the Clipboard, Or I need write directly to File system. If I use with --no-sandbox tag I can achieve it? (Please don&#39;t tell me about the work around to do so. I just want the HTML ui, but I bot need any Sandbox)."
+    },
+    {
+        "owner": {
+            "reputation": 184,
+            "user_id": 1109741,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/8ce3672a70f2aae96ff3da502ea58417?s=128&d=identicon&r=PG",
+            "display_name": "Matanya Cohen",
+            "link": "https://stackoverflow.com/users/1109741/matanya-cohen"
+        },
+        "reply_to_user": {
+            "reputation": 2644,
+            "user_id": 4781312,
+            "user_type": "registered",
+            "accept_rate": 100,
+            "profile_image": "https://i.stack.imgur.com/eoPWj.png?s=128&g=1",
+            "display_name": "Asesh",
+            "link": "https://stackoverflow.com/users/4781312/asesh"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1550218138,
+        "post_id": 54699848,
+        "comment_id": 96195733,
+        "content_license": "CC BY-SA 4.0",
+        "body": "As time pass many developer realize that HTML render is the better way to build their UI for desktop app. So why we need build it with Electron on other complicated way. way not have ability to enter all functionality into chromium. We just need keep not browsing internet with this app, and we not need any Sandbox as every desktop application. Why we need build it upon Node or Embedded Chromium to achieve bypass to access local system?"
+    },
+    {
+        "owner": {
+            "reputation": 2644,
+            "user_id": 4781312,
+            "user_type": "registered",
+            "accept_rate": 100,
+            "profile_image": "https://i.stack.imgur.com/eoPWj.png?s=128&g=1",
+            "display_name": "Asesh",
+            "link": "https://stackoverflow.com/users/4781312/asesh"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1550201938,
+        "post_id": 54699848,
+        "comment_id": 96190951,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Sandbox makes exploiting security holes very difficult. By default all the render processes including extensions will have sandbox enabled. Here&#39;s more on sandbox: <a href=\"https://chromium.googlesource.com/chromium/src/+/lkgr/docs/design/sandbox.md\" rel=\"nofollow noreferrer\">chromium.googlesource.com/chromium/src/+/lkgr/docs/design/&hellip;</a>"
+    }
+]

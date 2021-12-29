@@ -1,0 +1,19 @@
+[
+    {
+        "owner": {
+            "reputation": 1138,
+            "user_id": 14625593,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/o6RMg.png?s=128&g=1",
+            "display_name": "Just the benno",
+            "link": "https://stackoverflow.com/users/14625593/just-the-benno"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1611828287,
+        "post_id": 65808332,
+        "comment_id": 116577669,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Hi @godlypython. Have any of the answers solved your question/issue?"
+    }
+]

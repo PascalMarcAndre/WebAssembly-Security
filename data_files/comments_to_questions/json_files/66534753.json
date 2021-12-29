@@ -1,0 +1,90 @@
+[
+    {
+        "owner": {
+            "reputation": 7321,
+            "user_id": 68490,
+            "user_type": "registered",
+            "accept_rate": 20,
+            "profile_image": "https://www.gravatar.com/avatar/b3c70bbc491ede87ae5682c561af07d2?s=128&d=identicon&r=PG",
+            "display_name": "Tore Nestenius",
+            "link": "https://stackoverflow.com/users/68490/tore-nestenius"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1615274785,
+        "post_id": 66534753,
+        "comment_id": 117633666,
+        "content_license": "CC BY-SA 4.0",
+        "body": "you have two // in the url here  &quot;PostLogoutRedirectUri&quot;: &quot;<a href=\"https://localhost:5001//authentication/logout-callback\" rel=\"nofollow noreferrer\">localhost:5001//authentication/logout-callback</a>&quot;,"
+    },
+    {
+        "owner": {
+            "reputation": 431,
+            "user_id": 14201840,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/4e05d4fd94801927852066255854d2c6?s=128&d=identicon&r=PG&f=1",
+            "display_name": "TheNoobProgrammer",
+            "link": "https://stackoverflow.com/users/14201840/thenoobprogrammer"
+        },
+        "reply_to_user": {
+            "reputation": 7321,
+            "user_id": 68490,
+            "user_type": "registered",
+            "accept_rate": 20,
+            "profile_image": "https://www.gravatar.com/avatar/b3c70bbc491ede87ae5682c561af07d2?s=128&d=identicon&r=PG",
+            "display_name": "Tore Nestenius",
+            "link": "https://stackoverflow.com/users/68490/tore-nestenius"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1615258333,
+        "post_id": 66534753,
+        "comment_id": 117629725,
+        "content_license": "CC BY-SA 4.0",
+        "body": "After sometime, i think the problem is that i don&#39;t setup the Identity Server UI. From a tutorial i saw from a website, the user is redirected to the server login page. The problem is that i set the backend to be pure gRPC by default with the identity server config and what @ToreNestenius said is true,  i already change the authority url in the appsettings.json"
+    },
+    {
+        "owner": {
+            "reputation": 431,
+            "user_id": 14201840,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/4e05d4fd94801927852066255854d2c6?s=128&d=identicon&r=PG&f=1",
+            "display_name": "TheNoobProgrammer",
+            "link": "https://stackoverflow.com/users/14201840/thenoobprogrammer"
+        },
+        "reply_to_user": {
+            "reputation": 7321,
+            "user_id": 68490,
+            "user_type": "registered",
+            "accept_rate": 20,
+            "profile_image": "https://www.gravatar.com/avatar/b3c70bbc491ede87ae5682c561af07d2?s=128&d=identicon&r=PG",
+            "display_name": "Tore Nestenius",
+            "link": "https://stackoverflow.com/users/68490/tore-nestenius"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1615255405,
+        "post_id": 66534753,
+        "comment_id": 117629116,
+        "content_license": "CC BY-SA 4.0",
+        "body": "here&#39;s from the doc.   &quot;To be able to use Google for authentication, you first need to register with them. This is done at their developer console. Create a new project, enable the Google+ API and configure the callback address of your local IdentityServer by adding the /signin-google path to your base-address (e.g. <a href=\"http://localhost:5000/signin-google\" rel=\"nofollow noreferrer\">localhost:5000/signin-google</a>).&quot;"
+    },
+    {
+        "owner": {
+            "reputation": 7321,
+            "user_id": 68490,
+            "user_type": "registered",
+            "accept_rate": 20,
+            "profile_image": "https://www.gravatar.com/avatar/b3c70bbc491ede87ae5682c561af07d2?s=128&d=identicon&r=PG",
+            "display_name": "Tore Nestenius",
+            "link": "https://stackoverflow.com/users/68490/tore-nestenius"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1615226183,
+        "post_id": 66534753,
+        "comment_id": 117620457,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Are you sure <a href=\"https://localhost:5000/signin-google/.well-known/openid-configuration\" rel=\"nofollow noreferrer\">localhost:5000/signin-google/.well-known/openid-configuratio&zwnj;&#8203;n</a> is a valid url? often the discovery document is on <a href=\"https://localhost:5000/.well-known/openid-configuration\" rel=\"nofollow noreferrer\">localhost:5000/.well-known/openid-configuration</a>"
+    }
+]

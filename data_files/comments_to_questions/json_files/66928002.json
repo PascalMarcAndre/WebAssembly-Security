@@ -1,0 +1,46 @@
+[
+    {
+        "owner": {
+            "reputation": 1,
+            "user_id": 12484570,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/70ca0a6afb66dc21ba0397aa66bc21dd?s=128&d=identicon&r=PG&f=1",
+            "display_name": "agretsuko",
+            "link": "https://stackoverflow.com/users/12484570/agretsuko"
+        },
+        "reply_to_user": {
+            "reputation": 57569,
+            "user_id": 1679602,
+            "user_type": "registered",
+            "accept_rate": 65,
+            "profile_image": "https://i.stack.imgur.com/waYTU.jpg?s=128&g=1",
+            "display_name": "King King",
+            "link": "https://stackoverflow.com/users/1679602/king-king"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1617548828,
+        "post_id": 66928002,
+        "comment_id": 118330081,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I had already added services.HttpContextAccessor() but still receive the same error. (I have edited my post to include Startup.ConfigureServices.)"
+    },
+    {
+        "owner": {
+            "reputation": 57569,
+            "user_id": 1679602,
+            "user_type": "registered",
+            "accept_rate": 65,
+            "profile_image": "https://i.stack.imgur.com/waYTU.jpg?s=128&g=1",
+            "display_name": "King King",
+            "link": "https://stackoverflow.com/users/1679602/king-king"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1617436713,
+        "post_id": 66928002,
+        "comment_id": 118306630,
+        "content_license": "CC BY-SA 4.0",
+        "body": "in your <code>Startup.ConfigureServices</code> you need to have this <code>services.AddHttpContextAccessor();</code> to register the <code>IHttpContextAccessor</code>"
+    }
+]

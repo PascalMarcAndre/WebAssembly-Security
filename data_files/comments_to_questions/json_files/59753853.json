@@ -1,0 +1,38 @@
+[
+    {
+        "owner": {
+            "reputation": 285606,
+            "user_id": 155423,
+            "user_type": "registered",
+            "accept_rate": 90,
+            "profile_image": "https://www.gravatar.com/avatar/419218774d04a581476ea1887a0921e0?s=128&d=identicon&r=PG",
+            "display_name": "Shepmaster",
+            "link": "https://stackoverflow.com/users/155423/shepmaster"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1579100247,
+        "post_id": 59753853,
+        "comment_id": 105654141,
+        "content_license": "CC BY-SA 4.0",
+        "body": "See also <a href=\"https://stackoverflow.com/q/39266001/155423\">How to introspect all available methods and members of a Rust type?</a>"
+    },
+    {
+        "owner": {
+            "reputation": 285606,
+            "user_id": 155423,
+            "user_type": "registered",
+            "accept_rate": 90,
+            "profile_image": "https://www.gravatar.com/avatar/419218774d04a581476ea1887a0921e0?s=128&d=identicon&r=PG",
+            "display_name": "Shepmaster",
+            "link": "https://stackoverflow.com/users/155423/shepmaster"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1579100034,
+        "post_id": 59753853,
+        "comment_id": 105654018,
+        "content_license": "CC BY-SA 4.0",
+        "body": "No, it is not possible."
+    }
+]

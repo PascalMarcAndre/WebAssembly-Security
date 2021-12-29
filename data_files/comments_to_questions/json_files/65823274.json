@@ -1,0 +1,61 @@
+[
+    {
+        "owner": {
+            "reputation": 5604,
+            "user_id": 456669,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/865f6e52b2997cf077edb24d807fd0ca?s=128&d=identicon&r=PG",
+            "display_name": "Nikki9696",
+            "link": "https://stackoverflow.com/users/456669/nikki9696"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1611352469,
+        "post_id": 65823274,
+        "comment_id": 116433780,
+        "content_license": "CC BY-SA 4.0",
+        "body": "On your machine, it&#39;s probably using your self-signed cert."
+    },
+    {
+        "owner": {
+            "reputation": 55,
+            "user_id": 5766354,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/368bf49d9072f2a178df6a2fa9fb013a?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Luke Vincent",
+            "link": "https://stackoverflow.com/users/5766354/luke-vincent"
+        },
+        "reply_to_user": {
+            "reputation": 5604,
+            "user_id": 456669,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/865f6e52b2997cf077edb24d807fd0ca?s=128&d=identicon&r=PG",
+            "display_name": "Nikki9696",
+            "link": "https://stackoverflow.com/users/456669/nikki9696"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1611351443,
+        "post_id": 65823274,
+        "comment_id": 116433472,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Thanks so much for your reply. Yes, it turned out that it was the security cert. But I dont understand how Blazor server works just fine without one ?? Weird....."
+    },
+    {
+        "owner": {
+            "reputation": 5604,
+            "user_id": 456669,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/865f6e52b2997cf077edb24d807fd0ca?s=128&d=identicon&r=PG",
+            "display_name": "Nikki9696",
+            "link": "https://stackoverflow.com/users/456669/nikki9696"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1611343020,
+        "post_id": 65823274,
+        "comment_id": 116430444,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Stuff I&#39;d look at, if it was mine: 1. What user/account is it running under on prod? When running on local, it usually runs as you, and your permissions are not what the target server has. 2. Firewall problems (probably not your case here, but the target machine has to be able to hit the prod db machine) 3. App config settings in prod, check deployment 4. Security certificates / trust"
+    }
+]

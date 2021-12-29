@@ -1,0 +1,64 @@
+[
+    {
+        "owner": {
+            "reputation": 5,
+            "user_id": 14275324,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/790f4bde62277293cf3ba5564ec298d1?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Bas",
+            "link": "https://stackoverflow.com/users/14275324/bas"
+        },
+        "reply_to_user": {
+            "reputation": 1,
+            "user_id": 6152891,
+            "user_type": "registered",
+            "accept_rate": 75,
+            "profile_image": "https://www.gravatar.com/avatar/b45b7f89429f8766cdbf6c776c0a9d41?s=128&d=identicon&r=PG",
+            "display_name": "enet",
+            "link": "https://stackoverflow.com/users/6152891/enet"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1602655685,
+        "post_id": 64337975,
+        "comment_id": 113785677,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@enet yes, that is exactly what I would like. I know I can edit the login page to look how I want it too, but I dont want to have to leave the domain of the blazor wasm for that to do it."
+    },
+    {
+        "owner": {
+            "reputation": 1,
+            "user_id": 6152891,
+            "user_type": "registered",
+            "accept_rate": 75,
+            "profile_image": "https://www.gravatar.com/avatar/b45b7f89429f8766cdbf6c776c0a9d41?s=128&d=identicon&r=PG",
+            "display_name": "enet",
+            "link": "https://stackoverflow.com/users/6152891/enet"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1602606681,
+        "post_id": 64337975,
+        "comment_id": 113771351,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I&#39;m a little bit thick... Do you mean that you want to create a login form in the WebAssembly app in which some code may authenticate the user, internally pass id-token to Blazor, etc. In other words, you don&#39;t wish Blazor to re-direct the user to the IdentityServer provider for authentication. You don&#39;t want to see the Login page provided by IdentityServer4, but you want one tailored by you."
+    },
+    {
+        "owner": {
+            "reputation": 655,
+            "user_id": 35186,
+            "user_type": "registered",
+            "accept_rate": 33,
+            "profile_image": "https://i.stack.imgur.com/ykhD5.jpg?s=128&g=1",
+            "display_name": "Rav",
+            "link": "https://stackoverflow.com/users/35186/rav"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1602602396,
+        "post_id": 64337975,
+        "comment_id": 113769174,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Thats how it&#39;s supposed to work, IDP on a different site. You can always just use Identity within blazor if you&#39;re not bothered about have a dedicated IDP."
+    }
+]

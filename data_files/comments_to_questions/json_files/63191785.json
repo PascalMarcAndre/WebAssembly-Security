@@ -1,0 +1,65 @@
+[
+    {
+        "owner": {
+            "reputation": 4020,
+            "user_id": 69433,
+            "user_type": "registered",
+            "accept_rate": 87,
+            "profile_image": "https://www.gravatar.com/avatar/5ea646ff4c1c89f3d68c546e37582c9a?s=128&d=identicon&r=PG",
+            "display_name": "adopilot",
+            "link": "https://stackoverflow.com/users/69433/adopilot"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1598279297,
+        "post_id": 63191785,
+        "comment_id": 112399092,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Is there any chance to see how does your blazor web-client handling cookies, I am more fun of cookies then JWT barrier, But I do not know how to save cookie in my webassambly http client"
+    },
+    {
+        "owner": {
+            "reputation": 3093,
+            "user_id": 2427359,
+            "user_type": "registered",
+            "accept_rate": 62,
+            "profile_image": "https://www.gravatar.com/avatar/ab8c78d8270ab839f9461cf72cd20a57?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Simon",
+            "link": "https://stackoverflow.com/users/2427359/simon"
+        },
+        "reply_to_user": {
+            "reputation": 240386,
+            "user_id": 60761,
+            "user_type": "registered",
+            "accept_rate": 91,
+            "profile_image": "https://www.gravatar.com/avatar/5bf43bae0431d8f4a062234b5e3a0cb9?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Henk Holterman",
+            "link": "https://stackoverflow.com/users/60761/henk-holterman"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1596529370,
+        "post_id": 63191785,
+        "comment_id": 111832476,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@HenkHolterman: When I get an http-status code 403 then I can handle it by an suiteable errormessage and redirect the user to the login page."
+    },
+    {
+        "owner": {
+            "reputation": 240386,
+            "user_id": 60761,
+            "user_type": "registered",
+            "accept_rate": 91,
+            "profile_image": "https://www.gravatar.com/avatar/5bf43bae0431d8f4a062234b5e3a0cb9?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Henk Holterman",
+            "link": "https://stackoverflow.com/users/60761/henk-holterman"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1596213203,
+        "post_id": 63191785,
+        "comment_id": 111749802,
+        "content_license": "CC BY-SA 4.0",
+        "body": "What exactly do you mean by &#39;returning 403&#39;, what do you expect the user to see?"
+    }
+]

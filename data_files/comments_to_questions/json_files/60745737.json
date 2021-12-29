@@ -1,0 +1,371 @@
+[
+    {
+        "owner": {
+            "reputation": 795,
+            "user_id": 4873542,
+            "user_type": "registered",
+            "accept_rate": 83,
+            "profile_image": "https://lh4.googleusercontent.com/-Pgb3zoKnvRo/AAAAAAAAAAI/AAAAAAAAAU8/kDuu8Tt_h6Q/photo.jpg?sz=128",
+            "display_name": "Niek Jannink",
+            "link": "https://stackoverflow.com/users/4873542/niek-jannink"
+        },
+        "reply_to_user": {
+            "reputation": 13400,
+            "user_id": 2940908,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://i.stack.imgur.com/E79WU.jpg?s=128&g=1",
+            "display_name": "agua from mars",
+            "link": "https://stackoverflow.com/users/2940908/agua-from-mars"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1584993139,
+        "post_id": 60745737,
+        "comment_id": 107607739,
+        "content_license": "CC BY-SA 4.0",
+        "body": "updated the main question"
+    },
+    {
+        "owner": {
+            "reputation": 13400,
+            "user_id": 2940908,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://i.stack.imgur.com/E79WU.jpg?s=128&g=1",
+            "display_name": "agua from mars",
+            "link": "https://stackoverflow.com/users/2940908/agua-from-mars"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1584777429,
+        "post_id": 60745737,
+        "comment_id": 107545383,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Update your question please, it&#39;s not easy to read in comment"
+    },
+    {
+        "owner": {
+            "reputation": 795,
+            "user_id": 4873542,
+            "user_type": "registered",
+            "accept_rate": 83,
+            "profile_image": "https://lh4.googleusercontent.com/-Pgb3zoKnvRo/AAAAAAAAAAI/AAAAAAAAAU8/kDuu8Tt_h6Q/photo.jpg?sz=128",
+            "display_name": "Niek Jannink",
+            "link": "https://stackoverflow.com/users/4873542/niek-jannink"
+        },
+        "reply_to_user": {
+            "reputation": 13400,
+            "user_id": 2940908,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://i.stack.imgur.com/E79WU.jpg?s=128&g=1",
+            "display_name": "agua from mars",
+            "link": "https://stackoverflow.com/users/2940908/agua-from-mars"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1584731341,
+        "post_id": 60745737,
+        "comment_id": 107536311,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Microservice: <a href=\"https://gist.github.com/njannink/15595b77ffe1c0593be1a555fa37f83f\" rel=\"nofollow noreferrer\">gist.github.com/njannink/15595b77ffe1c0593be1a555fa37f83f</a> Blazor server: <a href=\"https://gist.github.com/njannink/7302a888110e24d199ea45b66da4f26b\" rel=\"nofollow noreferrer\">gist.github.com/njannink/7302a888110e24d199ea45b66da4f26b</a> Blazor client: <a href=\"https://gist.github.com/njannink/add2568cbf48c8b3c070ccd4f28fd127\" rel=\"nofollow noreferrer\">gist.github.com/njannink/add2568cbf48c8b3c070ccd4f28fd127</a>"
+    },
+    {
+        "owner": {
+            "reputation": 13400,
+            "user_id": 2940908,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://i.stack.imgur.com/E79WU.jpg?s=128&g=1",
+            "display_name": "agua from mars",
+            "link": "https://stackoverflow.com/users/2940908/agua-from-mars"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1584713543,
+        "post_id": 60745737,
+        "comment_id": 107528380,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Can you post the initialization code for both client and microservice ?"
+    },
+    {
+        "owner": {
+            "reputation": 795,
+            "user_id": 4873542,
+            "user_type": "registered",
+            "accept_rate": 83,
+            "profile_image": "https://lh4.googleusercontent.com/-Pgb3zoKnvRo/AAAAAAAAAAI/AAAAAAAAAU8/kDuu8Tt_h6Q/photo.jpg?sz=128",
+            "display_name": "Niek Jannink",
+            "link": "https://stackoverflow.com/users/4873542/niek-jannink"
+        },
+        "reply_to_user": {
+            "reputation": 13400,
+            "user_id": 2940908,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://i.stack.imgur.com/E79WU.jpg?s=128&g=1",
+            "display_name": "agua from mars",
+            "link": "https://stackoverflow.com/users/2940908/agua-from-mars"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1584709178,
+        "post_id": 60745737,
+        "comment_id": 107526466,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Yes and it works fine for the controllers"
+    },
+    {
+        "owner": {
+            "reputation": 13400,
+            "user_id": 2940908,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://i.stack.imgur.com/E79WU.jpg?s=128&g=1",
+            "display_name": "agua from mars",
+            "link": "https://stackoverflow.com/users/2940908/agua-from-mars"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1584688589,
+        "post_id": 60745737,
+        "comment_id": 107518493,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<a href=\"https://docs.microsoft.com/en-us/aspnet/core/security/blazor/webassembly/?view=aspnetcore-3.1\" rel=\"nofollow noreferrer\">docs.microsoft.com/en-us/aspnet/core/security/blazor/&hellip;</a>"
+    },
+    {
+        "owner": {
+            "reputation": 13400,
+            "user_id": 2940908,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://i.stack.imgur.com/E79WU.jpg?s=128&g=1",
+            "display_name": "agua from mars",
+            "link": "https://stackoverflow.com/users/2940908/agua-from-mars"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1584688537,
+        "post_id": 60745737,
+        "comment_id": 107518471,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Did you setup authentication for your web assembly client ?"
+    },
+    {
+        "owner": {
+            "reputation": 795,
+            "user_id": 4873542,
+            "user_type": "registered",
+            "accept_rate": 83,
+            "profile_image": "https://lh4.googleusercontent.com/-Pgb3zoKnvRo/AAAAAAAAAAI/AAAAAAAAAU8/kDuu8Tt_h6Q/photo.jpg?sz=128",
+            "display_name": "Niek Jannink",
+            "link": "https://stackoverflow.com/users/4873542/niek-jannink"
+        },
+        "reply_to_user": {
+            "reputation": 13400,
+            "user_id": 2940908,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://i.stack.imgur.com/E79WU.jpg?s=128&g=1",
+            "display_name": "agua from mars",
+            "link": "https://stackoverflow.com/users/2940908/agua-from-mars"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1584673047,
+        "post_id": 60745737,
+        "comment_id": 107515100,
+        "content_license": "CC BY-SA 4.0",
+        "body": "yes and it works fine from my windows app. Only from the SignalR webassembly client not"
+    },
+    {
+        "owner": {
+            "reputation": 13400,
+            "user_id": 2940908,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://i.stack.imgur.com/E79WU.jpg?s=128&g=1",
+            "display_name": "agua from mars",
+            "link": "https://stackoverflow.com/users/2940908/agua-from-mars"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1584655814,
+        "post_id": 60745737,
+        "comment_id": 107511318,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Did you set up authorization in your microservice ?"
+    },
+    {
+        "owner": {
+            "reputation": 795,
+            "user_id": 4873542,
+            "user_type": "registered",
+            "accept_rate": 83,
+            "profile_image": "https://lh4.googleusercontent.com/-Pgb3zoKnvRo/AAAAAAAAAAI/AAAAAAAAAU8/kDuu8Tt_h6Q/photo.jpg?sz=128",
+            "display_name": "Niek Jannink",
+            "link": "https://stackoverflow.com/users/4873542/niek-jannink"
+        },
+        "reply_to_user": {
+            "reputation": 13400,
+            "user_id": 2940908,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://i.stack.imgur.com/E79WU.jpg?s=128&g=1",
+            "display_name": "agua from mars",
+            "link": "https://stackoverflow.com/users/2940908/agua-from-mars"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1584650674,
+        "post_id": 60745737,
+        "comment_id": 107509517,
+        "content_license": "CC BY-SA 4.0",
+        "body": "before the UseSignalR. I removed the [Authorize] attribute from the hub and now it connects"
+    },
+    {
+        "owner": {
+            "reputation": 13400,
+            "user_id": 2940908,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://i.stack.imgur.com/E79WU.jpg?s=128&g=1",
+            "display_name": "agua from mars",
+            "link": "https://stackoverflow.com/users/2940908/agua-from-mars"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1584649379,
+        "post_id": 60745737,
+        "comment_id": 107509071,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Ok, but before or after UseSignalR ?"
+    },
+    {
+        "owner": {
+            "reputation": 795,
+            "user_id": 4873542,
+            "user_type": "registered",
+            "accept_rate": 83,
+            "profile_image": "https://lh4.googleusercontent.com/-Pgb3zoKnvRo/AAAAAAAAAAI/AAAAAAAAAU8/kDuu8Tt_h6Q/photo.jpg?sz=128",
+            "display_name": "Niek Jannink",
+            "link": "https://stackoverflow.com/users/4873542/niek-jannink"
+        },
+        "reply_to_user": {
+            "reputation": 13400,
+            "user_id": 2940908,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://i.stack.imgur.com/E79WU.jpg?s=128&g=1",
+            "display_name": "agua from mars",
+            "link": "https://stackoverflow.com/users/2940908/agua-from-mars"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1584641879,
+        "post_id": 60745737,
+        "comment_id": 107506143,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I tried connecting to the microservice and then I get the same CORS issues even I added the CORS rules to the microservice"
+    },
+    {
+        "owner": {
+            "reputation": 13400,
+            "user_id": 2940908,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://i.stack.imgur.com/E79WU.jpg?s=128&g=1",
+            "display_name": "agua from mars",
+            "link": "https://stackoverflow.com/users/2940908/agua-from-mars"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1584635326,
+        "post_id": 60745737,
+        "comment_id": 107503232,
+        "content_license": "CC BY-SA 4.0",
+        "body": "So you need to connect to that microservice not to your webserver, or create a proxy on your webserver. else your application can&#39;t connect to your SignalR hub."
+    },
+    {
+        "owner": {
+            "reputation": 795,
+            "user_id": 4873542,
+            "user_type": "registered",
+            "accept_rate": 83,
+            "profile_image": "https://lh4.googleusercontent.com/-Pgb3zoKnvRo/AAAAAAAAAAI/AAAAAAAAAU8/kDuu8Tt_h6Q/photo.jpg?sz=128",
+            "display_name": "Niek Jannink",
+            "link": "https://stackoverflow.com/users/4873542/niek-jannink"
+        },
+        "reply_to_user": {
+            "reputation": 13400,
+            "user_id": 2940908,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://i.stack.imgur.com/E79WU.jpg?s=128&g=1",
+            "display_name": "agua from mars",
+            "link": "https://stackoverflow.com/users/2940908/agua-from-mars"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1584622564,
+        "post_id": 60745737,
+        "comment_id": 107496627,
+        "content_license": "CC BY-SA 4.0",
+        "body": "The SignalR hubs are not on the Blazor server, but they are located in a different microservice"
+    },
+    {
+        "owner": {
+            "reputation": 13400,
+            "user_id": 2940908,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://i.stack.imgur.com/E79WU.jpg?s=128&g=1",
+            "display_name": "agua from mars",
+            "link": "https://stackoverflow.com/users/2940908/agua-from-mars"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1584605307,
+        "post_id": 60745737,
+        "comment_id": 107488751,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Don&#39;t you forgot a call to <code>UseSignaR</code> after <code>UseCors</code> ?"
+    },
+    {
+        "owner": {
+            "reputation": 795,
+            "user_id": 4873542,
+            "user_type": "registered",
+            "accept_rate": 83,
+            "profile_image": "https://lh4.googleusercontent.com/-Pgb3zoKnvRo/AAAAAAAAAAI/AAAAAAAAAU8/kDuu8Tt_h6Q/photo.jpg?sz=128",
+            "display_name": "Niek Jannink",
+            "link": "https://stackoverflow.com/users/4873542/niek-jannink"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1584562375,
+        "post_id": 60745737,
+        "comment_id": 107478012,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I moved the CORS policies to the SignalR services and now I get the following error:  WebSocket connection to &#39;ws://localhost:5000/hubs/posts?id=IuYH8BQpJ4DlfTbugrf5-A&#39; failed: HTTP Authentication failed; no valid credentials available"
+    },
+    {
+        "owner": {
+            "reputation": 795,
+            "user_id": 4873542,
+            "user_type": "registered",
+            "accept_rate": 83,
+            "profile_image": "https://lh4.googleusercontent.com/-Pgb3zoKnvRo/AAAAAAAAAAI/AAAAAAAAAU8/kDuu8Tt_h6Q/photo.jpg?sz=128",
+            "display_name": "Niek Jannink",
+            "link": "https://stackoverflow.com/users/4873542/niek-jannink"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1584557839,
+        "post_id": 60745737,
+        "comment_id": 107476179,
+        "content_license": "CC BY-SA 4.0",
+        "body": "When I look with fiddler at the networkt traffic I actually see that the authorization header isn&#39;t passed to the signalr url"
+    }
+]

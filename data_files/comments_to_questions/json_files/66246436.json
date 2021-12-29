@@ -1,0 +1,97 @@
+[
+    {
+        "owner": {
+            "reputation": 13,
+            "user_id": 13681455,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/453183c305fffd9afd8f28701f9adba1?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Mohammed Rubeesh ",
+            "link": "https://stackoverflow.com/users/13681455/mohammed-rubeesh"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1613968645,
+        "post_id": 66246436,
+        "comment_id": 117230334,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Is there any different approach to achieve the same. Can anyone help."
+    },
+    {
+        "owner": {
+            "reputation": 13,
+            "user_id": 13681455,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/453183c305fffd9afd8f28701f9adba1?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Mohammed Rubeesh ",
+            "link": "https://stackoverflow.com/users/13681455/mohammed-rubeesh"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1613642619,
+        "post_id": 66246436,
+        "comment_id": 117140216,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I had already tried that, but ClientConstants.PolicyLoaded value doesn&#39;t change.  PolicyLoaded never gets notified and is always false.  Please find the code updated Above"
+    },
+    {
+        "owner": {
+            "reputation": 1138,
+            "user_id": 14625593,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/o6RMg.png?s=128&g=1",
+            "display_name": "Just the benno",
+            "link": "https://stackoverflow.com/users/14625593/just-the-benno"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1613626714,
+        "post_id": 66246436,
+        "comment_id": 117134351,
+        "content_license": "CC BY-SA 4.0",
+        "body": "What about using the <code>App.razor</code> and showing your <code>&lt;LoadingSpinner &gt;</code> as long as your <code>AppLoadStatus.PolicyLoaded = false</code>; It might slow down the loading time of pages that don&#39;t need authorization but should be a good first solution. A different approach would be to tweak the router logic a bit. If you are interested, I could create a quick example."
+    },
+    {
+        "owner": {
+            "reputation": 13,
+            "user_id": 13681455,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/453183c305fffd9afd8f28701f9adba1?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Mohammed Rubeesh ",
+            "link": "https://stackoverflow.com/users/13681455/mohammed-rubeesh"
+        },
+        "reply_to_user": {
+            "reputation": 6999,
+            "user_id": 6717178,
+            "user_type": "registered",
+            "accept_rate": 100,
+            "profile_image": "https://i.stack.imgur.com/QbOLx.jpg?s=128&g=1",
+            "display_name": "JHBonarius",
+            "link": "https://stackoverflow.com/users/6717178/jhbonarius"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1613623059,
+        "post_id": 66246436,
+        "comment_id": 117133583,
+        "content_license": "CC BY-SA 4.0",
+        "body": "The policy is loaded correctly. If i login, the index page is loaded first and works fine, because it is decorated with only authorize attribute. Now if i navigate from here to any page decorated with policies it also works fine. The problem is when anybody directly loads any url decorated with policy(like copy paste url to new tab) . In this case if the token stored in the local storage is not expired it will directly load the page and get the error &#39;policy not found&#39; because the page gets loaded even before initializing the policy after async httpclient request"
+    },
+    {
+        "owner": {
+            "reputation": 6999,
+            "user_id": 6717178,
+            "user_type": "registered",
+            "accept_rate": 100,
+            "profile_image": "https://i.stack.imgur.com/QbOLx.jpg?s=128&g=1",
+            "display_name": "JHBonarius",
+            "link": "https://stackoverflow.com/users/6717178/jhbonarius"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1613585309,
+        "post_id": 66246436,
+        "comment_id": 117122784,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Id you set a breakpoint in the serrvicebuilder to see if the policies are actually loaded correctly?"
+    }
+]

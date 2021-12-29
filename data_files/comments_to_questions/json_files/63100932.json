@@ -1,0 +1,64 @@
+[
+    {
+        "owner": {
+            "reputation": 13400,
+            "user_id": 2940908,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://i.stack.imgur.com/E79WU.jpg?s=128&g=1",
+            "display_name": "agua from mars",
+            "link": "https://stackoverflow.com/users/2940908/agua-from-mars"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1595775549,
+        "post_id": 63100932,
+        "comment_id": 111584688,
+        "content_license": "CC BY-SA 4.0",
+        "body": "check your app.razor and main.razor file then if you add an authorize attribute in the main.razor all pages need authentication"
+    },
+    {
+        "owner": {
+            "reputation": 245,
+            "user_id": 5004920,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/1ef4952641dba5749d1992edfe786b6c?s=128&d=identicon&r=PG",
+            "display_name": "Eduardo Fonseca",
+            "link": "https://stackoverflow.com/users/5004920/eduardo-fonseca"
+        },
+        "reply_to_user": {
+            "reputation": 13400,
+            "user_id": 2940908,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://i.stack.imgur.com/E79WU.jpg?s=128&g=1",
+            "display_name": "agua from mars",
+            "link": "https://stackoverflow.com/users/2940908/agua-from-mars"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1595774745,
+        "post_id": 63100932,
+        "comment_id": 111584436,
+        "content_license": "CC BY-SA 4.0",
+        "body": "That&#39;s the weird thing, even without them, it keeps trying to authenticate"
+    },
+    {
+        "owner": {
+            "reputation": 13400,
+            "user_id": 2940908,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://i.stack.imgur.com/E79WU.jpg?s=128&g=1",
+            "display_name": "agua from mars",
+            "link": "https://stackoverflow.com/users/2940908/agua-from-mars"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1595772742,
+        "post_id": 63100932,
+        "comment_id": 111583779,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Yes, do not use the Authorize attribute on pages you want an anonymous access."
+    }
+]

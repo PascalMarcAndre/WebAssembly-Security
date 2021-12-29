@@ -1,0 +1,132 @@
+[
+    {
+        "owner": {
+            "reputation": 1489,
+            "user_id": 10962295,
+            "user_type": "registered",
+            "profile_image": "https://lh5.googleusercontent.com/-guQgT3_y5jg/AAAAAAAAAAI/AAAAAAAAABU/xsfDevF8zBo/photo.jpg?sz=128",
+            "display_name": "Zsolt Bendes",
+            "link": "https://stackoverflow.com/users/10962295/zsolt-bendes"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1599845077,
+        "post_id": 63849288,
+        "comment_id": 112911299,
+        "content_license": "CC BY-SA 4.0",
+        "body": "For securing client side you can use oidc code flow without exposing any secret key. Blazor has support for oidc. So it is not so hard to configure. Additionally I would recommend to use code flow with PKCE. More info on oidc PKCE: <a href=\"https://oauth.net/2/pkce/\" rel=\"nofollow noreferrer\">oauth.net/2/pkce</a>  How to setup Blazor for oidc: <a href=\"https://docs.microsoft.com/en-us/aspnet/core/blazor/security/webassembly/standalone-with-authentication-library?view=aspnetcore-3.1&amp;tabs=visual-studio\" rel=\"nofollow noreferrer\">docs.microsoft.com/en-us/aspnet/core/blazor/security/&hellip;</a>"
+    },
+    {
+        "owner": {
+            "reputation": 763,
+            "user_id": 3593088,
+            "user_type": "registered",
+            "accept_rate": 100,
+            "profile_image": "https://www.gravatar.com/avatar/988a1a85fb21b8feb2abcaf79e9ce972?s=128&d=identicon&r=PG&f=1",
+            "display_name": "levis84",
+            "link": "https://stackoverflow.com/users/3593088/levis84"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1599836403,
+        "post_id": 63849288,
+        "comment_id": 112907451,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Found this article so will give this a try. <a href=\"https://auth0.com/blog/securing-blazor-webassembly-apps/\" rel=\"nofollow noreferrer\">auth0.com/blog/securing-blazor-webassembly-apps</a> - uses TokenProvider to get an accesstoken."
+    },
+    {
+        "owner": {
+            "reputation": 13855,
+            "user_id": 61311,
+            "user_type": "registered",
+            "accept_rate": 71,
+            "profile_image": "https://i.stack.imgur.com/EgbU7.jpg?s=128&g=1",
+            "display_name": "Peter Morris",
+            "link": "https://stackoverflow.com/users/61311/peter-morris"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1599836042,
+        "post_id": 63849288,
+        "comment_id": 112907298,
+        "content_license": "CC BY-SA 4.0",
+        "body": "If you are okay with the end user knowing the keys then let the client have them. If not then you have to send the request to your server and have it execute it (calling other APIs if necessary)."
+    },
+    {
+        "owner": {
+            "reputation": 93083,
+            "user_id": 134204,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/vwnA5.jpg?s=128&g=1",
+            "display_name": "Panagiotis Kanavos",
+            "link": "https://stackoverflow.com/users/134204/panagiotis-kanavos"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1599836012,
+        "post_id": 63849288,
+        "comment_id": 112907280,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I&#39;d research it first. Nobody knows everything or can remember it all the time"
+    },
+    {
+        "owner": {
+            "reputation": 763,
+            "user_id": 3593088,
+            "user_type": "registered",
+            "accept_rate": 100,
+            "profile_image": "https://www.gravatar.com/avatar/988a1a85fb21b8feb2abcaf79e9ce972?s=128&d=identicon&r=PG&f=1",
+            "display_name": "levis84",
+            "link": "https://stackoverflow.com/users/3593088/levis84"
+        },
+        "reply_to_user": {
+            "reputation": 93083,
+            "user_id": 134204,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/vwnA5.jpg?s=128&g=1",
+            "display_name": "Panagiotis Kanavos",
+            "link": "https://stackoverflow.com/users/134204/panagiotis-kanavos"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1599835987,
+        "post_id": 63849288,
+        "comment_id": 112907270,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Yeh I understand that. So how does a client-side app authenticate with other API&#39;s if you cannot store the keys?"
+    },
+    {
+        "owner": {
+            "reputation": 93083,
+            "user_id": 134204,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/vwnA5.jpg?s=128&g=1",
+            "display_name": "Panagiotis Kanavos",
+            "link": "https://stackoverflow.com/users/134204/panagiotis-kanavos"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1599835959,
+        "post_id": 63849288,
+        "comment_id": 112907256,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Without looking how SPAs do this I&#39;d say you shouldn&#39;t store secrets anywhere. Tokens, provided by the server maybe, if they&#39;re refreshed frequently and there&#39;s a way to prevent replay attacks. I&#39;d look how React and Angular solve the same problem though and replicate it. After all, the browser environment is the same"
+    },
+    {
+        "owner": {
+            "reputation": 93083,
+            "user_id": 134204,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/vwnA5.jpg?s=128&g=1",
+            "display_name": "Panagiotis Kanavos",
+            "link": "https://stackoverflow.com/users/134204/panagiotis-kanavos"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1599835806,
+        "post_id": 63849288,
+        "comment_id": 112907181,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Where would you &quot;store&quot; them if you were building a React or Angular application? Porbably nowhere. Blazor WASM is actually React# - the component model is <i>identical</i>, the security issues the same."
+    }
+]

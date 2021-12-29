@@ -1,0 +1,90 @@
+[
+    {
+        "owner": {
+            "reputation": 3577,
+            "user_id": 1541397,
+            "user_type": "registered",
+            "accept_rate": 81,
+            "profile_image": "https://www.gravatar.com/avatar/991c4e6d0872e18880e3e0ff51cdf5a2?s=128&d=identicon&r=PG",
+            "display_name": "David Callanan",
+            "link": "https://stackoverflow.com/users/1541397/david-callanan"
+        },
+        "reply_to_user": {
+            "reputation": 1658,
+            "user_id": 10106101,
+            "user_type": "registered",
+            "profile_image": "https://graph.facebook.com/10155941262973655/picture?type=large",
+            "display_name": "Travis James",
+            "link": "https://stackoverflow.com/users/10106101/travis-james"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1578936677,
+        "post_id": 59720916,
+        "comment_id": 105593354,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Hi @TravisJames I was considering this (see point 3 in question), but this adds extra latency"
+    },
+    {
+        "owner": {
+            "reputation": 3577,
+            "user_id": 1541397,
+            "user_type": "registered",
+            "accept_rate": 81,
+            "profile_image": "https://www.gravatar.com/avatar/991c4e6d0872e18880e3e0ff51cdf5a2?s=128&d=identicon&r=PG",
+            "display_name": "David Callanan",
+            "link": "https://stackoverflow.com/users/1541397/david-callanan"
+        },
+        "reply_to_user": {
+            "reputation": 6058,
+            "user_id": 2399035,
+            "user_type": "registered",
+            "accept_rate": 80,
+            "profile_image": "https://i.stack.imgur.com/MlRmQ.png?s=128&g=1",
+            "display_name": "Lelio Faieta",
+            "link": "https://stackoverflow.com/users/2399035/lelio-faieta"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1578936533,
+        "post_id": 59720916,
+        "comment_id": 105593278,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@LelioFaieta Hi, I think you might be misunderstanding my question, and I have edited it slightly. I am aware I can setup SSL (see point 2)"
+    },
+    {
+        "owner": {
+            "reputation": 1658,
+            "user_id": 10106101,
+            "user_type": "registered",
+            "profile_image": "https://graph.facebook.com/10155941262973655/picture?type=large",
+            "display_name": "Travis James",
+            "link": "https://stackoverflow.com/users/10106101/travis-james"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1578935314,
+        "post_id": 59720916,
+        "comment_id": 105592733,
+        "content_license": "CC BY-SA 4.0",
+        "body": "What about creating websocket server clusters dedicated to individual ports, and then use a proxy process to forward individual connections from your main server port to the correct websocket port?"
+    },
+    {
+        "owner": {
+            "reputation": 6058,
+            "user_id": 2399035,
+            "user_type": "registered",
+            "accept_rate": 80,
+            "profile_image": "https://i.stack.imgur.com/MlRmQ.png?s=128&g=1",
+            "display_name": "Lelio Faieta",
+            "link": "https://stackoverflow.com/users/2399035/lelio-faieta"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1578935107,
+        "post_id": 59720916,
+        "comment_id": 105592632,
+        "content_license": "CC BY-SA 4.0",
+        "body": "websockets work also on SSL AFAIK. I set up a Ruby based websocket with SSL and it is working fine!"
+    }
+]

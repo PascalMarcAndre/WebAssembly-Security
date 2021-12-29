@@ -1,0 +1,198 @@
+[
+    {
+        "owner": {
+            "reputation": 240386,
+            "user_id": 60761,
+            "user_type": "registered",
+            "accept_rate": 91,
+            "profile_image": "https://www.gravatar.com/avatar/5bf43bae0431d8f4a062234b5e3a0cb9?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Henk Holterman",
+            "link": "https://stackoverflow.com/users/60761/henk-holterman"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1600641740,
+        "post_id": 63982705,
+        "comment_id": 113143855,
+        "content_license": "CC BY-SA 4.0",
+        "body": "If it was CORS your API wouldn&#39;t be hit.  <code>.Result</code> is always the wrong way. Look for <code>.Result</code> or <code>async void</code> in the rest of your code."
+    },
+    {
+        "owner": {
+            "reputation": 2665,
+            "user_id": 710275,
+            "user_type": "registered",
+            "accept_rate": 73,
+            "profile_image": "https://www.gravatar.com/avatar/7b62ccbad906bd1b83743810f94b7f44?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Adolfo Perez",
+            "link": "https://stackoverflow.com/users/710275/adolfo-perez"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1600635092,
+        "post_id": 63982705,
+        "comment_id": 113142550,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<a href=\"https://stackoverflow.com/questions/63002320/blazor-webassembly-api-call-children-could-not-be-evaluated\" title=\"blazor webassembly api call children could not be evaluated\">stackoverflow.com/questions/63002320/&hellip;</a>  <a href=\"https://stackoverflow.com/questions/30653770/httpclient-postasjsonasync-never-sees-when-the-post-is-succeeding-and-responding\" title=\"httpclient postasjsonasync never sees when the post is succeeding and responding\">stackoverflow.com/questions/30653770/&hellip;</a>"
+    },
+    {
+        "owner": {
+            "reputation": 2665,
+            "user_id": 710275,
+            "user_type": "registered",
+            "accept_rate": 73,
+            "profile_image": "https://www.gravatar.com/avatar/7b62ccbad906bd1b83743810f94b7f44?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Adolfo Perez",
+            "link": "https://stackoverflow.com/users/710275/adolfo-perez"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1600635065,
+        "post_id": 63982705,
+        "comment_id": 113142535,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Found a couple of links talking about enabling CORS, other about avoiding async/awaid deadlock by not doing await but doing .Result instead but nothing worked"
+    },
+    {
+        "owner": {
+            "reputation": 240386,
+            "user_id": 60761,
+            "user_type": "registered",
+            "accept_rate": 91,
+            "profile_image": "https://www.gravatar.com/avatar/5bf43bae0431d8f4a062234b5e3a0cb9?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Henk Holterman",
+            "link": "https://stackoverflow.com/users/60761/henk-holterman"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1600634466,
+        "post_id": 63982705,
+        "comment_id": 113142397,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Well, there is nothing obviously wrong with the code we can see. A simple mockup with the FetchData page fails to reproduce this. So it&#39;s in some part of the code you didn&#39;t post. Any other async stuff going on? A timer or something?"
+    },
+    {
+        "owner": {
+            "reputation": 2665,
+            "user_id": 710275,
+            "user_type": "registered",
+            "accept_rate": 73,
+            "profile_image": "https://www.gravatar.com/avatar/7b62ccbad906bd1b83743810f94b7f44?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Adolfo Perez",
+            "link": "https://stackoverflow.com/users/710275/adolfo-perez"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1600631967,
+        "post_id": 63982705,
+        "comment_id": 113141818,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I do have a page with &quot;/fetchevent&quot; Henk. I also added a log statement for Status code but it never shows which confirms what I suspected that it&#39;s not hitting that line"
+    },
+    {
+        "owner": {
+            "reputation": 240386,
+            "user_id": 60761,
+            "user_type": "registered",
+            "accept_rate": 91,
+            "profile_image": "https://www.gravatar.com/avatar/5bf43bae0431d8f4a062234b5e3a0cb9?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Henk Holterman",
+            "link": "https://stackoverflow.com/users/60761/henk-holterman"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1600631696,
+        "post_id": 63982705,
+        "comment_id": 113141753,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Add a log statement for response.StatusCode and just before the NavigateTo(). Also check the basics, do you have a <code>@page &quot;&#47;fetchevent&quot;</code> somewhere?"
+    },
+    {
+        "owner": {
+            "reputation": 2665,
+            "user_id": 710275,
+            "user_type": "registered",
+            "accept_rate": 73,
+            "profile_image": "https://www.gravatar.com/avatar/7b62ccbad906bd1b83743810f94b7f44?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Adolfo Perez",
+            "link": "https://stackoverflow.com/users/710275/adolfo-perez"
+        },
+        "reply_to_user": {
+            "reputation": 240386,
+            "user_id": 60761,
+            "user_type": "registered",
+            "accept_rate": 91,
+            "profile_image": "https://www.gravatar.com/avatar/5bf43bae0431d8f4a062234b5e3a0cb9?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Henk Holterman",
+            "link": "https://stackoverflow.com/users/60761/henk-holterman"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1600631549,
+        "post_id": 63982705,
+        "comment_id": 113141713,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@HenkHolterman in browser console I see no error but looks like the page refreshes to the AddEvent page instead of navigating to the Event List"
+    },
+    {
+        "owner": {
+            "reputation": 2665,
+            "user_id": 710275,
+            "user_type": "registered",
+            "accept_rate": 73,
+            "profile_image": "https://www.gravatar.com/avatar/7b62ccbad906bd1b83743810f94b7f44?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Adolfo Perez",
+            "link": "https://stackoverflow.com/users/710275/adolfo-perez"
+        },
+        "reply_to_user": {
+            "reputation": 5178,
+            "user_id": 1492496,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/dO7to.png?s=128&g=1",
+            "display_name": "Brian Parker",
+            "link": "https://stackoverflow.com/users/1492496/brian-parker"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1600630819,
+        "post_id": 63982705,
+        "comment_id": 113141525,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@BrianParker yes it hits the controller and adds my entity in the repo EF context but looks like the NavigateTo after the post in my AddEvent.razor doesn&#39;t get executed for some reason"
+    },
+    {
+        "owner": {
+            "reputation": 5178,
+            "user_id": 1492496,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/dO7to.png?s=128&g=1",
+            "display_name": "Brian Parker",
+            "link": "https://stackoverflow.com/users/1492496/brian-parker"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1600630594,
+        "post_id": 63982705,
+        "comment_id": 113141462,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Are you hitting the controller?"
+    },
+    {
+        "owner": {
+            "reputation": 240386,
+            "user_id": 60761,
+            "user_type": "registered",
+            "accept_rate": 91,
+            "profile_image": "https://www.gravatar.com/avatar/5bf43bae0431d8f4a062234b5e3a0cb9?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Henk Holterman",
+            "link": "https://stackoverflow.com/users/60761/henk-holterman"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1600630271,
+        "post_id": 63982705,
+        "comment_id": 113141394,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Have a look in the Browser Console...  You are catching the exception w/o a re-throw."
+    }
+]

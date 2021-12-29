@@ -1,0 +1,162 @@
+[
+    {
+        "owner": {
+            "reputation": 12769,
+            "user_id": 10521739,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/6459b077561be67082b7c27faed22fb2?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Allen Wu",
+            "link": "https://stackoverflow.com/users/10521739/allen-wu"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1611109474,
+        "post_id": 65634788,
+        "comment_id": 116342746,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Do you mean you want users to submit a registration request to you, and then you will create an AAD user for it?"
+    },
+    {
+        "owner": {
+            "reputation": 7,
+            "user_id": 10216272,
+            "user_type": "registered",
+            "profile_image": "https://graph.facebook.com/2027863500570931/picture?type=large",
+            "display_name": "Samo Simoncic",
+            "link": "https://stackoverflow.com/users/10216272/samo-simoncic"
+        },
+        "reply_to_user": {
+            "reputation": 12769,
+            "user_id": 10521739,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/6459b077561be67082b7c27faed22fb2?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Allen Wu",
+            "link": "https://stackoverflow.com/users/10521739/allen-wu"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1611057919,
+        "post_id": 65634788,
+        "comment_id": 116322256,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Thanks for the reply. I would like to apologize if I did not mention that I need registration without user intervention. I would like that when the user clicks the button and the system automatically registers to my account and send an email to me. This will be used for our webpage."
+    },
+    {
+        "owner": {
+            "reputation": 12769,
+            "user_id": 10521739,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/6459b077561be67082b7c27faed22fb2?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Allen Wu",
+            "link": "https://stackoverflow.com/users/10521739/allen-wu"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1611044573,
+        "post_id": 65634788,
+        "comment_id": 116316218,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I have uploaded a sample code <a href=\"https://github.com/hg3317593-1/BlazorSample\" rel=\"nofollow noreferrer\">here</a> for your reference. Remember to modify the <code>appsettings.json</code> file and access <code>https:&#47;&#47;localhost:44318&#47;GraphExample</code> to see if how it works."
+    },
+    {
+        "owner": {
+            "reputation": 12769,
+            "user_id": 10521739,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/6459b077561be67082b7c27faed22fb2?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Allen Wu",
+            "link": "https://stackoverflow.com/users/10521739/allen-wu"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1611041885,
+        "post_id": 65634788,
+        "comment_id": 116315230,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I notice that you remove the &quot;log in&quot; part. Why? If you don&#39;t sign in, the access token is null as expected. But I can hardly modify your code to make it work. All you need to configure is following <a href=\"https://docs.microsoft.com/en-us/aspnet/core/blazor/security/webassembly/standalone-with-azure-active-directory?view=aspnetcore-5.0\" rel=\"nofollow noreferrer\">this document</a> and then <a href=\"https://docs.microsoft.com/en-us/aspnet/core/blazor/security/webassembly/graph-api?view=aspnetcore-5.0\" rel=\"nofollow noreferrer\">this one</a> (Until <b>Call Graph API from a component using the Graph SDK</b> part)."
+    },
+    {
+        "owner": {
+            "reputation": 7,
+            "user_id": 10216272,
+            "user_type": "registered",
+            "profile_image": "https://graph.facebook.com/2027863500570931/picture?type=large",
+            "display_name": "Samo Simoncic",
+            "link": "https://stackoverflow.com/users/10216272/samo-simoncic"
+        },
+        "reply_to_user": {
+            "reputation": 12769,
+            "user_id": 10521739,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/6459b077561be67082b7c27faed22fb2?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Allen Wu",
+            "link": "https://stackoverflow.com/users/10521739/allen-wu"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1610614961,
+        "post_id": 65634788,
+        "comment_id": 116190108,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Allen Wu thanks for your help. I followed the instructions step-by-step in your link but the problem is not solved. I published my project at the following link: <a href=\"https://github.com/Senso4sLab/BlazorMSGraph\" rel=\"nofollow noreferrer\">github.com/Senso4sLab/BlazorMSGraph</a>. Is it possible that you try with your settings? Thanks for your help in advance. Sorry that I did not reply immediately but I am working on three different projects and sometimes is so hard switching between them very quickly:)"
+    },
+    {
+        "owner": {
+            "reputation": 12769,
+            "user_id": 10521739,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/6459b077561be67082b7c27faed22fb2?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Allen Wu",
+            "link": "https://stackoverflow.com/users/10521739/allen-wu"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1610504333,
+        "post_id": 65634788,
+        "comment_id": 116152845,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Hi Samo, any updates?"
+    },
+    {
+        "owner": {
+            "reputation": 7,
+            "user_id": 10216272,
+            "user_type": "registered",
+            "profile_image": "https://graph.facebook.com/2027863500570931/picture?type=large",
+            "display_name": "Samo Simoncic",
+            "link": "https://stackoverflow.com/users/10216272/samo-simoncic"
+        },
+        "reply_to_user": {
+            "reputation": 12769,
+            "user_id": 10521739,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/6459b077561be67082b7c27faed22fb2?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Allen Wu",
+            "link": "https://stackoverflow.com/users/10521739/allen-wu"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1610365698,
+        "post_id": 65634788,
+        "comment_id": 116100970,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Here is my Azure Ad: &quot;AzureAd&quot;: {     &quot;Authority&quot;: &quot;<a href=\"https://login.microsoftonline.com/yyy\" rel=\"nofollow noreferrer\">login.microsoftonline.com/yyy</a>&quot;,     &quot;ClientId&quot;: &quot;xxx&quot;,     &quot;ValidateAuthority&quot;: true   }  It is worth mentioning if I apply the authentication based on user intervention everything works fine. Due to this fact, I think that the AzureAd configuration is not the cause of the problem."
+    },
+    {
+        "owner": {
+            "reputation": 12769,
+            "user_id": 10521739,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/6459b077561be67082b7c27faed22fb2?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Allen Wu",
+            "link": "https://stackoverflow.com/users/10521739/allen-wu"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1610329400,
+        "post_id": 65634788,
+        "comment_id": 116090523,
+        "content_license": "CC BY-SA 4.0",
+        "body": "How is your &quot;AzureAD&quot; configuration like?"
+    }
+]

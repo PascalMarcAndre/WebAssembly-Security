@@ -1,0 +1,174 @@
+[
+    {
+        "owner": {
+            "reputation": 41,
+            "user_id": 4408465,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/49bafb0388c66c92fe408cfa6f302de9?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Martin Man&#248;",
+            "link": "https://stackoverflow.com/users/4408465/martin-man%c3%b8"
+        },
+        "reply_to_user": {
+            "reputation": 1,
+            "user_id": 14720276,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/e0boU.jpg?s=128&g=1",
+            "display_name": "laudable-logic",
+            "link": "https://stackoverflow.com/users/14720276/laudable-logic"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1606592397,
+        "post_id": 63972772,
+        "comment_id": 115009299,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@laudable-logic This solved it for me. Thank you for the link. The original question have been updated to refer to the answer."
+    },
+    {
+        "owner": {
+            "reputation": 1,
+            "user_id": 14720276,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/e0boU.jpg?s=128&g=1",
+            "display_name": "laudable-logic",
+            "link": "https://stackoverflow.com/users/14720276/laudable-logic"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1606490241,
+        "post_id": 63972772,
+        "comment_id": 114984334,
+        "content_license": "CC BY-SA 4.0",
+        "body": "This answer solved a similar problem for me: <a href=\"https://stackoverflow.com/a/62088093\">stackoverflow.com/a/62088093</a>"
+    },
+    {
+        "owner": {
+            "reputation": 41,
+            "user_id": 4408465,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/49bafb0388c66c92fe408cfa6f302de9?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Martin Man&#248;",
+            "link": "https://stackoverflow.com/users/4408465/martin-man%c3%b8"
+        },
+        "reply_to_user": {
+            "reputation": 809,
+            "user_id": 1303737,
+            "user_type": "registered",
+            "accept_rate": 80,
+            "profile_image": "https://i.stack.imgur.com/86YgG.jpg?s=128&g=1",
+            "display_name": "Loul G.",
+            "link": "https://stackoverflow.com/users/1303737/loul-g"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1606073749,
+        "post_id": 63972772,
+        "comment_id": 114842861,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@LoulG. Unfortunately no. I have started thinking in other ways to handle authorization (eg. having my IDP on another subdomain). If I still have issues, I&#39;ll have to look for some other hosting. My most recent test were performed after updating to the release version of .net5.0"
+    },
+    {
+        "owner": {
+            "reputation": 809,
+            "user_id": 1303737,
+            "user_type": "registered",
+            "accept_rate": 80,
+            "profile_image": "https://i.stack.imgur.com/86YgG.jpg?s=128&g=1",
+            "display_name": "Loul G.",
+            "link": "https://stackoverflow.com/users/1303737/loul-g"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1605949762,
+        "post_id": 63972772,
+        "comment_id": 114813967,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@MartinMan&#248; Did you find a solution ?"
+    },
+    {
+        "owner": {
+            "reputation": 41,
+            "user_id": 4408465,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/49bafb0388c66c92fe408cfa6f302de9?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Martin Man&#248;",
+            "link": "https://stackoverflow.com/users/4408465/martin-man%c3%b8"
+        },
+        "reply_to_user": {
+            "reputation": 5617,
+            "user_id": 11147346,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/BET7m.jpg?s=128&g=1",
+            "display_name": "Jalpa Panchal",
+            "link": "https://stackoverflow.com/users/11147346/jalpa-panchal"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1600791651,
+        "post_id": 63972772,
+        "comment_id": 113197040,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@JalpaPanchal Unfortunately I am unable to access the IIS of the host. Links can be found in earlier comment."
+    },
+    {
+        "owner": {
+            "reputation": 41,
+            "user_id": 4408465,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/49bafb0388c66c92fe408cfa6f302de9?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Martin Man&#248;",
+            "link": "https://stackoverflow.com/users/4408465/martin-man%c3%b8"
+        },
+        "reply_to_user": {
+            "reputation": 240386,
+            "user_id": 60761,
+            "user_type": "registered",
+            "accept_rate": 91,
+            "profile_image": "https://www.gravatar.com/avatar/5bf43bae0431d8f4a062234b5e3a0cb9?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Henk Holterman",
+            "link": "https://stackoverflow.com/users/60761/henk-holterman"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1600791634,
+        "post_id": 63972772,
+        "comment_id": 113197027,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@HenkHolterman The URL looks exactly as I would expect it to when targeting the server. Can compare the URL on the <a href=\"https://masterplaner.m-mano.dk/\" rel=\"nofollow noreferrer\">Site</a> and compare it with the endpoints exposed by <a href=\"https://masterplaner.m-mano.dk/swagger/\" rel=\"nofollow noreferrer\">Swagger</a>."
+    },
+    {
+        "owner": {
+            "reputation": 5617,
+            "user_id": 11147346,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/BET7m.jpg?s=128&g=1",
+            "display_name": "Jalpa Panchal",
+            "link": "https://stackoverflow.com/users/11147346/jalpa-panchal"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1600675433,
+        "post_id": 63972772,
+        "comment_id": 113150913,
+        "content_license": "CC BY-SA 4.0",
+        "body": "did you host the site as an application in iis? could you share the sample link code? you could try to use the failed request tracing ti check the 404 error detail. <a href=\"https://docs.microsoft.com/en-us/iis/troubleshoot/using-failed-request-tracing/troubleshooting-failed-requests-using-tracing-in-iis\" rel=\"nofollow noreferrer\">docs.microsoft.com/en-us/iis/troubleshoot/&hellip;</a>"
+    },
+    {
+        "owner": {
+            "reputation": 240386,
+            "user_id": 60761,
+            "user_type": "registered",
+            "accept_rate": 91,
+            "profile_image": "https://www.gravatar.com/avatar/5bf43bae0431d8f4a062234b5e3a0cb9?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Henk Holterman",
+            "link": "https://stackoverflow.com/users/60761/henk-holterman"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1600667509,
+        "post_id": 63972772,
+        "comment_id": 113147995,
+        "content_license": "CC BY-SA 4.0",
+        "body": "On the page where you press Ctrl+F5, what does the Url in the address bar look like at that moment?"
+    }
+]

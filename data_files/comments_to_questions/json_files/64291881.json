@@ -1,0 +1,45 @@
+[
+    {
+        "owner": {
+            "reputation": 2035,
+            "user_id": 2137483,
+            "user_type": "registered",
+            "accept_rate": 91,
+            "profile_image": "https://i.stack.imgur.com/zH7ZS.jpg?s=128&g=1",
+            "display_name": "Luke T O&#39;Brien",
+            "link": "https://stackoverflow.com/users/2137483/luke-t-obrien"
+        },
+        "reply_to_user": {
+            "reputation": 5178,
+            "user_id": 1492496,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/dO7to.png?s=128&g=1",
+            "display_name": "Brian Parker",
+            "link": "https://stackoverflow.com/users/1492496/brian-parker"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1602331364,
+        "post_id": 64291881,
+        "comment_id": 113689978,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Yeah I have seen the term JWT bounded about, but it was such a nightmare getting Cookie-based authentication working, now I find out there&#39;s another one... From the docs it seems like it should work with Cookies, the connection is a plain old HTTP request, so why doesn&#39;t it have cookies set <a href=\"https://docs.microsoft.com/en-us/aspnet/core/signalr/groups?view=aspnetcore-3.1\" rel=\"nofollow noreferrer\">docs.microsoft.com/en-us/aspnet/core/signalr/&hellip;</a>"
+    },
+    {
+        "owner": {
+            "reputation": 5178,
+            "user_id": 1492496,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/dO7to.png?s=128&g=1",
+            "display_name": "Brian Parker",
+            "link": "https://stackoverflow.com/users/1492496/brian-parker"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1602324948,
+        "post_id": 64291881,
+        "comment_id": 113688603,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<a href=\"https://stackoverflow.com/a/63120607/1492496\">stackoverflow.com/a/63120607/1492496</a>"
+    }
+]

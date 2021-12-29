@@ -1,0 +1,36 @@
+[
+    {
+        "owner": {
+            "reputation": 646,
+            "user_id": 15419298,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/2ff48691478ce41162c97f9b5323641a?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Cory Podojil",
+            "link": "https://stackoverflow.com/users/15419298/cory-podojil"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1617843748,
+        "post_id": 66892292,
+        "comment_id": 118423831,
+        "content_license": "CC BY-SA 4.0",
+        "body": "One more thing..if you want to change the <i>default Identity</i> paths, look at <code>AuthenticationPaths.RemoteProfilePath</code>"
+    },
+    {
+        "owner": {
+            "reputation": 646,
+            "user_id": 15419298,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/2ff48691478ce41162c97f9b5323641a?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Cory Podojil",
+            "link": "https://stackoverflow.com/users/15419298/cory-podojil"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1617843295,
+        "post_id": 66892292,
+        "comment_id": 118423746,
+        "content_license": "CC BY-SA 4.0",
+        "body": "They don&#39;t make it very clear but this should get you going down the correct path: <a href=\"https://docs.microsoft.com/en-us/aspnet/core/blazor/security/webassembly/additional-scenarios?view=aspnetcore-5.0#customize-app-routes\" rel=\"nofollow noreferrer\">docs.microsoft.com/en-us/aspnet/core/blazor/security/&hellip;</a>. Specifically look at the <code>builder.Services.AddApiAuthorization</code> code example just below all the routes."
+    }
+]

@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 15576,
+            "user_id": 3757232,
+            "user_type": "registered",
+            "accept_rate": 90,
+            "profile_image": "https://i.stack.imgur.com/kLzML.jpg?s=128&g=1",
+            "display_name": "Jared Smith",
+            "link": "https://stackoverflow.com/users/3757232/jared-smith"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1587818249,
+        "post_id": 61425680,
+        "comment_id": 108661281,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I&#39;m not sure what the overhead would be, but you can always actually use an iframe, pass from C -&gt; Your Javascript -&gt; eval in iframe -&gt; your Javascript -&gt; C. Although the only thing you&#39;ll be able to pass that way will be typed arrays or things that can be serialized to/from such, and I&#39;m not sure that there would be any way to actually secure it."
+    }
+]

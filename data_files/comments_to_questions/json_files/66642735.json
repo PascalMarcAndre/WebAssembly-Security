@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 40858,
+            "user_id": 842935,
+            "user_type": "registered",
+            "accept_rate": 85,
+            "profile_image": "https://www.gravatar.com/avatar/2b3b9d4aa138cb30767b8b1a7a90f027?s=128&d=identicon&r=PG",
+            "display_name": "dani herrera",
+            "link": "https://stackoverflow.com/users/842935/dani-herrera"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1615830828,
+        "post_id": 66642735,
+        "comment_id": 117808198,
+        "content_license": "CC BY-SA 4.0",
+        "body": "What about to define: <code>public class AuthComponentBase: ComponentBase</code> with <code>[Authorize]</code>  and inherit your components from it?"
+    }
+]

@@ -1,0 +1,19 @@
+[
+    {
+        "owner": {
+            "reputation": 93083,
+            "user_id": 134204,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/vwnA5.jpg?s=128&g=1",
+            "display_name": "Panagiotis Kanavos",
+            "link": "https://stackoverflow.com/users/134204/panagiotis-kanavos"
+        },
+        "edited": false,
+        "score": 2,
+        "creation_date": 1592485244,
+        "post_id": 62450555,
+        "comment_id": 110446497,
+        "content_license": "CC BY-SA 4.0",
+        "body": ".NET 5 is .NET <i>Core</i> 5 with missing .NET Old APIs included. You won&#39;t be able to just upgrade .NET Old to .NET 5 and have it run cross-platform"
+    }
+]

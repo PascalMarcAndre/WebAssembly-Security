@@ -1,0 +1,46 @@
+[
+    {
+        "owner": {
+            "reputation": 517,
+            "user_id": 12233905,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/2f208e6a8791feecc6bd9a81d2ee8336?s=128&d=identicon&r=PG&f=1",
+            "display_name": "StewieG",
+            "link": "https://stackoverflow.com/users/12233905/stewieg"
+        },
+        "reply_to_user": {
+            "reputation": 6999,
+            "user_id": 6717178,
+            "user_type": "registered",
+            "accept_rate": 100,
+            "profile_image": "https://i.stack.imgur.com/QbOLx.jpg?s=128&g=1",
+            "display_name": "JHBonarius",
+            "link": "https://stackoverflow.com/users/6717178/jhbonarius"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1614969614,
+        "post_id": 66497750,
+        "comment_id": 117557033,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I know, the default code works fine on client side (if I don&#39;t change anything). There is &quot;just&quot; a missing part for the server side to tell &quot;use your cookie / storage and send your data to the api&quot;. I mean the default serverside code is working also (with auth), but without API access. And the (code) difference between them seems minimal."
+    },
+    {
+        "owner": {
+            "reputation": 6999,
+            "user_id": 6717178,
+            "user_type": "registered",
+            "accept_rate": 100,
+            "profile_image": "https://i.stack.imgur.com/QbOLx.jpg?s=128&g=1",
+            "display_name": "JHBonarius",
+            "link": "https://stackoverflow.com/users/6717178/jhbonarius"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1614969365,
+        "post_id": 66497750,
+        "comment_id": 117556951,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Although you program them the same, server side and wasm are quite different. As the wasm runs naively in the client browser, a different approach for authentication is needed."
+    }
+]

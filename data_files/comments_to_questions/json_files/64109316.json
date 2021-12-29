@@ -1,0 +1,116 @@
+[
+    {
+        "owner": {
+            "reputation": 1,
+            "user_id": 14357185,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/40481f6084945f6f73c2ac35416b8ec0?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Dennis",
+            "link": "https://stackoverflow.com/users/14357185/dennis"
+        },
+        "reply_to_user": {
+            "reputation": 53479,
+            "user_id": 455493,
+            "user_type": "registered",
+            "accept_rate": 92,
+            "profile_image": "https://i.stack.imgur.com/ub5uS.jpg?s=128&g=1",
+            "display_name": "Tseng",
+            "link": "https://stackoverflow.com/users/455493/tseng"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1601377110,
+        "post_id": 64109316,
+        "comment_id": 113382813,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@Tseng thanks, tested it by adding claims to roles manually in the database and it worked. Do you know how I avoid claims being applied twice? Like when in your example <code>roles</code> are added to &quot;admin&quot; and <code>roles.manage</code> are added to &quot;manager&quot; now one user is in both roles &quot;admin&quot; and &quot;manager&quot;, this user would have the claim <code>roles</code> two times."
+    },
+    {
+        "owner": {
+            "reputation": 53479,
+            "user_id": 455493,
+            "user_type": "registered",
+            "accept_rate": 92,
+            "profile_image": "https://i.stack.imgur.com/ub5uS.jpg?s=128&g=1",
+            "display_name": "Tseng",
+            "link": "https://stackoverflow.com/users/455493/tseng"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1601373183,
+        "post_id": 64109316,
+        "comment_id": 113380937,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Yea, roles are &quot;bags of claims&quot; too, i.e. you could have a claim <code>roles</code> and <code>roles.manage</code>. The <code>roles.manage</code> could be added to the role named &quot;admin&quot; or &quot;manager&quot; where as the <code>roles</code> claim (read roles) could be added to the user role. When the user belongs to both &quot;user&quot; and &quot;admin&quot; role, both claims will be added to his property bag."
+    },
+    {
+        "owner": {
+            "reputation": 1,
+            "user_id": 14357185,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/40481f6084945f6f73c2ac35416b8ec0?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Dennis",
+            "link": "https://stackoverflow.com/users/14357185/dennis"
+        },
+        "reply_to_user": {
+            "reputation": 53479,
+            "user_id": 455493,
+            "user_type": "registered",
+            "accept_rate": 92,
+            "profile_image": "https://i.stack.imgur.com/ub5uS.jpg?s=128&g=1",
+            "display_name": "Tseng",
+            "link": "https://stackoverflow.com/users/455493/tseng"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1601366636,
+        "post_id": 64109316,
+        "comment_id": 113377873,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Wait, roles also have claims. So you mean I can add my role, then when I select a policy in my UI wich this role should have I add the claim for the policy to the role, then in my startup.cs I check for that claim?"
+    },
+    {
+        "owner": {
+            "reputation": 1,
+            "user_id": 14357185,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/40481f6084945f6f73c2ac35416b8ec0?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Dennis",
+            "link": "https://stackoverflow.com/users/14357185/dennis"
+        },
+        "reply_to_user": {
+            "reputation": 53479,
+            "user_id": 455493,
+            "user_type": "registered",
+            "accept_rate": 92,
+            "profile_image": "https://i.stack.imgur.com/ub5uS.jpg?s=128&g=1",
+            "display_name": "Tseng",
+            "link": "https://stackoverflow.com/users/455493/tseng"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1601365821,
+        "post_id": 64109316,
+        "comment_id": 113377481,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I want to add policies to roles so that I don&#180;t need to give each user 100 policies instead add the 100 policies to a role and give each user just that role.  Maybe that is possible with the claims you mentioned but currently I am not that familiar with claims so would be helpful if you could give me some examples other than the general Microsoft one."
+    },
+    {
+        "owner": {
+            "reputation": 53479,
+            "user_id": 455493,
+            "user_type": "registered",
+            "accept_rate": 92,
+            "profile_image": "https://i.stack.imgur.com/ub5uS.jpg?s=128&g=1",
+            "display_name": "Tseng",
+            "link": "https://stackoverflow.com/users/455493/tseng"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1601328625,
+        "post_id": 64109316,
+        "comment_id": 113368207,
+        "content_license": "CC BY-SA 4.0",
+        "body": "You using ASP.NET Core Identity? It has everything you need. Rules as an entity and claims. A role is basically a bag of claims, same as a user can be a bag of claims. So you create a role named &quot;Admin&quot; and add claims to it which define admin, for the claims you have policies in your startup. Should be well documented already. The claims will be automatically added to the users IdentityClaims if he has a specific role. <a href=\"https://docs.microsoft.com/en-us/aspnet/core/security/authorization/claims?view=aspnetcore-3.1\" rel=\"nofollow noreferrer\">docs.microsoft.com/en-us/aspnet/core/security/authorization/&zwnj;&#8203;&hellip;</a>"
+    }
+]

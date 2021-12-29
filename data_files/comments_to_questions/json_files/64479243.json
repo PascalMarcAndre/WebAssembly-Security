@@ -1,0 +1,38 @@
+[
+    {
+        "owner": {
+            "reputation": 436,
+            "user_id": 1584725,
+            "user_type": "registered",
+            "accept_rate": 67,
+            "profile_image": "https://www.gravatar.com/avatar/3b4af23cd0ebfb961c3ab01ffd884073?s=128&d=identicon&r=PG",
+            "display_name": "Brett JB",
+            "link": "https://stackoverflow.com/users/1584725/brett-jb"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1603622498,
+        "post_id": 64479243,
+        "comment_id": 114089745,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I&#39;d say there is going to be more of this coming down the pipe so a good case for a tutorial or guide if anyone at Microsoft is watching?"
+    },
+    {
+        "owner": {
+            "reputation": 436,
+            "user_id": 1584725,
+            "user_type": "registered",
+            "accept_rate": 67,
+            "profile_image": "https://www.gravatar.com/avatar/3b4af23cd0ebfb961c3ab01ffd884073?s=128&d=identicon&r=PG",
+            "display_name": "Brett JB",
+            "link": "https://stackoverflow.com/users/1584725/brett-jb"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1603622326,
+        "post_id": 64479243,
+        "comment_id": 114089688,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I am having the same issue and asked this question the day before you <a href=\"https://stackoverflow.com/questions/64470056/authorise-normal-razor-pages-in-a-blazor-webassemby-app\" title=\"authorise normal razor pages in a blazor webassemby app\">stackoverflow.com/questions/64470056/&hellip;</a> I think it is to do with the fact that the setup uses a bearer token (which if using the template you can see getting the weather data). After a suggestion I used the NavigateTo function, but to a normal server page it doesnt put the bearer token in by default. I&#39;m debating whether to pursue this or just roll my server pages into the app if I cant solve it. I am sure it is a question of configuring it in the startup code."
+    }
+]

@@ -1,0 +1,90 @@
+[
+    {
+        "owner": {
+            "reputation": 145,
+            "user_id": 11476545,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/439ded087dfb9e0529421b669d9914ca?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Bisjob",
+            "link": "https://stackoverflow.com/users/11476545/bisjob"
+        },
+        "reply_to_user": {
+            "reputation": 1,
+            "user_id": 6152891,
+            "user_type": "registered",
+            "accept_rate": 75,
+            "profile_image": "https://www.gravatar.com/avatar/b45b7f89429f8766cdbf6c776c0a9d41?s=128&d=identicon&r=PG",
+            "display_name": "enet",
+            "link": "https://stackoverflow.com/users/6152891/enet"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1591823940,
+        "post_id": 62306681,
+        "comment_id": 110207223,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Ok so I have to create a UserController, and in the GetAuthenticationStateAsync() method, I call this UserController which send me back a user item, containing the roles, and I create the AuthenticationState object, filled with the role as claim ?  Because in my previous project, I had a LoginController, which filled the token with the roles, and the AuthenticationStateProvider deserilized the roles frome the token. But as the new version support OIDC, I thought this could be donne automatically"
+    },
+    {
+        "owner": {
+            "reputation": 1,
+            "user_id": 6152891,
+            "user_type": "registered",
+            "accept_rate": 75,
+            "profile_image": "https://www.gravatar.com/avatar/b45b7f89429f8766cdbf6c776c0a9d41?s=128&d=identicon&r=PG",
+            "display_name": "enet",
+            "link": "https://stackoverflow.com/users/6152891/enet"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1591804823,
+        "post_id": 62306681,
+        "comment_id": 110197735,
+        "content_license": "CC BY-SA 4.0",
+        "body": "&quot; I don&#39;t know where to tell the server to add the role claim inside the token &quot; You don&#39;t tell the server. You do that on the client. You inject the AuthenticationStateProvider into a component, perhaps the App component, gets the AuthenticationState object, and add to it the role claims..... &quot;add the role claim inside the token&quot; You don&#39;t add the role claims inside the token. You add the role claims into the AuthenticationState object."
+    },
+    {
+        "owner": {
+            "reputation": 145,
+            "user_id": 11476545,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/439ded087dfb9e0529421b669d9914ca?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Bisjob",
+            "link": "https://stackoverflow.com/users/11476545/bisjob"
+        },
+        "reply_to_user": {
+            "reputation": 1,
+            "user_id": 6152891,
+            "user_type": "registered",
+            "accept_rate": 75,
+            "profile_image": "https://www.gravatar.com/avatar/b45b7f89429f8766cdbf6c776c0a9d41?s=128&d=identicon&r=PG",
+            "display_name": "enet",
+            "link": "https://stackoverflow.com/users/6152891/enet"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1591803078,
+        "post_id": 62306681,
+        "comment_id": 110196717,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@enet Yeah I used a CustomAuthenticationStateProvider in an other app, and write the ParseClaimsFromJwt method, but with the new version, I don&#39;t know where to tell the server to add the role claim inside the token"
+    },
+    {
+        "owner": {
+            "reputation": 1,
+            "user_id": 6152891,
+            "user_type": "registered",
+            "accept_rate": 75,
+            "profile_image": "https://www.gravatar.com/avatar/b45b7f89429f8766cdbf6c776c0a9d41?s=128&d=identicon&r=PG",
+            "display_name": "enet",
+            "link": "https://stackoverflow.com/users/6152891/enet"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1591802199,
+        "post_id": 62306681,
+        "comment_id": 110196141,
+        "content_license": "CC BY-SA 4.0",
+        "body": "You can add the roles to the AuthenticationStateProvider in the client app.  See this: <a href=\"https://docs.microsoft.com/en-us/aspnet/core/security/blazor/?view=aspnetcore-3.1#authenticationstateprovider-service\" rel=\"nofollow noreferrer\">docs.microsoft.com/en-us/aspnet/core/security/blazor/&hellip;</a>  If this cannot be useful to you, let me know, and I&#39;ll show you how to do that in Asp.Net Core"
+    }
+]

@@ -1,0 +1,80 @@
+[
+    {
+        "owner": {
+            "reputation": 495,
+            "user_id": 5577384,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/d7265224a43bec8e07c971f2b11273e9?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Adam R",
+            "link": "https://stackoverflow.com/users/5577384/adam-r"
+        },
+        "reply_to_user": {
+            "reputation": 18558,
+            "user_id": 3650362,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/Fqdi1.jpg?s=128&g=1",
+            "display_name": "trentcl",
+            "link": "https://stackoverflow.com/users/3650362/trentcl"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1532627720,
+        "post_id": 51544240,
+        "comment_id": 90057596,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Thanks to @trentcl, I thought I&#39;d try it again with multiple cycles of adding / removing data, and although the browser memory never drops significantly, it doesn&#39;t keep growing, so I can only assume the memory is being reused by WebAssembly.  This is sufficient for my needs."
+    },
+    {
+        "owner": {
+            "reputation": 18558,
+            "user_id": 3650362,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/Fqdi1.jpg?s=128&g=1",
+            "display_name": "trentcl",
+            "link": "https://stackoverflow.com/users/3650362/trentcl"
+        },
+        "edited": false,
+        "score": 3,
+        "creation_date": 1532626783,
+        "post_id": 51544240,
+        "comment_id": 90057094,
+        "content_license": "CC BY-SA 4.0",
+        "body": "In general (not just in Rust), freed memory is not restored to the operating system, but to the program&#39;s allocator. See, e.g., <a href=\"https://stackoverflow.com/questions/48690301/python-memory-releasing-very-slowly\">Python memory releasing very slowly</a>, <a href=\"https://stackoverflow.com/questions/10943907/linux-allocator-does-not-release-small-chunks-of-memory\">Linux Allocator Does Not Release Small Chunks of Memory</a>, and <a href=\"https://stackoverflow.com/questions/1242832/in-perl-how-can-i-release-memory-to-the-operating-system\">In Perl, how can I release memory to the operating system?</a>"
+    },
+    {
+        "owner": {
+            "reputation": 285606,
+            "user_id": 155423,
+            "user_type": "registered",
+            "accept_rate": 90,
+            "profile_image": "https://www.gravatar.com/avatar/419218774d04a581476ea1887a0921e0?s=128&d=identicon&r=PG",
+            "display_name": "Shepmaster",
+            "link": "https://stackoverflow.com/users/155423/shepmaster"
+        },
+        "edited": false,
+        "score": 2,
+        "creation_date": 1532625819,
+        "post_id": 51544240,
+        "comment_id": 90056638,
+        "content_license": "CC BY-SA 4.0",
+        "body": "As E_net4 alludes, your <code>remove_data</code> method can be written as <code>ID_TO_DATA.lock().unwrap().remove(&amp;id);</code>. No calls to <code>drop</code>, no <code>match</code>."
+    },
+    {
+        "owner": {
+            "reputation": 21528,
+            "user_id": 1233251,
+            "user_type": "registered",
+            "accept_rate": 90,
+            "profile_image": "https://i.stack.imgur.com/cI9GF.png?s=128&g=1",
+            "display_name": "E_net4 is out of comment flags",
+            "link": "https://stackoverflow.com/users/1233251/e-net4-is-out-of-comment-flags"
+        },
+        "edited": false,
+        "score": 3,
+        "creation_date": 1532625592,
+        "post_id": 51544240,
+        "comment_id": 90056509,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Can you show us how you measured memory usage in the browser? You might also want to know <a href=\"https://github.com/rust-lang/rust/blob/master/src/libcore/mem.rs#L795\" rel=\"nofollow noreferrer\">how <code>std::mem::drop</code> is implemented</a>, so as to avoid misusage."
+    }
+]

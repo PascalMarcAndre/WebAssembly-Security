@@ -1,0 +1,116 @@
+[
+    {
+        "owner": {
+            "reputation": 390,
+            "user_id": 269035,
+            "user_type": "registered",
+            "accept_rate": 57,
+            "profile_image": "https://www.gravatar.com/avatar/b469ca8d128134e1e692433ebaf33fd4?s=128&d=identicon&r=PG",
+            "display_name": "Matt G",
+            "link": "https://stackoverflow.com/users/269035/matt-g"
+        },
+        "reply_to_user": {
+            "reputation": 173,
+            "user_id": 4702869,
+            "user_type": "registered",
+            "accept_rate": 78,
+            "profile_image": "https://www.gravatar.com/avatar/9ce4fe8a4703609cbca543bb4f8e1c6e?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Chris Campbell",
+            "link": "https://stackoverflow.com/users/4702869/chris-campbell"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1614117228,
+        "post_id": 64874190,
+        "comment_id": 117286545,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@ChrisCampbell this helped me too, thanks"
+    },
+    {
+        "owner": {
+            "reputation": 5178,
+            "user_id": 1492496,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/dO7to.png?s=128&g=1",
+            "display_name": "Brian Parker",
+            "link": "https://stackoverflow.com/users/1492496/brian-parker"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1605813691,
+        "post_id": 64874190,
+        "comment_id": 114774628,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<a href=\"https://docs.microsoft.com/en-au/aspnet/core/security/authentication/scaffold-identity?view=aspnetcore-5.0&amp;tabs=visual-studio\" rel=\"nofollow noreferrer\">docs.microsoft.com/en-au/aspnet/core/security/authentication&zwnj;&#8203;/&hellip;</a>"
+    },
+    {
+        "owner": {
+            "reputation": 125,
+            "user_id": 14308072,
+            "user_type": "registered",
+            "profile_image": "https://lh4.googleusercontent.com/-XBD02FVdSWI/AAAAAAAAAAI/AAAAAAAAAAA/AMZuucm1Rn7jdyFPNGzzfQt4lWnfOrWOzw/photo.jpg?sz=128",
+            "display_name": "GAC",
+            "link": "https://stackoverflow.com/users/14308072/gac"
+        },
+        "reply_to_user": {
+            "reputation": 173,
+            "user_id": 4702869,
+            "user_type": "registered",
+            "accept_rate": 78,
+            "profile_image": "https://www.gravatar.com/avatar/9ce4fe8a4703609cbca543bb4f8e1c6e?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Chris Campbell",
+            "link": "https://stackoverflow.com/users/4702869/chris-campbell"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1605791074,
+        "post_id": 64874190,
+        "comment_id": 114763926,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@ChrisCampbell thank you thank you very much! After reading the article, this is EXACLTY the kind of article I&#39;m looking for!!! Thanks!"
+    },
+    {
+        "owner": {
+            "reputation": 125,
+            "user_id": 14308072,
+            "user_type": "registered",
+            "profile_image": "https://lh4.googleusercontent.com/-XBD02FVdSWI/AAAAAAAAAAI/AAAAAAAAAAA/AMZuucm1Rn7jdyFPNGzzfQt4lWnfOrWOzw/photo.jpg?sz=128",
+            "display_name": "GAC",
+            "link": "https://stackoverflow.com/users/14308072/gac"
+        },
+        "reply_to_user": {
+            "reputation": 173,
+            "user_id": 4702869,
+            "user_type": "registered",
+            "accept_rate": 78,
+            "profile_image": "https://www.gravatar.com/avatar/9ce4fe8a4703609cbca543bb4f8e1c6e?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Chris Campbell",
+            "link": "https://stackoverflow.com/users/4702869/chris-campbell"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1605787796,
+        "post_id": 64874190,
+        "comment_id": 114762355,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Thank you very much @ChrisCampbell! This is very very helpful!!!!"
+    },
+    {
+        "owner": {
+            "reputation": 173,
+            "user_id": 4702869,
+            "user_type": "registered",
+            "accept_rate": 78,
+            "profile_image": "https://www.gravatar.com/avatar/9ce4fe8a4703609cbca543bb4f8e1c6e?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Chris Campbell",
+            "link": "https://stackoverflow.com/users/4702869/chris-campbell"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1605708399,
+        "post_id": 64874190,
+        "comment_id": 114733852,
+        "content_license": "CC BY-SA 4.0",
+        "body": "You may want to start here: <a href=\"https://chrissainty.com/securing-your-blazor-apps-authentication-with-clientside-blazor-using-webapi-aspnet-core-identity/\" rel=\"nofollow noreferrer\">chrissainty.com/&hellip;</a> this should get you started adding the authentication part. If you want to ensure your web api is secure, best to start looking into Jwt bearer tokens - if you&#39;re using http client, the token can be passed in the client header upon each request and allow you to use the Authorize attribute on your controllers."
+    }
+]

@@ -1,0 +1,83 @@
+[
+    {
+        "owner": {
+            "reputation": 2743,
+            "user_id": 2838509,
+            "user_type": "registered",
+            "accept_rate": 63,
+            "profile_image": "https://www.gravatar.com/avatar/ddc514bdff431b6db641bba4d96d7658?s=128&d=identicon&r=PG&f=1",
+            "display_name": "NPadrutt",
+            "link": "https://stackoverflow.com/users/2838509/npadrutt"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1578765247,
+        "post_id": 59696171,
+        "comment_id": 105548840,
+        "content_license": "CC BY-SA 4.0",
+        "body": "That was the idea with the sample, since it has the exact same issue as my project has. And the code regarding authentication is identitcal as far as I can see. Also, I did my best to post all relevant code parts, but let me know if there is anything I missed."
+    },
+    {
+        "owner": {
+            "reputation": 1,
+            "user_id": 6152891,
+            "user_type": "registered",
+            "accept_rate": 75,
+            "profile_image": "https://www.gravatar.com/avatar/b45b7f89429f8766cdbf6c776c0a9d41?s=128&d=identicon&r=PG",
+            "display_name": "enet",
+            "link": "https://stackoverflow.com/users/6152891/enet"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1578764928,
+        "post_id": 59696171,
+        "comment_id": 105548749,
+        "content_license": "CC BY-SA 4.0",
+        "body": "OK, @NPadrutt, I saw the sample. In principal, it is something similar to what I&#39;ve suggested. It&#39;s really difficult to say what is wrong with your code without seeing and testing it all. Perhaps you forgot to copy some settings, for example. Check if your Client.Startup class contains all the code from the sample"
+    },
+    {
+        "owner": {
+            "reputation": 2743,
+            "user_id": 2838509,
+            "user_type": "registered",
+            "accept_rate": 63,
+            "profile_image": "https://www.gravatar.com/avatar/ddc514bdff431b6db641bba4d96d7658?s=128&d=identicon&r=PG&f=1",
+            "display_name": "NPadrutt",
+            "link": "https://stackoverflow.com/users/2838509/npadrutt"
+        },
+        "reply_to_user": {
+            "reputation": 1,
+            "user_id": 6152891,
+            "user_type": "registered",
+            "accept_rate": 75,
+            "profile_image": "https://www.gravatar.com/avatar/b45b7f89429f8766cdbf6c776c0a9d41?s=128&d=identicon&r=PG",
+            "display_name": "enet",
+            "link": "https://stackoverflow.com/users/6152891/enet"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1578760840,
+        "post_id": 59696171,
+        "comment_id": 105547667,
+        "content_license": "CC BY-SA 4.0",
+        "body": "No, in the StateProvider in Blazor WASM I request the user infos from the server. In the Controller Endpoint I make the call for IsAuthenticated. I updated my post to describe that better."
+    },
+    {
+        "owner": {
+            "reputation": 1,
+            "user_id": 6152891,
+            "user_type": "registered",
+            "accept_rate": 75,
+            "profile_image": "https://www.gravatar.com/avatar/b45b7f89429f8766cdbf6c776c0a9d41?s=128&d=identicon&r=PG",
+            "display_name": "enet",
+            "link": "https://stackoverflow.com/users/6152891/enet"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1578760575,
+        "post_id": 59696171,
+        "comment_id": 105547605,
+        "content_license": "CC BY-SA 4.0",
+        "body": "You use User.Identity.IsAuthenticated on Blazor WebAssembly, right ? If so, how do you get the User object, where do you get it from?"
+    }
+]

@@ -1,0 +1,88 @@
+[
+    {
+        "owner": {
+            "reputation": 836,
+            "user_id": 8045462,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/WXBPW.png?s=128&g=1",
+            "display_name": "Ghillie",
+            "link": "https://stackoverflow.com/users/8045462/ghillie"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1506009506,
+        "post_id": 46331830,
+        "comment_id": 79657048,
+        "content_license": "CC BY-SA 3.0",
+        "body": "I went through the C version and everywhere a float was being initialized I made sure it had &quot;.0f&quot; and the performace increased significantly.  With this change the WebAssembly version is faster than the JS version on my laptop.  However, on my desktop the JS version is still faster than the WebAssembly version.  The modified fiddle:  <a href=\"https://wasdk.github.io/WasmFiddle/?xbo35\" rel=\"nofollow noreferrer\">wasdk.github.io/WasmFiddle/?xbo35</a>"
+    },
+    {
+        "owner": {
+            "reputation": 65239,
+            "user_id": 249933,
+            "user_type": "registered",
+            "accept_rate": 81,
+            "profile_image": "https://www.gravatar.com/avatar/458f2e0d08d4114f8b323798cfea141d?s=128&d=identicon&r=PG",
+            "display_name": "ColinE",
+            "link": "https://stackoverflow.com/users/249933/coline"
+        },
+        "reply_to_user": {
+            "reputation": 6105,
+            "user_id": 3983557,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/01A0D.jpg?s=128&g=1",
+            "display_name": "JF Bastien",
+            "link": "https://stackoverflow.com/users/3983557/jf-bastien"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1505943889,
+        "post_id": 46331830,
+        "comment_id": 79625169,
+        "content_license": "CC BY-SA 3.0",
+        "body": "@JFBastien - I&#39;ve added a fiddle :-)"
+    },
+    {
+        "owner": {
+            "reputation": 65239,
+            "user_id": 249933,
+            "user_type": "registered",
+            "accept_rate": 81,
+            "profile_image": "https://www.gravatar.com/avatar/458f2e0d08d4114f8b323798cfea141d?s=128&d=identicon&r=PG",
+            "display_name": "ColinE",
+            "link": "https://stackoverflow.com/users/249933/coline"
+        },
+        "reply_to_user": {
+            "reputation": 6105,
+            "user_id": 3983557,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/01A0D.jpg?s=128&g=1",
+            "display_name": "JF Bastien",
+            "link": "https://stackoverflow.com/users/3983557/jf-bastien"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1505943259,
+        "post_id": 46331830,
+        "comment_id": 79624964,
+        "content_license": "CC BY-SA 3.0",
+        "body": "I&#39;m just tying to get this working in WasmFiddle, I&#39;ll update the question as soon as I manage. The browser is Chrome 61. Thanks for the link to the stack answer."
+    },
+    {
+        "owner": {
+            "reputation": 6105,
+            "user_id": 3983557,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/01A0D.jpg?s=128&g=1",
+            "display_name": "JF Bastien",
+            "link": "https://stackoverflow.com/users/3983557/jf-bastien"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1505942246,
+        "post_id": 46331830,
+        "comment_id": 79624581,
+        "content_license": "CC BY-SA 3.0",
+        "body": "Can you provide something like a jsfiddle link to try out? What browser are you testing in? Your stack question is answered <a href=\"https://stackoverflow.com/a/43644387/3983557\">here</a>, using 0 is safe in WebAssembly, but C++ may be unhappy when compiling to WebAssembly."
+    }
+]

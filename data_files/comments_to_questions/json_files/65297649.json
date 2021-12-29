@@ -1,0 +1,74 @@
+[
+    {
+        "owner": {
+            "reputation": 568,
+            "user_id": 3924272,
+            "user_type": "registered",
+            "accept_rate": 53,
+            "profile_image": "https://www.gravatar.com/avatar/1b01be61acf18c3d7b41427d4c655cf5?s=128&d=identicon&r=PG&f=1",
+            "display_name": "edition",
+            "link": "https://stackoverflow.com/users/3924272/edition"
+        },
+        "reply_to_user": {
+            "reputation": 9408,
+            "user_id": 1536976,
+            "user_type": "registered",
+            "accept_rate": 78,
+            "profile_image": "https://www.gravatar.com/avatar/cc2372591e00f2ab504b59b4f7cbed43?s=128&d=identicon&r=PG",
+            "display_name": "Trilarion",
+            "link": "https://stackoverflow.com/users/1536976/trilarion"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1607998406,
+        "post_id": 65297649,
+        "comment_id": 115442195,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Here&#39;s a live demo of the app: <a href=\"https://bgcottrell.com/xwatch/\" rel=\"nofollow noreferrer\">bgcottrell.com/xwatch</a>"
+    },
+    {
+        "owner": {
+            "reputation": 568,
+            "user_id": 3924272,
+            "user_type": "registered",
+            "accept_rate": 53,
+            "profile_image": "https://www.gravatar.com/avatar/1b01be61acf18c3d7b41427d4c655cf5?s=128&d=identicon&r=PG&f=1",
+            "display_name": "edition",
+            "link": "https://stackoverflow.com/users/3924272/edition"
+        },
+        "reply_to_user": {
+            "reputation": 9408,
+            "user_id": 1536976,
+            "user_type": "registered",
+            "accept_rate": 78,
+            "profile_image": "https://www.gravatar.com/avatar/cc2372591e00f2ab504b59b4f7cbed43?s=128&d=identicon&r=PG",
+            "display_name": "Trilarion",
+            "link": "https://stackoverflow.com/users/1536976/trilarion"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1607993745,
+        "post_id": 65297649,
+        "comment_id": 115441315,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Using the file output from wasm2wat (provided by the Debian package wabt) , I can see that <code>$AppWindow::AppWindow_QWidget</code> has 102 local variables, and <code>$Ui_AppWindow::setupUi_QMainWindow</code> has 773. What can I do in C++ code to lessen the number of local variables in WASM functions?"
+    },
+    {
+        "owner": {
+            "reputation": 9408,
+            "user_id": 1536976,
+            "user_type": "registered",
+            "accept_rate": 78,
+            "profile_image": "https://www.gravatar.com/avatar/cc2372591e00f2ab504b59b4f7cbed43?s=128&d=identicon&r=PG",
+            "display_name": "Trilarion",
+            "link": "https://stackoverflow.com/users/1536976/trilarion"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1607986559,
+        "post_id": 65297649,
+        "comment_id": 115439572,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Reduce the code until the problem disappears. Please provide the shortest code necessary to reproduce the problem."
+    }
+]

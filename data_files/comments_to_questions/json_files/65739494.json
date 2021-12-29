@@ -1,0 +1,44 @@
+[
+    {
+        "owner": {
+            "reputation": 51,
+            "user_id": 15013711,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/c9eed9afd338666af67d74b9b0b36992?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Saga",
+            "link": "https://stackoverflow.com/users/15013711/saga"
+        },
+        "reply_to_user": {
+            "reputation": 138,
+            "user_id": 6276110,
+            "user_type": "registered",
+            "profile_image": "https://graph.facebook.com/1071362716243861/picture?type=large",
+            "display_name": "Jan Bejvl",
+            "link": "https://stackoverflow.com/users/6276110/jan-bejvl"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1610729687,
+        "post_id": 65739494,
+        "comment_id": 116232921,
+        "content_license": "CC BY-SA 4.0",
+        "body": "According to Firefox there is nothing within the header that looks anything like authentication. That helps. But how do I get it there the (correct?) way?"
+    },
+    {
+        "owner": {
+            "reputation": 138,
+            "user_id": 6276110,
+            "user_type": "registered",
+            "profile_image": "https://graph.facebook.com/1071362716243861/picture?type=large",
+            "display_name": "Jan Bejvl",
+            "link": "https://stackoverflow.com/users/6276110/jan-bejvl"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1610728815,
+        "post_id": 65739494,
+        "comment_id": 116232500,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Is there an authentication header in the request?"
+    }
+]

@@ -1,0 +1,55 @@
+[
+    {
+        "owner": {
+            "reputation": 1928,
+            "user_id": 1147577,
+            "user_type": "registered",
+            "accept_rate": 47,
+            "profile_image": "https://www.gravatar.com/avatar/38cfe687ff670056ddf7a581e1a3756e?s=128&d=identicon&r=PG",
+            "display_name": "Martin Andersen",
+            "link": "https://stackoverflow.com/users/1147577/martin-andersen"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1607196158,
+        "post_id": 65131583,
+        "comment_id": 115198399,
+        "content_license": "CC BY-SA 4.0",
+        "body": "No. So I tried with Fiddler and try to watch the https trafic, the result the login process stopped working."
+    },
+    {
+        "owner": {
+            "reputation": 304,
+            "user_id": 4002463,
+            "user_type": "registered",
+            "accept_rate": 71,
+            "profile_image": "https://www.gravatar.com/avatar/3892f842b4d69317e8043f5e1060b2eb?s=128&d=identicon&r=PG&f=1",
+            "display_name": "pudm",
+            "link": "https://stackoverflow.com/users/4002463/pudm"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1607106178,
+        "post_id": 65131583,
+        "comment_id": 115177334,
+        "content_license": "CC BY-SA 4.0",
+        "body": "if you check network logs in the browser (pressing F12) do you see any failures"
+    },
+    {
+        "owner": {
+            "reputation": 32597,
+            "user_id": 9455659,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/Albsq.jpg?s=128&g=1",
+            "display_name": "Joy Wang-MSFT",
+            "link": "https://stackoverflow.com/users/9455659/joy-wang-msft"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1607045330,
+        "post_id": 65131583,
+        "comment_id": 115156289,
+        "content_license": "CC BY-SA 4.0",
+        "body": "The first link was broken, could you edit it?"
+    }
+]

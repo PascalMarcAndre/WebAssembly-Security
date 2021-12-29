@@ -1,0 +1,65 @@
+[
+    {
+        "owner": {
+            "reputation": 10072,
+            "user_id": 1115237,
+            "user_type": "registered",
+            "accept_rate": 76,
+            "profile_image": "https://www.gravatar.com/avatar/a5b371929b9ddad5e22fc6997e5aab49?s=128&d=identicon&r=PG",
+            "display_name": "Shlomi Schwartz",
+            "link": "https://stackoverflow.com/users/1115237/shlomi-schwartz"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1523518331,
+        "post_id": 49776226,
+        "comment_id": 86595868,
+        "content_license": "CC BY-SA 3.0",
+        "body": "Have a look here <a href=\"https://developers.google.com/web/updates/2018/03/emscripting-a-c-library\" rel=\"nofollow noreferrer\">developers.google.com/web/updates/2018/03/&hellip;</a>"
+    },
+    {
+        "owner": {
+            "reputation": 1841,
+            "user_id": 1116068,
+            "user_type": "registered",
+            "accept_rate": 76,
+            "profile_image": "https://www.gravatar.com/avatar/833e391c99c8405d4ee64f9528584fc4?s=128&d=identicon&r=PG",
+            "display_name": "Roni Gadot",
+            "link": "https://stackoverflow.com/users/1116068/roni-gadot"
+        },
+        "reply_to_user": {
+            "reputation": 1155,
+            "user_id": 2854284,
+            "user_type": "registered",
+            "accept_rate": 50,
+            "profile_image": "https://www.gravatar.com/avatar/a66cede09ad91417502051a3a146210a?s=128&d=identicon&r=PG",
+            "display_name": "curiousdannii",
+            "link": "https://stackoverflow.com/users/2854284/curiousdannii"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1523518153,
+        "post_id": 49776226,
+        "comment_id": 86595760,
+        "content_license": "CC BY-SA 3.0",
+        "body": "Thanks for the reply, I&#39;ve tried to add an existing lib, but couldn&#39;t figure it out ... could it be a WebAssembly limitation?"
+    },
+    {
+        "owner": {
+            "reputation": 1155,
+            "user_id": 2854284,
+            "user_type": "registered",
+            "accept_rate": 50,
+            "profile_image": "https://www.gravatar.com/avatar/a66cede09ad91417502051a3a146210a?s=128&d=identicon&r=PG",
+            "display_name": "curiousdannii",
+            "link": "https://stackoverflow.com/users/2854284/curiousdannii"
+        },
+        "edited": false,
+        "score": 4,
+        "creation_date": 1523505400,
+        "post_id": 49776226,
+        "comment_id": 86590480,
+        "content_license": "CC BY-SA 3.0",
+        "body": "Don&#39;t write your own libraries if they&#39;re for security. If you don&#39;t know enough C you&#39;re almost certainly not qualified to do this. Why can&#39;t you use an existing library?"
+    }
+]

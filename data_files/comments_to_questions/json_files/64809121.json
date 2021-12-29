@@ -1,0 +1,113 @@
+[
+    {
+        "owner": {
+            "reputation": 23,
+            "user_id": 11879499,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/07935076fb6084a285b7977d0881eb00?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Christian Meurrens",
+            "link": "https://stackoverflow.com/users/11879499/christian-meurrens"
+        },
+        "reply_to_user": {
+            "reputation": 42644,
+            "user_id": 1658906,
+            "user_type": "registered",
+            "accept_rate": 100,
+            "profile_image": "https://www.gravatar.com/avatar/4e4748ed2fb97e8a8d4dd6d439625135?s=128&d=identicon&r=PG",
+            "display_name": "juunas",
+            "link": "https://stackoverflow.com/users/1658906/juunas"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1605373539,
+        "post_id": 64809121,
+        "comment_id": 114632622,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@Juunas I was expecting something like that, I\u2019ll dig into that, thanks. Feel free to repost as an answer so I can validate."
+    },
+    {
+        "owner": {
+            "reputation": 42644,
+            "user_id": 1658906,
+            "user_type": "registered",
+            "accept_rate": 100,
+            "profile_image": "https://www.gravatar.com/avatar/4e4748ed2fb97e8a8d4dd6d439625135?s=128&d=identicon&r=PG",
+            "display_name": "juunas",
+            "link": "https://stackoverflow.com/users/1658906/juunas"
+        },
+        "reply_to_user": {
+            "reputation": 16888,
+            "user_id": 10505040,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/643c7cd13b4cd09ce56bb9ee71914516?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Jim Xu",
+            "link": "https://stackoverflow.com/users/10505040/jim-xu"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1605255707,
+        "post_id": 64809121,
+        "comment_id": 114600220,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Configuring CORS in the Function will not help @JimXu. The reason for the issue is that the function is trying to do an interactive authentication which is the wrong thing to do since it is an API. You need to check if the access token is attached correctly, inspect it in <a href=\"https://jwt.ms\" rel=\"nofollow noreferrer\">jwt.ms</a> to see if the claims in the token are what the Function expects."
+    },
+    {
+        "owner": {
+            "reputation": 16888,
+            "user_id": 10505040,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/643c7cd13b4cd09ce56bb9ee71914516?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Jim Xu",
+            "link": "https://stackoverflow.com/users/10505040/jim-xu"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1605250364,
+        "post_id": 64809121,
+        "comment_id": 114598661,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@ChristianMeurrens Have you configured CORS in Azure function : <a href=\"https://docs.microsoft.com/en-us/azure/azure-functions/functions-how-to-use-azure-function-app-settings#cors\" rel=\"nofollow noreferrer\">docs.microsoft.com/en-us/azure/azure-functions/&hellip;</a>?"
+    },
+    {
+        "owner": {
+            "reputation": 23,
+            "user_id": 11879499,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/07935076fb6084a285b7977d0881eb00?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Christian Meurrens",
+            "link": "https://stackoverflow.com/users/11879499/christian-meurrens"
+        },
+        "reply_to_user": {
+            "reputation": 164,
+            "user_id": 11205109,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/6cf7cbf06d2f40fc956b7eb78da3a1a1?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Raymond A.",
+            "link": "https://stackoverflow.com/users/11205109/raymond-a"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1605223031,
+        "post_id": 64809121,
+        "comment_id": 114593248,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Thanks for your answer,  Yes both my localhost and deployment url(s) are registered in the redirect urls and they are defined as SPA.  As I\u2019m able to login from the web client and to run the functions from the browser (after login), my bet is that the problem is in the communication between the client and the functions API."
+    },
+    {
+        "owner": {
+            "reputation": 164,
+            "user_id": 11205109,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/6cf7cbf06d2f40fc956b7eb78da3a1a1?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Raymond A.",
+            "link": "https://stackoverflow.com/users/11205109/raymond-a"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1605222314,
+        "post_id": 64809121,
+        "comment_id": 114593059,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Have you looked at the redirect url(s) configured in &quot;App registration&quot;? Also, have you defined them as SPA?"
+    }
+]

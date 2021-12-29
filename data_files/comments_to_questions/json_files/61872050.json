@@ -1,0 +1,46 @@
+[
+    {
+        "owner": {
+            "reputation": 1684,
+            "user_id": 1786007,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/c6bfb48152374c6833ec10ecf0574e0b?s=128&d=identicon&r=PG",
+            "display_name": "Venson",
+            "link": "https://stackoverflow.com/users/1786007/venson"
+        },
+        "reply_to_user": {
+            "reputation": 13400,
+            "user_id": 2940908,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://i.stack.imgur.com/E79WU.jpg?s=128&g=1",
+            "display_name": "agua from mars",
+            "link": "https://stackoverflow.com/users/2940908/agua-from-mars"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1589814803,
+        "post_id": 61872050,
+        "comment_id": 109435764,
+        "content_license": "CC BY-SA 4.0",
+        "body": "i added the program.cs contents. I inject the HttpClient (or HttpService, its just a wrapper with common used methods) by the normal @inject syntax."
+    },
+    {
+        "owner": {
+            "reputation": 13400,
+            "user_id": 2940908,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://i.stack.imgur.com/E79WU.jpg?s=128&g=1",
+            "display_name": "agua from mars",
+            "link": "https://stackoverflow.com/users/2940908/agua-from-mars"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1589814558,
+        "post_id": 61872050,
+        "comment_id": 109435599,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Can you post the code where you register your services and how your inject them ? The Blazor app doesn&#39;t know how your protect your api, it cannot guess there &#39;s a method allowing anonymous user. It&#39;s like a service you don&#39;t write for the app."
+    }
+]

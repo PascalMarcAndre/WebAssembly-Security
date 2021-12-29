@@ -1,0 +1,46 @@
+[
+    {
+        "owner": {
+            "reputation": 774,
+            "user_id": 2862934,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/eeccb6d448bf50536821c3ff2804f9f8?s=128&d=identicon&r=PG&f=1",
+            "display_name": "benjamin",
+            "link": "https://stackoverflow.com/users/2862934/benjamin"
+        },
+        "reply_to_user": {
+            "reputation": 240386,
+            "user_id": 60761,
+            "user_type": "registered",
+            "accept_rate": 91,
+            "profile_image": "https://www.gravatar.com/avatar/5bf43bae0431d8f4a062234b5e3a0cb9?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Henk Holterman",
+            "link": "https://stackoverflow.com/users/60761/henk-holterman"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1586436346,
+        "post_id": 61120227,
+        "comment_id": 108130827,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I am on Microsoft Visual Studio Community 2019 Preview Version 16.6.0 Preview 2.1. The WASM app targets netstandard2.1 with RazorLang 3.0. The web API targets netcoreapp3.1. Both are in C# 8.0."
+    },
+    {
+        "owner": {
+            "reputation": 240386,
+            "user_id": 60761,
+            "user_type": "registered",
+            "accept_rate": 91,
+            "profile_image": "https://www.gravatar.com/avatar/5bf43bae0431d8f4a062234b5e3a0cb9?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Henk Holterman",
+            "link": "https://stackoverflow.com/users/60761/henk-holterman"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1586432263,
+        "post_id": 61120227,
+        "comment_id": 108128693,
+        "content_license": "CC BY-SA 4.0",
+        "body": "What version are you on?  There were some changes to this model lately."
+    }
+]

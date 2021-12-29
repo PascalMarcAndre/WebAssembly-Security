@@ -1,0 +1,19 @@
+[
+    {
+        "owner": {
+            "reputation": 31,
+            "user_id": 5649726,
+            "user_type": "registered",
+            "profile_image": "https://lh4.googleusercontent.com/-rytF2fzwLwE/AAAAAAAAAAI/AAAAAAAAFBM/CbQN-fCSp84/photo.jpg?sz=128",
+            "display_name": "Vasyl Kovalisko",
+            "link": "https://stackoverflow.com/users/5649726/vasyl-kovalisko"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1607072119,
+        "post_id": 65128748,
+        "comment_id": 115162551,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Solution found: <code>public class AuthUserManager : UserManager&lt;AuthIdentityUser&gt; ... public override Task&lt;string&gt; GetSecurityStampAsync(AuthIdentityUser user)         {             return Task.FromResult(Guid.NewGuid().ToString());         }</code> and <code>services.AddDefaultIdentity&lt;AuthIdentityUser&gt;()                 .AddEntityFrameworkStores&lt;AuthDbContext&gt;()                 .AddSignInManager&lt;AuthSignInManager&gt;()                 .AddUserManager&lt;AuthUserManager&gt;();</code>"
+    }
+]

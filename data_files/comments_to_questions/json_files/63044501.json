@@ -1,0 +1,44 @@
+[
+    {
+        "owner": {
+            "reputation": 15,
+            "user_id": 13971084,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/da155201719657217c52a4ca2569c1cc?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Drdoomsalot",
+            "link": "https://stackoverflow.com/users/13971084/drdoomsalot"
+        },
+        "reply_to_user": {
+            "reputation": 7572,
+            "user_id": 13897065,
+            "user_type": "registered",
+            "profile_image": "https://graph.facebook.com/10215912395073881/picture?type=large",
+            "display_name": "Giovanni Esposito",
+            "link": "https://stackoverflow.com/users/13897065/giovanni-esposito"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1595525750,
+        "post_id": 63044501,
+        "comment_id": 111513058,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Thank you, I will do this in the future!"
+    },
+    {
+        "owner": {
+            "reputation": 7572,
+            "user_id": 13897065,
+            "user_type": "registered",
+            "profile_image": "https://graph.facebook.com/10215912395073881/picture?type=large",
+            "display_name": "Giovanni Esposito",
+            "link": "https://stackoverflow.com/users/13897065/giovanni-esposito"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1595460775,
+        "post_id": 63044501,
+        "comment_id": 111486069,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Ciao and welcome to Stack Overflow. Even if your app it&#39;s basically euqal to the example provided by MSDN, show us some code and where you want to retrieve Token. Answer may come faster and more accurate. Thanks :)"
+    }
+]

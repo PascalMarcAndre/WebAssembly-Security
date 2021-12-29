@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 1,
+            "user_id": 6152891,
+            "user_type": "registered",
+            "accept_rate": 75,
+            "profile_image": "https://www.gravatar.com/avatar/b45b7f89429f8766cdbf6c776c0a9d41?s=128&d=identicon&r=PG",
+            "display_name": "enet",
+            "link": "https://stackoverflow.com/users/6152891/enet"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1611280067,
+        "post_id": 65814461,
+        "comment_id": 116406932,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I&#39;ve updated my answer..."
+    }
+]

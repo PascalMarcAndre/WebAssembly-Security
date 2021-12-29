@@ -1,0 +1,46 @@
+[
+    {
+        "owner": {
+            "reputation": 13,
+            "user_id": 13681455,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/453183c305fffd9afd8f28701f9adba1?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Mohammed Rubeesh ",
+            "link": "https://stackoverflow.com/users/13681455/mohammed-rubeesh"
+        },
+        "reply_to_user": {
+            "reputation": 13400,
+            "user_id": 2940908,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://i.stack.imgur.com/E79WU.jpg?s=128&g=1",
+            "display_name": "agua from mars",
+            "link": "https://stackoverflow.com/users/2940908/agua-from-mars"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1591302864,
+        "post_id": 62199777,
+        "comment_id": 110013252,
+        "content_license": "CC BY-SA 4.0",
+        "body": "updated the code."
+    },
+    {
+        "owner": {
+            "reputation": 13400,
+            "user_id": 2940908,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://i.stack.imgur.com/E79WU.jpg?s=128&g=1",
+            "display_name": "agua from mars",
+            "link": "https://stackoverflow.com/users/2940908/agua-from-mars"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1591297935,
+        "post_id": 62199777,
+        "comment_id": 110010983,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Can you post the <code>HttpClient</code> DI setup ?"
+    }
+]

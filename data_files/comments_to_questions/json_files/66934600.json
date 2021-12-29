@@ -1,0 +1,38 @@
+[
+    {
+        "owner": {
+            "reputation": 3916,
+            "user_id": 1154773,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://www.gravatar.com/avatar/c7b64a292905678b7166b2ce373d0629?s=128&d=identicon&r=PG",
+            "display_name": "Alamakanambra",
+            "link": "https://stackoverflow.com/users/1154773/alamakanambra"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1617484901,
+        "post_id": 66934600,
+        "comment_id": 118318934,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Good approach is to generate asp.net core hosted blazor app with authorization by Visual studio and study that code."
+    },
+    {
+        "owner": {
+            "reputation": 1205,
+            "user_id": 1763382,
+            "user_type": "registered",
+            "accept_rate": 83,
+            "profile_image": "https://i.stack.imgur.com/gCf2f.png?s=128&g=1",
+            "display_name": "auburg",
+            "link": "https://stackoverflow.com/users/1763382/auburg"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1617475591,
+        "post_id": 66934600,
+        "comment_id": 118316562,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Have you not done a search online? There\u2019s plenty of tutorials on how to do this"
+    }
+]

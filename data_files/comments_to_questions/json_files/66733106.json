@@ -1,0 +1,263 @@
+[
+    {
+        "owner": {
+            "reputation": 63,
+            "user_id": 14940254,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/9a0f91b8914d997e99a0287e968ff0fa?s=128&d=identicon&r=PG&f=1",
+            "display_name": "capstonene",
+            "link": "https://stackoverflow.com/users/14940254/capstonene"
+        },
+        "reply_to_user": {
+            "reputation": 11619,
+            "user_id": 9078341,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/TAD0A.png?s=128&g=1",
+            "display_name": "Randy Casburn",
+            "link": "https://stackoverflow.com/users/9078341/randy-casburn"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1616355630,
+        "post_id": 66733106,
+        "comment_id": 117970098,
+        "content_license": "CC BY-SA 4.0",
+        "body": "thank you dear Randy. thanks so much for your helps"
+    },
+    {
+        "owner": {
+            "reputation": 11619,
+            "user_id": 9078341,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/TAD0A.png?s=128&g=1",
+            "display_name": "Randy Casburn",
+            "link": "https://stackoverflow.com/users/9078341/randy-casburn"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1616348068,
+        "post_id": 66733106,
+        "comment_id": 117967794,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Last comment from me here: you repeatedly point out that your &quot;study&quot; this, &quot;read many&quot; of those. Yet you have yet to provide one reference. If you are reading garbage resources that have not been vetted for accuracy, you are responsible for your own confusion. Example: &quot;<i>i read many posts that compare Java virtual machine with webassembly virtual machine</i>&quot; - without reference, there is very little anyone can say about what you read and perhaps, maybe, misunderstood in the &quot;many posts&quot;. Good luck to you."
+    },
+    {
+        "owner": {
+            "reputation": 11619,
+            "user_id": 9078341,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/TAD0A.png?s=128&g=1",
+            "display_name": "Randy Casburn",
+            "link": "https://stackoverflow.com/users/9078341/randy-casburn"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1616347824,
+        "post_id": 66733106,
+        "comment_id": 117967723,
+        "content_license": "CC BY-SA 4.0",
+        "body": "There are not remotely related. JVM = Java Bytecode runtime environment specifically meant for execution on the desktop ::: WASM = many (non-garbage collected) language runtime environment specifically adapted for execution within the browser."
+    },
+    {
+        "owner": {
+            "reputation": 63,
+            "user_id": 14940254,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/9a0f91b8914d997e99a0287e968ff0fa?s=128&d=identicon&r=PG&f=1",
+            "display_name": "capstonene",
+            "link": "https://stackoverflow.com/users/14940254/capstonene"
+        },
+        "reply_to_user": {
+            "reputation": 11619,
+            "user_id": 9078341,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/TAD0A.png?s=128&g=1",
+            "display_name": "Randy Casburn",
+            "link": "https://stackoverflow.com/users/9078341/randy-casburn"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1616346200,
+        "post_id": 66733106,
+        "comment_id": 117967260,
+        "content_license": "CC BY-SA 4.0",
+        "body": "would you compare JVM with wasm?"
+    },
+    {
+        "owner": {
+            "reputation": 63,
+            "user_id": 14940254,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/9a0f91b8914d997e99a0287e968ff0fa?s=128&d=identicon&r=PG&f=1",
+            "display_name": "capstonene",
+            "link": "https://stackoverflow.com/users/14940254/capstonene"
+        },
+        "reply_to_user": {
+            "reputation": 11619,
+            "user_id": 9078341,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/TAD0A.png?s=128&g=1",
+            "display_name": "Randy Casburn",
+            "link": "https://stackoverflow.com/users/9078341/randy-casburn"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1616345030,
+        "post_id": 66733106,
+        "comment_id": 117966919,
+        "content_license": "CC BY-SA 4.0",
+        "body": "thank you. but you know i read many posts that compare Java virtual machine with webassembly virtual machine and they don&#39;t talk about javascript isolation. so i thinked webassembly VM is something similar Java VM (JVM)"
+    },
+    {
+        "owner": {
+            "reputation": 11619,
+            "user_id": 9078341,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/TAD0A.png?s=128&g=1",
+            "display_name": "Randy Casburn",
+            "link": "https://stackoverflow.com/users/9078341/randy-casburn"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1616344489,
+        "post_id": 66733106,
+        "comment_id": 117966769,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I think a better answer to #2 would be to tell you that WASM is sandboxed by default and JavaScript can optionally be sandboxed. JavaScript is sandboxed using Content Security Policy or iframe attributes. The CSP version of sandboxing is provided <a href=\"https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/sandbox\" rel=\"nofollow noreferrer\">here</a> and describes precisely what sandboxing means. Those very same rules are applied to WASM by default."
+    },
+    {
+        "owner": {
+            "reputation": 11619,
+            "user_id": 9078341,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/TAD0A.png?s=128&g=1",
+            "display_name": "Randy Casburn",
+            "link": "https://stackoverflow.com/users/9078341/randy-casburn"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1616343909,
+        "post_id": 66733106,
+        "comment_id": 117966563,
+        "content_license": "CC BY-SA 4.0",
+        "body": "1. Yes...but using the term VM with JavaScript confuses many people (like it has for you). 2. The answer is in the final comment concerning <b>sandboxing</b> both WASM and JavaScript code."
+    },
+    {
+        "owner": {
+            "reputation": 63,
+            "user_id": 14940254,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/9a0f91b8914d997e99a0287e968ff0fa?s=128&d=identicon&r=PG&f=1",
+            "display_name": "capstonene",
+            "link": "https://stackoverflow.com/users/14940254/capstonene"
+        },
+        "reply_to_user": {
+            "reputation": 11619,
+            "user_id": 9078341,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/TAD0A.png?s=128&g=1",
+            "display_name": "Randy Casburn",
+            "link": "https://stackoverflow.com/users/9078341/randy-casburn"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1616343808,
+        "post_id": 66733106,
+        "comment_id": 117966531,
+        "content_license": "CC BY-SA 4.0",
+        "body": "thank you. yes. i read all of these before. please answer these two questions: 1- is JS VM is the same as JS machine, e.g. V8? 2- if JS is also run in VM, why wasm claim security because of running in VM?"
+    },
+    {
+        "owner": {
+            "reputation": 11619,
+            "user_id": 9078341,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/TAD0A.png?s=128&g=1",
+            "display_name": "Randy Casburn",
+            "link": "https://stackoverflow.com/users/9078341/randy-casburn"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1616343772,
+        "post_id": 66733106,
+        "comment_id": 117966507,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Finally, to address &quot;isolation&quot; with both WASM and JavaScript, I need to change the term a bit since &quot;isolation&quot; means different things in different (language) contexts. So when thinking about code running in a browser, we use the term <b>sandbox</b>. So WASM is automatically &quot;<i>sandboxed</i>&quot; in the browser. You can read more about sandboxing here: <a href=\"https://stackoverflow.com/questions/7043882/what-actually-is-sandboxing-in-javascript\" title=\"what actually is sandboxing in javascript\">stackoverflow.com/questions/7043882/&hellip;</a>"
+    },
+    {
+        "owner": {
+            "reputation": 11619,
+            "user_id": 9078341,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/TAD0A.png?s=128&g=1",
+            "display_name": "Randy Casburn",
+            "link": "https://stackoverflow.com/users/9078341/randy-casburn"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1616342352,
+        "post_id": 66733106,
+        "comment_id": 117966100,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Additionally, here is a blog post on the v8.dev web site that describes wasm integration into V8: <a href=\"https://v8.dev/blog/webassembly-experimental\" rel=\"nofollow noreferrer\">v8.dev/blog/webassembly-experimental</a>"
+    },
+    {
+        "owner": {
+            "reputation": 11619,
+            "user_id": 9078341,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/TAD0A.png?s=128&g=1",
+            "display_name": "Randy Casburn",
+            "link": "https://stackoverflow.com/users/9078341/randy-casburn"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1616342201,
+        "post_id": 66733106,
+        "comment_id": 117966053,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Ok, but it seems you&#39;ve missed some vital parts, maybe English is not your first language. Focusing on this question: &quot;<i>webassembly virtual machine which is embedded in browsers is V8?</i>&quot; - I&#39;ll quote the answer from the link I provided: &quot;<i>With the advent of WebAssembly appearing in browsers, the virtual machine that we talked about earlier will now load and run two types of code \u2014 JavaScript AND WebAssembly.</i>&quot;"
+    },
+    {
+        "owner": {
+            "reputation": 63,
+            "user_id": 14940254,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/9a0f91b8914d997e99a0287e968ff0fa?s=128&d=identicon&r=PG&f=1",
+            "display_name": "capstonene",
+            "link": "https://stackoverflow.com/users/14940254/capstonene"
+        },
+        "reply_to_user": {
+            "reputation": 11619,
+            "user_id": 9078341,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/TAD0A.png?s=128&g=1",
+            "display_name": "Randy Casburn",
+            "link": "https://stackoverflow.com/users/9078341/randy-casburn"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1616336959,
+        "post_id": 66733106,
+        "comment_id": 117964597,
+        "content_license": "CC BY-SA 4.0",
+        "body": "dear Randy i read all of the documentation of webassembly before"
+    },
+    {
+        "owner": {
+            "reputation": 11619,
+            "user_id": 9078341,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/TAD0A.png?s=128&g=1",
+            "display_name": "Randy Casburn",
+            "link": "https://stackoverflow.com/users/9078341/randy-casburn"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1616335493,
+        "post_id": 66733106,
+        "comment_id": 117964132,
+        "content_license": "CC BY-SA 4.0",
+        "body": "This: <a href=\"https://developer.mozilla.org/en-US/docs/WebAssembly/Concepts#how_does_webassembly_fit_into_the_web_platform\" rel=\"nofollow noreferrer\">developer.mozilla.org/en-US/docs/WebAssembly/&hellip;</a>"
+    }
+]

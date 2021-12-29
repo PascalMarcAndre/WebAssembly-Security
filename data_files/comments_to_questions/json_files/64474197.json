@@ -1,0 +1,95 @@
+[
+    {
+        "owner": {
+            "reputation": 5877,
+            "user_id": 3185968,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/ffc0f4eda45ce3e2ff4249afbfdac43e?s=128&d=identicon&r=PG&f=1",
+            "display_name": "EOF",
+            "link": "https://stackoverflow.com/users/3185968/eof"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1603402018,
+        "post_id": 64474197,
+        "comment_id": 114034821,
+        "content_license": "CC BY-SA 4.0",
+        "body": "On Intel-uarchs, the code that computes the multiplication of the uppermost bit separately uses just as many long-latency multiplying instructions as the <code>vpmullw</code>-using code, and as many instructions in total. I would expect it to have similar throughput, but it has worse latency, because its dependency tree is deeper. You might try to replace one of the <code>vpmaddubsw</code> with an <code>AND</code> with the result of a byte-comparison with zero, because it only has a single bit of input, avoiding the costly multliplying instruction, but using more shift instructions."
+    },
+    {
+        "owner": {
+            "reputation": 361,
+            "user_id": 3900123,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/0c2a43adeac7bb506c17a4db01444423?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Dan Weber",
+            "link": "https://stackoverflow.com/users/3900123/dan-weber"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1603387503,
+        "post_id": 64474197,
+        "comment_id": 114028733,
+        "content_license": "CC BY-SA 4.0",
+        "body": "If it&#39;s called twice, then the saturation isn&#39;t at play right?"
+    },
+    {
+        "owner": {
+            "reputation": 5877,
+            "user_id": 3185968,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/ffc0f4eda45ce3e2ff4249afbfdac43e?s=128&d=identicon&r=PG&f=1",
+            "display_name": "EOF",
+            "link": "https://stackoverflow.com/users/3185968/eof"
+        },
+        "edited": false,
+        "score": 2,
+        "creation_date": 1603386747,
+        "post_id": 64474197,
+        "comment_id": 114028435,
+        "content_license": "CC BY-SA 4.0",
+        "body": "The saturation is what kills this idea. Converting signed/unsigned multiplication to unsigned/unsigned would be easy enough, just add <code>((signed&gt;&gt;8)&amp;unsigned)&lt;&lt;8</code> to the result. Even the <code>add</code> part of <code>pmaddubsw</code> wouldn&#39;t normally hurt, because normally binary addition (signed or unsigned) is associative. But saturating addition is <i>not</i> associative, so you can&#39;t fix the signedness of the multiplication if the addition saturated."
+    },
+    {
+        "owner": {
+            "reputation": 361,
+            "user_id": 3900123,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/0c2a43adeac7bb506c17a4db01444423?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Dan Weber",
+            "link": "https://stackoverflow.com/users/3900123/dan-weber"
+        },
+        "reply_to_user": {
+            "reputation": 14928,
+            "user_id": 6870253,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/3c7ce91530d2dddae7b9fc2bd828ed78?s=128&d=identicon&r=PG&f=1",
+            "display_name": "chtz",
+            "link": "https://stackoverflow.com/users/6870253/chtz"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1603386397,
+        "post_id": 64474197,
+        "comment_id": 114028244,
+        "content_license": "CC BY-SA 4.0",
+        "body": "That would be acceptable I think. With or without saturation."
+    },
+    {
+        "owner": {
+            "reputation": 14928,
+            "user_id": 6870253,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/3c7ce91530d2dddae7b9fc2bd828ed78?s=128&d=identicon&r=PG&f=1",
+            "display_name": "chtz",
+            "link": "https://stackoverflow.com/users/6870253/chtz"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1603367767,
+        "post_id": 64474197,
+        "comment_id": 114018452,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Just to clarify: You want the same behavior as <code>pmaddubsw</code> just with two unsigned inputs? (i.e, horizontal addition of two products and saturation -- in this case to <code>[0,0xffff]</code>)."
+    }
+]

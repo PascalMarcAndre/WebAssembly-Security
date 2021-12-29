@@ -1,0 +1,36 @@
+[
+    {
+        "owner": {
+            "reputation": 159,
+            "user_id": 6253157,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/be3f5e264d39654071472792dbc44f89?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Chris",
+            "link": "https://stackoverflow.com/users/6253157/chris"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1624999920,
+        "post_id": 66423999,
+        "comment_id": 120509555,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@wafers have you found a solution to this?"
+    },
+    {
+        "owner": {
+            "reputation": 9148,
+            "user_id": 1945525,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/E7uTt.jpg?s=128&g=1",
+            "display_name": "rickvdbosch",
+            "link": "https://stackoverflow.com/users/1945525/rickvdbosch"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1614609767,
+        "post_id": 66423999,
+        "comment_id": 117429843,
+        "content_license": "CC BY-SA 4.0",
+        "body": "If there&#39;s any secrets in there, you might implement an API that returns configuration items that are specific for the front end. Have a look over here: <a href=\"https://docs.microsoft.com/en-us/aspnet/core/blazor/fundamentals/configuration?view=aspnetcore-5.0\" rel=\"nofollow noreferrer\">ASP.NET Core Blazor configuration</a>."
+    }
+]

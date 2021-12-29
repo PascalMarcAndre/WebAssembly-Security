@@ -1,0 +1,82 @@
+[
+    {
+        "owner": {
+            "reputation": 4473,
+            "user_id": 1104820,
+            "user_type": "registered",
+            "accept_rate": 66,
+            "profile_image": "https://www.gravatar.com/avatar/7325b123195f91240452230eac497fed?s=128&d=identicon&r=PG",
+            "display_name": "Vlado Pand\u017ei\u0107",
+            "link": "https://stackoverflow.com/users/1104820/vlado-pand%c5%bei%c4%87"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1605610788,
+        "post_id": 64872824,
+        "comment_id": 114697209,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Because, like said in question: there is user who can just see (reader) and user who has writter role (who is able to make destructive actions). I don&#39;t want complicate things, just simple, elegant solution. I don&#39;t want to make APIis, or make special &quot;reader&quot; views. Just hide submit button and prevent &quot;clever&quot; user from still submitting anything. This is not public app, only few users will use it. But I still want to make it secure, without introducing 2 weeks of development. Some DestructiveOperationDecorator that decorates all my destructive operations could  do the job"
+    },
+    {
+        "owner": {
+            "reputation": 5178,
+            "user_id": 1492496,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/dO7to.png?s=128&g=1",
+            "display_name": "Brian Parker",
+            "link": "https://stackoverflow.com/users/1492496/brian-parker"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1605610548,
+        "post_id": 64872824,
+        "comment_id": 114697091,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Forgive my ignorance but why is the non authorized user even seeing the form they are not supposed to be able to submit."
+    },
+    {
+        "owner": {
+            "reputation": 4473,
+            "user_id": 1104820,
+            "user_type": "registered",
+            "accept_rate": 66,
+            "profile_image": "https://www.gravatar.com/avatar/7325b123195f91240452230eac497fed?s=128&d=identicon&r=PG",
+            "display_name": "Vlado Pand\u017ei\u0107",
+            "link": "https://stackoverflow.com/users/1104820/vlado-pand%c5%bei%c4%87"
+        },
+        "reply_to_user": {
+            "reputation": 4550,
+            "user_id": 1226915,
+            "user_type": "registered",
+            "accept_rate": 86,
+            "profile_image": "https://www.gravatar.com/avatar/0a3e354005ed78f81aa2b7234681d9ca?s=128&d=identicon&r=PG",
+            "display_name": "Wim Ombelets",
+            "link": "https://stackoverflow.com/users/1226915/wim-ombelets"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1605607842,
+        "post_id": 64872824,
+        "comment_id": 114695955,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I don&#39;t want to make architectural changes and use httpClient. App will always be Blazor server and it didn&#39;t wanted to complicate and use httpClient to make request on server while I am currently &quot;on server&quot;"
+    },
+    {
+        "owner": {
+            "reputation": 4550,
+            "user_id": 1226915,
+            "user_type": "registered",
+            "accept_rate": 86,
+            "profile_image": "https://www.gravatar.com/avatar/0a3e354005ed78f81aa2b7234681d9ca?s=128&d=identicon&r=PG",
+            "display_name": "Wim Ombelets",
+            "link": "https://stackoverflow.com/users/1226915/wim-ombelets"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1605607553,
+        "post_id": 64872824,
+        "comment_id": 114695839,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I think it would make more sense from an architectural point of view to add the authorization policies to a protected API and call that from the frontend or service layer, where you can respond to potential 403s accordingly."
+    }
+]

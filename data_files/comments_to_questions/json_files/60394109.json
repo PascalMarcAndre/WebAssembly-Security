@@ -1,0 +1,19 @@
+[
+    {
+        "owner": {
+            "reputation": 150,
+            "user_id": 5874473,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/1d2146389dddd77d8ea58c683e452ed1?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Mark Malabanan",
+            "link": "https://stackoverflow.com/users/5874473/mark-malabanan"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1584139515,
+        "post_id": 60394109,
+        "comment_id": 107355091,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Having the same problem too, have you found the solution to this?"
+    }
+]

@@ -1,0 +1,145 @@
+[
+    {
+        "owner": {
+            "reputation": 240386,
+            "user_id": 60761,
+            "user_type": "registered",
+            "accept_rate": 91,
+            "profile_image": "https://www.gravatar.com/avatar/5bf43bae0431d8f4a062234b5e3a0cb9?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Henk Holterman",
+            "link": "https://stackoverflow.com/users/60761/henk-holterman"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1621830599,
+        "post_id": 60057113,
+        "comment_id": 119604024,
+        "content_license": "CC BY-SA 4.0",
+        "body": "You should use DTOs but they do not belong in the Application Layer. And should not have a dependency on the Model."
+    },
+    {
+        "owner": {
+            "reputation": 488,
+            "user_id": 1807542,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/2c4d94a78189c198f834dc1ff93c11cf?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Michel Jansson",
+            "link": "https://stackoverflow.com/users/1807542/michel-jansson"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1604529779,
+        "post_id": 60057113,
+        "comment_id": 114378264,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@Newm, what solution did you end up using for this? I feel it should be a quite common issue to have, but your question seems to basically the only one on the internet."
+    },
+    {
+        "owner": {
+            "reputation": 975,
+            "user_id": 1725931,
+            "user_type": "registered",
+            "accept_rate": 92,
+            "profile_image": "https://www.gravatar.com/avatar/84cfcfaa7ce8a7c8a9883411d85cdb64?s=128&d=identicon&r=PG",
+            "display_name": "Newm",
+            "link": "https://stackoverflow.com/users/1725931/newm"
+        },
+        "reply_to_user": {
+            "reputation": 777,
+            "user_id": 1061179,
+            "user_type": "registered",
+            "accept_rate": 93,
+            "profile_image": "https://i.stack.imgur.com/ANIgY.jpg?s=128&g=1",
+            "display_name": "Rich Bryant",
+            "link": "https://stackoverflow.com/users/1061179/rich-bryant"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1580825810,
+        "post_id": 60057113,
+        "comment_id": 106219772,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@Rich Bryant - sorry I was updating the post and did not see your comment.  The DTOs are largely used to remove the EF nativation properties etc.  I think your suggestion to move them to another project may be the way to go."
+    },
+    {
+        "owner": {
+            "reputation": 777,
+            "user_id": 1061179,
+            "user_type": "registered",
+            "accept_rate": 93,
+            "profile_image": "https://i.stack.imgur.com/ANIgY.jpg?s=128&g=1",
+            "display_name": "Rich Bryant",
+            "link": "https://stackoverflow.com/users/1061179/rich-bryant"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1580824256,
+        "post_id": 60057113,
+        "comment_id": 106218814,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Split your DTOs out of your Application layer, put them in the Shared - or whatever you choose to call it - project of the Blazor setup and reference that from the client and the app layer.  Better yet, reference the Domain and don&#39;t have DTOs."
+    },
+    {
+        "owner": {
+            "reputation": 13400,
+            "user_id": 2940908,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://i.stack.imgur.com/E79WU.jpg?s=128&g=1",
+            "display_name": "agua from mars",
+            "link": "https://stackoverflow.com/users/2940908/agua-from-mars"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1580821721,
+        "post_id": 60057113,
+        "comment_id": 106217385,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Regarding validation, if you use Fluent take a look at this <a href=\"https://blog.stevensanderson.com/2019/09/04/blazor-fluentvalidation/\" rel=\"nofollow noreferrer\">blog.stevensanderson.com/2019/09/04/blazor-fluentvalidation</a>"
+    },
+    {
+        "owner": {
+            "reputation": 13400,
+            "user_id": 2940908,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://i.stack.imgur.com/E79WU.jpg?s=128&g=1",
+            "display_name": "agua from mars",
+            "link": "https://stackoverflow.com/users/2940908/agua-from-mars"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1580821597,
+        "post_id": 60057113,
+        "comment_id": 106217323,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Actualy you sould not reference your application layer in the Blazor wasm app, as you don&#39;t do it with your React front. But call your APIs. You can (and I encourage you) reference your Domain layer"
+    },
+    {
+        "owner": {
+            "reputation": 975,
+            "user_id": 1725931,
+            "user_type": "registered",
+            "accept_rate": 92,
+            "profile_image": "https://www.gravatar.com/avatar/84cfcfaa7ce8a7c8a9883411d85cdb64?s=128&d=identicon&r=PG",
+            "display_name": "Newm",
+            "link": "https://stackoverflow.com/users/1725931/newm"
+        },
+        "reply_to_user": {
+            "reputation": 777,
+            "user_id": 1061179,
+            "user_type": "registered",
+            "accept_rate": 93,
+            "profile_image": "https://i.stack.imgur.com/ANIgY.jpg?s=128&g=1",
+            "display_name": "Rich Bryant",
+            "link": "https://stackoverflow.com/users/1061179/rich-bryant"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1580820619,
+        "post_id": 60057113,
+        "comment_id": 106216805,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I don&#39;t want that on the client. The PayCategoryListQueryHandler is in the Application layer which is also where the DTOs and validation live. When using React it goes AJAX-&gt;API-&gt;Application so there is no issue.  Using Blazor (so that I can reuse the validation) I reference the Application layer which is where the problem arrises."
+    }
+]

@@ -1,0 +1,86 @@
+[
+    {
+        "owner": {
+            "reputation": 482,
+            "user_id": 7677042,
+            "user_type": "registered",
+            "profile_image": "https://lh6.googleusercontent.com/-sImS78WECF4/AAAAAAAAAAI/AAAAAAAAGv0/jFZhqIYLltY/photo.jpg?sz=128",
+            "display_name": "Nagmon",
+            "link": "https://stackoverflow.com/users/7677042/nagmon"
+        },
+        "reply_to_user": {
+            "reputation": 45194,
+            "user_id": 3959875,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/wJdGu.png?s=128&g=1",
+            "display_name": "wOxxOm",
+            "link": "https://stackoverflow.com/users/3959875/woxxom"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1522222409,
+        "post_id": 49491383,
+        "comment_id": 86062783,
+        "content_license": "CC BY-SA 3.0",
+        "body": "@wOxxOm thanks, I&#39;ll try"
+    },
+    {
+        "owner": {
+            "reputation": 45194,
+            "user_id": 3959875,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/wJdGu.png?s=128&g=1",
+            "display_name": "wOxxOm",
+            "link": "https://stackoverflow.com/users/3959875/woxxom"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1522114457,
+        "post_id": 49491383,
+        "comment_id": 86010312,
+        "content_license": "CC BY-SA 3.0",
+        "body": "Maybe Chrome doesn&#39;t support wasm in extensions, but only from https? You can try to &quot;serve&quot; it by using a Service Worker inside your extension. Also consider asking on <a href=\"https://crbug.com\" rel=\"nofollow noreferrer\">crbug.com</a> or <a href=\"https://groups.google.com/a/chromium.org/d/forum/chromium-extensions\" rel=\"nofollow noreferrer\">chromium-extensions-announce</a>."
+    },
+    {
+        "owner": {
+            "reputation": 482,
+            "user_id": 7677042,
+            "user_type": "registered",
+            "profile_image": "https://lh6.googleusercontent.com/-sImS78WECF4/AAAAAAAAAAI/AAAAAAAAGv0/jFZhqIYLltY/photo.jpg?sz=128",
+            "display_name": "Nagmon",
+            "link": "https://stackoverflow.com/users/7677042/nagmon"
+        },
+        "reply_to_user": {
+            "reputation": 45194,
+            "user_id": 3959875,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/wJdGu.png?s=128&g=1",
+            "display_name": "wOxxOm",
+            "link": "https://stackoverflow.com/users/3959875/woxxom"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1522071215,
+        "post_id": 49491383,
+        "comment_id": 85988927,
+        "content_license": "CC BY-SA 3.0",
+        "body": "@wOxxOm thank for the reply! I also tried to do it from the MDN tutorial with no success. If i&#39;m trying to do it outside the sandbox I get this error: &quot;Uncaught (in promise) CompileError: WebAssembly.compile(): Wasm code generation disallowed by embedder&quot;"
+    },
+    {
+        "owner": {
+            "reputation": 45194,
+            "user_id": 3959875,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/wJdGu.png?s=128&g=1",
+            "display_name": "wOxxOm",
+            "link": "https://stackoverflow.com/users/3959875/woxxom"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1522067470,
+        "post_id": 49491383,
+        "comment_id": 85986226,
+        "content_license": "CC BY-SA 3.0",
+        "body": "What exactly was the permissions issue? If it was caused by inline code in script tag, simply use a separate js file. Try also an <a href=\"https://developer.mozilla.org/en-US/docs/WebAssembly/Using_the_JavaScript_API\" rel=\"nofollow noreferrer\">MDN tutorial</a> that uses a different approach."
+    }
+]

@@ -1,0 +1,63 @@
+[
+    {
+        "owner": {
+            "reputation": 11,
+            "user_id": 12246471,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/c05f8de0e6567fd161353633a6ba8749?s=128&d=identicon&r=PG&f=1",
+            "display_name": "IedeSnoek",
+            "link": "https://stackoverflow.com/users/12246471/iedesnoek"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1624109362,
+        "post_id": 64759626,
+        "comment_id": 120271112,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I think I may have the solution to this: <a href=\"https://stackoverflow.com/questions/67858376/blazor-authentication-working-on-azure-but-on-iis-in-a-vps/67956757#67956757\">Blazor authentication problem</a>"
+    },
+    {
+        "owner": {
+            "reputation": 41,
+            "user_id": 4355492,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/c1f8a8dccde8942ba23ec89b04791518?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Jabo",
+            "link": "https://stackoverflow.com/users/4355492/jabo"
+        },
+        "reply_to_user": {
+            "reputation": 3575,
+            "user_id": 1158845,
+            "user_type": "registered",
+            "accept_rate": 48,
+            "profile_image": "https://www.gravatar.com/avatar/e7d3b47649bd04652577d03ecddeed5e?s=128&d=identicon&r=PG",
+            "display_name": "Umair",
+            "link": "https://stackoverflow.com/users/1158845/umair"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1604967374,
+        "post_id": 64759626,
+        "comment_id": 114503942,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@Umair Sorry about that, added my startup class."
+    },
+    {
+        "owner": {
+            "reputation": 3575,
+            "user_id": 1158845,
+            "user_type": "registered",
+            "accept_rate": 48,
+            "profile_image": "https://www.gravatar.com/avatar/e7d3b47649bd04652577d03ecddeed5e?s=128&d=identicon&r=PG",
+            "display_name": "Umair",
+            "link": "https://stackoverflow.com/users/1158845/umair"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1604965273,
+        "post_id": 64759626,
+        "comment_id": 114503503,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Share some code of your blazor and identity server setup please."
+    }
+]

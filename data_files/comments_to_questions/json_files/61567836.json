@@ -1,0 +1,125 @@
+[
+    {
+        "owner": {
+            "reputation": 3104,
+            "user_id": 3546760,
+            "user_type": "registered",
+            "accept_rate": 91,
+            "profile_image": "https://www.gravatar.com/avatar/2c8d9f9e461f5a1acfba19e9d59996c1?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Almis",
+            "link": "https://stackoverflow.com/users/3546760/almis"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1589163923,
+        "post_id": 61567836,
+        "comment_id": 109175160,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Yes I did, authority points to the login/register flow"
+    },
+    {
+        "owner": {
+            "reputation": 12769,
+            "user_id": 10521739,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/6459b077561be67082b7c27faed22fb2?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Allen Wu",
+            "link": "https://stackoverflow.com/users/10521739/allen-wu"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1589162724,
+        "post_id": 61567836,
+        "comment_id": 109174915,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Did you modify the value of <code>Authority</code> in <code>appsettings.json</code> file as Jas Suri suggested? See <a href=\"https://docs.microsoft.com/en-us/aspnet/core/security/blazor/webassembly/standalone-with-azure-active-directory-b2c?view=aspnetcore-3.1#authentication-service-support\" rel=\"nofollow noreferrer\">docs.microsoft.com/en-us/aspnet/core/security/blazor/&hellip;</a>."
+    },
+    {
+        "owner": {
+            "reputation": 3104,
+            "user_id": 3546760,
+            "user_type": "registered",
+            "accept_rate": 91,
+            "profile_image": "https://www.gravatar.com/avatar/2c8d9f9e461f5a1acfba19e9d59996c1?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Almis",
+            "link": "https://stackoverflow.com/users/3546760/almis"
+        },
+        "reply_to_user": {
+            "reputation": 5815,
+            "user_id": 8357357,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/9dd821a1ba99ec871592062ce50d64ed?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Jas Suri - MSFT",
+            "link": "https://stackoverflow.com/users/8357357/jas-suri-msft"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1589139127,
+        "post_id": 61567836,
+        "comment_id": 109168671,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@JasSuri I don&#39;t really understand this, can you show me an example?"
+    },
+    {
+        "owner": {
+            "reputation": 5815,
+            "user_id": 8357357,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/9dd821a1ba99ec871592062ce50d64ed?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Jas Suri - MSFT",
+            "link": "https://stackoverflow.com/users/8357357/jas-suri-msft"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1588685881,
+        "post_id": 61567836,
+        "comment_id": 108988962,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Youll need to dynamically change the authority param in the <code>wwwroot&#47;appsettings.json</code> file to include the Policy ID of the respective User Flow you are trying to invoke when the user makes the action in the App"
+    },
+    {
+        "owner": {
+            "reputation": 3104,
+            "user_id": 3546760,
+            "user_type": "registered",
+            "accept_rate": 91,
+            "profile_image": "https://www.gravatar.com/avatar/2c8d9f9e461f5a1acfba19e9d59996c1?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Almis",
+            "link": "https://stackoverflow.com/users/3546760/almis"
+        },
+        "reply_to_user": {
+            "reputation": 849,
+            "user_id": 8784568,
+            "user_type": "registered",
+            "accept_rate": 100,
+            "profile_image": "https://i.stack.imgur.com/2tsJT.jpg?s=128&g=1",
+            "display_name": "Manish",
+            "link": "https://stackoverflow.com/users/8784568/manish"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1588528137,
+        "post_id": 61567836,
+        "comment_id": 108926446,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@Manish yes I did create the user flow for ProfileEdit, but I didn&#39;t add the name anywhere in my code, don&#39;t know where I should add it. Yes I can register from login flow but I wanted to show the register page without the as login intermediate"
+    },
+    {
+        "owner": {
+            "reputation": 849,
+            "user_id": 8784568,
+            "user_type": "registered",
+            "accept_rate": 100,
+            "profile_image": "https://i.stack.imgur.com/2tsJT.jpg?s=128&g=1",
+            "display_name": "Manish",
+            "link": "https://stackoverflow.com/users/8784568/manish"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1588473611,
+        "post_id": 61567836,
+        "comment_id": 108908901,
+        "content_license": "CC BY-SA 4.0",
+        "body": "have you created user flow for ProfileEdit? The register is working as expected, you can register a user from the login page(for this you need signuporsignin userflow)."
+    }
+]

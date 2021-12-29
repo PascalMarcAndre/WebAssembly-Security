@@ -1,0 +1,45 @@
+[
+    {
+        "owner": {
+            "reputation": 427,
+            "user_id": 2209634,
+            "user_type": "registered",
+            "accept_rate": 80,
+            "profile_image": "https://www.gravatar.com/avatar/afe4a5f554d071c8ce24b96131678fde?s=128&d=identicon&r=PG&f=1",
+            "display_name": "user2209634",
+            "link": "https://stackoverflow.com/users/2209634/user2209634"
+        },
+        "reply_to_user": {
+            "reputation": 3111,
+            "user_id": 14491467,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/96272b82d1565cba6f19f1e7e738be44?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Karney.",
+            "link": "https://stackoverflow.com/users/14491467/karney"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1615197967,
+        "post_id": 66521906,
+        "comment_id": 117607605,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I&#39;m not sure what other code I can post that would be relevant.  I&#39;ve just tried taking the API call out of the equation, hard-coded the token string in the Blazor app, and attempted to decode it in isolation after the app has initialised.  I get exactly the same result, i.e. when running in localhost via Visual Studio 2019, it decodes perfectly; when running it from the webserver, the same error as above.  The app uses System.IdentityModel.Tokens.Jwt, Version=6.8.0.0.  The only thing that is different is the fact that it&#39;s being served by a web server. Could it be some IIS config?"
+    },
+    {
+        "owner": {
+            "reputation": 3111,
+            "user_id": 14491467,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/96272b82d1565cba6f19f1e7e738be44?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Karney.",
+            "link": "https://stackoverflow.com/users/14491467/karney"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1615182064,
+        "post_id": 66521906,
+        "comment_id": 117602429,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I test the bearer token with ReadJwtToken, but no exception. Can you share more code and what extension you used?"
+    }
+]
