@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 4806,
+            "user_id": 26346,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/fce469a4b695184aa5e087d76db1d81e?s=128&d=identicon&r=PG",
+            "display_name": "J&#233;r&#244;me Laban",
+            "link": "https://stackoverflow.com/users/26346/j%c3%a9r%c3%b4me-laban"
+        },
+        "is_accepted": false,
+        "score": 2,
+        "last_activity_date": 1603312112,
+        "creation_date": 1603312112,
+        "answer_id": 64471298,
+        "question_id": 64457269,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>The number two may come from the default provided by emscripten, with the <a href=\"https://emscripten.org/docs/porting/pthreads.html#compiling-with-pthreads-enabled\" rel=\"nofollow noreferrer\">default number of workers</a> provided before the main of the application. You can change the default number of threads with this:</p>\n<pre class=\"lang-xml prettyprint-override\"><code>&lt;ItemGroup&gt;\n    &lt;WasmShellExtraEmccFlags Include=&quot;-s PTHREAD_POOL_SIZE=10&quot;/&gt;\n&lt;/ItemGroup&gt;\n</code></pre>\n<p>The support for threads is likely to improve a lot during the .NET 6 timeframe, so this may change signficantly.</p>\n"
+    }
+]

@@ -1,0 +1,22 @@
+[
+    {
+        "owner": {
+            "reputation": 25737,
+            "user_id": 6152891,
+            "user_type": "registered",
+            "accept_rate": 75,
+            "profile_image": "https://www.gravatar.com/avatar/b45b7f89429f8766cdbf6c776c0a9d41?s=128&d=identicon&r=PG",
+            "display_name": "enet",
+            "link": "https://stackoverflow.com/users/6152891/enet"
+        },
+        "is_accepted": false,
+        "score": 2,
+        "last_activity_date": 1589628277,
+        "last_edit_date": 1589628277,
+        "creation_date": 1589627154,
+        "answer_id": 61835766,
+        "question_id": 61830255,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>Try to use <code>IAccessTokenProvider.RequestAccessToken</code></p>\n\n<p><a href=\"https://github.com/dotnet/aspnetcore/tree/blazor-wasm/src/Components/WebAssembly/WebAssembly.Authentication/src/Services\" rel=\"nofollow noreferrer\">See more here</a></p>\n\n<p><a href=\"https://docs.microsoft.com/en-us/aspnet/core/security/authentication/identity-api-authorization?view=aspnetcore-3.1#retrieve-and-attach-the-access-token-to-the-response\" rel=\"nofollow noreferrer\">See also this</a> / <a href=\"https://github.com/dotnet/aspnetcore/blob/blazor-wasm/src/Components/WebAssembly/WebAssembly.Authentication/src/Services/RemoteAuthenticationService.cs\" rel=\"nofollow noreferrer\">and this</a></p>\n\n<p>hope this helps...</p>\n"
+    }
+]

@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 15678,
+            "user_id": 7609093,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/lwHJH.png?s=128&g=1",
+            "display_name": "Brando Zhang",
+            "link": "https://stackoverflow.com/users/7609093/brando-zhang"
+        },
+        "is_accepted": true,
+        "score": 1,
+        "last_activity_date": 1606270735,
+        "creation_date": 1606270735,
+        "answer_id": 64997636,
+        "question_id": 64979938,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>According to this github <a href=\"https://github.com/dotnet/aspnetcore/issues/20374\" rel=\"nofollow noreferrer\">issue</a> that the redirect mode only supported in the asp.net core 5.0.</p>\n<p>If your application is 3.1, it will not work well.</p>\n<p>If you migrate to 5.0, then you could use below codes to use redirect instead of popup.</p>\n<pre><code>builder.Services.AddMsalAuthentication(options =&gt;\n{\n    ...\n    options.ProviderOptions.LoginMode = &quot;redirect&quot;;\n});\n</code></pre>\n<p>More details ,you could refer to this <a href=\"https://docs.microsoft.com/en-us/aspnet/core/blazor/security/webassembly/hosted-with-azure-active-directory-b2c?view=aspnetcore-5.0#login-mode\" rel=\"nofollow noreferrer\">article</a>.</p>\n"
+    }
+]

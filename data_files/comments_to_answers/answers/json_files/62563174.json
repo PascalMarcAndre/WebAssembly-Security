@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 21,
+            "user_id": 13808181,
+            "user_type": "registered",
+            "profile_image": "https://lh3.googleusercontent.com/-D8VFLyS_M4E/AAAAAAAAAAI/AAAAAAAAAAA/AMZuucka2m74IkgqtA25mXEGSnYYTKljIQ/photo.jpg?sz=128",
+            "display_name": "lkriz",
+            "link": "https://stackoverflow.com/users/13808181/lkriz"
+        },
+        "is_accepted": false,
+        "score": 1,
+        "last_activity_date": 1593094239,
+        "creation_date": 1593094239,
+        "answer_id": 62577373,
+        "question_id": 62563174,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>The issue turned out to be with case-sensitivity. I still don't understand why though.</p>\n<p>Here's what I did.</p>\n<ol>\n<li>Update Blazor wasm solution wwwroot/index.html (URI all lower-case!)</li>\n</ol>\n<pre><code>&lt;base href=&quot;/testblazorauth/&quot; /&gt;   \n</code></pre>\n<ol start=\"2\">\n<li>Update the server project Startup.cs ( URI all lower-case!)</li>\n</ol>\n<pre><code>app.UsePathBase(&quot;/testblazorauth/&quot;);\n</code></pre>\n<ol start=\"3\">\n<li>Update appsettings.json (removed the explicit RedirectUri property). The framework will use the value from the second step and correctly build the callback URI.</li>\n</ol>\n<pre><code>&quot;IdentityServer&quot;: {\n    &quot;Clients&quot;: {\n      &quot;TestBlazorAuth.Client&quot;: {\n        &quot;Profile&quot;: &quot;IdentityServerSPA&quot;        \n      }\n    },\n    &quot;Key&quot;: {\n      &quot;Type&quot;: &quot;File&quot;,\n      &quot;FilePath&quot;: &quot;C:\\\\temp\\\\SOME_CERT.pfx&quot;,\n      &quot;Password&quot;: &quot;SOME_PASSWORD&quot;\n    }\n  },\n</code></pre>\n<p>In IIS, i have created new sub-application of Default Web Site with a host name &quot;testblazorauth&quot; (all lower-case).</p>\n<p>Published the app with VS and ran in Chrome and got expected results and no more errors.</p>\n"
+    }
+]

@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 1,
+            "user_id": 15063476,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/6710a0b315262d3dc9fb7bf9b103ba8c?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Mmusa",
+            "link": "https://stackoverflow.com/users/15063476/mmusa"
+        },
+        "is_accepted": false,
+        "score": 0,
+        "last_activity_date": 1614414377,
+        "creation_date": 1614414377,
+        "answer_id": 66396919,
+        "question_id": 66392800,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>Fisrt: You need register your app here: <a href=\"https://app.powerbi.com/embedsetup\" rel=\"nofollow noreferrer\">Embed for your organization</a></p>\n<p>Second: create a Blazor Wasm. Get the clientID and TenantID in Azure Portal-&gt;App Registrations</p>\n<pre><code>dotnet new blazorwasm -au SingleOrg --client-id &quot;{CLIENT ID}&quot; -o {APP NAME} --tenant-id &quot;{TENANT ID}&quot;\n</code></pre>\n<p>Finally: Your Program class should look like this;</p>\n<pre><code>        builder.Services.AddMsalAuthentication(options =&gt;\n        {\n            builder.Configuration.Bind(&quot;AzureAd&quot;, options.ProviderOptions.Authentication);\n            options.ProviderOptions.DefaultAccessTokenScopes.Add(&quot;https://analysis.windows.net/powerbi/api/Report.Read.All&quot;);\n        });\n</code></pre>\n"
+    }
+]

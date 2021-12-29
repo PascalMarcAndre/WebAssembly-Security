@@ -1,0 +1,41 @@
+[
+    {
+        "owner": {
+            "reputation": 235795,
+            "user_id": 60761,
+            "user_type": "registered",
+            "accept_rate": 91,
+            "profile_image": "https://www.gravatar.com/avatar/5bf43bae0431d8f4a062234b5e3a0cb9?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Henk Holterman",
+            "link": "https://stackoverflow.com/users/60761/henk-holterman"
+        },
+        "is_accepted": true,
+        "score": 1,
+        "last_activity_date": 1561010286,
+        "creation_date": 1561010286,
+        "answer_id": 56679804,
+        "question_id": 56665744,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<blockquote>\n  <p>that fetches data from a remote SQL Server instance by way of System.Data.SqlCient</p>\n</blockquote>\n\n<p>That part should defintely run on the server. There is no SqlClient in the Browser.<br>\nRunning Blazor server-side ought to work. You should not have to deal with SignalR directly.</p>\n\n<blockquote>\n  <p>running in the code-behind of a HttpHandler (the data returned from the server gets jsonified and ...</p>\n</blockquote>\n\n<p>That sounds like it would fit to the Hosted model: an API server exposing endpoints to the client. It would leave you with the best architecture, but it may be more work. </p>\n"
+    },
+    {
+        "owner": {
+            "reputation": 25737,
+            "user_id": 6152891,
+            "user_type": "registered",
+            "accept_rate": 75,
+            "profile_image": "https://www.gravatar.com/avatar/b45b7f89429f8766cdbf6c776c0a9d41?s=128&d=identicon&r=PG",
+            "display_name": "enet",
+            "link": "https://stackoverflow.com/users/6152891/enet"
+        },
+        "is_accepted": false,
+        "score": 2,
+        "last_activity_date": 1561113240,
+        "last_edit_date": 1561113240,
+        "creation_date": 1560946430,
+        "answer_id": 56667380,
+        "question_id": 56665744,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>Way too many question for a single 'Question\"</p>\n\n<p>Question: But does SignalR give you a way to use Blazor (ASP.NET Core hosted) instead?</p>\n\n<p>Answer: In other words, you're question is whether SingleR can be used from client-side Blazor, right ? The answer is yes...</p>\n\n<p>Question: Visual Studio says this hosting model \"runs on WebAssembly and is hosted on an ASP.NET Core server\" but I'm not sure what that means, exactly. Where is the WebAssembly running? Client? Server? Both places?</p>\n\n<p>Answer: Client-side Blazor is executed on the client browser. Blazor client-side is executed by the mono run time that is compiled to WebAssembly. WebAssembly cannot run on the server.It is designed to run on the web, alongside JavaScript. Blazor client-side is hosted on the server, and it is an Asp.Net Core project.</p>\n\n<p>Question: Can SignalR together with the Blazor (ASP.NET Core hosted) model be used to create a pipeline from the server-side WebAssembly to the client-side WebAssembly that obviates the need for the HttpHandler?</p>\n\n<p>Answer: No such animal server-side WebAssembly. You can use Web Api to enable communication between your Blazor client-side and the server. In that case, you'll have to use the HttpClient service. \nNote: you may also use SignleR for such communication of real-time is essential.</p>\n\n<p>What is HttpHandler ? A web Api controller is an HttpHandler... an action (a routing endpoint) in such a controller is an HttpHandler... Names are not important. The question is what problem do you want to solve.</p>\n\n<p>Seems to me that you'd better create your app with Server-side Blazor, in which case you may use the HttpClient Service, or perhaps not use HttpClient at all, and instead define a service which push the data to the browser, as after all, your code is executed on the server, and data is pushed to the browser via SignleR.</p>\n\n<p><strong>UPDATE</strong>:</p>\n\n<p>Question: @Isaac: Thanks for tackling the question(s) :) My underlying question is whether, in a Blazor web application, server-side code is (somehow) able to update UI components directly, perhaps via some RPC mechanism over SignalR, which would eliminate the need to expose a routing endpoint to the client and eliminate Ajax. I thought WASM could run server-side too. I am thinking of intranet apps, not internet apps, in terms of number of clients (relatively few).</p>\n\n<p>Answer: Conjure up a page in a Browser with an input[type=text] and a button control \"Click me\". Again, this page is running in the browser. It might be a client-side Blazor, but it might also be server-side Blazor. I know the secret, and I'm going to tell it to you. Our dear app is a <strong>Blazor server-side</strong>. Now enter a value to the input box and hit the \"Click me\" button. Right after you've clicked the button, SignleR pass the data you entered as well as every details such as the event type, etc. In short, the event is executed on the server. No Ajax, on your part... How SignleR works is of minor importance here. What is essential to understand that your code is executed on the server, not on the client, as happens when you use Client-side Blazor (WebAssembly).</p>\n\n<p>As I've already said above, the your code is executed on the server, and thus you don't have to expose routing endpoints to the client. You can simply define a service in your app, inject it to the DI container, and use it to call methods on it that do something interesting... </p>\n\n<p><strong>NEW UPDATE:</strong></p>\n\n<p>Question: Thanks. What if the user's button-click sends the text in a text box to the server, which does a database query using the text-value as a search-term, and then the server needs to send a dataset back to the client to populate a grid? Does the server invoke (remotely) a client-side method and supply the data as an argument to the client-side method? </p>\n\n<p>It is not clear from your question which mode of execution you are relating to. However, the flow of execution depicted here may be relevant to both client-side Blazor, and server-side Blazor. </p>\n\n<p>When the user hit the button, an event handler defined on the client app and running on the browser (Note that this can be either client-side Blazor or server-side Blazor), is triggered. This handler may use an injected HttpClient to send the content of the textbox, and wait for a response, if you're lucky, containing your searched data. I guess you know how to use the HttpClient object, right ? You post a request and then you gets a response. The retrieved data may be assigned to a local variable, and bound to, say, a table element which can display the data in a grid. </p>\n\n<p>I hope that you do understand that the http request is posted to a controller class defined on the server; that is you use Web Api.</p>\n\n<p>This flow of events is, again, identical in both client-side and server-side mode of execution. </p>\n\n<p>But, as your app is executed on the server, when you use server-side Blazor, you don't have to use Web Api, and can define a service instead which returns the required data. Note that the asking for data, querying the database, returning the data, executing code, rendering html, etc. all occurs on the server, at the end of which a SignleR method push the HTML diffs to the client Browser for display.</p>\n\n<p>Hope this helps...  </p>\n"
+    }
+]

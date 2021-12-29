@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 26,
+            "user_id": 1881667,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/50d7172bb0aad9171143dd388c225487?s=128&d=identicon&r=PG",
+            "display_name": "Christian Guldb&#230;k",
+            "link": "https://stackoverflow.com/users/1881667/christian-guldb%c3%a6k"
+        },
+        "is_accepted": true,
+        "score": 0,
+        "last_activity_date": 1605302486,
+        "creation_date": 1605302486,
+        "answer_id": 64828184,
+        "question_id": 64799789,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>I was able to follow the instructions in your link and make it work.</p>\n<p>Some things to try for the client app registration:</p>\n<ul>\n<li>'Authentication': For the 'Platform configurations' make sure you choose SPA and the redirect urls are correct</li>\n<li>'Authentication': For 'Implicit grant' don't check 'Access tokens' and 'ID tokens'</li>\n<li>'API permissions' make sure you added the server registration and clicked 'Grant admin consent'</li>\n</ul>\n"
+    }
+]

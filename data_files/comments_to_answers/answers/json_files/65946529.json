@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 1296,
+            "user_id": 2770641,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/366fa9e0a1e8f82fddae1595ffc297d6?s=128&d=identicon&r=PG&f=1",
+            "display_name": "sbc100",
+            "link": "https://stackoverflow.com/users/2770641/sbc100"
+        },
+        "is_accepted": false,
+        "score": 0,
+        "last_activity_date": 1611877625,
+        "creation_date": 1611877625,
+        "answer_id": 65946869,
+        "question_id": 65946529,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>You probably don't want to use <code>-s SIDE_MODULE</code>.   Using <code>SIDE_MODULE</code> enables emscripten dynamic linking (PIC) ABI which you probably don't want.</p>\n<p>Building with <code>--no-entry</code> and with an output file ending in <code>.wasm</code> should be enough to build something that is as sand-alone as possible.  However remember that emscripten's output is really designed to be run by emscripten-generated JS so you may run into complications trying to load it yourself like this.</p>\n"
+    }
+]

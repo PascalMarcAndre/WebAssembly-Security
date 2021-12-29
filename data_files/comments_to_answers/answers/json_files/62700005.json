@@ -1,0 +1,39 @@
+[
+    {
+        "owner": {
+            "reputation": 1,
+            "user_id": 14052481,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/96ff471206b22f791fd4b49835c7fc3f?s=128&d=identicon&r=PG&f=1",
+            "display_name": "viendev",
+            "link": "https://stackoverflow.com/users/14052481/viendev"
+        },
+        "is_accepted": false,
+        "score": -1,
+        "last_activity_date": 1596614028,
+        "creation_date": 1596614028,
+        "answer_id": 63260701,
+        "question_id": 62700005,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>you can use memory config by using <code>MemoryConfigurationSource</code></p>\n<p>example:</p>\n<pre><code>var appsettings = new Dictionary&lt;string, string&gt;()\n{\n   { &quot;API:Key&quot;, &quot;12345&quot; }\n};\nvar config = new MemoryConfigurationSource(InitialData = appsettings);\nbuilder.Configuration.Add(memoryConfig);\n</code></pre>\n<p>then whatever you want to use it, just @inject configuration (in razor pages) or in your class program that will look like:</p>\n<pre><code>builder.Configuration.GetValue&lt;string&gt;(&quot;API:Key&quot;)\n</code></pre>\n"
+    },
+    {
+        "owner": {
+            "reputation": 13186,
+            "user_id": 61311,
+            "user_type": "registered",
+            "accept_rate": 71,
+            "profile_image": "https://i.stack.imgur.com/EgbU7.jpg?s=128&g=1",
+            "display_name": "Peter Morris",
+            "link": "https://stackoverflow.com/users/61311/peter-morris"
+        },
+        "is_accepted": false,
+        "score": 0,
+        "last_activity_date": 1593708288,
+        "creation_date": 1593708288,
+        "answer_id": 62701224,
+        "question_id": 62700005,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>If you store it on the client, it's not safe.</p>\n<p>There is an experimental MS nuget package that claims to make the storage safe by encrypting it -  Microsoft.AspNetCore.ProtectedBrowserStorage</p>\n<p>You can read how to use it here <a href=\"https://docs.microsoft.com/en-us/aspnet/core/blazor/state-management?view=aspnetcore-3.1\" rel=\"nofollow noreferrer\">https://docs.microsoft.com/en-us/aspnet/core/blazor/state-management?view=aspnetcore-3.1</a></p>\n"
+    }
+]

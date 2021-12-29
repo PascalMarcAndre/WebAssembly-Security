@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 56,
+            "user_id": 11469307,
+            "user_type": "registered",
+            "profile_image": "https://lh5.googleusercontent.com/-DiXNAu5GXM0/AAAAAAAAAAI/AAAAAAAAAZs/pUBEB53Tg9s/photo.jpg?sz=128",
+            "display_name": "inv101",
+            "link": "https://stackoverflow.com/users/11469307/inv101"
+        },
+        "is_accepted": true,
+        "score": 4,
+        "last_activity_date": 1557308367,
+        "creation_date": 1557308367,
+        "answer_id": 56037694,
+        "question_id": 55884021,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>I had the same issue and found the solution on GitHub:</p>\n\n<p><a href=\"https://github.com/googlecodelabs/web-assembly-introduction/issues/11\" rel=\"nofollow noreferrer\">https://github.com/googlecodelabs/web-assembly-introduction/issues/11</a></p>\n\n<blockquote>\n  <p>With later version of emcc replace <code>memoryBase</code> with <code>__memory_base</code> and <code>tableBase</code> with <code>__table_base</code>.</p>\n</blockquote>\n"
+    }
+]

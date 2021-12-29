@@ -1,0 +1,40 @@
+[
+    {
+        "owner": {
+            "reputation": 708,
+            "user_id": 2862934,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/eeccb6d448bf50536821c3ff2804f9f8?s=128&d=identicon&r=PG&f=1",
+            "display_name": "benjamin",
+            "link": "https://stackoverflow.com/users/2862934/benjamin"
+        },
+        "is_accepted": true,
+        "score": 7,
+        "last_activity_date": 1616339533,
+        "last_edit_date": 1616339533,
+        "creation_date": 1587047376,
+        "answer_id": 61252765,
+        "question_id": 61120227,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>Ok! I finally figured out a way that works. It is not complicated but it took me <em>days</em> to get to the answer so I'm going to post it here because I think it would be useful to other people.</p>\n<p>On your controllers:</p>\n<pre><code>[Route(&quot;api/[controller]&quot;)]\npublic class SampleController : ControllerBase\n    {\n    //Etc.\n    }\n</code></pre>\n<p>In Startup.cs...</p>\n<pre><code>        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)\n        {\n            //Etc.\n            app.UseStaticFiles();\n            app.UseRouting();\n            app.UseEndpoints(endpoints =&gt;\n            {\n                endpoints.MapRazorPages();\n                endpoints.MapControllers();\n                endpoints.Map(&quot;api/{**slug}&quot;, HandleApiFallback);\n                endpoints.MapFallbackToFile(&quot;{**slug}&quot;, &quot;index.html&quot;);\n            });\n        }\n\n        private Task HandleApiFallback(HttpContext context)\n        {\n            context.Response.StatusCode = StatusCodes.Status404NotFound;\n            return Task. CompletedTask;\n        }\n</code></pre>\n"
+    },
+    {
+        "owner": {
+            "reputation": 235795,
+            "user_id": 60761,
+            "user_type": "registered",
+            "accept_rate": 91,
+            "profile_image": "https://www.gravatar.com/avatar/5bf43bae0431d8f4a062234b5e3a0cb9?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Henk Holterman",
+            "link": "https://stackoverflow.com/users/60761/henk-holterman"
+        },
+        "is_accepted": false,
+        "score": 3,
+        "last_activity_date": 1586433063,
+        "creation_date": 1586433063,
+        "answer_id": 61120525,
+        "question_id": 61120227,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>The minimal changes to a fresh app from the Wasm/Hosted template:</p>\n\n<blockquote>\n  <p>WeatherForecastController.cs</p>\n</blockquote>\n\n<pre><code>//[Route(\"[controller]\")]\n  [Route(\"api/[controller]\")]\n</code></pre>\n\n<blockquote>\n  <p>FetchData.razor</p>\n</blockquote>\n\n<pre><code>//forecasts = await Http.GetJsonAsync&lt;WeatherForecast[]&gt;(\"WeatherForecast\");\n  forecasts = await Http.GetJsonAsync&lt;WeatherForecast[]&gt;(\"api/WeatherForecast\");\n</code></pre>\n"
+    }
+]

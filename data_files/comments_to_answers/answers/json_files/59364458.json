@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 1296,
+            "user_id": 2770641,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/366fa9e0a1e8f82fddae1595ffc297d6?s=128&d=identicon&r=PG&f=1",
+            "display_name": "sbc100",
+            "link": "https://stackoverflow.com/users/2770641/sbc100"
+        },
+        "is_accepted": true,
+        "score": 1,
+        "last_activity_date": 1576542827,
+        "creation_date": 1576542827,
+        "answer_id": 59366076,
+        "question_id": 59364458,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>You need to also declare <code>__console_log</code> as extern \"C\".  That clue is in that fact that function signature is included in the error message.   lld is demanding the C++ symbol here (perhaps it would be more clear if it didn't, I'm not sure).</p>\n"
+    }
+]

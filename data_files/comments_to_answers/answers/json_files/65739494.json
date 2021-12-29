@@ -1,0 +1,39 @@
+[
+    {
+        "owner": {
+            "reputation": 21884,
+            "user_id": 526704,
+            "user_type": "registered",
+            "accept_rate": 70,
+            "profile_image": "https://i.stack.imgur.com/UJEcq.jpg?s=128&g=1",
+            "display_name": "DLeh",
+            "link": "https://stackoverflow.com/users/526704/dleh"
+        },
+        "is_accepted": false,
+        "score": 0,
+        "last_activity_date": 1617998118,
+        "creation_date": 1617998118,
+        "answer_id": 67027517,
+        "question_id": 65739494,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>When injecting <code>HttpClient</code>s via <code>IHttpClientFactory</code>, you can register a named HttpClient that uses windows auth like so:</p>\n<pre><code>services.AddHttpClient(&quot;Excit&quot;, x =&gt;\n{\n    //other settings\n}).ConfigurePrimaryHttpMessageHandler(() =&gt;\n{\n    return new HttpClientHandler\n    {\n        UseDefaultCredentials = true\n    };\n});\n</code></pre>\n"
+    },
+    {
+        "owner": {
+            "reputation": 128,
+            "user_id": 6276110,
+            "user_type": "registered",
+            "profile_image": "https://graph.facebook.com/1071362716243861/picture?type=large",
+            "display_name": "Jan Bejvl",
+            "link": "https://stackoverflow.com/users/6276110/jan-bejvl"
+        },
+        "is_accepted": false,
+        "score": 0,
+        "last_activity_date": 1610732793,
+        "creation_date": 1610732793,
+        "answer_id": 65741067,
+        "question_id": 65739494,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>I recommend checking <a href=\"https://docs.microsoft.com/en-us/aspnet/core/blazor/security/webassembly/additional-scenarios?view=aspnetcore-5.0\" rel=\"nofollow noreferrer\">Blazor WebAssembly additional security scenarios</a> (all the examples are there)</p>\n<p>To authorize your request, you can use HttpClient with BaseAddressAuthorizationMessageHandler:</p>\n<pre><code>builder.Services.AddHttpClient(&quot;ServerAPI&quot;, \n    client =&gt; client.BaseAddress = new Uri(&quot;https://www.example.com/base&quot;))\n.AddHttpMessageHandler&lt;BaseAddressAuthorizationMessageHandler&gt;();\n</code></pre>\n<p>BaseAddressAuthorizationMessageHandler will automatically add Authorize header to all outgoing requests.</p>\n<p>Note: This works only with Blazor Wasm, not Server.</p>\n"
+    }
+]

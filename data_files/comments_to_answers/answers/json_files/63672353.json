@@ -1,0 +1,40 @@
+[
+    {
+        "owner": {
+            "reputation": 8928,
+            "user_id": 41403,
+            "user_type": "registered",
+            "accept_rate": 88,
+            "profile_image": "https://www.gravatar.com/avatar/476b1c3cf22e774b835403adc9af6a59?s=128&d=identicon&r=PG",
+            "display_name": "Quango",
+            "link": "https://stackoverflow.com/users/41403/quango"
+        },
+        "is_accepted": false,
+        "score": 1,
+        "last_activity_date": 1598976541,
+        "last_edit_date": 1598976541,
+        "creation_date": 1598911800,
+        "answer_id": 63678823,
+        "question_id": 63672353,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>You should not create the <code>HttpClient</code> in that way, you need to inject in the same way the <em>FetchData</em> sample does in the basic sample app\n<a href=\"https://gist.github.com/SteveSandersonMS/7c5e80ebf7f238505f1281f550666600\" rel=\"nofollow noreferrer\">https://gist.github.com/SteveSandersonMS/7c5e80ebf7f238505f1281f550666600</a></p>\n<p>Try addding</p>\n<pre class=\"lang-cs prettyprint-override\"><code>@using System.Net.Http\n@inject HttpClient client;\n</code></pre>\n<p>at the top of your page. Change your <code>Create</code> method as follows:</p>\n<pre class=\"lang-cs prettyprint-override\"><code>protected async Task Create()\n  {\n      HttpResponseMessage response = await client.PostAsJsonAsync&lt;Emp&gt;(&quot;https://localhost:44333/api/emps&quot;,empList);\n      @if (response.IsSuccessStatusCode)\n      {\n          var userdata = response.Content.ReadFromJsonAsync&lt;YourExpectedResult&gt;();\n            if (userdata != null)\n            {\n                navigationManager.NavigateTo(&quot;/login&quot;);\n            }\n            else\n            {\n                navigationManager.NavigateTo(&quot;/registration&quot;);\n            }\n        }\n    }\n</code></pre>\n<p>I've used <code>YourExpectedResult</code> as the type you expect as your sample does not say what type you're deserializing to.</p>\n<p>More info: <a href=\"https://docs.microsoft.com/en-us/aspnet/core/blazor/call-web-api?view=aspnetcore-3.1\" rel=\"nofollow noreferrer\">https://docs.microsoft.com/en-us/aspnet/core/blazor/call-web-api?view=aspnetcore-3.1</a></p>\n"
+    },
+    {
+        "owner": {
+            "reputation": 1269,
+            "user_id": 10962295,
+            "user_type": "registered",
+            "profile_image": "https://lh5.googleusercontent.com/-guQgT3_y5jg/AAAAAAAAAAI/AAAAAAAAABU/xsfDevF8zBo/photo.jpg?sz=128",
+            "display_name": "Zsolt Bendes",
+            "link": "https://stackoverflow.com/users/10962295/zsolt-bendes"
+        },
+        "is_accepted": false,
+        "score": 1,
+        "last_activity_date": 1598884145,
+        "creation_date": 1598884145,
+        "answer_id": 63672740,
+        "question_id": 63672353,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>Since we don't have any information about the model in the POST so I'm assuming the property names using Delphi notation. Blazor uses the new <code>System.Text.Json</code> for serialization and if not set it will try to parse the data in case sensitive form. (The <code>PostAsJsonAsync&lt;T&gt;</code> also uses the new api in the background)\nThis could be one possible source of the issue.</p>\n<p>To fix this you can pass a settings to the serializer. For example:</p>\n<pre><code>var serializeOptions = new JsonSerializerOptions\n{\n    PropertyNamingPolicy = JsonNamingPolicy.CamelCase,\n};\nvar jsonString = JsonSerializer.Serialize(empDetails, serializeOptions);\n</code></pre>\n<p>From the information provided this is the only issue I could think of. You could also try to add input validation like <code>FluentValidator</code>.</p>\n"
+    }
+]

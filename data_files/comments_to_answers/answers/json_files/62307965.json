@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 6037,
+            "user_id": 10163251,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/7Fwrh.jpg?s=128&g=1",
+            "display_name": "Abraham Qian",
+            "link": "https://stackoverflow.com/users/10163251/abraham-qian"
+        },
+        "is_accepted": false,
+        "score": 0,
+        "last_activity_date": 1591857155,
+        "creation_date": 1591857155,
+        "answer_id": 62318394,
+        "question_id": 62307965,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>I don\u2019t know what\u2019s going on since I can not reproduce your issue. Here is a workaround.\nPlease ensure that IIS Application pool\u2019s <code>Advanced Settings</code> has set \u201d<code>Enable 32-Bit Application</code>\u201d to <code>true</code>.<br>\n<a href=\"https://i.stack.imgur.com/FVzdY.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/FVzdY.png\" alt=\"enter image description here\"></a><br>\nCheck below link for troubleshooting the issue.<br>\n<a href=\"https://stackoverflow.com/questions/207617/how-to-diagnose-iis-fatal-communication-error-problem/7920145#7920145\">How to diagnose IIS fatal communication error problem</a>  </p>\n"
+    }
+]

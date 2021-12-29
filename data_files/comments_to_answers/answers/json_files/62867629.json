@@ -1,0 +1,21 @@
+[
+    {
+        "owner": {
+            "reputation": 7850,
+            "user_id": 255966,
+            "user_type": "registered",
+            "accept_rate": 64,
+            "profile_image": "https://www.gravatar.com/avatar/00266ff14a605bf99cb6aed0518ad2ec?s=128&d=identicon&r=PG",
+            "display_name": "Stef Heyenrath",
+            "link": "https://stackoverflow.com/users/255966/stef-heyenrath"
+        },
+        "is_accepted": true,
+        "score": 1,
+        "last_activity_date": 1594630934,
+        "creation_date": 1594630934,
+        "answer_id": 62872562,
+        "question_id": 62867629,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>This issue sounds a lot like my issue on dotnet/aspnetcore: <a href=\"https://github.com/dotnet/aspnetcore/issues/23606\" rel=\"nofollow noreferrer\">WebAssembly.Authentication - Not possible to define &quot;Audience&quot;</a></p>\n<p>I solved this by creating a new <strong>Auth0ProviderOptions</strong> which extends from the <strong>OidcProviderOptions</strong> and defining <code>extraQueryParams</code>.</p>\n<ul>\n<li>See <a href=\"https://github.com/StefH/Blazor.WebAssembly.Authentication.Auth0/blob/master/src/Blazor.WebAssembly.Authentication.Auth0/Auth0ProviderOptions.cs\" rel=\"nofollow noreferrer\">this link for the class</a></li>\n<li>See <a href=\"https://github.com/StefH/Blazor.WebAssembly.Authentication.Auth0\" rel=\"nofollow noreferrer\">this link for the complete example project</a></li>\n</ul>\n"
+    }
+]

@@ -1,0 +1,21 @@
+[
+    {
+        "owner": {
+            "reputation": 4127,
+            "user_id": 1492496,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/dO7to.png?s=128&g=1",
+            "display_name": "Brian Parker",
+            "link": "https://stackoverflow.com/users/1492496/brian-parker"
+        },
+        "is_accepted": true,
+        "score": 1,
+        "last_activity_date": 1604665611,
+        "last_edit_date": 1604665611,
+        "creation_date": 1604622808,
+        "answer_id": 64707260,
+        "question_id": 64706336,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>In <code>Program.cs</code></p>\n<pre><code>builder.Services.AddApiAuthorization()\n    .AddAccountClaimsPrincipalFactory&lt;CustomAccountClaimsPrincipalFactory&gt;();\n</code></pre>\n<p><code>CustomAccountClaimsPrincipalFactory.cs</code></p>\n<pre><code>public class CustomAccountClaimsPrincipalFactory\n    : AccountClaimsPrincipalFactory&lt;RemoteUserAccount&gt;\n{\n    private const string Planet = &quot;planet&quot;;\n\n    public CustomAccountClaimsPrincipalFactory(IAccessTokenProviderAccessor accessor)\n        : base(accessor) { }\n\n    public async override ValueTask&lt;ClaimsPrincipal&gt; CreateUserAsync(\n        RemoteUserAccount account,\n        RemoteAuthenticationUserOptions options)\n    {\n        var user = await base.CreateUserAsync(account, options);\n\n        if (user.Identity.IsAuthenticated)\n        {\n            var identity = (ClaimsIdentity)user.Identity;\n            var claims = identity.Claims.Where(a =&gt; a.Type == Planet);\n            if (!claims.Any())\n            {\n                identity.AddClaim(new Claim(Planet, &quot;mars&quot;));\n            }\n        }\n        return user;\n\n    }\n\n}\n\n\n</code></pre>\n<p><code>ClaimDisplay.razor</code></p>\n<pre><code>@using System.Linq\n@using System.Threading.Tasks\n@using Microsoft.AspNetCore.Components\n@using Microsoft.AspNetCore.Components.Authorization\n\n@ClaimType: @Claim\n@code {\n    [Inject]\n    AuthenticationStateProvider AuthenticationStateProvider { get; set; }\n\n    [Parameter]\n    public string ClaimType { get; set; }\n\n    public string Claim { get; set; }\n\n    protected override async Task OnInitializedAsync()\n    {\n        var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();\n        var user = authState.User;\n        if (user.Identity.IsAuthenticated)\n        {\n            var userClaims = user.Claims.Where(claim =&gt; claim.Type.Equals(ClaimType));\n            Claims = userClaims.Any() ? userClaims.Select(claim =&gt; claim.Value).Aggregate(AddClaims) : &quot;&quot;;\n        }\n    }\n\n    private static string AddClaims(string left, string right) =&gt; left + &quot;, &quot; + right;\n}\n</code></pre>\n<p><strong>usage</strong>:</p>\n<pre><code>&lt;ClaimDisplay ClaimType=&quot;planet&quot; /&gt;\n\n</code></pre>\n<p>Working <a href=\"https://github.com/BrianLParker/RoleBaseAuth\" rel=\"nofollow noreferrer\">demo</a></p>\n"
+    }
+]

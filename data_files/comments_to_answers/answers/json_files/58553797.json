@@ -1,0 +1,21 @@
+[
+    {
+        "owner": {
+            "reputation": 1,
+            "user_id": 14263003,
+            "user_type": "unregistered",
+            "profile_image": "https://www.gravatar.com/avatar/6acbb9cc1e0f539f54513c309251b4d6?s=128&d=identicon&r=PG",
+            "display_name": "Ajit S",
+            "link": "https://stackoverflow.com/users/14263003/ajit-s"
+        },
+        "is_accepted": false,
+        "score": 0,
+        "last_activity_date": 1599863017,
+        "last_edit_date": 1599863017,
+        "creation_date": 1599862676,
+        "answer_id": 63854988,
+        "question_id": 58553797,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>I was trying something similar. In my case, the Log method in MyLogger gets called; however it fails at following line of code</p>\n<pre><code>using (var streamWriter = new StreamWriter(fullFilePath, true)) //Fails here \n{\n    streamWriter.WriteLine(logRecord);\n} \n</code></pre>\n<p>When I put it in try catch block, I got the exception &quot;Children could not be evaluated&quot;.\nWhile researching I came across following link. Steve Sanderson's response might make sense of the behavior</p>\n<p><a href=\"https://github.com/dotnet/aspnetcore/issues/16156\" rel=\"nofollow noreferrer\">Reading local files #16156</a></p>\n<p>BTW It's been a long time, please let me know the solution you came up with.</p>\n"
+    }
+]

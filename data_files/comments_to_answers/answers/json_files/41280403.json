@@ -1,0 +1,21 @@
+[
+    {
+        "owner": {
+            "reputation": 11144,
+            "user_id": 7329832,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/96a4e398a7a3d75e8cffbc635860e01a?s=128&d=identicon&r=PG&f=1",
+            "display_name": "jps",
+            "link": "https://stackoverflow.com/users/7329832/jps"
+        },
+        "is_accepted": true,
+        "score": 3,
+        "last_activity_date": 1482491382,
+        "last_edit_date": 1482491382,
+        "creation_date": 1482488643,
+        "answer_id": 41299588,
+        "question_id": 41280403,
+        "content_license": "CC BY-SA 3.0",
+        "body": "<p>You should have something like\n<code>HttpConfiguration config = new HttpConfiguration();</code>\nsomewhere, which you use to register your routes etc.</p>\n\n<p>Pass that config to your <code>BuildIocContainer()</code> mehod and add the line</p>\n\n<pre><code>config.DependencyResolver = new AutofacWebApiDependencyResolver(container);\n</code></pre>\n\n<p>instead of </p>\n\n<pre><code>GlobalConfiguration.Configuration.DependencyResolver = new AutofacWebApiDependencyResolver(container); //Set the WebApi DependencyResolver\n</code></pre>\n\n<p>Hope that helps</p>\n"
+    }
+]

@@ -1,0 +1,21 @@
+[
+    {
+        "owner": {
+            "reputation": 11123,
+            "user_id": 10612011,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/KM0g5.jpg?s=128&g=1",
+            "display_name": "Iamblichus",
+            "link": "https://stackoverflow.com/users/10612011/iamblichus"
+        },
+        "is_accepted": false,
+        "score": 2,
+        "last_activity_date": 1586871192,
+        "last_edit_date": 1586871192,
+        "creation_date": 1586849170,
+        "answer_id": 61202610,
+        "question_id": 61190809,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>Asynchronous functionalities don't seem to be fully supported in V8 yet. There is actually an <a href=\"https://issuetracker.google.com/issues/149937257\" rel=\"nofollow noreferrer\">open Issue Tracker</a> regarding this. You can click the star on the top left of the page to keep track of this issue.</p>\n\n<p>In any case, please be aware that there is no explicit statement in <a href=\"https://developers.google.com/apps-script/guides/v8-runtime#improved_function_detection\" rel=\"nofollow noreferrer\">the official documentation</a> referring to the availability of these functionalities in V8. It just states that you can use keywords like <code>async</code> in your code, but it doesn't mention what functionality you will get if you use that.</p>\n\n<h3>Reference:</h3>\n\n<ul>\n<li><a href=\"https://issuetracker.google.com/issues/149937257\" rel=\"nofollow noreferrer\">Issue Tracker: Async with V8 is not implemented as async / concurrent; documentation could be improved</a></li>\n<li><a href=\"https://developers.google.com/apps-script/guides/v8-runtime#improved_function_detection\" rel=\"nofollow noreferrer\">V8 Runtime Overview: Improved function detection</a></li>\n</ul>\n"
+    }
+]

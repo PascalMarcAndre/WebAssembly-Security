@@ -1,0 +1,40 @@
+[
+    {
+        "owner": {
+            "reputation": 12718,
+            "user_id": 2940908,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://i.stack.imgur.com/E79WU.jpg?s=128&g=1",
+            "display_name": "agua from mars",
+            "link": "https://stackoverflow.com/users/2940908/agua-from-mars"
+        },
+        "is_accepted": true,
+        "score": 1,
+        "last_activity_date": 1605770614,
+        "creation_date": 1605770614,
+        "answer_id": 64907087,
+        "question_id": 64900028,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>I've been faced to the same issue and I resolved it in <a href=\"https://github.com/Aguafrommars/TheIdServer/blob/master/src/Aguacongas.TheIdServer/Startup.cs\" rel=\"nofollow noreferrer\">TheIdServer</a> by registring and stubing some services :</p>\n<pre class=\"lang-cs prettyprint-override\"><code>services.AddRemoteAuthentication&lt;RemoteAuthenticationState, RemoteUserAccount, OidcProviderOptions&gt;();\nservices.AddScoped&lt;AuthenticationStateProvider, RemoteAuthenticationService&gt;()\n    .AddScoped&lt;SignOutSessionStateManager&gt;()\n    .AddTransient&lt;IAccessTokenProvider, AccessTokenProvider&gt;()\n    .AddTransient&lt;Microsoft.JSInterop.IJSRuntime, JSRuntime&gt;();\n</code></pre>\n<p><strong>RemoteAuthenticationService.cs</strong></p>\n<pre class=\"lang-cs prettyprint-override\"><code>using Microsoft.AspNetCore.Components.Server;\nusing Microsoft.AspNetCore.Components.WebAssembly.Authentication;\nusing System.Threading.Tasks;\n\nnamespace Aguacongas.TheIdServer.Services\n{\n    public class RemoteAuthenticationService : ServerAuthenticationStateProvider, IRemoteAuthenticationService&lt;RemoteAuthenticationState&gt;\n    {\n\n        public Task&lt;RemoteAuthenticationResult&lt;RemoteAuthenticationState&gt;&gt; CompleteSignInAsync(RemoteAuthenticationContext&lt;RemoteAuthenticationState&gt; context)\n        {\n            return Success(context);\n        }\n\n        public Task&lt;RemoteAuthenticationResult&lt;RemoteAuthenticationState&gt;&gt; CompleteSignOutAsync(RemoteAuthenticationContext&lt;RemoteAuthenticationState&gt; context)\n        {\n            return Success(context);\n        }\n\n        public Task&lt;RemoteAuthenticationResult&lt;RemoteAuthenticationState&gt;&gt; SignInAsync(RemoteAuthenticationContext&lt;RemoteAuthenticationState&gt; context)\n        {\n            return Success(context);\n        }\n\n        public Task&lt;RemoteAuthenticationResult&lt;RemoteAuthenticationState&gt;&gt; SignOutAsync(RemoteAuthenticationContext&lt;RemoteAuthenticationState&gt; context)\n        {\n            return Success(context);\n        }\n\n        private static Task&lt;RemoteAuthenticationResult&lt;RemoteAuthenticationState&gt;&gt; Success(RemoteAuthenticationContext&lt;RemoteAuthenticationState&gt; context)\n        {\n            return Task.FromResult(new RemoteAuthenticationResult&lt;RemoteAuthenticationState&gt;\n            {\n                State = context.State,\n                Status = RemoteAuthenticationStatus.Success\n            });\n        }\n    }\n}\n</code></pre>\n<p><strong>AccessTokenProvider.cs</strong></p>\n<pre class=\"lang-cs prettyprint-override\"><code>using Microsoft.AspNetCore.Components.WebAssembly.Authentication;\nusing System;\nusing System.Threading.Tasks;\n\nnamespace Aguacongas.TheIdServer.Services\n{\n    public class AccessTokenProvider : IAccessTokenProvider\n    {\n        public ValueTask&lt;AccessTokenResult&gt; RequestAccessToken()\n        {\n            throw new NotImplementedException();\n        }\n\n        public ValueTask&lt;AccessTokenResult&gt; RequestAccessToken(AccessTokenRequestOptions options)\n        {\n            throw new NotImplementedException();\n        }\n    }\n}\n</code></pre>\n<p><strong>JSRuntime.cs</strong></p>\n<pre class=\"lang-cs prettyprint-override\"><code>using Microsoft.JSInterop;\nusing System.Threading;\nusing System.Threading.Tasks;\n\nnamespace Aguacongas.TheIdServer.Services\n{\n    public class JSRuntime : IJSRuntime\n    {\n        public ValueTask&lt;TValue&gt; InvokeAsync&lt;TValue&gt;(string identifier, object[] args)\n        {\n            return new ValueTask&lt;TValue&gt;();\n        }\n\n        public ValueTask&lt;TValue&gt; InvokeAsync&lt;TValue&gt;(string identifier, CancellationToken cancellationToken, object[] args)\n        {\n            return new ValueTask&lt;TValue&gt;();\n        }\n    }\n}\n</code></pre>\n<p>I also remove :</p>\n<pre class=\"lang-cs prettyprint-override\"><code>builder.RootComponents.Add&lt;App&gt;(&quot;app&quot;);\n</code></pre>\n<p>from the blazor app's <em>Program.cs</em></p>\n"
+    },
+    {
+        "owner": {
+            "reputation": 254,
+            "user_id": 5141561,
+            "user_type": "registered",
+            "accept_rate": 80,
+            "profile_image": "https://graph.facebook.com/926750996976/picture?type=large",
+            "display_name": "JoeyD",
+            "link": "https://stackoverflow.com/users/5141561/joeyd"
+        },
+        "is_accepted": false,
+        "score": 1,
+        "last_activity_date": 1605729018,
+        "creation_date": 1605729018,
+        "answer_id": 64900326,
+        "question_id": 64900028,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>So the answer is by adding services.AddApiAuthorization(); to the Server startup.cs</p>\n<p>This fixes the issue with the missing service registrations, however, there is an additional error after.   From what it currently looks like, pre rendering is not supported with authentication.</p>\n<p>An unhandled exception occurred while processing the request.\nInvalidOperationException: JavaScript interop calls cannot be issued during server-side prerendering, because the page has not yet loaded in the browser. Prerendered components must wrap any JavaScript interop calls in conditional logic to ensure those interop calls are not attempted during prerendering.\nMicrosoft.AspNetCore.Mvc.ViewFeatures.UnsupportedJavaScriptRuntime.Microsoft.JSInterop.IJSRuntime.InvokeAsync(string identifier, object[] args)</p>\n"
+    }
+]

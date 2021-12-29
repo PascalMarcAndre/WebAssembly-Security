@@ -1,0 +1,21 @@
+[
+    {
+        "owner": {
+            "reputation": 156,
+            "user_id": 2013237,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/P14WZ.jpg?s=128&g=1",
+            "display_name": "Ryszard Grzesica",
+            "link": "https://stackoverflow.com/users/2013237/ryszard-grzesica"
+        },
+        "is_accepted": false,
+        "score": 0,
+        "last_activity_date": 1612377035,
+        "last_edit_date": 1612377035,
+        "creation_date": 1612376531,
+        "answer_id": 66033457,
+        "question_id": 65483259,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>I had similar problems whilst trying to debug bigger project using webpack and with whole environment set with Docker.</p>\n<p>First thing is that dwarf based debug is mutually exclusive with js source maps.\n<code>wasm-opt</code> is stripping dwarf if using other flag than <code>-g</code> or <code>-g3</code> (at least it was true with emsdk 2.0.10)</p>\n<p>Since we are building in Docker start of absolute path to sources has been different to absolute path on host PC where source lays thus wrong <code>file://</code>\nto workaround this issue I have changed dwarf paths by compiler and linker option</p>\n<p><code>-ffile-prefix-map=/prefix/dir/from/docker=/absolute/path/to/src</code></p>\n<p>Then I could set break in sources found in <code>files://</code> (and see debug information like local variables in C/C++ manner).</p>\n<p>I am using also <code>EM_ASM(debugger;);</code> to break on demand.</p>\n<p>One thing which was not working at that time was <code>std:string</code> showing incorrectly nulled value.</p>\n"
+    }
+]

@@ -1,0 +1,21 @@
+[
+    {
+        "owner": {
+            "reputation": 64423,
+            "user_id": 249933,
+            "user_type": "registered",
+            "accept_rate": 81,
+            "profile_image": "https://www.gravatar.com/avatar/458f2e0d08d4114f8b323798cfea141d?s=128&d=identicon&r=PG",
+            "display_name": "ColinE",
+            "link": "https://stackoverflow.com/users/249933/coline"
+        },
+        "is_accepted": true,
+        "score": 1,
+        "last_activity_date": 1533879357,
+        "creation_date": 1533879357,
+        "answer_id": 51779625,
+        "question_id": 51777407,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>Conventions for manipulating DOM nodes or using external APIs have not been created yet, but a couple of the WebAssembly proposals / future features will support this.</p>\n\n<p>The first is <a href=\"https://github.com/WebAssembly/reference-types\" rel=\"nofollow noreferrer\">the reference types proposal</a>, which allows extends the type system, adding a new <code>anyref</code> type that allows modules to hold references to objects provided by the host environment, i.e. you can pass a JS object to your wasm module.</p>\n\n<p>The second is the <a href=\"https://github.com/WebAssembly/host-bindings\" rel=\"nofollow noreferrer\">host bindings</a> proposal that allows WebAssembly modules to create, pass around, call, and manipulate JavaScript / DOM objects. It adds a number host bindings section that includes annotations that describes binding mechanism / interface that should be constructed.</p>\n\n<p>Rust already has a tool, <a href=\"https://hacks.mozilla.org/2018/04/javascript-to-rust-and-back-again-a-wasm-bindgen-tale/\" rel=\"nofollow noreferrer\">wasm-bindgen</a>, that is very similar in purpose and closely aligns with this proposal. With wasm-bindgen you can pass objects such as strings across the wasm / JS boundary with ease. The tool adds the binding metadata to the wasm module, and generates the required JS glue code.</p>\n"
+    }
+]

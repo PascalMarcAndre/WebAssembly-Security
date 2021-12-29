@@ -1,0 +1,79 @@
+[
+    {
+        "owner": {
+            "reputation": 25609,
+            "user_id": 425823,
+            "user_type": "registered",
+            "accept_rate": 86,
+            "profile_image": "https://www.gravatar.com/avatar/00d813f85062c23d43043e6132278610?s=128&d=identicon&r=PG",
+            "display_name": "Greg Gum",
+            "link": "https://stackoverflow.com/users/425823/greg-gum"
+        },
+        "is_accepted": false,
+        "score": 7,
+        "last_activity_date": 1605235031,
+        "creation_date": 1605235031,
+        "answer_id": 64814680,
+        "question_id": 60992581,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>If your using Blazor Server (not WebAssembly) you can only write to the browser console using JSInterop.  I wrote a wrapper class like this:</p>\n<pre><code>public class JsConsole\n{\n   private readonly IJSRuntime JsRuntime;\n   public JsConsole(IJSRuntime jSRuntime)\n   {\n       this.JsRuntime = jSRuntime;\n   }\n\n   public async Task LogAsync(string message)\n   {\n       await this.JsRuntime.InvokeVoidAsync(&quot;console.log&quot;, message);\n   }\n}\n</code></pre>\n<p>Then in your page, you can inject the JsConsole and use it:</p>\n<pre><code>await this.JsConsole.Log(message); //Will show in the browser console.\n</code></pre>\n"
+    },
+    {
+        "owner": {
+            "reputation": 9,
+            "user_id": 11686229,
+            "user_type": "registered",
+            "profile_image": "https://lh4.googleusercontent.com/-xoDNqUIc070/AAAAAAAAAAI/AAAAAAAABlA/bN4LjFVAGRo/photo.jpg?sz=128",
+            "display_name": "Tintoretto",
+            "link": "https://stackoverflow.com/users/11686229/tintoretto"
+        },
+        "is_accepted": false,
+        "score": 0,
+        "last_activity_date": 1588365486,
+        "creation_date": 1588365486,
+        "answer_id": 61550429,
+        "question_id": 60992581,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>Just crate a variable and change it if ur things work.. for example</p>\n\n<pre><code>&lt;p&gt;@message&lt;/p&gt;\n&lt;button onclck=@Send&gt;&lt;/button&gt;\n@code {\n   private string message = \"Don`t work\";\n\n   public void Send()\n{\n  message = \"working\"\n}\n}\n</code></pre>\n\n<p>I hope it helps...</p>\n"
+    },
+    {
+        "owner": {
+            "reputation": 12718,
+            "user_id": 2940908,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://i.stack.imgur.com/E79WU.jpg?s=128&g=1",
+            "display_name": "agua from mars",
+            "link": "https://stackoverflow.com/users/2940908/agua-from-mars"
+        },
+        "is_accepted": false,
+        "score": 9,
+        "last_activity_date": 1611567180,
+        "last_edit_date": 1611567180,
+        "creation_date": 1585835112,
+        "answer_id": 60993039,
+        "question_id": 60992581,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>You can user an <code>ILogger&lt;T&gt;</code> that give you the possibility to write warning or error in the console :</p>\n<pre class=\"lang-cs prettyprint-override\"><code>@using Microsoft.Extensions.Logging\n@inject ILogger&lt;MyComponent&gt; _logger\n...\n@code {\n\n     protected override void OnInitialized()\n     {\n          _logger.LogWarning(&quot;warning&quot;);\n          _logger.LogError(&quot;error&quot;);\n     }\n}\n\n</code></pre>\n"
+    },
+    {
+        "owner": {
+            "reputation": 25737,
+            "user_id": 6152891,
+            "user_type": "registered",
+            "accept_rate": 75,
+            "profile_image": "https://www.gravatar.com/avatar/b45b7f89429f8766cdbf6c776c0a9d41?s=128&d=identicon&r=PG",
+            "display_name": "enet",
+            "link": "https://stackoverflow.com/users/6152891/enet"
+        },
+        "is_accepted": true,
+        "score": 21,
+        "last_activity_date": 1603890673,
+        "last_edit_date": 1603890673,
+        "creation_date": 1585834139,
+        "answer_id": 60992719,
+        "question_id": 60992581,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>I usually do something like this:</p>\n<pre><code>Console.WriteLine(&quot;My debug output.&quot;);\n</code></pre>\n<p>if it's Blazor WebAssembly, I see the message in the browser\u00b4s console.</p>\n<p>If it's Blazor Server App I see the message in the Output window. (In the output window, there is a dropdown - select: &quot; ASP.NET Core Web Server&quot;)</p>\n<p>Hope this helps...</p>\n"
+    }
+]

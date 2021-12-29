@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 304,
+            "user_id": 6921520,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/328b408b045b8b7ae53914c01cf4f8ad?s=128&d=identicon&r=PG&f=1",
+            "display_name": "\u0160tefan Barto\u0161",
+            "link": "https://stackoverflow.com/users/6921520/%c5%a0tefan-barto%c5%a1"
+        },
+        "is_accepted": false,
+        "score": 1,
+        "last_activity_date": 1589275793,
+        "creation_date": 1589275793,
+        "answer_id": 61748254,
+        "question_id": 61742609,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>I've found docs on MS page regarding <a href=\"https://docs.microsoft.com/en-us/aspnet/core/security/blazor/webassembly/additional-scenarios?view=aspnetcore-3.1#options-for-hosted-apps-and-third-party-login-providers\" rel=\"nofollow noreferrer\">3rd login providers</a>. And this <a href=\"https://docs.microsoft.com/en-us/aspnet/core/security/blazor/webassembly/?view=aspnetcore-3.1\" rel=\"nofollow noreferrer\">article</a> describes OIDC auth process. The Blazor wasm authentication uses <em>oidc-client.js</em> library, which is capable of oauth2 and oidc. Therefore, it is possible and client should be enough(see the quote below).</p>\n\n<blockquote>\n  <p>The server hosting the app doesn't play a role.</p>\n</blockquote>\n\n<p>However, I haven't found any examples of this.</p>\n"
+    }
+]

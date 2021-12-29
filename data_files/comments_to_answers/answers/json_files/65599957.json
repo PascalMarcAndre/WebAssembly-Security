@@ -1,0 +1,40 @@
+[
+    {
+        "owner": {
+            "reputation": 193,
+            "user_id": 848967,
+            "user_type": "registered",
+            "accept_rate": 40,
+            "profile_image": "https://i.stack.imgur.com/IFUsG.png?s=128&g=1",
+            "display_name": "Robert Sundstr&#246;m",
+            "link": "https://stackoverflow.com/users/848967/robert-sundstr%c3%b6m"
+        },
+        "is_accepted": false,
+        "score": 0,
+        "last_activity_date": 1610091108,
+        "last_edit_date": 1610091108,
+        "creation_date": 1610056163,
+        "answer_id": 65620435,
+        "question_id": 65599957,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>To load the cert from Azure Key Vault in IdentityServer 4, you can use ActiveLogin:(<a href=\"https://github.com/ActiveLogin/ActiveLogin.Authentication\" rel=\"nofollow noreferrer\">https://github.com/ActiveLogin/ActiveLogin.Authentication</a>)</p>\n<p>More here: <a href=\"https://github.com/IdentityServer/IdentityServer4/issues/2705\" rel=\"nofollow noreferrer\">https://github.com/IdentityServer/IdentityServer4/issues/2705</a></p>\n"
+    },
+    {
+        "owner": {
+            "reputation": 5308,
+            "user_id": 7687666,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/BZWkL.png?s=128&g=1",
+            "display_name": "Jason Pan",
+            "link": "https://stackoverflow.com/users/7687666/jason-pan"
+        },
+        "is_accepted": false,
+        "score": 1,
+        "last_activity_date": 1609983882,
+        "creation_date": 1609983882,
+        "answer_id": 65605579,
+        "question_id": 65599957,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>I guess you may forget to add <code>application setting</code> on portal, if your code has no problem.</p>\n<blockquote>\n<p>We need to give Azure App Service permission to use the newly uploaded certificate. For that:</p>\n</blockquote>\n<ol>\n<li>Go to Configuration in the menu of your Azure App Service</li>\n<li>Click on New application setting</li>\n<li>In Name, put: WEBSITE_LOAD_CERTIFICATES</li>\n<li>In Value, put the Thumbprint that you copied from the previous section.</li>\n<li>Click Ok, and don\u2019t forget to click Save</li>\n</ol>\n<p>If it doesn't work, pls read below blogs, you will find out the issues.</p>\n<h1>Suggestion</h1>\n<p>You can refer to this blogs to check the steps, I believe it will useful to you.</p>\n<p><a href=\"https://gavilan.blog/2020/08/18/blazor-using-a-self-signed-certificate-for-identityserver4-in-azure-app-service/\" rel=\"nofollow noreferrer\">Blazor: Using a Self-Signed Certificate for IdentityServer4 in Azure App Service</a></p>\n"
+    }
+]

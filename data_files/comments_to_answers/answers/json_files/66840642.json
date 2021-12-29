@@ -1,0 +1,21 @@
+[
+    {
+        "owner": {
+            "reputation": 1208,
+            "user_id": 13065781,
+            "user_type": "registered",
+            "profile_image": "https://lh3.googleusercontent.com/a-/AOh14GhWupH4pkdlvxqYtejE7Na8zO3IF9Zx9IaknU0LtA=k-s128",
+            "display_name": "MrC aka Shaun Curtis",
+            "link": "https://stackoverflow.com/users/13065781/mrc-aka-shaun-curtis"
+        },
+        "is_accepted": false,
+        "score": 1,
+        "last_activity_date": 1616962234,
+        "last_edit_date": 1616962234,
+        "creation_date": 1616957982,
+        "answer_id": 66845120,
+        "question_id": 66840642,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>Your profile suggests you know what you're doing, so I'll keep this succinct.</p>\n<p>Your <code>for</code> loop needs to look something like this.  Set a local &quot;index&quot; variable within the loop to link the controls to.  If you don't they point to the last value of <code>i</code> - in this case 2 which is <code>out of range</code>!  The razor code is converted to a cs file by the razor builder.  You can see the c# file generated in the <em>obj</em> folder structure - <em>obj\\Debug\\net5.0\\Razor\\Pages</em>.  Note, the linkage of the Validation Message</p>\n<pre class=\"lang-cs prettyprint-override\"><code>@for(var i = 0; i &lt; Model.Fields.Count; i++)\n   {\n    var index = i;\n    &lt;div class=&quot;form-group&quot;&gt;\n      &lt;label&gt;@Model.Fields[index].Name&lt;/label&gt;\n      &lt;input @bind-value=&quot;Model.Fields[index].Value&quot; class=&quot;form-control&quot; /&gt;\n      &lt;ValidationMessage For=&quot;(()=&gt; Model.Fields[index].Value)&quot; /&gt;\n    &lt;/div&gt;\n}\n</code></pre>\n<p>Now the message validation store.  Here's my rewritten <code>ValidationRequested</code>.  Note I'm creating a <code>FieldIdentifier</code> which is the correct way to do it. &quot;Address&quot; works because it's a property of <code>EditContext.Model</code>.  If a <code>ValidationMessage</code> doesn't display the message you anticipate, then it's either not being generated, or it's <code>FieldIdentifier</code> doesn't match the field the <code>ValidationMessage</code> is <code>For</code>.   This should get you going in whatever project you're involved in - if not add a comment for clarification :-).</p>\n<pre class=\"lang-cs prettyprint-override\"><code>    void ValidationRequested(object sender, ValidationRequestedEventArgs args)\n    {\n        _messageStore.Clear();\n        _messageStore.Add(new FieldIdentifier(Model.Fields[0], &quot;Value&quot;), &quot;FirstName Validation Message&quot;);\n        _messageStore.Add(new FieldIdentifier(Model.Fields[1], &quot;Value&quot;), &quot;Surname Validation Message&quot;);\n        _messageStore.Add(editContext.Field(&quot;FirstName&quot;), &quot;Test&quot;);\n        _messageStore.Add(editContext.Field(&quot;Address&quot;), &quot;Invalid Address&quot;);\n        _messageStore.Add(editContext.Field(&quot;ChildModel.ChildName&quot;), &quot;Invalid Child Name&quot;);\n        editContext.NotifyValidationStateChanged();\n    }\n\n</code></pre>\n<p>If you interested in Validation and want something more that the basic out-of-the-box validation, there's a couple of my articles that might give you info <a href=\"https://shauncurtis.github.io/articles/ValidationFormState.html\" rel=\"nofollow noreferrer\">Validation Form State Control</a> or there's a  version of Fluent Validation by Chris Sainty out there if you search.</p>\n"
+    }
+]

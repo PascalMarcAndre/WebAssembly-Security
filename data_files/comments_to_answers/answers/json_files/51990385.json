@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 31239,
+            "user_id": 1097780,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/a8f01ad795c29c3d05ad26ee47ea6069?s=128&d=identicon&r=PG",
+            "display_name": "Andreas Rossberg",
+            "link": "https://stackoverflow.com/users/1097780/andreas-rossberg"
+        },
+        "is_accepted": false,
+        "score": 1,
+        "last_activity_date": 1535046746,
+        "creation_date": 1535046746,
+        "answer_id": 51991620,
+        "question_id": 51990385,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>Regarding WebAssembly:</p>\n\n<p>Unfortunately, there is no production-quality stand-alone implementation yet. I expect some to show up in the future, but it hasn't happened yet.</p>\n\n<p>For historical reasons, existing production implementations are all part of a JavaScript VM. Fortunately, none of these VMs is tied to a browser. If you don't mind including some unused JS baggage, you can embed them as they are (ripping out the JS would be very hard). One problem, though, is that these VMs don't yet provide embedding interfaces for Wasm specifically. You have to go through JS, which is stupid.</p>\n\n<p>There is an <a href=\"https://github.com/rossberg/wasm-c-api\" rel=\"nofollow noreferrer\">initial design</a> for a C and C++ API for WebAssembly, which would give direct access to an embedded Wasm VM. It is meant to be VM-neutral, i.e., could be implemented by any existing VM (the repo contains a prototype implementation on top of V8). This may evolve into a standard, but I cannot promise any timeline. Right now it's only for the brave.</p>\n"
+    }
+]

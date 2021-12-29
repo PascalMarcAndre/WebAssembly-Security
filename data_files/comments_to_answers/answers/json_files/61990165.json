@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 4977,
+            "user_id": 812369,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/bf76341bdec26376f2b4ff2a77a5d80a?s=128&d=identicon&r=PG",
+            "display_name": "rdmptn",
+            "link": "https://stackoverflow.com/users/812369/rdmptn"
+        },
+        "is_accepted": false,
+        "score": 1,
+        "last_activity_date": 1590344812,
+        "creation_date": 1590344812,
+        "answer_id": 61990491,
+        "question_id": 61990165,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>Move it to a server-side hosting model. This is like any other purely client SPA -your code goes to the client and they can read it. </p>\n"
+    }
+]

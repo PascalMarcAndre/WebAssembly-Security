@@ -1,0 +1,38 @@
+[
+    {
+        "owner": {
+            "reputation": 31239,
+            "user_id": 1097780,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/a8f01ad795c29c3d05ad26ee47ea6069?s=128&d=identicon&r=PG",
+            "display_name": "Andreas Rossberg",
+            "link": "https://stackoverflow.com/users/1097780/andreas-rossberg"
+        },
+        "is_accepted": false,
+        "score": 1,
+        "last_activity_date": 1545847238,
+        "creation_date": 1545847238,
+        "answer_id": 53935453,
+        "question_id": 53925972,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>You might be interested in the <a href=\"https://github.com/rossberg/wasm-c-api\" rel=\"nofollow noreferrer\">Wasm C/C++ API proposal</a>, which allows using a Wasm engine directly from C/C++. The design of this API is independent of any particular engine, but the proposal contains a more or less complete prototype implementation on top of V8.</p>\n\n<p>Sample snippet (see e.g. <a href=\"https://github.com/rossberg/wasm-c-api/blob/master/example/hello.cc\" rel=\"nofollow noreferrer\">hello.cc</a>):</p>\n\n<pre><code>// ...\nauto engine = wasm::Engine::make();\nauto store = wasm::Store::make(engine.get());\nauto module = wasm::Module::make(store.get(), binary);\nauto instance = wasm::Instance::make(store.get(), module.get(), imports);\nauto exports = instance-&gt;exports();\nexports[0]-&gt;func()-&gt;call();\n</code></pre>\n"
+    },
+    {
+        "owner": {
+            "reputation": 15060,
+            "user_id": 8605791,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/9ae3be140b26db13a86d624dba4ef1c8?s=128&d=identicon&r=PG&f=1",
+            "display_name": "llllllllll",
+            "link": "https://stackoverflow.com/users/8605791/llllllllll"
+        },
+        "is_accepted": true,
+        "score": 3,
+        "last_activity_date": 1545813691,
+        "creation_date": 1545813691,
+        "answer_id": 53929545,
+        "question_id": 53925972,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>You can construct a WebAssembly module directly from C++ via <code>v8::WasmCompiledModule</code> class (it will be renamed to <code>v8::WasmModuleObject</code> in next version):</p>\n\n<pre><code>    Local&lt;WasmCompiledModule&gt; module = WasmCompiledModule::DeserializeOrCompile(isolate,\n            WasmCompiledModule::BufferReference(0, 0),\n            WasmCompiledModule::BufferReference(wasmbin.data(), wasmbin.size())\n        ).ToLocalChecked();\n</code></pre>\n\n<p>But AFAIK, v8 doesn't expose its webassembly api directly, you have to get them from JS global context. The following code creates a module instance, and gets the <code>exports</code> of the instance:</p>\n\n<pre><code>    using args_type = Local&lt;Value&gt;[];\n\n    Local&lt;Object&gt; module_instance_exports = context-&gt;Global()\n        -&gt;Get(context, String::NewFromUtf8(isolate, \"WebAssembly\"))\n        .ToLocalChecked().As&lt;Object&gt;()\n        -&gt;Get(context, String::NewFromUtf8(isolate, \"Instance\"))\n        .ToLocalChecked().As&lt;Object&gt;()\n        -&gt;CallAsConstructor(context, 1, args_type{module})\n        .ToLocalChecked().As&lt;Object&gt;()\n        -&gt;Get(context, String::NewFromUtf8(isolate, \"exports\"))\n        .ToLocalChecked().As&lt;Object&gt;()\n        ;\n</code></pre>\n\n<p>Then you can get the <code>add</code> function from <code>exports</code> object and call it:</p>\n\n<pre><code>    Local&lt;Int32&gt; adder_res = module_instance_exports\n        -&gt;Get(context, String::NewFromUtf8(isolate, \"add\"))\n        .ToLocalChecked().As&lt;Function&gt;()\n        -&gt;Call(context, context-&gt;Global(), 2, args_type{Int32::New(isolate, 77), Int32::New(isolate, 88)})\n        .ToLocalChecked().As&lt;Int32&gt;();\n\n    std::cout &lt;&lt; \"77 + 88 = \" &lt;&lt; adder_res-&gt;Value() &lt;&lt; \"\\n\";\n</code></pre>\n"
+    }
+]

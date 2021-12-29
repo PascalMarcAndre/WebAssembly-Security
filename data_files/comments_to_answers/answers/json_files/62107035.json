@@ -1,0 +1,21 @@
+[
+    {
+        "owner": {
+            "reputation": 990,
+            "user_id": 207425,
+            "user_type": "registered",
+            "accept_rate": 69,
+            "profile_image": "https://i.stack.imgur.com/1dXtN.png?s=128&g=1",
+            "display_name": "pigfox",
+            "link": "https://stackoverflow.com/users/207425/pigfox"
+        },
+        "is_accepted": false,
+        "score": 0,
+        "last_activity_date": 1590875721,
+        "creation_date": 1590875721,
+        "answer_id": 62109136,
+        "question_id": 62107035,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>The problem was that I needed to do port forwarding:</p>\n\n<p>docker run -p 8989:8989 test3</p>\n\n<p>It works now.</p>\n"
+    }
+]

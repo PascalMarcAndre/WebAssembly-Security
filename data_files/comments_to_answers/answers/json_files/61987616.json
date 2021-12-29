@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 246,
+            "user_id": 3930384,
+            "user_type": "registered",
+            "profile_image": "https://graph.facebook.com/516629801/picture?type=large",
+            "display_name": "Steven Peirce",
+            "link": "https://stackoverflow.com/users/3930384/steven-peirce"
+        },
+        "is_accepted": true,
+        "score": 4,
+        "last_activity_date": 1595245175,
+        "creation_date": 1595245175,
+        "answer_id": 62994581,
+        "question_id": 61987616,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>I found that I need to explicitly call the <code>logout</code> endpoint:\n<a href=\"https://auth0.com/docs/api/authentication?javascript#logout\" rel=\"nofollow noreferrer\">https://auth0.com/docs/api/authentication?javascript#logout</a></p>\n<p>For now I have created a <code>Logout</code> component and added the logic inside - I hope there is a better way (e.g. configuring this as part of <code>AddOidcAuthentication</code> but I couldn't figure it out).</p>\n<pre class=\"lang-cs prettyprint-override\"><code>@inject NavigationManager Navigation\n@inject SignOutSessionStateManager SignOutManager\n@inject BaseAddress BaseAddress\n@inject Auth0Config Auth0Config\n\n&lt;AuthorizeView&gt;\n    &lt;Authorized&gt;\n        &lt;button class=@($&quot;{CssClass} btn btn-link&quot;) @onclick=BeginSignOut&gt;Log out&lt;/button&gt;\n    &lt;/Authorized&gt;\n&lt;/AuthorizeView&gt;\n\n@code {\n    \n    [Parameter]\n    public string CssClass { get; set; }\n\n    private async Task BeginSignOut()\n    {\n        await SignOutManager.SetSignOutState();\n        Navigation.NavigateTo($&quot;{Auth0Config.Authority}/v2/logout?client_id={Auth0Config.ClientId}&amp;returnTo={BaseAddress.Url}authentication/logout&quot;);\n    }\n}\n</code></pre>\n"
+    }
+]

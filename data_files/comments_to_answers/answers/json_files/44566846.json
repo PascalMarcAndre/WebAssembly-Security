@@ -1,0 +1,21 @@
+[
+    {
+        "owner": {
+            "reputation": 2883,
+            "user_id": 2583765,
+            "user_type": "registered",
+            "accept_rate": 75,
+            "profile_image": "https://www.gravatar.com/avatar/5e54eb8bd99cabcd824ddb09367efb4d?s=128&d=identicon&r=PG&f=1",
+            "display_name": "birgersp",
+            "link": "https://stackoverflow.com/users/2583765/birgersp"
+        },
+        "is_accepted": true,
+        "score": 5,
+        "last_activity_date": 1497535151,
+        "creation_date": 1497535151,
+        "answer_id": 44569488,
+        "question_id": 44566846,
+        "content_license": "CC BY-SA 3.0",
+        "body": "<p>Turns out I had to use <code>--use-preload-plugins</code> when executing emcc to create the preload file. Finally, the command looks like this:</p>\n\n<pre><code>emcc --bind -s USE_SDL=2 -s USE_SDL_IMAGE=2 -o webapp.js src/webapp.cpp --preload-file resources --use-preload-plugins\n</code></pre>\n"
+    }
+]

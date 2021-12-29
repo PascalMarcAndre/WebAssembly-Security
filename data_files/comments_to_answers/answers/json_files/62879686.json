@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 38,
+            "user_id": 3464717,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/0d5e8403753955852fd7e47122c320f0?s=128&d=identicon&r=PG",
+            "display_name": "KingOss",
+            "link": "https://stackoverflow.com/users/3464717/kingoss"
+        },
+        "is_accepted": true,
+        "score": 0,
+        "last_activity_date": 1594656896,
+        "creation_date": 1594656896,
+        "answer_id": 62879933,
+        "question_id": 62879686,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>use Blazor WebAssembly with authentication (also if possible) is not a great idea:\nusually, when you write a normal client-server application, the client collect the user typed data and send it to the server. In the server you can check if the password is correct (for example establishing a connection to a database and checking matches between username and password).</p>\n<p>In Blazor WebAssembly, all the code is compiled, dll are generated, sent to the client (using the Web-Assembly technology) and runs inside a JavaScript sandbox. This mean that ALL the objects are available on client side and can be seen by the user, so also all the connection strings can be readed.</p>\n<p>Also if there are some ways to mask them, none of them are 100% secure, actually.</p>\n<p>If you don't need to have an off-line application I suggest you to use Blazor Server technology, that use SignalR.</p>\n<p>However, if you really want to implement authentication in WebAssembly, you can take a look at the <a href=\"https://docs.microsoft.com/en-us/aspnet/core/blazor/security/webassembly/standalone-with-authentication-library?view=aspnetcore-3.1&amp;tabs=visual-studio\" rel=\"nofollow noreferrer\">Microsoft documentation</a>.</p>\n<p>Hope this can be useful!</p>\n"
+    }
+]

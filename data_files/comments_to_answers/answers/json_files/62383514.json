@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 16712,
+            "user_id": 9119186,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/RFjFW.png?s=128&g=1",
+            "display_name": "Vencovsky",
+            "link": "https://stackoverflow.com/users/9119186/vencovsky"
+        },
+        "is_accepted": false,
+        "score": 0,
+        "last_activity_date": 1592216259,
+        "creation_date": 1592216259,
+        "answer_id": 62386087,
+        "question_id": 62383514,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>You cannot use StackExchange Redis in blazor webassembly because that is like an SDK for connecting and managing the redis, not the redis it self.</p>\n\n<p>And the error message saying </p>\n\n<blockquote>\n  <p>Unhandled exception rendering component: Cannot start threads on this runtime.</p>\n</blockquote>\n\n<p>Means that it cannot run the redis in webassembly.</p>\n\n<p>If you want to use StackExchange Redis, you need to create some api that will be connected with the redis.</p>\n\n<p>If you want to cache some data in the client side, you can either user <code>localStorage</code>/<code>sessionStorage</code> or <code>IndexedDB</code>.</p>\n"
+    }
+]

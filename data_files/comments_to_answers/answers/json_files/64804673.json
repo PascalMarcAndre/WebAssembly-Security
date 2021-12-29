@@ -1,0 +1,21 @@
+[
+    {
+        "owner": {
+            "reputation": 64423,
+            "user_id": 249933,
+            "user_type": "registered",
+            "accept_rate": 81,
+            "profile_image": "https://www.gravatar.com/avatar/458f2e0d08d4114f8b323798cfea141d?s=128&d=identicon&r=PG",
+            "display_name": "ColinE",
+            "link": "https://stackoverflow.com/users/249933/coline"
+        },
+        "is_accepted": false,
+        "score": 0,
+        "last_activity_date": 1605188012,
+        "creation_date": 1605188012,
+        "answer_id": 64804875,
+        "question_id": 64804673,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p><code>WebAssembly.instantiateModule</code> is not a function on the <code>WebAssembly</code> object <a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly#\" rel=\"nofollow noreferrer\">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly#</a></p>\n"
+    }
+]

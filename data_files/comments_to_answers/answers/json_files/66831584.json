@@ -1,0 +1,21 @@
+[
+    {
+        "owner": {
+            "reputation": 184,
+            "user_id": 14924779,
+            "user_type": "registered",
+            "profile_image": "https://lh3.googleusercontent.com/a-/AOh14Gj5YSg_5YhTpAY-SjfVbNFuFcH918PDbXPM9_tZ2w=k-s128",
+            "display_name": "David Eggenberger",
+            "link": "https://stackoverflow.com/users/14924779/david-eggenberger"
+        },
+        "is_accepted": false,
+        "score": 0,
+        "last_activity_date": 1616973022,
+        "last_edit_date": 1616973022,
+        "creation_date": 1616853547,
+        "answer_id": 66832126,
+        "question_id": 66831584,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>When choosing your configuration the created template gets delivered with IdentityServer and ASP.NET Core Identity. IdentityServer makes the Endpoint OpenID/OAuth compatible. This is needed for the Blazor WebAssembly app to streamline the process of getting a token, validating it etc. ASP.NET Core Identity is used to save and retrieve the users from the database, loging them in by setting a Cookie and checking the correctness of provided passwords, hashing them etc. <strong>This link answers how you can modify the default Razor Pages delivered when an app with ASP.NET Core Identity is created.</strong></p>\n<p><a href=\"https://stackoverflow.com/questions/50802781/where-are-the-login-and-register-pages-in-an-aspnet-core-scaffolded-app/58004931#58004931\">Where are the Login and Register pages in an AspNet Core scaffolded app?</a></p>\n"
+    }
+]

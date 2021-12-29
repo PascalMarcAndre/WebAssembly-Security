@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 2803,
+            "user_id": 3036129,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/glLJ3.jpg?s=128&g=1",
+            "display_name": "jackdbd",
+            "link": "https://stackoverflow.com/users/3036129/jackdbd"
+        },
+        "is_accepted": false,
+        "score": 0,
+        "last_activity_date": 1612103439,
+        "creation_date": 1612103439,
+        "answer_id": 65980285,
+        "question_id": 65950937,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>Using Deno you can run WebAssembly modules on a server because the Deno <a href=\"https://deno.land/std@0.85.0/wasi/README.md\" rel=\"nofollow noreferrer\">wasi module</a> provides an implementation of <a href=\"https://hacks.mozilla.org/2019/03/standardizing-wasi-a-webassembly-system-interface/\" rel=\"nofollow noreferrer\">WASI</a>, the WebAssembly system interface. Using Deno is just <strong>one</strong> way of running wasm modules on a server. You could choose between many other implementations of WASI, like the <a href=\"https://nodejs.org/api/wasi.html\" rel=\"nofollow noreferrer\">wasi module in Node.js</a>, <a href=\"https://github.com/bytecodealliance/wasmtime\" rel=\"nofollow noreferrer\">wasmtime</a>, <a href=\"https://www.fastly.com/blog/announcing-lucet-fastly-native-webassembly-compiler-runtime\" rel=\"nofollow noreferrer\">lucet</a>, <a href=\"https://github.com/wasmerio/wasmer/\" rel=\"nofollow noreferrer\">wasmer</a>, etc.</p>\n<blockquote>\n<p>Code [running] outside of a browser needs a way to talk to the system\u200a\u2014\u200aa system interface.</p>\n</blockquote>\n<p>As for your security concerns, keep in mind that your WebAssembly code runs in a <a href=\"https://webassembly.org/docs/security/\" rel=\"nofollow noreferrer\">sandboxed environment</a>. It's not your host system that executes directly the code in your wasm module. It's the wasm runtime \u2014 that implements the WASI interface \u2014 that runs it. And as far as I know the only way for your code to produce side effects (e.g. perform a HTTP call, access files) is to go through appropriate APIs defined by WASI.</p>\n"
+    }
+]

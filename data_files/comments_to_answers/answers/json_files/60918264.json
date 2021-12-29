@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 8934,
+            "user_id": 10201850,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/rz0ZX.jpg?s=128&g=1",
+            "display_name": "Xueli Chen",
+            "link": "https://stackoverflow.com/users/10201850/xueli-chen"
+        },
+        "is_accepted": true,
+        "score": 1,
+        "last_activity_date": 1585550209,
+        "creation_date": 1585550209,
+        "answer_id": 60925229,
+        "question_id": 60918264,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>From  this <a href=\"https://github.com/dotnet/aspnetcore/issues/19779\" rel=\"nofollow noreferrer\">github issue</a> </p>\n\n<blockquote>\n  <p>The Identity scaffolder adds a wwwroot folder to the Server project with the default set of styles and other assets for the default Identity UI. These styles then override the styles that come from the Client project. In particular, both the Client and Server projects end up with a css/site.css.</p>\n</blockquote>\n\n<p>You have the following two options\uff1a</p>\n\n<ol>\n<li><p>Change the name of <code>site.css</code> of wwwroot folder in  Blazor Server project.</p></li>\n<li><p>Remove the wwwroot folder in  Blazor Server project.</p></li>\n</ol>\n"
+    }
+]

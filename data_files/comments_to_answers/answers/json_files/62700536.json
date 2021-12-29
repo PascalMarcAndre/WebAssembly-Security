@@ -1,0 +1,21 @@
+[
+    {
+        "owner": {
+            "reputation": 33021,
+            "user_id": 137100,
+            "user_type": "registered",
+            "accept_rate": 90,
+            "profile_image": "https://i.stack.imgur.com/akWbA.jpg?s=128&g=1",
+            "display_name": "Mark",
+            "link": "https://stackoverflow.com/users/137100/mark"
+        },
+        "is_accepted": true,
+        "score": 7,
+        "last_activity_date": 1593707311,
+        "creation_date": 1593707311,
+        "answer_id": 62700961,
+        "question_id": 62700536,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>I have figured it out by browsing the <a href=\"https://docs.microsoft.com/en-us/azure/active-directory/develop/msal-js-sso\" rel=\"noreferrer\">MSAL.js</a> docs: there is a <code>cacheLocation</code> config property that can be set to <strong>localStorage</strong>, and <code>Microsoft.Authentication.WebAssembly.Msal.Models.MsalProviderOptions</code> exposes that property.</p>\n<p>To get it working, I simply added the following to <strong>Program.cs</strong>:</p>\n<pre class=\"lang-cs prettyprint-override\"><code>builder.Services.AddMsalAuthentication(options =&gt;\n{\n    options.ProviderOptions.Cache.CacheLocation = &quot;localStorage&quot;;\n    ...\n});\n</code></pre>\n"
+    }
+]

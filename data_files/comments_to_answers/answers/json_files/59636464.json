@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 9,
+            "user_id": 11769413,
+            "user_type": "registered",
+            "profile_image": "https://lh6.googleusercontent.com/-7NydHMfcjhg/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3rcYhz1VVvekOqp70pxzCMCo07TfQQ/photo.jpg?sz=128",
+            "display_name": "Avi Tawill",
+            "link": "https://stackoverflow.com/users/11769413/avi-tawill"
+        },
+        "is_accepted": false,
+        "score": 0,
+        "last_activity_date": 1605001966,
+        "creation_date": 1605001966,
+        "answer_id": 64766540,
+        "question_id": 59636464,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>I placed all the cameras by id into array like that</p>\n<p><div class=\"snippet\" data-lang=\"js\" data-hide=\"false\" data-console=\"true\" data-babel=\"false\">\r\n<div class=\"snippet-code\">\r\n<pre class=\"snippet-code-js lang-js prettyprint-override\"><code>      navigator.mediaDevices.enumerateDevices()\n        .then(function(devices) {\n        \n        for(;devices[i];){\n        if(devices[i].kind == \"videoinput\"){\n            that.aCameras.push(   [devices[i].deviceId , devices[i].label]   )\n            j++;            \n            }\n        i++;\n        }\n    });</code></pre>\r\n</div>\r\n</div>\r\n</p>\n<p>Than on the event that flip the camera by pressing the button i did this:</p>\n<p><div class=\"snippet\" data-lang=\"js\" data-hide=\"false\" data-console=\"true\" data-babel=\"false\">\r\n<div class=\"snippet-code\">\r\n<pre class=\"snippet-code-js lang-js prettyprint-override\"><code>      var defaultsOpts = { audio: false, video: true };\n      defaultsOpts.video = { \n              deviceId: that.aCameras[that.currentCamera][0]\n      };\n      if ( that.aCameras.length-1 != that.currentCamera ){\n          that.currentCamera++;\n      }\n      else{\n          that.currentCamera = 0;\n      }      \n      navigator.mediaDevices.getUserMedia(defaultsOpts)\n            .then(function (stream) {\n                  vid.srcObject = stream;\n                  localstream = stream;\n                  vid.play();\n               });\n          \n       });</code></pre>\r\n</div>\r\n</div>\r\n</p>\n<p>like that instead of using user/enviroment,\nmy problem was sort of solved.</p>\n<p>hope will help you too.</p>\n<p>Regards,\nAvi.</p>\n"
+    }
+]

@@ -1,0 +1,38 @@
+[
+    {
+        "owner": {
+            "reputation": 55,
+            "user_id": 3153528,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/d7a599a95b0fe4d2877982fd6f0b93a0?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Neits",
+            "link": "https://stackoverflow.com/users/3153528/neits"
+        },
+        "is_accepted": false,
+        "score": 0,
+        "last_activity_date": 1618740177,
+        "creation_date": 1618740177,
+        "answer_id": 67147315,
+        "question_id": 65513936,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>I was stuck for the last two weeks with the same error code in the same setting: Blazor WASM talking to an AAD secured Azure Functions app.</p>\n<p>What appeared to be a problem in my case was the scopes that I was listing in the http request when contacting AAD identification provider endpoints. Almost all examples I came across use Microsoft Graph API. There, <code>User.Read</code> is the scope that is given as an example. My first though was that even when I am contacting my own API I have to include the <code>User.Read</code> scope in the request because I was reasoning that this scope is necessary to identify the user. However, this is not the case and the only scope that you have to list when you call the authorize and token endpoints is the one that you exposed under the &quot;Expose an API blade&quot; in your AAD app registration.</p>\n<p>I am using the OAuth2 authorization code in my example and not the implicit grant. Make sure that in the manifest of your API registration you have set <code>&quot;accessTokenAcceptedVersion&quot;: 2</code> and not <code>&quot;accessTokenAcceptedVersion&quot;: null</code>. The latter implies the use of implicit flow as far as I know.</p>\n<p>The scope the I exposed in my API is <code>Api.Read</code>. You can expose more scopes if you need but the point is that you only ask for scopes that you exposed.</p>\n<p>I also have both following options unticked (i.e. no implicit flow). However, I tried with selecting &quot;ID token&quot; and it still worked. Note that the &quot;ID token&quot; option is selected by default if you let the Azure Portal create your AAD app registration from your function app Authentication blade.</p>\n<p><a href=\"https://i.stack.imgur.com/R4JkO.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/R4JkO.png\" alt=\"enter image description here\" /></a></p>\n<h2>Blazor code</h2>\n<h3>Program.cs</h3>\n<p>This code has to be added.</p>\n<pre><code>        builder.Services.AddScoped&lt;GraphAPIAuthorizationMessageHandler&gt;();\n        \n        builder.Services.AddHttpClient(&quot;{NAME}&quot;, \n                client =&gt; client.BaseAddress = new Uri(&quot;https://your-azure-functions-url.net&quot;))\n            .AddHttpMessageHandler&lt;GraphAPIAuthorizationMessageHandler&gt;();\n\n        builder.Services.AddScoped(sp =&gt; sp.GetRequiredService&lt;IHttpClientFactory&gt;()\n            .CreateClient(&quot;{NAME}&quot;));\n\n        builder.Services.AddMsalAuthentication(options =&gt;\n        {\n            builder.Configuration.Bind(&quot;AzureAd&quot;, options.ProviderOptions.Authentication);\n            // NOTE: no &quot;api://&quot; when providing the scope\n            options.ProviderOptions.DefaultAccessTokenScopes.Add(&quot;{you API application id}/{api exposed scope}&quot;);\n        });\n</code></pre>\n<h3>appsetting.json</h3>\n<pre><code>&quot;AzureAd&quot;: {\n&quot;Authority&quot;: &quot;https://login.microsoftonline.com/{aad tenant id}&quot;,\n&quot;ClientId&quot;: &quot;{application id of your blazor wasm app}&quot;,\n&quot;ValidateAuthority&quot;: true\n</code></pre>\n<p>}</p>\n<h3>GraphAPIAuthorizationMessageHandler.cs</h3>\n<p>Note that this class can have a different name. you'll then also reference a different name in Program.cs.</p>\n<pre><code>public class GraphAPIAuthorizationMessageHandler : AuthorizationMessageHandler\n{\n    public GraphAPIAuthorizationMessageHandler(IAccessTokenProvider provider,\n        NavigationManager navigationManager)\n        : base(provider, navigationManager)\n    {\n        ConfigureHandler(\n            authorizedUrls: new[] { &quot;https://your-azure-functions-url.net&quot; },\n            // NOTE: here with &quot;api://&quot;\n            scopes: new[] { &quot;api://{you API application id}/{api exposed scope}&quot; });\n    }\n}\n</code></pre>\n<p>I hope this works. If not, let me know.</p>\n"
+    },
+    {
+        "owner": {
+            "reputation": 30696,
+            "user_id": 9455659,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/Albsq.jpg?s=128&g=1",
+            "display_name": "Joy Wang",
+            "link": "https://stackoverflow.com/users/9455659/joy-wang"
+        },
+        "is_accepted": false,
+        "score": 0,
+        "last_activity_date": 1609485880,
+        "creation_date": 1609485880,
+        "answer_id": 65527948,
+        "question_id": 65513936,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>At least you need to get the access token, then use the token to call the function api. In this case, if you want to get the token in only one step, you could use the <a href=\"https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-oauth2-client-creds-grant-flow\" rel=\"nofollow noreferrer\">client credential flow</a>, MSAL sample <a href=\"https://docs.microsoft.com/en-us/azure/active-directory/develop/scenario-daemon-overview\" rel=\"nofollow noreferrer\">here</a>, follow every part on the left to complete the prerequisites.</p>\n<p>The following are the approximate steps(for more details, you still need to follow the sample above):</p>\n<p>1.<a href=\"https://docs.microsoft.com/en-us/azure/active-directory/develop/scenario-daemon-app-registration\" rel=\"nofollow noreferrer\">Create a new App registration</a> and <a href=\"https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app#add-a-client-secret\" rel=\"nofollow noreferrer\">add a client secret</a>.</p>\n<p>2.<a href=\"https://docs.microsoft.com/en-us/azure/active-directory/develop/scenario-daemon-app-configuration?tabs=dotnet#instantiate-the-confidential-client-application-with-a-client-secret\" rel=\"nofollow noreferrer\">Instantiate the confidential client application with a client secret</a></p>\n<pre><code>app = ConfidentialClientApplicationBuilder.Create(config.ClientId)\n           .WithClientSecret(config.ClientSecret)\n           .WithAuthority(new Uri(config.Authority))\n           .Build();\n</code></pre>\n<p>3.<a href=\"https://docs.microsoft.com/en-us/azure/active-directory/develop/scenario-daemon-acquire-token?tabs=dotnet#acquiretokenforclient-api\" rel=\"nofollow noreferrer\">Get the token</a></p>\n<pre><code>string[] scopes = new string[] { &quot;&lt;AppId URI of your function related AD App&gt;/.default&quot; };\n\nresult = await app.AcquireTokenForClient(scopes)\n                  .ExecuteAsync();\n</code></pre>\n<p>4.<a href=\"https://docs.microsoft.com/en-us/azure/active-directory/develop/scenario-daemon-call-api?tabs=dotnet\" rel=\"nofollow noreferrer\">Call the function API</a></p>\n<pre><code>httpClient = new HttpClient();\nhttpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(&quot;Bearer&quot;, result.AccessToken);\n\n// Call the web API.\nHttpResponseMessage response = await _httpClient.GetAsync(apiUri);\n...\n}\n</code></pre>\n"
+    }
+]

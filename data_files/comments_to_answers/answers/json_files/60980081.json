@@ -1,0 +1,41 @@
+[
+    {
+        "owner": {
+            "reputation": 7010,
+            "user_id": 7453,
+            "user_type": "registered",
+            "accept_rate": 93,
+            "profile_image": "https://www.gravatar.com/avatar/9221ab436283d74b2f9980004df83c1c?s=128&d=identicon&r=PG",
+            "display_name": "Patrick Szalapski",
+            "link": "https://stackoverflow.com/users/7453/patrick-szalapski"
+        },
+        "is_accepted": true,
+        "score": 0,
+        "last_activity_date": 1587664686,
+        "creation_date": 1587664686,
+        "answer_id": 61393934,
+        "question_id": 60980081,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>There seems to be no way of doing this in Blazor without Javascript interop, as of 3.2.0-preview4.</p>\n"
+    },
+    {
+        "owner": {
+            "reputation": 12718,
+            "user_id": 2940908,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://i.stack.imgur.com/E79WU.jpg?s=128&g=1",
+            "display_name": "agua from mars",
+            "link": "https://stackoverflow.com/users/2940908/agua-from-mars"
+        },
+        "is_accepted": false,
+        "score": 1,
+        "last_activity_date": 1587728650,
+        "last_edit_date": 1592644375,
+        "creation_date": 1585808675,
+        "answer_id": 60985380,
+        "question_id": 60980081,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<h3>UPDATE for preview5</h3>\n<p>The default logger use log level to write in the console now you don't need to create your logger.</p>\n<pre class=\"lang-cs prettyprint-override\"><code>@using using Microsoft.Extensions.Logging\n@inject ILogger&lt;MyComponent&gt; _logger\n...\n@code {\n\n     protected override void OnInitialized()\n     {\n          _logger.LogWarning(&quot;warning&quot;);\n          _logger.LogError(&quot;error&quot;);\n     }\n}\n</code></pre>\n<p><a href=\"https://github.com/dotnet/aspnetcore/blob/b69457e606adf24f9bb76014bba3eea65c51b954/src/Components/WebAssembly/WebAssembly/src/Services/WebAssemblyConsoleLogger.cs\" rel=\"nofollow noreferrer\">https://github.com/dotnet/aspnetcore/blob/b69457e606adf24f9bb76014bba3eea65c51b954/src/Components/WebAssembly/WebAssembly/src/Services/WebAssemblyConsoleLogger.cs</a></p>\n<h3>Before preview 5</h3>\n<p>You can use JSInterop:</p>\n<pre class=\"lang-cs prettyprint-override\"><code>@inject IJSRuntime _jsRuntime\n...\n@code {\n\n     protected override async Task OnInitializedAsync()\n     {\n          await _jsRuntime.InvokeVoidAsync(&quot;console.error&quot;, &quot;ERROR&quot;).ConfigureAwait(false);\n     }\n}\n</code></pre>\n<p>Or implement your logger :</p>\n<pre class=\"lang-cs prettyprint-override\"><code>public class ConsoleLogger : ILogger\n{\n    private readonly IJSRuntime _jsRuntime;\n\n    public ConsoleLogger(IJSRuntime jsRuntime)\n    {\n        _jsRuntime = jsRuntime ?? throw new ArgumentNullException(nameof(jsRuntime));\n    }\n\n    public IDisposable BeginScope&lt;TState&gt;(TState state)\n    {\n        return NoOpDisposable.Instance;\n    }\n\n    public bool IsEnabled(LogLevel logLevel)\n    {\n        return logLevel &gt;= LogLevel.Warning;\n    }\n\n    public void Log&lt;TState&gt;(LogLevel logLevel, EventId eventId, TState state, Exception exception, Func&lt;TState, Exception, string&gt; formatter)\n    {\n        var formattedMessage = formatter(state, exception);\n        switch(logLevel)\n        {\n            case LogLevel.Critical:\n            case LogLevel.Error:\n                _jsRuntime.InvokeVoidAsync(&quot;console.error&quot;, formattedMessage);\n                break;\n            case LogLevel.Warning:\n                _jsRuntime.InvokeVoidAsync(&quot;console.warn&quot;, formattedMessage);\n                break;\n            case LogLevel.Information:\n                _jsRuntime.InvokeVoidAsync(&quot;console.info&quot;, formattedMessage);\n                break;\n            case LogLevel.Trace:\n            case LogLevel.Debug:\n                _jsRuntime.InvokeVoidAsync(&quot;console.debug&quot;, formattedMessage);\n                break;\n            default:\n                _jsRuntime.InvokeVoidAsync(&quot;console.log&quot;, formattedMessage);\n                break;\n        }\n    }\n\n    [SuppressMessage(&quot;Major Code Smell&quot;, &quot;S3881:\\&quot;IDisposable\\&quot; should be implemented correctly&quot;, Justification = &quot;From default console logger&quot;)]\n    [SuppressMessage(&quot;Critical Code Smell&quot;, &quot;S2223:Non-constant static fields should not be visible&quot;, Justification = &quot;From default console logger&quot;)]\n    [SuppressMessage(&quot;Critical Code Smell&quot;, &quot;S1186:Methods should not be empty&quot;, Justification = &quot;From default console logger&quot;)]\n    private class NoOpDisposable : IDisposable\n    {            \n        public static NoOpDisposable Instance = new NoOpDisposable();\n            \n        public void Dispose() { }\n    }\n}\n</code></pre>\n<p>Your logger provider</p>\n<pre class=\"lang-cs prettyprint-override\"><code>public class ConsoleLoggerProvider : ILoggerProvider\n{\n    private readonly IServiceCollection _services;\n    ILogger _logger;\n    public ConsoleLoggerProvider(IServiceCollection services)\n    {\n        _services = services ?? throw new ArgumentNullException(nameof(services));\n    }\n\n    public ILogger CreateLogger(string categoryName)\n    {\n        if (_logger != null)\n        {\n            return _logger;\n        }\n\n        using var provider = _services.BuildServiceProvider();\n        var jsRuntime = provider.GetRequiredService&lt;IJSRuntime&gt;();\n        _logger = new ConsoleLogger(jsRuntime);\n        return _logger;\n    }\n\n    public void Dispose()\n    {\n        // nothing to dispose.\n    }\n}\n</code></pre>\n<p>Inject it in DI:</p>\n<pre class=\"lang-cs prettyprint-override\"><code>public static async Task Main(string[] args)\n{\n    var builder = WebAssemblyHostBuilder.CreateDefault(args);            \n    builder.RootComponents.Add&lt;App&gt;(&quot;app&quot;);\n    builder.Services.AddLogging(options =&gt;\n    {\n        options.ClearProviders();\n        options.AddProvider(new ConsoleLoggerProvider(options.Services));\n    });\n</code></pre>\n<p>An inject an <code>ILogger&lt;T&gt;</code> in your components or services and use this logger to log in the console with warning or error level</p>\n<pre class=\"lang-cs prettyprint-override\"><code>@using using Microsoft.Extensions.Logging\n@inject ILogger&lt;MyComponent&gt; _logger\n...\n@code {\n\n     protected override void OnInitialized()\n     {\n          _logger.LogWarning(&quot;warning&quot;);\n          _logger.LogError(&quot;error&quot;);\n     }\n}\n</code></pre>\n"
+    }
+]

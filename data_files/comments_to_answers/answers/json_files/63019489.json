@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 73,
+            "user_id": 13129431,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/be40c8995899485adf5c48d87d01ae69?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Zack",
+            "link": "https://stackoverflow.com/users/13129431/zack"
+        },
+        "is_accepted": true,
+        "score": 0,
+        "last_activity_date": 1595358704,
+        "creation_date": 1595358704,
+        "answer_id": 63021518,
+        "question_id": 63019489,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>Finally realized I was missing getters/setters on the missing properties.</p>\n"
+    }
+]

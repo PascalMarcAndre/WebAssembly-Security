@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 11,
+            "user_id": 13576115,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/536fb2737b56e0ff274b1cb03031cfda?s=128&d=identicon&r=PG&f=1",
+            "display_name": "jokk",
+            "link": "https://stackoverflow.com/users/13576115/jokk"
+        },
+        "is_accepted": true,
+        "score": 0,
+        "last_activity_date": 1606588538,
+        "creation_date": 1606588538,
+        "answer_id": 65053193,
+        "question_id": 65051414,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>I figured it out.\nI was right about the trailing slash in the appsettings.json, however it didn't work editing manually in the file.\nTherefore i created the project again like so: dotnet new blazorwasm -au IndividualB2C --aad-b2c-instance &quot;{AAD B2C INSTANCE}&quot; --api-client-id &quot;{SERVER API APP CLIENT ID}&quot; --app-id-uri &quot;{SERVER API APP ID URI}&quot; --client-id &quot;{CLIENT APP CLIENT ID}&quot; --default-scope &quot;{DEFAULT SCOPE}&quot; --domain &quot;{TENANT DOMAIN}&quot; -ho -o {APP NAME} -ssp &quot;{SIGN UP OR SIGN IN POLICY}&quot;</p>\n<p>Where {AAD B2C INSTANCE} needs to have a trailing slash at the end. For example: <a href=\"https://contoso.b2clogin.com/\" rel=\"nofollow noreferrer\">https://contoso.b2clogin.com/</a></p>\n"
+    }
+]

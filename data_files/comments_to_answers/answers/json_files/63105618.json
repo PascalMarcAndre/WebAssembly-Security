@@ -1,0 +1,58 @@
+[
+    {
+        "owner": {
+            "reputation": 108,
+            "user_id": 11080892,
+            "user_type": "registered",
+            "profile_image": "https://lh4.googleusercontent.com/--FtsbDs1DdA/AAAAAAAAAAI/AAAAAAAAABc/kpnXGBoIXwk/photo.jpg?sz=128",
+            "display_name": "Jeff Bacon",
+            "link": "https://stackoverflow.com/users/11080892/jeff-bacon"
+        },
+        "is_accepted": false,
+        "score": 1,
+        "last_activity_date": 1595947483,
+        "creation_date": 1595947483,
+        "answer_id": 63136809,
+        "question_id": 63105618,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>Thank you guys SO much for this - I've been banging my head against this for a week (doh - forgot to look at the browser session data in Chrome to think about using JRRuntime...).</p>\n<p>I'm not sure if this is Cognito-specific, but the key for me is not using the NavigationManager BaseUri, but the OIDC Authority.</p>\n<pre class=\"lang-cs prettyprint-override\"><code>@page &quot;/&quot;\n@using System.Text.Json\n@inject IJSRuntime JSRuntime\n\n&lt;AuthorizeView&gt;\n    &lt;Authorized&gt;\n        &lt;div&gt;\n            &lt;b&gt;CachedAuthSettings&lt;/b&gt;\n            &lt;pre&gt;\n                @JsonSerializer.Serialize(authSettings, indented);\n            &lt;/pre&gt;\n            &lt;br/&gt;\n            &lt;b&gt;CognitoUser&lt;/b&gt;&lt;br/&gt;\n            &lt;pre&gt;\n                @JsonSerializer.Serialize(user, indented);\n            &lt;/pre&gt;\n        &lt;/div&gt;\n    &lt;/Authorized&gt;\n    &lt;NotAuthorized&gt;\n        &lt;div class=&quot;alert alert-warning&quot; role=&quot;alert&quot;&gt;\n            Everything requires you to &lt;a href=&quot;/authentication/login&quot;&gt;Log In&lt;/a&gt; first.\n        &lt;/div&gt;\n    &lt;/NotAuthorized&gt;\n&lt;/AuthorizeView&gt;\n\n@code {\n\n    JsonSerializerOptions indented = new JsonSerializerOptions() { WriteIndented = true };\n    CachedAuthSettings authSettings;\n    CognitoUser user;\n\n    protected override async Task OnInitializedAsync()\n    {\n        string key = &quot;Microsoft.AspNetCore.Components.WebAssembly.Authentication.CachedAuthSettings&quot;;\n        string authSettingsRAW = await JSRuntime.InvokeAsync&lt;string&gt;(&quot;sessionStorage.getItem&quot;, key);\n        authSettings = JsonSerializer.Deserialize&lt;CachedAuthSettings&gt;(authSettingsRAW);\n        string userRAW = await JSRuntime.InvokeAsync&lt;string&gt;(&quot;sessionStorage.getItem&quot;, authSettings?.OIDCUserKey);\n        user = JsonSerializer.Deserialize&lt;CognitoUser&gt;(userRAW);\n    }\n\n    public class CachedAuthSettings\n    {\n        public string authority { get; set; }\n        public string metadataUrl { get; set; }\n        public string client_id { get; set; }\n        public string[] defaultScopes { get; set; }\n        public string redirect_uri { get; set; }\n        public string post_logout_redirect_uri { get; set; }\n        public string response_type { get; set; }\n        public string response_mode { get; set; }\n        public string scope { get; set; }\n\n        public string OIDCUserKey =&gt; $&quot;oidc.user:{authority}:{client_id}&quot;;\n    }\n\n    public class CognitoUser\n    {\n        public string id_token { get; set; }\n        public string access_token { get; set; }\n        public string refresh_token { get; set; }\n        public string token_type { get; set; }\n        public string scope { get; set; }\n        public int expires_at { get; set; }\n    }\n}\n</code></pre>\n<p>I get serialization errors if I directly try and convert the string to classes using JSRuntme.InvokeAsync but it works fine with the JsonSerializer, that's why you see that seemingly extra step there.</p>\n"
+    },
+    {
+        "owner": {
+            "reputation": 25737,
+            "user_id": 6152891,
+            "user_type": "registered",
+            "accept_rate": 75,
+            "profile_image": "https://www.gravatar.com/avatar/b45b7f89429f8766cdbf6c776c0a9d41?s=128&d=identicon&r=PG",
+            "display_name": "enet",
+            "link": "https://stackoverflow.com/users/6152891/enet"
+        },
+        "is_accepted": false,
+        "score": 1,
+        "last_activity_date": 1595849034,
+        "creation_date": 1595849034,
+        "answer_id": 63114276,
+        "question_id": 63105618,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>Here's a working code sample that allows you to get the id_token in raw format as well as a list of claims parsed from it.</p>\n<p>Note: You should authenticate before you can see the results...</p>\n<pre><code>@page &quot;/&quot;\n\n@inject IJSRuntime JSRuntime\n@inject NavigationManager NavigationManager\n\n@using System.Security.Claims\n@using System.Text.Json\n\n&lt;p&gt;@JwtToken&lt;/p&gt;\n\n@foreach (var claim in claims)\n{\n    &lt;p&gt;@claim&lt;/p&gt;\n}\n\n\n@code {\n      List&lt;Claim&gt; claims = new List&lt;Claim&gt;();\n      string JwtToken;\n\n\n    protected override async Task OnInitializedAsync()\n    {\n        await GetJwtToken();\n\n    }\n    private async Task GetJwtToken()\n    {\n        var baseUri = NavigationManager.BaseUri.Substring(0, \n                              NavigationManager.BaseUri.Length - 1);\n        // client id example: RoleBasedApiAuthorization.Client \n        const string clientID = &quot;&lt;Place here your client id&gt;&quot;;\n        var key = $&quot;oidc.user:{baseUri}:{clientID}&quot;;\n        JwtToken = await JSRuntime.InvokeAsync&lt;string&gt; \n                                    (&quot;sessionStorage.getItem&quot;, key);\n\n        if (JwtToken != null)\n        {\n            claims = ParseClaimsFromJwt(JwtToken).ToList();\n        }\n\n    }\n\n\n    public IEnumerable&lt;Claim&gt; ParseClaimsFromJwt(string jwt)\n    {\n        var payload = jwt.Split('.')[1];\n        var jsonBytes = ParseBase64WithoutPadding(payload);\n        var keyValuePairs = JsonSerializer.Deserialize&lt;Dictionary&lt;string, object&gt;&gt;(jsonBytes);\n        return keyValuePairs.Select(kvp =&gt; new Claim(kvp.Key, kvp.Value.ToString()));\n    }\n\n    private byte[] ParseBase64WithoutPadding(string base64)\n    {\n        switch (base64.Length % 4)\n        {\n            case 2: base64 += &quot;==&quot;; break;\n            case 3: base64 += &quot;=&quot;; break;\n        }\n        return Convert.FromBase64String(base64);\n    }\n}\n</code></pre>\n"
+    },
+    {
+        "owner": {
+            "reputation": 12718,
+            "user_id": 2940908,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://i.stack.imgur.com/E79WU.jpg?s=128&g=1",
+            "display_name": "agua from mars",
+            "link": "https://stackoverflow.com/users/2940908/agua-from-mars"
+        },
+        "is_accepted": false,
+        "score": 4,
+        "last_activity_date": 1595831757,
+        "creation_date": 1595831757,
+        "answer_id": 63109855,
+        "question_id": 63105618,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>You can read it from the session storage using JSInterop, it is stored at key <em>oidc.user:{app baseUri}:{app client id}</em> :</p>\n<pre class=\"lang-cs prettyprint-override\"><code>@inject IJSRuntime JSRuntime\n@inject NavigationManager NavigationManager\n...\n@code {\n     private async Task&lt;string&gt; ReadIdToken()\n     {\n          const string clientId = &quot;your oidc client id&quot;;\n          var userDataKey = $&quot;oidc.user:{NavigationManager.BaseUri}:{clientId}&quot;;\n          var userData = await JSRuntime.InvokeAsync&lt;UserData&gt;(&quot;sessionStorage.getItem&quot;, userDataKey);\n          return userData.id_token;          \n     }\n\n     class UserData\n     {\n         public string id_token { get; set; }\n         public int expires_at { get; set; }\n     }\n}\n</code></pre>\n"
+    }
+]

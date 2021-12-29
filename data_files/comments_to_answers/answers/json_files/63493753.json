@@ -1,0 +1,21 @@
+[
+    {
+        "owner": {
+            "reputation": 502,
+            "user_id": 1464438,
+            "user_type": "registered",
+            "accept_rate": 92,
+            "profile_image": "https://i.stack.imgur.com/CPxh2.jpg?s=128&g=1",
+            "display_name": "Taylor C. White",
+            "link": "https://stackoverflow.com/users/1464438/taylor-c-white"
+        },
+        "is_accepted": true,
+        "score": 1,
+        "last_activity_date": 1598016117,
+        "creation_date": 1598016117,
+        "answer_id": 63523714,
+        "question_id": 63493753,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>The issue was that removing/not having the &quot;api://&quot; scheme prepended to the client ID caused this to not populate the claims for some reason. Very odd. <a href=\"https://i.stack.imgur.com/bJ4KO.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/bJ4KO.png\" alt=\"Scope documentation\" /></a>.</p>\n"
+    }
+]

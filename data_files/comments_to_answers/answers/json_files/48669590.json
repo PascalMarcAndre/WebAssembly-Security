@@ -1,0 +1,21 @@
+[
+    {
+        "owner": {
+            "reputation": 2005,
+            "user_id": 755391,
+            "user_type": "registered",
+            "accept_rate": 100,
+            "profile_image": "https://www.gravatar.com/avatar/4ed639a3ea6219b80b58e2e81ff9ba47?s=128&d=identicon&r=PG",
+            "display_name": "marvinhagemeister",
+            "link": "https://stackoverflow.com/users/755391/marvinhagemeister"
+        },
+        "is_accepted": false,
+        "score": 0,
+        "last_activity_date": 1518035688,
+        "creation_date": 1518035688,
+        "answer_id": 48672786,
+        "question_id": 48669590,
+        "content_license": "CC BY-SA 3.0",
+        "body": "<p>This is still an <strong><a href=\"https://github.com/Microsoft/TypeScript/issues/13422\" rel=\"nofollow noreferrer\">unsolved issue</a></strong>.</p>\n\n<p>Until TypeScript supports a dedicated compilation target you're only options to use a module bundler.</p>\n\n<p>The most popular ones these days are <a href=\"https://webpack.js.org/\" rel=\"nofollow noreferrer\">webpack</a>, <a href=\"https://github.com/rollup/rollup\" rel=\"nofollow noreferrer\">rollup</a> or <a href=\"https://parceljs.org/\" rel=\"nofollow noreferrer\">parcel</a>.</p>\n"
+    }
+]

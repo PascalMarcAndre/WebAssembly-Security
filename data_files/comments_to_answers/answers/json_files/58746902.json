@@ -1,0 +1,21 @@
+[
+    {
+        "owner": {
+            "reputation": 25737,
+            "user_id": 6152891,
+            "user_type": "registered",
+            "accept_rate": 75,
+            "profile_image": "https://www.gravatar.com/avatar/b45b7f89429f8766cdbf6c776c0a9d41?s=128&d=identicon&r=PG",
+            "display_name": "enet",
+            "link": "https://stackoverflow.com/users/6152891/enet"
+        },
+        "is_accepted": false,
+        "score": 3,
+        "last_activity_date": 1573125571,
+        "creation_date": 1573125571,
+        "answer_id": 58747674,
+        "question_id": 58746902,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<blockquote>\n  <p>a Blazor WebAssembly app can't enforce authorization access rules</p>\n</blockquote>\n\n<p>That is correct... only the server can and should enforce authorization access rules. In Blazor WebAssembly App authorization is used for UI's purposes only.</p>\n\n<blockquote>\n  <p>reverse mechanism is implemented in GetAuthenticationStateAsync where\n  a token is exchanged for user info</p>\n</blockquote>\n\n<p>The GetAuthenticationStateAsync method does not ordinarily create the AuthenticationState object, and it is set somewhere else, but if you use a Blazor WebAssembly App, you must create a custom AuthenticationStateProvider and override this method to provide the AuthenticationState object. You should follow these steps:   </p>\n\n<ul>\n<li><p>Get the token, a Jwt token, for instance, from a local store</p></li>\n<li><p>Parse the Jwt token; it should contains a collection of claims such as name, etc.</p></li>\n<li><p>Create a ClaimsPrincipal object from those claims, and pass it to the constructor of the AuthenticationState object which you return from GetAuthenticationStateAsync to calling objects, such as the CascadingAuthenticationState component...</p></li>\n</ul>\n\n<p>Hope this helps...</p>\n"
+    }
+]

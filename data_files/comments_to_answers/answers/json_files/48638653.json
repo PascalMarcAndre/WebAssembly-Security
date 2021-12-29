@@ -1,0 +1,22 @@
+[
+    {
+        "owner": {
+            "reputation": 2006,
+            "user_id": 582010,
+            "user_type": "registered",
+            "accept_rate": 91,
+            "profile_image": "https://www.gravatar.com/avatar/ab181aba4f2cdba8199be9f20c3665dc?s=128&d=identicon&r=PG",
+            "display_name": "Daniel N&#228;slund",
+            "link": "https://stackoverflow.com/users/582010/daniel-n%c3%a4slund"
+        },
+        "is_accepted": true,
+        "score": 1,
+        "last_activity_date": 1519973998,
+        "last_edit_date": 1519973998,
+        "creation_date": 1517932119,
+        "answer_id": 48646858,
+        "question_id": 48638653,
+        "content_license": "CC BY-SA 3.0",
+        "body": "<p><code>One pass verification</code> means that you don't have to traverse the bytecode twice to gather all information necessary for validating your program.</p>\n\n<p>It relies on two mechanism: </p>\n\n<p><strong><em>Linear memory</em></strong> is disjoint from code space; the execution stack; and the engines control structures so your program can't jump to arbitrary locations or corrupt the execution environment. So the engine won't have to do tedious checks at runtime for guaranteeing memory safety. If it completely eliminates the risk of memory safety bugs? That I can't answer to. The Spectre/Meltdown bugs did cause some engines to restrict the privileges of the WebAssembly execution engines, I believe.</p>\n\n<p><strong><em>Structured control flow</em></strong> means that the program by construction can't form irreducible loops or contain branches into blocks with misaligned stack heights.</p>\n\n<p>The <strong><em>structured control flow</em></strong> part is what simplifies the parsing and validation mechanisms. Every control flow instruction is contained inside a block, which means that for forwards jumps we already know the destination and won't have to parse the program again to find out.</p>\n\n<p>The <code>validation process</code> occurs just prior to the compilation. In Firefox for instance it's hidden behind an iterator that feeds from the reader of the binary code and passes on each instruction to the compiler. Here is the function that validates each function body: <a href=\"https://searchfox.org/mozilla-central/source/js/src/wasm/WasmValidate.cpp#903\" rel=\"nofollow noreferrer\">https://searchfox.org/mozilla-central/source/js/src/wasm/WasmValidate.cpp#903</a></p>\n\n<p>The actual validation is done by placing the operands on a type stack and verifying that the types on that stack matches the type of the instructions. Some code excerpts from Firefox: <a href=\"https://searchfox.org/mozilla-central/source/js/src/wasm/WasmValidate.cpp#501\" rel=\"nofollow noreferrer\">DecodeFunctionBodyExpr</a> has a case clause for a bunch of i32 functions such as i32.add, i32.sub, i32.mul which all take two i32 operands. From there <a href=\"https://searchfox.org/mozilla-central/source/js/src/wasm/WasmBinaryIterator.h#1201\" rel=\"nofollow noreferrer\">ReadBinary</a> is called which calls <a href=\"https://searchfox.org/mozilla-central/source/js/src/wasm/WasmBinaryIterator.h#710\" rel=\"nofollow noreferrer\">popWithType</a> once for each operand. And inside popWithType there's accesses to a typestack which keeps track of the  operands. If the types mismatch, then an error is signaled up the callchain.</p>\n\n<p>Ben Smith has written a blog post <a href=\"https://binji.github.io/2017/03/04/webassembly-type-checking.html\" rel=\"nofollow noreferrer\">WebAssembly type-checking</a> which explains how the type checking is done with pedagogic pictures. The type checking of WebAssembly is straightforward with the exception of unreachable code  in control flow. See the last section in that post for an explanation of how it's solved using \"polymorphic stacks\".</p>\n"
+    }
+]

@@ -1,0 +1,21 @@
+[
+    {
+        "owner": {
+            "reputation": 894,
+            "user_id": 1319478,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/nNwwc.png?s=128&g=1",
+            "display_name": "quepas",
+            "link": "https://stackoverflow.com/users/1319478/quepas"
+        },
+        "is_accepted": true,
+        "score": 1,
+        "last_activity_date": 1582910682,
+        "last_edit_date": 1582910682,
+        "creation_date": 1582889701,
+        "answer_id": 60450888,
+        "question_id": 59790919,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<h1>Explanation</h1>\n\n<p>You can run a JavaScript code from inside your C++ function. Such JS code has access to all objects you usually would have access to when running it in a web browser. To do that we will use <a href=\"https://emscripten.org/docs/porting/connecting_cpp_and_javascript/Interacting-with-code.html#interacting-with-code-call-javascript-from-native\" rel=\"nofollow noreferrer\">EM_ASM_INT</a> macro which executes JS code returning an <code>int</code> value.</p>\n\n<h1>Quick solution</h1>\n\n<p>We inject the JS code inside the C++ code <code>example.cpp</code>. The use of <code>int main()</code> function makes sure the code will automatically execute when loading the page without the need for loading the WebAssembly module manually. However, you can use a different function, export it, and execute it on your webpage as well.</p>\n\n<pre><code>#include &lt;iostream&gt;\n#include &lt;emscripten.h&gt;\n\nint main()\n{\n   int screen_width = EM_ASM_INT(\n       return screen.availWidth;);\n   std::cout &lt;&lt; \"Screen width=\" &lt;&lt; screen_width &lt;&lt; std::endl;\n}\n</code></pre>\n\n<p>We compile the above <code>example.cpp</code> code with the <a href=\"https://emscripten.org/docs/tools_reference/emcc.html\" rel=\"nofollow noreferrer\">Emscripten compiler</a> as follows:</p>\n\n<pre class=\"lang-sh prettyprint-override\"><code>emcc example.cpp -o example.html\n</code></pre>\n\n<p>The output is a webpage with embedded <code>int main()</code> function with JS code inside it (truly, inception).\nTo run the code while allowing for the Cross-origin resource sharing (CORS), we will use <a href=\"https://emscripten.org/docs/compiling/Running-html-files-with-emrun.html\" rel=\"nofollow noreferrer\">emrun</a> tool (I could not run the example on Firefox, so I have used Chrome instead):</p>\n\n<pre class=\"lang-sh prettyprint-override\"><code>emrun --browser chrome example.html\n</code></pre>\n\n<h1>Comment</h1>\n\n<p>This approach works for JS code with the return value of type scalar <code>int</code> (using <code>EM_ASM_INT</code>), <code>double</code> (with <code>EM_ASM_DOUBLE</code>), but also array of <code>char*</code> (using <code>EM_ASM_INT</code> with careful and manual memory management as shown <a href=\"https://emscripten.org/docs/api_reference/emscripten.h.html#c.EM_ASM_INT\" rel=\"nofollow noreferrer\">here</a>).</p>\n"
+    }
+]

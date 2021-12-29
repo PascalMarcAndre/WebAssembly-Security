@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 11,
+            "user_id": 14512906,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/daca2afa7be45bcb0e89361dfef04d10?s=128&d=identicon&r=PG&f=1",
+            "display_name": "dwz8",
+            "link": "https://stackoverflow.com/users/14512906/dwz8"
+        },
+        "is_accepted": false,
+        "score": 0,
+        "last_activity_date": 1604137917,
+        "creation_date": 1604137917,
+        "answer_id": 64620439,
+        "question_id": 64515982,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>I did some more testing, and I have a working solution now based on the recommendation that @Thomas provided. Thanks again for that.\nHowever, I got it to work only if I drop the MINIMAL_RUNTIME flag.</p>\n<p>The difference:\n<strong>without MINIMAL_RUNTIME</strong>:</p>\n<pre><code>emcc square.c -DNDEBUG  -s ALLOW_MEMORY_GROWTH=1 -s SAFE_HEAP=1 -s INVOKE_RUN=0 -s ENVIRONMENT=web,worker -s MODULARIZE=1 -s SUPPORT_ERRNO=0 -s &quot;EXPORT_NAME='wasmMod'&quot; -o square.html \n</code></pre>\n<p>Call from square.html:</p>\n<pre><code>let res = binary('square.wasm')\n.then(wasm =&gt; { wasmMod({wasm: wasm})\n.then(MyModule =&gt; { \n  console.log('WebAssembly loaded!');\n  console.log(MyModule._square(3));\n});\n});\n</code></pre>\n<p>MyModule contains everything I need. I can use my wasm functions without problems.</p>\n<p>Now <strong>with MINIMAL_RUNTIME</strong>:</p>\n<pre><code>emcc square.c -DNDEBUG -s MINIMAL_RUNTIME -s ALLOW_MEMORY_GROWTH=1 -s SAFE_HEAP=1 -s INVOKE_RUN=0 -s ENVIRONMENT=web,worker -s MODULARIZE=1 --pre-js ./ready.js -s SUPPORT_ERRNO=0 -s &quot;EXPORT_NAME='wasmMod'&quot; -o square.html -s EXTRA_EXPORTED_RUNTIME_METHODS=&quot;['getValue','setValue']&quot;\n</code></pre>\n<p>Using the same calling sequence in the HTML file gives an error:</p>\n<pre><code>square.html:44 Uncaught (in promise) TypeError: wasmMod(...).then is not a function at square.html:44 \n</code></pre>\n<p>I can't get this to work like the version without MINIMAL_RUNTIME. Inside function <code>ready()</code> I have access to _square() inside the wasmMod closure, however, outside that closure no module exists that I can access. wasmMod points to the js function only, not to a module.\nI expect the error to be on my side, however, I can't spend any more time on this, so I will for now cruise with the full version.</p>\n"
+    }
+]

@@ -1,0 +1,21 @@
+[
+    {
+        "owner": {
+            "reputation": 396,
+            "user_id": 1584725,
+            "user_type": "registered",
+            "accept_rate": 67,
+            "profile_image": "https://www.gravatar.com/avatar/3b4af23cd0ebfb961c3ab01ffd884073?s=128&d=identicon&r=PG",
+            "display_name": "Brett JB",
+            "link": "https://stackoverflow.com/users/1584725/brett-jb"
+        },
+        "is_accepted": true,
+        "score": 2,
+        "last_activity_date": 1603731099,
+        "creation_date": 1603731099,
+        "answer_id": 64541531,
+        "question_id": 64479243,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>I have solved my problem, so lets hope it solves yours...</p>\n<p>In your startup.cs, change the line</p>\n<pre><code>    services.AddAuthentication()\n    .AddIdentityServerJwt();\n</code></pre>\n<p>To:</p>\n<pre><code>            services.AddAuthentication(options =&gt;\n        {\n            options.DefaultAuthenticateScheme = IdentityConstants.ApplicationScheme;\n            options.DefaultChallengeScheme = IdentityConstants.ApplicationScheme;\n        })\n\n            .AddIdentityServerJwt();\n</code></pre>\n<p>You may have some side effects in your API controllers if using claims as it changes the naming structure, but that is easily fixed, and if you are used to writing MVC, then it makes it more like it used to be... if that makes sense. Theres more detail about this where I posted the answer to my own question. Link to that is in my comment above.</p>\n<p>Hpe that works for you. Let me know.\nCheers</p>\n"
+    }
+]

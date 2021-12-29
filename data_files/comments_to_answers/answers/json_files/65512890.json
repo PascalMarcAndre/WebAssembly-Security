@@ -1,0 +1,21 @@
+[
+    {
+        "owner": {
+            "reputation": 1914,
+            "user_id": 2936204,
+            "user_type": "registered",
+            "accept_rate": 83,
+            "profile_image": "https://www.gravatar.com/avatar/b8f5a181db5efda6b5d98bd511a6d908?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Neil W",
+            "link": "https://stackoverflow.com/users/2936204/neil-w"
+        },
+        "is_accepted": false,
+        "score": 0,
+        "last_activity_date": 1609358752,
+        "creation_date": 1609358752,
+        "answer_id": 65512951,
+        "question_id": 65512890,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>You need to add this line to your main:</p>\n<pre><code>builder.Services.AddApiAuthorization();\n</code></pre>\n<p>For more info, see:</p>\n<p><a href=\"https://docs.microsoft.com/en-us/aspnet/core/blazor/security/webassembly/hosted-with-identity-server?view=aspnetcore-3.1&amp;tabs=visual-studio\" rel=\"nofollow noreferrer\">https://docs.microsoft.com/en-us/aspnet/core/blazor/security/webassembly/hosted-with-identity-server?view=aspnetcore-3.1&amp;tabs=visual-studio</a></p>\n"
+    }
+]

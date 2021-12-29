@@ -1,0 +1,39 @@
+[
+    {
+        "owner": {
+            "reputation": 244,
+            "user_id": 5574962,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/EmmZL.png?s=128&g=1",
+            "display_name": "3per",
+            "link": "https://stackoverflow.com/users/5574962/3per"
+        },
+        "is_accepted": true,
+        "score": 1,
+        "last_activity_date": 1596529112,
+        "last_edit_date": 1596529112,
+        "creation_date": 1596518169,
+        "answer_id": 63240652,
+        "question_id": 63191785,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>Just add <code>OnRedirectToLogin</code> yet</p>\n<pre><code>options.Events.OnRedirectToLogin = context =&gt;\n{\n    context.Response.StatusCode = 401; // or 403 if you want\n    return Task.CompletedTask;\n};\n</code></pre>\n"
+    },
+    {
+        "owner": {
+            "reputation": 131,
+            "user_id": 10832603,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/69dd885ef780d478a47e8535fe6171f6?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Aditya Singh",
+            "link": "https://stackoverflow.com/users/10832603/aditya-singh"
+        },
+        "is_accepted": false,
+        "score": 0,
+        "last_activity_date": 1596384778,
+        "creation_date": 1596384778,
+        "answer_id": 63218271,
+        "question_id": 63191785,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>Instead of using cookie authentication scheme please use a JWT bearer authentication scheme, cookie authentication scheme will always redirect the user to default login page.\nPlease modify your code as below:-</p>\n<pre><code> services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)\n            .AddJwtBearer(options =&gt;\n            {\n                options.Authority = &quot;&quot;;\n                options.Audience = &quot;&quot;;\n            });\n</code></pre>\n<p>Please pass the appropriate <strong>authority</strong> and <strong>audience</strong>.                                         With above code the server has now been configured to authenticate and authorize the request by inspecting the access token and will now return a 401 unauthorized if the either token is not supplied or incorrect token is passed.</p>\n"
+    }
+]

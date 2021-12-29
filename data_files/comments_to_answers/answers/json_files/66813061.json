@@ -1,0 +1,21 @@
+[
+    {
+        "owner": {
+            "reputation": 25737,
+            "user_id": 6152891,
+            "user_type": "registered",
+            "accept_rate": 75,
+            "profile_image": "https://www.gravatar.com/avatar/b45b7f89429f8766cdbf6c776c0a9d41?s=128&d=identicon&r=PG",
+            "display_name": "enet",
+            "link": "https://stackoverflow.com/users/6152891/enet"
+        },
+        "is_accepted": true,
+        "score": 1,
+        "last_activity_date": 1616753797,
+        "creation_date": 1616753797,
+        "answer_id": 66814951,
+        "question_id": 66813061,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>The following suggestion may work. If not, report further issues, and I'll try to improve on it...</p>\n<p>Make the following changes in your App.razor file:</p>\n<p>Replace:</p>\n<pre><code>&lt;AuthorizeRouteView RouteData=&quot;@routeData&quot; \n                               DefaultLayout=&quot;@typeof(MainLayout)&quot;&gt;\n            &lt;NotAuthorized&gt;\n                @if (!context.User.Identity.IsAuthenticated)\n                {\n                    &lt;RedirectToLogin /&gt;\n                }\n                else\n                {\n                    &lt;p&gt;You are not authorized to access this resource.&lt;/p&gt;\n                }\n            &lt;/NotAuthorized&gt;\n &lt;/AuthorizeRouteView&gt;\n</code></pre>\n<p>with</p>\n<pre><code>&lt;RouteView RouteData=&quot;@routeData&quot; DefaultLayout=&quot;@typeof(MainLayout)&quot; /&gt;\n</code></pre>\n<p>You also have to remove all added Authorize attributes.</p>\n<p>You'll no longer make use of the <code>RedirectToLogin</code> component...\nLeave the <code>LoginDisplay</code> component in its place to enable authentication when requested.</p>\n"
+    }
+]

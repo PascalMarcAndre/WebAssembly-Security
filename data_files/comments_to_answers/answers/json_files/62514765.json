@@ -1,0 +1,21 @@
+[
+    {
+        "owner": {
+            "reputation": 1517,
+            "user_id": 1793353,
+            "user_type": "registered",
+            "accept_rate": 51,
+            "profile_image": "https://www.gravatar.com/avatar/0fd322aa5dddd61040b8be1fdaa7d8d3?s=128&d=identicon&r=PG",
+            "display_name": "amplifier",
+            "link": "https://stackoverflow.com/users/1793353/amplifier"
+        },
+        "is_accepted": true,
+        "score": 0,
+        "last_activity_date": 1592854436,
+        "creation_date": 1592854436,
+        "answer_id": 62522152,
+        "question_id": 62514765,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>by replacing</p>\n<pre><code>services.AddIdentity&lt;ApplicationUser, IdentityRole&gt;(options =&gt; options.SignIn.RequireConfirmedAccount = true)\n.AddEntityFrameworkStores&lt;ApplicationDbContext&gt;()\n.AddDefaultTokenProviders();\n</code></pre>\n<p>with</p>\n<pre><code>services.AddDefaultIdentity&lt;ApplicationUser&gt;(options =&gt; options.SignIn.RequireConfirmedAccount = true)\n.AddEntityFrameworkStores&lt;ApplicationDbContext&gt;()\n.AddDefaultTokenProviders();\n</code></pre>\n<p>I resolved the issue</p>\n"
+    }
+]

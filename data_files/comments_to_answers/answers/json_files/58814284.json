@@ -1,0 +1,39 @@
+[
+    {
+        "owner": {
+            "reputation": 533,
+            "user_id": 11144591,
+            "user_type": "registered",
+            "profile_image": "https://lh3.googleusercontent.com/-LhwR4jQgwq8/AAAAAAAAAAI/AAAAAAAAH9Q/QCvrmdGUeEw/photo.jpg?sz=128",
+            "display_name": "David Masterson",
+            "link": "https://stackoverflow.com/users/11144591/david-masterson"
+        },
+        "is_accepted": true,
+        "score": 5,
+        "last_activity_date": 1573555595,
+        "creation_date": 1573555595,
+        "answer_id": 58817046,
+        "question_id": 58814284,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>Child Component add a EventCallback for OnLevelClick</p>\n\n<pre><code>@using BlazorApp.Models\n\n@if (!AwesomenessModel.Level.HasValue) {\n    &lt;div&gt;&lt;button class=\"btn btn-link\" @onclick=\"LevelClick\"&gt;@Level&lt;/button&gt;&lt;/div&gt;\n}\n\n@code {\n    [Parameter]\n    public AwesomenessModel AwesomenessModel { get; set; }\n\n    [Parameter]\n    public int Level { get; set; }\n\n    [Parameter]\n    public EventCallback&lt;string&gt; OnLevelClick { get; set; }\n\n    private void LevelClick() {\n        AwesomenessModel.Level = Level;\n        OnLevelClick.InvokeAsync();\n    }\n}\n</code></pre>\n\n<p>parent Component add  Handler for OnLevelClick</p>\n\n<pre><code>@using BlazorApp.Models\n\n@if (AwesomenessModel.Level.HasValue) {\n    &lt;div&gt;Awesomeness is @AwesomenessModel.Level.Value&lt;/div&gt;\n} else {\n    for (int i = 0; i &lt; 10; i++) {\n        &lt;AwesomenessSelector AwesomenessModel=\"@AwesomenessModel\" Level=\"@i\" @OnLevelClick=\"OnLevelClick\"&gt;&lt;/AwesomenessSelector&gt;\n    }\n}\n\n@code {\n    [Parameter]\n    public AwesomenessModel AwesomenessModel { get; set; }\n\n    private void OnLevelClick() {\n        this.StateHasChanged();\n    }\n}\n</code></pre>\n\n<p>hope this helps </p>\n"
+    },
+    {
+        "owner": {
+            "reputation": 21,
+            "user_id": 5301192,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/8d9af2ad23da9968d89c17147075f881?s=128&d=identicon&r=PG&f=1",
+            "display_name": "PIESSE",
+            "link": "https://stackoverflow.com/users/5301192/piesse"
+        },
+        "is_accepted": false,
+        "score": 1,
+        "last_activity_date": 1573553502,
+        "last_edit_date": 1573553502,
+        "creation_date": 1573548600,
+        "answer_id": 58815025,
+        "question_id": 58814284,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>You need <code>StateHasChanged()</code> on the parent control that doesn't know that the child has been updated. I believe you should create an event on the child that is triggered when you need to update the parent. Then on the parent when the event is triggered <code>StateHasChanged()</code>. All theory but should work.</p>\n"
+    }
+]

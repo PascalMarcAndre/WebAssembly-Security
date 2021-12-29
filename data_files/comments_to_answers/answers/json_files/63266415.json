@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 33,
+            "user_id": 14016210,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/3416d5185f07ec77503a7c893ea18ecf?s=128&d=identicon&r=PG&f=1",
+            "display_name": "user14016210",
+            "link": "https://stackoverflow.com/users/14016210/user14016210"
+        },
+        "is_accepted": false,
+        "score": 0,
+        "last_activity_date": 1596714153,
+        "creation_date": 1596714153,
+        "answer_id": 63282839,
+        "question_id": 63266415,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>I solved by creating a &quot;new certificate with advanced options&quot; instead of &quot;create new certificate&quot; through Let's Encrypt tool, in this way I can set the password required to use certificate in my .NET Core project.</p>\n"
+    }
+]

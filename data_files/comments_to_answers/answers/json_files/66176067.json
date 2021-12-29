@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 11,
+            "user_id": 15199008,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/53774d28fb1a3b26682f33735f6c4137?s=128&d=identicon&r=PG",
+            "display_name": "RogueHobbit",
+            "link": "https://stackoverflow.com/users/15199008/roguehobbit"
+        },
+        "is_accepted": false,
+        "score": 1,
+        "last_activity_date": 1616158299,
+        "creation_date": 1616158299,
+        "answer_id": 66708555,
+        "question_id": 66176067,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>I found the solution to this and am posting it here in case anyone else is facing a similar issue.</p>\n<p>It turns out the problem wasn't SignalR or anything specific to Blazor Server. After enabling the developer exception page on the load balanced environment, I saw that the error was &quot;Unable to unprotect the message.State&quot;. The application state is encrypted by middleware before the user is authenticated by Azure AD. When Azure AD posts back, it includes that encrypted state which is then in turn decrypted on the client side by the middleware.</p>\n<p>The key needed to decrypt is by stored on the web server. When in a load balanced environment, if you land on a different server than where you started, the middleware will then be attempting to decrypt state with the wrong key. This of course results in an error.</p>\n<p>To fix this you have to store the keys on a central location like a file share instead of on the server itself. Implementing the fix is actually simple. Include the following line in ConfigureServices in startup.cs:</p>\n<pre><code>services.AddDataProtection()\n.PersistKeysToFileSystem(new DirectoryInfo(@&quot;\\\\server\\share\\directory\\&quot;));\n</code></pre>\n<p>There are also options to store keys on Azure if that is preferred.</p>\n<p>This post by Kevin Dockx is what finally gave me the answer:</p>\n<p><a href=\"https://www.kevindockx.com/solving-correlation-failed-state-property-not-found-errors-openid-connect-middleware-asp-net-core/\" rel=\"nofollow noreferrer\">Solving Correlation Failed: State Property Not Found Errors (OpenID Connect Middleware / ASP.NET Core)</a></p>\n"
+    }
+]

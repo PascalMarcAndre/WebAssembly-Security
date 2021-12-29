@@ -1,0 +1,21 @@
+[
+    {
+        "owner": {
+            "reputation": 3232,
+            "user_id": 1158845,
+            "user_type": "registered",
+            "accept_rate": 48,
+            "profile_image": "https://www.gravatar.com/avatar/e7d3b47649bd04652577d03ecddeed5e?s=128&d=identicon&r=PG",
+            "display_name": "Umair",
+            "link": "https://stackoverflow.com/users/1158845/umair"
+        },
+        "is_accepted": false,
+        "score": 0,
+        "last_activity_date": 1605697565,
+        "creation_date": 1605697565,
+        "answer_id": 64891837,
+        "question_id": 64885060,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>Can you share your startup for the blazor app?</p>\n<p>I had the same issue a couple weeks ago but with an asp.net mvc app when integrating is4 with which had identity configured. So it could be same for you.</p>\n<p>Enet's solution might work, but I have not tried it. Below is another solution which worked for me only if you have Identity configured in your Blazor app. Try setting the schemes in your <code>services.AddAuthentication</code> and <code>AddOpenIdConnect</code>:</p>\n<pre class=\"lang-cs prettyprint-override\"><code>services.AddAuthentication(options =&gt;\n{\n    options.DefaultScheme = &quot;Cookies&quot;;\n    options.DefaultChallengeScheme = &quot;Oidc&quot;;\n    options.DefaultAuthenticateScheme = &quot;Cookies&quot;; // &lt;-- add this line\n})\n    .AddCookie(&quot;Cookies&quot;, options =&gt;\n    {\n    })\n    .AddOpenIdConnect(&quot;oidc&quot;, options =&gt;\n    {\n        options.SignInScheme = &quot;Cookies&quot;; // &lt;-- add this line\n    })\n;\n</code></pre>\n"
+    }
+]

@@ -1,0 +1,39 @@
+[
+    {
+        "owner": {
+            "reputation": 31239,
+            "user_id": 1097780,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/a8f01ad795c29c3d05ad26ee47ea6069?s=128&d=identicon&r=PG",
+            "display_name": "Andreas Rossberg",
+            "link": "https://stackoverflow.com/users/1097780/andreas-rossberg"
+        },
+        "is_accepted": true,
+        "score": 1,
+        "last_activity_date": 1458171566,
+        "last_edit_date": 1458171566,
+        "creation_date": 1458153602,
+        "answer_id": 36044304,
+        "question_id": 36042935,
+        "content_license": "CC BY-SA 3.0",
+        "body": "<p>No, that's not possible, and it's highly unlikely that it ever will be, given that it would probably require piercing all sorts of abstraction barriers within the system. The complexity would be enormous, and the effect on maintainability and security would probably be severe.</p>\n\n<p>The web interface to WebAssembly modules (through the <code>Wasm</code> object) provides a clean and simple way to interface between JS and Wasm. In the future, ES6 modules might simplify interop further. It's not obvious what advantage a complicated mechanism like you propose would have over that.</p>\n"
+    },
+    {
+        "owner": {
+            "reputation": 6045,
+            "user_id": 3983557,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/01A0D.jpg?s=128&g=1",
+            "display_name": "JF Bastien",
+            "link": "https://stackoverflow.com/users/3983557/jf-bastien"
+        },
+        "is_accepted": false,
+        "score": 1,
+        "last_activity_date": 1458153464,
+        "creation_date": 1458153464,
+        "answer_id": 36044259,
+        "question_id": 36042935,
+        "content_license": "CC BY-SA 3.0",
+        "body": "<p>For 1. you can play with the following flags:</p>\n\n<ul>\n<li><code>trace_turbo</code>: trace generated TurboFan IR</li>\n<li><code>trace_turbo_graph</code>: trace generated TurboFan graphs</li>\n<li><code>trace_turbo_cfg_file</code>: trace turbo cfg graph (for C1 visualizer) to a given file name</li>\n<li><code>trace_turbo_types</code>: trace TurboFan's types</li>\n<li><code>trace_turbo_scheduler</code>: trace TurboFan's scheduler</li>\n<li><code>trace_turbo_reduction</code>: trace TurboFan's various reducers</li>\n<li><code>trace_turbo_jt</code>: trace TurboFan's jump threading</li>\n<li><code>trace_turbo_ceq</code>: trace TurboFan's control equivalence</li>\n<li><code>turbo_stats</code>: print TurboFan statistics</li>\n</ul>\n\n<p>They may change in future versions of V8 and aren't a stable API.</p>\n\n<p>TurboFan is pretty complicated in that it consumes information from the baseline JIT / the interpreter, and may get to that information after deopt. The compiler isn't always a straight pipeline from JS / wasm to assembly. Inlining and a bunch of other things affect what happens.</p>\n\n<p>For 2.: write wasm code or valid asm.js in the first place.</p>\n\n<p>We've discussed performing a bunch of different types of dynamic tracing, caching traces (and allowing injection of traces for testing), but that's probably not something we'd expose considering that there's already a way to give the compiler precise type information!</p>\n"
+    }
+]

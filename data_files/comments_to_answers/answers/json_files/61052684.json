@@ -1,0 +1,38 @@
+[
+    {
+        "owner": {
+            "reputation": 344,
+            "user_id": 1288616,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/17077b2af875d2aa0d5eaaf1f0d40ca6?s=128&d=identicon&r=PG",
+            "display_name": "murkle",
+            "link": "https://stackoverflow.com/users/1288616/murkle"
+        },
+        "is_accepted": false,
+        "score": 4,
+        "last_activity_date": 1608278522,
+        "creation_date": 1608278522,
+        "answer_id": 65353533,
+        "question_id": 61052684,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>You can encode the wasm as base64 and then load it like this (no size limitation as far as I know - definitely works with 5Mb+)</p>\n<pre><code>Module.wasmBinaryFile=&quot;data:application/wasm;base64,AGFzbQEAAAABww...\n</code></pre>\n"
+    },
+    {
+        "owner": {
+            "reputation": 3268,
+            "user_id": 13378247,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/10d7d5a6636d8776427782cf74f9bba7?s=128&d=identicon&r=PG&f=1",
+            "display_name": "GirkovArpa",
+            "link": "https://stackoverflow.com/users/13378247/girkovarpa"
+        },
+        "is_accepted": true,
+        "score": 2,
+        "last_activity_date": 1587950681,
+        "creation_date": 1587950681,
+        "answer_id": 61450335,
+        "question_id": 61052684,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>You can inline the Wasm binary as a Uint8Array, and instantiate it this way.  It only works if it's small enough, though.  I believe you get an error if the Wasm is more than 4KB.</p>\n\n<pre class=\"lang-js prettyprint-override\"><code>// your Wasm file as a Uint8Array\nconst wasmSourceCode = new Uint8Array([0, 97, 115, 109 ...]);\nconst wasmModule = new WebAssembly.Module(wasmSourceCode );\nconst wasmInstance = new WebAssembly.Instance(wasmModule);\n</code></pre>\n"
+    }
+]

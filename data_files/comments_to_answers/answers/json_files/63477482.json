@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 296,
+            "user_id": 2362688,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/2noFG.jpg?s=128&g=1",
+            "display_name": "Serzas",
+            "link": "https://stackoverflow.com/users/2362688/serzas"
+        },
+        "is_accepted": false,
+        "score": 0,
+        "last_activity_date": 1605880597,
+        "creation_date": 1605880597,
+        "answer_id": 64930731,
+        "question_id": 63477482,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>Have faced similar issue, documentation says:</p>\n<blockquote>\n<p>Deploying a standalone Blazor WebAssembly app to Azure App Service for Linux isn't currently supported. A Linux server image to host the app isn't available at this time. Work is in progress to enable this scenario.</p>\n</blockquote>\n<p><a href=\"https://docs.microsoft.com/en-us/aspnet/core/blazor/host-and-deploy/webassembly?view=aspnetcore-5.0#standalone-deployment\" rel=\"nofollow noreferrer\">https://docs.microsoft.com/en-us/aspnet/core/blazor/host-and-deploy/webassembly?view=aspnetcore-5.0#standalone-deployment</a></p>\n<p>Looks like this is a Docker OS compatibility and framework functionality issue. I would suggest to target your app to Server (Blazor Server Hosting model scenario).</p>\n"
+    }
+]

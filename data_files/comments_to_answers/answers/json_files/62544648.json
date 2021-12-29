@@ -1,0 +1,21 @@
+[
+    {
+        "owner": {
+            "reputation": 1525,
+            "user_id": 8309806,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://i.stack.imgur.com/dP8rf.png?s=128&g=1",
+            "display_name": "avi12",
+            "link": "https://stackoverflow.com/users/8309806/avi12"
+        },
+        "is_accepted": false,
+        "score": 0,
+        "last_activity_date": 1592991225,
+        "creation_date": 1592991225,
+        "answer_id": 62551951,
+        "question_id": 62544648,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>Turns out the solution was pretty simple</p>\n<p><code>main.cpp</code></p>\n<pre class=\"lang-cpp prettyprint-override\"><code>#include &lt;emscripten.h&gt;\n#include &lt;string&gt;\n\nEMSCRIPTEN_KEEPALIVE\nextern &quot;C&quot; {\n  std::string* testFunc(std::string* parameter) {\n    return parameter;\n  }\n}\n</code></pre>\n<p>Compilation:</p>\n<pre class=\"lang-bsh prettyprint-override\"><code>em++ .\\main.cpp -s EXPORTED_RUNTIME_METHODS='[&quot;ccall&quot;, &quot;cwrap&quot;]' -s MODULARIZE -s EXPORTED_FUNCTIONS='[&quot;_testFunc&quot;]' -o wasm_module.js\n</code></pre>\n<p>The <code>wasm_module.js</code> should be somewhere under <code>src/</code><br />\nThe <code>wasm_module.wasm</code> should be under <code>public/js/</code></p>\n<p>Then, the Vue component:</p>\n<pre class=\"lang-js prettyprint-override\"><code>import moduleWasm from &quot;./path/to/wasm_module.js&quot;;\n\nexport default {\n  async created() {\n    const instance = await moduleWasm();\n    const func = instance.cwrap(&quot;testFunc&quot;, &quot;string&quot;, [&quot;string&quot;]); // Note that: (func_name, return_type, [parameter_types])\n    console.log(func(&quot;Hello World&quot;) === &quot;Hello World&quot;); // true\n  }\n};\n</code></pre>\n"
+    }
+]

@@ -1,0 +1,39 @@
+[
+    {
+        "owner": {
+            "reputation": 106,
+            "user_id": 5015720,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/8b253e21987bfef56d1d94189193dbec?s=128&d=identicon&r=PG&f=1",
+            "display_name": "tlively",
+            "link": "https://stackoverflow.com/users/5015720/tlively"
+        },
+        "is_accepted": false,
+        "score": 6,
+        "last_activity_date": 1562177380,
+        "creation_date": 1562177380,
+        "answer_id": 56875811,
+        "question_id": 56766674,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>On the web, WebAssembly runs in the same sandbox as JavaScript, so WebAssembly cannot affect its host machine in any way that could not also be done with pure JavaScript. But WebAssembly goes further and <em>does</em> make it safer to run untrusted code because of how its imports work.</p>\n\n<p>When a WebAssembly module is instantiated, it is supplied with a set of imported functions. These imports are the only host functions that the module has access to, and they cannot be changed once the module has been instantiated. Without imports, a WebAssembly module can only express pure computation and can only affect the state of its own memory. That means that if you don't supply any imports that can make network requests, you can be certain that the WebAssembly module cannot make network requests. Contrast this to JavaScript, where figuring out whether a program uses a particular API is undecidable in general.</p>\n\n<p>That does not mean that the code in the WebAssembly module cannot have bugs or security vulnerabilities. For example, buffer overrun attacks on buggy C programs are still possible when those C programs are compiled to WebAssembly, but the difference is that the worst they can do is determined by the imports, which are easy to inspect. So if you import <code>eval</code> into your buggy C WebAssembly module you might have serious problems, but if you only import <code>console.log</code>, the worst an attacker could do is spam your console.</p>\n\n<p>I don't view WebAssembly being low level as relevant to security. WebAssembly modules are no harder to read than minimized or obfuscated JavaScript, and the difference all but disappears when you consider asm.js-style JavaScript. Certainly it is harder to read a WebAssembly module than a pretty-printed JavaScript program, but that doesn't really get you anywhere in terms of security.</p>\n"
+    },
+    {
+        "owner": {
+            "reputation": 64423,
+            "user_id": 249933,
+            "user_type": "registered",
+            "accept_rate": 81,
+            "profile_image": "https://www.gravatar.com/avatar/458f2e0d08d4114f8b323798cfea141d?s=128&d=identicon&r=PG",
+            "display_name": "ColinE",
+            "link": "https://stackoverflow.com/users/249933/coline"
+        },
+        "is_accepted": true,
+        "score": 7,
+        "last_activity_date": 1561532114,
+        "creation_date": 1561532114,
+        "answer_id": 56766887,
+        "question_id": 56766674,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>WebAssembly was never designed to be less hackable than JavaScript. WebAssembly modules run within the browser and can be inspected and debugged just like any other JavaScript application. The only additional protection they offer is that of obfuscation. It is a lower level language which makes it harder to decipher the code - although that is not a strong protection!</p>\n\n<p>WebAssembly modules are sandboxed in that one module cannot access the memory, or interact with, another running module. They have their own isolated execution environment. JavaScript is also sandboxed in order to prevent code from one tab or page interacting with another - and more importantly preventing it from accessing the underlying host OS!</p>\n\n<p>Webassembly uses linear memory, which is a contiguous block of memory, that is typical used to create a heap. It can be exported to the host environment, which means that the hosting JavaScript code can directly read and write to it as a byte array.</p>\n\n<p>In summary, WebAssembly is not less hackable and has a different sandbox. If these are the trains you\u2019re looking at this technology, perhaps it\u2019s time for a rethink?</p>\n"
+    }
+]

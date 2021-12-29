@@ -1,0 +1,75 @@
+[
+    {
+        "owner": {
+            "reputation": 196,
+            "user_id": 15419298,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/2ff48691478ce41162c97f9b5323641a?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Cory Podojil",
+            "link": "https://stackoverflow.com/users/15419298/cory-podojil"
+        },
+        "is_accepted": false,
+        "score": 0,
+        "last_activity_date": 1616098708,
+        "creation_date": 1616098708,
+        "answer_id": 66698529,
+        "question_id": 66642735,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<blockquote>\n<p>My app should only allow authorized users, and the recommended configuration loads a little bit of the page before redirecting to the login.</p>\n</blockquote>\n<p>You should be doing this in the <code>App.razor</code> file. It will execute way before anything else and will ensure the user is authenticated and authorized before rendering any other component.</p>\n<pre class=\"lang-html prettyprint-override\"><code>&lt;CascadingAuthenticationState&gt;\n    &lt;Router AppAssembly=&quot;@typeof(Program).Assembly&quot; PreferExactMatches=&quot;@true&quot;&gt;\n        &lt;Found Context=&quot;routeData&quot;&gt;\n            &lt;AuthorizeRouteView RouteData=&quot;@routeData&quot; DefaultLayout=&quot;@typeof(MainLayout)&quot;&gt;\n                &lt;NotAuthorized&gt;\n                    @if (context.User.Identity != null &amp;&amp; !context.User.Identity.IsAuthenticated)\n                    {\n                        &lt;RedirectToLogin /&gt;\n                    }\n                    else\n                    {\n                        &lt;p&gt;You are not authorized to access this resource.&lt;/p&gt;\n                    }\n                &lt;/NotAuthorized&gt;\n                &lt;Authorizing&gt;\n                    &lt;Loader /&gt;\n                &lt;/Authorizing&gt;\n            &lt;/AuthorizeRouteView&gt;\n        &lt;/Found&gt;\n        &lt;NotFound&gt;\n            &lt;LayoutView Layout=&quot;@typeof(MainLayout)&quot;&gt;\n                &lt;div class=&quot;row justify-content-center&quot;&gt;\n                    &lt;div class=&quot;col text-center&quot;&gt;\n                        &lt;h2&gt;Looks like you're lost, we didn't find anything at this location.&lt;/h2&gt;\n                        &lt;p&gt;Try navigating to the Dashboard or going back in the browser.&lt;/p&gt;\n                    &lt;/div&gt;\n                &lt;/div&gt;\n            &lt;/LayoutView&gt;\n        &lt;/NotFound&gt;\n    &lt;/Router&gt;\n&lt;/CascadingAuthenticationState&gt;\n</code></pre>\n"
+    },
+    {
+        "owner": {
+            "reputation": 699,
+            "user_id": 3433178,
+            "user_type": "registered",
+            "profile_image": "https://graph.facebook.com/100002496317739/picture?type=large",
+            "display_name": "Bennyboy1973",
+            "link": "https://stackoverflow.com/users/3433178/bennyboy1973"
+        },
+        "is_accepted": false,
+        "score": 0,
+        "last_activity_date": 1616052502,
+        "creation_date": 1616052502,
+        "answer_id": 66686525,
+        "question_id": 66642735,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>Try using <code>[Authorize]</code> in your layout page.</p>\n"
+    },
+    {
+        "owner": {
+            "reputation": 1695,
+            "user_id": 3486567,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/3e554e74f28210f5f84aef154ffd5f72?s=128&d=identicon&r=PG",
+            "display_name": "nahidf",
+            "link": "https://stackoverflow.com/users/3486567/nahidf"
+        },
+        "is_accepted": false,
+        "score": 0,
+        "last_activity_date": 1616048191,
+        "last_edit_date": 1616048191,
+        "creation_date": 1616047844,
+        "answer_id": 66685634,
+        "question_id": 66642735,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<blockquote>\n<p>How can I configure my Blazor WebAssembly to require authenticated users for the entire app rather than mark each page or controllers with the [Authorize] attribute?</p>\n</blockquote>\n<p>You can check the authentication status on the main page's load and decide what to do next.</p>\n<blockquote>\n<p>My app should only allow authorized users, and the recommended configuration loads a little bit of the page before redirecting to the login.</p>\n</blockquote>\n<p>Copy code bellow to the <code>Index.razor</code></p>\n<pre><code>@inject NavigationManager Navigation\n@code{ \n\n    [CascadingParameter]\n    private Task&lt;AuthenticationState&gt; authenticationStateTask { get; set; }\n\n    protected async override Task OnInitializedAsync()\n    {\n        base.OnInitialized();\n\n        var authState = await authenticationStateTask;\n        var user = authState.User;\n\n        if(!user.Identity.IsAuthenticated)\n        {\n            Navigation.NavigateTo($&quot;authentication/login?returnUrl={Uri.EscapeDataString(Navigation.Uri)}&quot;);\n        }\n    }\n}\n</code></pre>\n<p>There is some <a href=\"https://stackoverflow.com/questions/60687879/require-authorization-on-all-blazor-pages?answertab=active#tab-top\">other solutions</a> suggesting to add <code>@attribute [Microsoft.AspNetCore.Authorization.Authorize]</code> on <code>_Imports.cs</code> and <code>@attribute [Microsoft.AspNetCore.Authorization.AllowAnonymous]</code> on the pages which doesnt need authorization. This never worked for me as expected, but good to know about it.</p>\n"
+    },
+    {
+        "owner": {
+            "reputation": 4127,
+            "user_id": 1492496,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/dO7to.png?s=128&g=1",
+            "display_name": "Brian Parker",
+            "link": "https://stackoverflow.com/users/1492496/brian-parker"
+        },
+        "is_accepted": false,
+        "score": 0,
+        "last_activity_date": 1615841830,
+        "creation_date": 1615841830,
+        "answer_id": 66645550,
+        "question_id": 66642735,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>If your app is stand alone an easy way is simply add a new <code>_Imports.razor</code> in the pages folder.\nThen put this line in it.</p>\n<p><code>@attribute [Authorize]</code></p>\n<p>If it is self hosted.\nTry this <a href=\"https://damienbod.com/2021/03/08/securing-blazor-web-assembly-using-cookies/\" rel=\"nofollow noreferrer\">link</a> to add global Auth with no tokens in the browser.</p>\n"
+    }
+]

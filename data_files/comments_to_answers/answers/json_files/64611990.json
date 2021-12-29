@@ -1,0 +1,21 @@
+[
+    {
+        "owner": {
+            "reputation": 4127,
+            "user_id": 1492496,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/dO7to.png?s=128&g=1",
+            "display_name": "Brian Parker",
+            "link": "https://stackoverflow.com/users/1492496/brian-parker"
+        },
+        "is_accepted": false,
+        "score": 1,
+        "last_activity_date": 1604088631,
+        "last_edit_date": 1604088631,
+        "creation_date": 1604086422,
+        "answer_id": 64614713,
+        "question_id": 64611990,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>Looks like you will have to transform the role claims with an <code>AccountClaimsPrincipalFactory</code>.</p>\n<p>The claim type Blazor expects is just &quot;role&quot; not &quot;http://schemas.microsoft.com/ws/2008/06/identity/claims/role&quot;. A factory can achieve this for you then you will be able to use standard blazor components / mechanisms to manage them.</p>\n<p>Even with the Individual user accounts option you have to do this as the claims come in a comma separated string.</p>\n<p>This is a link for an <a href=\"https://docs.microsoft.com/en-us/aspnet/core/blazor/security/webassembly/hosted-with-identity-server?view=aspnetcore-3.1&amp;tabs=visual-studio#custom-user-factory\" rel=\"nofollow noreferrer\">example</a>. This is not your case but the solution is the same you need to transform the claims you have to what blazor expects.</p>\n"
+    }
+]

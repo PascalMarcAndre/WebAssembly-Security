@@ -1,0 +1,21 @@
+[
+    {
+        "owner": {
+            "reputation": 2041,
+            "user_id": 1333724,
+            "user_type": "registered",
+            "accept_rate": 100,
+            "profile_image": "https://www.gravatar.com/avatar/acc5cea42dca926af89f94eb56fbbdbb?s=128&d=identicon&r=PG",
+            "display_name": "maxm",
+            "link": "https://stackoverflow.com/users/1333724/maxm"
+        },
+        "is_accepted": false,
+        "score": 0,
+        "last_activity_date": 1547672286,
+        "creation_date": 1547672286,
+        "answer_id": 54225271,
+        "question_id": 54204650,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>That is a byte string. The bytes in your screenshot are <code>123 034 111 114 105 110 097 108 082 101 113 117 101 115 034 058</code> or <code>\"{\"orinalReques\":</code>. </p>\n\n<p>Assuming the string is utf-8 decode with: </p>\n\n<pre class=\"lang-js prettyprint-override\"><code>var enc = new TextDecoder(\"utf-8\");\nenc.decode(array);\n</code></pre>\n"
+    }
+]

@@ -1,0 +1,21 @@
+[
+    {
+        "owner": {
+            "reputation": 1076,
+            "user_id": 146136,
+            "user_type": "registered",
+            "accept_rate": 100,
+            "profile_image": "https://www.gravatar.com/avatar/ebccace92bf7a50532b9ff270483ff5f?s=128&d=identicon&r=PG",
+            "display_name": "seraphym",
+            "link": "https://stackoverflow.com/users/146136/seraphym"
+        },
+        "is_accepted": false,
+        "score": 0,
+        "last_activity_date": 1589258707,
+        "creation_date": 1589258707,
+        "answer_id": 61744001,
+        "question_id": 61736263,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>Your Blazor app is intended to live as the fallback route, and invokes a static html page (index.html), when no other route is available.</p>\n\n<p>So if you're getting a Blazor page loaded when you intended for an MVC controller or Api Controller to be invoked, that means that the <strong>route could not be resolved.</strong> </p>\n\n<p>You could test this by removing Blazor entirely and verifying that signin-facebook now resolves to a 404 when supplying the exact same parameters as in your screenshot.</p>\n\n<p>Ideally, you'll reserve a prefix like 'api' for all of your api actions so that there's no confusion between your client-side navigation and server actions.</p>\n"
+    }
+]

@@ -1,0 +1,21 @@
+[
+    {
+        "owner": {
+            "reputation": 16012,
+            "user_id": 1768,
+            "user_type": "registered",
+            "accept_rate": 92,
+            "profile_image": "https://i.stack.imgur.com/6arep.png?s=128&g=1",
+            "display_name": "mattruma",
+            "link": "https://stackoverflow.com/users/1768/mattruma"
+        },
+        "is_accepted": true,
+        "score": 0,
+        "last_activity_date": 1592303327,
+        "creation_date": 1592303327,
+        "answer_id": 62406375,
+        "question_id": 62066593,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>After contacting the Blazor team, this is what they recommended <a href=\"https://docs.microsoft.com/en-us/aspnet/core/security/blazor/webassembly/additional-scenarios?view=aspnetcore-3.1#customize-the-user\" rel=\"nofollow noreferrer\">https://docs.microsoft.com/en-us/aspnet/core/security/blazor/webassembly/additional-scenarios?view=aspnetcore-3.1#customize-the-user</a>.</p>\n"
+    }
+]

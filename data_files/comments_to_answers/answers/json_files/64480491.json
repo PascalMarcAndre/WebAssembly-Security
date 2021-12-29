@@ -1,0 +1,39 @@
+[
+    {
+        "owner": {
+            "reputation": 2438,
+            "user_id": 1499294,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/GsdSn.jpg?s=128&g=1",
+            "display_name": "Daz",
+            "link": "https://stackoverflow.com/users/1499294/daz"
+        },
+        "is_accepted": false,
+        "score": 0,
+        "last_activity_date": 1617208561,
+        "last_edit_date": 1617208561,
+        "creation_date": 1617205200,
+        "answer_id": 66890943,
+        "question_id": 64480491,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>If you are using WASM hosted in ASPNET then the OpenID configuration URL is taken from the 'authority' value returned by the call to <em>/_configuration/YourApp.Client</em> (assuming you're using the standard template). Because ngrok is a reverse proxy the server side knows nothing about the URL the client is using and it assumes the request was sent to localhost.</p>\n<p>You can manipulate the authority URL in OidcConfigurationController but then you just get the same issue with the endpoints returned from <em>/.well-known/openid-configuration</em>.</p>\n<p>To properly fix it the request pipeline needs to be made aware of the URL the client is using.</p>\n<p>I added this to my Startup.cs:</p>\n<pre><code>   public void Configure(IApplicationBuilder app, IWebHostEnvironment env)\n   {\n        //for using IdentityServer with ngrok\n        if (env.IsDevelopment())\n        {\n            app.Use(async (ctx, next) =&gt;\n            {\n                if (ctx.Request.Host.HasValue  &amp;&amp; ctx.Request.Headers.ContainsKey(&quot;X-Original-Host&quot;) &amp;&amp; ctx.Request.Headers[&quot;X-Original-Host&quot;].First().ToLower().EndsWith(&quot;.ngrok.io&quot;))\n                {\n                    ctx.Request.Scheme = ctx.Request.Headers[&quot;X-Forwarded-Proto&quot;];\n                    ctx.Request.Host = new HostString(ctx.Request.Headers[&quot;X-Original-Host&quot;]);\n                }\n\n                await next();\n            });\n\n            app.UseForwardedHeaders(); //https://docs.microsoft.com/en-gb/aspnet/core/host-and-deploy/proxy-load-balancer?view=aspnetcore-5.0\n        }\n</code></pre>\n<p>This must go at the top of the HTTP request pipeline. Just <code>app.UseForwardedHeaders()</code> on it's own didn't work for me, maybe because ngrok's headers have different names.</p>\n<p>There's an alternative answer here: <a href=\"https://stackoverflow.com/a/64327330/1499294\">https://stackoverflow.com/a/64327330/1499294</a> which uses <code>SetIdentityServerOrigin()</code>.  If you prefer that method then you can combine it with the above to avoid hard-coding the host name.</p>\n<p>Useful links:</p>\n<p><a href=\"https://github.com/IdentityServer/IdentityServer4/issues/4535\" rel=\"nofollow noreferrer\">https://github.com/IdentityServer/IdentityServer4/issues/4535</a></p>\n<p><a href=\"https://docs.microsoft.com/en-gb/aspnet/core/host-and-deploy/proxy-load-balancer?view=aspnetcore-5.0#iisiis-express-and-aspnet-core-module\" rel=\"nofollow noreferrer\">https://docs.microsoft.com/en-gb/aspnet/core/host-and-deploy/proxy-load-balancer?view=aspnetcore-5.0#iisiis-express-and-aspnet-core-module</a></p>\n"
+    },
+    {
+        "owner": {
+            "reputation": 196,
+            "user_id": 15419298,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/2ff48691478ce41162c97f9b5323641a?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Cory Podojil",
+            "link": "https://stackoverflow.com/users/15419298/cory-podojil"
+        },
+        "is_accepted": false,
+        "score": 0,
+        "last_activity_date": 1616029196,
+        "creation_date": 1616029196,
+        "answer_id": 66683371,
+        "question_id": 64480491,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>You need to update your <code>Progam.cs</code> file and set the <code>HttpClient.BaseAddress</code> to use the proper URI.</p>\n<p>Using Blazor WASM standalone:</p>\n<pre class=\"lang-cs prettyprint-override\"><code>builder.Services.AddHttpClient(\n&quot;Private.ServerAPI&quot;, \nclient =&gt; client.BaseAddress = new Uri(&quot;https://api.myapp.com&quot;));\n</code></pre>\n<p>OR, if you are using Blazor-hosted WASM:</p>\n<pre class=\"lang-cs prettyprint-override\"><code>builder.Services.AddHttpClient(\n&quot;Private.ServerAPI&quot;, \nclient =&gt; client.BaseAddress = new Uri(builder.HostEnvironment.BaseAddress));\n</code></pre>\n"
+    }
+]

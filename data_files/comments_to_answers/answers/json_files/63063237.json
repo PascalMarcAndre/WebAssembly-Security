@@ -1,0 +1,21 @@
+[
+    {
+        "owner": {
+            "reputation": 108,
+            "user_id": 11080892,
+            "user_type": "registered",
+            "profile_image": "https://lh4.googleusercontent.com/--FtsbDs1DdA/AAAAAAAAAAI/AAAAAAAAABc/kpnXGBoIXwk/photo.jpg?sz=128",
+            "display_name": "Jeff Bacon",
+            "link": "https://stackoverflow.com/users/11080892/jeff-bacon"
+        },
+        "is_accepted": true,
+        "score": 2,
+        "last_activity_date": 1595955224,
+        "last_edit_date": 1595955224,
+        "creation_date": 1595947698,
+        "answer_id": 63136893,
+        "question_id": 63063237,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>Thanks to the answers on <a href=\"https://stackoverflow.com/questions/63105618/how-to-get-the-id-token-in-blazor-web-assembly\">How to get the id_token in blazor web assembly</a> I was able to get the id_token. Sample code below:</p>\n<pre class=\"lang-cs prettyprint-override\"><code>@page &quot;/&quot;\n@using System.Text.Json\n@inject IJSRuntime JSRuntime\n\n&lt;AuthorizeView&gt;\n    &lt;Authorized&gt;\n        &lt;div&gt;\n            &lt;b&gt;CachedAuthSettings&lt;/b&gt;\n            &lt;pre&gt;\n@JsonSerializer.Serialize(authSettings, indented);\n            &lt;/pre&gt;\n            &lt;br/&gt;\n            &lt;b&gt;CognitoUser&lt;/b&gt;&lt;br/&gt;\n            &lt;pre&gt;\n@JsonSerializer.Serialize(user, indented);\n            &lt;/pre&gt;\n        &lt;/div&gt;\n    &lt;/Authorized&gt;\n    &lt;NotAuthorized&gt;\n        &lt;div class=&quot;alert alert-warning&quot; role=&quot;alert&quot;&gt;\n            Everything requires you to &lt;a href=&quot;/authentication/login&quot;&gt;Log In&lt;/a&gt; first.\n        &lt;/div&gt;\n    &lt;/NotAuthorized&gt;\n&lt;/AuthorizeView&gt;\n\n@code {\n\n    JsonSerializerOptions indented = new JsonSerializerOptions() { WriteIndented = true };\n    CachedAuthSettings authSettings;\n    CognitoUser user;\n\n    protected override async Task OnInitializedAsync()\n    {\n        string key = &quot;Microsoft.AspNetCore.Components.WebAssembly.Authentication.CachedAuthSettings&quot;;\n        string authSettingsRAW = await JSRuntime.InvokeAsync&lt;string&gt;(&quot;sessionStorage.getItem&quot;, key);\n        authSettings = JsonSerializer.Deserialize&lt;CachedAuthSettings&gt;(authSettingsRAW);\n        string userRAW = await JSRuntime.InvokeAsync&lt;string&gt;(&quot;sessionStorage.getItem&quot;, authSettings?.OIDCUserKey);\n        user = JsonSerializer.Deserialize&lt;CognitoUser&gt;(userRAW);\n    }\n\n    public class CachedAuthSettings\n    {\n        public string authority { get; set; }\n        public string metadataUrl { get; set; }\n        public string client_id { get; set; }\n        public string[] defaultScopes { get; set; }\n        public string redirect_uri { get; set; }\n        public string post_logout_redirect_uri { get; set; }\n        public string response_type { get; set; }\n        public string response_mode { get; set; }\n        public string scope { get; set; }\n\n        public string OIDCUserKey =&gt; $&quot;oidc.user:{authority}:{client_id}&quot;;\n    }\n\n    public class CognitoUser\n    {\n        public string id_token { get; set; }\n        public string access_token { get; set; }\n        public string refresh_token { get; set; }\n        public string token_type { get; set; }\n        public string scope { get; set; }\n        public int expires_at { get; set; }\n    }\n}\n</code></pre>\n<p>EDIT: However... if you are using the id_token with CognitoAWSCredentials then you will run into this bug (<a href=\"https://github.com/aws/aws-sdk-net/pull/1603\" rel=\"nofollow noreferrer\">https://github.com/aws/aws-sdk-net/pull/1603</a>) which is awaiting merging. Without it, you will not be able to use the AWS SDK Clients directly in Blazor WebAssembly, only pass the id_token to your backend for <em>it</em> to be able to create CognitoAWSCredentials.</p>\n"
+    }
+]

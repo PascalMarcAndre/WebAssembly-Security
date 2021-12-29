@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 4127,
+            "user_id": 1492496,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/dO7to.png?s=128&g=1",
+            "display_name": "Brian Parker",
+            "link": "https://stackoverflow.com/users/1492496/brian-parker"
+        },
+        "is_accepted": true,
+        "score": 1,
+        "last_activity_date": 1609322773,
+        "creation_date": 1609322773,
+        "answer_id": 65505199,
+        "question_id": 65504397,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>In <code>App.razor</code> you can:</p>\n<pre><code>...\n&lt;AuthorizeRouteView RouteData=&quot;@routeData&quot; DefaultLayout=&quot;@typeof(MainLayout)&quot;&gt;\n    &lt;Authorizing&gt;\n        Some other authorizing message...\n    &lt;/Authorizing&gt;\n    &lt;NotAuthorized&gt;\n        @if (!context.User.Identity.IsAuthenticated)\n        {\n            &lt;RedirectToLogin /&gt;\n        }\n        else\n        {\n            &lt;p&gt;You are not authorized to access this resource.&lt;/p&gt;\n        }\n    &lt;/NotAuthorized&gt;\n&lt;/AuthorizeRouteView&gt;\n...\n\n</code></pre>\n"
+    }
+]

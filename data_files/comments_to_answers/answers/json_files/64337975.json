@@ -1,0 +1,22 @@
+[
+    {
+        "owner": {
+            "reputation": 25737,
+            "user_id": 6152891,
+            "user_type": "registered",
+            "accept_rate": 75,
+            "profile_image": "https://www.gravatar.com/avatar/b45b7f89429f8766cdbf6c776c0a9d41?s=128&d=identicon&r=PG",
+            "display_name": "enet",
+            "link": "https://stackoverflow.com/users/6152891/enet"
+        },
+        "is_accepted": true,
+        "score": 1,
+        "last_activity_date": 1602670828,
+        "last_edit_date": 1602670828,
+        "creation_date": 1602662097,
+        "answer_id": 64348922,
+        "question_id": 64337975,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<blockquote>\n<p>@enet yes, that is exactly what I would like. I know I can edit the login page to look how I want it too, but I dont want to have to leave the domain of the blazor wasm for that to do it</p>\n</blockquote>\n<p>What you wish to do is actually avoid redirection to the IdentityServer4 server, but alas, redirection is the heart of the OpenID Connect flow...</p>\n<p>I can only think about a solution common before the Blazor team created the current WebAssembly authentication system: Use JWT Token Authentication...</p>\n<p>Do the following:</p>\n<ul>\n<li>Create a WebAssembly hosted app.</li>\n<li>Create a Login page, register page, etc.</li>\n</ul>\n<p>With WebAssembly hosted app, the front-end (browser) and the backend (server) belong to the same domain. You can add an account controller to the Controllers folder with a Login end point, which will be accessed from the front-end, using HTTP calls, with the users' credentials gathered by your Login page. The code in the Login end point should authenticate the user, perhaps using the Identity system (default), and then creates a JWT Token which is passed to the front-end\n(Could be stored in the local storage). Now, whenever you want to access a protected web api end point, you add the JWT Token to the HttpClient object's header.</p>\n<p>Note: I do not recommend adopting this on account of the time and knowledge it require. Of course, it's feasible, and that's how we used to code before.</p>\n<p>I did not have much time to answer your question in detail and in order, so if you have questions, don't hesitate to ask.</p>\n<blockquote>\n<p>Thank you for your response! Maybe I just dont get it then... If I want login to any other site I am never redirected to some other domain to login. Does that mean all those sites dont use OIDC?</p>\n</blockquote>\n<p>If what you're stating is correct, then the answer is yes. The flow of OpenID Connect requires redirection. You can't and you should not authenticate the user on the client (browser). You can redirect him to an identity provider like IdnetityServer4 if you're using OpenID Connect, as for instance, or perform an HTTP call to send the user's credentials to a Web Api end point to authenticate, returning a JWT Token. There are other methods of authenticating the user, none of which takes place on the front-end. As you want your web application as well as the server that serves the application and contains Web Api end points, you should consider my suggestion above. This is a viable solution, mind you, and I did not really meant to deter you from adopting it; the point is that Blazor offers you amazing functionality, well tested and secured which mostly requires you to configure some settings, etc., while implementing it on your own requires some knowledge and time. But of course you can find examples of JWT Token authentication for Blazor.</p>\n"
+    }
+]

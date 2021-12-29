@@ -1,0 +1,21 @@
+[
+    {
+        "owner": {
+            "reputation": 301,
+            "user_id": 11305308,
+            "user_type": "registered",
+            "profile_image": "https://lh5.googleusercontent.com/-6ngjOvC-MJg/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3re_89HQkpZPWEmysqG9Xfpghhs9Dg/mo/photo.jpg?sz=128",
+            "display_name": "d00lar",
+            "link": "https://stackoverflow.com/users/11305308/d00lar"
+        },
+        "is_accepted": true,
+        "score": 0,
+        "last_activity_date": 1613490182,
+        "last_edit_date": 1613490182,
+        "creation_date": 1613469616,
+        "answer_id": 66222248,
+        "question_id": 66009663,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>ok so if nobody knows i will post answer</p>\n<p>on SERVER project we need to allow anonym + windows auth (on iis can be only windows - anonym is needed for debug in Kestrel only)</p>\n<p>also on server project we need to install</p>\n<p><code>Microsoft.AspNetCore.Authentication.Negotiate</code></p>\n<p>in <code>ConfigureServices</code> we need to add <code>services.AddAuthentication(NegotiateDefaults.AuthenticationScheme).AddNegotiate();</code></p>\n<p>and then in some controller for example</p>\n<pre><code> [Authorize]\n [Route(&quot;getuser&quot;)]\n public ActionResult Index()\n {\n        return Ok(this.httpContextAccessor.HttpContext.User.Claims.Where(p =&gt; p.Type== ClaimTypes.Name).FirstOrDefault().Value.ToString());\n }\n</code></pre>\n<p>so we need to get from this route in wasm and we are done -\nthis is how to get windows username in Web assembly</p>\n"
+    }
+]

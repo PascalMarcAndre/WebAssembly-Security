@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 468,
+            "user_id": 1807542,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/2c4d94a78189c198f834dc1ff93c11cf?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Michel Jansson",
+            "link": "https://stackoverflow.com/users/1807542/michel-jansson"
+        },
+        "is_accepted": true,
+        "score": 0,
+        "last_activity_date": 1609107492,
+        "creation_date": 1609107492,
+        "answer_id": 65471001,
+        "question_id": 65458988,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>An RCL (<code>&lt;Project Sdk=&quot;Microsoft.NET.Sdk.Razor&quot;&gt;</code>) should not need any of those package references as the required ones is part of the framework. In Visual Studio you can see what's included with the framework by expanding <code>Project/Depedencies/Frameworks/Microsoft.NETCore.App/</code>.</p>\n<p>But you do however have to make sure you also have added the required using directives.\nEither add them to the top of your <code>.razor</code>-file, or even better for such generic usings, add them to the <code>_Imports.razor</code>-file.</p>\n<pre><code>@using System.Net.Http\n@using System.Net.Http.Json\n</code></pre>\n"
+    }
+]

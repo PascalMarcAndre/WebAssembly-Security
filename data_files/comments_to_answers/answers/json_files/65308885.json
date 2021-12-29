@@ -1,0 +1,39 @@
+[
+    {
+        "owner": {
+            "reputation": 21,
+            "user_id": 11436278,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/b84e69cc56f198c4333997b4377aeca5?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Cristian",
+            "link": "https://stackoverflow.com/users/11436278/cristian"
+        },
+        "is_accepted": false,
+        "score": 0,
+        "last_activity_date": 1608126120,
+        "creation_date": 1608126120,
+        "answer_id": 65324464,
+        "question_id": 65308885,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>Thank you for answer! It wasn't my solution, to use await you need to perform an async Task, but was an index to find the problem. The problem was in declaration jQuery correctly and after I defined correctly declaration jQuery in razor.</p>\n<pre><code>protected override async Task OnAfterRenderAsync(bool firstRender)\n   {\n       if (firstRender)\n           await JSRuntime.InvokeAsync&lt;object&gt;(&quot;vMap&quot;);\n       \n   }\n</code></pre>\n"
+    },
+    {
+        "owner": {
+            "reputation": 2042,
+            "user_id": 1073742,
+            "user_type": "registered",
+            "accept_rate": 28,
+            "profile_image": "https://i.stack.imgur.com/QMy0y.jpg?s=128&g=1",
+            "display_name": "Dan Csharpster",
+            "link": "https://stackoverflow.com/users/1073742/dan-csharpster"
+        },
+        "is_accepted": false,
+        "score": 0,
+        "last_activity_date": 1608068461,
+        "creation_date": 1608068461,
+        "answer_id": 65314102,
+        "question_id": 65308885,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>You're calling an async method without awaiting it.  I would fix that, for starters.</p>\n<pre><code>protected override void OnAfterRender(bool firstRender)\n    {\n        if (firstRender) \n            await JsRuntime.InvokeVoidAsync(&quot;vmap.initialize&quot;);\n    }\n</code></pre>\n<p>You can see an interop example calling InvokeVoidAsync <a href=\"https://docs.microsoft.com/en-us/aspnet/core/blazor/call-javascript-from-dotnet?view=aspnetcore-5.0\" rel=\"nofollow noreferrer\">here</a></p>\n<p>If you still need help, try posting a working example in <a href=\"https://blazorfiddle.com/\" rel=\"nofollow noreferrer\">BlazorFiddle</a> so we can help you more easily.</p>\n"
+    }
+]

@@ -1,0 +1,61 @@
+[
+    {
+        "owner": {
+            "reputation": 568,
+            "user_id": 1415454,
+            "user_type": "registered",
+            "accept_rate": 67,
+            "profile_image": "https://www.gravatar.com/avatar/6ff55239f069e204b22596b14e1e63e6?s=128&d=identicon&r=PG",
+            "display_name": "Chris Simeone",
+            "link": "https://stackoverflow.com/users/1415454/chris-simeone"
+        },
+        "is_accepted": true,
+        "score": 1,
+        "last_activity_date": 1590608040,
+        "last_edit_date": 1590608040,
+        "creation_date": 1590607602,
+        "answer_id": 62051295,
+        "question_id": 60324442,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>**</p>\n\n<h2>Microsoft has released a fix for this issue!</h2>\n\n<p>**</p>\n\n<p>Support for Blazor WebAssembly projects has been added in the 8.6 release of Visual Studio for Mac. You can update by installing the latest from <a href=\"https://visualstudio.com/mac\" rel=\"nofollow noreferrer\">https://visualstudio.com/mac</a> or updating to the Stable channel using the Visual Studio > Check for Updates\u2026 menu. </p>\n\n<p>Ultimately this update worked. However when trying to run the Blazor WebAssembly the very first time I got the following error:</p>\n\n<blockquote>\n  <p>The ASP.NET Core developer certificate is in an invalid state. To fix\n  this issue, run the following commands to remove all existing ASP.NET\n  Core development certificates and create a new untrusted developer\n  certificate.</p>\n</blockquote>\n\n<pre><code>dotnet dev-certs https --clean\ndotnet dev-certs https\ndotnet dev-certs https --trust\n</code></pre>\n\n<p>I followed the instructions running the three commands above and that resolved my error. FYI, the first of the three commands may take a few minutes and you may not see any output activity immediately.</p>\n\n<p>Now I can build a run Blazor WebAssembly in Version 8.6 of Visual Studio for Mac.</p>\n\n<p>For more info see the <a href=\"https://developercommunity.visualstudio.com/content/problem/925026/missing-blazor-webassembly-app-template-for-visual.html\" rel=\"nofollow noreferrer\">post I created</a> in the Visual Studio Developer Community: </p>\n"
+    },
+    {
+        "owner": {
+            "reputation": 568,
+            "user_id": 1415454,
+            "user_type": "registered",
+            "accept_rate": 67,
+            "profile_image": "https://www.gravatar.com/avatar/6ff55239f069e204b22596b14e1e63e6?s=128&d=identicon&r=PG",
+            "display_name": "Chris Simeone",
+            "link": "https://stackoverflow.com/users/1415454/chris-simeone"
+        },
+        "is_accepted": false,
+        "score": 1,
+        "last_activity_date": 1583186924,
+        "last_edit_date": 1583186924,
+        "creation_date": 1583186256,
+        "answer_id": 60497267,
+        "question_id": 60324442,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>Currently, Visual Studio for Mac does not have the ability to create WebAssembly apps using a template. It can however build WebAssembly apps.</p>\n\n<p>To work around this limitation I use the CLI for <strong>create</strong> and <strong>run</strong> WebAssembly apps.</p>\n\n<p><strong>\u00bb</strong> To <strong>create</strong> the WebAssembly apps from the CLI I use:</p>\n\n<pre><code>dotnet new blazorwasm -n NameOfMyProject\n</code></pre>\n\n<p><strong>\u00bb</strong> Now I can <strong>edit and build</strong> the app using Visual Studio for Mac.</p>\n\n<p><strong>\u00bb</strong> To <strong>run</strong> the app from the CLI. I <code>cd</code> into the project directory and run:</p>\n\n<pre><code>dotnet run\n</code></pre>\n\n<p>Now I can load the app in a browser and edit and test my code changes. I even noticed that \"hot reload\" works.</p>\n\n<p>I opened an issue with Microsoft Visual Studio Feedback System. A senior product manager replied 4 days ago with this message: \"<em>We have started working on adding support for Blazor Web Assembly.</em>\"</p>\n\n<p>In case you're interested, here is the link to that request:\n<a href=\"https://developercommunity.visualstudio.com/content/problem/925026/missing-blazor-webassembly-app-template-for-visual.html\" rel=\"nofollow noreferrer\">https://developercommunity.visualstudio.com/content/problem/925026/missing-blazor-webassembly-app-template-for-visual.html</a></p>\n"
+    },
+    {
+        "owner": {
+            "reputation": 149,
+            "user_id": 5690171,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://www.gravatar.com/avatar/4b344d0f1afdd3590a8a2874028ab3bd?s=128&d=identicon&r=PG",
+            "display_name": "Chefty",
+            "link": "https://stackoverflow.com/users/5690171/chefty"
+        },
+        "is_accepted": false,
+        "score": 1,
+        "last_activity_date": 1582299233,
+        "creation_date": 1582299233,
+        "answer_id": 60341871,
+        "question_id": 60324442,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>I just had the same issue and might have a workaround for you.\nI did exactly the same command:</p>\n\n<pre><code>dotnet new blazorwasm -n NameOfMyProject\n</code></pre>\n\n<p>Then I just opened Visual Studio and used \"open project or solution\" to open the .csproj. From the IDE interface you can build and run without problem.</p>\n\n<p>Cheers,</p>\n\n<p>Chefty</p>\n"
+    }
+]

@@ -1,0 +1,21 @@
+[
+    {
+        "owner": {
+            "reputation": 40831,
+            "user_id": 1658906,
+            "user_type": "registered",
+            "accept_rate": 100,
+            "profile_image": "https://www.gravatar.com/avatar/4e4748ed2fb97e8a8d4dd6d439625135?s=128&d=identicon&r=PG",
+            "display_name": "juunas",
+            "link": "https://stackoverflow.com/users/1658906/juunas"
+        },
+        "is_accepted": true,
+        "score": 0,
+        "last_activity_date": 1590233370,
+        "creation_date": 1590233370,
+        "answer_id": 61971335,
+        "question_id": 61964610,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>There shouldn't be an issue. The one thing I was thinking of that could have issues was the on-behalf-of flow but the article says basically no issues: <a href=\"https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-oauth2-on-behalf-of-flow#use-of-a-single-application\" rel=\"nofollow noreferrer\">https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-oauth2-on-behalf-of-flow#use-of-a-single-application</a>.</p>\n\n<p>The new application model allows an app registration to have multiple platforms in it, so you can register reply URLs for desktop apps, mobile apps and API scopes all in the same app.</p>\n\n<p>There might be some weird corner cases if it is a multi-tenant application, but if it is single-tenant there should be no issues with using a single app. </p>\n"
+    }
+]

@@ -1,0 +1,39 @@
+[
+    {
+        "owner": {
+            "reputation": 123,
+            "user_id": 2587664,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/4b9fF.jpg?s=128&g=1",
+            "display_name": "Matt",
+            "link": "https://stackoverflow.com/users/2587664/matt"
+        },
+        "is_accepted": false,
+        "score": 0,
+        "last_activity_date": 1583501625,
+        "creation_date": 1583501625,
+        "answer_id": 60565162,
+        "question_id": 60057113,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>to keep the presentation layer separated from the application layer, even if you're using Blazor, you should not reference directly some application layer's code from any point of the presentation layer. Instead, call an API endpoint the same way you're doing it with the React front-end. </p>\n\n<p>Also, as stated by others in comments, you should extract your dto-poco class to another project, and reference this one.</p>\n"
+    },
+    {
+        "owner": {
+            "reputation": 211,
+            "user_id": 9122330,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/906765334468a6006f8f19eae4363ce1?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Alois",
+            "link": "https://stackoverflow.com/users/9122330/alois"
+        },
+        "is_accepted": false,
+        "score": 3,
+        "last_activity_date": 1611963753,
+        "last_edit_date": 1611963753,
+        "creation_date": 1582031748,
+        "answer_id": 60281779,
+        "question_id": 60057113,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>Create a new <strong>dotnet.standard</strong>-project called something like, <strong>MyProject.Domain.Shared</strong>. There you put all communication (poco-)classes.</p>\n<p>The <strong>Shared-Project</strong> is consumed by your <strong>Domain-Project</strong>, <strong>Application-Layer</strong> and <strong>Client-Layer</strong>.\nThe <strong>Domain-Project</strong> is consumed by the <strong>Application-Layer</strong> and <strong>Persistence-Layer</strong>.</p>\n<p>In the <strong>Shared-Project</strong> you put:</p>\n<ul>\n<li>DTOs</li>\n<li>Requests</li>\n<li>Responses</li>\n<li>Validators</li>\n</ul>\n<p>In the <strong>Application-Project</strong> you put:</p>\n<ul>\n<li>Request Handlers</li>\n<li>Response Handlers</li>\n</ul>\n<p>In the <strong>Domain-Project</strong> you put:</p>\n<ul>\n<li>Domain-Objects</li>\n<li>Repository-Interfaces</li>\n<li>Handlers which consumes the requests and produce responses)</li>\n</ul>\n"
+    }
+]

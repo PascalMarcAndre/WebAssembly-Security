@@ -1,0 +1,21 @@
+[
+    {
+        "owner": {
+            "reputation": 3512,
+            "user_id": 1154773,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://www.gravatar.com/avatar/c7b64a292905678b7166b2ce373d0629?s=128&d=identicon&r=PG",
+            "display_name": "Alamakanambra",
+            "link": "https://stackoverflow.com/users/1154773/alamakanambra"
+        },
+        "is_accepted": false,
+        "score": 0,
+        "last_activity_date": 1617474898,
+        "creation_date": 1617474898,
+        "answer_id": 66934636,
+        "question_id": 66923063,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>This may be it:</p>\n<p><code>&lt;SkipExtraFilesOnServer&gt;False&lt;/SkipExtraFilesOnServer&gt;</code></p>\n<p>That <code>False</code> actually means this <code>True</code>:\n<a href=\"https://i.stack.imgur.com/p41Lj.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/p41Lj.png\" alt=\"enter image description here\" /></a></p>\n"
+    }
+]

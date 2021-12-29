@@ -1,0 +1,38 @@
+[
+    {
+        "owner": {
+            "reputation": 679,
+            "user_id": 1134359,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/0c895fe4e47be7f391d309de1f4b1745?s=128&d=identicon&r=PG",
+            "display_name": "jamie",
+            "link": "https://stackoverflow.com/users/1134359/jamie"
+        },
+        "is_accepted": false,
+        "score": 0,
+        "last_activity_date": 1618491091,
+        "creation_date": 1618491091,
+        "answer_id": 67108838,
+        "question_id": 65547764,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>What worked for me was deleting the <code>obj</code> and <code>bin</code> folders, besides renaming the link to the css file to {AssemblyName}.styles.css.\nSetting it to ProjectName does not work if it differs from AssemblyName.</p>\n<p>This way it was not necessary for me to delete and recreate the specific css files.\nNote: I'm using Blazor Server with ASP.NET 5</p>\n"
+    },
+    {
+        "owner": {
+            "reputation": 41,
+            "user_id": 14874039,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/efc1dc37dfceda181f15944ad050e6fd?s=128&d=identicon&r=PG&f=1",
+            "display_name": "TharinduSK",
+            "link": "https://stackoverflow.com/users/14874039/tharindusk"
+        },
+        "is_accepted": false,
+        "score": 2,
+        "last_activity_date": 1609667639,
+        "creation_date": 1609667639,
+        "answer_id": 65548488,
+        "question_id": 65547764,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>Deleting the CSS isolated files and creating them again from the beginning made it work! How ever rebuilding the solution or cleaning the solution did not work. Still no clue of what was going on.</p>\n"
+    }
+]

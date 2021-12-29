@@ -1,0 +1,21 @@
+[
+    {
+        "owner": {
+            "reputation": 6045,
+            "user_id": 3983557,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/01A0D.jpg?s=128&g=1",
+            "display_name": "JF Bastien",
+            "link": "https://stackoverflow.com/users/3983557/jf-bastien"
+        },
+        "is_accepted": true,
+        "score": 5,
+        "last_activity_date": 1479425510,
+        "last_edit_date": 1479425510,
+        "creation_date": 1479279792,
+        "answer_id": 40625922,
+        "question_id": 40625530,
+        "content_license": "CC BY-SA 3.0",
+        "body": "<p>Looks like you're hitting <a href=\"https://github.com/WebAssembly/binaryen/issues/822\" rel=\"nofollow noreferrer\">this bug</a>.</p>\n\n<p>The following was suggested to resolve the issue:</p>\n\n<ul>\n<li><a href=\"https://github.com/WebAssembly/binaryen\" rel=\"nofollow noreferrer\">Download binaryen</a>.</li>\n<li>Install it using <code>cmake . &amp;&amp; make</code></li>\n<li>Download <a href=\"https://kripken.github.io/emscripten-site/docs/getting_started/downloads.html#sdk-downloads\" rel=\"nofollow noreferrer\">EMCC SDK</a></li>\n<li>Install <a href=\"http://kripken.github.io/emscriptensite/docs/getting_started/downloads.html#platform-notes-installation-instructions-portable-sdk\" rel=\"nofollow noreferrer\">platform specific requirements</a></li>\n<li>Install <a href=\"http://kripken.github.io/emscriptensite/docs/getting_started/downloads.html#all-os-installation-instructions-portable-sdk\" rel=\"nofollow noreferrer\">EMCC compiler following the instructions</a></li>\n<li>To verify everything installed <code>run emcc -v</code></li>\n</ul>\n"
+    }
+]

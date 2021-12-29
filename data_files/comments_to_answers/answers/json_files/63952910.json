@@ -1,0 +1,21 @@
+[
+    {
+        "owner": {
+            "reputation": 1813,
+            "user_id": 1514010,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/BLtSx.png?s=128&g=1",
+            "display_name": "zakki",
+            "link": "https://stackoverflow.com/users/1514010/zakki"
+        },
+        "is_accepted": true,
+        "score": 2,
+        "last_activity_date": 1601013271,
+        "last_edit_date": 1601013271,
+        "creation_date": 1600838582,
+        "answer_id": 64021522,
+        "question_id": 63952910,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>To make <code>FS</code> available in a modularized build, you have to export it explicitly:</p>\n<pre><code>emcc ... -s 'EXPORTED_RUNTIME_METHODS=[&quot;FS&quot;]'\n</code></pre>\n"
+    }
+]

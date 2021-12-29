@@ -1,0 +1,39 @@
+[
+    {
+        "owner": {
+            "reputation": 1332,
+            "user_id": 2663033,
+            "user_type": "registered",
+            "accept_rate": 100,
+            "profile_image": "https://i.stack.imgur.com/8RJho.jpg?s=128&g=1",
+            "display_name": "TheMagnificent11",
+            "link": "https://stackoverflow.com/users/2663033/themagnificent11"
+        },
+        "is_accepted": true,
+        "score": 0,
+        "last_activity_date": 1606918402,
+        "creation_date": 1606918402,
+        "answer_id": 65109794,
+        "question_id": 65038989,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>So it turns out the issue was actually in the code.</p>\n<p>I missed a note section in the docs that said I had to manually edit the client app code if API ID URI was <em>untrusted publisher domain similar to <a href=\"https://contoso.onmicrosoft.com/41451fa7-82d9-4673-8fa5-69eff5a761fd\" rel=\"nofollow noreferrer\">https://contoso.onmicrosoft.com/41451fa7-82d9-4673-8fa5-69eff5a761fd</a></em>, which it was in my case.</p>\n<p>Removing the extra <code>https://{TENANT DOMAIN}/</code> in the <code>Program.cs</code> of the client app fixed things (note the difference between the commented-out line and the line that comes after).</p>\n<pre><code>namespace BlazorClient\n{\n    public class Program\n    {\n        public static async Task Main(string[] args)\n        {\n            ...\n\n            builder.Services.AddMsalAuthentication(options =&gt;\n            {\n                builder.Configuration.Bind(&quot;AzureAdB2C&quot;, options.ProviderOptions.Authentication);\n                //options.ProviderOptions.DefaultAccessTokenScopes.Add(&quot;https://***.onmicrosoft.com/https://***.onmicrosoft.com/*******/blazor.client&quot;);\n                options.ProviderOptions.DefaultAccessTokenScopes.Add(&quot;https://***.onmicrosoft.com/*******/blazor.client&quot;);\n            });\n\n            await builder.Build().RunAsync();\n        }\n    }\n}\n</code></pre>\n"
+    },
+    {
+        "owner": {
+            "reputation": 4829,
+            "user_id": 13336683,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/be9aebbaa23eb5578d0e21d2b0921dbe?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Carl Zhao",
+            "link": "https://stackoverflow.com/users/13336683/carl-zhao"
+        },
+        "is_accepted": false,
+        "score": -1,
+        "last_activity_date": 1606729364,
+        "creation_date": 1606729364,
+        "answer_id": 65071169,
+        "question_id": 65038989,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>I can reproduce your problem. The reason for the error is that you have used unauthorized resources. You need to change the <code>scope</code> to your own expose api. Go to Azure AD B2C&gt;App registrations&gt;your client application&gt;API permissions.</p>\n<p><a href=\"https://i.stack.imgur.com/D5xJT.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/D5xJT.png\" alt=\"enter image description here\" /></a></p>\n<p><a href=\"https://i.stack.imgur.com/jXEC4.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/jXEC4.png\" alt=\"enter image description here\" /></a></p>\n"
+    }
+]

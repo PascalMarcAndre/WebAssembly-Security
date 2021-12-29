@@ -1,0 +1,21 @@
+[
+    {
+        "owner": {
+            "reputation": 545,
+            "user_id": 1762453,
+            "user_type": "registered",
+            "accept_rate": 85,
+            "profile_image": "https://www.gravatar.com/avatar/28068e61a850f22e8d2c36e2d6536573?s=128&d=identicon&r=PG",
+            "display_name": "Codefun64",
+            "link": "https://stackoverflow.com/users/1762453/codefun64"
+        },
+        "is_accepted": false,
+        "score": 1,
+        "last_activity_date": 1613880826,
+        "creation_date": 1613880826,
+        "answer_id": 66299098,
+        "question_id": 66298781,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>The problem, apparently, is that inside of my Application.razor file, I was calling back to my front-end server with <code>await response.Content.ReadAsByteArrayAsync()</code> rather than <code>await response.Content.ReadAsAsync&lt;byte[]&gt;()</code>, and you want the LATTER because the former somehow transforms the data in a way you don't necessarily expect, that, when converted to a UTF8 string, looks remarkably like a Base64 string. Strange behaviors abound.</p>\n"
+    }
+]

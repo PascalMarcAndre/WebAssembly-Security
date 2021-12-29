@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 662,
+            "user_id": 6150564,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/4d04eb4863d6265f6a3bc21a9458db1f?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Razi",
+            "link": "https://stackoverflow.com/users/6150564/razi"
+        },
+        "is_accepted": false,
+        "score": 1,
+        "last_activity_date": 1597967827,
+        "creation_date": 1597967827,
+        "answer_id": 63514683,
+        "question_id": 63504543,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>Can you please share steps that you took to configure Azure Function to authenticate against Azure B2C (Policy and Application)? The steps you mentioned are not related to Azure AD B2C but to Azure AD.</p>\n<p>You may find this link useful which explains the actual setup needed: <a href=\"https://codemilltech.com/adding-azure-ad-b2c-authentication-to-azure-functions/#:%7E:text=The%20Azure%20Function%20App%20can,And%20then%20the%20Xamarin\" rel=\"nofollow noreferrer\">https://codemilltech.com/adding-azure-ad-b2c-authentication-to-azure-functions/#:~:text=The%20Azure%20Function%20App%20can,And%20then%20the%20Xamarin</a>.</p>\n"
+    }
+]

@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 11,
+            "user_id": 3910034,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/356dc2c8f5302cceefa0c8db63cbea67?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Jagdriver",
+            "link": "https://stackoverflow.com/users/3910034/jagdriver"
+        },
+        "is_accepted": false,
+        "score": 0,
+        "last_activity_date": 1597052224,
+        "creation_date": 1597052224,
+        "answer_id": 63337670,
+        "question_id": 63310771,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>It was actually very simple. To allow my custom response headers to be available in a Blazor Webassembly app, On the server API, just add below header to the response:</p>\n<p>HttpContext.Response.Headers.Add(&quot; Access-Control-Expose-Headers&quot;,&quot;YourCustomHeader,YourOtherCustomHeader&quot;);</p>\n"
+    }
+]

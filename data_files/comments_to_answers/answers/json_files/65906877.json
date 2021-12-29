@@ -1,0 +1,21 @@
+[
+    {
+        "owner": {
+            "reputation": 96,
+            "user_id": 14733873,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/ffc9cca2f3a6d93ff54f2c1f2b91d6a4?s=128&d=identicon&r=PG&f=1",
+            "display_name": "StavSheiz",
+            "link": "https://stackoverflow.com/users/14733873/stavsheiz"
+        },
+        "is_accepted": false,
+        "score": 0,
+        "last_activity_date": 1611701974,
+        "last_edit_date": 1611701974,
+        "creation_date": 1611700940,
+        "answer_id": 65910342,
+        "question_id": 65906877,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>Try adding the cookie scheme when you use the authentication service:</p>\n<pre><code>        services.AddAuthentication(options =&gt;\n        {\n            options.DefaultChallengeScheme = CookieAuthenticationDefaults.AuthenticationScheme;\n            options.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;\n            options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;\n        }).AddCookie(CookieAuthenticationDefaults.AuthenticationScheme);\n</code></pre>\n<p>Then, when you sign in use that same scheme:</p>\n<pre><code>        var claimsIdentity = new ClaimsIdentity(\n            claims, CookieAuthenticationDefaults.AuthenticationScheme);\n\n        var authProperties = new AuthenticationProperties\n        {\n            IsPersistent = true,\n        };\n\n        await httpContext.SignInAsync(\n            CookieAuthenticationDefaults.AuthenticationScheme,\n            new ClaimsPrincipal(claimsIdentity),\n            authProperties);\n</code></pre>\n"
+    }
+]

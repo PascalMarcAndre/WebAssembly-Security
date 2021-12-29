@@ -1,0 +1,58 @@
+[
+    {
+        "owner": {
+            "reputation": 11,
+            "user_id": 14842076,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/fc06ae93da30a23da61df31d01654057?s=128&d=identicon&r=PG&f=1",
+            "display_name": "rayder2007",
+            "link": "https://stackoverflow.com/users/14842076/rayder2007"
+        },
+        "is_accepted": false,
+        "score": 1,
+        "last_activity_date": 1608258043,
+        "last_edit_date": 1608258043,
+        "creation_date": 1608196836,
+        "answer_id": 65337800,
+        "question_id": 64759626,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>We also faced this problem.  The error appears if the server time does not match the client time.  Experiments have shown that it is enough to have a difference of 10 minutes.\nIdeally, the time on the client and server should be in sync.\nWe are currently asking customers to check the time on the device, but this is not a solution to the problem.</p>\n"
+    },
+    {
+        "owner": {
+            "reputation": 93,
+            "user_id": 959478,
+            "user_type": "registered",
+            "accept_rate": 25,
+            "profile_image": "https://graph.facebook.com/763530815/picture?type=large",
+            "display_name": "Cristovao Morgado",
+            "link": "https://stackoverflow.com/users/959478/cristovao-morgado"
+        },
+        "is_accepted": false,
+        "score": 0,
+        "last_activity_date": 1606948907,
+        "creation_date": 1606948907,
+        "answer_id": 65117251,
+        "question_id": 64759626,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>I believe you have to configure you Identity on appsettings.json</p>\n<p>On dev you have</p>\n<pre><code>&quot;IdentityServer&quot;: {\n    &quot;Clients&quot;: {\n      &quot;updown&quot;: {\n        &quot;Profile&quot;: &quot;IdentityServerSPA&quot;\n      }\n\n    },\n    &quot;Key&quot;: {\n      &quot;Type&quot;: &quot;Development&quot;\n    }\n</code></pre>\n<p>But in production you must configure some certificates.</p>\n<pre><code> &quot;Key&quot;: {\n      &quot;Type&quot;: &quot;File&quot;,\n      &quot;FilePath&quot;: &quot;path to .pfx&quot;,\n      &quot;Password&quot;: &quot;pass&quot;\n    }\n \n</code></pre>\n<p>otherwise not recommended put the tempkey.json from obj folder</p>\n"
+    },
+    {
+        "owner": {
+            "reputation": 1695,
+            "user_id": 3486567,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/3e554e74f28210f5f84aef154ffd5f72?s=128&d=identicon&r=PG",
+            "display_name": "nahidf",
+            "link": "https://stackoverflow.com/users/3486567/nahidf"
+        },
+        "is_accepted": false,
+        "score": 0,
+        "last_activity_date": 1604983845,
+        "creation_date": 1604983845,
+        "answer_id": 64763065,
+        "question_id": 64759626,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>You need <code>SameSite</code> as None for OpenID Connect to work in this case. Also you need to have HTTPS.</p>\n<p>Read more <a href=\"https://docs.microsoft.com/en-us/aspnet/core/security/samesite?view=aspnetcore-3.1\" rel=\"nofollow noreferrer\">https://docs.microsoft.com/en-us/aspnet/core/security/samesite?view=aspnetcore-3.1</a></p>\n"
+    }
+]

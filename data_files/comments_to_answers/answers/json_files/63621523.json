@@ -1,0 +1,21 @@
+[
+    {
+        "owner": {
+            "reputation": 247,
+            "user_id": 7523443,
+            "user_type": "registered",
+            "accept_rate": 25,
+            "profile_image": "https://www.gravatar.com/avatar/4a6d376f529a0b9587a56f78639ca1ae?s=128&d=identicon&r=PG&f=1",
+            "display_name": "DJFalstaff",
+            "link": "https://stackoverflow.com/users/7523443/djfalstaff"
+        },
+        "is_accepted": false,
+        "score": 0,
+        "last_activity_date": 1598889837,
+        "creation_date": 1598889837,
+        "answer_id": 63674264,
+        "question_id": 63621523,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>I found the answer in this Microsoft help page.\n<a href=\"https://docs.microsoft.com/en-us/aspnet/core/blazor/security/webassembly/azure-active-directory-groups-and-roles?view=aspnetcore-3.1\" rel=\"nofollow noreferrer\">https://docs.microsoft.com/en-us/aspnet/core/blazor/security/webassembly/azure-active-directory-groups-and-roles?view=aspnetcore-3.1</a></p>\n"
+    }
+]

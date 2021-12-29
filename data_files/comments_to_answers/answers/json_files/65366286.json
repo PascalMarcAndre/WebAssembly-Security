@@ -1,0 +1,21 @@
+[
+    {
+        "owner": {
+            "reputation": 161,
+            "user_id": 1930728,
+            "user_type": "registered",
+            "accept_rate": 100,
+            "profile_image": "https://www.gravatar.com/avatar/2eaf785bc931e79e0148d6cc8db261c4?s=128&d=identicon&r=PG",
+            "display_name": "user1930728",
+            "link": "https://stackoverflow.com/users/1930728/user1930728"
+        },
+        "is_accepted": true,
+        "score": 1,
+        "last_activity_date": 1608558571,
+        "creation_date": 1608558571,
+        "answer_id": 65393938,
+        "question_id": 65366286,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>I added a routes.json file to wwwroot with the following to fix the issue.</p>\n<pre><code>{\n  &quot;routes&quot;: [\n    {\n      &quot;route&quot;: &quot;/*&quot;,\n      &quot;serve&quot;: &quot;/index.html&quot;,\n      &quot;statusCode&quot;: 200\n    }\n  ]\n}\n</code></pre>\n"
+    }
+]

@@ -1,0 +1,39 @@
+[
+    {
+        "owner": {
+            "reputation": 96,
+            "user_id": 6830857,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/sXQMo.jpg?s=128&g=1",
+            "display_name": "Kasper Olesen",
+            "link": "https://stackoverflow.com/users/6830857/kasper-olesen"
+        },
+        "is_accepted": false,
+        "score": 1,
+        "last_activity_date": 1573820704,
+        "creation_date": 1573820704,
+        "answer_id": 58877044,
+        "question_id": 58875009,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>I found a way of doing this, but I suspect its not the best or most proper way of doing it.</p>\n\n<p>I created a static EventManager like this:</p>\n\n<pre><code>    public static class EventManager\n    {\n        public static List&lt;Action&gt; renderActions = new List&lt;Action&gt;();\n        public static void AddRenderAction(Action renderAction)\n        {\n            renderActions.Add(renderAction);\n        }\n\n        public static void TriggerRenderActions()\n        {\n            renderActions.ForEach(a =&gt; a.Invoke());\n        }\n    }\n</code></pre>\n\n<p>and then in the OnInitialized method of the NavMenu.razor component I add the \"StateHasChanged\" method which is inherented :</p>\n\n<pre><code>protected override void OnInitialized()\n        {\n            EventManager.AddRenderAction(()=&gt;StateHasChanged());\n        }\n</code></pre>\n\n<p>this way I can call EventManager.TriggerRenderActions() from anywhere to make all the added actions run.</p>\n"
+    },
+    {
+        "owner": {
+            "reputation": 12718,
+            "user_id": 2940908,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://i.stack.imgur.com/E79WU.jpg?s=128&g=1",
+            "display_name": "agua from mars",
+            "link": "https://stackoverflow.com/users/2940908/agua-from-mars"
+        },
+        "is_accepted": false,
+        "score": 1,
+        "last_activity_date": 1573815634,
+        "creation_date": 1573815634,
+        "answer_id": 58875620,
+        "question_id": 58875009,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>Use the <a href=\"https://docs.microsoft.com/en-us/aspnet/core/security/blazor/?view=aspnetcore-3.0&amp;tabs=visual-studio#authorizeview-component\" rel=\"nofollow noreferrer\"><code>AuthorizeView</code></a> with a role-based or policy authorization</p>\n"
+    }
+]

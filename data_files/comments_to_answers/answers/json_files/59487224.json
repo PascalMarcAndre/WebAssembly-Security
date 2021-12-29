@@ -1,0 +1,22 @@
+[
+    {
+        "owner": {
+            "reputation": 3816,
+            "user_id": 4661625,
+            "user_type": "registered",
+            "accept_rate": 67,
+            "profile_image": "https://www.gravatar.com/avatar/c3cd0caf54e0766c83f04f51f881303b?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Bumsik Kim",
+            "link": "https://stackoverflow.com/users/4661625/bumsik-kim"
+        },
+        "is_accepted": true,
+        "score": 6,
+        "last_activity_date": 1579360392,
+        "last_edit_date": 1592644375,
+        "creation_date": 1577362754,
+        "answer_id": 59488387,
+        "question_id": 59487224,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<h2>TLDR;</h2>\n<p>There are two solutions:</p>\n<ol>\n<li>Add <code>-s ENVIRONMENT='web'</code> in your emcc command, so try <code>emcc add.c -o js_plumbing.js -s EXTRA_EXPORTED_RUNTIME_METHODS=['ccall','cwrap'] -s ENVIRONMENT='web'</code></li>\n</ol>\n<p>or</p>\n<ol start=\"2\">\n<li>Add <code>&quot;node&quot;: { &quot;fs&quot;: &quot;empty&quot; }</code> field in your <code>webpack.config.js</code>. I don't know how to do it in zero-config way though.</li>\n</ol>\n<h2>Why</h2>\n<p>Emscripten's emcc command produces both <code>.js</code> and <code>.wasm</code> files. The <code>.js</code> file is not only a wrapper of the <code>.wasm</code> but also provides a C/C++ runtime for the web, and more importantly in the question, a generic loader for the <code>.wasm</code> file.</p>\n<p>The <code>.js</code> file's loader is very comprehensive that covers node, web, web worker, and <a href=\"https://v8.dev/docs/d8\" rel=\"nofollow noreferrer\">D8 JS shell</a> by default. This often make problems with bundlers such as Webpack because the bundlers try to resolve all modules in the source code, including <code>require('fs')</code> which is used for loading <code>.wasm</code> file in the nodejs environment, and the bundler produces error if any module is not available for the web environment.</p>\n<p>One way to avoid the problem is that to use <a href=\"https://github.com/emscripten-core/emscripten/blob/79523944931f526c4b1c2a92e1a826475c987a2b/src/settings.js#L540\" rel=\"nofollow noreferrer\"><code>ENVIRONMENT</code></a> flag in <code>emcc</code> command. This will remove some problematic codes such as <code>require('fs')</code>.</p>\n<p>Another way is to let Webpack ignore <code>fs</code> module by adding <code>&quot;node&quot;: { &quot;fs&quot;: &quot;empty&quot; }</code> in the webpack configuration.</p>\n"
+    }
+]

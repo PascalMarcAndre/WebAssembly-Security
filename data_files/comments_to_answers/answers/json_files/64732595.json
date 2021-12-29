@@ -1,0 +1,22 @@
+[
+    {
+        "owner": {
+            "reputation": 20573,
+            "user_id": 1643676,
+            "user_type": "registered",
+            "accept_rate": 67,
+            "profile_image": "https://www.gravatar.com/avatar/418606a9471058ad35cb48144e582371?s=128&d=identicon&r=PG",
+            "display_name": "Athanasios Kataras",
+            "link": "https://stackoverflow.com/users/1643676/athanasios-kataras"
+        },
+        "is_accepted": false,
+        "score": 0,
+        "last_activity_date": 1604791206,
+        "last_edit_date": 1604791206,
+        "creation_date": 1604789279,
+        "answer_id": 64733159,
+        "question_id": 64732595,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>There is not. APIs are in their nature http and independent from the client side.</p>\n<p>Be that as it may, a good way to do this, is to generate the open api json file, and auto generate the client side <a href=\"https://docs.microsoft.com/en-us/aspnet/core/tutorials/web-api-help-pages-using-swagger?view=aspnetcore-3.1\" rel=\"nofollow noreferrer\">https://docs.microsoft.com/en-us/aspnet/core/tutorials/web-api-help-pages-using-swagger?view=aspnetcore-3.1</a>. Check <a href=\"https://github.com/OpenAPITools/openapi-generator\" rel=\"nofollow noreferrer\">https://github.com/OpenAPITools/openapi-generator</a> for a library to do that.</p>\n<p>This is similar to wsdl for soap services.</p>\n"
+    }
+]

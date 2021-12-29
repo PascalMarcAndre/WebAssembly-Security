@@ -1,0 +1,21 @@
+[
+    {
+        "owner": {
+            "reputation": 2034,
+            "user_id": 2816057,
+            "user_type": "registered",
+            "accept_rate": 87,
+            "profile_image": "https://graph.facebook.com/1585677544/picture?type=large",
+            "display_name": "Michael Tranchida",
+            "link": "https://stackoverflow.com/users/2816057/michael-tranchida"
+        },
+        "is_accepted": true,
+        "score": 0,
+        "last_activity_date": 1610575721,
+        "creation_date": 1610575721,
+        "answer_id": 65710496,
+        "question_id": 65661659,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>Someone posted then deleted an answer here which said the problem was in following line in the <code>Program.cs</code> file of the client project:</p>\n<pre><code>builder.Services.AddHttpClient(&quot;RclConsumer.ServerAPI&quot;, client =&gt; client.BaseAddress = new \n   Uri(builder.HostEnvironment.BaseAddress))\n   .AddHttpMessageHandler&lt;BaseAddressAuthorizationMessageHandler&gt;();\n</code></pre>\n<p>Surely there's something I'm missing, otherwise can't help but think this is a major oversight that one can't hit an API endpoint without being authenticated.</p>\n<pre><code>public static class HttpClientService\n{\n    public static HttpClient AnonymousHttpClient { get; set; }\n\n    static HttpClientService()\n    {\n        AnonymousHttpClient = new HttpClient();\n\n#if DEBUG\n        AnonymousHttpClient.BaseAddress = new Uri(&quot;https://localhost:44395/&quot;);\n#else\n        throw new Exception(&quot;Need the Base address here&quot;);\n#endif\n\n    }\n}\n</code></pre>\n<p>My reasoning for putting it in it's own class library is that I plan on adding Razor Class Libraries and I want a single instance of the <code>HttpClient</code> to use across the solution because of the <a href=\"https://www.aspnetmonsters.com/2016/08/2016-08-27-httpclientwrong\" rel=\"nofollow noreferrer\">problem with sockets</a></p>\n"
+    }
+]

@@ -1,0 +1,39 @@
+[
+    {
+        "owner": {
+            "reputation": 600,
+            "user_id": 5201578,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://www.gravatar.com/avatar/d5814e6c4da8c54bc849dad866cd48dc?s=128&d=identicon&r=PG",
+            "display_name": "Paulo Alexandre",
+            "link": "https://stackoverflow.com/users/5201578/paulo-alexandre"
+        },
+        "is_accepted": false,
+        "score": 1,
+        "last_activity_date": 1585695974,
+        "creation_date": 1585695974,
+        "answer_id": 60961272,
+        "question_id": 51033272,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>There is another option using the <code>XMLHttpRequest</code> object like showed at <a href=\"https://studiolacosanostra.github.io/2020/02/23/How-to-run-rust-wasm-on-cordova/\" rel=\"nofollow noreferrer\">https://studiolacosanostra.github.io/2020/02/23/How-to-run-rust-wasm-on-cordova/</a>.</p>\n\n<p>Of course, you don't need to overwriting the <code>fetch</code> function like they do there, but you certainly can use the idea to create your own function. </p>\n"
+    },
+    {
+        "owner": {
+            "reputation": 331,
+            "user_id": 5053611,
+            "user_type": "registered",
+            "profile_image": "https://lh6.googleusercontent.com/-2RqNb1GvJYM/AAAAAAAAAAI/AAAAAAAAGMY/n6V1KiNV4ms/photo.jpg?sz=128",
+            "display_name": "Federico Massi",
+            "link": "https://stackoverflow.com/users/5053611/federico-massi"
+        },
+        "is_accepted": false,
+        "score": 1,
+        "last_activity_date": 1533228951,
+        "creation_date": 1533228951,
+        "answer_id": 51658748,
+        "question_id": 51033272,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>As you can see in the console, \"URL scheme must be \u201chttp\u201d or \u201chttps\u201d for CORS request.\".</p>\n"
+    }
+]

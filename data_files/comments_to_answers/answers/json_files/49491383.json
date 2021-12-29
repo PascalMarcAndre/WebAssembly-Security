@@ -1,0 +1,21 @@
+[
+    {
+        "owner": {
+            "reputation": 64423,
+            "user_id": 249933,
+            "user_type": "registered",
+            "accept_rate": 81,
+            "profile_image": "https://www.gravatar.com/avatar/458f2e0d08d4114f8b323798cfea141d?s=128&d=identicon&r=PG",
+            "display_name": "ColinE",
+            "link": "https://stackoverflow.com/users/249933/coline"
+        },
+        "is_accepted": false,
+        "score": 1,
+        "last_activity_date": 1522071562,
+        "creation_date": 1522071562,
+        "answer_id": 49492896,
+        "question_id": 49491383,
+        "content_license": "CC BY-SA 3.0",
+        "body": "<p>WebAssembly modules are typically loaded via HTTP from JavaScript, however, there are other ways to include them in your code. You could for example base64 encode your WebAssembly binary and include that as a string. Or, you could use a build tool such as rollup to do that for you:</p>\n\n<p><a href=\"https://github.com/rollup/rollup-plugin-wasm\" rel=\"nofollow noreferrer\">https://github.com/rollup/rollup-plugin-wasm</a></p>\n\n<p>This allows you to reference a wasm file as an import:</p>\n\n<pre><code>import wasm from './sample.wasm';\n\nsample({ ...imports }).then(({ instance }) =&gt; {\n  console.log(instance.exports.main())\n})\n</code></pre>\n\n<p>However, when built with rollup it will be base64 encoded and inlined.</p>\n"
+    }
+]

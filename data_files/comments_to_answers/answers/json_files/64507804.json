@@ -1,0 +1,21 @@
+[
+    {
+        "owner": {
+            "reputation": 4127,
+            "user_id": 1492496,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/dO7to.png?s=128&g=1",
+            "display_name": "Brian Parker",
+            "link": "https://stackoverflow.com/users/1492496/brian-parker"
+        },
+        "is_accepted": true,
+        "score": 2,
+        "last_activity_date": 1603556613,
+        "last_edit_date": 1603556613,
+        "creation_date": 1603495753,
+        "answer_id": 64508457,
+        "question_id": 64507804,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>Note: The template stores the email in both the email and the name field in the database.</p>\n<p>In <code>Startup.cs</code> in the server. Add these options to <code>AddApiAuthorization</code>.</p>\n<pre><code> services.AddIdentityServer()        \n    .AddApiAuthorization&lt;ApplicationUser, ApplicationDbContext&gt;(options =&gt;\n    {\n        options.IdentityResources[&quot;openid&quot;].UserClaims.Add(&quot;name&quot;);\n        options.ApiResources.Single().UserClaims.Add(&quot;name&quot;);                 \n    });\n</code></pre>\n<p>In your controller</p>\n<pre><code>Public async Task&lt;IEnumerable&lt;WeatherForecast&gt;&gt; Get()\n{\n    var userName = User.Identity.Name;\n    var applicationUser = await userManager.FindByNameAsync(userName);\n...\n\n</code></pre>\n"
+    }
+]

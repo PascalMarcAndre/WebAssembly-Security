@@ -1,0 +1,39 @@
+[
+    {
+        "owner": {
+            "reputation": 13860,
+            "user_id": 82484,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/dce692de4d98f82c4b4906681850c7b4?s=128&d=identicon&r=PG",
+            "display_name": "C&#233;dric Rup",
+            "link": "https://stackoverflow.com/users/82484/c%c3%a9dric-rup"
+        },
+        "is_accepted": false,
+        "score": 1,
+        "last_activity_date": 1618388101,
+        "creation_date": 1618388101,
+        "answer_id": 67087942,
+        "question_id": 64446727,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>There's a way to ensure Blazor is initialized before trying to call interop</p>\n<p>Modify your index to prevent Blazor autoloading</p>\n<pre><code>&lt;script src=&quot;_framework/blazor.webassembly.js&quot; autoload=&quot;false&quot;&gt;&lt;/script&gt;\n</code></pre>\n<p>Then you can boot Blazor yourself and use a promise to execute your interop</p>\n<pre><code>&lt;script&gt;\n    let items = [\n        { name:'Item 1', description:'This is a description of the first item' },\n        { name:'Item 2', description:'This is a description of the second item' },\n        { name:'Item 3', description:'This is a description of the third item' },\n    ];\n    window.Blazor.start()\n       .then(()=&gt;DotNet.invokeMethodAsync('MyOrg.MyApp.Index', 'LoadItems'))\n       .then(results =&gt; console.log(results))\n       .catch(ex=&gt;console.log(ex));\n&lt;/script&gt;\n</code></pre>\n"
+    },
+    {
+        "owner": {
+            "reputation": 128,
+            "user_id": 6276110,
+            "user_type": "registered",
+            "profile_image": "https://graph.facebook.com/1071362716243861/picture?type=large",
+            "display_name": "Jan Bejvl",
+            "link": "https://stackoverflow.com/users/6276110/jan-bejvl"
+        },
+        "is_accepted": true,
+        "score": 1,
+        "last_activity_date": 1603230711,
+        "last_edit_date": 1603230711,
+        "creation_date": 1603209642,
+        "answer_id": 64448967,
+        "question_id": 64446727,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>Welcome to Blazor!</p>\n<p>Firstly, I would suggest reading the docs at <a href=\"https://docs.microsoft.com/en-us/aspnet/core/blazor/call-dotnet-from-javascript?view=aspnetcore-3.1\" rel=\"nofollow noreferrer\">Call .Net from js</a></p>\n<p>The way you include the script in your index.html means, that the script is executed <strong>before</strong> your wasm app is loaded.</p>\n<p>To solve the issue, it is a good practice to use js interop in OnAfterRenderAsync lifecycle method   (<a href=\"https://docs.microsoft.com/en-us/aspnet/core/blazor/components/lifecycle?view=aspnetcore-3.1\" rel=\"nofollow noreferrer\">Lifecycle docs</a>)</p>\n<p>So if you update your script to something like:</p>\n<pre><code>&lt;script&gt;\n        netFromJs = {\n            staticCall:  function () {\n                let items = [\n                    { name: 'Item 1', description: 'This is a description of the first item' },\n                    { name: 'Item 2', description: 'This is a description of the second item' },\n                    { name: 'Item 3', description: 'This is a description of the third item' },\n                ];\n\n                try {\n                    DotNet\n                        .invokeMethodAsync('wasmprerender.Client', 'LoadItems')\n                        .then(results =&gt; {\n                        console.log(results);\n                    });\n                }\n                catch (ex) {\n                    console.log(ex);\n                }\n            }\n        }\n    &lt;/script&gt;\n</code></pre>\n<p>Then in your component (page is also component), you will be able to do something like:</p>\n<pre><code>@inject IJSRuntime _js\n\n@code {\n    static List&lt;object&gt; items = new List&lt;object&gt;();\n\n    [JSInvokable]\n    public static Task LoadItems()\n    {\n        try\n        {\n            Console.WriteLine(&quot;Loading items&quot;);\n            items = new List&lt;object&gt;();\n        }\n        catch (Exception ex)\n        {\n        }\n\n        return Task.CompletedTask;\n    }\n\n    protected override async Task OnAfterRenderAsync(bool firstRender)\n    {\n        await _js.InvokeVoidAsync(&quot;netFromJs.static&quot;);\n    }\n}\n</code></pre>\n<p>To address your note about that the static call. Your example works with the Static method call, Blazor also supports the Instance method call. You will find a nice example here <a href=\"https://docs.microsoft.com/en-us/aspnet/core/blazor/call-dotnet-from-javascript?view=aspnetcore-3.1#instance-method-call\" rel=\"nofollow noreferrer\">Instance call</a></p>\n<p>Lastly, I do not recommend touch index.html too much. Create and reference separate .js file or from .NET 5 RC1 you can use <a href=\"https://devblogs.microsoft.com/aspnet/asp-net-core-updates-in-net-5-release-candidate-1/#blazor-javascript-isolation-and-object-references\" rel=\"nofollow noreferrer\">Js isolation</a></p>\n"
+    }
+]

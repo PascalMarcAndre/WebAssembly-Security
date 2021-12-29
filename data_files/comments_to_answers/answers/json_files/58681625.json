@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 18898,
+            "user_id": 6036428,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/b632c15ba23e78e466c8d33d657378fe?s=128&d=identicon&r=PG&f=1",
+            "display_name": "jmrk",
+            "link": "https://stackoverflow.com/users/6036428/jmrk"
+        },
+        "is_accepted": true,
+        "score": 0,
+        "last_activity_date": 1572796728,
+        "creation_date": 1572796728,
+        "answer_id": 58681913,
+        "question_id": 58681625,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>I would recommend to use the <a href=\"https://github.com/WebAssembly/wasm-c-api\" rel=\"nofollow noreferrer\">WebAssembly C/C++ API</a>, which V8 implements in the form of a library called \"libwee8\". The documentation for that is currently <a href=\"https://docs.google.com/document/d/1oFPHyNb_eXg6NzrE6xJDNPdJrHMZvx0LqsD6wpbd9vY/edit\" rel=\"nofollow noreferrer\">here</a>. That should be the easiest way to run WebAssembly modules from C++ without involving JavaScript. As an added bonus, it makes it easy to switch the underlying implementation, if for whatever reason in the future life of your product V8 won't be the right solution for a given use-case.</p>\n\n<p>That said, if you prefer to do everything by yourself using the (JavaScript-focused!) traditional V8 API, then you can look at the prototype implementation that maps the Wasm C++ API onto the (slightly modified, see other files in that directory) V8 API here: <a href=\"https://github.com/WebAssembly/wasm-c-api/blob/master/src/wasm-v8.cc\" rel=\"nofollow noreferrer\">https://github.com/WebAssembly/wasm-c-api/blob/master/src/wasm-v8.cc</a>. Be aware that due to the indirections required, this will be quite a bit slower than using <code>libwee8</code>, but if you're reinventing the wheel for educational purposes, that might not matter to you ;-)</p>\n\n<p>Specifically, in <a href=\"https://github.com/WebAssembly/wasm-c-api/blob/master/src/wasm-v8.cc#L2106\" rel=\"nofollow noreferrer\">https://github.com/WebAssembly/wasm-c-api/blob/master/src/wasm-v8.cc#L2106</a> you can see how the instantiation call takes an <code>imports</code> object as its second argument. As the error message you got informs you, it must be present (and it must be a JavaScript object), even when it is empty.</p>\n"
+    }
+]

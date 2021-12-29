@@ -1,0 +1,21 @@
+[
+    {
+        "owner": {
+            "reputation": 174,
+            "user_id": 1227445,
+            "user_type": "registered",
+            "accept_rate": 50,
+            "profile_image": "https://www.gravatar.com/avatar/258b21cb64d360f84617ef2ae72633b5?s=128&d=identicon&r=PG",
+            "display_name": "user1227445",
+            "link": "https://stackoverflow.com/users/1227445/user1227445"
+        },
+        "is_accepted": true,
+        "score": 1,
+        "last_activity_date": 1613787170,
+        "creation_date": 1613787170,
+        "answer_id": 66287332,
+        "question_id": 66286744,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>So after closely comparing my code to the code in the github repository used by the Microsoft documentation I discovered they have a file called appsettings.Development.json in the Client/wwwroot folder, which is used to provide a URL prefix to the Client app so it can access the Api project locally. This prefix is then prepended to the BaseAddress in Program.cs.</p>\n<p>The frustrating part is that the documentation completely omits this and provides no indication that this is a necessary step.</p>\n<p>I'm posting this here in case anyone else comes across the same problem.</p>\n"
+    }
+]

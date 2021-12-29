@@ -1,0 +1,38 @@
+[
+    {
+        "owner": {
+            "reputation": 11,
+            "user_id": 2298872,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/fa94eb272c6bb7a76e02117beb706d3f?s=128&d=identicon&r=PG&f=1",
+            "display_name": "34gl3",
+            "link": "https://stackoverflow.com/users/2298872/34gl3"
+        },
+        "is_accepted": false,
+        "score": 1,
+        "last_activity_date": 1597171932,
+        "creation_date": 1597171932,
+        "answer_id": 63364601,
+        "question_id": 62588935,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>The IdentityServer configuration in appsettings.json should look similar to the following</p>\n<pre><code>  &quot;IdentityServer&quot;: {\n    &quot;Clients&quot;: {\n      &quot;MyProject.Client&quot;: {\n        &quot;Profile&quot;: &quot;IdentityServerSPA&quot;\n      }\n    },\n    &quot;Key&quot;: {\n      &quot;Type&quot;: &quot;Store&quot;,\n      &quot;StoreName&quot;: &quot;My&quot;,\n      &quot;StoreLocation&quot;: &quot;CurrentUser&quot;,\n      &quot;Name&quot;: &quot;CN=my-project&quot;\n    }\n  },\n</code></pre>\n<p>so the OidcConfigurationController will be able to find your client id.</p>\n"
+    },
+    {
+        "owner": {
+            "reputation": 21,
+            "user_id": 13538232,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/a129964235e1f9abd130ea7bf5a3bace?s=128&d=identicon&r=PG&f=1",
+            "display_name": "juvivas",
+            "link": "https://stackoverflow.com/users/13538232/juvivas"
+        },
+        "is_accepted": false,
+        "score": 2,
+        "last_activity_date": 1595906685,
+        "creation_date": 1595906685,
+        "answer_id": 63126566,
+        "question_id": 62588935,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>AddOidcAuthentication call OidcConfigurationController to manage authtoization task and this controller use AuthenticationService.js\nyou need set the controller to allow anonymous request to work correctly</p>\n<pre><code> [AllowAnonymous]\npublic class OidcConfigurationController : Controller\n{\n    private readonly ILogger&lt;OidcConfigurationController&gt; _logger;\n\n    public OidcConfigurationController(IClientRequestParametersProvider clientRequestParametersProvider, ILogger&lt;OidcConfigurationController&gt; logger)\n    {\n        ClientRequestParametersProvider = clientRequestParametersProvider;\n        _logger = logger;\n    }\n\n    public IClientRequestParametersProvider ClientRequestParametersProvider { get; }\n\n    [HttpGet(&quot;_configuration/{clientId}&quot;)]\n    public IActionResult GetClientRequestParameters([FromRoute] string clientId)\n    {\n        var parameters = ClientRequestParametersProvider.GetClientParameters(HttpContext, clientId);\n        return Ok(parameters);\n    }\n}\n</code></pre>\n"
+    }
+]

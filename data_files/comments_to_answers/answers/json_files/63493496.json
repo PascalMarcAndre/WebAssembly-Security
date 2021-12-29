@@ -1,0 +1,38 @@
+[
+    {
+        "owner": {
+            "reputation": 144,
+            "user_id": 9028374,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/e5cd0b8950b5831de518ed53b45638a6?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Tacot",
+            "link": "https://stackoverflow.com/users/9028374/tacot"
+        },
+        "is_accepted": true,
+        "score": 0,
+        "last_activity_date": 1600362496,
+        "creation_date": 1600362496,
+        "answer_id": 63942983,
+        "question_id": 63493496,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>Found my problem, the code was fine, the problem was on the Azure registration side, The client uses the roles registered in the client app in Azure while the server uses the ones in the server app. so make sure you register the user in both with the same role.</p>\n"
+    },
+    {
+        "owner": {
+            "reputation": 645,
+            "user_id": 1657427,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/ed4ba309579160b9a1df089052df11ae?s=128&d=identicon&r=PG",
+            "display_name": "fuzzy_logic",
+            "link": "https://stackoverflow.com/users/1657427/fuzzy-logic"
+        },
+        "is_accepted": false,
+        "score": 1,
+        "last_activity_date": 1600300902,
+        "creation_date": 1600300902,
+        "answer_id": 63929459,
+        "question_id": 63493496,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>I got it working by using RequireRole in the policy options.</p>\n<p>For example, I added the app role to the manifest:</p>\n<pre><code>&quot;appRoles&quot;: [\n    {\n        &quot;allowedMemberTypes&quot;: [\n            &quot;User&quot;\n        ],\n        &quot;description&quot;: &quot;Reader role.&quot;,\n        &quot;displayName&quot;: &quot;Reader&quot;,\n        &quot;id&quot;: &quot;41d9ba42-456e-4471-8946-24216e5f6c64&quot;,\n        &quot;isEnabled&quot;: true,\n        &quot;lang&quot;: null,\n        &quot;origin&quot;: &quot;Application&quot;,\n        &quot;value&quot;: &quot;Reader&quot;\n    }\n]\n</code></pre>\n<p>Configure the policy via RequireRole:</p>\n<pre><code>builder.Services.AddAuthorizationCore(options =&gt;\n{\n    options.AddPolicy(&quot;app-reader&quot;, policy =&gt; policy.RequireRole(&quot;Reader&quot;));\n});\n</code></pre>\n<p>And then use as per:</p>\n<pre><code>&lt;AuthorizeView Policy=&quot;app-reader&quot;&gt;\n    &lt;Authorized&gt;\n        &lt;p&gt;\n            The user is in the 'Reader' Role\n            and can see this content.\n        &lt;/p&gt;\n    &lt;/Authorized&gt;\n    &lt;NotAuthorized&gt;\n        &lt;p&gt;\n            The user is NOT in the 'Reader' role \n            and sees this content.\n        &lt;/p&gt;\n    &lt;/NotAuthorized&gt;\n&lt;/AuthorizeView&gt;\n</code></pre>\n<p>Or, as an attribute on a razor page:</p>\n<pre><code>@attribute [Authorize(Policy = &quot;app-reader&quot;)]\n</code></pre>\n"
+    }
+]

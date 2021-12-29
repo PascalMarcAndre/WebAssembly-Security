@@ -1,0 +1,21 @@
+[
+    {
+        "owner": {
+            "reputation": 235795,
+            "user_id": 60761,
+            "user_type": "registered",
+            "accept_rate": 91,
+            "profile_image": "https://www.gravatar.com/avatar/5bf43bae0431d8f4a062234b5e3a0cb9?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Henk Holterman",
+            "link": "https://stackoverflow.com/users/60761/henk-holterman"
+        },
+        "is_accepted": true,
+        "score": 1,
+        "last_activity_date": 1598361229,
+        "creation_date": 1598361229,
+        "answer_id": 63579655,
+        "question_id": 63579489,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>Use 2 DbContexts. The Identity tables (yours or ASP.NET) should not be part of the Shared or Client projects.</p>\n<blockquote>\n<p>I want to authorize users with [Authorize] property</p>\n</blockquote>\n<p>The real authorization happens on the server, nothing in the client is safe. Have you looked at the complete (JWT based) implementation in the template?</p>\n<blockquote>\n<ul>\n<li>Can't I just add my users table on the Shared and use Identity from that table? (Since it's just a single table of rather larger database)</li>\n</ul>\n</blockquote>\n<p>No, Identity needs the base class. And your client app doesn't need (and shouldn't see) most of its properties.</p>\n<blockquote>\n<ul>\n<li>Do I need two databases for this? One for Identity, one for rest of the application?</li>\n</ul>\n</blockquote>\n<p>That is the best way. Note that you can have 2 DbContexts for 1 physical Db.</p>\n<p>Link to the User wit a simple UserId (no Nav property) when needed.</p>\n"
+    }
+]

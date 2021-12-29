@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 196,
+            "user_id": 15419298,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/2ff48691478ce41162c97f9b5323641a?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Cory Podojil",
+            "link": "https://stackoverflow.com/users/15419298/cory-podojil"
+        },
+        "is_accepted": false,
+        "score": 0,
+        "last_activity_date": 1616103684,
+        "creation_date": 1616103684,
+        "answer_id": 66699531,
+        "question_id": 66550092,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>Can you update the question with your <code>Startup.cs</code> file and all the Identity/Authentication configuration?</p>\n<p>Chances are you are not setting the Application Cookie which Identity Server will honor. Here's an example:</p>\n<pre class=\"lang-cs prettyprint-override\"><code>services.ConfigureApplicationCookie(options =&gt;\n{\n    options.Cookie.Name = &quot;MyAppCookie&quot;;\n    options.Cookie.HttpOnly = true;\n    options.Cookie.SameSite = SameSiteMode.Strict;\n    options.ExpireTimeSpan = TimeSpan.FromDays(1);\n    options.Cookie.MaxAge = TimeSpan.FromDays(7);\n    options.SlidingExpiration = true;\n    options.LoginPath = &quot;/login&quot;;\n    options.LogoutPath = &quot;/logout&quot;;\n    options.AccessDeniedPath = &quot;/error&quot;;\n    options.ReturnUrlParameter = CookieAuthenticationDefaults.ReturnUrlParameter;\n});\n</code></pre>\n"
+    }
+]

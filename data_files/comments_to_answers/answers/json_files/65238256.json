@@ -1,0 +1,21 @@
+[
+    {
+        "owner": {
+            "reputation": 1914,
+            "user_id": 2936204,
+            "user_type": "registered",
+            "accept_rate": 83,
+            "profile_image": "https://www.gravatar.com/avatar/b8f5a181db5efda6b5d98bd511a6d908?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Neil W",
+            "link": "https://stackoverflow.com/users/2936204/neil-w"
+        },
+        "is_accepted": false,
+        "score": 0,
+        "last_activity_date": 1608253401,
+        "creation_date": 1608253401,
+        "answer_id": 65350462,
+        "question_id": 65238256,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<ol>\n<li><p>Add the AuthenticationStateProvider to the DI container in Program.cs in your WebAssembly.</p>\n</li>\n<li><p>Inject IServiceProvider into your Razor Component in the Razor Library.</p>\n</li>\n<li><p>Use IServiceProvider.GetService to get hold of the AuthenticationStateProvider.</p>\n</li>\n</ol>\n<p>The following link should help you finish the job.</p>\n<p><a href=\"https://stackoverflow.com/questions/62761351/how-to-use-authorization-namespace-in-a-shared-razor-class-library-project\">How to use Authorization namespace in a shared Razor Class Library Project?</a></p>\n"
+    }
+]

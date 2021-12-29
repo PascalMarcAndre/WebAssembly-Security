@@ -1,0 +1,21 @@
+[
+    {
+        "owner": {
+            "reputation": 1914,
+            "user_id": 2936204,
+            "user_type": "registered",
+            "accept_rate": 83,
+            "profile_image": "https://www.gravatar.com/avatar/b8f5a181db5efda6b5d98bd511a6d908?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Neil W",
+            "link": "https://stackoverflow.com/users/2936204/neil-w"
+        },
+        "is_accepted": false,
+        "score": 1,
+        "last_activity_date": 1609367231,
+        "creation_date": 1609367231,
+        "answer_id": 65514342,
+        "question_id": 65514178,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>They're 'hidden'.  Provided by Identity as part of the framework.  To get the pages into your project so that you can customise them:</p>\n<ol>\n<li>Right-Click Server Project</li>\n<li>Select Add &gt; New Scaffold Item</li>\n<li>Select &quot;Identity&quot;</li>\n</ol>\n<p>You'll then get a load of new assets loaded into your Server project.  Look for:</p>\n<p>Areas &gt; Identity &gt; Pages &gt; Account &gt; Login.cshtml</p>\n<p>Customise away!</p>\n"
+    }
+]

@@ -1,0 +1,22 @@
+[
+    {
+        "owner": {
+            "reputation": 270423,
+            "user_id": 155423,
+            "user_type": "registered",
+            "accept_rate": 90,
+            "profile_image": "https://www.gravatar.com/avatar/419218774d04a581476ea1887a0921e0?s=128&d=identicon&r=PG",
+            "display_name": "Shepmaster",
+            "link": "https://stackoverflow.com/users/155423/shepmaster"
+        },
+        "is_accepted": true,
+        "score": 6,
+        "last_activity_date": 1527449945,
+        "last_edit_date": 1527449945,
+        "creation_date": 1526679613,
+        "answer_id": 50419599,
+        "question_id": 50415623,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>It's basically impossible to debug things without access to a debugger or the ability to print out messages. Because of this, I ported your code to use <a href=\"https://github.com/rustwasm/wasm-bindgen\" rel=\"nofollow noreferrer\">wasm-bindgen</a>, purely for the ability to access the console from inside Rust code:</p>\n\n<pre><code>#![feature(proc_macro, wasm_custom_section, wasm_import_module)]\n\nextern crate wasm_bindgen;\nextern crate image;\n\nuse wasm_bindgen::prelude::*;\nuse std::mem;\n\npub mod console {\n    use wasm_bindgen::prelude::*;\n\n    #[wasm_bindgen]\n    extern {\n        #[wasm_bindgen(js_namespace = console)]\n        pub fn log(s: &amp;str);\n    }\n}\n\n#[wasm_bindgen]\npub fn alloc(len: usize) -&gt; *mut u8 {\n    let mut buf = Vec::with_capacity(len);\n    let ptr = buf.as_mut_ptr();\n    mem::forget(buf);\n    ptr\n}\n\n#[wasm_bindgen]\npub fn read_img(ptr: *mut u8, len: usize) {\n    let img = unsafe { Vec::from_raw_parts(ptr, len, len) };\n\n    if let Err(e) = image::load_from_memory(&amp;img) {\n        console::log(&amp;e.to_string());\n    }\n}\n</code></pre>\n\n<p>The updated JavaScript:</p>\n\n<pre><code>const js = import(\"./imaj_bg\");\n\nasync function loadImgIntoMem(img, { alloc, memory }) {\n  const resp = await fetch(img);\n  const buf = await resp.arrayBuffer();\n\n  const len = buf.byteLength;\n  const ptr = alloc(len);\n\n  const imgArray = new Uint8Array(memory.buffer, ptr, len);    \n  imgArray.set(new Uint8Array(buf));\n\n  return { ptr, len };\n}\n\nasync function go(js) {\n  const { ptr, len } = await loadImgIntoMem('cat.jpg', js);\n  js.read_img(ptr, len);\n};\n\njs.then(go);\n</code></pre>\n\n<p>Building and serving the code:</p>\n\n<pre class=\"lang-none prettyprint-override\"><code>$ cargo build --target wasm32-unknown-unknown --release\n$ wasm-bindgen target/wasm32-unknown-unknown/release/imaj.wasm --out-dir=.\n$ yarn serve\n</code></pre>\n\n<p>Accessing the page and reviewing the console log shows this anticlimactic message:</p>\n\n<pre class=\"lang-none prettyprint-override\"><code>operation not supported on wasm yet\n</code></pre>\n\n<p>The truth is that there's large parts of the Rust standard library that don't exist yet in WebAssembly. Many of these are stubbed out to return this error.</p>\n\n<p>I don't know exactly which platform support that is missing for your code. The most obvious one is threading, required by the <code>jpeg_rayon</code> and <code>hdr</code> feature, but turning off all of image's features except <code>jpeg</code> still reports same error. It's likely there's something else needed.</p>\n\n<p>However, it does seem to be specific to a given image codec. If you try the same code but load a PNG image, it's successful:</p>\n\n<pre><code>pub fn read_img(ptr: *mut u8, len: usize) {\n    let img = unsafe { Vec::from_raw_parts(ptr, len, len) };\n\n    let img = match image::load_from_memory(&amp;img) {\n        Ok(i) =&gt; i,\n        Err(e) =&gt; {\n            console::log(&amp;e.to_string());\n            return;\n        }\n    };\n\n    console::log(&amp;format!(\"{:?}\", img.to_rgba()));\n}\n</code></pre>\n\n<pre class=\"lang-none prettyprint-override\"><code>ImageBuffer { width: 305, height: 314, _phantom: PhantomData, data: [255, 255, 255, 0 /* remaining pixels skipped */\n</code></pre>\n\n<p>This indicates that the JPEG code does not yet work with WASM. A given codec may or may not work yet; it's probably best to file issues with the upstream maintainers.</p>\n"
+    }
+]

@@ -1,0 +1,21 @@
+[
+    {
+        "owner": {
+            "reputation": 8928,
+            "user_id": 41403,
+            "user_type": "registered",
+            "accept_rate": 88,
+            "profile_image": "https://www.gravatar.com/avatar/476b1c3cf22e774b835403adc9af6a59?s=128&d=identicon&r=PG",
+            "display_name": "Quango",
+            "link": "https://stackoverflow.com/users/41403/quango"
+        },
+        "is_accepted": false,
+        "score": 1,
+        "last_activity_date": 1590748690,
+        "creation_date": 1590748690,
+        "answer_id": 62084031,
+        "question_id": 62069721,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>When you create a Blazor application using Identity with local user accounts, it defaults to using Entity Framework and Microsoft SQL Server, specifically SQLexpress on your development machine. If you check <code>Startup.cs</code> you should see:</p>\n\n<pre class=\"lang-cs prettyprint-override\"><code>   services.AddDbContext&lt;ApplicationDbContext&gt;(options =&gt;\n       options.UseSqlServer(\n           Configuration.GetConnectionString(\"DefaultConnection\")));\n</code></pre>\n\n<p>As your hosting service is providing MySql, that's not going to work, so you need to replace this. It makes sense to remove SqlServer from your template and switch to using MySql on your development machine so the two use the same code.</p>\n\n<p>When you run locally the connection string used comes from <code>appsettings.json</code>. When you publish, if there is a file called <code>appsettings.Production.json</code> any settings in here will be used instead, so you can put the connection string to connect to the hosted MySQL database in there.</p>\n\n<p>I'm not an expert on setting up MySQL so I'd suggest you look at <a href=\"https://medium.com/@cptullio/net-core-3-blazor-app-and-security-with-identity-and-mysql-61b12dc7523\" rel=\"nofollow noreferrer\">\".NET Core 3 \u2014 Blazor App and Security with Identity and MySql\"</a> which should help in the process.</p>\n"
+    }
+]

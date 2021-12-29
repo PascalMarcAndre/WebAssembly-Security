@@ -1,0 +1,38 @@
+[
+    {
+        "owner": {
+            "reputation": 336,
+            "user_id": 10540286,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/799f5c7fed12571229b69dfffade5793?s=128&d=identicon&r=PG",
+            "display_name": "CodeFromItaly",
+            "link": "https://stackoverflow.com/users/10540286/codefromitaly"
+        },
+        "is_accepted": true,
+        "score": 1,
+        "last_activity_date": 1597391104,
+        "creation_date": 1597391104,
+        "answer_id": 63408607,
+        "question_id": 63371014,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>I solved the issue by using hosting my application into Azure.</p>\n<p>I think that I had problems with the autosigned certificate.\nMoreover some features were missing from my Windows feature windows.</p>\n"
+    },
+    {
+        "owner": {
+            "reputation": 1299,
+            "user_id": 13336642,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/44c1327968933c572dad6f1cac04ada8?s=128&d=identicon&r=PG&f=1",
+            "display_name": "samwu",
+            "link": "https://stackoverflow.com/users/13336642/samwu"
+        },
+        "is_accepted": false,
+        "score": 2,
+        "last_activity_date": 1597312670,
+        "creation_date": 1597312670,
+        "answer_id": 63392624,
+        "question_id": 63371014,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>You can try the following steps to publish an Blazor WebAssembly App on iis. I tested it can work normally on my pc.</p>\n<p>To publish blazor app in iis first make sure you installed below iis feature.\n<a href=\"https://i.stack.imgur.com/HSg6M.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/HSg6M.png\" alt=\"enter image description here\" /></a></p>\n<ul>\n<li>.NET Core hosting bundle</li>\n<li>ASP.NET Core Runtime</li>\n</ul>\n<p>Download and Install the Runtime and Hosting bundle as per your version. after installing hosting bundles do not forget to restart the machine.</p>\n<p>Now take a look at the Solution Explorer tab, which is located on the left side of the screen. Right-click on Server project of the solution, which is BlazorDDL.Server. Click on Publish.\n<a href=\"https://i.stack.imgur.com/8zsN6.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/8zsN6.png\" alt=\"enter image description here\" /></a></p>\n<p>You will see a new screen. In the left menu, click on Folder. Choose the folder where you want your Blazor application to be published to.Click on Publish. If there is no error, your application will be published successfully.</p>\n<p><a href=\"https://i.stack.imgur.com/onqW3.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/onqW3.png\" alt=\"enter image description here\" /></a></p>\n<p>Next, you will have to configure IIS.\n<a href=\"https://i.stack.imgur.com/M415c.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/M415c.png\" alt=\"enter image description here\" /></a></p>\n<p>And you have to configure Application Pool. You will find it the left panel. Double click on the pool ankisite.The Edit Application Pool window will appear. From the .NET CLR Version drop-down list, choose No Managed Code option.\n<a href=\"https://i.stack.imgur.com/ClvsZ.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/ClvsZ.png\" alt=\"enter image description here\" /></a></p>\n"
+    }
+]

@@ -1,0 +1,39 @@
+[
+    {
+        "owner": {
+            "reputation": 25737,
+            "user_id": 6152891,
+            "user_type": "registered",
+            "accept_rate": 75,
+            "profile_image": "https://www.gravatar.com/avatar/b45b7f89429f8766cdbf6c776c0a9d41?s=128&d=identicon&r=PG",
+            "display_name": "enet",
+            "link": "https://stackoverflow.com/users/6152891/enet"
+        },
+        "is_accepted": false,
+        "score": 2,
+        "last_activity_date": 1584122753,
+        "creation_date": 1584122753,
+        "answer_id": 60675317,
+        "question_id": 60674120,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>There are various ways to do it. The following one is sort of a service that implements the State pattern and the Notifier pattern:</p>\n\n<h2>State.cs</h2>\n\n<pre><code> public interface IState\n{\n    event Action Notify;\n    bool ShowEasterEggs { get; set; }\n}\npublic class State : IState\n{\n    public event Action Notify;\n\n    bool showEggs = false;\n    public bool ShowEasterEggs\n    {\n        get =&gt; showEggs;\n        set\n        {\n            if (showEggs != value)\n            {\n                showEggs = value;\n\n                if (Notify != null)\n                {\n                    Notify?.Invoke();\n                }\n            }\n        }\n    }\n\n}\n</code></pre>\n\n<h2>Child1.razor</h2>\n\n<pre><code> @inject IState State\n\n &lt;input type=\"checkbox\" @bind=\"State.ShowEasterEggs\" /&gt;Show Easter Eggs\n &lt;hr /&gt;\n\n\n @code {\n\n }\n</code></pre>\n\n<h2>Child2.razor</h2>\n\n<pre><code> @inject IState State\n @implements IDisposable\n\n@if (State.ShowEasterEggs)\n{\n    &lt;span&gt;EASTER EGGS SHOWN&lt;/span&gt;\n}\n\n&lt;hr /&gt;\n\n\n@code {\n   protected override void OnInitialized()\n  {\n       State.Notify += OnNotify;\n  }\n\n public void OnNotify()\n {\n    InvokeAsync(() =&gt;\n    {\n        StateHasChanged();\n    });\n}\n\npublic void Dispose()\n{\n    State.Notify -= OnNotify;\n}\n}\n</code></pre>\n\n<h2>Index.razor</h2>\n\n<pre><code> @page \"/\"\n\n &lt;Child1&gt;&lt;/Child1&gt;\n &lt;Child2&gt;&lt;/Child2&gt;\n\n\n\n @code { }\n</code></pre>\n\n<h2>Program.cs</h2>\n\n<pre><code>builder.Services.AddSingleton&lt;IState, State&gt;();\n</code></pre>\n\n<p>AS you've probably noticed, the State service store the state of the check box, and notify subscribers of changes to this state.  </p>\n\n<p>Hope this helps...</p>\n"
+    },
+    {
+        "owner": {
+            "reputation": 16712,
+            "user_id": 9119186,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/RFjFW.png?s=128&g=1",
+            "display_name": "Vencovsky",
+            "link": "https://stackoverflow.com/users/9119186/vencovsky"
+        },
+        "is_accepted": true,
+        "score": 1,
+        "last_activity_date": 1584117534,
+        "creation_date": 1584117534,
+        "answer_id": 60674202,
+        "question_id": 60674120,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>You need to use <a href=\"https://docs.microsoft.com/en-us/aspnet/core/blazor/components?view=aspnetcore-3.1#cascading-values-and-parameters\" rel=\"nofollow noreferrer\">Cascading values and parameters</a></p>\n\n<p>You would need to have a <code>CascadingValue</code> component that is parent of any component that will react to the changes.</p>\n\n<p><code>CascadingValue</code> will receive a property called <code>Value</code> that will hold the value you want to the children to see (<code>State</code>).</p>\n\n<p>And you will get that property in your child components and pass an attribute <code>CascadingParameter</code> to a property with the same name you passed in <code>CascadingValue</code>'s <code>Value</code> attribute.</p>\n\n<p>e.g. from the docs</p>\n\n<p>The parent</p>\n\n<pre><code>@inherits LayoutComponentBase\n@using BlazorSample.UIThemeClasses\n\n@inject IState State @* Injecting the State *@\n\n&lt;div class=\"container-fluid\"&gt;\n    &lt;div class=\"row\"&gt;\n        &lt;div class=\"col-sm-3\"&gt;\n            &lt;NavMenu /&gt;\n        &lt;/div&gt;\n        &lt;div class=\"col-sm-9\"&gt;\n            &lt;CascadingValue Value=\"State\"&gt; @* Passing State as a Cascading Value*@\n                &lt;div class=\"content px-4\"&gt;\n                    @Body\n                &lt;/div&gt;\n            &lt;/CascadingValue&gt;\n        &lt;/div&gt;\n    &lt;/div&gt;\n&lt;/div&gt;\n</code></pre>\n\n<p>Any child component</p>\n\n<pre><code>&lt;input type=\"checkbox\" @bind=\"State.ShowEasterEggs\"/&gt;Show Easter Eggs\n\n@code {\n\n    // Getting the Cascading Value as a parameter\n    [CascadingParameter]\n    protected State State { get; set; }\n\n}\n</code></pre>\n"
+    }
+]

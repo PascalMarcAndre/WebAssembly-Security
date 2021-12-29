@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 10961,
+            "user_id": 10521739,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/6459b077561be67082b7c27faed22fb2?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Allen Wu",
+            "link": "https://stackoverflow.com/users/10521739/allen-wu"
+        },
+        "is_accepted": false,
+        "score": 1,
+        "last_activity_date": 1610503847,
+        "creation_date": 1610503847,
+        "answer_id": 65694725,
+        "question_id": 65693124,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>Azure AD B2C receives an access token (idp_access_token) from the identity provider. Azure AD B2C uses that token to retrieve information about the user. See details <a href=\"https://docs.microsoft.com/en-us/azure/active-directory-b2c/idp-pass-through-user-flow?pivots=b2c-user-flow\" rel=\"nofollow noreferrer\">here</a>.</p>\n<p>No matter whether <strong>idp_access_token</strong> claim is a valid JWT, it cannot be used to access Microsoft Graph or other additional scopes. As the document has stated, it is for retrieving information about the user. Usually the embedded IdP access token is used to call the services that the IdP hosts. But Microsoft Graph data is hosted in Azure AD, not Microsoft Account side.</p>\n<p>Currently, if you want to call Microsoft Graph API for B2C tenant, you have to follow Azure AD Authentication protocols. For example, <a href=\"https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-oauth2-auth-code-flow\" rel=\"nofollow noreferrer\">OAuth 2.0 authorization code flow</a>.</p>\n<p>If you want to call you own API protected by B2C, you should choose Azure B2C Authentication protocols. For example, <a href=\"https://docs.microsoft.com/en-us/azure/active-directory-b2c/authorization-code-flow\" rel=\"nofollow noreferrer\">OAuth 2.0 authorization code flow in Azure Active Directory B2C</a>.</p>\n"
+    }
+]

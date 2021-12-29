@@ -1,0 +1,21 @@
+[
+    {
+        "owner": {
+            "reputation": 1200,
+            "user_id": 4603507,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/b98e667a16bc113e946a343dfa84de4c?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Olsonist",
+            "link": "https://stackoverflow.com/users/4603507/olsonist"
+        },
+        "is_accepted": false,
+        "score": 5,
+        "last_activity_date": 1610495659,
+        "last_edit_date": 1610495659,
+        "creation_date": 1610300957,
+        "answer_id": 65656496,
+        "question_id": 65655125,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p><em>IEEE 754-2008</em> is a requirement for WebAssembly and <em>sqrt</em> is a requirement for <em>IEEE 754-2008</em> while <em>sin</em>, <em>cos</em>, ... are not requirements for <em>IEEE 754-2008</em>. They are <a href=\"https://en.wikipedia.org/wiki/IEEE_754\" rel=\"nofollow noreferrer\">recommended</a> but not required.</p>\n"
+    }
+]

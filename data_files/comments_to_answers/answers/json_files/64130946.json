@@ -1,0 +1,21 @@
+[
+    {
+        "owner": {
+            "reputation": 353,
+            "user_id": 7377950,
+            "user_type": "registered",
+            "accept_rate": 100,
+            "profile_image": "https://i.stack.imgur.com/EcQkN.jpg?s=128&g=1",
+            "display_name": "everywill",
+            "link": "https://stackoverflow.com/users/7377950/everywill"
+        },
+        "is_accepted": false,
+        "score": 0,
+        "last_activity_date": 1619406341,
+        "creation_date": 1619406341,
+        "answer_id": 67260339,
+        "question_id": 64130946,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>In Module's locateFile, you should return the correct path for MyModule.wasm and MyModule.worker.js.\nBesides, In Module's mainScriptUrlOrBlob, you should assign the path for MyModule.js.\nThe mainScriptUrlOrBlob is used in worker for loading the wasm.</p>\n"
+    }
+]

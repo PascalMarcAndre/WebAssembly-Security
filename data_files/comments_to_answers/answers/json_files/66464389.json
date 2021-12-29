@@ -1,0 +1,21 @@
+[
+    {
+        "owner": {
+            "reputation": 522,
+            "user_id": 881481,
+            "user_type": "registered",
+            "accept_rate": 55,
+            "profile_image": "https://www.gravatar.com/avatar/1d867273499ce1dc2bc441335973cd58?s=128&d=identicon&r=PG",
+            "display_name": "Logan R. Kearsley",
+            "link": "https://stackoverflow.com/users/881481/logan-r-kearsley"
+        },
+        "is_accepted": false,
+        "score": 1,
+        "last_activity_date": 1614875508,
+        "creation_date": 1614875508,
+        "answer_id": 66479165,
+        "question_id": 66464389,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>Well, I figured it out. It all comes down to this expression:</p>\n<pre><code>(i32.rotl (local.get $r) (i32.load (local.get $a)))\n</code></pre>\n<p>Being backwards. Turns out the arguments go in the other order! Changing it to this:</p>\n<pre><code>(i32.rotl (i32.load (local.get $a)) (local.get $r))\n</code></pre>\n<p>makes everything work.</p>\n"
+    }
+]

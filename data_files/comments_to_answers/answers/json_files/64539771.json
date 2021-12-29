@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 196,
+            "user_id": 15419298,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/2ff48691478ce41162c97f9b5323641a?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Cory Podojil",
+            "link": "https://stackoverflow.com/users/15419298/cory-podojil"
+        },
+        "is_accepted": true,
+        "score": 0,
+        "last_activity_date": 1616028801,
+        "creation_date": 1616028801,
+        "answer_id": 66683340,
+        "question_id": 64539771,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>You don't have to! :) The question is though, do you want the entire app to be secure, or just a couple pages?</p>\n<p>Personally, I prefer injecting <code>@inject AuthenticationStateProvider AuthenticationStateProvider</code> and then getting the auth state using <code>GetAuthenticationStateAsync();</code> inside of <code>OnInitializedAsync()</code>. Example:</p>\n<pre class=\"lang-cs prettyprint-override\"><code>protected override async Task OnInitializedAsync()\n{\n    try\n    {\n        var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();\n        if(authState.User.Identity.IsAuthenticated)\n            UserName = $&quot;Hi, {authState.User.Claims.FirstOrDefault(x =&gt; x.Type == &quot;display_name&quot;)?.Value}!&quot;;\n    }\n    catch (Exception ex)\n    {\n        Logger.LogError($&quot;Failed to initialize menu. Error: {ex}&quot;);\n    }\n}\n</code></pre>\n<p>You can get away with using <code>&lt;AuthorizeView /&gt;</code> components to handle rendering content for authenticated/authorized users. Example from my own app:</p>\n<pre class=\"lang-html prettyprint-override\"><code>&lt;AuthorizeView&gt;\n    &lt;Authorized&gt;\n        &lt;CascadingValue Name=&quot;DeviceType&quot; IsFixed=&quot;true&quot; Value=&quot;DeviceType&quot;&gt;\n            &lt;NavMenu /&gt;\n        &lt;/CascadingValue&gt;\n    &lt;/Authorized&gt;\n&lt;/AuthorizeView&gt;\n</code></pre>\n<p>I use this to only render my navigation if the current user is logged in. If not, no menu.</p>\n"
+    }
+]

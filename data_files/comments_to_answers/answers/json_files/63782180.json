@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 11,
+            "user_id": 14137435,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/0bce84d0e328be7019a009e05f5ee650?s=128&d=identicon&r=PG&f=1",
+            "display_name": "jfverb",
+            "link": "https://stackoverflow.com/users/14137435/jfverb"
+        },
+        "is_accepted": false,
+        "score": 0,
+        "last_activity_date": 1599501329,
+        "creation_date": 1599501329,
+        "answer_id": 63782235,
+        "question_id": 63782180,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>You could look at these posts, they helped me: <a href=\"https://chrissainty.com/securing-your-blazor-apps-authentication-with-clientside-blazor-using-webapi-aspnet-core-identity/\" rel=\"nofollow noreferrer\">https://chrissainty.com/securing-your-blazor-apps-authentication-with-clientside-blazor-using-webapi-aspnet-core-identity/</a></p>\n"
+    }
+]

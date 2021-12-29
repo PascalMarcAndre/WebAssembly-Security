@@ -1,0 +1,21 @@
+[
+    {
+        "owner": {
+            "reputation": 93,
+            "user_id": 959478,
+            "user_type": "registered",
+            "accept_rate": 25,
+            "profile_image": "https://graph.facebook.com/763530815/picture?type=large",
+            "display_name": "Cristovao Morgado",
+            "link": "https://stackoverflow.com/users/959478/cristovao-morgado"
+        },
+        "is_accepted": false,
+        "score": 1,
+        "last_activity_date": 1606947018,
+        "creation_date": 1606947018,
+        "answer_id": 65116891,
+        "question_id": 64947538,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>In this model when you scaffold the Identity pages you'll get the vanilla design.\nThe thing is that as you noticed you're going from the blazor to a &quot;razor&quot; site .</p>\n<p>What I've done is adapt the design to those pages.</p>\n<p>The other way is to have an Identity server independent and implement a fully SPA for login and user management.</p>\n"
+    }
+]

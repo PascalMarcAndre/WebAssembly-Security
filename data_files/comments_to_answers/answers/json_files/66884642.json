@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 1,
+            "user_id": 15520578,
+            "user_type": "registered",
+            "profile_image": "https://lh3.googleusercontent.com/-xM8uacSFZtA/AAAAAAAAAAI/AAAAAAAAAAA/AMZuucmkeoJeZ-JJgMPF3BdGhPg3zI-rGw/s96-c/photo.jpg?sz=128",
+            "display_name": "Karunanidhi Kumar",
+            "link": "https://stackoverflow.com/users/15520578/karunanidhi-kumar"
+        },
+        "is_accepted": false,
+        "score": 0,
+        "last_activity_date": 1617431683,
+        "creation_date": 1617431683,
+        "answer_id": 66928382,
+        "question_id": 66884642,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>Found the cause of the issue, IIS setting was missed in one of the servers.\nWe need to set &quot;Load User Profile&quot; to &quot;true&quot; in the application pool of the Identity Server. After making that application works without issues.</p>\n"
+    }
+]

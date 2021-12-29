@@ -1,0 +1,40 @@
+[
+    {
+        "owner": {
+            "reputation": 2867,
+            "user_id": 2658697,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/1d9486e90f5e906e38a06aa76bf5fa0b?s=128&d=identicon&r=PG",
+            "display_name": "Mister Magoo",
+            "link": "https://stackoverflow.com/users/2658697/mister-magoo"
+        },
+        "is_accepted": false,
+        "score": 0,
+        "last_activity_date": 1595241648,
+        "creation_date": 1595241648,
+        "answer_id": 62993633,
+        "question_id": 62991035,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>You are not using the Interface <code>ILocalStorageServer</code> in your constructor, it should be</p>\n<pre class=\"lang-cs prettyprint-override\"><code>public class StorageManagement\n{\n    private readonly ILocalStorageService LocalStorage;\n    \n    public StorageManagement(ILocalStorageService localStorage)\n    {\n        LocalStorage = localStorage;\n    }\n}\n</code></pre>\n"
+    },
+    {
+        "owner": {
+            "reputation": 12718,
+            "user_id": 2940908,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://i.stack.imgur.com/E79WU.jpg?s=128&g=1",
+            "display_name": "agua from mars",
+            "link": "https://stackoverflow.com/users/2940908/agua-from-mars"
+        },
+        "is_accepted": true,
+        "score": 0,
+        "last_activity_date": 1595237694,
+        "last_edit_date": 1595237694,
+        "creation_date": 1595232574,
+        "answer_id": 62991156,
+        "question_id": 62991035,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>Just <code>builder.Services.AddBlazoredLocalStorage();</code> or <code>builder.Services.AddBlazoredLocalStorage(config =&gt; config.JsonSerializerOptions.WriteIndented = true);</code> as it's explain in <a href=\"https://github.com/Blazored/LocalStorage/blob/master/README.md\" rel=\"nofollow noreferrer\">README</a>.<br />\nThen <code>builder.Services.AddScoped&lt;StorageManagement&gt;();</code> or <code>builder.Services.AddScoped(p =&gt; new StorageManagement(p.GetRequiredSerice&lt;ILocalStorageService&gt;()));</code></p>\n<p>But your service should take a <code>ILocalStorageService</code> not a <code>LocalStorageService</code> instance :</p>\n<pre class=\"lang-cs prettyprint-override\"><code>public class StorageManagement\n{\n    public StorageManagement(ILocalStorageService localStorage)\n    {\n        //How to initialize it here?\n    }\n}\n</code></pre>\n"
+    }
+]

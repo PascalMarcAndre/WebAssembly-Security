@@ -1,0 +1,21 @@
+[
+    {
+        "owner": {
+            "reputation": 31239,
+            "user_id": 1097780,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/a8f01ad795c29c3d05ad26ee47ea6069?s=128&d=identicon&r=PG",
+            "display_name": "Andreas Rossberg",
+            "link": "https://stackoverflow.com/users/1097780/andreas-rossberg"
+        },
+        "is_accepted": false,
+        "score": 2,
+        "last_activity_date": 1574066406,
+        "last_edit_date": 1574066406,
+        "creation_date": 1574064616,
+        "answer_id": 58910307,
+        "question_id": 58908855,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>Due to its overly dynamic nature with features like getters/setters, proxies, property addition/deletion, mutable global, user-defined implicit conversions, and other features that can cause \"action from the distance\", almost <em>every</em> language construct in JavaScript can lead to the invocation of arbitrary user code. Even the statement <code>x;</code> can. The only construct that is guaranteed not to is <code>===</code>.</p>\n\n<p>For example, <code>collection2[key] = -1</code>, could invoke a setter on <code>collection2</code> or one of its prototypes (including <code>Array.prototype</code> or <code>Object.prototype</code>), it could invoke a getter on the global object if <code>collection2</code> or <code>key</code> isn't bound locally, it performs string conversion on <code>key</code>, which in turn might invoke <code>toString</code> or <code>valueOf</code> on it, which in turn might be defined by the user or invoke getters. And so on.</p>\n\n<p>As a consequence, it is impossible to guarantee freedom from errors for almost any function but utterly trivial ones like</p>\n\n<pre><code>function f() {}\nfunction g(x, y) { x === y }\n</code></pre>\n\n<p>Since you asked about Wasm, that has no such implicit features, every call is explicit, so it is <em>way</em> easier to reason about.</p>\n"
+    }
+]

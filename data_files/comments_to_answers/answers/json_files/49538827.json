@@ -1,0 +1,21 @@
+[
+    {
+        "owner": {
+            "reputation": 64423,
+            "user_id": 249933,
+            "user_type": "registered",
+            "accept_rate": 81,
+            "profile_image": "https://www.gravatar.com/avatar/458f2e0d08d4114f8b323798cfea141d?s=128&d=identicon&r=PG",
+            "display_name": "ColinE",
+            "link": "https://stackoverflow.com/users/249933/coline"
+        },
+        "is_accepted": true,
+        "score": 8,
+        "last_activity_date": 1522257392,
+        "creation_date": 1522257392,
+        "answer_id": 49540541,
+        "question_id": 49538827,
+        "content_license": "CC BY-SA 3.0",
+        "body": "<p>How private is it? Not private at all. Your WebAssembly code is delivered over HTTP to the client's machine where it is executed. It is obfuscated a little, but hardly private.</p>\n\n<p>The code is delivered in a binary format, however using readily available tools, e.g. <code>wasm2wat</code>, this can easily be converted into a human readable text format. The text is a relatively low level language, but still quite readable. It will not protect your algorithms, it will simply take people a little longer to understand them.</p>\n\n<p>WebAssembly is not readily transformable back to higher level languages (e.g. C++), but this does not make your algorithm private.</p>\n"
+    }
+]

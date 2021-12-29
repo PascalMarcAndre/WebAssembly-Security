@@ -1,0 +1,21 @@
+[
+    {
+        "owner": {
+            "reputation": 1141,
+            "user_id": 2120273,
+            "user_type": "registered",
+            "accept_rate": 80,
+            "profile_image": "https://i.stack.imgur.com/MTl6N.png?s=128&g=1",
+            "display_name": "Kaine",
+            "link": "https://stackoverflow.com/users/2120273/kaine"
+        },
+        "is_accepted": false,
+        "score": 0,
+        "last_activity_date": 1615394887,
+        "creation_date": 1615394887,
+        "answer_id": 66569264,
+        "question_id": 66567628,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>There is an auth Cookie set by the Identity Server in Blazor Core Hosted. However, by default this is not used to authenticate MVC requests using the [Authorize] Attribute.</p>\n<p>You can set the [Authorize] attribute to use the Identity Server auth cookie by adding the Identity.Application scheme to the AuthenticationSchemes on the decorator:</p>\n<p>[Authorize(AuthenticationSchemes = &quot;Identity.Application&quot;)]</p>\n<p>Having done this the request will be authenticated.</p>\n<p>However, this method has meant getting the UserId slightly differntly in the MVC controller when compared to the Blazor AIP calls.</p>\n<p>In calls made from the HttpClient I get the UserId from the HttpContextAccessor</p>\n<pre><code>var userId = _httpContextAccessor.HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier)\n</code></pre>\n<p>This returns null when the request comes through the MVC controller and so I get the UserId via the UserManager instead:</p>\n<pre><code>           var userName = _httpContextAccessor?.HttpContext?.User?.Identity?.Name;\n           var user = await _userManager.FindByEmailAsync(userName);\n           var userId = theUser.Id;\n</code></pre>\n<p>This seems to work, but if there's a better way to do this I would be glad to hear it.</p>\n"
+    }
+]

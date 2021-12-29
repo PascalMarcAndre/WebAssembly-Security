@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 11,
+            "user_id": 14137435,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/0bce84d0e328be7019a009e05f5ee650?s=128&d=identicon&r=PG&f=1",
+            "display_name": "jfverb",
+            "link": "https://stackoverflow.com/users/14137435/jfverb"
+        },
+        "is_accepted": false,
+        "score": 0,
+        "last_activity_date": 1598711733,
+        "creation_date": 1598711733,
+        "answer_id": 63648136,
+        "question_id": 63647552,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>The controller action has a httpost attribute and you call it with a get(GetFromJsonAsync)? The attribute has to be HttpGet.</p>\n"
+    }
+]

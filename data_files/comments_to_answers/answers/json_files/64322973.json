@@ -1,0 +1,41 @@
+[
+    {
+        "owner": {
+            "reputation": 2135,
+            "user_id": 3960200,
+            "user_type": "registered",
+            "accept_rate": 41,
+            "profile_image": "https://graph.facebook.com/726296462/picture?type=large",
+            "display_name": "Etienne Charland",
+            "link": "https://stackoverflow.com/users/3960200/etienne-charland"
+        },
+        "is_accepted": false,
+        "score": 1,
+        "last_activity_date": 1602625006,
+        "last_edit_date": 1602625006,
+        "creation_date": 1602624574,
+        "answer_id": 64343431,
+        "question_id": 64322973,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>Here's a solution for single-page admin content: GatedContent</p>\n<p>It will show a login form, and after successful login, show the gated content.</p>\n<p><a href=\"https://stackoverflow.com/a/64343137/3960200\">SpinnerButton is defined here.</a></p>\n<pre><code>@using Microsoft.AspNetCore.Identity\n@using System.ComponentModel.DataAnnotations\n@inject NavigationManager navManager\n@inject SignInManager&lt;ApplicationUser&gt; signInManager\n@inject UserManager&lt;ApplicationUser&gt; userManager;\n\n@if (!LoggedIn)\n{\n&lt;EditForm Context=&quot;formContext&quot; class=&quot;form-signin&quot; OnValidSubmit=&quot;@SubmitAsync&quot; Model=&quot;this&quot;&gt;\n    &lt;DataAnnotationsValidator /&gt;\n\n    &lt;div style=&quot;margin-bottom: 1rem; margin-top: 1rem;&quot; class=&quot;row&quot;&gt;\n        &lt;Field For=&quot;@(() =&gt; Username)&quot; Width=&quot;4&quot; Required=&quot;true&quot;&gt;\n            &lt;RadzenTextBox @bind-Value=&quot;@Username&quot; class=&quot;form-control&quot; Style=&quot;margin-bottom: 0px;&quot; /&gt;\n        &lt;/Field&gt;\n    &lt;/div&gt;\n    &lt;div style=&quot;margin-bottom: 1rem&quot; class=&quot;row&quot;&gt;\n        &lt;Field For=&quot;@(() =&gt; Password)&quot; Width=&quot;4&quot; Required=&quot;true&quot;&gt;\n            &lt;RadzenPassword @bind-Value=&quot;@Password&quot; class=&quot;form-control&quot; /&gt;\n        &lt;/Field&gt;\n    &lt;/div&gt;\n\n    &lt;SpinnerButton @ref=&quot;ButtonRef&quot; style=&quot;width:150px&quot; Text=&quot;Login&quot; ButtonType=&quot;@((Radzen.ButtonType)ButtonType.Submit)&quot; ButtonStyle=&quot;@((Radzen.ButtonStyle)ButtonStyle.Primary)&quot; OnSubmit=&quot;LogInAsync&quot; /&gt;\n    @if (Error.HasValue())\n    {\n        &lt;div class=&quot;red&quot;&gt;@Error&lt;/div&gt;\n    }\n&lt;/EditForm&gt;\n}\nelse\n{\n    @ChildContent\n}\n@code {\n    public SpinnerButton? ButtonRef { get; set; }\n    public async Task SubmitAsync() =&gt; await ButtonRef!.FormSubmitAsync().ConfigureAwait(false);\n\n    [Required]\n    public string Username { get; set; } = string.Empty;\n\n    [Required]\n    public string Password { get; set; } = string.Empty;\n\n    string? Error { get; set; }\n    bool LoggedIn { get; set; }\n\n    [Parameter]\n    public RenderFragment? ChildContent { get; set; }\n\n    public async Task LogInAsync()\n    {\n        Error = null;\n        try\n        {\n            var user = await userManager.FindByNameAsync(Username).ConfigureAwait(false);\n            if (user != null)\n            {\n                var isAdmin = await userManager.IsInRoleAsync(user, ApplicationRole.Admin).ConfigureAwait(false);\n                if (isAdmin)\n                {\n                    var singInResult = await signInManager.CheckPasswordSignInAsync(user, Password, true).ConfigureAwait(false);\n                    if (singInResult.Succeeded)\n                    {\n                        LoggedIn = true;\n                    }\n                    else\n                    {\n                        Error = &quot;Invalid password&quot;;\n                    }\n                }\n                else\n                {\n                    Error = &quot;User is not Admin&quot;;\n                }\n            }\n            else\n            {\n                Error = &quot;Username not found&quot;;\n            }\n        }\n        catch (Exception ex)\n        {\n            Error = ex.Message;\n        }\n    }\n}\n</code></pre>\n<p>Use like this</p>\n<pre><code>&lt;GatedContent&gt;\n    This is an admin page.\n&lt;/GatedContent&gt;\n</code></pre>\n<p>Of course, this solution doesn't preserve the state after page reload, but it works for simple admin pages.</p>\n"
+    },
+    {
+        "owner": {
+            "reputation": 129,
+            "user_id": 8375468,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/5dc2d545590290f9e23aac8936a3a992?s=128&d=identicon&r=PG&f=1",
+            "display_name": "JoeGER94",
+            "link": "https://stackoverflow.com/users/8375468/joeger94"
+        },
+        "is_accepted": false,
+        "score": 0,
+        "last_activity_date": 1602600378,
+        "last_edit_date": 1602600378,
+        "creation_date": 1602599371,
+        "answer_id": 64337213,
+        "question_id": 64322973,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>My workaround is like this: I've created a SignInController like this</p>\n<pre><code>    public class SignInController : ControllerBase\n    {\n        private readonly SignInManager&lt;IdentityUser&gt; _signInManager;\n\n        public SignInController(SignInManager&lt;IdentityUser&gt; signInManager)\n        {\n            _signInManager = signInManager;\n        }\n\n        [HttpPost(&quot;/signin&quot;)]\n        public IActionResult Index([FromForm]string username, [FromForm]string password, [FromForm]string rememberMe)\n        {\n            bool.TryParse(rememberMe, out bool res);\n            var signInResult = _signInManager.PasswordSignInAsync(username, password, res, false);\n            if (signInResult.Result.Succeeded)\n            {\n                return Redirect(&quot;/&quot;);\n            }\n            return Redirect(&quot;/login/&quot;+ signInResult.Result.Succeeded);\n        }\n\n        [HttpPost(&quot;/signout&quot;)]\n        public async Task&lt;IActionResult&gt; Logout()\n        {\n            if (_signInManager.IsSignedIn(User))\n            {\n                await _signInManager.SignOutAsync();\n            }\n            return Redirect(&quot;/&quot;);\n        }\n    }\n\n</code></pre>\n<p>And I've a login.razor like this:</p>\n<pre><code>@page &quot;/login&quot;\n    &lt;form action=&quot;/signin&quot; method=&quot;post&quot;&gt;\n            &lt;div class=&quot;form-group&quot;&gt;\n                &lt;p&gt; Username &lt;/p&gt;\n                &lt;input id=&quot;username&quot; Name=&quot;username&quot; /&gt;\n            &lt;/div&gt;\n            &lt;div class=&quot;form-group&quot;&gt;\n                &lt;p&gt;password&lt;p/&gt;\n                &lt;input type=&quot;password&quot; id=&quot;password&quot; /&gt;\n            &lt;/div&gt;\n            &lt;div class=&quot;form-group&quot;&gt;\n                &lt;p&gt; remember me? &lt;p/&gt;\n                &lt;input type=&quot;checkbox&quot; id=&quot;rememberMe&quot; /&gt;\n            &lt;/div&gt;\n            &lt;button type=&quot;Submit&quot; Text=&quot;login&quot; /&gt;\n    &lt;/form&gt;\n</code></pre>\n<p>This issue is caused by the signInManager which is only working if you use HTTP/S requests. Otherwise, it will throw Exceptions. There are also some reports about that on the dotnet/aspcore.net Repo on GitHub.</p>\n<p>At the moment this is the only way (I know) to use it with blazor server.</p>\n"
+    }
+]

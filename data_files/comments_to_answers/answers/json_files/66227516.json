@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 1,
+            "user_id": 2260740,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/172a1d96f5c1dd33a1d7865c6c2a3c73?s=128&d=identicon&r=PG&f=1",
+            "display_name": "MhD hN",
+            "link": "https://stackoverflow.com/users/2260740/mhd-hn"
+        },
+        "is_accepted": false,
+        "score": 0,
+        "last_activity_date": 1613601978,
+        "creation_date": 1613601978,
+        "answer_id": 66251052,
+        "question_id": 66227516,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>By formating windows drive and installing windows and visual studio it finally worked.</p>\n"
+    }
+]

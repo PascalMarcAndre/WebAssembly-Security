@@ -1,0 +1,40 @@
+[
+    {
+        "owner": {
+            "reputation": 2754,
+            "user_id": 1621232,
+            "user_type": "registered",
+            "accept_rate": 74,
+            "profile_image": "https://www.gravatar.com/avatar/4ca2ea1416fa3dc15d1037e6502ac4da?s=128&d=identicon&r=PG",
+            "display_name": "Nicolas Marshall",
+            "link": "https://stackoverflow.com/users/1621232/nicolas-marshall"
+        },
+        "is_accepted": false,
+        "score": 0,
+        "last_activity_date": 1583262616,
+        "creation_date": 1583262616,
+        "answer_id": 60514035,
+        "question_id": 60499885,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>I ended up settling on either of three methods:</p>\n\n<ol>\n<li><p>@Tim's method (accepted answer): include the import in the class properties, and <code>await</code> at constructor time.</p>\n\n<p>But: there might be overhead associated with storing the import in each instance.</p></li>\n</ol>\n\n<hr>\n\n<ol start=\"2\">\n<li><code>await</code>ing in each method of the class to have the import defined there:</li>\n</ol>\n\n<pre class=\"lang-js prettyprint-override\"><code>export class Something {\n  static async from_X() {\n    const libEd = await loadLibProm();\n    return libEd.genFromX();\n  }\n\n  async do_Y() {\n    const libEd = await loadLibProm();\n    return libEd.doY();\n  }\n}\n</code></pre>\n\n<p>But: the class API is now all async and more awkward to use.</p>\n\n<hr>\n\n<ol start=\"3\">\n<li>Pre-loading the import at code start. And hoping the load is going to be finished when the class is called.</li>\n</ol>\n\n<pre class=\"lang-js prettyprint-override\"><code>let libEd: typeof import(\"../../.cache/ed25519wars/index.js\");\nasync function loadLibProm(): Promise&lt;\n  typeof import(\"../../.cache/ed25519wars/index.js\")\n&gt; {\n  libEd = await import(\"../../.cache/ed25519wars/index.js\");\n  return libEd;\n}\nloadLibProm(); // this somehow starts running the promise ?? wut ? Anyways that's what we want\n\nexport class Something {\n  static from_X() {\n    return libEd.genFromX();\n  }\n\n  do_Y() {\n    return libEd.doY();\n  }\n}\n</code></pre>\n\n<p>But: this needs better error handling for the case an instance of the class is created before the import is finished / after the import failed.</p>\n"
+    },
+    {
+        "owner": {
+            "reputation": 122,
+            "user_id": 12997127,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/2412c0383b51e04ff29afa9e36143d75?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Tim O&#39;Connell",
+            "link": "https://stackoverflow.com/users/12997127/tim-oconnell"
+        },
+        "is_accepted": true,
+        "score": 1,
+        "last_activity_date": 1583209667,
+        "last_edit_date": 1583209667,
+        "creation_date": 1583208516,
+        "answer_id": 60499942,
+        "question_id": 60499885,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>There's a couple of ways I would approach this:</p>\n\n<ol>\n<li><p>If the class doesn't need to be instantiated immediately, then I would await the library loading, then pass it to the class constructor. This is the cleanest way as the library is always defined within the class.</p></li>\n<li><p>If the class must be instantiated before fetching the library, then methods in the class must handle the situation when it is not defined (e.g. not loaded yet). You can then call something like <code>await myClassInstance.init()</code> to fetch the library. I typically provide a fallback for each method if the library is not loaded yet, perhaps it returns an empty string or a dummy UI.</p></li>\n</ol>\n\n<p>EDIT: adding TypeScript example for option 1</p>\n\n<pre><code>interface MyLibrary {\n  libraryMethod: () =&gt; void;\n}\n\nclass ExampleClass {\n  localLib: MyLibrary;\n\n  constructor(lib: MyLibrary) {\n    this.localLib = lib;\n  }\n\n  myClassMethod() {\n    this.localLib.libraryMethod();\n  }\n}\n\nasync function run() {\n  // first we fetch the remote library\n  const myLibrary: MyLibrary | undefined = await import('/lib.js');\n\n  // good practise to add some check here\n  if (!myLibrary) {\n    throw Error('failed to fetch myLib');\n  }\n\n  // then we create the class instance using the downloaded library\n  const myClassInstance = new ExampleClass(myLibrary);\n\n  // now we can call our class method which definitely has the remote library\n  myClassInstance.myClassMethod();\n}\n</code></pre>\n"
+    }
+]

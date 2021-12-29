@@ -1,0 +1,21 @@
+[
+    {
+        "owner": {
+            "reputation": 39251,
+            "user_id": 842935,
+            "user_type": "registered",
+            "accept_rate": 85,
+            "profile_image": "https://www.gravatar.com/avatar/2b3b9d4aa138cb30767b8b1a7a90f027?s=128&d=identicon&r=PG",
+            "display_name": "dani herrera",
+            "link": "https://stackoverflow.com/users/842935/dani-herrera"
+        },
+        "is_accepted": true,
+        "score": 0,
+        "last_activity_date": 1611737757,
+        "creation_date": 1611737757,
+        "answer_id": 65915761,
+        "question_id": 65915627,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>Quoting <a href=\"https://docs.microsoft.com/en-us/aspnet/core/blazor/components/css-isolation?view=aspnetcore-5.0#razor-class-library-rcl-support\" rel=\"nofollow noreferrer\">Razor class library (RCL) support</a> docs:</p>\n<blockquote>\n<p>When a Razor class library (RCL) provides isolated styles, the  tag's href attribute points to {STATIC WEB ASSET BASE PATH}/{ASSEMBLY NAME}.bundle.scp.css, where the placeholders are:</p>\n<ul>\n<li>{STATIC WEB ASSET BASE PATH}: The static web asset base path.</li>\n<li>{ASSEMBLY NAME}: The class library's assembly name.</li>\n</ul>\n<p>In the following example:</p>\n<ul>\n<li>The static web asset base path is _content/ClassLib.</li>\n<li>The class library's assembly name is ClassLib.</li>\n</ul>\n<p><code>&lt;link href=&quot;_content/ClassLib/ClassLib.bundle.scp.css&quot; rel=&quot;stylesheet&quot;&gt;</code></p>\n</blockquote>\n<p>In _Host page you should to add something like:</p>\n<pre><code>&lt;link href=&quot;_content/YourClassLib/YourClassLib.bundle.scp.css&quot; rel=&quot;stylesheet&quot;&gt;\n</code></pre>\n"
+    }
+]

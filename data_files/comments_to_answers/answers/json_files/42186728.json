@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 31239,
+            "user_id": 1097780,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/a8f01ad795c29c3d05ad26ee47ea6069?s=128&d=identicon&r=PG",
+            "display_name": "Andreas Rossberg",
+            "link": "https://stackoverflow.com/users/1097780/andreas-rossberg"
+        },
+        "is_accepted": true,
+        "score": 6,
+        "last_activity_date": 1486901356,
+        "creation_date": 1486901356,
+        "answer_id": 42187365,
+        "question_id": 42186728,
+        "content_license": "CC BY-SA 3.0",
+        "body": "<p>Other than performance, Wasm does not provide any new capability that the Web doesn't already have. You will be able to see what Wasm modules are loaded, you will be able to see what's being called, and you can inspect and step through Wasm code in text form -- and arguably, Wasm code is no more obscure than e.g. minified asm.js code. Moreover, Wasm is only able to interact with the browser and the web page by calling into JavaScript.</p>\n\n<p>So, no, web sites won't be able to use it to do anything behind your back other than in ways they can use already.</p>\n"
+    }
+]

@@ -1,0 +1,57 @@
+[
+    {
+        "owner": {
+            "reputation": 1,
+            "user_id": 13259718,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/3d929f0ee668666c8789576f6e5fe3be?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Steve Pearson",
+            "link": "https://stackoverflow.com/users/13259718/steve-pearson"
+        },
+        "is_accepted": false,
+        "score": 0,
+        "last_activity_date": 1591606210,
+        "creation_date": 1591606210,
+        "answer_id": 62258316,
+        "question_id": 61845477,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>Had the same problem and switched out to Azure B2C which again resolved the issue.  Appears to be a problem with the auth library when linking to AWS Cognito as the auth provider.</p>\n\n<p>Issues raised with MS - \n<a href=\"https://github.com/dotnet/aspnetcore/issues/22651\" rel=\"nofollow noreferrer\">https://github.com/dotnet/aspnetcore/issues/22651</a></p>\n"
+    },
+    {
+        "owner": {
+            "reputation": 33,
+            "user_id": 7979810,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/43ee3fccebd7cae5e3ee5171c0c91566?s=128&d=identicon&r=PG&f=1",
+            "display_name": "matlodej",
+            "link": "https://stackoverflow.com/users/7979810/matlodej"
+        },
+        "is_accepted": false,
+        "score": 1,
+        "last_activity_date": 1590360551,
+        "creation_date": 1590360551,
+        "answer_id": 61993370,
+        "question_id": 61845477,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>I ended up switching from Cognito to Auth0 and upgrading from Api Gateway's RestApi to HttpApi, which includes built in JWT authorizer, and I am very happy with the change. Cognito just had too many problems in the end, but if someone is determined to get it to work check @aguafrommars's comments under the accepted answer.</p>\n"
+    },
+    {
+        "owner": {
+            "reputation": 12718,
+            "user_id": 2940908,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://i.stack.imgur.com/E79WU.jpg?s=128&g=1",
+            "display_name": "agua from mars",
+            "link": "https://stackoverflow.com/users/2940908/agua-from-mars"
+        },
+        "is_accepted": true,
+        "score": 0,
+        "last_activity_date": 1589702896,
+        "creation_date": 1589702896,
+        "answer_id": 61848770,
+        "question_id": 61845477,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>Response 1:</p>\n\n<p>While the authorizing message is displayed, the app check for a valid authentication and set up auto renew token iframe. If you look at the network log on your browser  you'll see requests made by this time.<br>\nWhen the app run in release it's faster.</p>\n\n<p>Response 2:</p>\n\n<p>You need to add authorization on pages you want to protect by adding the <a href=\"https://docs.microsoft.com/en-us/aspnet/core/security/blazor/?view=aspnetcore-3.1#authorize-attribute\" rel=\"nofollow noreferrer\"><code>Authorize</code> attribute</a>.</p>\n\n<pre class=\"lang-cs prettyprint-override\"><code>@page \"/\"\n@attribute [Authorize]\n\n</code></pre>\n"
+    }
+]

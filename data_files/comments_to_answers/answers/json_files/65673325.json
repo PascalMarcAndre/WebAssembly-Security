@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 3072,
+            "user_id": 3211046,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/77407732f18133962067fe5d6111405a?s=128&d=identicon&r=PG&f=1",
+            "display_name": "chrisguttandin",
+            "link": "https://stackoverflow.com/users/3211046/chrisguttandin"
+        },
+        "is_accepted": true,
+        "score": 1,
+        "last_activity_date": 1610402228,
+        "creation_date": 1610402228,
+        "answer_id": 65675110,
+        "question_id": 65673325,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>Passing an instantiated WASM module to a worker (or an AudioWorklet) isn't possible. It only works when the WASM module is compiled but not yet instantiated. There is an example on MDN which shows how to do that with a regular worker but it works the same way when using the <code>processorOptions</code> of an <code>AudioWorkletProcessor</code>.</p>\n<p><a href=\"https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/Module#sending_a_compiled_module_to_a_worker\" rel=\"nofollow noreferrer\">https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/Module#sending_a_compiled_module_to_a_worker</a></p>\n<p>The idea is to use <code>compileStreaming()</code> on the main thread and <code>instantiate()</code> in the worker.</p>\n<p>On the other hand it's also possible to import everything directly into an AudioWorklet as shown in this example. However, I would not recommend doing that since compiling the code on the audio thread may result in an audible glitch.</p>\n<p><a href=\"https://googlechromelabs.github.io/web-audio-samples/audio-worklet/design-pattern/wasm/\" rel=\"nofollow noreferrer\">https://googlechromelabs.github.io/web-audio-samples/audio-worklet/design-pattern/wasm/</a></p>\n"
+    }
+]

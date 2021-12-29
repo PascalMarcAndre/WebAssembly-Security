@@ -1,0 +1,21 @@
+[
+    {
+        "owner": {
+            "reputation": 765,
+            "user_id": 3034366,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/05333214b131564ad1d3e56bcb745cd5?s=128&d=identicon&r=PG",
+            "display_name": "Craig Brown",
+            "link": "https://stackoverflow.com/users/3034366/craig-brown"
+        },
+        "is_accepted": true,
+        "score": 0,
+        "last_activity_date": 1600944723,
+        "last_edit_date": 1600944723,
+        "creation_date": 1600943666,
+        "answer_id": 64044618,
+        "question_id": 64016688,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>The answer was really simple. Actually, the <code>RequireAuthorization()</code> call does work. If you're already logged in to B2C you won't be redirected to the login page first (and, in Edge at least, it doesn't even visibly redirect to B2C first before redirecting back to the app, hence the confusion). But if I load the page in a private browser window I am redirected to the B2C login page - so it must be working as intended.</p>\n<p>For future reference, the answer to the title question is:</p>\n<ol>\n<li>Add auth to the ASP.NET Core Server app if you haven't already.</li>\n<li>In the Server app, add a project reference to the Blazor app.</li>\n<li>Add the following line to the <code>UseEndpoints</code> call inside the <code>Configure</code> method in <code>Startup.cs</code>:</li>\n</ol>\n<pre class=\"lang-cs prettyprint-override\"><code>endpoints.MapFallbackToFile(&quot;index.html&quot;).RequireAuthorization();\n</code></pre>\n"
+    }
+]

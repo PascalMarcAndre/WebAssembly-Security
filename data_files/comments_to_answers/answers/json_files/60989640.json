@@ -1,0 +1,39 @@
+[
+    {
+        "owner": {
+            "reputation": 659,
+            "user_id": 217981,
+            "user_type": "registered",
+            "accept_rate": 86,
+            "profile_image": "https://i.stack.imgur.com/42y8z.jpg?s=128&g=1",
+            "display_name": "Eugene Niemand",
+            "link": "https://stackoverflow.com/users/217981/eugene-niemand"
+        },
+        "is_accepted": false,
+        "score": 1,
+        "last_activity_date": 1594677261,
+        "creation_date": 1594677261,
+        "answer_id": 62884868,
+        "question_id": 60989640,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>Based on <a href=\"https://stackoverflow.com/users/9855089/jaap\">Jaap's</a> answer I had to do the following for Serilog BrowserHttp Sink endpoint</p>\n<pre><code>services.AddSingleton(provider =&gt;\n        {\n            var config = provider.GetService&lt;IConfiguration&gt;();\n            _appConfiguration = config.GetSection(&quot;App&quot;).Get&lt;AppConfiguration&gt;();\n\n            var levelSwitch = new LoggingLevelSwitch();\n            Log.Logger = new LoggerConfiguration()\n                .MinimumLevel.ControlledBy(levelSwitch)\n                .Enrich.WithProperty(&quot;InstanceId&quot;, Guid.NewGuid().ToString(&quot;n&quot;))\n                .WriteTo.BrowserHttp(_appConfiguration.ApiBaseUrl, controlLevelSwitch: levelSwitch)\n                .WriteTo.BrowserConsole()\n                .CreateLogger();\n\n            Log.Information(&quot;Hello, browser!&quot;);\n\n            return _appConfiguration;\n        });\n</code></pre>\n"
+    },
+    {
+        "owner": {
+            "reputation": 285,
+            "user_id": 9855089,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/hMA6J.jpg?s=128&g=1",
+            "display_name": "Jaap",
+            "link": "https://stackoverflow.com/users/9855089/jaap"
+        },
+        "is_accepted": true,
+        "score": 1,
+        "last_activity_date": 1585895553,
+        "creation_date": 1585895553,
+        "answer_id": 61006252,
+        "question_id": 60989640,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>I also posted this question at GitHub dotnet/aspnetcore and James Newton-King came up with the answer, see: <a href=\"https://github.com/dotnet/aspnetcore/issues/20442#issuecomment-608064432\" rel=\"nofollow noreferrer\">https://github.com/dotnet/aspnetcore/issues/20442#issuecomment-608064432</a></p>\n\n<p><strong>JamesNK:</strong></p>\n\n<blockquote>\n  <p>You should be able to get an IConfiguration inside the AddSingleton. e.g.</p>\n</blockquote>\n\n<pre><code>builder.Services.AddSingleton(services =&gt;\n{\n    var configuration = services.GetRequiredService&lt;IConfiguration&gt;();\n    var backendUrl = configuration[\"BackendUrl\"];\n\n    // Create a gRPC-Web channel pointing to the backend server.\n    // GrpcWebText is used because server streaming requires it. If server streaming is not used in your app\n    // then GrpcWeb is recommended because it produces smaller messages.\n    var httpClient = new HttpClient(new GrpcWebHandler(GrpcWebMode.GrpcWebText, new HttpClientHandler()));\n    var channel = GrpcChannel.ForAddress(backendUrl, new GrpcChannelOptions { HttpClient = httpClient });\n    return channel;\n});\n</code></pre>\n"
+    }
+]

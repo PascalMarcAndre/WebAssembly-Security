@@ -1,0 +1,21 @@
+[
+    {
+        "owner": {
+            "reputation": 1512,
+            "user_id": 4958427,
+            "user_type": "registered",
+            "accept_rate": 58,
+            "profile_image": "https://i.stack.imgur.com/udkQm.png?s=128&g=1",
+            "display_name": "snazzybouche",
+            "link": "https://stackoverflow.com/users/4958427/snazzybouche"
+        },
+        "is_accepted": true,
+        "score": 8,
+        "last_activity_date": 1560803406,
+        "creation_date": 1560803406,
+        "answer_id": 56638501,
+        "question_id": 56535423,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>You can't. I looked into this for a project a while back and active vs inactive is the only distinction the browser can make.</p>\n\n<p>Information about the positions of other windows on the system isn't passed to the browser, especially given that this route could possibly be reverse engineered to expose a security risk. It's much safer to keep each window in the dark about what other programmes on the system are doing.</p>\n\n<p>You can gather information based on events happening in the current window - <a href=\"https://stackoverflow.com/questions/1234008/detecting-browser-print-event\">for example detecting the opening of a print dialogue</a> - but not from other windows.</p>\n\n<p>The <a href=\"https://developer.mozilla.org/en-US/docs/Web/API/Page_Visibility_API\" rel=\"noreferrer\">Page Visibility API</a> has <a href=\"https://caniuse.com/#search=visibilitystate\" rel=\"noreferrer\">95% coverage</a> and is probably the closest you can come - but you already know this, because it's the top answer in each question you linked. You're out of luck here.</p>\n"
+    }
+]

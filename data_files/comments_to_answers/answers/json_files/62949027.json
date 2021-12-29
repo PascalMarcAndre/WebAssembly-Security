@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 131,
+            "user_id": 10832603,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/69dd885ef780d478a47e8535fe6171f6?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Aditya Singh",
+            "link": "https://stackoverflow.com/users/10832603/aditya-singh"
+        },
+        "is_accepted": false,
+        "score": 0,
+        "last_activity_date": 1596112574,
+        "creation_date": 1596112574,
+        "answer_id": 63173323,
+        "question_id": 62949027,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>The AAD error states that the URL which you are getting redirected is not present in the reply url list configured in the app registration.You need to register a reply url in the format -  {WebsiteUrl}/authentication/login-callback.<br />\nPlease give it a try then hopefully should resolve the issue.<br />\n<strong>Note-WebsiteUrl is the Url hosted in azure</strong></p>\n"
+    }
+]

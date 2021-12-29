@@ -1,0 +1,57 @@
+[
+    {
+        "owner": {
+            "reputation": 2118,
+            "user_id": 931409,
+            "user_type": "registered",
+            "accept_rate": 70,
+            "profile_image": "https://www.gravatar.com/avatar/597e6c69fda7baf00dde0c2e181efb69?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Tomov",
+            "link": "https://stackoverflow.com/users/931409/tomov"
+        },
+        "is_accepted": true,
+        "score": 0,
+        "last_activity_date": 1589093087,
+        "creation_date": 1589093087,
+        "answer_id": 61708171,
+        "question_id": 48854770,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>What I ended up doing is moving some of the logic from JavaScript into C++ and compiling that into NodeJS native modules (that's possible for Electron apps).</p>\n\n<p>It works pretty good, it's very fast, the source is... as protected as it can get, but you may need to worry about cross-platform issues, also compiling/linking can be a bit of a pain, but other than that it's great.</p>\n"
+    },
+    {
+        "owner": {
+            "reputation": 18898,
+            "user_id": 6036428,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/b632c15ba23e78e466c8d33d657378fe?s=128&d=identicon&r=PG&f=1",
+            "display_name": "jmrk",
+            "link": "https://stackoverflow.com/users/6036428/jmrk"
+        },
+        "is_accepted": false,
+        "score": 2,
+        "last_activity_date": 1519006878,
+        "creation_date": 1519006878,
+        "answer_id": 48858766,
+        "question_id": 48854770,
+        "content_license": "CC BY-SA 3.0",
+        "body": "<p>V8 developer here. No, it is not possible to compile JavaScript ahead of time and send only the compiled code to the browser. V8 (and other virtual machines like it) <em>contain</em> compilers, but they cannot be used as standalone compilers to produce standalone binaries.</p>\n\n<p><em>In theory</em>, you could compile JavaScript to WebAssembly -- any two turing-complete programming languages can in theory be compiled to each other. As far as I know, no such compiler exists today though. One big reason for that is that performance of the end result would be horrible (see the discussion with Andreas Rossberg for details); so considering that browsers can execute JavaScript directly, people have little reason to develop such a thing. (It would also be a large and difficult task.)</p>\n\n<p>As for your stated goal: your best shot at making JavaScript code unreadable is to minify it. In fact, that is effectively just as good as your idea to generate assembly, because disassemblers exist that turn assembly back into minified-like higher-level language code; they cannot reconstruct variable names or comments (because that information is lost during compilation), but they can reconstruct program logic.</p>\n"
+    },
+    {
+        "owner": {
+            "reputation": 31239,
+            "user_id": 1097780,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/a8f01ad795c29c3d05ad26ee47ea6069?s=128&d=identicon&r=PG",
+            "display_name": "Andreas Rossberg",
+            "link": "https://stackoverflow.com/users/1097780/andreas-rossberg"
+        },
+        "is_accepted": false,
+        "score": 0,
+        "last_activity_date": 1518979529,
+        "creation_date": 1518979529,
+        "answer_id": 48855302,
+        "question_id": 48854770,
+        "content_license": "CC BY-SA 3.0",
+        "body": "<p>WebAssembly is not doing that. And no, it's not possible either. The web is supposed to be both browser- and hardware-independent.</p>\n\n<p>Moreover, a language like JS would <em>not</em> be faster if compiled offline -- it only is anything close to fast because it is dynamically compiled and optimised, taking dynamic profile information into account.</p>\n"
+    }
+]

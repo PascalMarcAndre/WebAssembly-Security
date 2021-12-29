@@ -1,0 +1,22 @@
+[
+    {
+        "owner": {
+            "reputation": 5017,
+            "user_id": 23059,
+            "user_type": "registered",
+            "accept_rate": 47,
+            "profile_image": "https://www.gravatar.com/avatar/28d1534c68a23bb158022f3d5f0985ad?s=128&d=identicon&r=PG",
+            "display_name": "Cameron Taggart",
+            "link": "https://stackoverflow.com/users/23059/cameron-taggart"
+        },
+        "is_accepted": false,
+        "score": 1,
+        "last_activity_date": 1579609637,
+        "last_edit_date": 1579609637,
+        "creation_date": 1579608348,
+        "answer_id": 59840782,
+        "question_id": 59835844,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>I recently built a small commercial app and was stuck on this for weeks and was really excited when I got this working. I ended up using <a href=\"https://rustwasm.github.io/wasm-bindgen/api/wasm_bindgen/closure/struct.Closure.html#method.once_into_js\" rel=\"nofollow noreferrer\">Closure.once_into_js</a>. However, that also has the caveat that \"The only way the FnOnce is deallocated is by calling the JavaScript function. If the JavaScript function is never called then the FnOnce and everything it closes over will leak.\" So if the callback is called, everything should be fine, but if not, there is still a memory leak. I found the programming style to be pretty nice. I mapped the JavaScript functions to Rust like this:</p>\n\n<pre class=\"lang-rust prettyprint-override\"><code>#[wasm_bindgen]\nfn getSomething(details: &amp;JsValue, callback: JsValue);\n\npub fn get_something(details: &amp;Details, callback: impl Fn(Option&lt;String&gt;) + 'static){\n    getSomething(&amp;serde_wasm_bindgen::to_value(details).unwrap(), Closure::once_into_js(move |v: JsValue| \n        callback(serde_wasm_bindgen::from_value(v).unwrap())   \n    ));\n}\n</code></pre>\n\n<p>And then I'm able to use it from Rust in my app like so:</p>\n\n<pre class=\"lang-rust prettyprint-override\"><code>let callback = move |id| {\n};\nget_something(&amp;details, callback);\n</code></pre>\n\n<p>I defined the callbacks as static impl functions and then move the values in.</p>\n"
+    }
+]

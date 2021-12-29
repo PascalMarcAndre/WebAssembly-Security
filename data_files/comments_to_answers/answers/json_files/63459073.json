@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 6037,
+            "user_id": 10163251,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/7Fwrh.jpg?s=128&g=1",
+            "display_name": "Abraham Qian",
+            "link": "https://stackoverflow.com/users/10163251/abraham-qian"
+        },
+        "is_accepted": false,
+        "score": 3,
+        "last_activity_date": 1597720710,
+        "creation_date": 1597720710,
+        "answer_id": 63461379,
+        "question_id": 63459073,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>Firstly, please ensure that the Asp.net Core IIS <code>Hosting Bundle installer</code> has been installed on the server.<br />\n<a href=\"https://dotnet.microsoft.com/download/dotnet/5.0\" rel=\"nofollow noreferrer\">https://dotnet.microsoft.com/download/dotnet/5.0</a><br />\n<a href=\"https://i.stack.imgur.com/Z6zJM.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/Z6zJM.png\" alt=\"enter image description here\" /></a><br />\nBesides, the identity under where your web application runs in IIS should have full access to the root folder of your website. Try to grant the IUSR account full control to that physical path.<br />\nLast, please refer to the below link to hosting <code>Core-based</code> web application in IIS.<br />\n<a href=\"https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/iis/?view=aspnetcore-3.1\" rel=\"nofollow noreferrer\">https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/iis/?view=aspnetcore-3.1</a><br />\nFeel free to let me know if the problem still exists.</p>\n"
+    }
+]

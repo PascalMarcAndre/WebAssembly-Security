@@ -1,0 +1,21 @@
+[
+    {
+        "owner": {
+            "reputation": 5750,
+            "user_id": 960169,
+            "user_type": "registered",
+            "accept_rate": 62,
+            "profile_image": "https://i.stack.imgur.com/n37KX.gif?s=128&g=1",
+            "display_name": "Chris Sainty",
+            "link": "https://stackoverflow.com/users/960169/chris-sainty"
+        },
+        "is_accepted": true,
+        "score": 2,
+        "last_activity_date": 1581413608,
+        "creation_date": 1581413608,
+        "answer_id": 60165699,
+        "question_id": 60164866,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>None of your C# code is getting compiled to WebAssembly. Only the Mono runtime is compiled to WebAssembly, it then loads and runs your application DLLs directly in the browser. Just wanted to clear that up first.</p>\n\n<p>To answer your question about browser compatibility. You can check which browsers support WebAssembly via the CanIUse.com web site (<a href=\"https://caniuse.com/#search=webassembly\" rel=\"nofollow noreferrer\">https://caniuse.com/#search=webassembly</a>).</p>\n\n<p>I would just add that using Blazor for this is quite a heavy solution right now, the standard file > new Blazor project is around 2.4mb, which is quite a lot just to show a checkbox. </p>\n"
+    }
+]

@@ -1,0 +1,22 @@
+[
+    {
+        "owner": {
+            "reputation": 1963,
+            "user_id": 6020412,
+            "user_type": "registered",
+            "accept_rate": 90,
+            "profile_image": "https://www.gravatar.com/avatar/a0c26de71499fc6adfae5cbdccd1ee7a?s=128&d=identicon&r=PG",
+            "display_name": "Antoine Thiry",
+            "link": "https://stackoverflow.com/users/6020412/antoine-thiry"
+        },
+        "is_accepted": false,
+        "score": 1,
+        "last_activity_date": 1603785253,
+        "last_edit_date": 1603785253,
+        "creation_date": 1569852730,
+        "answer_id": 58169704,
+        "question_id": 56925313,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>I hope you found a solution to your issue. Here's my (really hacky solution) but it works :</p>\n<p><strong>jslib</strong></p>\n<pre><code>GetByteArray: function(){\n    var array = new Uint8Array([10, 20, 30, 40, 50]);\n    var str = array.toString();\n    str = '[' + str + ']';\n    unityInstance.sendMessage('gameObject', 'ByteArrayAvailable', str);\n}\n</code></pre>\n<p><strong>c#</strong></p>\n<pre><code>#if UNITY_WEBGL &amp;&amp; !UNITY_EDITOR\n\n[DllImport(&quot;__Internal&quot;)]\nprivate static extern void GetByteArray();\n\n#endif\n\n...\n    \nvoid CallWebGL()\n{\n    GetByteArray();\n}\n\nvoid ByteArrayAvailable(string byteArrayStr)\n{\n    var byteArray = JsonConvert.DeserializeObject&lt;byte[]&gt;(byteArrayStr);\n}\n</code></pre>\n<p>You need to add Newtonsoft.Json.dll to you plugins folder to make it work but that's the only easy way I found to make it work :)</p>\n"
+    }
+]

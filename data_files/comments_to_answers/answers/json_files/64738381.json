@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 51,
+            "user_id": 6022618,
+            "user_type": "registered",
+            "profile_image": "https://lh5.googleusercontent.com/-io4FMaKYmSI/AAAAAAAAAAI/AAAAAAAAB70/gFfkGMStnQQ/photo.jpg?sz=128",
+            "display_name": "Daniel Weber",
+            "link": "https://stackoverflow.com/users/6022618/daniel-weber"
+        },
+        "is_accepted": true,
+        "score": 3,
+        "last_activity_date": 1604860173,
+        "creation_date": 1604860173,
+        "answer_id": 64741676,
+        "question_id": 64738381,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>ok i found the issue. In my &quot;_Host.cshtml&quot; file was the link to the &quot;project.styles.css&quot; missing:</p>\n<pre><code>&lt;link href=&quot;ProjectName.styles.css&quot; rel=&quot;stylesheet&quot; /&gt;\n</code></pre>\n<p>with this everything works fine.</p>\n"
+    }
+]

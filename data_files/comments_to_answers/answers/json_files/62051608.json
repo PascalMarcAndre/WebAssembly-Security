@@ -1,0 +1,21 @@
+[
+    {
+        "owner": {
+            "reputation": 2256,
+            "user_id": 1146891,
+            "user_type": "registered",
+            "accept_rate": 90,
+            "profile_image": "https://i.stack.imgur.com/OZODk.png?s=128&g=1",
+            "display_name": "Francesco Cristallo",
+            "link": "https://stackoverflow.com/users/1146891/francesco-cristallo"
+        },
+        "is_accepted": true,
+        "score": 0,
+        "last_activity_date": 1597791870,
+        "creation_date": 1597791870,
+        "answer_id": 63477812,
+        "question_id": 62051608,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>After days of tests, I was finally able to achieve what I wanted:</p>\n<p><strong>&quot;Port a Blazor Server app to Blazor WebAssembly hosted on Asp.net Core, keeping my custom Asp.net Identity + CosmosDB provider, without using Identity Server 4 and Entity Framework.&quot;</strong></p>\n<p>I created a manual implementation of JWT tokens Authentication Service + State provider and hooked it to Asp.Net Core Identity.</p>\n<p>I used this project as guide that contains a full working JWT implementation:</p>\n<p><a href=\"https://github.com/CodeMazeBlog/blazor-series/tree/blazor-webassembly-authentication-aspnetcore-identity\" rel=\"nofollow noreferrer\">https://github.com/CodeMazeBlog/blazor-series/tree/blazor-webassembly-authentication-aspnetcore-identity</a></p>\n"
+    }
+]

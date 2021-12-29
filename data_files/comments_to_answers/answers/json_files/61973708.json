@@ -1,0 +1,21 @@
+[
+    {
+        "owner": {
+            "reputation": 1879,
+            "user_id": 4018304,
+            "user_type": "registered",
+            "accept_rate": 75,
+            "profile_image": "https://i.stack.imgur.com/El5bg.jpg?s=128&g=1",
+            "display_name": "Hari Krishna",
+            "link": "https://stackoverflow.com/users/4018304/hari-krishna"
+        },
+        "is_accepted": false,
+        "score": 2,
+        "last_activity_date": 1590691562,
+        "creation_date": 1590691562,
+        "answer_id": 62072279,
+        "question_id": 61973708,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p><strong>While directing the user to the <code>end_session_endpoint</code> will clear some of the user's single sign-on state with Azure AD B2C,</strong> it will not sign the user out of the user's social identity provider (IDP) session. If the user selects the same IDP during a subsequent sign-in, they will be reauthenticated, without entering their credentials. If a user wants to sign out of your B2C application, it does not necessarily mean they want to sign out of their Facebook account entirely. However, in the case of local accounts, the user's session will be ended properly.</p>\n\n<p>To sign out the user, redirect the user to the end_session endpoint that is listed in the OpenID Connect metadata document(<a href=\"https://login.microsoftonline.com/fabrikamb2c.onmicrosoft.com/v2.0/.well-known/openid-configuration?p=b2c_1_sign_in\" rel=\"nofollow noreferrer\">example</a>) :</p>\n\n<pre><code>GET https://{tenant}.b2clogin.com/{tenant}.onmicrosoft.com/{policy}/oauth2/v2.0/logout?post_logout_redirect_uri=https%3A%2F%2Fjwt.ms%2F\n</code></pre>\n\n<p>Reference: <a href=\"https://docs.microsoft.com/en-us/azure/active-directory-b2c/active-directory-b2c-reference-oidc#send-a-sign-out-request\" rel=\"nofollow noreferrer\">Azure Active Directory B2C: Web sign-in with OpenID Connect</a> </p>\n"
+    }
+]

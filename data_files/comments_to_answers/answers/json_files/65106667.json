@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 14858,
+            "user_id": 10505040,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/643c7cd13b4cd09ce56bb9ee71914516?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Jim Xu",
+            "link": "https://stackoverflow.com/users/10505040/jim-xu"
+        },
+        "is_accepted": true,
+        "score": 2,
+        "last_activity_date": 1606972753,
+        "creation_date": 1606972753,
+        "answer_id": 65120313,
+        "question_id": 65106667,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>If you want to make outgoing requests to URIs that aren't within the app's base URI, you can create a custom <code>AuthorizationMessageHandler</code> class to implement it. For more details, please refer to <a href=\"https://docs.microsoft.com/en-us/aspnet/core/blazor/security/webassembly/additional-scenarios?view=aspnetcore-5.0#custom-authorizationmessagehandler-class\" rel=\"nofollow noreferrer\">here</a></p>\n<p>For example</p>\n<p>Create Custom AuthorizationMessageHandler class</p>\n<pre><code>using Microsoft.AspNetCore.Components;\nusing Microsoft.AspNetCore.Components.WebAssembly.Authentication;\n\npublic class CustomAuthorizationMessageHandler : AuthorizationMessageHandler\n{\n    public CustomAuthorizationMessageHandler(IAccessTokenProvider provider,\n        NavigationManager navigationManager)\n        : base(provider, navigationManager)\n    {\n        ConfigureHandler(\n            authorizedUrls: new[] { &quot;https://localhost:44389/&quot; },\n            scopes: new[] { &quot;https://&lt;&gt;.onmicrosoft.com/api/user_impersonation&quot; });\n    }\n}\n</code></pre>\n<p>Add the following code in <code>Program.cs</code>.</p>\n<pre><code>using System;\nusing System.Net.Http;\nusing System.Collections.Generic;\nusing System.Threading.Tasks;\nusing System.Text;\nusing Microsoft.AspNetCore.Components.WebAssembly.Hosting;\nusing Microsoft.Extensions.Configuration;\nusing Microsoft.Extensions.DependencyInjection;\nusing Microsoft.Extensions.Logging;\n\nnamespace WebB2C\n{\n    public class Program\n    {\n        public static async Task Main(string[] args)\n        {\n            var builder = WebAssemblyHostBuilder.CreateDefault(args);\n            builder.RootComponents.Add&lt;App&gt;(&quot;app&quot;);\n          \n            builder.Services.AddScoped&lt;CustomAuthorizationMessageHandler&gt;();\n            builder.Services.AddHttpClient(&quot;ServerAPI&quot;, client =&gt;\n              client.BaseAddress = new Uri(&quot;https://localhost:44389/&quot;))\n                    .AddHttpMessageHandler&lt;CustomAuthorizationMessageHandler&gt;();\n            builder.Services.AddScoped(sp =&gt; sp.GetRequiredService&lt;IHttpClientFactory&gt;()\n             .CreateClient(&quot;ServerAPI&quot;));\n\n            builder.Services.AddMsalAuthentication(options =&gt;\n            {\n                builder.Configuration.Bind(&quot;AzureAdB2C&quot;, options.ProviderOptions.Authentication);\n                options.ProviderOptions.DefaultAccessTokenScopes.Add(&quot;https://&lt;&gt;.onmicrosoft.com/api/user_impersonation&quot;);\n                options.ProviderOptions.DefaultAccessTokenScopes.Add(&quot;openid&quot;);\n                options.ProviderOptions.DefaultAccessTokenScopes.Add(&quot;offline_access&quot;);\n            });\n\n            await builder.Build().RunAsync();\n        }\n    }\n}\n\n</code></pre>\n"
+    }
+]

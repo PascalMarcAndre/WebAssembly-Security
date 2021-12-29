@@ -1,0 +1,39 @@
+[
+    {
+        "owner": {
+            "reputation": 804,
+            "user_id": 1837420,
+            "user_type": "registered",
+            "accept_rate": 100,
+            "profile_image": "https://www.gravatar.com/avatar/dcc8aebb48a00b1d6c6a37a956b3a529?s=128&d=identicon&r=PG",
+            "display_name": "Carlos Jimenez Bermudez",
+            "link": "https://stackoverflow.com/users/1837420/carlos-jimenez-bermudez"
+        },
+        "is_accepted": false,
+        "score": 3,
+        "last_activity_date": 1594701433,
+        "creation_date": 1594701433,
+        "answer_id": 62888180,
+        "question_id": 61309742,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>Eliminating the generated file <em>Areas/Identity/Pages/Account/Shared/_ViewStart.cshtml</em> solves this issue without changing anything in <em>_Layout.cshtml</em></p>\n<p>You will also see that the scaffolder generates <em>Pages/Shared/_LoginPartial.cshtml</em> in , which I eliminated because it was redundant. From the start there is one in <em>Areas/Identity/Pages/Account/Shared/_LoginPartial.cshtml</em> which is the one I kept.</p>\n<p>If you do add the</p>\n<pre><code>@RenderSection(&quot;Scripts&quot;, false)\n</code></pre>\n<p>Part you will notice that the navbar disappears because the project stops recognizing the existence of the <em>_LoginPartial.cshtml</em> even if you do have the original and the generated one.</p>\n"
+    },
+    {
+        "owner": {
+            "reputation": 751,
+            "user_id": 9586388,
+            "user_type": "registered",
+            "profile_image": "https://lh5.googleusercontent.com/-gUTMZUBvR1I/AAAAAAAAAAI/AAAAAAAAAiw/JwwRtRA4D1Q/photo.jpg?sz=128",
+            "display_name": "\u0414\u043c\u0438\u0442\u0440\u043e \u0406\u0432\u0430\u043d\u043e\u0432",
+            "link": "https://stackoverflow.com/users/9586388/%d0%94%d0%bc%d0%b8%d1%82%d1%80%d0%be-%d0%86%d0%b2%d0%b0%d0%bd%d0%be%d0%b2"
+        },
+        "is_accepted": false,
+        "score": 3,
+        "last_activity_date": 1587324438,
+        "creation_date": 1587324438,
+        "answer_id": 61310377,
+        "question_id": 61309742,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>Than means, than on your <code>_Layout.cshtml</code> page there is a statement</p>\n\n<pre><code>@RenderSection(\"Scripts\")\n</code></pre>\n\n<p>And there is no</p>\n\n<pre><code>@section Scripts {\n...\n}\n</code></pre>\n\n<p>On the page, using <code>_Layout.cshtml</code> as a layout page. To prevent such errors, you can change</p>\n\n<pre><code>@RenderSection(\"Scripts\")\n</code></pre>\n\n<p>into</p>\n\n<pre><code>@RenderSection(\"Scripts\", false)\n</code></pre>\n\n<p>which will make the <code>Scripts</code> section not mandatory for pages, using this layout.</p>\n"
+    }
+]

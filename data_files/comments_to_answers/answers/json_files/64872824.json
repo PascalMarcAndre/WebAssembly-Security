@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 878,
+            "user_id": 14625593,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/o6RMg.png?s=128&g=1",
+            "display_name": "Just the benno",
+            "link": "https://stackoverflow.com/users/14625593/just-the-benno"
+        },
+        "is_accepted": true,
+        "score": 1,
+        "last_activity_date": 1605609608,
+        "creation_date": 1605609608,
+        "answer_id": 64873624,
+        "question_id": 64872824,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>Maybe it is too simple but have you thought about using a simple level of encapsulation?\nCreate a method that accepts a delegate of the operation that should happen if the user has the right privilege?</p>\n<pre><code>\n    public static class IdentiyContextExecuter\n    {\n        public static async Task&lt;T&gt; Execute&lt;T&gt;(Func&lt;Task&lt;T&gt;&gt; method, IdentityContext context)\n        {\n            if (await context.HasWritePermissions() == false)\n            {\n                return default;\n            }\n\n            T result = await method();\n            return result;\n        }\n    }\n\n</code></pre>\n<p>And in your submit method or in each submit method, you could use the class.</p>\n<pre><code>protected async Task HandleValidSubmit()\n{\n    var result = await IdentiyContextExecuter.Execute(() =&gt; Task.FromResult(true), IdentityContext);\n} \n\n</code></pre>\n<p>It is not very elegant but should fit your purpose, I guess. You could rewrite it as an extension method for the IdentityContext class. Like <code>ExecuteIfHasWritePermissions(...)</code></p>\n"
+    }
+]

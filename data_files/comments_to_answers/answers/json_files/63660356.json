@@ -1,0 +1,21 @@
+[
+    {
+        "owner": {
+            "reputation": 146,
+            "user_id": 13118875,
+            "user_type": "registered",
+            "profile_image": "https://graph.facebook.com/2746680615401110/picture?type=large",
+            "display_name": "Bolat Basheyev",
+            "link": "https://stackoverflow.com/users/13118875/bolat-basheyev"
+        },
+        "is_accepted": false,
+        "score": 1,
+        "last_activity_date": 1598961139,
+        "last_edit_date": 1598961139,
+        "creation_date": 1598928446,
+        "answer_id": 63680620,
+        "question_id": 63660356,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>Compiling untrusted source code and linking to your app sounds really unsafe. If I understand your problem correctly, you need to &quot;provide safe runtime environment for single threaded user code with only access to your API&quot;, then in my opinion its better to use runtime interpreter instead. It will provide you more control and sandbox capabilities, safe API calls and users code exceptions handling.</p>\n<p>If you have doubts about interpreters performance, its a good trade of to safety, flexibilty and control. Vast of interpreters compile source code to bytecode and runs realy fast. Also you can reach better performance by providing fast API to script.</p>\n<p>In my Java enterprise projects I use built-in Rhino JavaScript interpreter to run user scripts and provide API to reach flexibility, required performance and control. This scripts can call nothing but my API. Its safe, flexible and absolutely controllable.</p>\n<p>I found these C/C++ (C like syntax) interpreter libraries:</p>\n<ol>\n<li><p>JavaScript (ECMA)\n<a href=\"https://v8.dev/\" rel=\"nofollow noreferrer\">https://v8.dev/</a></p>\n</li>\n<li><p>Lua\n<a href=\"http://acamara.es/blog/2012/08/running-a-lua-5-2-script-from-c/\" rel=\"nofollow noreferrer\">http://acamara.es/blog/2012/08/running-a-lua-5-2-script-from-c/</a></p>\n</li>\n<li><p>C++ interpreter\n<a href=\"https://github.com/root-project/cling\" rel=\"nofollow noreferrer\">https://github.com/root-project/cling</a></p>\n</li>\n</ol>\n"
+    }
+]

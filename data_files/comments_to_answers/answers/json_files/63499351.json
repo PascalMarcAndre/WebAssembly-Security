@@ -1,0 +1,39 @@
+[
+    {
+        "owner": {
+            "reputation": 244,
+            "user_id": 5574962,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/EmmZL.png?s=128&g=1",
+            "display_name": "3per",
+            "link": "https://stackoverflow.com/users/5574962/3per"
+        },
+        "is_accepted": true,
+        "score": 0,
+        "last_activity_date": 1610756771,
+        "creation_date": 1610756771,
+        "answer_id": 65745288,
+        "question_id": 63499351,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<ol>\n<li><p>I've copied *.StaticWebAssets.xml files from <code>...\\Server\\bin\\Debug\\netcoreapp3.1</code> to <code>...\\NUnitTestProject1\\bin\\Debug\\netcoreapp3.1</code></p>\n</li>\n<li><p>I've added <code>UseStaticWebAssets()</code> into backend launch code.</p>\n<pre><code>builder\n .ConfigureWebHostDefaults(w =&gt;\n {\n     w.UseUrls(serviceUrl);\n     w.UseStaticWebAssets();\n })\n.Build()\n.Start();\n</code></pre>\n</li>\n</ol>\n<p>All of the tests passed. Debugger shows <code>CompositeFileProvider</code> injection with same structure as when backend launched manual...</p>\n<p>I've setup copying of these files in build events</p>\n<pre><code>&lt;Target Name=&quot;PostBuild&quot; AfterTargets=&quot;PostBuildEvent&quot;&gt;\n    &lt;Exec Command=&quot;copy ..\\Rest\\bin\\$(ConfigurationName)\\net5.0-windows\\*.StaticWebAssets.xml .\\bin\\$(ConfigurationName)\\net5.0-windows\\*.*&quot; /&gt;\n&lt;/Target&gt;\n</code></pre>\n<p>It a pity, that I cannot realize how implement auto-generation StaticWebAssets.xml in a test project.</p>\n"
+    },
+    {
+        "owner": {
+            "reputation": 1630,
+            "user_id": 6866739,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/gn0c3.jpg?s=128&g=1",
+            "display_name": "Mikaal Anwar",
+            "link": "https://stackoverflow.com/users/6866739/mikaal-anwar"
+        },
+        "is_accepted": false,
+        "score": 2,
+        "last_activity_date": 1600737016,
+        "last_edit_date": 1600737016,
+        "creation_date": 1600736671,
+        "answer_id": 64001739,
+        "question_id": 63499351,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>Based on your received response i.e. <em><strong>\u201cNotFound\u201d</strong></em>, my first guess would be that the path being created for fetching that particular file might be incorrect. If I was to debug that I\u2019d probably try a few overloads of the <a href=\"https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.builder.staticfilesendpointroutebuilderextensions.mapfallbacktofile?view=aspnetcore-3.1#Microsoft_AspNetCore_Builder_StaticFilesEndpointRouteBuilderExtensions_MapFallbackToFile_Microsoft_AspNetCore_Routing_IEndpointRouteBuilder_System_String_Microsoft_AspNetCore_Builder_StaticFileOptions_\" rel=\"nofollow noreferrer\">\u201cMapFallbackToFile\u201d</a> function. Ones that require an explicit path (absolute or relative) or other properties. After a bit of hit and trial, you might be able to find the respective file.</p>\n<p>Another thing you can do to speed up the debugging process is that you can programmatically check the current working directory and use that as a point of reference to construct the accurate file path needed. This can be done using the following command:</p>\n<p><code>System.IO.Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);</code></p>\n<p>A very commonly faced error is that often our program is running in the build directory (e.g bin/debug/..) and our required file (e.g. css or image) file is not present there, hence, we encounter such issues. This is one way to go about solving this problem.</p>\n"
+    }
+]

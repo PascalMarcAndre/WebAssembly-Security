@@ -1,0 +1,39 @@
+[
+    {
+        "owner": {
+            "reputation": 108,
+            "user_id": 11080892,
+            "user_type": "registered",
+            "profile_image": "https://lh4.googleusercontent.com/--FtsbDs1DdA/AAAAAAAAAAI/AAAAAAAAABc/kpnXGBoIXwk/photo.jpg?sz=128",
+            "display_name": "Jeff Bacon",
+            "link": "https://stackoverflow.com/users/11080892/jeff-bacon"
+        },
+        "is_accepted": false,
+        "score": 0,
+        "last_activity_date": 1595954951,
+        "last_edit_date": 1595954951,
+        "creation_date": 1594914470,
+        "answer_id": 62938531,
+        "question_id": 62906320,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>Ugh, of course it was simple...</p>\n<pre><code>@inject HttpClient Http\n@inject IAccessTokenProvider TokenProvider\n...\nHttpRequestMessage requestMessage = new HttpRequestMessage()\n{\n   ...\n};\nAccessTokenResult result = await TokenProvider.RequestAccessToken();\nif (result.TryGetToken(out AccessToken token))\n{\n    requestMessage.Headers.Authorization =\n        new AuthenticationHeaderValue(&quot;Bearer&quot;, token.Value);\n}\nHttpResponseMessage response = await Http.SendAsync(requestMessage);\n</code></pre>\n<p>EDIT: for anyone reading this, please refer to <a href=\"https://stackoverflow.com/questions/63063237/how-do-i-get-the-id-token-in-blazor-webassembly-after-authenticating-with-openid\">How do I get the id_token in Blazor WebAssembly after authenticating with OpenId (Cognito)?</a> as well as you will need the id_token not the access_token if you are intending to use Identity Pools in Cognito to scope access for a user to a particular IAM Role.</p>\n"
+    },
+    {
+        "owner": {
+            "reputation": 171,
+            "user_id": 4925321,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/0e0a7218d4bebcf9156d7ba584abd550?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Jon Edwards",
+            "link": "https://stackoverflow.com/users/4925321/jon-edwards"
+        },
+        "is_accepted": true,
+        "score": 0,
+        "last_activity_date": 1594908939,
+        "creation_date": 1594908939,
+        "answer_id": 62936751,
+        "question_id": 62906320,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>In the Client projects Program.cs, you can add an HttpClient as follows that will add the neccessary tokens to your http requests. This can then by injected into code as required to make your http calls.</p>\n<pre><code>builder.Services.AddHttpClient(&quot;UniqueClientNameHere&quot;, client =&gt; client.BaseAddress = serverBaseAddress)\n                .AddHttpMessageHandler&lt;BaseAddressAuthorizationMessageHandler&gt;();\n\n// Supply HttpClient instances that include access tokens when making requests to the server project\nbuilder.Services.AddTransient(sp =&gt; sp.GetRequiredService&lt;IHttpClientFactory&gt;().CreateClient(&quot;UniqueClientNameHere&quot;));\n</code></pre>\n<p>for example inside a .razor file called Foobar.razor:</p>\n<pre><code>@page &quot;/foobar&quot;\n@inject HttpClient Http\n\n&lt;h1&gt;Hello Foobar&lt;/h1&gt;\n\n@code{\n    protected override async Task OnInitializedAsync()\n    {\n        HttpResponseMessage response = await Http.SendAsync(requestMessage);\n    }\n}\n</code></pre>\n"
+    }
+]

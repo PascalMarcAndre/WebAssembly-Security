@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 1289,
+            "user_id": 8333554,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/MvQ83.jpg?s=128&g=1",
+            "display_name": "DCCoder",
+            "link": "https://stackoverflow.com/users/8333554/dccoder"
+        },
+        "is_accepted": true,
+        "score": 6,
+        "last_activity_date": 1605156190,
+        "creation_date": 1605156190,
+        "answer_id": 64798061,
+        "question_id": 64797195,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>There are currently <a href=\"https://github.com/dotnet/AspNetCore.Docs/issues/17649\" rel=\"noreferrer\">two accepted ways</a> of handling this.</p>\n<p><strong>The first</strong></p>\n<p>#1 Configure Identity to use roles by calling AddRoles</p>\n<pre><code>services.AddDefaultIdentity&lt;ApplicationUser&gt;(options =&gt; options.SignIn.RequireConfirmedAccount = true)\n    .AddRoles&lt;IdentityRole&gt;()\n    .AddEntityFrameworkStores&lt;ApplicationDbContext&gt;();\n</code></pre>\n<p>#2 Configure identity server to put the role claim into the id token and the access token and prevent the default mapping for roles in the JwtSecurityTokenHandler.</p>\n<pre><code>services.AddIdentityServer()\n    .AddApiAuthorization&lt;ApplicationUser, ApplicationDbContext&gt;(options =&gt; {\n        options.IdentityResources[&quot;openid&quot;].UserClaims.Add(&quot;role&quot;);\n        options.ApiResources.Single().UserClaims.Add(&quot;role&quot;);\n    });\n\n// Need to do this as it maps &quot;role&quot; to ClaimTypes.Role and causes issues\nJwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Remove(&quot;role&quot;);\n</code></pre>\n<p>#3 On your blazor application use [Authorize(Roles = &quot;admin&quot;)] or any other role your app defines.</p>\n<p>#4 On your protected resource APIs use [Authorize(Roles = &quot;admin&quot;)] or any other role your app defines.</p>\n<p><strong>The second</strong></p>\n<p>#1 Add Class to configure options.UserOptions.RoleClaim on the Client</p>\n<pre><code>using Microsoft.AspNetCore.Components.WebAssembly.Authentication;\nusing Microsoft.Extensions.Options;\n\nnamespace App.Client.Services\n{\n    public class ApiAuthorizationOptionsConfiguration\n        : IPostConfigureOptions&lt;RemoteAuthenticationOptions&lt;ApiAuthorizationProviderOptions&gt;&gt;\n    {\n        public void Configure(RemoteAuthenticationOptions&lt;ApiAuthorizationProviderOptions&gt; options)\n        {\n            options.UserOptions.RoleClaim ??= &quot;role&quot;;\n        }\n\n        public void PostConfigure(string name, RemoteAuthenticationOptions&lt;ApiAuthorizationProviderOptions&gt; options)\n        {\n            if (string.Equals(name, Options.DefaultName))\n            {\n                Configure(options);\n            }\n        }\n    }\n}\n</code></pre>\n<p>#2 Modify the Program.cs file to call ApiAuthorizationOptionsConfiguration and configure the role claim.</p>\n<pre><code>using App.Client.Services;\n...\n\nnamespace App.Client\n{\n    public class Program\n    {\n        public static async Task Main(string[] args)\n        {\n            ...\n\n            builder.Services.AddAuthorizationCore();\n            builder.Services.AddApiAuthorization();\n            builder.Services.TryAddEnumerable(\n                ServiceDescriptor.Singleton&lt;\n                    IPostConfigureOptions&lt;RemoteAuthenticationOptions&lt;ApiAuthorizationProviderOptions&gt;&gt;,\n                    ApiAuthorizationOptionsConfiguration&gt;());\n\n            ...\n        }\n    }\n}\n</code></pre>\n"
+    }
+]

@@ -1,0 +1,21 @@
+[
+    {
+        "owner": {
+            "reputation": 39251,
+            "user_id": 842935,
+            "user_type": "registered",
+            "accept_rate": 85,
+            "profile_image": "https://www.gravatar.com/avatar/2b3b9d4aa138cb30767b8b1a7a90f027?s=128&d=identicon&r=PG",
+            "display_name": "dani herrera",
+            "link": "https://stackoverflow.com/users/842935/dani-herrera"
+        },
+        "is_accepted": true,
+        "score": 0,
+        "last_activity_date": 1612116523,
+        "creation_date": 1612116523,
+        "answer_id": 65982570,
+        "question_id": 65979821,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>At this moment doesn't exist a second parameter on <code>AuthorizeRouteView</code> to set a specific layout for 'public' users. But exists an easy solution, this is how you can deal easily with this scenario.</p>\n<p>Let's suppose do you have 2 layouts ready to apply for auth and pub users:</p>\n<ul>\n<li><code>AuthL.razor</code> for auth users.</li>\n<li><code>PubL.razor</code> for public users.</li>\n</ul>\n<p>At this moment, you can rewrite your <code>MainLayout.razor</code> using <a href=\"https://docs.microsoft.com/en-us/aspnet/core/blazor/security/?view=aspnetcore-5.0#authorizeview-component\" rel=\"nofollow noreferrer\">AuthorizeView component</a> to set the proper layout:</p>\n<pre><code>@inherits LayoutComponentBase\n&lt;AuthorizeView&gt;\n    &lt;Authorized&gt;\n        &lt;AuthL Body=@Body /&gt;            \n    &lt;/Authorized&gt;\n    &lt;NotAuthorized&gt;\n        &lt;PubL Body=@Body /&gt;            \n    &lt;/NotAuthorized&gt;\n&lt;/AuthorizeView&gt;\n</code></pre>\n<p>That's all.</p>\n"
+    }
+]

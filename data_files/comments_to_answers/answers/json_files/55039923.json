@@ -1,0 +1,21 @@
+[
+    {
+        "owner": {
+            "reputation": 1918,
+            "user_id": 3683187,
+            "user_type": "registered",
+            "accept_rate": 63,
+            "profile_image": "https://i.stack.imgur.com/tj2pu.png?s=128&g=1",
+            "display_name": "Xharlie",
+            "link": "https://stackoverflow.com/users/3683187/xharlie"
+        },
+        "is_accepted": true,
+        "score": 5,
+        "last_activity_date": 1551954128,
+        "creation_date": 1551954128,
+        "answer_id": 55041379,
+        "question_id": 55039923,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>This is apparently a confirmed bug in Chrome: <a href=\"https://bugs.chromium.org/p/chromium/issues/detail?id=935169\" rel=\"noreferrer\">https://bugs.chromium.org/p/chromium/issues/detail?id=935169</a></p>\n\n<p>It only occurs when Chrome's developer tools are open.</p>\n"
+    }
+]

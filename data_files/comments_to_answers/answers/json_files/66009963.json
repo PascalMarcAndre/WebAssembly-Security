@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 1037,
+            "user_id": 5417823,
+            "user_type": "registered",
+            "profile_image": "https://graph.facebook.com/963616840327777/picture?type=large",
+            "display_name": "mylee",
+            "link": "https://stackoverflow.com/users/5417823/mylee"
+        },
+        "is_accepted": false,
+        "score": 0,
+        "last_activity_date": 1616934991,
+        "creation_date": 1616934991,
+        "answer_id": 66841513,
+        "question_id": 66009963,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>Running a Blazor WebAssembly in the content scripts is a little bit more tricky.</p>\n<p>A Chrome extension only allows loading JavaScript files as part of the content scripts. So you have to import the Blazor and DotNet JavaScript files and call to <code>Blazor.start</code> in your content script. However, the shipped Blazor and DotNet JS files does not support importing with ES6 <code>import()</code>.</p>\n<p>To make building Blazor WebAssembly to browser extension easier, I have created a package in the repository <a href=\"https://github.com/mingyaulee/Blazor.BrowserExtension\" rel=\"nofollow noreferrer\">Blazor.BrowserExtension</a>. You can follow the steps in the link to convert your existing project. After that, follow the <a href=\"https://github.com/mingyaulee/Blazor.BrowserExtension#add-a-content-script\" rel=\"nofollow noreferrer\">extra steps</a> to add a content script to your extension.</p>\n<blockquote>\n<p>Extras:</p>\n<p>Chrome Extensions APIs are accessible in Razor pages or from dependency injection. The APIs are imported from another package <a href=\"https://github.com/mingyaulee/WebExtension.Net\" rel=\"nofollow noreferrer\">WebExtension.Net</a>.</p>\n</blockquote>\n<p>Another option is to download the package <a href=\"https://www.nuget.org/packages/Blazor.BrowserExtension.Build/\" rel=\"nofollow noreferrer\">Blazor.BrowserExtension.Build</a> which contains the build targets needed to build your Blazor project into a browser extension.</p>\n"
+    }
+]

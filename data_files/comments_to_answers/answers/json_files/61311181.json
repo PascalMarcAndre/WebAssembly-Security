@@ -1,0 +1,57 @@
+[
+    {
+        "owner": {
+            "reputation": 836,
+            "user_id": 7301314,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/yC2wM.jpg?s=128&g=1",
+            "display_name": "Sen Alexandru",
+            "link": "https://stackoverflow.com/users/7301314/sen-alexandru"
+        },
+        "is_accepted": false,
+        "score": 2,
+        "last_activity_date": 1608917570,
+        "creation_date": 1608917570,
+        "answer_id": 65450301,
+        "question_id": 61311181,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>You can also try adding these lines directly to the <code>Configure</code> method of the <code>Startup</code> class:</p>\n<pre><code>//ENABLE CORS\napp.UseCors(x =&gt; x\n   .AllowAnyMethod()\n   .AllowAnyHeader()\n   .SetIsOriginAllowed(origin =&gt; true) // allow any origin  \n   .AllowCredentials());               // allow credentials \n</code></pre>\n"
+    },
+    {
+        "owner": {
+            "reputation": 187,
+            "user_id": 12291500,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/AzhOv.png?s=128&g=1",
+            "display_name": "Nate W",
+            "link": "https://stackoverflow.com/users/12291500/nate-w"
+        },
+        "is_accepted": false,
+        "score": 1,
+        "last_activity_date": 1608147934,
+        "creation_date": 1608147934,
+        "answer_id": 65330158,
+        "question_id": 61311181,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p><a href=\"https://stackoverflow.com/users/1706963/inliner49er\">@inliner49er</a>, I wish that I could add a comment to clarify what you responded, since your answer is correct, but I don't have enough reputation points. Therefore, I'll post my tweaks to your answer as a separate answer.</p>\n<p>You nailed it, the CORS issue fixed my program also. The only part of your code that didn't make sense was the reference that you have to a class called <code>Constants</code>. I am in the process of trying to complete the <a href=\"https://www.pluralsight.com\" rel=\"nofollow noreferrer\">PluralSight</a> tutorial, and because I'm working entirely internally, I can safely replace your code with the following:</p>\n<pre><code>services.AddCors(options =&gt;\n{\n    options.AddPolicy(&quot;PolicyName&quot;, builder =&gt; builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());\n});\n</code></pre>\n<p>I am super new to all of this, literally hours into the process of learning about it, so there is a buttload that I don't understand. I just thought I'd post this to help anyone who might have similar questions to what I had.</p>\n"
+    },
+    {
+        "owner": {
+            "reputation": 910,
+            "user_id": 1706963,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/WXUTi.jpg?s=128&g=1",
+            "display_name": "inliner49er",
+            "link": "https://stackoverflow.com/users/1706963/inliner49er"
+        },
+        "is_accepted": true,
+        "score": 4,
+        "last_activity_date": 1599727771,
+        "last_edit_date": 1599727771,
+        "creation_date": 1587407606,
+        "answer_id": 61329552,
+        "question_id": 61311181,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>What a misleading error message. It was a CORS issue.</p>\n<p>The fix was adding <code>&quot;PATCH&quot;</code> to my CORS policy in my API's startup.cs <code>ConfigureServices</code> method (which previously was <code>&quot;GET, DELETE, PUT, POST, OPTIONS&quot;</code>).</p>\n<pre class=\"lang-cs prettyprint-override\"><code>services.AddCors(options =&gt;\n{\n    options.AddPolicy(CorsAllowAll,\n    builder =&gt;\n    {\n            builder.WithOrigins(Constants.ApiClientCors).AllowAnyHeader().WithMethods(&quot;GET, PATCH, DELETE, PUT, POST, OPTIONS&quot;);\n    });  \n});\n</code></pre>\n"
+    }
+]

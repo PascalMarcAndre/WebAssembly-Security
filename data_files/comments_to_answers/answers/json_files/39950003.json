@@ -1,0 +1,21 @@
+[
+    {
+        "owner": {
+            "reputation": 30031,
+            "user_id": 637669,
+            "user_type": "registered",
+            "accept_rate": 100,
+            "profile_image": "https://www.gravatar.com/avatar/0227e5d5eaceb8ae2f751df38d421764?s=128&d=identicon&r=PG",
+            "display_name": "arrowd",
+            "link": "https://stackoverflow.com/users/637669/arrowd"
+        },
+        "is_accepted": false,
+        "score": 0,
+        "last_activity_date": 1476093652,
+        "creation_date": 1476093652,
+        "answer_id": 39955788,
+        "question_id": 39950003,
+        "content_license": "CC BY-SA 3.0",
+        "body": "<p>There are no such commands in CMake. Use <a href=\"https://cmake.org/cmake/help/v3.5/command/target_compile_options.html\" rel=\"nofollow\">target_compile_options</a> instead of <code>ADD_COMPILE_FLAG</code> and <a href=\"https://cmake.org/cmake/help/v3.5/command/target_link_libraries.html\" rel=\"nofollow\">target_link_libraries</a> for <code>ADD_LINK_FLAG</code>.</p>\n"
+    }
+]

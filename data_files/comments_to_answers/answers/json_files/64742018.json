@@ -1,0 +1,40 @@
+[
+    {
+        "owner": {
+            "reputation": 1739,
+            "user_id": 826402,
+            "user_type": "registered",
+            "accept_rate": 80,
+            "profile_image": "https://i.stack.imgur.com/ZPWp8.jpg?s=128&g=1",
+            "display_name": "nAviD",
+            "link": "https://stackoverflow.com/users/826402/navid"
+        },
+        "is_accepted": true,
+        "score": 1,
+        "last_activity_date": 1604982104,
+        "creation_date": 1604982104,
+        "answer_id": 64762850,
+        "question_id": 64742018,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>The easiest way is to use a <code>CascadeParameter</code>.</p>\n"
+    },
+    {
+        "owner": {
+            "reputation": 25609,
+            "user_id": 425823,
+            "user_type": "registered",
+            "accept_rate": 86,
+            "profile_image": "https://www.gravatar.com/avatar/00d813f85062c23d43043e6132278610?s=128&d=identicon&r=PG",
+            "display_name": "Greg Gum",
+            "link": "https://stackoverflow.com/users/425823/greg-gum"
+        },
+        "is_accepted": false,
+        "score": 1,
+        "last_activity_date": 1604932165,
+        "creation_date": 1604932165,
+        "answer_id": 64753541,
+        "question_id": 64742018,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>Based on @nAviD's answer, I did this:</p>\n<p><code>MainLayout.razor</code> sets up the cascading parameter. The toaster components sets a @ref in the MessageService.</p>\n<pre><code>@inherits LayoutComponentBase\n@using JusticeOnTheWeb.Core\n\n&lt;CascadingValue Value=&quot;MessageService&quot;&gt;\n    &lt;div class=&quot;content&quot;&gt;\n        @Body\n    &lt;/div&gt;\n&lt;/CascadingValue&gt;\n\n&lt;SfToast ID=&quot;toast_default&quot; @ref=&quot;MessageService.Toaster&quot; CssClass=&quot;e-toast-success&quot; Timeout=&quot;2000&quot; Icon=&quot;e-meeting&quot;&gt;\n    &lt;ToastPosition X=&quot;Right&quot;&gt;&lt;/ToastPosition&gt;\n&lt;/SfToast&gt;\n\n@code{\n\n    public MessageService MessageService { get; set; } = new MessageService();\n\n}\n</code></pre>\n<p>Then it gets consumed by <code>MyComponent.razor</code>:</p>\n<pre><code>&lt;SfButton @onclick=&quot;ShowMessage&quot;&gt;Show Message&lt;/SfButton&gt;\n\n\n@code {\n\n    [CascadingParameter]\n    public MessageService MessageService { get; set; }\n\n    public void ShowMessage()\n    {\n        this.MessageService.Show(&quot;42&quot;);\n    }\n}\n</code></pre>\n"
+    }
+]

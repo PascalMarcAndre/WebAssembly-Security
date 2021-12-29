@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 188,
+            "user_id": 13624968,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/5rRsf.jpg?s=128&g=1",
+            "display_name": "devbf",
+            "link": "https://stackoverflow.com/users/13624968/devbf"
+        },
+        "is_accepted": false,
+        "score": 0,
+        "last_activity_date": 1600246392,
+        "creation_date": 1600246392,
+        "answer_id": 63916508,
+        "question_id": 63916291,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>Had the same issue (already answered it <a href=\"https://stackoverflow.com/questions/63679708/blazor-webassembly-visual-studio-debugger-issues/63682035#63682035\">here</a>), a simple <code>Ctrl + Shift + I</code> triggers the page to load in my case.</p>\n"
+    }
+]

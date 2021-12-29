@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 11,
+            "user_id": 6342840,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/NlQNq.jpg?s=128&g=1",
+            "display_name": "bedrock",
+            "link": "https://stackoverflow.com/users/6342840/bedrock"
+        },
+        "is_accepted": false,
+        "score": 0,
+        "last_activity_date": 1617197624,
+        "creation_date": 1617197624,
+        "answer_id": 66888921,
+        "question_id": 66878555,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>I problems I encountered were resolved by adding &quot;AllowAnyMethod&quot; in CORS config setting in startup.cs file in Web service app:</p>\n<pre><code>services.AddCors(options =&gt;\n{\n    options.AddPolicy(\n        &quot;BlazorWebAssembly&quot;,\n        builder =&gt; builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());\n})  \n</code></pre>\n"
+    }
+]

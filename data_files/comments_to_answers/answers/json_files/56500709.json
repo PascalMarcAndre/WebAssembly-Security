@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 76,
+            "user_id": 11615961,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/673938b7e89b06dc85576f83e061d9b3?s=128&d=identicon&r=PG&f=1",
+            "display_name": "JDU",
+            "link": "https://stackoverflow.com/users/11615961/jdu"
+        },
+        "is_accepted": false,
+        "score": 3,
+        "last_activity_date": 1559941547,
+        "creation_date": 1559941547,
+        "answer_id": 56501209,
+        "question_id": 56500709,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>You are trying to connect from WebAssembly to a local server, most likely using a protocol which isn't allowed from the browser WASM sandbox. </p>\n\n<p>WebAssembly can't for instance open low-level network sockets out of the WASM sandbox, you're mainly constrained to the same things that you can do with JavaScript in terms of file, system and network access when you're running WASM in a browser.</p>\n\n<p>It's worth reading up on the constraints that WebAssembly has around security and system access <strong>when used in a browser context</strong> as well as it's worth noting that it's not WebAssembly that's blocking your connection here, it's the browser that's running the WebAssembly.</p>\n"
+    }
+]

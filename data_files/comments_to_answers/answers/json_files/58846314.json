@@ -1,0 +1,39 @@
+[
+    {
+        "owner": {
+            "reputation": 1680,
+            "user_id": 8382203,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/FZ5FB.png?s=128&g=1",
+            "display_name": "Anders Revsgaard",
+            "link": "https://stackoverflow.com/users/8382203/anders-revsgaard"
+        },
+        "is_accepted": false,
+        "score": 1,
+        "last_activity_date": 1589224779,
+        "last_edit_date": 1589224779,
+        "creation_date": 1589224021,
+        "answer_id": 61737409,
+        "question_id": 58846314,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>I was in a situation where I needed an extendable library for Blazor WebAssembly supporting OpenID Connect (OIDC) with Proof Key for Code Exchange (PKCE). Therefore, I have created the open source <a href=\"https://github.com/ITfoxtec/ITfoxtec.Identity.BlazorWebAssembly.OpenidConnect\" rel=\"nofollow noreferrer\">ITfoxtec.Identity.BlazorWebAssembly.OpenidConnect</a> library which is JavaScript free and pure .NET.</p>\n"
+    },
+    {
+        "owner": {
+            "reputation": 727,
+            "user_id": 8892051,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/wEowP.png?s=128&g=1",
+            "display_name": "Henry Rodriguez",
+            "link": "https://stackoverflow.com/users/8892051/henry-rodriguez"
+        },
+        "is_accepted": true,
+        "score": 2,
+        "last_activity_date": 1573694951,
+        "creation_date": 1573694951,
+        "answer_id": 58848068,
+        "question_id": 58846314,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>I would recommend you to give a try to <a href=\"https://github.com/henalbrod/Blazor.Auth0\" rel=\"nofollow noreferrer\">Blazor.Auth0</a> (author here).</p>\n\n<blockquote>\n  <p>Blazor.Auth0 is a library for using the Authorization Code Grant with Proof Key for Code Exchange (PKCE) with Auth0's Universal Login in Blazor SPAs.</p>\n</blockquote>\n\n<p>If you're not interested in adding/using a third-party service then at least the source code would help to drive you in the correct path.</p>\n\n<p>I hope this helps :)</p>\n"
+    }
+]

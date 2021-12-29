@@ -1,0 +1,21 @@
+[
+    {
+        "owner": {
+            "reputation": 33,
+            "user_id": 2788167,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/1af238859db983a93ec3c40b8e6f3073?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Mrcl1450",
+            "link": "https://stackoverflow.com/users/2788167/mrcl1450"
+        },
+        "is_accepted": false,
+        "score": 1,
+        "last_activity_date": 1602181196,
+        "last_edit_date": 1602181196,
+        "creation_date": 1602172100,
+        "answer_id": 64266153,
+        "question_id": 62406340,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>To change from the pop-up page to a redirect you need:</p>\n<pre><code>options.ProviderOptions.LoginMode = &quot;Redirect&quot;;\n</code></pre>\n"
+    }
+]

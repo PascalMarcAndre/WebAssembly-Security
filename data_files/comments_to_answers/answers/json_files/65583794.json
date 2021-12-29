@@ -1,0 +1,22 @@
+[
+    {
+        "owner": {
+            "reputation": 356,
+            "user_id": 4819504,
+            "user_type": "registered",
+            "accept_rate": 83,
+            "profile_image": "https://i.stack.imgur.com/4Z1k6.jpg?s=128&g=1",
+            "display_name": "puerile",
+            "link": "https://stackoverflow.com/users/4819504/puerile"
+        },
+        "is_accepted": false,
+        "score": 0,
+        "last_activity_date": 1610363089,
+        "last_edit_date": 1610363089,
+        "creation_date": 1610360840,
+        "answer_id": 65665086,
+        "question_id": 65583794,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>The easiest way to make it work:</p>\n<blockquote>\n<p>Add/set the env variable <code>ASPNETCORE_ENVIRONMENT</code> to <code>Development</code></p>\n</blockquote>\n<p><a href=\"https://i.stack.imgur.com/3eyfx.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/3eyfx.png\" alt=\"enter image description here\" /></a></p>\n<p>...and your Hosted Blazor WASM <strong>with Identity</strong> will finally work in Azure App Service</p>\n<hr />\n<p>If you don't want the easy way above, do these instead:</p>\n<ol>\n<li>Generate a self-signed certificated by following this article:</li>\n</ol>\n<p>(in the <strong>Generating a Self-Signed Certificate</strong> section)\n<a href=\"https://gavilan.blog/2020/08/18/blazor-using-a-self-signed-certificate-for-identityserver4-in-azure-app-service/\" rel=\"nofollow noreferrer\">https://gavilan.blog/2020/08/18/blazor-using-a-self-signed-certificate-for-identityserver4-in-azure-app-service/</a></p>\n<ol start=\"2\">\n<li>Remember the password you used for the generated certificate.</li>\n<li>Place the certificate in your project (e.g. in the server project)</li>\n<li>Append these in the <code>appsettings.json</code> file:</li>\n</ol>\n<p><a href=\"https://i.stack.imgur.com/4Y0qO.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/4Y0qO.png\" alt=\"enter image description here\" /></a></p>\n<ol start=\"5\">\n<li>Publish the app once again.</li>\n</ol>\n"
+    }
+]

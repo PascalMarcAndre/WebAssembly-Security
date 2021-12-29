@@ -1,0 +1,58 @@
+[
+    {
+        "owner": {
+            "reputation": 35,
+            "user_id": 4999254,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/Y3sIn.jpg?s=128&g=1",
+            "display_name": "iankit3",
+            "link": "https://stackoverflow.com/users/4999254/iankit3"
+        },
+        "is_accepted": false,
+        "score": 2,
+        "last_activity_date": 1563653171,
+        "last_edit_date": 1563653171,
+        "creation_date": 1563652751,
+        "answer_id": 57128131,
+        "question_id": 52239924,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<blockquote>\n  <p><code>there was some error;  TypeError: \"Response has unsupported MIME type\"</code>\n  The Web server you are running does not understands/serves a MIME type <code>application/wasm</code>.</p>\n</blockquote>\n\n<p>You can use a <a href=\"https://crates.io/crates/https\" rel=\"nofollow noreferrer\">rust based http server</a>, it knows about wasm MIME type.</p>\n\n<h2>Installation</h2>\n\n<p>Simply use curl</p>\n\n<pre><code>curl -SsL https://cdn.rawgit.com/thecoshman/http/master/install.sh | sh\n</code></pre>\n\n<p>and execute the downloaded script or you can explorer other ways to do the same at <a href=\"https://crates.io/crates/https\" rel=\"nofollow noreferrer\">https://crates.io/crates/https</a>.</p>\n\n<hr>\n\n<h2>Running</h2>\n\n<p>Please use the downloaded server to server your Web Application(index.html).\ne.g</p>\n\n<pre><code>cd ${YOUR_APPS_PATH}\n\nhttp\n</code></pre>\n"
+    },
+    {
+        "owner": {
+            "reputation": 61,
+            "user_id": 8710484,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/108619920e40a64afae03bddee88ecf0?s=128&d=identicon&r=PG&f=1",
+            "display_name": "StashOfCode",
+            "link": "https://stackoverflow.com/users/8710484/stashofcode"
+        },
+        "is_accepted": false,
+        "score": 0,
+        "last_activity_date": 1544779499,
+        "creation_date": 1544779499,
+        "answer_id": 53776765,
+        "question_id": 52239924,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>A snippet of code for a workaround has been published on the WebAssembly Git <a href=\"https://github.com/mdn/webassembly-examples/issues/5\" rel=\"nofollow noreferrer\">here</a>. Unfortunately, this is a workaround, and this defeats the purpose of <code>instantiateStreaming()</code> which is told <a href=\"https://developer.mozilla.org/en-US/docs/WebAssembly/Loading_and_running\" rel=\"nofollow noreferrer\">here</a> to be \"a lot more efficient\", since the workaround needs an ArrayBuffer that <code>instantiateStreaming()</code> helps to avoid. </p>\n"
+    },
+    {
+        "owner": {
+            "reputation": 13267,
+            "user_id": 778272,
+            "user_type": "registered",
+            "accept_rate": 75,
+            "profile_image": "https://www.gravatar.com/avatar/bf138947e7290724a00b290ba461a205?s=128&d=identicon&r=PG",
+            "display_name": "Lucio Paiva",
+            "link": "https://stackoverflow.com/users/778272/lucio-paiva"
+        },
+        "is_accepted": false,
+        "score": 8,
+        "last_activity_date": 1539141252,
+        "creation_date": 1539141252,
+        "answer_id": 52732080,
+        "question_id": 52239924,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>Considering you can't change the server to properly return <code>application/wasm</code> for <code>.wasm</code> file requests for any reason, you can work around the issue by changing the way you instantiate the WebAssembly module. Instead of doing this:</p>\n\n<pre><code>WebAssembly.instantiateStreaming(fetch(\"./add.wasm\")).then(obj =&gt; /* ... */)\n</code></pre>\n\n<p>Do this:</p>\n\n<pre><code>const response = await fetch(\"add.wasm\");\nconst buffer = await response.arrayBuffer();\nconst obj = await WebAssembly.instantiate(buffer);\nobj.instance.exports.exported_func();\n</code></pre>\n\n<p>Or the equivalent using <code>then()</code> if you cannot use <code>async/await</code>.</p>\n\n<p>In practice, what my workaround does is to avoid calling <code>instantiateStreaming()</code>, which must check the MIME type returned by the server before proceeding (according to <a href=\"https://www.w3.org/TR/wasm-web-api-1/#streaming-modules\" rel=\"noreferrer\">this specification</a>). Instead, I call <code>instantiate()</code> passing an <code>ArrayBuffer</code> and avoid the check altogether.</p>\n"
+    }
+]

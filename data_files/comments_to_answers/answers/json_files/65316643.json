@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 878,
+            "user_id": 14625593,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/o6RMg.png?s=128&g=1",
+            "display_name": "Just the benno",
+            "link": "https://stackoverflow.com/users/14625593/just-the-benno"
+        },
+        "is_accepted": true,
+        "score": 1,
+        "last_activity_date": 1608115548,
+        "creation_date": 1608115548,
+        "answer_id": 65321735,
+        "question_id": 65316643,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>I've created a page whereon initializing a random value is written into the session storage. When you click a button, the value is read and compared to the expected one. The result is displayed and it is true. I've tested in various browsers.</p>\n<p><strong>However, there is a kind of special behavior here. If you are using the debugger in visual studio</strong> (haven't tested in vs code but assume they behave the same), <strong>you will see only 1000 chars</strong>, even if your string has a lot more of them. In the example just comment the <code>&lt;p&gt;</code> tag in to see, that 10,000 chars are displayed but the debugger only shows 1,000.</p>\n<pre><code>\n@page &quot;/sessionStorage&quot;\n@inject IJSRuntime js\n\n&lt;h1&gt;SessionStorage&lt;/h1&gt;\n\n@if (isSame.HasValue == true)\n{\n  @*&lt;p&gt;@_expectedSessionValue&lt;/p&gt;*@\n    &lt;p&gt;Result: @isSame&lt;/p&gt;\n}\n\n&lt;button class=&quot;btn btn-primary&quot; @onclick=&quot;ReadSessionStorage&quot;&gt;Click me&lt;/button&gt;\n\n@code {\n    private Boolean? isSame = null;\n\n    private String _expectedSessionValue = &quot;&quot;;\n    private String _sessionKey = &quot;key1&quot;;\n\n\n    protected async override Task OnInitializedAsync()\n    {\n        Random random = new Random(12345);\n\n        Char[] content = new char[10000];\n        for (int i = 0; i &lt; content.Length; i++)\n        {\n            content[i] = (Char)('a' + random.Next(0, 26));\n        }\n\n        _expectedSessionValue = new string(content);\n\n        await js.InvokeVoidAsync(&quot;sessionStorage.setItem&quot;, new[] { _sessionKey, _expectedSessionValue });\n\n        base.OnInitialized();\n    }\n\n    protected async Task ReadSessionStorage()\n    {\n        await base.OnParametersSetAsync();\n\n        String value = await js.InvokeAsync&lt;String&gt;(&quot;sessionStorage.getItem&quot;, new[] { _sessionKey });\n\n        isSame = value == _expectedSessionValue;\n        StateHasChanged();\n    }\n\n}\n\n\n</code></pre>\n"
+    }
+]

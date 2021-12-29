@@ -1,0 +1,21 @@
+[
+    {
+        "owner": {
+            "reputation": 2627,
+            "user_id": 1435376,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://i.stack.imgur.com/Ft6s1.jpg?s=128&g=1",
+            "display_name": "Ruben-J",
+            "link": "https://stackoverflow.com/users/1435376/ruben-j"
+        },
+        "is_accepted": false,
+        "score": 0,
+        "last_activity_date": 1603790065,
+        "creation_date": 1603790065,
+        "answer_id": 64551252,
+        "question_id": 64543545,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>The problem was that the IIS server time wasn't in sync. So on the localhost it worked flawless, but connecting remotely was returning a token that was already expired. The logging of the Authorization Service of Blazor is minimal and doesn't show it discards the token because its expired.</p>\n"
+    }
+]

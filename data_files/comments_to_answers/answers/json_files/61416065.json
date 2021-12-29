@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 18898,
+            "user_id": 6036428,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/b632c15ba23e78e466c8d33d657378fe?s=128&d=identicon&r=PG&f=1",
+            "display_name": "jmrk",
+            "link": "https://stackoverflow.com/users/6036428/jmrk"
+        },
+        "is_accepted": false,
+        "score": 0,
+        "last_activity_date": 1587763752,
+        "creation_date": 1587763752,
+        "answer_id": 61417736,
+        "question_id": 61416065,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>To inspect generated code, you can run the <code>d8</code> shell with the <code>--print-wasm-code</code> flag. You'll need either a debug build, or a release build with the <code>v8_enable_disassembler = true</code> GN arg.</p>\n\n<p>There's no existing way to retrieve generated code via V8's API; so if that's what you want, then you'd have to add it. Keep in mind that V8 is not designed to be a standalone compiler, which means generated code assumes that it's going to run \"inside V8\", so if you wanted to use it for anything else, you'd have to make significant modifications.</p>\n"
+    }
+]

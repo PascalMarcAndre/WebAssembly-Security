@@ -1,0 +1,40 @@
+[
+    {
+        "owner": {
+            "reputation": 25737,
+            "user_id": 6152891,
+            "user_type": "registered",
+            "accept_rate": 75,
+            "profile_image": "https://www.gravatar.com/avatar/b45b7f89429f8766cdbf6c776c0a9d41?s=128&d=identicon&r=PG",
+            "display_name": "enet",
+            "link": "https://stackoverflow.com/users/6152891/enet"
+        },
+        "is_accepted": false,
+        "score": 1,
+        "last_activity_date": 1580811546,
+        "creation_date": 1580811546,
+        "answer_id": 60055209,
+        "question_id": 60054668,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>First off, A Blazor WebAssembly App is not a .NET CORE app.</p>\n\n<p>You can't execute CLI commands in a Blazor WebAssembly App which is more or less identical to JavaScript in scope and limitations. A Blazor WebAssembly App is single-threaded and runs in the same sandbox of JavaScript. In JavaScript you can't access the user's file system, which implies that you won't be able to do it using a WebAssembly App. </p>\n\n<p>I'm not sure I get you. If you want to display data retrieved from the server, why can't you display it in Html elements such as input box list box, etc. ?  </p>\n"
+    },
+    {
+        "owner": {
+            "reputation": 6662,
+            "user_id": 147301,
+            "user_type": "registered",
+            "accept_rate": 97,
+            "profile_image": "https://i.stack.imgur.com/5cRaa.png?s=128&g=1",
+            "display_name": "Flores",
+            "link": "https://stackoverflow.com/users/147301/flores"
+        },
+        "is_accepted": true,
+        "score": 2,
+        "last_activity_date": 1580810874,
+        "creation_date": 1580810874,
+        "answer_id": 60055041,
+        "question_id": 60054668,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>The permissions of blazor are limited by the browser javascript sandbox, so you cannot do anything you also cannot do in javascript. Starting processes is one of them.</p>\n"
+    }
+]

@@ -1,0 +1,39 @@
+[
+    {
+        "owner": {
+            "reputation": 329,
+            "user_id": 14201840,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/4e05d4fd94801927852066255854d2c6?s=128&d=identicon&r=PG&f=1",
+            "display_name": "TheNoobProgrammer",
+            "link": "https://stackoverflow.com/users/14201840/thenoobprogrammer"
+        },
+        "is_accepted": true,
+        "score": 0,
+        "last_activity_date": 1615278283,
+        "creation_date": 1615278283,
+        "answer_id": 66543229,
+        "question_id": 66534753,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>I found an answer to this problem, what i need to do is quite simple. I create the gRPC server without Identity Server UI and configuration, i just need to add the UI for it to work.<br />\nInstall IdentityServer4 UI template</p>\n<pre><code>dotnet new -i IdentityServer4.Templates\n</code></pre>\n<p>Add IdentityServer UI</p>\n<pre><code>dotnet new is4ui\n</code></pre>\n<p>Add the controller</p>\n<pre><code>app.UseEndpoints(endpoints =&gt;\n{\n    endpoints.MapGrpcService&lt;GreeterService&gt;().RequireCors(&quot;AllowAll&quot;);\n\n    endpoints.MapGrpcService&lt;UserService&gt;().RequireCors(&quot;AllowAll&quot;);\n\n    endpoints.MapGet(&quot;/&quot;, async context =&gt;\n    {\n        await context.Response.WriteAsync(&quot;Communication with gRPC endpoints must be made through a gRPC client. To learn how to create a client, visit: https://go.microsoft.com/fwlink/?linkid=2086909&quot;);\n    });\n\n    // Add this\n    endpoints.MapDefaultControllerRoute().RequireAuthorization();\n});\n</code></pre>\n"
+    },
+    {
+        "owner": {
+            "reputation": 5683,
+            "user_id": 68490,
+            "user_type": "registered",
+            "accept_rate": 20,
+            "profile_image": "https://www.gravatar.com/avatar/b3c70bbc491ede87ae5682c561af07d2?s=128&d=identicon&r=PG",
+            "display_name": "Tore Nestenius",
+            "link": "https://stackoverflow.com/users/68490/tore-nestenius"
+        },
+        "is_accepted": false,
+        "score": 0,
+        "last_activity_date": 1615278066,
+        "creation_date": 1615278066,
+        "answer_id": 66543178,
+        "question_id": 66534753,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>You use the Google authentication handler, like:</p>\n<pre><code>.AddGoogle(&quot;Google&quot;, options =&gt;\n{\n    //Configuration\n}).\n</code></pre>\n<p>And it will automatically by default listen for incoming requests from Google on this URL <strong>/signin-google</strong></p>\n<p>so that is automatically done for you.</p>\n<p>For the client that authenticates to IdentityServer, using AddOpenIDConnect, you typicall want to have https://localhost:5001/signin-oidc as the redirect URL in the client definition in IdentityServer.</p>\n<p>In your example, you also have AuthenticationService.js:1 GET https://localhost:5000/signin-google/.well-known/openid-configuration net::ERR_FAILED</p>\n<p>Are you not using 5001 for HTTPS and 5000 for HTTP?</p>\n<p>If localhost:5001 is your IdentityServer, then you would access the discovery document on AuthenticationService.js:1 GET https://localhost:5000/.well-known/openid-...</p>\n<p>The URL localhost:5000/signin-google is only used if Google contacts you, and your client should never call that endpoint.</p>\n<p>Perhaps if you better explained your architecture, then I can provide a better answer because right now I think you are mixing up IdentityServer, Google and your client.</p>\n"
+    }
+]

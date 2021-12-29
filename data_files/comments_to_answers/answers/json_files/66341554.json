@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 1,
+            "user_id": 13157126,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/aa4e0dfe815067b38caffb99914303e1?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Garett Cooper",
+            "link": "https://stackoverflow.com/users/13157126/garett-cooper"
+        },
+        "is_accepted": false,
+        "score": 0,
+        "last_activity_date": 1614213630,
+        "creation_date": 1614213630,
+        "answer_id": 66360885,
+        "question_id": 66341554,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>After digging through all the client code I could trying to identify the problem, I realized that the issue didn't occur when the WASM client was running standalone, instead of on an ASP.NET server. The server's Startup.cs class still contained code from the individual user accounts project template, which seems to have been the root cause.</p>\n<p>I'm unable to reproduce the issue after removing the commented out lines from the Startup.cs class</p>\n<pre class=\"lang-cs prettyprint-override\"><code>namespace Server {\n    public class Startup {\n        public Startup(IConfiguration configuration) {\n            Configuration = configuration;\n        }\n\n        public IConfiguration Configuration { get; }\n\n        public void ConfigureServices(IServiceCollection services) {\n            // services.AddDbContext&lt;ApplicationDbContext&gt;(options =&gt;\n            //    options.UseSqlServer(\n            //        Configuration.GetConnectionString(&quot;DefaultConnection&quot;)));\n\n            services.AddDatabaseDeveloperPageExceptionFilter();\n\n            // services.AddDefaultIdentity&lt;ApplicationUser&gt;(options =&gt; options.SignIn.RequireConfirmedAccount = true)\n            //     .AddEntityFrameworkStores&lt;ApplicationDbContext&gt;();\n            //\n            // services.AddIdentityServer()\n            //     .AddApiAuthorization&lt;ApplicationUser, ApplicationDbContext&gt;();\n            //\n            // services.AddAuthentication()\n            //     .AddIdentityServerJwt();\n\n            //services.AddServerSideBlazor();\n            //services.AddBlazoredModal();\n\n            services.AddControllersWithViews();\n            services.AddRazorPages();\n        }\n\n        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.\n        public void Configure(IApplicationBuilder app, IWebHostEnvironment env) {\n            if (env.IsDevelopment()) {\n                app.UseDeveloperExceptionPage();\n                app.UseWebAssemblyDebugging();\n            } else {\n                app.UseExceptionHandler(&quot;/Error&quot;);\n                app.UseHsts();\n            }\n\n            app.UseHttpsRedirection();\n            app.UseBlazorFrameworkFiles();\n            app.UseStaticFiles();\n\n            app.UseRouting();\n\n            // app.UseIdentityServer();\n            // app.UseAuthentication();\n            // app.UseAuthorization();\n\n            app.UseEndpoints(endpoints =&gt; {\n                endpoints.MapRazorPages();\n                endpoints.MapControllers();\n                endpoints.MapFallbackToFile(&quot;/index.html&quot;);\n            });\n        }\n    }\n}\n</code></pre>\n"
+    }
+]

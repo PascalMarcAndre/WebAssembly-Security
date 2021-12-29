@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 594,
+            "user_id": 6255000,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/CsYl8.jpg?s=128&g=1",
+            "display_name": "DenverCoder9",
+            "link": "https://stackoverflow.com/users/6255000/denvercoder9"
+        },
+        "is_accepted": true,
+        "score": 1,
+        "last_activity_date": 1614090056,
+        "creation_date": 1614090056,
+        "answer_id": 66334957,
+        "question_id": 65994552,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>This use case is exactly what the <a href=\"https://github.com/fivedots/storage-foundation-api-explainer\" rel=\"nofollow noreferrer\">Storage Foundation API</a> proposal was created for. You can test this API in Chrome by setting the <code>#experimental-web-platform-features</code> flag. If you run into any trouble, please file a new Issue in the GitHub repository.</p>\n"
+    }
+]

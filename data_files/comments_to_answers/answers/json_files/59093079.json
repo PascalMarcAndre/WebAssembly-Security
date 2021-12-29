@@ -1,0 +1,21 @@
+[
+    {
+        "owner": {
+            "reputation": 15796,
+            "user_id": 941357,
+            "user_type": "registered",
+            "accept_rate": 90,
+            "profile_image": "https://www.gravatar.com/avatar/3adf491b609c2462001889686edde315?s=128&d=identicon&r=PG",
+            "display_name": "ali haider",
+            "link": "https://stackoverflow.com/users/941357/ali-haider"
+        },
+        "is_accepted": true,
+        "score": 0,
+        "last_activity_date": 1574991349,
+        "creation_date": 1574991349,
+        "answer_id": 59097805,
+        "question_id": 59093079,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>I was able to upgrade the python version to 3.8.0 using pyenv.  The upgrade helped me with the certificate issue.</p>\n\n<pre><code>brew install pyenv\npyenv install 3.8.0\n\npyenv global 3.8.0 \n</code></pre>\n\n<p>or if inside the emsdk directory:</p>\n\n<pre><code>pyenv local 3.8.0\n</code></pre>\n\n<p>The command <code>./emsdk install latest</code> ran successfully after the python upgrade.</p>\n"
+    }
+]

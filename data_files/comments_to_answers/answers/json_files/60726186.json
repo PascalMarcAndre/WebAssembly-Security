@@ -1,0 +1,56 @@
+[
+    {
+        "owner": {
+            "reputation": 21,
+            "user_id": 476323,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/6658d46b536cc3bd771a3f52d98acc11?s=128&d=identicon&r=PG",
+            "display_name": "Enes Taha Selek",
+            "link": "https://stackoverflow.com/users/476323/enes-taha-selek"
+        },
+        "is_accepted": false,
+        "score": 0,
+        "last_activity_date": 1615985136,
+        "creation_date": 1615985136,
+        "answer_id": 66673353,
+        "question_id": 60726186,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>I resolve this issue with this :</p>\n<pre><code> services.AddScoped&lt;CustomAuthenticationStateProvider&gt;();\n services.AddScoped&lt;AuthenticationStateProvider&gt;(s =&gt; s.GetRequiredService&lt;CustomAuthenticationStateProvider&gt;());\n</code></pre>\n"
+    },
+    {
+        "owner": {
+            "reputation": 19,
+            "user_id": 6461922,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/0NeaJ.jpg?s=128&g=1",
+            "display_name": "webface",
+            "link": "https://stackoverflow.com/users/6461922/webface"
+        },
+        "is_accepted": false,
+        "score": -2,
+        "last_activity_date": 1588036379,
+        "creation_date": 1588036379,
+        "answer_id": 61471062,
+        "question_id": 60726186,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>To resolve this issue, I closed the project, deleted the \"obj\" folder, reloaded the project and all was well.</p>\n\n<p>H/T to John Dover as his answer led me to remember that pesky folder.</p>\n"
+    },
+    {
+        "owner": {
+            "reputation": 579,
+            "user_id": 4250126,
+            "user_type": "registered",
+            "profile_image": "https://graph.facebook.com/100000650157504/picture?type=large",
+            "display_name": "John Dover",
+            "link": "https://stackoverflow.com/users/4250126/john-dover"
+        },
+        "is_accepted": false,
+        "score": 1,
+        "last_activity_date": 1584471780,
+        "creation_date": 1584471780,
+        "answer_id": 60728725,
+        "question_id": 60726186,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>Ok, So I thought I would try a couple things here. and wanted to show what I found without cluttering comments.</p>\n\n<p>Adding services.AddAuthorizationCore() to startup.cs (and delete the .vs folder and reload project) in server-side blazor answers this SO post, but introduces a new problem. My question then is, is this really necessary to have in server-side blazor project because the site I was following did not add it. <a href=\"https://devblogs.microsoft.com/aspnet/blazor-webassembly-3-2-0-preview-2-release-now-available/\" rel=\"nofollow noreferrer\">https://devblogs.microsoft.com/aspnet/blazor-webassembly-3-2-0-preview-2-release-now-available/</a></p>\n\n<p>Secondly I believe the real issue is when I changed the base href tag. If I create a new project, change the connection string and run it, everything is good. If I then stop the application, change the </p>\n\n<pre><code>&lt;base href=\"/client-side-blazor/\"/&gt;\n</code></pre>\n\n<p>(including trailing slash) in index.html and add </p>\n\n<pre><code>app.UsePathBase(\"/client-side-blazor\")\n</code></pre>\n\n<p>to server-side blazor startup.cs, and then rerun the application it no longer works as before. and calls to the weather forcast controller responds with 401.</p>\n"
+    }
+]

@@ -1,0 +1,21 @@
+[
+    {
+        "owner": {
+            "reputation": 5683,
+            "user_id": 68490,
+            "user_type": "registered",
+            "accept_rate": 20,
+            "profile_image": "https://www.gravatar.com/avatar/b3c70bbc491ede87ae5682c561af07d2?s=128&d=identicon&r=PG",
+            "display_name": "Tore Nestenius",
+            "link": "https://stackoverflow.com/users/68490/tore-nestenius"
+        },
+        "is_accepted": false,
+        "score": 0,
+        "last_activity_date": 1608217649,
+        "creation_date": 1608217649,
+        "answer_id": 65343285,
+        "question_id": 65336589,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>You should aim to have one domain name for your identityServer that is used by all clients and API's. Also its best practice to use HTTPS everywhere and for HTTPS you need certificates and a domain.</p>\n<p>The issuer is also part of the tokens and the token validation will be problematic when the name of the issuer (Ip or domain changes)</p>\n"
+    }
+]

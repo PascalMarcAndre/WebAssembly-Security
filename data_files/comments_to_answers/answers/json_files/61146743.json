@@ -1,0 +1,113 @@
+[
+    {
+        "owner": {
+            "reputation": 196,
+            "user_id": 15419298,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/2ff48691478ce41162c97f9b5323641a?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Cory Podojil",
+            "link": "https://stackoverflow.com/users/15419298/cory-podojil"
+        },
+        "is_accepted": false,
+        "score": 0,
+        "last_activity_date": 1616024631,
+        "creation_date": 1616024631,
+        "answer_id": 66682844,
+        "question_id": 61146743,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>I had this exact issue while deploying a separate API/Identity/gRPC Server and Blazor WASM/gRPC Client both with different host names. The requests being sent to the gRPC server were not including the <code>authorization</code> header and thus a <code>gRPC 401/Unauthenticated</code> even though the user was successfully authenticated.</p>\n<p>If you are using IdentityServer4 (or any authentication really) and it is hosted from a different endpoint (URI) than the Blazor WASM app, you will need a custom implementation of <code>AuthorizationMessageHandler</code>. First, set <code>authorizedUrls</code> within <code>ConfigureHandler()</code> to include your backend server(s), then update your <code>Program.cs</code> file and replace or add the newly created message handler to the gRPC and Http clients.</p>\n<p>It is very simple, create the custom class implementation:</p>\n<pre class=\"lang-cs prettyprint-override\"><code>public class CorsAuthorizationMessageHandler : AuthorizationMessageHandler\n{\n    public CorsAuthorizationMessageHandler(IAccessTokenProvider provider, \n       NavigationManager navigation) : base(provider, navigation)\n    {\n        ConfigureHandler(authorizedUrls: new[] { &quot;https://api.myapp.com&quot; });\n    }\n}\n</code></pre>\n<p>Then update Progam.cs and add the following scoped service:</p>\n<pre class=\"lang-cs prettyprint-override\"><code>builder.Services.AddScoped&lt;CorsAuthorizationMessageHandler&gt;();\n</code></pre>\n<p>Next update any secured <code>HttpClients</code>:</p>\n<pre class=\"lang-cs prettyprint-override\"><code>builder.Services.AddHttpClient(\n    &quot;Private.ServerAPI&quot;, \n    client =&gt; client.BaseAddress = new Uri(&quot;https://api.myapp.com&quot;)\n).AddHttpMessageHandler&lt;CorsAuthorizationMessageHandler&gt;();\n</code></pre>\n<p>Finally for <code>gRPC</code> clients:</p>\n<pre class=\"lang-cs prettyprint-override\"><code>builder.Services.AddScoped(sp =&gt;\n{\n    var messageHandler = sp.GetRequiredService&lt;CorsAuthorizationMessageHandler&gt;();\n    messageHandler.InnerHandler = new HttpClientHandler();\n    var grpcWebHandler = new GrpcWebHandler(GrpcWebMode.GrpcWeb, messageHandler);\n    var channel = GrpcChannel.ForAddress(&quot;https://api.myapp.com&quot;, \n        new GrpcChannelOptions { HttpHandler = grpcWebHandler });\n    return new MygRPCService.MygRPCServiceClient(channel);\n});\n</code></pre>\n<p>That's it! Let me know if you have questions about this configuration.</p>\n"
+    },
+    {
+        "owner": {
+            "reputation": 7850,
+            "user_id": 255966,
+            "user_type": "registered",
+            "accept_rate": 64,
+            "profile_image": "https://www.gravatar.com/avatar/00266ff14a605bf99cb6aed0518ad2ec?s=128&d=identicon&r=PG",
+            "display_name": "Stef Heyenrath",
+            "link": "https://stackoverflow.com/users/255966/stef-heyenrath"
+        },
+        "is_accepted": false,
+        "score": 1,
+        "last_activity_date": 1594663167,
+        "creation_date": 1594663167,
+        "answer_id": 62881597,
+        "question_id": 61146743,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>For my solution I extracted the code to get and cache the token in a separate class: <strong>GrpcBearerTokenProvider.cs</strong></p>\n<pre class=\"lang-cs prettyprint-override\"><code>public class GrpcBearerTokenProvider\n{\n    private readonly IAccessTokenProvider _provider;\n    private readonly NavigationManager _navigation;\n    private AccessToken _lastToken;\n    private string _cachedToken;\n\n    public GrpcBearerTokenProvider(IAccessTokenProvider provider, NavigationManager navigation)\n    {\n        _provider = provider;\n        _navigation = navigation;\n    }\n\n    public async Task&lt;string&gt; GetTokenAsync(params string[] scopes)\n    {\n        var now = DateTimeOffset.Now;\n\n        if (_lastToken == null || now &gt;= _lastToken.Expires.AddMinutes(-5))\n        {\n            var tokenResult = scopes?.Length &gt; 0 ?\n                await _provider.RequestAccessToken(new AccessTokenRequestOptions { Scopes = scopes }) :\n                await _provider.RequestAccessToken();\n\n            if (tokenResult.TryGetToken(out var token))\n            {\n                _lastToken = token;\n                _cachedToken = _lastToken.Value;\n            }\n            else\n            {\n                throw new AccessTokenNotAvailableException(_navigation, tokenResult, scopes);\n            }\n        }\n\n        return _cachedToken;\n    }\n}\n</code></pre>\n<p>Which can be used in the partial page code-behind like:</p>\n<pre class=\"lang-cs prettyprint-override\"><code>[Inject]\npublic GrpcChannel Channel { get; set; }\n\n[Inject]\npublic GrpcBearerTokenProvider GrpcBearerTokenProvider { get; set; }\n\nprivate async Task IncrementCount()\n{\n    var cts = new CancellationTokenSource();\n\n    string token = &quot;&quot;;\n    try\n    {\n        token = await GrpcBearerTokenProvider.GetTokenAsync(Program.Scope);\n    }\n    catch (AccessTokenNotAvailableException a)\n    {\n        a.Redirect();\n    }\n\n    var headers = new Metadata\n    {\n        { &quot;Authorization&quot;, $&quot;Bearer {token}&quot; }\n    };\n\n    var client = new Count.Counter.CounterClient(Channel);\n    var call = client.StartCounter(new CounterRequest { Start = currentCount }, headers, cancellationToken: cts.Token);\n}\n</code></pre>\n<p>Full example projects can be found here:</p>\n<ul>\n<li><a href=\"https://github.com/StefH/BlazorWasmGrpcWithAADAuth\" rel=\"nofollow noreferrer\">https://github.com/StefH/BlazorWasmGrpcWithAADAuth</a></li>\n<li><a href=\"https://github.com/StefH/BlazorWasmGrpcWithAuth0\" rel=\"nofollow noreferrer\">https://github.com/StefH/BlazorWasmGrpcWithAuth0</a></li>\n</ul>\n"
+    },
+    {
+        "owner": {
+            "reputation": 11,
+            "user_id": 11882035,
+            "user_type": "registered",
+            "profile_image": "https://lh4.googleusercontent.com/-jxTgfQRs68c/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3rcj7Zbh15BtfaJEx3TMzMITfRZjdg/photo.jpg?sz=128",
+            "display_name": "Erik K&#252;hlmann",
+            "link": "https://stackoverflow.com/users/11882035/erik-k%c3%bchlmann"
+        },
+        "is_accepted": false,
+        "score": 1,
+        "last_activity_date": 1594595286,
+        "creation_date": 1594595286,
+        "answer_id": 62867320,
+        "question_id": 61146743,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>I solved this based on the new project templates for Hosted Blazor WebAssembly projects by Microsoft in .NET Core 3.2. I copied code from BaseAddressAuthorizationMessageHandler but commented out the exception thrown when the token is unavailable and added it to the HttpClient in Program.cs:</p>\n<p><strong>Program.cs</strong>:</p>\n<pre class=\"lang-cs prettyprint-override\"><code>builder.Services.AddHttpClient(&quot;SampleProject.ServerAPI&quot;, client =&gt; client.BaseAddress = new Uri(builder.HostEnvironment.BaseAddress))\n    .AddHttpMessageHandler&lt;GrpcWebHandler&gt;()\n    .AddHttpMessageHandler&lt;GrpcAuthorizationMessageHandler&gt;();\n\nbuilder.Services.AddSingleton(services =&gt;\n{\n    // Create a gRPC-Web channel pointing to the backend server\n    var httpClient = services.GetRequiredService&lt;HttpClient&gt;();\n    var baseUri = services.GetRequiredService&lt;NavigationManager&gt;().BaseUri;\n    var channel = GrpcChannel.ForAddress(baseUri, new GrpcChannelOptions { HttpClient = httpClient });\n\n    // Now we can instantiate gRPC clients for this channel\n    return new Products.ProductsClient(channel);\n});\n</code></pre>\n<p><strong>GrpcAuthorizationMessageHandler.cs (<a href=\"https://github.com/dotnet/aspnetcore/blob/master/src/Components/WebAssembly/WebAssembly.Authentication/src/Services/BaseAddressAuthorizationMessageHandler.cs\" rel=\"nofollow noreferrer\">source</a>):</strong></p>\n<pre class=\"lang-cs prettyprint-override\"><code>public class GrpcAuthorizationMessageHandler : DelegatingHandler\n{\n    private readonly IAccessTokenProvider _provider;\n    private readonly NavigationManager _navigation;\n    private AccessToken _lastToken;\n    private AuthenticationHeaderValue _cachedHeader;\n    private Uri[] _authorizedUris;\n    private AccessTokenRequestOptions _tokenOptions;\n\n    public GrpcAuthorizationMessageHandler(\n        IAccessTokenProvider provider,\n        NavigationManager navigation)\n    {\n        _provider = provider;\n        _navigation = navigation;\n        ConfigureHandler(new[] { _navigation.BaseUri });\n    }\n\n    protected override async Task&lt;HttpResponseMessage&gt; SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)\n    {\n        var now = DateTimeOffset.Now;\n        if (_authorizedUris == null)\n        {\n            throw new InvalidOperationException($&quot;The '{nameof(AuthorizationMessageHandler)}' is not configured. &quot; +\n                $&quot;Call '{nameof(AuthorizationMessageHandler.ConfigureHandler)}' and provide a list of endpoint urls to attach the token to.&quot;);\n        }\n\n        if (_authorizedUris.Any(uri =&gt; uri.IsBaseOf(request.RequestUri)))\n        {\n            if (_lastToken == null || now &gt;= _lastToken.Expires.AddMinutes(-5))\n            {\n                var tokenResult = _tokenOptions != null ?\n                    await _provider.RequestAccessToken(_tokenOptions) :\n                    await _provider.RequestAccessToken();\n\n                if (tokenResult.TryGetToken(out var token))\n                {\n                    _lastToken = token;\n                    _cachedHeader = new AuthenticationHeaderValue(&quot;Bearer&quot;, _lastToken.Value);\n                }\n                // this exception was commented out to be used with the GrpcWebHandler\n                // else\n                // {\n                    // throw new AccessTokenNotAvailableException(_navigation, tokenResult, _tokenOptions?.Scopes);\n                // }\n            }\n\n            // We don't try to handle 401s and retry the request with a new token automatically since that would mean we need to copy the request\n            // headers and buffer the body and we expect that the user instead handles the 401s. (Also, we can't really handle all 401s as we might\n            // not be able to provision a token without user interaction).\n            request.Headers.Authorization = _cachedHeader;\n        }\n\n        return await base.SendAsync(request, cancellationToken);\n    }\n\n    public GrpcAuthorizationMessageHandler ConfigureHandler(\n        IEnumerable&lt;string&gt; authorizedUrls,\n        IEnumerable&lt;string&gt; scopes = null,\n        string returnUrl = null)\n    {\n        if (_authorizedUris != null)\n        {\n            throw new InvalidOperationException(&quot;Handler already configured.&quot;);\n        }\n\n        if (authorizedUrls == null)\n        {\n            throw new ArgumentNullException(nameof(authorizedUrls));\n        }\n\n        var uris = authorizedUrls.Select(uri =&gt; new Uri(uri, UriKind.Absolute)).ToArray();\n        if (uris.Length == 0)\n        {\n            throw new ArgumentException(&quot;At least one URL must be configured.&quot;, nameof(authorizedUrls));\n        }\n\n        _authorizedUris = uris;\n        var scopesList = scopes?.ToArray();\n        if (scopesList != null || returnUrl != null)\n        {\n            _tokenOptions = new AccessTokenRequestOptions\n            {\n                Scopes = scopesList,\n                ReturnUrl = returnUrl\n            };\n        }\n\n        return this;\n    }\n}\n</code></pre>\n<p>Here is the rationale behind it.</p>\n<p>According to <a href=\"https://blog.stevensanderson.com/2020/01/15/2020-01-15-grpc-web-in-blazor-webassembly/\" rel=\"nofollow noreferrer\">this blog post</a> by Steve Sanderson, you only need to add the GrpcWebHandler to the HttpClient to be able to use GrpcWeb. However, if you try to use the BaseAddressAuthorizationMessageHandler with the GrpcWebHandler you will get an RpcException with StatusCode=Internal thrown when the user is unauthenticated.</p>\n<p>After looking into the code, I found that the cause of the exception is that the authorization handler throws an exception when the token is not available, and the GrpcWebHandler catches it as an internal exception. If you add a custom message handler that does not throw that exception, like the one above, the GrpcWebHandler will throw the correct RcpException with StatusCode=Unauthenticated, which you can then handle accordingly, for example by redirecting to the login page.</p>\n<p>This is a sample of how you can then use your GrpcClient in a razor page without needing to add additional authorization code:</p>\n<pre class=\"lang-cs prettyprint-override\"><code>@inject CustomClient grpcClient\n@inject NavigationManager navManager\n\n@code {\n    public async Task MakeRequest() {\n        var request = new Request();\n        try\n        {\n            var reply = await grpcClient.MakeRequestAsync(request);\n        }\n        catch (Grpc.Core.RpcException ex) when (ex.StatusCode == StatusCode.Unauthenticated)\n        {\n            NavigationManager.NavigateTo($&quot;/authentication/login/?returnUrl={NavigationManager.BaseUri}your-page&quot;);\n        }\n    }\n}\n</code></pre>\n"
+    },
+    {
+        "owner": {
+            "reputation": 828,
+            "user_id": 55046,
+            "user_type": "registered",
+            "accept_rate": 85,
+            "profile_image": "https://www.gravatar.com/avatar/044b315842bbe12c9cca4eb1325e425e?s=128&d=identicon&r=PG",
+            "display_name": "Fred",
+            "link": "https://stackoverflow.com/users/55046/fred"
+        },
+        "is_accepted": false,
+        "score": 1,
+        "last_activity_date": 1590318071,
+        "creation_date": 1590318071,
+        "answer_id": 61984976,
+        "question_id": 61146743,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>You could change this a bit and skip the async. It's not pretty but you get rid of the Task Channel. I havn't tried the code below it's just a thought on how it could be done.</p>\n\n<pre><code>builder.Services.AddSingleton(services =&gt;\n{\nvar httpClient = new HttpClient(new GrpcWebHandler(GrpcWebMode.GrpcWeb, new HttpClientHandler()));\nvar baseUri = \"serviceUri\";\n\nvar authenticationService = services.GetRequiredService&lt;IAccessTokenProvider&gt;();\n\nIAccessTokenProvider tokenResult;\nTask.Run(() =&gt; token = await authenticationService.RequestAccessToken());\n\nint i = 0;\nwhile (true)\n{\n   if (tokenResult.TryGetToken(out var tokenResult) || i &gt; 10)\n      break;\n   i++;\n\n   Thread.Sleep(10);\n}\n\nif(tokenResult.TryGetToken(out var token)) {\n    var credentials = CallCredentials.FromInterceptor((context, metadata) =&gt;\n    {\n        if (!string.IsNullOrEmpty(token.Value))\n        {\n            metadata.Add(\"Authorization\", $\"Bearer {token.Value}\");\n        }\n        return Task.CompletedTask;\n    });\n\n    var channel = GrpcChannel.ForAddress(baseUri, new GrpcChannelOptions { HttpClient = httpClient, Credentials = ChannelCredentials.Create(new SslCredentials(), credentials) });\n\n    return channel;\n}\n\nreturn GrpcChannel.ForAddress(baseUri, new GrpcChannelOptions() { HttpClient = httpClient });\n</code></pre>\n\n<p>});</p>\n"
+    },
+    {
+        "owner": {
+            "reputation": 285,
+            "user_id": 9855089,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/hMA6J.jpg?s=128&g=1",
+            "display_name": "Jaap",
+            "link": "https://stackoverflow.com/users/9855089/jaap"
+        },
+        "is_accepted": false,
+        "score": 1,
+        "last_activity_date": 1587462049,
+        "creation_date": 1587462049,
+        "answer_id": 61340419,
+        "question_id": 61146743,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>I tried to do something similar in my Blazor WASM app with the sample code from the 'Ticketer' example from JamesNK at <a href=\"https://github.com/grpc/grpc-dotnet/tree/master/examples#ticketer\" rel=\"nofollow noreferrer\">https://github.com/grpc/grpc-dotnet/tree/master/examples#ticketer</a> and it works. </p>\n\n<blockquote>\n  <p>The ticketer shows how to use gRPC with authentication and\n  authorization in ASP.NET Core. This example has a gRPC method marked\n  with an [Authorize] attribute. The client can only call the method if\n  it has been authenticated by the server and passes a valid JWT token\n  with the gRPC call.</p>\n</blockquote>\n\n<p>I create a token in 'Client/Shared/NavMenu.cs' (<code>OnInitializedAsync()</code>) and use that token in calls to the gRPC-services in other pages.</p>\n"
+    },
+    {
+        "owner": {
+            "reputation": 339,
+            "user_id": 3246541,
+            "user_type": "registered",
+            "accept_rate": 45,
+            "profile_image": "https://www.gravatar.com/avatar/40c286cc48f1844bf59fed209676e3d7?s=128&d=identicon&r=PG&f=1",
+            "display_name": "lolsharp",
+            "link": "https://stackoverflow.com/users/3246541/lolsharp"
+        },
+        "is_accepted": false,
+        "score": 5,
+        "last_activity_date": 1587331895,
+        "creation_date": 1587331895,
+        "answer_id": 61311894,
+        "question_id": 61146743,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>After lots of additional tests, i found a solution.\nWhile not perfect it is working fine so far.</p>\n\n<p>Registration of the channel during startup</p>\n\n<pre><code>builder.Services.AddSingleton(async services =&gt;\n{\n    var httpClient = new HttpClient(new GrpcWebHandler(GrpcWebMode.GrpcWeb, new HttpClientHandler()));\n    var baseUri = \"serviceUri\";\n\n    var authenticationService = services.GetRequiredService&lt;IAccessTokenProvider&gt;();\n\n    var tokenResult = await authenticationService.RequestAccessToken();\n\n    if(tokenResult.TryGetToken(out var token)) {\n        var credentials = CallCredentials.FromInterceptor((context, metadata) =&gt;\n        {\n            if (!string.IsNullOrEmpty(token.Value))\n            {\n                metadata.Add(\"Authorization\", $\"Bearer {token.Value}\");\n            }\n            return Task.CompletedTask;\n        });\n\n        var channel = GrpcChannel.ForAddress(baseUri, new GrpcChannelOptions { HttpClient = httpClient, Credentials = ChannelCredentials.Create(new SslCredentials(), credentials) });\n\n        return channel;\n    }\n\n    return GrpcChannel.ForAddress(baseUri, new GrpcChannelOptions() { HttpClient = httpClient });\n\n});\n</code></pre>\n\n<p>Since the channel is registered using async, it has to be injected as a Task</p>\n\n<pre><code>@inject Task&lt;GrpcChannel&gt; Channel\n</code></pre>\n"
+    }
+]

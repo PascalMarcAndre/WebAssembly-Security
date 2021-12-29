@@ -1,0 +1,41 @@
+[
+    {
+        "owner": {
+            "reputation": 52791,
+            "user_id": 555045,
+            "user_type": "registered",
+            "accept_rate": 100,
+            "profile_image": "https://www.gravatar.com/avatar/182d0ce855c8324a596648c04643e8f9?s=128&d=identicon&r=PG",
+            "display_name": "nicomp",
+            "link": "https://stackoverflow.com/users/555045/nicomp"
+        },
+        "is_accepted": true,
+        "score": 3,
+        "last_activity_date": 1602214060,
+        "last_edit_date": 1602214060,
+        "creation_date": 1602213242,
+        "answer_id": 64273440,
+        "question_id": 64273143,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p><code>mulhs(a, b) = mulhu(a, b) - (a &lt; 0 ? b : 0) - (b &lt; 0 ? a : 0)</code></p>\n<p>Using that, two signed double-width products can be computed like this,</p>\n<pre><code>__m128i mul_epi32(__m128i a, __m128i b) {\n    a = _mm_shuffle_epi32(a, _MM_SHUFFLE(3, 1, 1, 0));\n    b = _mm_shuffle_epi32(b, _MM_SHUFFLE(3, 1, 1, 0));\n    __m128i unsignedProduct = _mm_mul_epu32(a, b);\n    __m128i threshold = _mm_set_epi32(INT_MIN, 0, INT_MIN, 0);\n    __m128i signA = _mm_cmplt_epi32(a, threshold);\n    __m128i signB = _mm_cmplt_epi32(b, threshold);\n    __m128i x = _mm_shuffle_epi32(_mm_and_si128(signA, b), _MM_SHUFFLE(2, 3, 0, 1));\n    __m128i y = _mm_shuffle_epi32(_mm_and_si128(signB, a), _MM_SHUFFLE(2, 3, 0, 1));\n    return _mm_sub_epi32(_mm_sub_epi32(unsignedProduct, x), y);\n}\n</code></pre>\n<p>That saves a couple of operations over the other proposal, but it's very close and now it includes a load which could be bad if this code is cold.</p>\n"
+    },
+    {
+        "owner": {
+            "reputation": 351,
+            "user_id": 3900123,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/0c2a43adeac7bb506c17a4db01444423?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Dan Weber",
+            "link": "https://stackoverflow.com/users/3900123/dan-weber"
+        },
+        "is_accepted": false,
+        "score": 0,
+        "last_activity_date": 1602211097,
+        "last_edit_date": 1602211097,
+        "creation_date": 1602210744,
+        "answer_id": 64273144,
+        "question_id": 64273143,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<h2>Big shout out to @GeDaMo on ##asm for helping come up with this solution.</h2>\n<h2><a href=\"https://godbolt.org/z/WGa1ba\" rel=\"nofollow noreferrer\">Godbolt</a></h2>\n<h2>C/C++:</h2>\n<pre class=\"lang-cpp prettyprint-override\"><code>#include &lt;xmmintrin.h&gt;\n#include &lt;stdint.h&gt;\n#include &lt;tmmintrin.h&gt;\n#include &lt;smmintrin.h&gt;\n#include &lt;cstdio&gt;\n\ntypedef int32_t int32x4_t __attribute__((vector_size(16))) __attribute__((aligned(16)));\ntypedef int64_t int64x2_t __attribute__((vector_size(16))) __attribute__((aligned(16)));\n\nint64x2_t multiply32_low_s(int32x4_t a, int32x4_t b) {\n    auto aSigns = a &gt;&gt; 31;\n    auto bSigns = b &gt;&gt; 31;\n    auto aInt = a ^ aSigns;\n    aInt -= aSigns;\n    auto bInt = b ^ bSigns;\n    bInt -= bSigns;\n    const auto shuffleMask = _MM_SHUFFLE(1,1,0,0);\n    auto absProd = _mm_mul_epu32(_mm_shuffle_epi32((__m128i)aInt, shuffleMask), _mm_shuffle_epi32((__m128i)bInt, shuffleMask));\n    auto aSignsInt = _mm_shuffle_epi32((__m128i)aSigns, shuffleMask);\n    auto bSignsInt = _mm_shuffle_epi32((__m128i)bSigns,shuffleMask);\n    auto prodSigns = aSignsInt ^ bSignsInt;\n    absProd ^= prodSigns;\n    absProd -= prodSigns;\n    return (int64x2_t)absProd;\n}\n\nint64x2_t multiply32_high_s(int32x4_t a, int32x4_t b) {\n    auto aSigns = a &gt;&gt; 31;\n    auto bSigns = b &gt;&gt; 31;\n    auto aInt = a ^ aSigns;\n    aInt -= aSigns;\n    auto bInt = b ^ bSigns;\n    bInt -= bSigns;\n    const auto shuffleMask = _MM_SHUFFLE(3,3,2,2);\n    auto absProd = _mm_mul_epu32(_mm_shuffle_epi32((__m128i)aInt, shuffleMask), _mm_shuffle_epi32((__m128i)bInt, shuffleMask));\n    auto aSignsInt = _mm_shuffle_epi32((__m128i)aSigns, shuffleMask);\n    auto bSignsInt = _mm_shuffle_epi32((__m128i)bSigns,shuffleMask);\n    auto prodSigns = aSignsInt ^ bSignsInt;\n    absProd ^= prodSigns;\n    absProd -= prodSigns;\n    return (int64x2_t)absProd;\n}\n\n\nint main(int argc, char* argv[]) {\n    int32x4_t a{-5,500,-5000,50000};\n    int32x4_t b{10,-100,-5000,500000000};\n    auto c = multiply32_low_s(a,b);\n    auto d = multiply32_high_s(a,b);\n    printf(&quot;%ld %ld\\n&quot;, c[0],c[1]);\n    printf(&quot;%ld %ld\\n&quot;, d[0],d[1]);\n}\n</code></pre>\n<h2>Assembly</h2>\n<pre><code>multiply32_low_s(int __vector(4), int __vector(4)):\n movdqa xmm3,xmm0\n movdqa xmm2,xmm1\n psrad  xmm3,0x1f\n psrad  xmm2,0x1f\n pxor   xmm0,xmm3\n pxor   xmm1,xmm2\n psubd  xmm1,xmm2\n psubd  xmm0,xmm3\n pshufd xmm2,xmm2,0x50\n pshufd xmm1,xmm1,0x50\n pshufd xmm0,xmm0,0x50\n pshufd xmm3,xmm3,0x50\n pmuludq xmm0,xmm1\n pxor   xmm2,xmm3\n pxor   xmm0,xmm2\n psubq  xmm0,xmm2\n ret    \n nop    WORD PTR [rax+rax*1+0x0]\nmultiply32_high_s(int __vector(4), int __vector(4)):\n movdqa xmm3,xmm0\n movdqa xmm2,xmm1\n psrad  xmm3,0x1f\n psrad  xmm2,0x1f\n pxor   xmm0,xmm3\n pxor   xmm1,xmm2\n psubd  xmm1,xmm2\n psubd  xmm0,xmm3\n pshufd xmm2,xmm2,0xfa\n pshufd xmm1,xmm1,0xfa\n pshufd xmm0,xmm0,0xfa\n pshufd xmm3,xmm3,0xfa\n pmuludq xmm0,xmm1\n pxor   xmm2,xmm3\n pxor   xmm0,xmm2\n psubq  xmm0,xmm2\n ret    \n nop    WORD PTR [rax+rax*1+0x0]\n</code></pre>\n"
+    }
+]

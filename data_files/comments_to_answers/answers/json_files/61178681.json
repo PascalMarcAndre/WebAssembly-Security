@@ -1,0 +1,21 @@
+[
+    {
+        "owner": {
+            "reputation": 55,
+            "user_id": 1405344,
+            "user_type": "registered",
+            "accept_rate": 40,
+            "profile_image": "https://graph.facebook.com/665719873/picture?type=large",
+            "display_name": "Kostas Xagoraris",
+            "link": "https://stackoverflow.com/users/1405344/kostas-xagoraris"
+        },
+        "is_accepted": false,
+        "score": 1,
+        "last_activity_date": 1597830538,
+        "creation_date": 1597830538,
+        "answer_id": 63484312,
+        "question_id": 61178681,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>I followed the instructions of dfkeenan on this thread:\n<a href=\"https://github.com/dotnet/aspnetcore/issues/20887\" rel=\"nofollow noreferrer\">https://github.com/dotnet/aspnetcore/issues/20887</a></p>\n<p>and I added a ProfileService on which i added the claims I needed (CompanyName, CompanyID)</p>\n<pre><code>public class ProfileService : IProfileService\n{\n    public ProfileService()\n    {\n    }\n\n    public Task GetProfileDataAsync(ProfileDataRequestContext context)\n    {\n        var nameClaim = context.Subject.FindAll(JwtClaimTypes.Name);\n        context.IssuedClaims.AddRange(nameClaim);\n\n        var roleClaims = context.Subject.FindAll(JwtClaimTypes.Role);\n        context.IssuedClaims.AddRange(roleClaims);\n        context.IssuedClaims.AddRange(context.Subject.FindAll(&quot;CompanyName&quot;));\n        context.IssuedClaims.AddRange(context.Subject.FindAll(&quot;CompanyId&quot;));\n\n        return Task.CompletedTask;\n    }\n\n    public Task IsActiveAsync(IsActiveContext context)\n    {\n        return Task.CompletedTask;\n    }\n}\n</code></pre>\n<p>and then registered</p>\n<p><code>services.AddTransient&lt;IProfileService, ProfileService&gt;(); </code></p>\n<p>on ConfigureServices</p>\n"
+    }
+]

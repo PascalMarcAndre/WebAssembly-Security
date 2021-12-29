@@ -1,0 +1,61 @@
+[
+    {
+        "owner": {
+            "reputation": 2953,
+            "user_id": 2427359,
+            "user_type": "registered",
+            "accept_rate": 62,
+            "profile_image": "https://i.stack.imgur.com/MMrrm.png?s=128&g=1",
+            "display_name": "Simon",
+            "link": "https://stackoverflow.com/users/2427359/simon"
+        },
+        "is_accepted": false,
+        "score": 0,
+        "last_activity_date": 1596196203,
+        "last_edit_date": 1596196203,
+        "creation_date": 1596195689,
+        "answer_id": 63191211,
+        "question_id": 63188383,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>I got it by my self, using <code>[Authorize(AuthenticationSchemes = AuthSchemes)]</code> fpr my action in the controller. Here is the code:</p>\n<pre><code>[Route(&quot;[controller]&quot;)]\n[ApiController]\npublic class ClientsController : ControllerBase\n{          \n    private const string AuthSchemes = CookieAuthenticationDefaults.AuthenticationScheme;\n\n    [HttpGet(&quot;search&quot;)]\n    [Authorize(AuthenticationSchemes = AuthSchemes)]\n    public ActionResult&lt;List&lt;Shared.Client&gt;&gt; Search(Shared.Client.SearchProperty pProperty, string pText)\n    {\n        // [...]\n    }\n}\n</code></pre>\n<p>You can read more about this topic here: <a href=\"https://docs.microsoft.com/de-de/aspnet/core/security/authorization/limitingidentitybyscheme?view=aspnetcore-3.1\" rel=\"nofollow noreferrer\">https://docs.microsoft.com/de-de/aspnet/core/security/authorization/limitingidentitybyscheme?view=aspnetcore-3.1</a></p>\n"
+    },
+    {
+        "owner": {
+            "reputation": 318,
+            "user_id": 12147380,
+            "user_type": "registered",
+            "profile_image": "https://lh3.googleusercontent.com/a-/AAuE7mBliiN36yhMnbU4h3t5m_gXfn4v0oEsKigpmdqv=k-s128",
+            "display_name": "&#211;scar L&#243;pez",
+            "link": "https://stackoverflow.com/users/12147380/%c3%93scar-l%c3%b3pez"
+        },
+        "is_accepted": false,
+        "score": 1,
+        "last_activity_date": 1596304297,
+        "last_edit_date": 1596304297,
+        "creation_date": 1596190197,
+        "answer_id": 63189836,
+        "question_id": 63188383,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>You're getting redirected to the &quot;Login Page&quot; or returnURL because your authentication isn't working properly and you're getting Unauthorized. ASP.Net Core redirects you by default when it fails to authenticate instead of returning a 401 code.</p>\n<p>Make sure that you're implementing it in the right way as stated in <a href=\"https://docs.microsoft.com/es-es/aspnet/core/security/authentication/identity?view=aspnetcore-3.1&amp;tabs=visual-studio\" rel=\"nofollow noreferrer\">https://docs.microsoft.com/es-es/aspnet/core/security/authentication/identity?view=aspnetcore-3.1&amp;tabs=visual-studio</a>.</p>\n<p>Don't forget to add the following lines on your Configure method in the Startup.cs class to add the auth middleware:</p>\n<pre><code>app.UseAuthentication();\napp.UseAuthorization();\n</code></pre>\n<p>Please, check if you've it in the right order.(The order is important, since you first authenticate, and then it checks your role).</p>\n<p>They also must be placed between the <code>app.UseRouting()</code> and the <code>app.UseEndpoints()</code> calls.</p>\n"
+    },
+    {
+        "owner": {
+            "reputation": 304720,
+            "user_id": 216074,
+            "user_type": "registered",
+            "accept_rate": 90,
+            "profile_image": "https://www.gravatar.com/avatar/609c93bafd659500f83fde04802a9be5?s=128&d=identicon&r=PG",
+            "display_name": "poke",
+            "link": "https://stackoverflow.com/users/216074/poke"
+        },
+        "is_accepted": true,
+        "score": 4,
+        "last_activity_date": 1596205263,
+        "last_edit_date": 1596205263,
+        "creation_date": 1596187306,
+        "answer_id": 63189101,
+        "question_id": 63188383,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>If you see that the user is not recognized on future request after you explicitly signed in with the cookie authentication scheme, then that shows that you haven\u2019t properly configured the authentication middleware. As <a href=\"https://docs.microsoft.com/en-us/aspnet/core/security/authentication/cookie?view=aspnetcore-3.1#configuration\" rel=\"nofollow noreferrer\">per the docs</a>, you will not only have to add the authentication services using <code>services.AddAuthentication(\u2026)</code> but you will also have to configure the authentication middleware to run as part of the request pipeline. This will usually look like this:</p>\n<pre><code>app.UseRouting();\n\n// add the call to `UseAuthentication`\napp.UseAuthentication();\napp.UseAuthorization();\n\napp.UseEndpoints(endpoints =&gt;\n{\n    endpoints.MapControllers();\n});\n</code></pre>\n<p>By adding the <code>UseAuthentication()</code> call into the middleware, you will cause the default authentication scheme\u2014which is the cookie scheme in your case\u2014to run an attempt to authenticate the user. This makes sure that if there is an authentication cookie in the request, then it will used to authenticate the user, regardless of whether you want to access an authorized route or not.</p>\n<p>Once the middleware runs, actions protected with just the <code>[Authorize]</code> attribute will also work since the authentication of the cookie scheme has already happened (since it\u2019s the default scheme).</p>\n<p>Otherwise, if the middleware is not invoked by default, you will need to make sure that the authentication scheme is always explicitly invoked whenever you need to access the user information. That is what <code>[Authorize(AuthenticationSchemes = &quot;scheme-name&quot;)]</code> does: Before the <em>authorization</em> runs, it will attempt to authenticate the specified schemes. \u2013 If you use the authentication middleware and have the correct default scheme, then you can skip this since the scheme will be authenticated by default.</p>\n<p>In your original code, without the authentication running, this also gives you the explanation why you were being redirected: Since the authentication scheme didn\u2019t run to authenticate the user, there was no signed in user (even though the user had a cookie). So when the user was <em>authorized</em>, no user was there and you were being redirected to the login page.</p>\n<h2>Why is there a redirect to <code>/Account/Login</code>?</h2>\n<p>The cookie authentication scheme is the one involved in redirecting users to the login page when authentication is required (e.g. through the <code>[Authorize]</code> attribute) but the user does not have an authentication cookie yet. In that case, the authentication will be \u201cchallenged\u201d which for the cookie scheme means that the user will be redirected to the login page where they should sign in.</p>\n<p>By default, the route to the login page is configured to be <code>/Account/Login</code>. This default is there to match the default behavior when you use ASP.NET Core Identity. You can easily configure this route to match your actual login page by changing <a href=\"https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.authentication.cookies.cookieauthenticationoptions.loginpath?view=aspnetcore-3.1\" rel=\"nofollow noreferrer\"><code>CookieAuthenticationOptions.LoginPath</code></a>. You can do that for example with the <code>AddCookie()</code> call:</p>\n<pre><code>services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)\n    .AddCookie(options =&gt;\n    {\n        options.LoginPath = &quot;/Auth/Login&quot;; // using the AuthController instead\n    });\n</code></pre>\n<p>Now, when users are challenged, they will be redirected to your <code>AuthController.Login</code> action instead where they should sign in.</p>\n<p>Note that the cookie scheme will add a request parameter <code>ReturnUrl</code> to the login action which contains the path to the page that the user originally tried to access. E.g. when accessing your search action, they would be redirected to <code>/Auth/Login?ReturnUrl=%2FClients%2Fsearch</code>. So you are expected to accept this route parameter and return back to that route when the login is done, e.g.:</p>\n<pre><code>[HttpPost]\npublic async Task&lt;IActionResult&gt; Login(Credentials pCredentials, string returnUrl)\n{\n    // do login\n\n    return LocalRedirect(returnUrl);\n}\n</code></pre>\n<p>You can also change the name of the parameter <code>ReturnUrl</code> to whatever you like by changing <a href=\"https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.authentication.cookies.cookieauthenticationoptions.returnurlparameter?view=aspnetcore-3.1\" rel=\"nofollow noreferrer\"><code>CookieAuthenticationOptions.ReturnUrlParameter</code></a>.</p>\n"
+    }
+]

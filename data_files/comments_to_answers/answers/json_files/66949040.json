@@ -1,0 +1,21 @@
+[
+    {
+        "owner": {
+            "reputation": 16897,
+            "user_id": 116388,
+            "user_type": "registered",
+            "accept_rate": 96,
+            "profile_image": "https://i.stack.imgur.com/G9fyZ.png?s=128&g=1",
+            "display_name": "Manuel Selva",
+            "link": "https://stackoverflow.com/users/116388/manuel-selva"
+        },
+        "is_accepted": true,
+        "score": 1,
+        "last_activity_date": 1617864133,
+        "creation_date": 1617864133,
+        "answer_id": 66998562,
+        "question_id": 66949040,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>Yes it is implemented in all runtimes implementing <code>wasi</code>. The reason is that this feature is related to import/export mechanism of WebAssembly.</p>\n"
+    }
+]

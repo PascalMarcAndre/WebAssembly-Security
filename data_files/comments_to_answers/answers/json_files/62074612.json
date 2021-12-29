@@ -1,0 +1,38 @@
+[
+    {
+        "owner": {
+            "reputation": 21,
+            "user_id": 13167938,
+            "user_type": "registered",
+            "profile_image": "https://lh3.googleusercontent.com/a-/AOh14GhJ3QciZ9HOyGVJmHaA4w3bSopeQSY5rplmxffitA=k-s128",
+            "display_name": "Sander van &#39;t Einde",
+            "link": "https://stackoverflow.com/users/13167938/sander-van-t-einde"
+        },
+        "is_accepted": false,
+        "score": 1,
+        "last_activity_date": 1604585193,
+        "creation_date": 1604585193,
+        "answer_id": 64698874,
+        "question_id": 62074612,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>I've come across the same issue.</p>\n<p>My solution was 2-sided: I had to fix something in the fronend and in the backend.</p>\n<h2>Blazor</h2>\n<p>In your connection builder you should add the AccessTokenProvider:</p>\n<pre class=\"lang-csharp prettyprint-override\"><code>string accessToken = &quot;eyYourToken&quot;;\nconnection = new HubConnectionBuilder()\n    .WithUrl(&quot;https://localhost:5001/hub/chat&quot;, options =&gt;\n    {\n        options.AccessTokenProvider = () =&gt; Task.FromResult(token.Value);\n    })\n    .Build();\n</code></pre>\n<p><code>options.AccessTokenProvider</code> is of type <code>Func&lt;Task&lt;string&gt;&gt;</code>, thus you can also perform async operations here. Should that be required.</p>\n<p>Doing solely this, should allow SignalR to work.</p>\n<h2>Backend</h2>\n<p><strong>However!</strong> You might still see an error when SignalR attempts to create a WebSocket connection. This is because you are likely using IdentityServer on the backend and this does not support Jwt tokens from query strings. Unfortunately SignalR attempts to authorize websocket requests by a query string parameter called <code>access_token</code>.</p>\n<p>Add this code to your startup:</p>\n<pre class=\"lang-csharp prettyprint-override\"><code>.AddJwtBearer(&quot;Bearer&quot;, options =&gt;\n{\n    // other configurations omitted for brevity\n    options.Events = new JwtBearerEvents\n    {\n        OnMessageReceived = context =&gt;\n        {\n            var accessToken = context.Request.Query[&quot;access_token&quot;];\n\n            // If the request is for our hub...\n            var path = context.HttpContext.Request.Path;\n            if (!string.IsNullOrEmpty(accessToken) &amp;&amp;\n                (path.StartsWithSegments(&quot;/hubs&quot;))) // Ensure that this path is the same as yours!\n            {\n                // Read the token out of the query string\n                context.Token = accessToken;\n            }\n            return Task.CompletedTask;\n        }\n    };\n});\n</code></pre>\n<p><em>edit 1</em>: Clarified the usage of the Blazor SignalR code</p>\n"
+    },
+    {
+        "owner": {
+            "reputation": 11,
+            "user_id": 7590104,
+            "user_type": "registered",
+            "profile_image": "https://graph.facebook.com/1522434754463257/picture?type=large",
+            "display_name": "Peter",
+            "link": "https://stackoverflow.com/users/7590104/peter"
+        },
+        "is_accepted": false,
+        "score": 1,
+        "last_activity_date": 1595516630,
+        "creation_date": 1595516630,
+        "answer_id": 63057327,
+        "question_id": 62074612,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>This is my solution and works</p>\n<pre><code>[Inject] HttpClient httpClient { get; set; }\n[Inject] IAccessTokenProvider tokenProvider { get; set; }\nHubConnection hubConnection { get; set; }\n\n(...)\n\nprivate async Task ConnectToNotificationHub()\n{\n    string url = httpClient.BaseAddress.ToString() + &quot;notificationhub&quot;;\n\n    var tokenResult = await tokenProvider.RequestAccessToken();\n\n    if (tokenResult.TryGetToken(out var token))\n    {\n        hubConnection = new HubConnectionBuilder().WithUrl(url, options =&gt;\n        {\n            options.Headers.Add(&quot;Authorization&quot;, $&quot;Bearer {token.Value}&quot;);\n        }).Build();\n\n\n        await hubConnection.StartAsync();\n\n        hubConnection.Closed += async (s) =&gt;\n        {\n            await hubConnection.StartAsync();\n        };\n\n        hubConnection.On&lt;string&gt;(&quot;notification&quot;, m =&gt;\n        {\n            string msg = m;\n        });\n    }\n}\n</code></pre>\n"
+    }
+]

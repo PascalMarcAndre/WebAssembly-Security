@@ -1,0 +1,21 @@
+[
+    {
+        "owner": {
+            "reputation": 235795,
+            "user_id": 60761,
+            "user_type": "registered",
+            "accept_rate": 91,
+            "profile_image": "https://www.gravatar.com/avatar/5bf43bae0431d8f4a062234b5e3a0cb9?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Henk Holterman",
+            "link": "https://stackoverflow.com/users/60761/henk-holterman"
+        },
+        "is_accepted": true,
+        "score": 2,
+        "last_activity_date": 1596450187,
+        "creation_date": 1596450187,
+        "answer_id": 63227678,
+        "question_id": 63225051,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>The error comes from a name clash, the project can be compiled but not loaded.<br />\nI know a way to get it working, I'm not sure is this is the only or best way.</p>\n<ol>\n<li>Rename your resx project to <code>MyNamespace.BlazorApp.Translations</code></li>\n<li>Make sure there is a public class Translation in the root (no 's')</li>\n<li>Make a Folder called <code>Resources</code> in the Translations project</li>\n<li>Add Translation.resx, Translation.es.resx etc to that folder</li>\n<li>Change the config to <code>builder.Services.AddLocalization(options =&gt; options.ResourcesPath = &quot;Resources&quot;);</code></li>\n</ol>\n<p>Resources is a default name at several places, not a good idea to name your own project the same. The ResourcesPath seems to be required, I don't know what the defaults are.</p>\n"
+    }
+]

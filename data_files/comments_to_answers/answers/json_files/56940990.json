@@ -1,0 +1,39 @@
+[
+    {
+        "owner": {
+            "reputation": 31239,
+            "user_id": 1097780,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/a8f01ad795c29c3d05ad26ee47ea6069?s=128&d=identicon&r=PG",
+            "display_name": "Andreas Rossberg",
+            "link": "https://stackoverflow.com/users/1097780/andreas-rossberg"
+        },
+        "is_accepted": true,
+        "score": 1,
+        "last_activity_date": 1562617302,
+        "creation_date": 1562617302,
+        "answer_id": 56942074,
+        "question_id": 56940990,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>Wasm code cannot directly access physical memory, neither inside the Wasm engine itself nor anywhere else in the process. It can only access memory within its declared \"linear memory\" array, which is like accessing a big byte array.</p>\n\n<p>Out of bounds access to this array does not seg-fault. Instead, the Wasm execution will be aborted with a so-called trap, a kind of exception on the Wasm level. Engines can implement bounds checks in any way they like. On 32 bit architectures it is typically an actual address comparison. On 64 bit architectures, engines can use more efficient virtual memory techniques, which cause a hardware signal that the engine then catches and translates into a trap. However, the hardware fault in this case is an implementation detail and not observable by Wasm code.</p>\n"
+    },
+    {
+        "owner": {
+            "reputation": 64423,
+            "user_id": 249933,
+            "user_type": "registered",
+            "accept_rate": 81,
+            "profile_image": "https://www.gravatar.com/avatar/458f2e0d08d4114f8b323798cfea141d?s=128&d=identicon&r=PG",
+            "display_name": "ColinE",
+            "link": "https://stackoverflow.com/users/249933/coline"
+        },
+        "is_accepted": false,
+        "score": 1,
+        "last_activity_date": 1562614327,
+        "creation_date": 1562614327,
+        "answer_id": 56941503,
+        "question_id": 56940990,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>WebAssembly is not able to address directly into any process memory, rather, it is only allowed to read / write to memory addresses within the pre-defined \u2018linear memory\u2019, which webassembly modules share with their JavaScript host.</p>\n\n<p>So no, WebAssembly can not access random memory at a random address.</p>\n"
+    }
+]

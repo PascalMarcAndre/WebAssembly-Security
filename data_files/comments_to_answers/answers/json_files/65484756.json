@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 878,
+            "user_id": 14625593,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/o6RMg.png?s=128&g=1",
+            "display_name": "Just the benno",
+            "link": "https://stackoverflow.com/users/14625593/just-the-benno"
+        },
+        "is_accepted": false,
+        "score": 0,
+        "last_activity_date": 1609216301,
+        "creation_date": 1609216301,
+        "answer_id": 65487311,
+        "question_id": 65484756,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>Since Blazor WASM is entirely executed on the client, there are two different authentication models: <strong>Cookies</strong> and <strong>Token</strong>. (There are more). The basic idea, though, is the same. With each HTTP request sent by <code>HttpClient</code>, an additional header is sent to the server.</p>\n<p>Personally, I think Token authentication is a much smarter way supported in different libraries and can be implemented very quickly.</p>\n<p>In a nutshell:\nWith a token-based approach - to be more precise with OpenId Connect -,, you provide an identity service, and your Blazor application will become a client. The token, unlike a cookie, can be read easily by a client. If configured properly, it contains information (claims) like the user's name or email address.\nThe identity service is an MVC/Razor page application with special libraries handling the authentication flow.</p>\n<p>The authentication flow (very, very briefly):\nA user wants to login into your Blazor application. If there is no token available, the authentication process starts. The Blazor application redirects the user to the &quot;authentication flow&quot; part of your identity service. It is an endpoint without any &quot;visual&quot; result. The result is another redirect to your MVC/Razor page login view. You can implement any authentication logic here. If the user has been authenticated successfully (based on your logic), the user is redirected back to your Blazor application with a valid token in the URL. This token is extracted and can be used to access an API.</p>\n<p>It sounds a bit complicated, and it is a lot to learn and understand. However, you will get a reliable, widely used, and safe way to do authentication and authorization.</p>\n<p>As a starting point for reading</p>\n<p><a href=\"https://identityserver4.readthedocs.io/en/latest/quickstarts/0_overview.html\" rel=\"nofollow noreferrer\">https://identityserver4.readthedocs.io/en/latest/quickstarts/0_overview.html</a>\n<a href=\"https://identityserver4.readthedocs.io/en/latest/topics/signin.html#login-workflow\" rel=\"nofollow noreferrer\">https://identityserver4.readthedocs.io/en/latest/topics/signin.html#login-workflow</a>\n<a href=\"https://docs.microsoft.com/en-us/aspnet/core/blazor/security/webassembly/standalone-with-authentication-library?view=aspnetcore-5.0\" rel=\"nofollow noreferrer\">https://docs.microsoft.com/en-us/aspnet/core/blazor/security/webassembly/standalone-with-authentication-library?view=aspnetcore-5.0</a></p>\n"
+    }
+]

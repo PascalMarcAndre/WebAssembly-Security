@@ -1,0 +1,75 @@
+[
+    {
+        "owner": {
+            "reputation": 33,
+            "user_id": 8833472,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/8zDQj.png?s=128&g=1",
+            "display_name": "JIT Solution",
+            "link": "https://stackoverflow.com/users/8833472/jit-solution"
+        },
+        "is_accepted": false,
+        "score": 0,
+        "last_activity_date": 1614012102,
+        "creation_date": 1614012102,
+        "answer_id": 66319781,
+        "question_id": 60745737,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>I've got the same errors with CORS and afterwards Websocket.<br />\nIn my case the fallback longPolling was used as why the connection worked but the console logged the error <code>HTTP Authentication failed; no valid credentials available</code>.<br />\nIf you use Identity Server JWT the following code solved the error for my case.<br />\n(The Code is from the <a href=\"https://docs.microsoft.com/en-us/aspnet/core/signalr/authn-and-authz?view=aspnetcore-5.0#identity-server-jwt-authentication\" rel=\"nofollow noreferrer\">Microsoft SignalR Documentation - Authentication and authorization in ASP.NET Core SignalR - Identity Server JWT authentication</a>)</p>\n<pre><code>services.AddAuthentication()\n    .AddIdentityServerJwt();\n// insert:\n services.TryAddEnumerable(\n    ServiceDescriptor.Singleton&lt;IPostConfigureOptions&lt;JwtBearerOptions&gt;, \n        ConfigureJwtBearerOptions&gt;());\n</code></pre>\n<pre><code>using Microsoft.AspNetCore.Authentication.JwtBearer;\nusing Microsoft.Extensions.Options;\npublic class ConfigureJwtBearerOptions : IPostConfigureOptions&lt;JwtBearerOptions&gt;\n{\n    public void PostConfigure(string name, JwtBearerOptions options)\n    {\n        var originalOnMessageReceived = options.Events.OnMessageReceived;\n        options.Events.OnMessageReceived = async context =&gt;\n        {\n            await originalOnMessageReceived(context);\n                \n            if (string.IsNullOrEmpty(context.Token))\n            {\n                var accessToken = context.Request.Query[&quot;access_token&quot;];\n                var path = context.HttpContext.Request.Path;\n                \n                if (!string.IsNullOrEmpty(accessToken) &amp;&amp; \n                    path.StartsWithSegments(&quot;/hubs&quot;))\n                {\n                    context.Token = accessToken;\n                }\n            }\n        };\n    }\n}\n</code></pre>\n<p><strong>Important</strong>: Your Route has to start with <code>hubs</code> for the Options to trigger!<br />\n(see Line <code>path.StartsWithSegments(&quot;/hubs&quot;))</code>)</p>\n<pre><code>app.UseEndpoints(e =&gt;\n            {\n                ...\n                e.MapHub&lt;ChatHub&gt;(&quot;hubs/chat&quot;);\n            });\n</code></pre>\n"
+    },
+    {
+        "owner": {
+            "reputation": 1,
+            "user_id": 13516502,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/e520def2c66a8fdd16dc7f11c0bf9c59?s=128&d=identicon&r=PG&f=1",
+            "display_name": "John",
+            "link": "https://stackoverflow.com/users/13516502/john"
+        },
+        "is_accepted": false,
+        "score": 0,
+        "last_activity_date": 1589212732,
+        "creation_date": 1589212732,
+        "answer_id": 61734000,
+        "question_id": 60745737,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>This is problem with Microsoft.AspNetCore.SignalR.Client 3.1.3.\nYou can read about it <a href=\"https://docs.microsoft.com/en-us/aspnet/core/tutorials/signalr-blazor-webassembly?view=aspnetcore-3.1&amp;tabs=visual-studio\" rel=\"nofollow noreferrer\">here</a> in comments.</p>\n\n<p>You can wait for update or temporarly fix this issue:</p>\n\n<ol>\n<li>Disable negotiation</li>\n<li>Set WebSocket transport explicitly</li>\n<li>Modify query url</li>\n<li>Add OnMessageReceived handler</li>\n</ol>\n\n<p>Client side:</p>\n\n<pre><code>  var token = await GetAccessToken();\n  var hubConnection = new HubConnectionBuilder()\n        .WithUrl($\"/notification?access_token={token}\", options =&gt;\n        {\n            options.SkipNegotiation = true;\n            options.Transports = HttpTransportType.WebSockets;\n            options.AccessTokenProvider = GetAccessToken;\n\n        })\n        .Build();\n</code></pre>\n\n<p>Server side:</p>\n\n<pre><code>        public void ConfigureServices(IServiceCollection services)\n    {\n        services.AddAuthentication(options =&gt;\n        {\n            // ...\n        })\n        .AddJwtBearer(options =&gt;\n        {\n            options.Events = new JwtBearerEvents\n            {\n                OnMessageReceived = context =&gt;\n                {\n                    var accessToken = context.Request.Query[\"access_token\"];\n\n                    var path = context.HttpContext.Request.Path;\n                    if (!string.IsNullOrEmpty(accessToken) &amp;&amp;\n                        (path.StartsWithSegments(\"/notification\", System.StringComparison.InvariantCulture)))\n                    {\n                        context.Token = accessToken;\n                    }\n                    return Task.CompletedTask;\n                },\n            };\n        });\n    }\n</code></pre>\n"
+    },
+    {
+        "owner": {
+            "reputation": 775,
+            "user_id": 4873542,
+            "user_type": "registered",
+            "accept_rate": 83,
+            "profile_image": "https://lh4.googleusercontent.com/-Pgb3zoKnvRo/AAAAAAAAAAI/AAAAAAAAAU8/kDuu8Tt_h6Q/photo.jpg?sz=128",
+            "display_name": "Niek Jannink",
+            "link": "https://stackoverflow.com/users/4873542/niek-jannink"
+        },
+        "is_accepted": true,
+        "score": 0,
+        "last_activity_date": 1585068421,
+        "creation_date": 1585068421,
+        "answer_id": 60835555,
+        "question_id": 60745737,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>The best solution is indeed as <a href=\"https://stackoverflow.com/users/4358683/ismail-umar\">Ismail Umer</a> described using a seperate authentication service using something like IdentityServer4. And use this service in all other services. This is something I will do in a next iteration.</p>\n\n<p>As short term solution I temporary moved the blazor server part into my api service and use a dual authentication method (JWT header or cookie). </p>\n\n<pre><code>        var key = Encoding.UTF8.GetBytes(m_configuration[@\"SecurityKey\"]);\n        services.AddAuthentication(options =&gt;\n            {\n                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;\n                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;\n            })\n            .AddJwtBearer(options =&gt;\n            {\n                options.TokenValidationParameters = new TokenValidationParameters\n                {\n                    NameClaimType = @\"http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier\",\n                    ValidateIssuerSigningKey = true,\n                    IssuerSigningKey = new SymmetricSecurityKey(key),\n                    ValidateIssuer = false,\n                    ValidateAudience = false,\n                    ValidateLifetime = true\n                };\n            })\n            .AddCookie();\n\n        // TODO: For time being support dual authorization. At later stage split in various micro-services and use IdentityServer4 for Auth\n        services.AddAuthorization(options =&gt;\n        {\n            var defaultAuthorizationPolicyBuilder = new AuthorizationPolicyBuilder(\n                CookieAuthenticationDefaults.AuthenticationScheme,\n                JwtBearerDefaults.AuthenticationScheme);\n            defaultAuthorizationPolicyBuilder =\n                defaultAuthorizationPolicyBuilder.RequireAuthenticatedUser();\n            options.DefaultPolicy = defaultAuthorizationPolicyBuilder.Build();\n        });\n</code></pre>\n"
+    },
+    {
+        "owner": {
+            "reputation": 383,
+            "user_id": 4358683,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/1b78508e6f196e3ae37d50cfddfec391?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Ismail Umar",
+            "link": "https://stackoverflow.com/users/4358683/ismail-umar"
+        },
+        "is_accepted": false,
+        "score": 1,
+        "last_activity_date": 1585006529,
+        "creation_date": 1585006529,
+        "answer_id": 60823018,
+        "question_id": 60745737,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>In my case, ASP.NET Core 2.2 I have an API from which I want to be able to use SignalR from the API to connect to my client application.</p>\n\n<p>I have Projects for </p>\n\n<ol>\n<li>Web API</li>\n<li>IdentityServer4</li>\n<li>MVC Client</li>\n</ol>\n\n<p>With ASP.NET Core Identity as the for user management</p>\n\n<p>In order for your user to be authenticated you need to implement a IUserIdProvider like this</p>\n\n<pre><code> public class IdBasedUserIdProvider : IUserIdProvider\n {\n      public string GetUserId(HubConnectionContext connection)\n      {\n           //TODO: Implement USERID Mapper Here\n           //throw new NotImplementedException();\n           //return whatever you want to map/identify the user by here. Either ID/Email\n           return connection.User.FindFirst(\"sub\").Value;\n      }\n }\n</code></pre>\n\n<p>With this I make sure I am pushing along the ID/Email to a method I am calling either from the Server or Client. Although I can always use the .User on the HubContext and it works fine.</p>\n\n<p>In my Web API Startup.cs file I came up with</p>\n\n<pre><code>public void ConfigureServices(IServiceCollection services)\n{\n     services.AddCors(cfg =&gt;\n           {\n                cfg.AddDefaultPolicy(policy =&gt;\n                {\n                     policy.WithOrigins(Configuration.GetSection(\"AuthServer:DomainBaseUrl\").Get&lt;string[]&gt;())\n                     .AllowAnyHeader()\n                     .AllowAnyMethod()\n                     .AllowCredentials()\n                     .SetIsOriginAllowed((_) =&gt; true)\n                     .SetIsOriginAllowedToAllowWildcardSubdomains();\n                });\n           });\n}\npublic void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory, UserManager&lt;AppUser&gt; userManager,\n           RoleManager&lt;IdentityRole&gt; roleManager){\n\n    app.UseCors();\n\n}\n</code></pre>\n\n<p><strong>NOTE</strong>\nConfiguration.GetSection(\"AuthServer:DomainBaseUrl\").Get() retrieves the list of domains to allow CORS for from a config file.</p>\n\n<p>And I did this configuration in My Client App COnfigureService Method</p>\n\n<pre><code>           services.AddCors(cfg =&gt;\n           {\n                cfg.AddDefaultPolicy(policy =&gt; {\n                     policy.AllowAnyHeader();\n                     policy.AllowAnyMethod();\n                     policy.SetIsOriginAllowed((host) =&gt; true);\n                     policy.AllowAnyOrigin();\n                });\n           });\n</code></pre>\n\n<p>I hope this helps your situation.</p>\n"
+    }
+]

@@ -1,0 +1,56 @@
+[
+    {
+        "owner": {
+            "reputation": 61,
+            "user_id": 13685139,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/9742c97009c682c2c357ce7c6f0c8d0f?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Shama",
+            "link": "https://stackoverflow.com/users/13685139/shama"
+        },
+        "is_accepted": true,
+        "score": 0,
+        "last_activity_date": 1611127506,
+        "creation_date": 1611127506,
+        "answer_id": 65804844,
+        "question_id": 65634788,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<blockquote>\n<p>Please imagine the single-page website. Usually, this kind of page has a &quot;contact us&quot; tab where is the contact form. If the user fills up the contact form then data have to be somehow sent to us. For this purpose, I tried to use MS graph API. When the user clicks the submit button, in the background the registration to my account will be created and an email will be sent to me. It means that the user is not aware of any registration procedure. \u2013 Samo Simoncic</p>\n</blockquote>\n<p>For your app to be able to create users in a tenant, it needs to use an app only flow which requires a secret. We do not advise exposing app only flows of this nature, which can easily be exploited to create bogus users or overwhelm your tenant, open to the general public.</p>\n<p>The best approach would be to take this registrations in a local DB, and then have a daemon app process them behind the scenes. Here is the sample where <a href=\"https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2/tree/master/1-Call-MSGraph\" rel=\"nofollow noreferrer\">daemon console application is calling Microsoft Graph</a>.</p>\n"
+    },
+    {
+        "owner": {
+            "reputation": 26,
+            "user_id": 6526032,
+            "user_type": "registered",
+            "profile_image": "https://graph.facebook.com/260519407643274/picture?type=large",
+            "display_name": "Ahmad Mozaffar",
+            "link": "https://stackoverflow.com/users/6526032/ahmad-mozaffar"
+        },
+        "is_accepted": false,
+        "score": 0,
+        "last_activity_date": 1610995187,
+        "creation_date": 1610995187,
+        "answer_id": 65780272,
+        "question_id": 65634788,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>I have cloned your repo from the GitHub URL you posted in the comments.\nThere is no issue with the code to fetch the data from the Microsoft Graph API, the problem is that you have written the code of calling the API when the apps shows the index component before even the user logs in, you have to check if the user is logged in first and add a login button to the UI or you can add [Authorize] to the index page so it will redirect the user to Login before it shows the component and make the API and to implement that make sure to add the CascadingAuthenticationState and AuthorizeView to your App.razor as following</p>\n<pre><code>&lt;CascadingAuthenticationState&gt;\n    &lt;Router AppAssembly=&quot;@typeof(Program).Assembly&quot;&gt;\n        &lt;Found Context=&quot;routeData&quot;&gt;\n            &lt;AuthorizeRouteView RouteData=&quot;@routeData&quot; DefaultLayout=&quot;@typeof(MainLayout)&quot;&gt;\n                &lt;NotAuthorized&gt;\n                    @if (!context.User.Identity.IsAuthenticated)\n                    {\n                        &lt;a class=&quot;btn btn-success&quot; href=&quot;/authentication/login&quot;&gt;Login with Microsoft&lt;/a&gt;\n                    }\n                    else\n                    {\n                        &lt;p&gt;You are not authorized to access this resource.&lt;/p&gt;\n                    }\n                &lt;/NotAuthorized&gt;\n            &lt;/AuthorizeRouteView&gt;\n        &lt;/Found&gt;\n        &lt;NotFound&gt;\n            &lt;LayoutView Layout=&quot;@typeof(MainLayout)&quot;&gt;\n                &lt;p&gt;Sorry, there's nothing at this address.&lt;/p&gt;\n            &lt;/LayoutView&gt;\n        &lt;/NotFound&gt;\n    &lt;/Router&gt;\n&lt;/CascadingAuthenticationState&gt;\n\n</code></pre>\n<p>And then in your Index.razor add at the top the following line</p>\n<pre><code>@attribute [Authorize]\n</code></pre>\n<p>Then you launch the app if the user is not logged in, he/she will be asked to do so and then go to the Index component and make the API call which will succed then</p>\n"
+    },
+    {
+        "owner": {
+            "reputation": 10961,
+            "user_id": 10521739,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/6459b077561be67082b7c27faed22fb2?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Allen Wu",
+            "link": "https://stackoverflow.com/users/10521739/allen-wu"
+        },
+        "is_accepted": false,
+        "score": 0,
+        "last_activity_date": 1610435380,
+        "creation_date": 1610435380,
+        "answer_id": 65679406,
+        "question_id": 65634788,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>Not sure about the cause of the issue.</p>\n<p>But I can make it work with the following code and configuration:</p>\n<p><strong>Program.cs</strong></p>\n<pre><code>    public static async Task Main(string[] args)\n    {\n        var builder = WebAssemblyHostBuilder.CreateDefault(args);\n        builder.RootComponents.Add&lt;App&gt;(&quot;app&quot;);\n\n        // Adds the Microsoft graph client (Graph SDK) support for this app. \n        builder.Services.AddMicrosoftGraphClient(&quot;https://graph.microsoft.com/User.Read&quot;);\n\n        // Integrates authentication with the MSAL library\n        builder.Services.AddMsalAuthentication(options =&gt;\n        {\n            builder.Configuration.Bind(&quot;AzureAd&quot;, options.ProviderOptions.Authentication);\n            options.ProviderOptions.DefaultAccessTokenScopes.Add(&quot;https://graph.microsoft.com/User.Read&quot;);\n        });\n        await builder.Build().RunAsync();\n    }\n</code></pre>\n<p><strong>appsettings.json</strong></p>\n<pre><code>{\n  &quot;AzureAd&quot;: {\n    &quot;Authority&quot;: &quot;https://login.microsoftonline.com/exxxxx4e-bd27-40d5-8459-230ba2xxxxxb&quot;,\n    &quot;ClientId&quot;: &quot;7xxxxxx8-88b3-4c02-a2f8-0a890xxxxxx5&quot;,\n    &quot;CallbackPath&quot;: &quot;/signin-oidc&quot;,\n    &quot;ValidateAuthority&quot;: &quot;true&quot;,\n    &quot;DefaultScopes&quot;: [\n      &quot;openid&quot;,\n      &quot;profile&quot;\n    ]\n  }\n}\n</code></pre>\n<p>You can refer to the configuration and sample code <a href=\"https://github.com/Azure-Samples/ms-identity-blazor-wasm/tree/main/WebApp-graph-user/Call-MSGraph\" rel=\"nofollow noreferrer\">here</a>.</p>\n"
+    }
+]

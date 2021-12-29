@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 414,
+            "user_id": 9222915,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/8c4681709e6455ef19196a5ac0d7fc6a?s=128&d=identicon&r=PG&f=1",
+            "display_name": "me&#39;",
+            "link": "https://stackoverflow.com/users/9222915/me"
+        },
+        "is_accepted": false,
+        "score": 1,
+        "last_activity_date": 1590919802,
+        "creation_date": 1590919802,
+        "answer_id": 62114597,
+        "question_id": 62114179,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>One reason is that they may have an application or library and they don't want to rewrite in Javascript. For example, if they have already made a game in a systems language and they want people on the web to be able to play it, they won't want to rewrite in javascript. </p>\n\n<p>Javascript can be rather annoying to use in very large projects because it wasn't really designed for them. It might just be easier to write good code in a different language.</p>\n"
+    }
+]

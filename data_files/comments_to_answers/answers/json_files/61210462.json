@@ -1,0 +1,22 @@
+[
+    {
+        "owner": {
+            "reputation": 12718,
+            "user_id": 2940908,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://i.stack.imgur.com/E79WU.jpg?s=128&g=1",
+            "display_name": "agua from mars",
+            "link": "https://stackoverflow.com/users/2940908/agua-from-mars"
+        },
+        "is_accepted": false,
+        "score": 1,
+        "last_activity_date": 1586877144,
+        "last_edit_date": 1586877144,
+        "creation_date": 1586876739,
+        "answer_id": 61210929,
+        "question_id": 61210462,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p><a href=\"https://docs.microsoft.com/en-us/aspnet/core/security/blazor/webassembly/?view=aspnetcore-3.1\" rel=\"nofollow noreferrer\">Secure ASP.NET Core Blazor WebAssembly</a> explains how to secure a Blazor WASM app  </p>\n\n<p><a href=\"https://devblogs.microsoft.com/aspnet/blazor-webassembly-3-2-0-preview-2-release-now-available/\" rel=\"nofollow noreferrer\">Blazor WebAssembly 3.2.0 Preview 2 release now available</a> explains how to use <code>IAccessTokenProvider</code> to get the access token to authentify your applicaton on API.</p>\n"
+    }
+]

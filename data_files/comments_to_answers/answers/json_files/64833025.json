@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 21,
+            "user_id": 7199890,
+            "user_type": "registered",
+            "profile_image": "https://graph.facebook.com/10153951940930264/picture?type=large",
+            "display_name": "Oscar",
+            "link": "https://stackoverflow.com/users/7199890/oscar"
+        },
+        "is_accepted": true,
+        "score": 0,
+        "last_activity_date": 1606927833,
+        "creation_date": 1606927833,
+        "answer_id": 65112514,
+        "question_id": 64833025,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>In the meanwhile I found the solution. In stead of directly linking to <code>/authentication/logout/</code> I use the <code>@onclick=&quot;BeginSignOut&quot;</code> on the logout link/button.</p>\n<p>Then you need to inject:</p>\n<pre class=\"lang-cs prettyprint-override\"><code>        [Inject] NavigationManager Navigation { get; set; }\n        [Inject] SignOutSessionStateManager SignOutManager { get; set; }\n</code></pre>\n<p>and use it in:</p>\n<pre class=\"lang-cs prettyprint-override\"><code>        protected async Task BeginSignOut(MouseEventArgs args)\n        {\n            await SignOutManager.SetSignOutState();\n            Navigation.NavigateTo(&quot;authentication/logout&quot;);\n        }\n</code></pre>\n"
+    }
+]

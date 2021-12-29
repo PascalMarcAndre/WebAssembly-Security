@@ -1,0 +1,21 @@
+[
+    {
+        "owner": {
+            "reputation": 317,
+            "user_id": 267124,
+            "user_type": "registered",
+            "accept_rate": 25,
+            "profile_image": "https://www.gravatar.com/avatar/64e590aa5e63904f34f290625ebd2372?s=128&d=identicon&r=PG",
+            "display_name": "Craig",
+            "link": "https://stackoverflow.com/users/267124/craig"
+        },
+        "is_accepted": false,
+        "score": 0,
+        "last_activity_date": 1615419280,
+        "creation_date": 1615419280,
+        "answer_id": 66574418,
+        "question_id": 66568707,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>Turns out it was working ok, just the breakpoints were not working - no idea why not.  I added Console.WriteLine messages to each &amp; all events are hit correctly.  So both techniques work as expected.</p>\n"
+    }
+]

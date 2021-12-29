@@ -1,0 +1,21 @@
+[
+    {
+        "owner": {
+            "reputation": 12718,
+            "user_id": 2940908,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://i.stack.imgur.com/E79WU.jpg?s=128&g=1",
+            "display_name": "agua from mars",
+            "link": "https://stackoverflow.com/users/2940908/agua-from-mars"
+        },
+        "is_accepted": false,
+        "score": 0,
+        "last_activity_date": 1586870404,
+        "creation_date": 1586870404,
+        "answer_id": 61208733,
+        "question_id": 61207786,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>To use the <code>AuthorizeView role</code>, roles claims should be return by your Identity provider (Azure AD in your case). Your application should ask those claims by asking the corresponding scope.<br>\nAccording to the doc : <a href=\"https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-permissions-and-consent#profile\" rel=\"nofollow noreferrer\">Permissions and consent in the Microsoft identity platform endpoint</a>, the <strong>profile</strong> scope should return roles claims.</p>\n\n<p>The doc <a href=\"https://docs.microsoft.com/en-us/aspnet/core/security/blazor/webassembly/standalone-with-azure-active-directory?view=aspnetcore-3.1#access-token-scopes\" rel=\"nofollow noreferrer\">Secure an ASP.NET Core Blazor WebAssembly standalone app with Azure Active Directory</a> explains how to request scopes from Azure AD</p>\n"
+    }
+]

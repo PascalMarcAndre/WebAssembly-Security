@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 30696,
+            "user_id": 9455659,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/Albsq.jpg?s=128&g=1",
+            "display_name": "Joy Wang",
+            "link": "https://stackoverflow.com/users/9455659/joy-wang"
+        },
+        "is_accepted": false,
+        "score": 0,
+        "last_activity_date": 1606700259,
+        "creation_date": 1606700259,
+        "answer_id": 65067072,
+        "question_id": 65040872,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>When you request the token, you are using different resource endpoints in the scope, i.e. Microsoft Graph and your custom API in your case, it is not correct, you can just request the token for one resource, because one token can just have one audience.</p>\n"
+    }
+]

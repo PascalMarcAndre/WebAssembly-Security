@@ -1,0 +1,21 @@
+[
+    {
+        "owner": {
+            "reputation": 1949,
+            "user_id": 1121245,
+            "user_type": "registered",
+            "accept_rate": 80,
+            "profile_image": "https://www.gravatar.com/avatar/b9b01fb3b20f21cebcc7784fb4809abd?s=128&d=identicon&r=PG",
+            "display_name": "Michele mpp Marostica",
+            "link": "https://stackoverflow.com/users/1121245/michele-mpp-marostica"
+        },
+        "is_accepted": true,
+        "score": 2,
+        "last_activity_date": 1584545766,
+        "creation_date": 1584545766,
+        "answer_id": 60742802,
+        "question_id": 60727676,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p><a href=\"https://devblogs.microsoft.com/aspnet/blazor-webassembly-3-2-0-preview-2-release-now-available/\" rel=\"nofollow noreferrer\">https://devblogs.microsoft.com/aspnet/blazor-webassembly-3-2-0-preview-2-release-now-available/</a></p>\n\n<p>The preview 2 of Blazor WebAssembly comes with a working template out of the box.</p>\n"
+    }
+]

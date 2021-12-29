@@ -1,0 +1,21 @@
+[
+    {
+        "owner": {
+            "reputation": 1605,
+            "user_id": 3833068,
+            "user_type": "registered",
+            "accept_rate": 50,
+            "profile_image": "https://www.gravatar.com/avatar/6a2a668bce4cd485078f912cbda24f2a?s=128&d=identicon&r=PG",
+            "display_name": "Ameo",
+            "link": "https://stackoverflow.com/users/3833068/ameo"
+        },
+        "is_accepted": false,
+        "score": 5,
+        "last_activity_date": 1574287051,
+        "creation_date": 1574287051,
+        "answer_id": 58964021,
+        "question_id": 58964020,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>Yes; the <code>log</code> crate provides <a href=\"https://docs.rs/log/0.4.8/log/#compile-time-filters\" rel=\"noreferrer\">features flags</a> that allow logging to be statically disabled at compile time up to a certain level.</p>\n\n<p>If you want to completely disable all logging in release builds but keep normal logging in debug builds, change your entry in <code>Cargo.toml</code> to include the <code>release_max_level_off</code> feature like this:</p>\n\n<pre><code>log = { version = \"0.4\", features = [\"release_max_level_off\"] }\n</code></pre>\n\n<p>This will cause all calls to logging functions to be eliminated from the resulting binary, taking any related formatting code with it via dead code elimination.</p>\n"
+    }
+]

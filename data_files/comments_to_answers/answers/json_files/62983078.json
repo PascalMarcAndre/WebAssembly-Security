@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 572,
+            "user_id": 3680412,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/FiXfl.jpg?s=128&g=1",
+            "display_name": "Guillaume Besson",
+            "link": "https://stackoverflow.com/users/3680412/guillaume-besson"
+        },
+        "is_accepted": true,
+        "score": 0,
+        "last_activity_date": 1595248661,
+        "creation_date": 1595248661,
+        "answer_id": 62995569,
+        "question_id": 62983078,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>Found out the problem. The Soxr lib was wrongfully casting a function pointer. The pointed function was expecting no arguments but was casted to a function receiving one int as argument. I wrote a patch to fix this and everything is working fine! There is more information about this in the <a href=\"https://emscripten.org/docs/porting/guidelines/function_pointer_issues.html\" rel=\"nofollow noreferrer\">Emscripten documentation</a>.</p>\n"
+    }
+]

@@ -1,0 +1,39 @@
+[
+    {
+        "owner": {
+            "reputation": 31,
+            "user_id": 10785558,
+            "user_type": "registered",
+            "profile_image": "https://lh4.googleusercontent.com/-G8KgiCUSgtE/AAAAAAAAAAI/AAAAAAAAAFo/l-D9fw2ezwU/photo.jpg?sz=128",
+            "display_name": "Mostafa Zaki",
+            "link": "https://stackoverflow.com/users/10785558/mostafa-zaki"
+        },
+        "is_accepted": false,
+        "score": 1,
+        "last_activity_date": 1619015279,
+        "creation_date": 1619015279,
+        "answer_id": 67197883,
+        "question_id": 66497750,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>I don\u2019t like the approach of BlazorServer referencing BlazorWasm. I prefer to have both BlazorServer and BlazorWasm projects reference a dll(rdl) which contains the App, makes it a bit more clear that both are using a shared codebase and it avoids BlazorServer pulling in unnecessary dependencies from BlazorWasm.\nyou can check this link\n<strong><a href=\"https://github.com/mostafaefcih/BlazorDaulMode\" rel=\"nofollow noreferrer\">https://github.com/mostafaefcih/BlazorDaulMode</a></strong>\nor check blazor getting started course on plaursight</p>\n"
+    },
+    {
+        "owner": {
+            "reputation": 515,
+            "user_id": 1302730,
+            "user_type": "registered",
+            "accept_rate": 100,
+            "profile_image": "https://www.gravatar.com/avatar/7b2da2cbd748a04d91ef1d886a26b77c?s=128&d=identicon&r=PG",
+            "display_name": "DotNetDublin",
+            "link": "https://stackoverflow.com/users/1302730/dotnetdublin"
+        },
+        "is_accepted": false,
+        "score": 1,
+        "last_activity_date": 1615591478,
+        "creation_date": 1615591478,
+        "answer_id": 66608517,
+        "question_id": 66497750,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>These Blazor Train videos from Carl Franklin may help you.</p>\n<p>Blazor Synchronicity; Develop Server &amp; WASM Apps Simultaneously</p>\n<p><a href=\"https://www.youtube.com/watch?v=SkYQDPXw__c\" rel=\"nofollow noreferrer\">https://www.youtube.com/watch?v=SkYQDPXw__c</a></p>\n<p>Blazor Synchronicity 5.0</p>\n<p><a href=\"https://www.youtube.com/watch?v=fHzIWOfmqzg\" rel=\"nofollow noreferrer\">https://www.youtube.com/watch?v=fHzIWOfmqzg</a></p>\n"
+    }
+]

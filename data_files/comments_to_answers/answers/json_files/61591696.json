@@ -1,0 +1,21 @@
+[
+    {
+        "owner": {
+            "reputation": 12718,
+            "user_id": 2940908,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://i.stack.imgur.com/E79WU.jpg?s=128&g=1",
+            "display_name": "agua from mars",
+            "link": "https://stackoverflow.com/users/2940908/agua-from-mars"
+        },
+        "is_accepted": false,
+        "score": 2,
+        "last_activity_date": 1588598459,
+        "creation_date": 1588598459,
+        "answer_id": 61593217,
+        "question_id": 61591696,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>IMO the best way is to use the <code>IHttpClientFactory</code> and assign the token by using the built-in <code>BaseAddressAuthorizationMessageHandler</code> </p>\n\n<p><strong>Setup DI</strong></p>\n\n<pre class=\"lang-cs prettyprint-override\"><code>public class Program\n{\n    public static async Task Main(string[] args)\n    {\n        var builder = WebAssemblyHostBuilder.CreateDefault(args);\n        builder.RootComponents.Add&lt;App&gt;(\"app\");\n        builder.Services.AddOidcAuthentication&lt;RemoteAuthenticationState, RemoteUserAccount&gt;(options =&gt;\n                {\n                    options.ProviderOptions.Authority = \"http://localhost:5000\";\n                    options.ProviderOptions.ClientId= \"{YOUR CLIENT ID}\";                                    \n                    options.ProviderOptions.RedirectUri= \"http://localhost:1330/authentication/login-callback\";\n                })\n                .AddHttpClient(\"apiClient\")\n                .ConfigureHttpClient(httpClient =&gt;\n                {\n                    httpClient.BaseAddress = \"http://localhost:5002\";\n                })\n                .AddHttpMessageHandler&lt;BaseAddressAuthorizationMessageHandler&gt;();\n        await builder.Build().RunAsync();\n    }\n}\n</code></pre>\n\n<p>Use in Component or Service by injecting an <code>IHttpClientFactory</code></p>\n\n<p><strong>Component Sample</strong></p>\n\n<pre class=\"lang-cs prettyprint-override\"><code>@inject IHttpClientFactory _factory\n@code {\n    protected override async Task OnInitializedAsync()\n    {\n        var client = _factory.CreateClient(\"apiClient\")\n        var data = await client.GetJsonAsync&lt;Data&gt;(\"api/data\");\n    }\n}\n</code></pre>\n\n<p>There is multiple way to use <code>IHttpClientFactory</code>, read <a href=\"https://docs.microsoft.com/en-us/dotnet/architecture/microservices/implement-resilient-applications/use-httpclientfactory-to-implement-resilient-http-requests\" rel=\"nofollow noreferrer\">Use IHttpClientFactory to implement resilient HTTP requests</a> for more informations.</p>\n"
+    }
+]

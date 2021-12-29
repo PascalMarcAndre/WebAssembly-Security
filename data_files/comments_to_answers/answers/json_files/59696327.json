@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 41,
+            "user_id": 5750875,
+            "user_type": "registered",
+            "profile_image": "https://lh5.googleusercontent.com/-Fox93ti7QTU/AAAAAAAAAAI/AAAAAAAAD9o/3JKJA_fV5ik/photo.jpg?sz=128",
+            "display_name": "Jonas Hagmar",
+            "link": "https://stackoverflow.com/users/5750875/jonas-hagmar"
+        },
+        "is_accepted": false,
+        "score": 3,
+        "last_activity_date": 1580197479,
+        "creation_date": 1580197479,
+        "answer_id": 59944171,
+        "question_id": 59696327,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>I ran into the same problem, and I believe that it is related to this Emscripten issue:</p>\n\n<p><a href=\"https://github.com/emscripten-core/emscripten/issues/10078\" rel=\"nofollow noreferrer\">https://github.com/emscripten-core/emscripten/issues/10078</a></p>\n\n<p><code>FindBoost.cmake</code> calls <code>find_path()</code> to find the location of <code>boost/config.hpp</code> in a number of alternative paths (specified in <code>HINTS</code>, <a href=\"https://cmake.org/cmake/help/v3.16/command/find_path.html\" rel=\"nofollow noreferrer\">which is synonymous with PATHS</a>)</p>\n\n<p>Apparently there is currently a bug in Emscripten (I am using version 1.39.6), in that it does not respect the <code>PATHS</code>/<code>HINTS</code> variable.</p>\n"
+    }
+]

@@ -1,0 +1,22 @@
+[
+    {
+        "owner": {
+            "reputation": 235795,
+            "user_id": 60761,
+            "user_type": "registered",
+            "accept_rate": 91,
+            "profile_image": "https://www.gravatar.com/avatar/5bf43bae0431d8f4a062234b5e3a0cb9?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Henk Holterman",
+            "link": "https://stackoverflow.com/users/60761/henk-holterman"
+        },
+        "is_accepted": false,
+        "score": 1,
+        "last_activity_date": 1596704204,
+        "last_edit_date": 1596704204,
+        "creation_date": 1596702342,
+        "answer_id": 63279626,
+        "question_id": 63254162,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<blockquote>\n<p>or is there something else going on here?</p>\n</blockquote>\n<p>It looks that way. You didn't state what hardware you use but on my Desktop (i7) I can download in &lt; 100 ms (Localhost) and Deserialization takes &lt; 4 seconds. Not much difference between Debug and Release mode or between Browsers.</p>\n<p>So, 5 seconds to just download from localhost is already very strange. Something is wrong in your setup.</p>\n<p>An MCVE:</p>\n<ul>\n<li>Start with the Wasm Hosted template</li>\n<li>Make the controller return ~17000 items (was 5) to get ~ 1.5 MB</li>\n<li>Put your code in the FetchData OnInit(), replace Foo with WeatherForecast</li>\n<li>Don't try to render them all.</li>\n</ul>\n<p>See what results you get for this.</p>\n"
+    }
+]

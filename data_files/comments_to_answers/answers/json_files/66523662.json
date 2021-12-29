@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 1296,
+            "user_id": 2770641,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/366fa9e0a1e8f82fddae1595ffc297d6?s=128&d=identicon&r=PG&f=1",
+            "display_name": "sbc100",
+            "link": "https://stackoverflow.com/users/2770641/sbc100"
+        },
+        "is_accepted": true,
+        "score": 1,
+        "last_activity_date": 1615217992,
+        "creation_date": 1615217992,
+        "answer_id": 66532743,
+        "question_id": 66523662,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>Emscripten itself does not aim to provide any sandboxing.  With emscripten, any sandboxing of the compiled code is provide by the host environment.  For example, by far the most common host if the web which has a very strong sandbox of its own.   If you run emscripten code on the web is has exactly the same privileges as the rest of the JS code on the page.   Likewise, if you run emscripten generated code under node if has the same privileges as the rest of the JS code in the process  (i.e. by default this means the same privileges as the node process itself).</p>\n<p>One of the goals of WASI however is to define a strict sandbox such that it becomes simple for a host environment to decide exactly what resources to share with a WebAssembly module.</p>\n"
+    }
+]

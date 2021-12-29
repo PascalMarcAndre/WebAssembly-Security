@@ -1,0 +1,95 @@
+[
+    {
+        "owner": {
+            "reputation": 11,
+            "user_id": 8173552,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/53143b6f1a07a749304a242e9f98e920?s=128&d=identicon&r=PG&f=1",
+            "display_name": "tolgaali",
+            "link": "https://stackoverflow.com/users/8173552/tolgaali"
+        },
+        "is_accepted": false,
+        "score": 1,
+        "last_activity_date": 1609028584,
+        "last_edit_date": 1609028584,
+        "creation_date": 1608985744,
+        "answer_id": 65456378,
+        "question_id": 62349412,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>The problem for me occurs if I select the Configure For HTTPS option when creating the project.</p>\n<hr />\n<p>As a workaround,</p>\n<ol>\n<li>for an HTTPS configured project changing is <code>settings-sslport</code>, to <code>0</code></li>\n<li><code>applicationUrl</code> to only <code>http://localhost:port</code> in <code>launchsettings.json</code></li>\n</ol>\n<p>I think the debug adapter has an underlying security related problem. Good luck!</p>\n"
+    },
+    {
+        "owner": {
+            "reputation": 483,
+            "user_id": 8705563,
+            "user_type": "registered",
+            "profile_image": "https://lh6.googleusercontent.com/-hfCSQmuQczw/AAAAAAAAAAI/AAAAAAAADwM/T_CQ38dYi1M/photo.jpg?sz=128",
+            "display_name": "Reap",
+            "link": "https://stackoverflow.com/users/8705563/reap"
+        },
+        "is_accepted": false,
+        "score": 0,
+        "last_activity_date": 1603828551,
+        "last_edit_date": 1603828551,
+        "creation_date": 1603289073,
+        "answer_id": 64465332,
+        "question_id": 62349412,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>This sounds extremely na\u00efve but this was the entire problem for me.\nI didn't notice this line was removed in the diff.</p>\n<p>Make sure your main <em>builds and runs</em> the <code>CreateHostBuilder</code> function.</p>\n<p>This unfortunately causes the same error above but is not at all directly related.</p>\n<pre><code>public static void Main(string[] args)\n{\n    CreateHostBuilder(args).Build().Run();\n}\n...\npublic static IHostBuilder CreateHostBuilder(string[] args)\n...\n</code></pre>\n"
+    },
+    {
+        "owner": {
+            "reputation": 337,
+            "user_id": 893865,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/55160367ac49e8f6b81d66143c53c02c?s=128&d=identicon&r=PG",
+            "display_name": "Hamdan Dabbas",
+            "link": "https://stackoverflow.com/users/893865/hamdan-dabbas"
+        },
+        "is_accepted": false,
+        "score": 5,
+        "last_activity_date": 1595490435,
+        "creation_date": 1595490435,
+        "answer_id": 63049339,
+        "question_id": 62349412,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>After searching for couple of days, I did the following and it worked like charm:</p>\n<p>1.Install IE &quot;Microsoft edge&quot;</p>\n<p>2.Use IE &quot;Microsoft edge&quot; as your VS. browser (<strong>NOT CHROME</strong>)</p>\n<p>3.Use your application as server (<strong>NOT IIS EXPRESS</strong>).</p>\n<p>Enjoy.\n<a href=\"https://i.stack.imgur.com/m7cZ1.png\" rel=\"noreferrer\"><img src=\"https://i.stack.imgur.com/m7cZ1.png\" alt=\"enter image description here\" /></a></p>\n"
+    },
+    {
+        "owner": {
+            "reputation": 2808,
+            "user_id": 1515307,
+            "user_type": "registered",
+            "accept_rate": 52,
+            "profile_image": "https://www.gravatar.com/avatar/064bc5f5c10efcafceedce2f0868a3ec?s=128&d=identicon&r=PG",
+            "display_name": "James Hancock",
+            "link": "https://stackoverflow.com/users/1515307/james-hancock"
+        },
+        "is_accepted": false,
+        "score": 4,
+        "last_activity_date": 1592835356,
+        "creation_date": 1592835356,
+        "answer_id": 62516491,
+        "question_id": 62349412,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>It appears that the issue is that if you remove the IIS Express section from the launchSettings.json file of your project, that debugging will then fail to work. And this is true even if you're using VS code against the project directly without IIS proxying or VS.net too.</p>\n<p>So the solution is to put back the IIS Express section in the launchsettings.json file and not remove it until this is fixed.</p>\n"
+    },
+    {
+        "owner": {
+            "reputation": 51,
+            "user_id": 13779388,
+            "user_type": "unregistered",
+            "profile_image": "https://www.gravatar.com/avatar/7a20c36ae16e35fa514fc13890ab80f1?s=128&d=identicon&r=PG",
+            "display_name": "blighty",
+            "link": "https://stackoverflow.com/users/13779388/blighty"
+        },
+        "is_accepted": false,
+        "score": 5,
+        "last_activity_date": 1592627978,
+        "creation_date": 1592627978,
+        "answer_id": 62481725,
+        "question_id": 62349412,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>for me I was missing <code>app.UseWebAssemblyDebugging();</code> in <code>Startup.Configure()</code>. Hope this helps someone.</p>\n"
+    }
+]

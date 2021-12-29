@@ -1,0 +1,40 @@
+[
+    {
+        "owner": {
+            "reputation": 396,
+            "user_id": 1584725,
+            "user_type": "registered",
+            "accept_rate": 67,
+            "profile_image": "https://www.gravatar.com/avatar/3b4af23cd0ebfb961c3ab01ffd884073?s=128&d=identicon&r=PG",
+            "display_name": "Brett JB",
+            "link": "https://stackoverflow.com/users/1584725/brett-jb"
+        },
+        "is_accepted": false,
+        "score": 1,
+        "last_activity_date": 1598980536,
+        "last_edit_date": 1598980536,
+        "creation_date": 1598979154,
+        "answer_id": 63692141,
+        "question_id": 63651738,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p><em><strong>Hold the Bus</strong></em>\nOriginally I wrote:\nOk, I think this is a 'bleeding edge' issue. If you change the server from IIS to 'your app' in the dropdown next to the green 'Debug Start' button, the the server will run standalone and hopefully circumvent some of the issues currently experienced by IIS.\nIts not a strict 'answer' but should hopefully be a solution... worked for me anyway.</p>\n<p><strong>I need to modify that answer</strong> and will leave these edits till we figure it out...\nI just added back some new code that I had removed, thinking they were possibly breaking changes, and it has failed again. I don't understand why since all I have put in is a static BLL Helper class and a controller for helping setup. All very so so. I have removed them again and it still doesn't work. There is a strange issue here. I'll come back when I know more. If you find anything, please post a comment.</p>\n<p>Cheers</p>\n"
+    },
+    {
+        "owner": {
+            "reputation": 155,
+            "user_id": 9733925,
+            "user_type": "registered",
+            "profile_image": "https://lh5.googleusercontent.com/-9V9qSenk3bc/AAAAAAAAAAI/AAAAAAAAACc/azFymwcyXj0/photo.jpg?sz=128",
+            "display_name": "TheAnachronism",
+            "link": "https://stackoverflow.com/users/9733925/theanachronism"
+        },
+        "is_accepted": true,
+        "score": 2,
+        "last_activity_date": 1598825153,
+        "creation_date": 1598825153,
+        "answer_id": 63662595,
+        "question_id": 63651738,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>Ok so something that has caused the debug browser NOT to crash is:\nNot using the password autocomplete for the login page.\nIf I enter the password manually the browser doesn't crash on successful login.\nI have no idea how or why this works but it seems it does in some weird way.</p>\n<p>If anyone has an idea or so please post it so I can mark it as the actual answer to this problem. This here is more of a weird workaround.</p>\n"
+    }
+]

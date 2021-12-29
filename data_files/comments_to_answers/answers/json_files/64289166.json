@@ -1,0 +1,39 @@
+[
+    {
+        "owner": {
+            "reputation": 2601,
+            "user_id": 195965,
+            "user_type": "registered",
+            "accept_rate": 82,
+            "profile_image": "https://www.gravatar.com/avatar/aec177aa3bc73958600e3c37d266b3ee?s=128&d=identicon&r=PG",
+            "display_name": "Jonas Arcangel",
+            "link": "https://stackoverflow.com/users/195965/jonas-arcangel"
+        },
+        "is_accepted": true,
+        "score": 1,
+        "last_activity_date": 1602553365,
+        "creation_date": 1602553365,
+        "answer_id": 64327330,
+        "question_id": 64289166,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>The solution was to add the following:</p>\n<p>using IdentityServer4.Extensions;</p>\n<pre><code>//...\napp.Use((ctx, next) =&gt; \n{\n    ctx.SetIdentityServerOrigin(&quot;http://167.172.118.170&quot;);\n    return next();\n});\n</code></pre>\n"
+    },
+    {
+        "owner": {
+            "reputation": 534,
+            "user_id": 4547957,
+            "user_type": "registered",
+            "profile_image": "https://graph.facebook.com/10153657129051416/picture?type=large",
+            "display_name": "Ziregbe Otee",
+            "link": "https://stackoverflow.com/users/4547957/ziregbe-otee"
+        },
+        "is_accepted": false,
+        "score": 1,
+        "last_activity_date": 1602302483,
+        "creation_date": 1602302483,
+        "answer_id": 64289830,
+        "question_id": 64289166,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>Your application is not configured properly.</p>\n<p>You need to configure your identity sever using similar code like below in your Program.cs</p>\n<pre><code>builder.Services.AddOidcAuthentication(options =&gt;\n        {\n            builder.Configuration.Bind(&quot;OidcConfiguration&quot;, options.ProviderOptions);\n        });\n</code></pre>\n<p>&quot;OidcConfiguration&quot; comes from your configuration file and will have parameters like below:</p>\n<pre><code>&quot;OidcConfiguration&quot;: {\n    &quot;Authority&quot;: &quot;https://YourIdentityServerIP&quot;,\n    &quot;ClientId&quot;: &quot;YourClienId&quot;,\n    &quot;DefaultScopes&quot;: [\n      &quot;openid&quot;,\n      &quot;profile&quot;,\n      &quot;api&quot;\n    ],\n    &quot;RedirectUri&quot;: &quot;https://yourclientapp/authentication/login-callback&quot;,\n    &quot;PostLogoutRedirectUri&quot;: &quot;https://yourclientapp/authentication/logout-callback&quot;,\n    &quot;ResponseType&quot;: &quot;code&quot;\n\n  }\n</code></pre>\n<p>You can use this two links to see how i configured mine in a pet project</p>\n<p>Program Files:\n<a href=\"https://github.com/oteebest/edu-client-blazor/blob/master/CBTClient/Program.cs\" rel=\"nofollow noreferrer\">https://github.com/oteebest/edu-client-blazor/blob/master/CBTClient/Program.cs</a></p>\n<p>appsetting.json\n<a href=\"https://github.com/oteebest/edu-client-blazor/blob/master/CBTClient/wwwroot/appsettings.json\" rel=\"nofollow noreferrer\">https://github.com/oteebest/edu-client-blazor/blob/master/CBTClient/wwwroot/appsettings.json</a></p>\n"
+    }
+]

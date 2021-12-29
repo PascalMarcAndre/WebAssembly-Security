@@ -1,0 +1,57 @@
+[
+    {
+        "owner": {
+            "reputation": 11,
+            "user_id": 10353570,
+            "user_type": "registered",
+            "profile_image": "https://lh6.googleusercontent.com/-q8Jp8Blxthw/AAAAAAAAAAI/AAAAAAAAAAA/2TgewxCdAjE/photo.jpg?sz=128",
+            "display_name": "murat_yuceer",
+            "link": "https://stackoverflow.com/users/10353570/murat-yuceer"
+        },
+        "is_accepted": false,
+        "score": 1,
+        "last_activity_date": 1609772982,
+        "creation_date": 1609772982,
+        "answer_id": 65564998,
+        "question_id": 63831943,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>Add this</p>\n<pre><code>public class CookieHandler : DelegatingHandler\n{\n    protected override async Task&lt;HttpResponseMessage&gt; SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)\n    {\n        request.SetBrowserRequestCredentials(BrowserRequestCredentials.Include);\n\n        return await base.SendAsync(request, cancellationToken);\n    }\n}\n</code></pre>\n"
+    },
+    {
+        "owner": {
+            "reputation": 63,
+            "user_id": 9182405,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/aa60cfe3be6b12825c32eddc9aeced02?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Dumas.DED",
+            "link": "https://stackoverflow.com/users/9182405/dumas-ded"
+        },
+        "is_accepted": true,
+        "score": 1,
+        "last_activity_date": 1600177183,
+        "creation_date": 1600177183,
+        "answer_id": 63903147,
+        "question_id": 63831943,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>Based on some of @Mihaimyh's insights I was able to get this to work using a custom delegating handler on the user data service. It is registered thusly:</p>\n<pre><code>builder.Services.AddHttpClient&lt;IUserDataService, UserDataService&gt;(client =&gt; client.BaseAddress = new Uri(&quot;https://localhost:44336/&quot;))\n                .AddHttpMessageHandler&lt;CustomDelegatingHandler&gt;();\n</code></pre>\n<p>Internally it uses <code>JSInterop</code> to run a Javascript function to retrieve the cookie, which it then attaches to all outgoing requests that use the <code>SendAsync()</code> method:</p>\n<pre><code>public class CustomDelegatingHandler : DelegatingHandler\n{\n    private IJSRuntime JSRuntime;\n\n    public CustomDelegatingHandler(IJSRuntime jSRuntime) : base()\n    {\n        JSRuntime = jSRuntime;\n    }\n\n    protected override async Task&lt;HttpResponseMessage&gt; SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)\n    {\n        var cookie = await JSRuntime.InvokeAsync&lt;string&gt;(&quot;blazorExtensions.GetCookie&quot;, new[] { &quot;MyCookie&quot; });\n        Debug.WriteLine($&quot;My cookie: {cookie}&quot;);\n        request.Headers.Add(&quot;MyCookie&quot;, $&quot;{cookie}&quot;);\n        return await base.SendAsync(request, cancellationToken);\n    }\n}\n</code></pre>\n<p>The Javascript function looks like this (lifted almost verbatim from <a href=\"https://www.w3schools.com/js/js_cookies.asp\" rel=\"nofollow noreferrer\">W3Schools</a>):</p>\n<pre><code>window.blazorExtensions = { \n    GetCookie: function (cname) {\n        var name = cname + &quot;=&quot;;\n        var decodedCookie = decodeURIComponent(document.cookie);\n        var ca = decodedCookie.split(';');\n        for (var i = 0; i &lt; ca.length; i++) {\n            var c = ca[i];\n            while (c.charAt(0) == ' ') {\n                c = c.substring(1);\n            }\n            if (c.indexOf(name) == 0) {\n                return c.substring(name.length, c.length);\n            }\n        }\n        return &quot;&quot;;\n    }\n}\n</code></pre>\n<p>I've also modified things on the service end to look for the cookie in the headers instead of the cookie collection. Now, instead of this...</p>\n<pre><code>var myCookie = HttpContext.Request.Cookies.FirstOrDefault(c =&gt; c.Key == &quot;MyCookie&quot;);\n</code></pre>\n<p>...I've done this:</p>\n<pre><code>HttpContext.Request.Headers.TryGetValue(&quot;MyCookie&quot;, out var myCookie);\n</code></pre>\n<p>I admittedly have no idea how this tracks with the conventions for such things in Blazor apps, but it appears to be working well enough for our purposes. Thanks again everyone for all your help.</p>\n"
+    },
+    {
+        "owner": {
+            "reputation": 772,
+            "user_id": 10955627,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/9eee353ec4ef387d51369ba414fbabcb?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Mihaimyh",
+            "link": "https://stackoverflow.com/users/10955627/mihaimyh"
+        },
+        "is_accepted": false,
+        "score": 1,
+        "last_activity_date": 1599788565,
+        "last_edit_date": 1599788565,
+        "creation_date": 1599788081,
+        "answer_id": 63839659,
+        "question_id": 63831943,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>This is what I did in a test Blazor WebAssembly AspNet Hosted app:</p>\n<p><code>FetchData.razor</code></p>\n<pre><code>@page &quot;/fetchdata&quot;\n@using BlazorApp3.Shared\n@inject HttpClient Http\n\n&lt;h1&gt;Weather forecast&lt;/h1&gt;\n\n&lt;p&gt;This component demonstrates fetching data from the server.&lt;/p&gt;\n\n@if (forecasts == null)\n{\n    &lt;p&gt;&lt;em&gt;Loading...&lt;/em&gt;&lt;/p&gt;\n}\nelse\n{\n    &lt;table class=&quot;table&quot;&gt;\n        &lt;thead&gt;\n            &lt;tr&gt;\n                &lt;th&gt;Date&lt;/th&gt;\n                &lt;th&gt;Temp. (C)&lt;/th&gt;\n                &lt;th&gt;Temp. (F)&lt;/th&gt;\n                &lt;th&gt;Summary&lt;/th&gt;\n            &lt;/tr&gt;\n        &lt;/thead&gt;\n        &lt;tbody&gt;\n            @foreach (var forecast in forecasts)\n            {\n                &lt;tr&gt;\n                    &lt;td&gt;@forecast.Date.ToShortDateString()&lt;/td&gt;\n                    &lt;td&gt;@forecast.TemperatureC&lt;/td&gt;\n                    &lt;td&gt;@forecast.TemperatureF&lt;/td&gt;\n                    &lt;td&gt;@forecast.Summary&lt;/td&gt;\n                &lt;/tr&gt;\n            }\n        &lt;/tbody&gt;\n    &lt;/table&gt;\n}\n\n@code {\n    private WeatherForecast[] forecasts;\n\n    protected override async Task OnInitializedAsync()\n    {\n        Http.DefaultRequestHeaders.Add(&quot;key&quot;, &quot;someValue&quot;);\n        forecasts = await Http.GetFromJsonAsync&lt;WeatherForecast[]&gt;(&quot;WeatherForecast&quot;);\n    }\n\n}\n</code></pre>\n<p>Notice <code>Http.DefaultRequestHeaders.Add(&quot;key&quot;, &quot;someValue&quot;);</code></p>\n<p>On the server side, on <code>WeatherForecastController</code> I am looking in the request headers for the key, and if is present I am trying to get the value:</p>\n<pre><code>using BlazorApp3.Shared;\nusing Microsoft.AspNetCore.Mvc;\nusing Microsoft.Extensions.Logging;\nusing System;\nusing System.Collections.Generic;\nusing System.Linq;\n\nnamespace BlazorApp3.Server.Controllers\n{\n    [ApiController]\n    [Route(&quot;[controller]&quot;)]\n    public class WeatherForecastController : ControllerBase\n    {\n        // The Web API will only accept tokens 1) for users, and 2) having the access_as_user scope for this API\n        private static readonly string[] scopeRequiredByApi = new string[] { &quot;user_impersonation&quot; };\n\n        private static readonly string[] Summaries = new[]\n                {\n            &quot;Freezing&quot;, &quot;Bracing&quot;, &quot;Chilly&quot;, &quot;Cool&quot;, &quot;Mild&quot;, &quot;Warm&quot;, &quot;Balmy&quot;, &quot;Hot&quot;, &quot;Sweltering&quot;, &quot;Scorching&quot;\n        };\n\n        private readonly ILogger&lt;WeatherForecastController&gt; _logger;\n\n        public WeatherForecastController(ILogger&lt;WeatherForecastController&gt; logger)\n        {\n            _logger = logger;\n        }\n\n        [HttpGet]\n        public IEnumerable&lt;WeatherForecast&gt; Get()\n        {\n            if (HttpContext.Request.Headers.ContainsKey(&quot;key&quot;))\n            {\n                var success = HttpContext.Request.Headers.TryGetValue(&quot;key&quot;, out var headervalue);\n\n                if (success)\n                {\n                    _logger.LogInformation(headervalue.ToString());\n                }\n            }\n\n            var rng = new Random();\n            return Enumerable.Range(1, 5).Select(index =&gt; new WeatherForecast\n            {\n                Date = DateTime.Now.AddDays(index),\n                TemperatureC = rng.Next(-20, 55),\n                Summary = Summaries[rng.Next(Summaries.Length)]\n            })\n            .ToArray();\n        }\n    }\n}\n</code></pre>\n<p><a href=\"https://i.stack.imgur.com/3lput.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/3lput.png\" alt=\"Debug screenshot\" /></a></p>\n<p>I am able to get the value on the http request headers.</p>\n<p>If you need to create a cookie, you must use <code>JsInterop</code>, more details here <a href=\"https://stackoverflow.com/questions/54024644/how-do-i-create-a-cookie-client-side-using-blazor\">How do I create a cookie client side using blazor</a>.</p>\n"
+    }
+]

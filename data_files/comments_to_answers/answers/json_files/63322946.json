@@ -1,0 +1,21 @@
+[
+    {
+        "owner": {
+            "reputation": 5683,
+            "user_id": 68490,
+            "user_type": "registered",
+            "accept_rate": 20,
+            "profile_image": "https://www.gravatar.com/avatar/b3c70bbc491ede87ae5682c561af07d2?s=128&d=identicon&r=PG",
+            "display_name": "Tore Nestenius",
+            "link": "https://stackoverflow.com/users/68490/tore-nestenius"
+        },
+        "is_accepted": true,
+        "score": 1,
+        "last_activity_date": 1596968123,
+        "creation_date": 1596968123,
+        "answer_id": 63325080,
+        "question_id": 63322946,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>Each account in Auth0 has a discovery endpoint and you can find it by going to Settings for your Auth0 application and then under Advanced settings you will find the Endpoints tab.</p>\n<p>Under there you will find your OpenID Configuration URL.</p>\n<p><a href=\"https://i.stack.imgur.com/HUGA0.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/HUGA0.png\" alt=\"enter image description here\" /></a></p>\n"
+    }
+]

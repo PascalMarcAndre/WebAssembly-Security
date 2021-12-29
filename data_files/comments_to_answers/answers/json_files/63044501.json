@@ -1,0 +1,40 @@
+[
+    {
+        "owner": {
+            "reputation": 25737,
+            "user_id": 6152891,
+            "user_type": "registered",
+            "accept_rate": 75,
+            "profile_image": "https://www.gravatar.com/avatar/b45b7f89429f8766cdbf6c776c0a9d41?s=128&d=identicon&r=PG",
+            "display_name": "enet",
+            "link": "https://stackoverflow.com/users/6152891/enet"
+        },
+        "is_accepted": true,
+        "score": 0,
+        "last_activity_date": 1595476095,
+        "creation_date": 1595476095,
+        "answer_id": 63046595,
+        "question_id": 63044501,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>To get the access token you need to inject IAccessTokenProvider and request the access token.</p>\n<p>You may try the following, in a razor component...</p>\n<pre><code>@using Microsoft.AspNetCore.Components.WebAssembly.Authentication\n@inject IAccessTokenProvider TokenProvider\n\nvar tokenResult = await TokenProvider.RequestAccessToken();\n\nif (tokenResult.TryGetToken(out var token))\n{\n    ...\n}\n</code></pre>\n"
+    },
+    {
+        "owner": {
+            "reputation": 276,
+            "user_id": 4002463,
+            "user_type": "registered",
+            "accept_rate": 71,
+            "profile_image": "https://www.gravatar.com/avatar/3892f842b4d69317e8043f5e1060b2eb?s=128&d=identicon&r=PG&f=1",
+            "display_name": "pudm",
+            "link": "https://stackoverflow.com/users/4002463/pudm"
+        },
+        "is_accepted": false,
+        "score": 0,
+        "last_activity_date": 1595468460,
+        "creation_date": 1595468460,
+        "answer_id": 63045582,
+        "question_id": 63044501,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>If you are using the default application, the token gets added to the HTTP client when the requests are being sent to the back end. This is done in the program.cs where the http client is created:</p>\n<pre><code>   builder.Services.AddHttpClient(&quot;BlazorWasmWithAADAuth.ServerAPI&quot;, client =&gt; client.BaseAddress = new Uri(builder.HostEnvironment.BaseAddress))\n        .AddHttpMessageHandler&lt;BaseAddressAuthorizationMessageHandler&gt;();\n\n    // Supply HttpClient instances that include access tokens when making requests to the server project\n    builder.Services.AddTransient(sp =&gt; sp.GetRequiredService&lt;IHttpClientFactory&gt;().CreateClient(&quot;BlazorWasmWithAADAuth.ServerAPI&quot;));\n</code></pre>\n<p>if you are trying to get the token for calling another resource you will have to create another http client for that endpoint and add the token by creating a custom authorization message handler.</p>\n"
+    }
+]

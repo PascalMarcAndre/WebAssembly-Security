@@ -1,0 +1,95 @@
+[
+    {
+        "owner": {
+            "reputation": 37199,
+            "user_id": 3850405,
+            "user_type": "registered",
+            "accept_rate": 64,
+            "profile_image": "https://www.gravatar.com/avatar/b2b9eece8c493ba7ddcff82f845ff2af?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Ogglas",
+            "link": "https://stackoverflow.com/users/3850405/ogglas"
+        },
+        "is_accepted": false,
+        "score": 2,
+        "last_activity_date": 1611359742,
+        "creation_date": 1611359742,
+        "answer_id": 65854313,
+        "question_id": 60840986,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>I tried the solution from @Brett and it worked but on redirect back to the page the user came from it ended up saying <code>Authorizing...</code>, <code>Checking login state...</code> and then finally  <code>Completing login...</code> and got stuck there. The user then had to click on a link or manually type the previous URL to get back.</p>\n<p><a href=\"https://i.stack.imgur.com/9Qe5A.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/9Qe5A.png\" alt=\"enter image description here\" /></a></p>\n<p><a href=\"https://i.stack.imgur.com/AVwK8.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/AVwK8.png\" alt=\"enter image description here\" /></a></p>\n<p><a href=\"https://i.stack.imgur.com/DD54B.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/DD54B.png\" alt=\"enter image description here\" /></a></p>\n<p>Microsoft now has documentation for &quot;<strong>Require authorization for the entire app</strong>&quot;.</p>\n<p><a href=\"https://docs.microsoft.com/en-us/aspnet/core/blazor/security/webassembly/?view=aspnetcore-5.0#require-authorization-for-the-entire-app\" rel=\"nofollow noreferrer\">https://docs.microsoft.com/en-us/aspnet/core/blazor/security/webassembly/?view=aspnetcore-5.0#require-authorization-for-the-entire-app</a></p>\n<p>According to the documentation you can either:</p>\n<ul>\n<li>Use the Authorize attribute directive in the <code>_Imports.razor</code> file:</li>\n</ul>\n<pre><code>@using Microsoft.AspNetCore.Authorization\n@attribute [Authorize]\n</code></pre>\n<ul>\n<li>Add the Authorize  attribute to each Razor component in the Pages folder.</li>\n</ul>\n<p>I added the code to <code>_Imports.razor</code> but then I only received a white screen for content:</p>\n<p><a href=\"https://i.stack.imgur.com/nzmmV.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/nzmmV.png\" alt=\"enter image description here\" /></a></p>\n<p>I then noticed that <code>https://localhost:44123/authentication/login</code> also gave me a white screen that <code>Shared\\RedirectToLogin.razor</code> normally points to. I then added <code>@attribute [AllowAnonymous]</code> to <code>Pages\\Authentication.razor</code> and then everything worked as expected and I did not get stuck.</p>\n<p><a href=\"https://i.stack.imgur.com/OVHeM.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/OVHeM.png\" alt=\"enter image description here\" /></a></p>\n<p>With this solution I could also see the default <code>You are logged out.</code> message.</p>\n<p><a href=\"https://i.stack.imgur.com/99GkQ.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/99GkQ.png\" alt=\"enter image description here\" /></a></p>\n"
+    },
+    {
+        "owner": {
+            "reputation": 1257,
+            "user_id": 1856913,
+            "user_type": "registered",
+            "accept_rate": 58,
+            "profile_image": "https://www.gravatar.com/avatar/68b3c4166ab68850721df43d0fabdb7b?s=128&d=identicon&r=PG",
+            "display_name": "Cornelis",
+            "link": "https://stackoverflow.com/users/1856913/cornelis"
+        },
+        "is_accepted": false,
+        "score": 0,
+        "last_activity_date": 1609016435,
+        "creation_date": 1609016435,
+        "answer_id": 65460673,
+        "question_id": 60840986,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>In my trip to get familiar with Blazor, I am following a tutorial and the author has a nice and clean way to solve this problem as well. As everything seems to be a component in Blazor, your login page probably is a component as well. It is at least in the tutorial. So all he does is this:</p>\n<pre><code>&lt;NotAuthorized&gt;\n    &lt;Login /&gt;\n&lt;/NotAuthorized&gt;\n</code></pre>\n<p>And you need to add the correct using to your login component of course.</p>\n<p>The downside to this solution is that the url doesn't match the page you see when you aren't logged in.</p>\n"
+    },
+    {
+        "owner": {
+            "reputation": 1656,
+            "user_id": 690374,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/ec7cf7ad4f27ca56a9949114924674b1?s=128&d=identicon&r=PG",
+            "display_name": "Sipke Schoorstra",
+            "link": "https://stackoverflow.com/users/690374/sipke-schoorstra"
+        },
+        "is_accepted": false,
+        "score": 0,
+        "last_activity_date": 1594585413,
+        "creation_date": 1594585413,
+        "answer_id": 62866102,
+        "question_id": 60840986,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>You could leverage the <code>&lt;NotAuthorizedContent&gt;</code> template of the <code>&lt;Router&gt;</code> component as <a href=\"https://gist.github.com/SteveSandersonMS/175a08dcdccb384a52ba760122cd2eda#customizing-the-display-for-unauthenticated-users\" rel=\"nofollow noreferrer\">described here</a>:</p>\n<pre><code>&lt;CascadingAuthenticationState&gt;\n    &lt;Router AppAssembly=&quot;typeof(Startup).Assembly&quot;&gt;\n        &lt;NotFoundContent&gt;\n            &lt;p&gt;Sorry, there's nothing at this address.&lt;/p&gt;\n        &lt;/NotFoundContent&gt;\n        &lt;NotAuthorizedContent&gt;\n            &lt;h1&gt;Sorry&lt;/h1&gt;\n            &lt;p&gt;You're not authorized to reach this page. You may need to log in as a different user.&lt;/p&gt;\n        &lt;/NotAuthorizedContent&gt;\n        &lt;AuthorizingContent&gt;\n            &lt;p&gt;Please wait...&lt;/p&gt;\n        &lt;/AuthorizingContent&gt;\n    &lt;/Router&gt;\n&lt;/CascadingAuthenticationState&gt;\n</code></pre>\n<p>Replace the contents of <code>&lt;NotAuthorizedContent&gt;</code> with a custom component called something like <code>RedirectToLogin</code> whose <code>OnInitializedAsync</code> checks if the user is logged in, and if not, does the redirect.</p>\n"
+    },
+    {
+        "owner": {
+            "reputation": 131,
+            "user_id": 4096106,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/acbe8a5efc5502ec1c1b3475b89bde93?s=128&d=identicon&r=PG&f=1",
+            "display_name": "mend0k",
+            "link": "https://stackoverflow.com/users/4096106/mend0k"
+        },
+        "is_accepted": false,
+        "score": 7,
+        "last_activity_date": 1594166117,
+        "last_edit_date": 1594166117,
+        "creation_date": 1594165722,
+        "answer_id": 62785474,
+        "question_id": 60840986,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>Basically to apply authorization to all pages in BlazorApp.Client, you have to add:</p>\n<pre><code>@attribute [Microsoft.AspNetCore.Authorization.Authorize]\n</code></pre>\n<p>...to your _Imports.razor file.</p>\n<p>Furthermore, you can add:</p>\n<pre><code>@attribute [Microsoft.AspNetCore.Authorization.AllowAnonymous]\n</code></pre>\n<p>...on pages that don't require authorization.</p>\n<p>Also if you wanted to redirect a user to any page, here is something I came up with:</p>\n<pre><code>&lt;NotAuthorized&gt;\n    @if (true) { navMan.NavigateTo(&quot;login&quot;); }\n&lt;/NotAuthorized&gt;\n</code></pre>\n<p>...where navMan is an injected instance of NavigationManager. Here i'm redirecting the user to my Login.razor if they try to access an authorized user only page .</p>\n"
+    },
+    {
+        "owner": {
+            "reputation": 351,
+            "user_id": 9388563,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/3bbfd186ce1f32932687aeb0f021be73?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Brett",
+            "link": "https://stackoverflow.com/users/9388563/brett"
+        },
+        "is_accepted": false,
+        "score": 16,
+        "last_activity_date": 1591884554,
+        "creation_date": 1591884554,
+        "answer_id": 62326339,
+        "question_id": 60840986,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>There may be slicker ways of doing this, but this is what worked for me:</p>\n\n<p>Assuming you've configured Authentication correctly according to <a href=\"https://docs.microsoft.com/en-us/aspnet/core/security/blazor/webassembly/standalone-with-authentication-library?view=aspnetcore-3.1\" rel=\"noreferrer\">these instructions</a></p>\n\n<p>In your MainLayout.razor (which is used by default for all components) add a <code>code</code> block as follows: </p>\n\n<pre class=\"lang-cs prettyprint-override\"><code>@code{ \n\n    [CascadingParameter] protected Task&lt;AuthenticationState&gt; AuthStat { get; set; }\n\n    protected async override Task OnInitializedAsync()\n    {\n        base.OnInitialized();\n        var user = (await AuthStat).User;\n        if(!user.Identity.IsAuthenticated)\n        {\n            NavigationManager.NavigateTo($\"authentication/login?returnUrl={Uri.EscapeDataString(NavigationManager.Uri)}\");\n        }\n    }\n}\n</code></pre>\n\n<p>If the user is not authenticated, we redirect to the built-in The RemoteAuthenticatorView component at the \"authentication/\" enpoint with the \"login\" action. This should kick-off authentication  </p>\n"
+    }
+]

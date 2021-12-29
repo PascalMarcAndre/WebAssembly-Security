@@ -1,0 +1,21 @@
+[
+    {
+        "owner": {
+            "reputation": 1070,
+            "user_id": 115065,
+            "user_type": "registered",
+            "accept_rate": 67,
+            "profile_image": "https://www.gravatar.com/avatar/14effc24a9a780e68a23094720cd5d8f?s=128&d=identicon&r=PG",
+            "display_name": "Mark3308",
+            "link": "https://stackoverflow.com/users/115065/mark3308"
+        },
+        "is_accepted": false,
+        "score": 0,
+        "last_activity_date": 1597422722,
+        "creation_date": 1597422722,
+        "answer_id": 63416676,
+        "question_id": 63416115,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>You have to inject the AuthenticationStateProvider.</p>\n<p>Please see the following link:</p>\n<p><a href=\"https://docs.microsoft.com/en-us/aspnet/core/blazor/security/?view=aspnetcore-3.1\" rel=\"nofollow noreferrer\">https://docs.microsoft.com/en-us/aspnet/core/blazor/security/?view=aspnetcore-3.1</a></p>\n<p>This will enable you to get the authentication state which contains the user:</p>\n<pre class=\"lang-cs prettyprint-override\"><code>        var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();\n        var user = authState.User;\n</code></pre>\n"
+    }
+]

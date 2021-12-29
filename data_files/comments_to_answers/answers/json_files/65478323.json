@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 156,
+            "user_id": 2013237,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/P14WZ.jpg?s=128&g=1",
+            "display_name": "Ryszard Grzesica",
+            "link": "https://stackoverflow.com/users/2013237/ryszard-grzesica"
+        },
+        "is_accepted": false,
+        "score": 1,
+        "last_activity_date": 1612377659,
+        "creation_date": 1612377659,
+        "answer_id": 66033749,
+        "question_id": 65478323,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>You may use VFS for that start here <a href=\"https://emscripten.org/docs/api_reference/Filesystem-API.html#filesystem-api-filesystems\" rel=\"nofollow noreferrer\">https://emscripten.org/docs/api_reference/Filesystem-API.html#filesystem-api-filesystems</a> and then just parse them in you c/c++.</p>\n"
+    }
+]

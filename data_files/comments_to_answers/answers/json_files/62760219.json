@@ -1,0 +1,57 @@
+[
+    {
+        "owner": {
+            "reputation": 1,
+            "user_id": 9805939,
+            "user_type": "registered",
+            "profile_image": "https://lh6.googleusercontent.com/-e2_00dq6xKk/AAAAAAAAAAI/AAAAAAAABd0/xdwCWMGE-8U/photo.jpg?sz=128",
+            "display_name": "P&#228;r Sandgren",
+            "link": "https://stackoverflow.com/users/9805939/p%c3%a4r-sandgren"
+        },
+        "is_accepted": false,
+        "score": 0,
+        "last_activity_date": 1611262588,
+        "creation_date": 1611262588,
+        "answer_id": 65835584,
+        "question_id": 62760219,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>One way to solve this is to make a component that wraps your application, and check if the user is authenticated in the OnInitialized(). That, combined with subscribing to AuthenticationStateProvider.AuthenticationStateChanged worked for me. I posted a more detailed solution <a href=\"https://stackoverflow.com/a/65835531/9805939\">here</a>.</p>\n"
+    },
+    {
+        "owner": {
+            "reputation": 73,
+            "user_id": 13129431,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/be40c8995899485adf5c48d87d01ae69?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Zack",
+            "link": "https://stackoverflow.com/users/13129431/zack"
+        },
+        "is_accepted": true,
+        "score": 2,
+        "last_activity_date": 1594866237,
+        "last_edit_date": 1594866237,
+        "creation_date": 1594865511,
+        "answer_id": 62926383,
+        "question_id": 62760219,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>To overcome this, I so far settled with the workaround to use the Authorized section in razor of the LoginDisplay component, to trigger the service to check if the service user info is empty and then go to Graph again instead of trying to store in in localstorage or something like that... Then, I have user info displaying components subscribe to an event in the service to know when the user info needed updated to call StateHasChanged().</p>\n<p>If there is a better solution to persisting service data across page refreshes, I am all eyes.</p>\n"
+    },
+    {
+        "owner": {
+            "reputation": 108,
+            "user_id": 11080892,
+            "user_type": "registered",
+            "profile_image": "https://lh4.googleusercontent.com/--FtsbDs1DdA/AAAAAAAAAAI/AAAAAAAAABc/kpnXGBoIXwk/photo.jpg?sz=128",
+            "display_name": "Jeff Bacon",
+            "link": "https://stackoverflow.com/users/11080892/jeff-bacon"
+        },
+        "is_accepted": false,
+        "score": 0,
+        "last_activity_date": 1594774618,
+        "creation_date": 1594774618,
+        "answer_id": 62906037,
+        "question_id": 62760219,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>I'm totally sure what you mean by &quot;every time they are authenticated&quot;.</p>\n<p>If you want to take an action on EVERY event (like a page load) then you could do it by embedding an AuthorizedView in your page:</p>\n<pre><code>&lt;AuthorizeView&gt;\n    &lt;Authorized&gt;\n        ... do action for authorized users ...\n    &lt;/Authorized&gt;\n    &lt;NotAuthorized&gt;\n        ... do action for un-authorized users ...\n    &lt;/NotAuthorized&gt;\n&lt;/AuthorizeView&gt;\n</code></pre>\n<p>If you want to trigger an action whenever the Authentication action is taken you can do it in OnParametersSet and looking at the Action to see what type of authentication event it is.</p>\n<p>also see: <a href=\"https://docs.microsoft.com/en-us/aspnet/core/blazor/security/webassembly/additional-scenarios?view=aspnetcore-3.1#customize-the-authentication-user-interface\" rel=\"nofollow noreferrer\">https://docs.microsoft.com/en-us/aspnet/core/blazor/security/webassembly/additional-scenarios?view=aspnetcore-3.1#customize-the-authentication-user-interface</a></p>\n<p>It may be better to create custom RenderFragments for the specific Actions - it will depend on what you want to do I guess.</p>\n<pre><code>@page &quot;/authentication/{action}&quot;\n@using Microsoft.AspNetCore.Components.WebAssembly.Authentication\n@using Microsoft.AspNetCore.Components.WebAssembly.Hosting\n@using System.Text.Json\n@using System.Security.Claims\n\n&lt;RemoteAuthenticatorView Action=&quot;@Action&quot; /&gt;\n\n@inject ILogger&lt;Authentication&gt; logger\n\n@code{\n    [Parameter]\n    public string Action { get; set; }\n\n    protected override void OnParametersSet()\n    {\n        base.OnParametersSet();\n        logger.LogInformation($&quot;Action: {Action}&quot;);\n\n        //\n        // DO YOUR ACTION HERE\n        //\n    }\n}\n</code></pre>\n"
+    }
+]

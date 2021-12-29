@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 170,
+            "user_id": 3703237,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/4dbe318616c0c800e28b84dff804a051?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Dominik Oswald",
+            "link": "https://stackoverflow.com/users/3703237/dominik-oswald"
+        },
+        "is_accepted": false,
+        "score": 1,
+        "last_activity_date": 1601033506,
+        "creation_date": 1601033506,
+        "answer_id": 64063311,
+        "question_id": 64060709,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>1.) Yes everyone could access to your api if your controller doesn't have any authorization query.</p>\n<p>2.) Out of the Box -&gt; use [Authorize] Attribute or anything like if(user.permission == &quot;Foo&quot;)</p>\n<p>Check out for detail information:</p>\n<ul>\n<li><a href=\"https://docs.microsoft.com/en-us/aspnet/core/blazor/security/?view=aspnetcore-3.1\" rel=\"nofollow noreferrer\">https://docs.microsoft.com/en-us/aspnet/core/blazor/security/?view=aspnetcore-3.1</a></li>\n<li><a href=\"https://chrissainty.com/securing-your-blazor-apps-authentication-with-clientside-blazor-using-webapi-aspnet-core-identity/\" rel=\"nofollow noreferrer\">https://chrissainty.com/securing-your-blazor-apps-authentication-with-clientside-blazor-using-webapi-aspnet-core-identity/</a></li>\n</ul>\n"
+    }
+]

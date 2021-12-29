@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 4977,
+            "user_id": 812369,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/bf76341bdec26376f2b4ff2a77a5d80a?s=128&d=identicon&r=PG",
+            "display_name": "rdmptn",
+            "link": "https://stackoverflow.com/users/812369/rdmptn"
+        },
+        "is_accepted": true,
+        "score": 0,
+        "last_activity_date": 1610648447,
+        "creation_date": 1610648447,
+        "answer_id": 65724744,
+        "question_id": 65724054,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>Yes, you can get it from the services container</p>\n<pre><code>public static async Task Main(string[] args)\n{\n    var builder = WebAssemblyHostBuilder.CreateDefault(args);\n    builder.RootComponents.Add&lt;App&gt;(&quot;app&quot;);\n    builder.Services.AddSingleton(new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });\n\n\n    var host = builder.Build();\n\n    var jsRuntime = host.Services.GetRequiredService&lt;IJSRuntime&gt;(); // get the service from the DI container\n    // do something like get the culture - that's what the MS example for that does\n    var cultureName = await jsRuntime.InvokeAsync&lt;string&gt;(&quot;blazorCulture.get&quot;);\n\n    await host.RunAsync();\n}\n</code></pre>\n"
+    }
+]

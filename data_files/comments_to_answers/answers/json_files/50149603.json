@@ -1,0 +1,40 @@
+[
+    {
+        "owner": {
+            "reputation": 21708,
+            "user_id": 9305398,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/cqJvE.png?s=128&g=1",
+            "display_name": "Acorn",
+            "link": "https://stackoverflow.com/users/9305398/acorn"
+        },
+        "is_accepted": false,
+        "score": 4,
+        "last_activity_date": 1526136259,
+        "last_edit_date": 1526136259,
+        "creation_date": 1525732808,
+        "answer_id": 50223439,
+        "question_id": 50149603,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>No, it cannot. While, of course, you can verify the integrity of some source code, that is not buying you any real security. No matter what you do, you cannot prevent a third-party's computer to run, modify and do whatever they like.</p>\n\n<p>Now, you can make it harder for sure (obfuscation, memory encryption, self-rewriting code, interpreters/VMs... and all those kinds of tricks), but typically, making it hard enough to be somewhat useful is non-trivial (e.g. see <a href=\"https://en.wikipedia.org/wiki/Denuvo\" rel=\"nofollow noreferrer\">Denuvo</a> and <a href=\"https://www.reddit.com/r/CrackStatus/comments/43dgej/how_denuvo_works_and_why_its_so_hard_to_crack/\" rel=\"nofollow noreferrer\">this Reddit post</a>, VMProtect, <a href=\"https://stackoverflow.com/questions/354676/have-you-ever-used-code-virtualizer-or-vmprotect-to-protect-from-reverse-enginee\">Have you ever used code virtualizer or vmprotect to protect from reverse engineering?</a>, etc.) and, with time or enough popularity, it would be bypassed anyway.</p>\n\n<p>The only way to secure your application would be to run it server-side; which is more expensive and opens you to other issues.</p>\n\n<hr>\n\n<p>Note that if your goal would have been trying to protect the <strong>source code</strong> rather than the application itself (in other words, to avoid others reading/copying the code), then compiling (with optimizations) a language like C into WebAssembly could be a fair option (and you would want to write as much as possible of your application in it). Even if the solution does not hide how the application works, it can effectively make it harder to read/reuse the original code/design -- it is just a form of obfuscation.</p>\n\n<p>However, this question is focused on preventing malicious parties to bypass protections and/or manipulate behavior/data, and for that a bit of obfuscation by compiling to WebAssembly is <strong>not</strong> going to buy you any security.</p>\n"
+    },
+    {
+        "owner": {
+            "reputation": 191,
+            "user_id": 403048,
+            "user_type": "registered",
+            "accept_rate": 42,
+            "profile_image": "https://www.gravatar.com/avatar/4dc8ea6c7915c465b2c996a5ab3930dc?s=128&d=identicon&r=PG",
+            "display_name": "Boyan Mihaylovv",
+            "link": "https://stackoverflow.com/users/403048/boyan-mihaylovv"
+        },
+        "is_accepted": false,
+        "score": 7,
+        "last_activity_date": 1525339719,
+        "creation_date": 1525339719,
+        "answer_id": 50151527,
+        "question_id": 50149603,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>JS is a dynamic language and you can override (almost) everything. You can get the body of the function as string and hash it to generate a \"snapshot\" of it and later on check against this snapshot, but one can override one of the inner functions independently.</p>\n\n<pre><code>var getA = function() { return 1; };\n\nvar myFunc = function() {\n  var a = getA();\n  return a * 2;\n};\n\nWebAssembly.instantiate(wasmBytes, { myFunc });\n\n// ... later on ...\ngetA = function() { return 5; };\n</code></pre>\n"
+    }
+]

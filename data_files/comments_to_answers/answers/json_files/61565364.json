@@ -1,0 +1,40 @@
+[
+    {
+        "owner": {
+            "reputation": 1030,
+            "user_id": 72894,
+            "user_type": "registered",
+            "accept_rate": 91,
+            "profile_image": "https://www.gravatar.com/avatar/a7093cd109ad9439060c41075e48e4c0?s=128&d=identicon&r=PG",
+            "display_name": "Rogier",
+            "link": "https://stackoverflow.com/users/72894/rogier"
+        },
+        "is_accepted": false,
+        "score": 0,
+        "last_activity_date": 1588491010,
+        "last_edit_date": 1588491010,
+        "creation_date": 1588489034,
+        "answer_id": 61570728,
+        "question_id": 61565364,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>The Blazor Client is bootstrapped from a static <code>index.html</code> in the <code>wwwroot</code>. In the Server project this is mapped to an Endpoint in the <code>Startup.cs</code>, basically a catch-all to all endpoints not taken by your Razor Pages or Controllers:</p>\n\n<pre><code>app.UseEndpoints(endpoints =&gt;\n{\n    endpoints.MapRazorPages();\n    endpoints.MapControllers();\n    endpoints.MapFallbackToFile(\"index.html\");\n});\n</code></pre>\n\n<p>For your scenario:</p>\n\n<ol>\n<li>Create a new layout in Server, say _LayoutBlazor.cshtml</li>\n<li><p>Re-create the contents of the <code>index.html</code> from the Client. Note that the _framework files from the Client are copied to the Server wwwroot upon build:\n:</p>\n\n<p><code>&lt;app&gt;Loading...&lt;/app&gt;</code></p>\n\n<p><code>&lt;script  src=\"@Href(\"~/_framework/blazor.webassembly.js\")\"&gt;&lt;/script&gt;</code></p></li>\n<li><p>Create a new Razor page and put the \"Authorize\" tag on it and use the _LayoutBlazor. </p></li>\n<li><p>Remove the <code>endpoints.MapFallbackToFile(\"index.html\");</code> from Startup.cs</p></li>\n</ol>\n\n<p>Mark Gould has created a proof of concept here: <a href=\"https://github.com/markgould/RazorBlazor\" rel=\"nofollow noreferrer\">RazorBlazor</a></p>\n"
+    },
+    {
+        "owner": {
+            "reputation": 533,
+            "user_id": 11144591,
+            "user_type": "registered",
+            "profile_image": "https://lh3.googleusercontent.com/-LhwR4jQgwq8/AAAAAAAAAAI/AAAAAAAAH9Q/QCvrmdGUeEw/photo.jpg?sz=128",
+            "display_name": "David Masterson",
+            "link": "https://stackoverflow.com/users/11144591/david-masterson"
+        },
+        "is_accepted": true,
+        "score": 3,
+        "last_activity_date": 1588451978,
+        "creation_date": 1588451978,
+        "answer_id": 61565996,
+        "question_id": 61565364,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>I created a control RedirectToLogin.razor</p>\n\n<pre><code>@inject NavigationManager Navigation\n@code {\n    protected override void OnInitialized()\n    {\n        String thisPage = Navigation.Uri.Replace(Navigation.BaseUri, \"~/\");\n        Navigation.NavigateTo($\"Identity/Account/Login?returnUrl={thisPage}\");\n        base.OnInitialized();\n    }\n}\n</code></pre>\n\n<p>And then inserted it into the mainlayout.razor</p>\n\n<pre><code>&lt;div class=\"container-fluid\"&gt;\n &lt;AuthorizeView&gt;\n        &lt;Authorized&gt;\n            &lt;NavigationLogger /&gt;\n            &lt;ContextMenuMouseClick&gt;\n                &lt;MenuTopBar /&gt;\n                &lt;NavMenu /&gt;\n                &lt;SubPageContainer&gt;\n                    @Body\n                &lt;/SubPageContainer&gt;\n            &lt;/ContextMenuMouseClick&gt;\n        &lt;/Authorized&gt;\n        &lt;NotAuthorized&gt;\n            &lt;RedirectToLogin /&gt;\n        &lt;/NotAuthorized&gt;\n&lt;/AuthorizeView&gt;\n&lt;/div&gt;\n</code></pre>\n\n<p>So when the layout is loaded and it is in the NotAuthorized state it will redirect to the login page and after authorising  will return to the page it was trying to access.</p>\n\n<p>Hope this helps.</p>\n"
+    }
+]

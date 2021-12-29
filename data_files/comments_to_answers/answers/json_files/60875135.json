@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 2003,
+            "user_id": 2032097,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/McQMT.png?s=128&g=1",
+            "display_name": "lilo.jacob",
+            "link": "https://stackoverflow.com/users/2032097/lilo-jacob"
+        },
+        "is_accepted": false,
+        "score": 0,
+        "last_activity_date": 1618066957,
+        "creation_date": 1618066957,
+        "answer_id": 67035832,
+        "question_id": 60875135,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>Yes, you can &quot;run&quot; it with any hosting.\nAll you need is to build(publish) your solution and host it as a static website.</p>\n"
+    }
+]

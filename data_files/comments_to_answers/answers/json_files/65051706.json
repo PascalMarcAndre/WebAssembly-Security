@@ -1,0 +1,39 @@
+[
+    {
+        "owner": {
+            "reputation": 25737,
+            "user_id": 6152891,
+            "user_type": "registered",
+            "accept_rate": 75,
+            "profile_image": "https://www.gravatar.com/avatar/b45b7f89429f8766cdbf6c776c0a9d41?s=128&d=identicon&r=PG",
+            "display_name": "enet",
+            "link": "https://stackoverflow.com/users/6152891/enet"
+        },
+        "is_accepted": true,
+        "score": 0,
+        "last_activity_date": 1606639080,
+        "creation_date": 1606639080,
+        "answer_id": 65058338,
+        "question_id": 65051706,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>Ok, I've solved the issue thanks to <a href=\"https://github.com/dotnet/aspnetcore/issues/28224#issuecomment-735350062\" rel=\"nofollow noreferrer\">mkArtakMSFT</a> and <a href=\"https://blazor-university.com/dependency-injection/dependency-lifetimes-and-scopes/transient-dependencies/\" rel=\"nofollow noreferrer\">Peter Morris</a>.</p>\n<blockquote>\n<p>The general rule of thumb is that every time you encapsulate a\ndisposable type in a new type as a member, you should make your new\ntype disposable too. In your particular case, the BlazorTimer class is\nnot disposable - hence the underlying _timer instance, when\ninitialized, never gets disposed of - leaving some memory behind.</p>\n<p>Furthermore, every time the SetTimer method is called, a new Timer\ninstance is being created, and the old one is being left behind (in\nthe air), again leaking memory. Consider disposing of existing\ninstance, if that's your intent. Or, even better, reuse existing\ninstance if that would be acceptable for your business rules\n<a href=\"https://github.com/dotnet/aspnetcore/issues/28224#issuecomment-735350062\" rel=\"nofollow noreferrer\">Source</a></p>\n</blockquote>\n<p>Note: &quot;the BlazorTimer class is not disposable&quot; because I'm using transient dependencies. Implementing it as disposable would have adverse effects... See explanation <a href=\"https://blazor-university.com/dependency-injection/dependency-lifetimes-and-scopes/transient-dependencies/\" rel=\"nofollow noreferrer\">blazor-university</a></p>\n<p>To solve the leaking memory, in my current code snippet, I should simply call the Dispose method (always do that, this time forgot it) on the Timer object from the NotifyTimerElapsed method</p>\n"
+    },
+    {
+        "owner": {
+            "reputation": 139,
+            "user_id": 12048621,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/7fcf63701e61729a6748a34f809bba90?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Stellarade",
+            "link": "https://stackoverflow.com/users/12048621/stellarade"
+        },
+        "is_accepted": false,
+        "score": 1,
+        "last_activity_date": 1606581887,
+        "creation_date": 1606581887,
+        "answer_id": 65052061,
+        "question_id": 65051706,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>BlazorTimer should implement IDisposable. The BlazorTimer Dispose method should stop the timer, unsubscribe the Elapsed event, and dispose the timer.</p>\n<p>The root of the problem is that your BlazorTimer is set as a Transient service. So for each new request, you\u2019re getting new BlazorTimer objects with new .Net timers that are never getting disposed properly</p>\n"
+    }
+]

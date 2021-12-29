@@ -1,0 +1,57 @@
+[
+    {
+        "owner": {
+            "reputation": 11,
+            "user_id": 15199008,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/53774d28fb1a3b26682f33735f6c4137?s=128&d=identicon&r=PG",
+            "display_name": "RogueHobbit",
+            "link": "https://stackoverflow.com/users/15199008/roguehobbit"
+        },
+        "is_accepted": false,
+        "score": 0,
+        "last_activity_date": 1614887510,
+        "creation_date": 1614887510,
+        "answer_id": 66482076,
+        "question_id": 65001011,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>I want to chime in and say I was really struggling with this today and Sascha Stops' answer was right on the money. Thanks a lot.</p>\n<p>One thing I'd like to point out that with .NET 5 being released and with the latest update to Visual Studio 2019, there is now a Blazor WebAssembly template for Work or School Accounts (i.e. Azure AD authentication). I created my app with this template and assumed it would set everything up correctly. It does not.</p>\n<p>The client app registration has the redirect URIs set up as Web instead of SPA. This was the first issue I encountered and had to change it manually after doing some research. The second problem was this audience setting being discussed here. I hope Microsoft cleans up these bugs in the template soon because I'm sure there will be a lot of confused developers out there.</p>\n"
+    },
+    {
+        "owner": {
+            "reputation": 31,
+            "user_id": 8839529,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/97270f266fd9ca5444ce90c402f7bbe3?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Michael Schreiber",
+            "link": "https://stackoverflow.com/users/8839529/michael-schreiber"
+        },
+        "is_accepted": false,
+        "score": 1,
+        "last_activity_date": 1609747777,
+        "last_edit_date": 1609747777,
+        "creation_date": 1609746704,
+        "answer_id": 65559284,
+        "question_id": 65001011,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>Thank you so much! I had the same issue, and your post was the key to resolve it.\nOne thing to add:\nThe value for Audience is the apiname in lowercase:</p>\n<pre><code>&quot;Audience&quot;: &quot;api://&lt;apiname in lowercase&gt;&quot;\n</code></pre>\n<p>I also tried to only change the ClientID to lowercase but that did not work.</p>\n<p>In addition to adding &quot;Audience&quot; in appsettings.json for the server, I had to adjust the app registration for the server as follows:\n<a href=\"https://i.stack.imgur.com/yL1Cc.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/yL1Cc.png\" alt=\"Select only ID tokens for server.\" /></a></p>\n<p>The platform for the server must be Web.</p>\n<p>I also had to adjust the app registration for the client.</p>\n<p>The platform for the client must be SPA and both token types must be deselected:\n<a href=\"https://i.stack.imgur.com/mq5wl.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/mq5wl.png\" alt=\"Deselect token type for client.\" /></a></p>\n"
+    },
+    {
+        "owner": {
+            "reputation": 36,
+            "user_id": 14916173,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/563820d59e9cd3dbc14fc644d6b4d3e4?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Sascha Stops",
+            "link": "https://stackoverflow.com/users/14916173/sascha-stops"
+        },
+        "is_accepted": true,
+        "score": 2,
+        "last_activity_date": 1609376879,
+        "creation_date": 1609376879,
+        "answer_id": 65515496,
+        "question_id": 65001011,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>I managed to solve this error in my project by adding the &quot;Audience&quot; value into the server's appsettings.json file</p>\n<pre><code>  &quot;AzureAd&quot;: {\n    &quot;Instance&quot;: &quot;https://login.microsoftonline.com/&quot;,\n    &quot;Domain&quot;: &quot;&lt;domain&gt;&quot;,\n    &quot;TenantId&quot;: &quot;&lt;guid&gt;&quot;,\n    &quot;ClientId&quot;: &quot;api://&lt;apiname&gt;&quot;,\n    &quot;CallbackPath&quot;: &quot;/signin-oidc&quot;,\n    &quot;Audience&quot;: &quot;api://blazorapp1_server&quot;\n  },\n</code></pre>\n<p>It looks like the audience validation is case-sensitive and fails if the ClientId contains uppercase letters and the audience value passed in the bearer token is in all lowercase. Adding the audience value in all lower case solved it for me.</p>\n"
+    }
+]

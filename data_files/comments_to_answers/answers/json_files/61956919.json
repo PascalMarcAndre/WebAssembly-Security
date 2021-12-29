@@ -1,0 +1,21 @@
+[
+    {
+        "owner": {
+            "reputation": 8928,
+            "user_id": 41403,
+            "user_type": "registered",
+            "accept_rate": 88,
+            "profile_image": "https://www.gravatar.com/avatar/476b1c3cf22e774b835403adc9af6a59?s=128&d=identicon&r=PG",
+            "display_name": "Quango",
+            "link": "https://stackoverflow.com/users/41403/quango"
+        },
+        "is_accepted": false,
+        "score": 2,
+        "last_activity_date": 1590160451,
+        "creation_date": 1590160451,
+        "answer_id": 61958187,
+        "question_id": 61956919,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>If you're running Blazor locally you could be doing one of three things:</p>\n\n<ol>\n<li><p>Running directly from the file system, e.g. opening <code>index.html</code> in the browser. You can't apply TLS (SSL) here because there is no server to decode the requests and encode the responses</p></li>\n<li><p>Running on a local IISExpress server, e.g. via Visual Studio</p></li>\n<li><p>Running the Kestrel server, e.g. via <code>dotnet run</code></p></li>\n</ol>\n\n<p>In either (2) or (3) you need a local development certificate. This is exactly the same as any other ASP.NET Core application. It used to be hard but these days Visual Studio will help you out with this when you first run the app.</p>\n\n<p>If you need to set one up, <a href=\"https://www.hanselman.com/blog/DevelopingLocallyWithASPNETCoreUnderHTTPSSSLAndSelfSignedCerts.aspx\" rel=\"nofollow noreferrer\">Scott Hanselmann has a useful guide</a> on doing this.</p>\n"
+    }
+]

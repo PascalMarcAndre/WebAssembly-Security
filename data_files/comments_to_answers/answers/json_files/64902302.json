@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 96,
+            "user_id": 8087760,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/99hfP.jpg?s=128&g=1",
+            "display_name": "Chad Hasbrook",
+            "link": "https://stackoverflow.com/users/8087760/chad-hasbrook"
+        },
+        "is_accepted": true,
+        "score": 0,
+        "last_activity_date": 1605746774,
+        "creation_date": 1605746774,
+        "answer_id": 64903688,
+        "question_id": 64902302,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p><a href=\"https://docs.microsoft.com/en-us/graph/api/user-get?view=graph-rest-1.0&amp;tabs=http\" rel=\"nofollow noreferrer\">Per documentation, Microsoft Graph</a> uses userprincipalname or objectID for queries</p>\n<pre><code>GET /users/{id | userPrincipalName}\n</code></pre>\n<p>You can apply filters to Microsoft Graph calls but generally the objectID is immutable and is the primary identifier that I've seen with enterprise applications/services.</p>\n"
+    }
+]

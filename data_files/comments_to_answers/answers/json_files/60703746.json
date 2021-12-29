@@ -1,0 +1,21 @@
+[
+    {
+        "owner": {
+            "reputation": 42883,
+            "user_id": 577603,
+            "user_type": "registered",
+            "accept_rate": 77,
+            "profile_image": "https://www.gravatar.com/avatar/70c19b44cc2eb6f1a87a08fc892c502b?s=128&d=identicon&r=PG",
+            "display_name": "ComicSansMS",
+            "link": "https://stackoverflow.com/users/577603/comicsansms"
+        },
+        "is_accepted": false,
+        "score": 1,
+        "last_activity_date": 1584354790,
+        "creation_date": 1584354790,
+        "answer_id": 60704295,
+        "question_id": 60703746,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>You should aim to keep your include paths unique, so that this cannot happen.</p>\n\n<p>One way to achieve this is by moving the majority of includes to their own subdirectory. So instead of <code>#include &lt;config.h&gt;</code> you could use <code>#include &lt;MyProject/config.h&gt;</code>.</p>\n\n<pre><code>configure_file(\"${CMAKE_CURRENT_SOURCE_DIR}/src/config.h.in\"\n               \"${GENERATED_HEADER_DIR}/MyProject/config.h\")\n</code></pre>\n\n<p>If you end up in a situation where this is not possible, eg. because both of the headers are part of third-party libraries A and B not under your control, you need to solve the problem by allowing each <code>.cpp</code> file to only make use of either lib A or lib B, but never both. As soon as both libraries are usable by the same source file, you get the conflict on the include files, which is <em>not resolvable</em>. Any clever hackery regarding the order of include directories on the build command line or <code>#include &lt;&gt;</code> vs. <code>include \"\"</code> is extremely fragile and non-portable.</p>\n"
+    }
+]

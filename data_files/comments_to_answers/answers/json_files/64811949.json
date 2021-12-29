@@ -1,0 +1,39 @@
+[
+    {
+        "owner": {
+            "reputation": 25609,
+            "user_id": 425823,
+            "user_type": "registered",
+            "accept_rate": 86,
+            "profile_image": "https://www.gravatar.com/avatar/00d813f85062c23d43043e6132278610?s=128&d=identicon&r=PG",
+            "display_name": "Greg Gum",
+            "link": "https://stackoverflow.com/users/425823/greg-gum"
+        },
+        "is_accepted": false,
+        "score": 1,
+        "last_activity_date": 1605236004,
+        "creation_date": 1605236004,
+        "answer_id": 64814798,
+        "question_id": 64811949,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>Try using this built in component - the Authorized View:</p>\n<pre><code>&lt;AuthorizeView&gt;\n    &lt;Authorized&gt;\n        &lt;h1&gt;Hello, @context.User.Identity.Name!&lt;/h1&gt;\n        &lt;p&gt;You can only see this content if you're authenticated.&lt;/p&gt;\n    &lt;/Authorized&gt;\n    &lt;NotAuthorized&gt;\n        &lt;h1&gt;Authentication Failure!&lt;/h1&gt;\n        &lt;p&gt;You're not signed in.&lt;/p&gt;\n    &lt;/NotAuthorized&gt;\n&lt;/AuthorizeView&gt;\n</code></pre>\n<p>But as noted by @Brian Parker, this is a convenience only.  Since your on the client, there is really no such thing as security, as all security measure can be bypassed.  In other words, you need to ensure your security measure are in place in your APIs so no insecure data is being passed to the client.</p>\n"
+    },
+    {
+        "owner": {
+            "reputation": 4127,
+            "user_id": 1492496,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/dO7to.png?s=128&g=1",
+            "display_name": "Brian Parker",
+            "link": "https://stackoverflow.com/users/1492496/brian-parker"
+        },
+        "is_accepted": true,
+        "score": 1,
+        "last_activity_date": 1605220112,
+        "creation_date": 1605220112,
+        "answer_id": 64812763,
+        "question_id": 64811949,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>No its not safe in a browser. Browser should only see what the client has privileges for. Also the hardware of a client is really unknown so the performance ability to do sorting and filtering of data is questionable.</p>\n"
+    }
+]

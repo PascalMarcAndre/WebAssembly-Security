@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 4806,
+            "user_id": 26346,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/fce469a4b695184aa5e087d76db1d81e?s=128&d=identicon&r=PG",
+            "display_name": "J&#233;r&#244;me Laban",
+            "link": "https://stackoverflow.com/users/26346/j%c3%a9r%c3%b4me-laban"
+        },
+        "is_accepted": true,
+        "score": 1,
+        "last_activity_date": 1591130193,
+        "creation_date": 1591130193,
+        "answer_id": 62160991,
+        "question_id": 62159756,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>Make sure to update to Uno 2.4.4 or later, which contains a fix for pointers management for Safari on iOS. </p>\n\n<p>Safari for iOS can return pointers being negative, which was causing trouble to the pointer management system in Uno. See <a href=\"https://github.com/unoplatform/uno/pull/3245\" rel=\"nofollow noreferrer\">this Pull Request</a> for more information.</p>\n"
+    }
+]

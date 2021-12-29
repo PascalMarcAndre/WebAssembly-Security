@@ -1,0 +1,21 @@
+[
+    {
+        "owner": {
+            "reputation": 5683,
+            "user_id": 68490,
+            "user_type": "registered",
+            "accept_rate": 20,
+            "profile_image": "https://www.gravatar.com/avatar/b3c70bbc491ede87ae5682c561af07d2?s=128&d=identicon&r=PG",
+            "display_name": "Tore Nestenius",
+            "link": "https://stackoverflow.com/users/68490/tore-nestenius"
+        },
+        "is_accepted": false,
+        "score": 0,
+        "last_activity_date": 1615367219,
+        "creation_date": 1615367219,
+        "answer_id": 66561517,
+        "question_id": 66560210,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>By default, only these claims are mapped from the ID-Token:</p>\n<pre><code>options.ClaimActions.MapUniqueJsonKey(&quot;sub&quot;, &quot;sub&quot;);\noptions.ClaimActions.MapUniqueJsonKey(&quot;name&quot;, &quot;name&quot;);\noptions.ClaimActions.MapUniqueJsonKey(&quot;given_name&quot;, &quot;given_name&quot;);\noptions.ClaimActions.MapUniqueJsonKey(&quot;family_name&quot;, &quot;family_name&quot;);\noptions.ClaimActions.MapUniqueJsonKey(&quot;profile&quot;, &quot;profile&quot;);\noptions.ClaimActions.MapUniqueJsonKey(&quot;email&quot;, &quot;email&quot;);\n</code></pre>\n<p>To get additional claims mapped, we have to write like:</p>\n<pre><code>options.ClaimActions.MapUniqueJsonKey(&quot;website&quot;, &quot;website&quot;);\noptions.ClaimActions.MapUniqueJsonKey(&quot;gender&quot;, &quot;gender&quot;);\noptions.ClaimActions.MapUniqueJsonKey(&quot;birthdate&quot;, &quot;birthdate&quot;);\n</code></pre>\n<p>In AddOpenIDConnect. This is called Claims transformation if you want to google for it.</p>\n"
+    }
+]

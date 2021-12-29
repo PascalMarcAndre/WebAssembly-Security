@@ -1,0 +1,21 @@
+[
+    {
+        "owner": {
+            "reputation": 1387,
+            "user_id": 5084424,
+            "user_type": "registered",
+            "accept_rate": 88,
+            "profile_image": "https://i.stack.imgur.com/RBdXZ.jpg?s=128&g=1",
+            "display_name": "SimonS",
+            "link": "https://stackoverflow.com/users/5084424/simons"
+        },
+        "is_accepted": true,
+        "score": 1,
+        "last_activity_date": 1614005065,
+        "creation_date": 1614005065,
+        "answer_id": 66317874,
+        "question_id": 66221439,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>The most likely reason why this is happening, is that some Antiviruses block the execution of downloaded <code>.dll</code> files. That's why it is working in some networks, but doesn't in some others.</p>\n<p>What you can do, and what is also <a href=\"https://github.com/dotnet/aspnetcore/issues/5477#issuecomment-599148931\" rel=\"nofollow noreferrer\">suggested as a Workaround by microsoft</a>, is to rename all <code>.dll</code> to <code>.bin</code> - and also change the config json. it worked in my case.</p>\n<p>I use the following PowerShell function for that:</p>\n<pre><code>Function Hide-BlazorDLL {\n\n    Param(\n        [ValidateScript({ (Split-Path $_ -Leaf) -eq &quot;wwwroot&quot; })]\n        [string]$Path = (Get-Location).Path\n    )\n\n    &lt;#\n        according to the following links:\n        https://github.com/dotnet/aspnetcore/issues/19552\n        https://github.com/dotnet/aspnetcore/issues/5477#issuecomment-599148931\n        https://github.com/dotnet/aspnetcore/issues/21489\n    #&gt;\n\n    # Test the Path\n    $WorkingDir = Join-Path $Path &quot;_framework&quot;\n    if (!(Test-Path $WorkingDir)) { Throw &quot;Wrong path. must be in wwwroot folder of published application.&quot; }\n\n    # Test if path is correct and accessible\n    Get-ChildItem &quot;$WorkingDir\\_bin&quot; -Recurse | Rename-item -NewName { $_.name -replace &quot;.dll\\b&quot;,&quot;.bin&quot; } -ErrorAction SilentlyContinue\n    ((Get-Content &quot;$WorkingDir\\blazor.boot.json&quot; -Raw) -replace '.dll&quot;','.bin&quot;') | Set-Content &quot;$WorkingDir\\blazor.boot.json&quot;\n\n    # Delete Compressed Blazor files\n    Remove-Item &quot;$WorkingDir\\blazor.boot.json.gz&quot;\n    Remove-Item &quot;$WorkingDir\\blazor.boot.json.br&quot;\n}\n</code></pre>\n<p>Basically you need to navigate to the <code>wwwroot</code> folder of your published application and run the function there. e.g:</p>\n<pre><code>PS D:\\inetpub\\wwwroot\\&lt;appname&gt;\\wwwroot&gt; Hide-BlazorDLL\n</code></pre>\n<p>Note:</p>\n<ul>\n<li>if you have a <code>service-worker-assets.js</code> in your <code>wwwroot</code> folder, you most likely have to replace <code>.dll</code> with <code>.bin</code> in there too, and remove the <code>wwwroot/service-worker-assets.js.br</code> and <code>wwwroot/service-worker-assets.js.gz</code> files</li>\n</ul>\n"
+    }
+]

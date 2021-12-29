@@ -1,0 +1,22 @@
+[
+    {
+        "owner": {
+            "reputation": 12718,
+            "user_id": 2940908,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://i.stack.imgur.com/E79WU.jpg?s=128&g=1",
+            "display_name": "agua from mars",
+            "link": "https://stackoverflow.com/users/2940908/agua-from-mars"
+        },
+        "is_accepted": false,
+        "score": 1,
+        "last_activity_date": 1591369116,
+        "last_edit_date": 1591369116,
+        "creation_date": 1591342702,
+        "answer_id": 62210359,
+        "question_id": 62203734,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>You should either :</p>\n\n<ul>\n<li>Install an HTTPS certificate for your endpoint and run a full end-to-end HTTPS (Recommended)<br>\nTo setup kestrel with a certificate on docker read <a href=\"https://docs.microsoft.com/en-us/aspnet/core/security/docker-https?view=aspnetcore-3.1\" rel=\"nofollow noreferrer\">this doc</a></li>\n<li>Override the OIDC config used by your app :</li>\n</ul>\n\n<p><strong>Create a metadata.json file</strong></p>\n\n<pre><code>{\n    \"issuer\": \"http://YYY.azurewebsites.net\",\n    \"jwks_uri\": \"https://YYY.azurewebsites.net/.well-known/openid-configuration/jwks\",\n    \"authorization_endpoint\": \"https://YYY.azurewebsites.net/connect/authorize\",\n    \"token_endpoint\": \"https://YYY.azurewebsites.net/connect/token\",\n    \"userinfo_endpoint\": \"https://YYY.azurewebsites.net/connect/userinfo\",\n    \"end_session_endpoint\": \"https://YYY.azurewebsites.net/connect/endsession\",\n    \"check_session_iframe\": \"https://YYY.azurewebsites.net/connect/checksession\"\n}\n</code></pre>\n\n<blockquote>\n  <p>\"issuer\": \"<a href=\"http://YYY.azurewebsites.net\" rel=\"nofollow noreferrer\">http://YYY.azurewebsites.net</a>\" is an HTTP url not HTTPS</p>\n</blockquote>\n\n<p><strong>Configure the application to get metadata from your custom file</strong></p>\n\n<pre class=\"lang-cs prettyprint-override\"><code>public class Program\n{\n    public static async Task Main(string[] args)\n    {\n        var builder = WebAssemblyHostBuilder.CreateDefault(args);\n        builder.RootComponents.Add&lt;App&gt;(\"app\");\n        builder.Services.AddOidcAuthentication&lt;RemoteAuthenticationState, RemoteUserAccount&gt;(options =&gt;\n                {\n                    var providerOptions = options.ProviderOptions;\n                    providerOptions.Authority = \"https://YYY.azurewebsites.net\";\n                    providerOptions.MetadataUrl = \"https://YYY.azurewebsites.net/metadata.json\";\n                    providerOptions.PostLogoutRedirectUri = \"https://YYY.azurewebsites.net/authentication/logout-callback\";\n                    providerOptions.RedirectUri = \"https://YYY.azurewebsites.net/login-callback\";\n                });\n        await builder.Build().RunAsync();\n    }\n}\n</code></pre>\n"
+    }
+]

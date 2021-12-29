@@ -1,0 +1,21 @@
+[
+    {
+        "owner": {
+            "reputation": 1,
+            "user_id": 5098378,
+            "user_type": "registered",
+            "profile_image": "https://lh6.googleusercontent.com/-et5XBLwjxEA/AAAAAAAAAAI/AAAAAAAAALY/4LTL4Lz_mUI/photo.jpg?sz=128",
+            "display_name": "Adam Krhovj&#225;k",
+            "link": "https://stackoverflow.com/users/5098378/adam-krhovj%c3%a1k"
+        },
+        "is_accepted": false,
+        "score": 0,
+        "last_activity_date": 1607976401,
+        "last_edit_date": 1607976401,
+        "creation_date": 1607972695,
+        "answer_id": 65294961,
+        "question_id": 64794057,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>What helped me was to call NavigationManager with forceLoad parameter being set to <strong>true</strong>\n<code>Navigation.NavigateTo(&quot;counter&quot;, true);</code><br />\nwhere Navigation is an injected instance of NavigationManager class</p>\n"
+    }
+]

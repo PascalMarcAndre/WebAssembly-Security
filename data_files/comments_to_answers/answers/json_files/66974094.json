@@ -1,0 +1,40 @@
+[
+    {
+        "owner": {
+            "reputation": 25737,
+            "user_id": 6152891,
+            "user_type": "registered",
+            "accept_rate": 75,
+            "profile_image": "https://www.gravatar.com/avatar/b45b7f89429f8766cdbf6c776c0a9d41?s=128&d=identicon&r=PG",
+            "display_name": "enet",
+            "link": "https://stackoverflow.com/users/6152891/enet"
+        },
+        "is_accepted": true,
+        "score": 1,
+        "last_activity_date": 1617737206,
+        "creation_date": 1617737206,
+        "answer_id": 66975278,
+        "question_id": 66974094,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>If you're using the token based authentication (API), you can attach an event handler to the RemoteAuthenticatorView component located in the Authentication component. I think it has an event that is invoked immediately after a user log in. As far as I recall, I've once answered a similar question that way, and then changed my answer to something more useful. Try this solution, and let us know if it's OK.</p>\n"
+    },
+    {
+        "owner": {
+            "reputation": 10743,
+            "user_id": 18938,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/cad36aea9ff5e233ea939e212bfc466b?s=128&d=identicon&r=PG",
+            "display_name": "Eric King",
+            "link": "https://stackoverflow.com/users/18938/eric-king"
+        },
+        "is_accepted": false,
+        "score": 0,
+        "last_activity_date": 1617736172,
+        "last_edit_date": 1617736172,
+        "creation_date": 1617734174,
+        "answer_id": 66974545,
+        "question_id": 66974094,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>You can inject the <code>AuthorizationService</code> into your component and then await the <code>AuthenticationState</code> to run code if your user is logged in. Further details are in the <a href=\"https://docs.microsoft.com/en-us/aspnet/core/blazor/security/?view=aspnetcore-5.0#procedural-logic\" rel=\"nofollow noreferrer\">documentation here</a>.</p>\n<pre><code>@using Microsoft.AspNetCore.Authorization\n@inject IAuthorizationService AuthorizationService\n\n&lt;button @onclick=&quot;@DoSomething&quot;&gt;Do something important&lt;/button&gt;\n\n@code {\n    [CascadingParameter]\n    private Task&lt;AuthenticationState&gt; authenticationStateTask { get; set; }\n\n    private async Task DoSomething()\n    {\n        var user = (await authenticationStateTask).User;\n\n        if (user.Identity.IsAuthenticated)\n        {\n            // Perform an action only available to authenticated (signed-in) users.\n        }\n    }\n}\n</code></pre>\n<p>Instead of an onclick handler you can put the auth check in a component's initializedasync method or wherever else is appropriate.</p>\n<p>Another approach is to hook into the <code>OnLoginSucceeded</code> property of the <code>RemoteAuthenticatorView</code>, like:</p>\n<pre><code>&lt;RemoteAuthenticatorView Action=&quot;@Action&quot; OnLogInSucceeded=&quot;OnLoginSucceeded&quot; /&gt;\n@code{\n    [Parameter] public string Action { get; set; }\n\n    private void OnLoginSucceeded() \n    {\n        // do your stuff here\n    }\n}\n</code></pre>\n"
+    }
+]

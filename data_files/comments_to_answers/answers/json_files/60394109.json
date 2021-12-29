@@ -1,0 +1,39 @@
+[
+    {
+        "owner": {
+            "reputation": 31,
+            "user_id": 12501885,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/620bd3af959a66343b414a938b107ec8?s=128&d=identicon&r=PG&f=1",
+            "display_name": "He-Wolf",
+            "link": "https://stackoverflow.com/users/12501885/he-wolf"
+        },
+        "is_accepted": false,
+        "score": 2,
+        "last_activity_date": 1591783619,
+        "creation_date": 1591783619,
+        "answer_id": 62300938,
+        "question_id": 60394109,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>Solution of Richard Holmes worked for me fine with a little modification: at comparsion \n(datetime.UtcDateTime &lt;= DateTime.Now) DateTime.Now needs to be change to DateTime.UtcNow</p>\n"
+    },
+    {
+        "owner": {
+            "reputation": 140,
+            "user_id": 5874473,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/1d2146389dddd77d8ea58c683e452ed1?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Mark Malabanan",
+            "link": "https://stackoverflow.com/users/5874473/mark-malabanan"
+        },
+        "is_accepted": false,
+        "score": 2,
+        "last_activity_date": 1618548206,
+        "last_edit_date": 1618548206,
+        "creation_date": 1584144693,
+        "answer_id": 60678605,
+        "question_id": 60394109,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>I've followed the same blog posts you did, and it seems we have to do our own expiration check on the client side. In the <code>ApiAuthenticationStateProvider</code> on the client side, I did this:</p>\n<pre><code>public override async Task&lt;AuthenticationState&gt; GetAuthenticationStateAsync()\n{\n    var savedToken = await _localStorage.GetItemAsync&lt;string&gt;(&quot;authToken&quot;);\n    var anonymousState = new AuthenticationState(new ClaimsPrincipal(new ClaimsIdentity()));\n\n    // Not authenticated\n    if (string.IsNullOrWhiteSpace(savedToken))\n    {\n        return anonymousState;\n    }\n\n    var claims = ParseClaimsFromJwt(savedToken);\n    // Checks the exp field of the token\n    var expiry = claims.Where(claim =&gt; claim.Type.Equals(&quot;exp&quot;)).FirstOrDefault();\n    if (expiry == null)\n        return anonymousState;\n\n    // The exp field is in Unix time\n    var datetime = DateTimeOffset.FromUnixTimeSeconds(long.Parse(expiry.Value));\n    if (datetime.UtcDateTime &lt;= DateTime.UtcNow)\n        return anonymousState;\n\n    _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(&quot;bearer&quot;, savedToken);\n\n    return new AuthenticationState(new ClaimsPrincipal(new ClaimsIdentity(claims, &quot;jwt&quot;)));\n}\n</code></pre>\n<p>It's not pretty, but it gets the job done for now.</p>\n"
+    }
+]

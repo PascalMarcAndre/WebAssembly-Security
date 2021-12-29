@@ -1,0 +1,40 @@
+[
+    {
+        "owner": {
+            "reputation": 321,
+            "user_id": 2398817,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/4fBPy.jpg?s=128&g=1",
+            "display_name": "danfer",
+            "link": "https://stackoverflow.com/users/2398817/danfer"
+        },
+        "is_accepted": false,
+        "score": 0,
+        "last_activity_date": 1597497523,
+        "creation_date": 1597497523,
+        "answer_id": 63426473,
+        "question_id": 63391217,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>I had same issue, just look for the section &quot;Unauthenticated or unauthorized web API requests in an app with a secure default client&quot; at <a href=\"https://docs.microsoft.com/en-us/aspnet/core/blazor/security/webassembly/additional-scenarios?view=aspnetcore-3.1#unauthenticated-or-unauthorized-web-api-requests-in-an-app-with-a-secure-default-client\" rel=\"nofollow noreferrer\">https://docs.microsoft.com/en-us/aspnet/core/blazor/security/webassembly/additional-scenarios?view=aspnetcore-3.1#unauthenticated-or-unauthorized-web-api-requests-in-an-app-with-a-secure-default-client</a> for the solution, regards.</p>\n"
+    },
+    {
+        "owner": {
+            "reputation": 12718,
+            "user_id": 2940908,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://i.stack.imgur.com/E79WU.jpg?s=128&g=1",
+            "display_name": "agua from mars",
+            "link": "https://stackoverflow.com/users/2940908/agua-from-mars"
+        },
+        "is_accepted": true,
+        "score": 0,
+        "last_activity_date": 1597319017,
+        "last_edit_date": 1597319017,
+        "creation_date": 1597310581,
+        "answer_id": 63392012,
+        "question_id": 63391217,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>I have this <em>App.razor</em> nd it works for me :</p>\n<pre class=\"lang-html prettyprint-override\"><code>&lt;Router AppAssembly=&quot;@typeof(Program).Assembly&quot;&gt;\n    &lt;Found Context=&quot;routeData&quot;&gt;\n        &lt;AuthorizeRouteView RouteData=&quot;@routeData&quot; DefaultLayout=&quot;@typeof(MainLayout)&quot;&gt;\n            &lt;NotAuthorized&gt;\n                &lt;RedirectToLogin /&gt;\n            &lt;/NotAuthorized&gt;\n            &lt;Authorizing&gt;\n                &lt;PageLoading Information=&quot;Authentication in progress&quot; /&gt;\n            &lt;/Authorizing&gt;\n        &lt;/AuthorizeRouteView&gt;\n    &lt;/Found&gt;\n    &lt;NotFound&gt;\n        &lt;CascadingAuthenticationState&gt;\n            &lt;LayoutView Layout=&quot;@typeof(MainLayout)&quot;&gt;\n                &lt;PageNotFound /&gt;\n            &lt;/LayoutView&gt;\n        &lt;/CascadingAuthenticationState&gt;\n    &lt;/NotFound&gt;\n&lt;/Router&gt;\n</code></pre>\n<p>You <code>HttpClient</code> must not have <code>AuthorizationMessageHandler</code>.</p>\n"
+    }
+]

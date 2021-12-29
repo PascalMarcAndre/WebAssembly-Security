@@ -1,0 +1,38 @@
+[
+    {
+        "owner": {
+            "reputation": 14858,
+            "user_id": 10505040,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/643c7cd13b4cd09ce56bb9ee71914516?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Jim Xu",
+            "link": "https://stackoverflow.com/users/10505040/jim-xu"
+        },
+        "is_accepted": false,
+        "score": 1,
+        "last_activity_date": 1611214131,
+        "creation_date": 1611214131,
+        "answer_id": 65822833,
+        "question_id": 65808332,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>If you want to directly upload file to Azure blob in Blazor WebAssembly application, we need to configure CORS fro Azure storage account. Regarding how to configure it, please refer to <a href=\"https://docs.microsoft.com/en-us/rest/api/storageservices/cross-origin-resource-sharing--cors--support-for-the-azure-storage-services\" rel=\"nofollow noreferrer\">here</a>.</p>\n<p>For example</p>\n<p>Configure CORS</p>\n<pre><code>Allowed origins: *\nAllowed verbs: DELETE,GET,HEAD,MERGE,POST,OPTIONS,PUT\nAllowed headers: *\nExposed headers: *\nMaximum age (seconds): 3600\n</code></pre>\n<p><a href=\"https://i.stack.imgur.com/h1cIT.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/h1cIT.png\" alt=\"enter image description here\" /></a></p>\n<p><a href=\"https://docs.microsoft.com/en-us/rest/api/storageservices/create-account-sas\" rel=\"nofollow noreferrer\">Create Account SAS</a>.\n<a href=\"https://i.stack.imgur.com/CxI02.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/CxI02.png\" alt=\"enter image description here\" /></a></p>\n<p>My upload file compoment</p>\n<pre><code>@page &quot;/fileupload&quot;\n@using System.ComponentModel.DataAnnotations\n@using System.IO\n@using System.Linq\n@using System.Threading\n@using Azure.Storage.Blobs\n@using Azure.Storage.Blobs.Models\n@using Azure.Storage\n@using Azure\n\n\n&lt;h3&gt;File Upload Component&lt;/h3&gt;\n&lt;label for=&quot;browseData&quot;&gt;&lt;b&gt;Browse File&lt;/b&gt;&lt;/label&gt;\n&lt;p&gt;&lt;InputFile id=&quot;browseData&quot; OnChange=&quot;@OnInputFileChange&quot; /&gt;&lt;/p&gt;\n@{\n    var progressCss = &quot;progress &quot; + (displayProgress ? &quot;&quot; : &quot;d-none&quot;);\n}\n\n&lt;div class=&quot;@progressCss&quot;&gt;\n    &lt;div class=&quot;progress-bar&quot; role=&quot;progressbar&quot; style=&quot;@($&quot;width: { progressBar }%&quot;)&quot; aria-valuenow=&quot;@progressBar&quot; aria-valuemin=&quot;0&quot; aria-valuemax=&quot;100&quot;&gt;&lt;/div&gt;\n&lt;/div&gt;\n\n@code {\n    private bool displayProgress = false;\n    private string result = string.Empty;\n    private string progressBar;\n    private int maxAllowedSize = 10 * 1024 * 1024;\n    private async Task OnInputFileChange(InputFileChangeEventArgs e)\n    {\n        var maxAllowedFiles = 1;\n\n        var inputFile = e.GetMultipleFiles(maxAllowedFiles).First();\n\n        var blobUri = new Uri(&quot;https://&quot;\n                                  + &quot;23storage23&quot; +\n                                  &quot;.blob.core.windows.net/&quot; +\n                                  &quot;upload&quot; + &quot;/&quot; + inputFile.Name);\n\n\n        AzureSasCredential credential = new AzureSasCredential(&quot;&quot;);\n        BlobClient blobClient = new BlobClient(blobUri, credential, new BlobClientOptions());\n        displayProgress = true;\n\n        var res = await blobClient.UploadAsync(inputFile.OpenReadStream(maxAllowedSize), new BlobUploadOptions\n        {\n            HttpHeaders = new BlobHttpHeaders { ContentType = inputFile.ContentType },\n            TransferOptions = new StorageTransferOptions\n            {\n                InitialTransferSize = 1024 * 1024,\n                MaximumConcurrency = 10\n            },\n            ProgressHandler = new Progress&lt;long&gt;((progress) =&gt;\n            {\n                progressBar = (100.0 * progress / inputFile.Size).ToString(&quot;0&quot;);\n\n            })\n\n        });\n\n\n\n\n\n    }\n}\n</code></pre>\n<p><a href=\"https://i.stack.imgur.com/KNLuz.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/KNLuz.png\" alt=\"enter image description here\" /></a>\n<a href=\"https://i.stack.imgur.com/Sk2hh.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/Sk2hh.png\" alt=\"enter image description here\" /></a></p>\n<p>Besides, you also can download my <a href=\"https://github.com/JimXu199545/FileUpload\" rel=\"nofollow noreferrer\">sample</a> to do a test.</p>\n"
+    },
+    {
+        "owner": {
+            "reputation": 878,
+            "user_id": 14625593,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/o6RMg.png?s=128&g=1",
+            "display_name": "Just the benno",
+            "link": "https://stackoverflow.com/users/14625593/just-the-benno"
+        },
+        "is_accepted": true,
+        "score": 1,
+        "last_activity_date": 1611212427,
+        "creation_date": 1611212427,
+        "answer_id": 65822497,
+        "question_id": 65808332,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<p>I was able to upload a file with your code. It was working like a charm. So, there is no error in your source code. I used the <code>Microsoft.NET.Sdk.BlazorWebAssembly</code> SDK with <code>net5.0</code> as the target framework. Probably, it's a configuration issue with the storage account.</p>\n<p><a href=\"https://i.stack.imgur.com/pi8PN.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/pi8PN.png\" alt=\"CORS policies\" /></a></p>\n<p>The CORS policy allows the host of the application (https://localhost:5001) to accesses the resources with any verb and any header (*) values. The response can include the <code>content-length</code> header. Is your WASM self hosted or hosted within an ASP core application? You can easily spot what origin is sent to azure by inspected the request.</p>\n<p><a href=\"https://i.stack.imgur.com/UqWNM.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/UqWNM.png\" alt=\"what origin is used to send a request\" /></a></p>\n<p>Based on your context, only a few verbs like <strong>PUT</strong> might be enough.</p>\n<p>The configuration of the SAS key can also be more specific.</p>\n<p><a href=\"https://i.stack.imgur.com/ll0sd.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/ll0sd.png\" alt=\"Configuration for SAS\" /></a></p>\n<p><strong>Using SAS from Blazor WASM</strong></p>\n<p>Even not entirely part of your questions, but worth mentioning. If you want to allow a direct upload into your blob storage - and there are good reasons for it - before uploading a file, your WASM app should send a request to your API, the response contains the SAS key that can only be used for this one operation. The SAS key itself should be a <a href=\"https://docs.microsoft.com/en-us/azure/storage/common/storage-sas-overview?toc=/azure/storage/blobs/toc.json#user-delegation-sas\" rel=\"nofollow noreferrer\">user delegation SAS key</a></p>\n"
+    }
+]

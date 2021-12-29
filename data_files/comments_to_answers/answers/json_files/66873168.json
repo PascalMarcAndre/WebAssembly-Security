@@ -1,0 +1,21 @@
+[
+    {
+        "owner": {
+            "reputation": 395,
+            "user_id": 13642792,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/31f1272a6db434568d07d3d4d635101f?s=128&d=identicon&r=PG",
+            "display_name": "Thomas Erd&#246;si",
+            "link": "https://stackoverflow.com/users/13642792/thomas-erd%c3%b6si"
+        },
+        "is_accepted": false,
+        "score": 1,
+        "last_activity_date": 1617176620,
+        "last_edit_date": 1617176620,
+        "creation_date": 1617120107,
+        "answer_id": 66874449,
+        "question_id": 66873168,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<ol>\n<li><p>Authentication and authorization should always be handled by the\nbackend because the frontend can always be manipulated or emulated.\nIf you follow these instructions, authorization will be fully\nhandled by the server side. The login and logout functionality will\nredirect you to razor pages running on the server. When the user is\nauthenticated, a JWT is created and sent to your Blazor application.\nThis token can then be used to send authentication information along\nwith subsequent HTTP requests. It's a bit tricky to get this\napproach up and running, but it works well.</p>\n</li>\n<li><p>The identity server used in these examples is part of ASP.NET.</p>\n</li>\n<li><p>IdentityServer and IdentityServer4 are referring to the IdentityServer that is\nincluded in ASP.NET.</p>\n</li>\n<li><p>You may also use Cookie-based authentication and create a Web API to handle\nlogin/logout and provide user information. It is easy to set-up and to provide\nBlazor UIs for authentication. Make sure to have an\nencrypted connection when using this approach because you need to\nsend login information via HTTP request.</p>\n<p>Anyway, I personally would stick to the Microsoft recommendations and use JWT.</p>\n</li>\n</ol>\n"
+    }
+]
