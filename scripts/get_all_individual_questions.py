@@ -20,5 +20,5 @@ with open('../data_files/questions/all_relevant_question_id.txt') as id_file:
         new_question = SITE.fetch('questions', ids={line}, filter='withbody')
 
         # Open a new JSON-file named after the question id where all the raw JSON data gets saved/dumped to
-        with open('questions/' + line + '.json', 'w', encoding='utf-8') as question_file:
+        with open('../data_files/questions/json_files/' + line + '.json', 'w', encoding='utf-8') as question_file:
             json.dump(new_question['items'][0], question_file, indent=4)

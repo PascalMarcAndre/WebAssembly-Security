@@ -19,5 +19,5 @@ with open('../data_files/answers/all_answer_id.txt') as id_file:
         new_comments = SITE.fetch('answers/{id}/comments', id={line}, sort='creation', filter='withbody')
 
         # Open a new JSON-file named after the answer id where all its raw comment JSON data gets saved/dumped to
-        with open('comments/'+ line + '.json', 'w', encoding='utf-8') as comment_file:
+        with open('../data_files/comments_to_answers/json_files/'+ line + '.json', 'w', encoding='utf-8') as comment_file:
             json.dump(new_comments['items'], comment_file, indent=4)

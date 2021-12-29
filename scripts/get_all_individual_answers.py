@@ -20,5 +20,5 @@ with open('../data_files/questions/all_relevant_question_id.txt') as id_file:
         new_answer = SITE.fetch('questions/{ids}/answers', ids={line}, sort='creation', filter='withbody')
 
         # Open a new JSON-file named after the question id where all the raw JSON data gets saved/dumped to
-        with open('answers/' + line + '.json', 'w', encoding='utf-8') as answer_file:
+        with open('../data_files/answers/json_files/' + line + '.json', 'w', encoding='utf-8') as answer_file:
             json.dump(new_answer['items'], answer_file, indent=4)
