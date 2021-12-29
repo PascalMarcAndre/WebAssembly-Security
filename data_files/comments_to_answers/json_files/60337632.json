@@ -1,0 +1,19 @@
+[
+    {
+        "owner": {
+            "reputation": 47,
+            "user_id": 2035254,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/4a695d59e45a651ff4ce23c0453ad570?s=128&d=identicon&r=PG",
+            "display_name": "Guy",
+            "link": "https://stackoverflow.com/users/2035254/guy"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1582295161,
+        "post_id": 60337632,
+        "comment_id": 106738764,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Thank you for the response, I already have the code to store the JWT in local storage and extract the claims.  Your first link has pointed me in a direction but it&#39;s a shame that I can&#39;t use an Authorize attribute on the page and just inject the RouteData into a service to handle the request.  That would have been a cleaner method that would fit with using the same code both server side and client side."
+    }
+]

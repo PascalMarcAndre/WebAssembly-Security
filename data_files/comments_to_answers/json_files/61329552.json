@@ -1,0 +1,55 @@
+[
+    {
+        "owner": {
+            "reputation": 3887,
+            "user_id": 4356300,
+            "user_type": "registered",
+            "accept_rate": 54,
+            "profile_image": "https://i.stack.imgur.com/xoYPz.jpg?s=128&g=1",
+            "display_name": "yogihosting",
+            "link": "https://stackoverflow.com/users/4356300/yogihosting"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1609680810,
+        "post_id": 61329552,
+        "comment_id": 115892624,
+        "content_license": "CC BY-SA 4.0",
+        "body": "This solution does not works for me when I call Patch from Blazor WebAssembly. But for Blazor Server it works."
+    },
+    {
+        "owner": {
+            "reputation": 90,
+            "user_id": 11413960,
+            "user_type": "registered",
+            "profile_image": "https://lh4.googleusercontent.com/-J1qkWUl5K98/AAAAAAAAAAI/AAAAAAAAAD4/XgrjxyCgkzE/photo.jpg?sz=128",
+            "display_name": "Anna L",
+            "link": "https://stackoverflow.com/users/11413960/anna-l"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1604578579,
+        "post_id": 61329552,
+        "comment_id": 114392317,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Question is about Blazor WebAssembly, not about Blazor  ServerSide"
+    },
+    {
+        "owner": {
+            "reputation": 20103,
+            "user_id": 1879019,
+            "user_type": "registered",
+            "accept_rate": 65,
+            "profile_image": "https://i.stack.imgur.com/otzDQ.jpg?s=128&g=1",
+            "display_name": "tomRedox",
+            "link": "https://stackoverflow.com/users/1879019/tomredox"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1599728192,
+        "post_id": 61329552,
+        "comment_id": 112865254,
+        "content_license": "CC BY-SA 4.0",
+        "body": "That fixed it for me too.  You could mark this as the answer."
+    }
+]

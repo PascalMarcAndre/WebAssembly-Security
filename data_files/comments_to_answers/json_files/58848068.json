@@ -1,0 +1,19 @@
+[
+    {
+        "owner": {
+            "reputation": 138,
+            "user_id": 2669023,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/da12070dcbd7ed2f9eb356e97c3c985b?s=128&d=identicon&r=PG",
+            "display_name": "Aurelien B",
+            "link": "https://stackoverflow.com/users/2669023/aurelien-b"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1581284431,
+        "post_id": 58848068,
+        "comment_id": 106370270,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Hi Henri, I browsed quickly the source code, where do you take care of the authorization code (before the token request)? Thank you!"
+    }
+]

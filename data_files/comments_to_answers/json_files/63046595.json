@@ -1,0 +1,45 @@
+[
+    {
+        "owner": {
+            "reputation": 1,
+            "user_id": 6152891,
+            "user_type": "registered",
+            "accept_rate": 75,
+            "profile_image": "https://www.gravatar.com/avatar/b45b7f89429f8766cdbf6c776c0a9d41?s=128&d=identicon&r=PG",
+            "display_name": "enet",
+            "link": "https://stackoverflow.com/users/6152891/enet"
+        },
+        "reply_to_user": {
+            "reputation": 15,
+            "user_id": 13971084,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/da155201719657217c52a4ca2569c1cc?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Drdoomsalot",
+            "link": "https://stackoverflow.com/users/13971084/drdoomsalot"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1595525654,
+        "post_id": 63046595,
+        "comment_id": 111513011,
+        "content_license": "CC BY-SA 4.0",
+        "body": "The way to thank users in stackoverflow is to up-vote / accept their answers."
+    },
+    {
+        "owner": {
+            "reputation": 15,
+            "user_id": 13971084,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/da155201719657217c52a4ca2569c1cc?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Drdoomsalot",
+            "link": "https://stackoverflow.com/users/13971084/drdoomsalot"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1595525479,
+        "post_id": 63046595,
+        "comment_id": 111512917,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Thanks so much! This lead me to the right answer. The other half of what I was missing was adding scopes to the msal authentication. If anyone else needs help, I found this link that kind of made all the pieces fall into place: <a href=\"https://github.com/dotnet/aspnetcore/issues/21142\" rel=\"nofollow noreferrer\">Blazor Client can not get access token after login successfully</a>"
+    }
+]

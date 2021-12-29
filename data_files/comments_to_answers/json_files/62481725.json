@@ -1,0 +1,55 @@
+[
+    {
+        "owner": {
+            "reputation": 417,
+            "user_id": 1198057,
+            "user_type": "registered",
+            "accept_rate": 71,
+            "profile_image": "https://www.gravatar.com/avatar/82bca8c4822e07604deb03b684d904e8?s=128&d=identicon&r=PG",
+            "display_name": "t4nky",
+            "link": "https://stackoverflow.com/users/1198057/t4nky"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1610572734,
+        "post_id": 62481725,
+        "comment_id": 116180123,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Thank you, that one helped! I convered my Balzor Server Side to a Client Side app and missed adding this line"
+    },
+    {
+        "owner": {
+            "reputation": 310,
+            "user_id": 2450402,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/7db67843204471542a8f8b6219480f09?s=128&d=identicon&r=PG&f=1",
+            "display_name": "d.i.joe",
+            "link": "https://stackoverflow.com/users/2450402/d-i-joe"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1605165140,
+        "post_id": 62481725,
+        "comment_id": 114568849,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I mistakenly commented that line and that makes the error &quot;Failed to launch debug adapter.&quot; to show."
+    },
+    {
+        "owner": {
+            "reputation": 15504,
+            "user_id": 93356,
+            "user_type": "registered",
+            "accept_rate": 85,
+            "profile_image": "https://i.stack.imgur.com/vD4W3.jpg?s=128&g=1",
+            "display_name": "Sergi Papaseit",
+            "link": "https://stackoverflow.com/users/93356/sergi-papaseit"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1592749158,
+        "post_id": 62481725,
+        "comment_id": 110529678,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@blightly, thanks, but unfortunately that is not my case. ` app.UseWebAssemblyDebugging();` is already added by default in the projects I&#39;ve tried, since I am using the latest version of the Blazor Wasm template"
+    }
+]

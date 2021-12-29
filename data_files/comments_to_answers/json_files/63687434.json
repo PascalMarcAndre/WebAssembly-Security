@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 843,
+            "user_id": 1362146,
+            "user_type": "registered",
+            "accept_rate": 75,
+            "profile_image": "https://www.gravatar.com/avatar/5353a14cba0f3c3080ffbcf4295fdd86?s=128&d=identicon&r=PG",
+            "display_name": "Matt Sanders",
+            "link": "https://stackoverflow.com/users/1362146/matt-sanders"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1620351921,
+        "post_id": 63687434,
+        "comment_id": 119182021,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Thanks for linking the issue, but it looks like the issue was closed and the PR linked to the closure didn&#39;t help me understand the current state. Is there an update to this or link to a new open issue?"
+    }
+]

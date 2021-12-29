@@ -1,0 +1,187 @@
+[
+    {
+        "owner": {
+            "reputation": 175,
+            "user_id": 9537752,
+            "user_type": "registered",
+            "profile_image": "https://lh3.googleusercontent.com/-XdUIqdMkCWA/AAAAAAAAAAI/AAAAAAAAAAA/4252rscbv5M/photo.jpg?sz=128",
+            "display_name": "Ask P",
+            "link": "https://stackoverflow.com/users/9537752/ask-p"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1562347102,
+        "post_id": 56766887,
+        "comment_id": 100358788,
+        "content_license": "CC BY-SA 4.0",
+        "body": "&quot;but they cannot get such control through Wasm code, only through JS code.&quot; - well put. By &quot;the client has no access to a module&#39;s innards, only its exports.&quot;, you mean no code outside a wasm module has programmatic access to the module&#39;s innards, only to what that module exports, right?"
+    },
+    {
+        "owner": {
+            "reputation": 31659,
+            "user_id": 1097780,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/a8f01ad795c29c3d05ad26ee47ea6069?s=128&d=identicon&r=PG",
+            "display_name": "Andreas Rossberg",
+            "link": "https://stackoverflow.com/users/1097780/andreas-rossberg"
+        },
+        "reply_to_user": {
+            "reputation": 175,
+            "user_id": 9537752,
+            "user_type": "registered",
+            "profile_image": "https://lh3.googleusercontent.com/-XdUIqdMkCWA/AAAAAAAAAAI/AAAAAAAAAAA/4252rscbv5M/photo.jpg?sz=128",
+            "display_name": "Ask P",
+            "link": "https://stackoverflow.com/users/9537752/ask-p"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1562345625,
+        "post_id": 56766887,
+        "comment_id": 100358254,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@AskP, somebody taking control of the page obviously can do anything, but they cannot <i>get</i> such control through Wasm code, only through JS code."
+    },
+    {
+        "owner": {
+            "reputation": 175,
+            "user_id": 9537752,
+            "user_type": "registered",
+            "profile_image": "https://lh3.googleusercontent.com/-XdUIqdMkCWA/AAAAAAAAAAI/AAAAAAAAAAA/4252rscbv5M/photo.jpg?sz=128",
+            "display_name": "Ask P",
+            "link": "https://stackoverflow.com/users/9537752/ask-p"
+        },
+        "reply_to_user": {
+            "reputation": 31659,
+            "user_id": 1097780,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/a8f01ad795c29c3d05ad26ee47ea6069?s=128&d=identicon&r=PG",
+            "display_name": "Andreas Rossberg",
+            "link": "https://stackoverflow.com/users/1097780/andreas-rossberg"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1562343896,
+        "post_id": 56766887,
+        "comment_id": 100357650,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@AndreasRossberg Are you saying that a hacker can&#39;t set a breakpoint in client JS code before wasm module instantiation, change the wasm module code to import &amp; use whichever runtime environment objects (DOM, library etc.) desired, and then supply the module those env. objects for use?"
+    },
+    {
+        "owner": {
+            "reputation": 31659,
+            "user_id": 1097780,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/a8f01ad795c29c3d05ad26ee47ea6069?s=128&d=identicon&r=PG",
+            "display_name": "Andreas Rossberg",
+            "link": "https://stackoverflow.com/users/1097780/andreas-rossberg"
+        },
+        "reply_to_user": {
+            "reputation": 175,
+            "user_id": 9537752,
+            "user_type": "registered",
+            "profile_image": "https://lh3.googleusercontent.com/-XdUIqdMkCWA/AAAAAAAAAAI/AAAAAAAAAAA/4252rscbv5M/photo.jpg?sz=128",
+            "display_name": "Ask P",
+            "link": "https://stackoverflow.com/users/9537752/ask-p"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1562267453,
+        "post_id": 56766887,
+        "comment_id": 100332975,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@AskP, no, a JS program, by default, has access to the entire JS and DOM library, so can do everything. A Wasm module has no access to anything unless you explicitly provide it."
+    },
+    {
+        "owner": {
+            "reputation": 175,
+            "user_id": 9537752,
+            "user_type": "registered",
+            "profile_image": "https://lh3.googleusercontent.com/-XdUIqdMkCWA/AAAAAAAAAAI/AAAAAAAAAAA/4252rscbv5M/photo.jpg?sz=128",
+            "display_name": "Ask P",
+            "link": "https://stackoverflow.com/users/9537752/ask-p"
+        },
+        "reply_to_user": {
+            "reputation": 31659,
+            "user_id": 1097780,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/a8f01ad795c29c3d05ad26ee47ea6069?s=128&d=identicon&r=PG",
+            "display_name": "Andreas Rossberg",
+            "link": "https://stackoverflow.com/users/1097780/andreas-rossberg"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1562260612,
+        "post_id": 56766887,
+        "comment_id": 100330962,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@AndreasRossberg Isn&#39;t what your comment describes just a kind of default module runtime encapsulation that ColinE described in his answer? (which seals off just one class of client vulnerability). Webassembly can still be altered/hacked (i.e. via debugger breakpoints) just like any other client JS, no?"
+    },
+    {
+        "owner": {
+            "reputation": 31659,
+            "user_id": 1097780,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/a8f01ad795c29c3d05ad26ee47ea6069?s=128&d=identicon&r=PG",
+            "display_name": "Andreas Rossberg",
+            "link": "https://stackoverflow.com/users/1097780/andreas-rossberg"
+        },
+        "reply_to_user": {
+            "reputation": 175,
+            "user_id": 9537752,
+            "user_type": "registered",
+            "profile_image": "https://lh3.googleusercontent.com/-XdUIqdMkCWA/AAAAAAAAAAI/AAAAAAAAAAA/4252rscbv5M/photo.jpg?sz=128",
+            "display_name": "Ask P",
+            "link": "https://stackoverflow.com/users/9537752/ask-p"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1562191751,
+        "post_id": 56766887,
+        "comment_id": 100305575,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@AskP, ColinE, sorry, but this answer is incorrect. Wasm was most definitely designed for sandboxing, while JS never was. Specifically, Wasm modules provide perfect encapsulation: a module has <i>no ambient capabilities</i>, only its imports; the client has no access to a module&#39;s innards, only its exports. That&#39;s not even remotely true of JavaScript."
+    },
+    {
+        "owner": {
+            "reputation": 65239,
+            "user_id": 249933,
+            "user_type": "registered",
+            "accept_rate": 81,
+            "profile_image": "https://www.gravatar.com/avatar/458f2e0d08d4114f8b323798cfea141d?s=128&d=identicon&r=PG",
+            "display_name": "ColinE",
+            "link": "https://stackoverflow.com/users/249933/coline"
+        },
+        "reply_to_user": {
+            "reputation": 175,
+            "user_id": 9537752,
+            "user_type": "registered",
+            "profile_image": "https://lh3.googleusercontent.com/-XdUIqdMkCWA/AAAAAAAAAAI/AAAAAAAAAAA/4252rscbv5M/photo.jpg?sz=128",
+            "display_name": "Ask P",
+            "link": "https://stackoverflow.com/users/9537752/ask-p"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1561533559,
+        "post_id": 56766887,
+        "comment_id": 100090453,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Thanks :-) when a wasm module is instantiatied the functions, global variables and memory it imports / exports is defined. If linear memory is exported, any JavaScript code that has a reference to the module will be able to read and write to module memory. Typically this is the code that instantiates the module."
+    },
+    {
+        "owner": {
+            "reputation": 175,
+            "user_id": 9537752,
+            "user_type": "registered",
+            "profile_image": "https://lh3.googleusercontent.com/-XdUIqdMkCWA/AAAAAAAAAAI/AAAAAAAAAAA/4252rscbv5M/photo.jpg?sz=128",
+            "display_name": "Ask P",
+            "link": "https://stackoverflow.com/users/9537752/ask-p"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1561532718,
+        "post_id": 56766887,
+        "comment_id": 100090023,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Great distilled insight.  WASM = lower level therefor more obfuscated + module sandboxing (unless exported). JS = window/page sandboxing.   &quot;&gt;which means that the hosting JavaScript code can directly read and write to it as a byte array.&quot;  By this, do you meant the JS code which complies/instantiates &amp; runs a WASM module? i.e. WebAssembly.compileStreaming()/WebAssembly.instantiateStream&zwnj;&#8203;ing()"
+    }
+]

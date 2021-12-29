@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 844,
+            "user_id": 1569755,
+            "user_type": "registered",
+            "accept_rate": 86,
+            "profile_image": "https://www.gravatar.com/avatar/8b2ab6a039c6845ce04c4f495f3802bb?s=128&d=identicon&r=PG",
+            "display_name": "Benni",
+            "link": "https://stackoverflow.com/users/1569755/benni"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1605999287,
+        "post_id": 62785474,
+        "comment_id": 114826812,
+        "content_license": "CC BY-SA 4.0",
+        "body": "is the <code>&lt;NotAuthorized&gt;</code> hack still the best thing blazor wasm has to offer to redirect to the login page?"
+    }
+]

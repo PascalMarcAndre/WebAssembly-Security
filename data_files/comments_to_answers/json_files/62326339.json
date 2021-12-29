@@ -1,0 +1,38 @@
+[
+    {
+        "owner": {
+            "reputation": 954,
+            "user_id": 6184866,
+            "user_type": "registered",
+            "accept_rate": 91,
+            "profile_image": "https://i.stack.imgur.com/Bg39h.jpg?s=128&g=1",
+            "display_name": "Arsinclair",
+            "link": "https://stackoverflow.com/users/6184866/arsinclair"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1607811316,
+        "post_id": 62326339,
+        "comment_id": 115391847,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Another thing, <code>NavigationManager.Uri</code> returns fully qualified URL, but if AspNet Identity is used as Authentication Provider, it will intend to redirect you to a local Url using <code>LocalRedirect(returnUrl);</code>. So it wants a local URL that can be obtained with <code>NavigationManager.ToBaseRelativePath(NavigationManager.Uri)</code>."
+    },
+    {
+        "owner": {
+            "reputation": 954,
+            "user_id": 6184866,
+            "user_type": "registered",
+            "accept_rate": 91,
+            "profile_image": "https://i.stack.imgur.com/Bg39h.jpg?s=128&g=1",
+            "display_name": "Arsinclair",
+            "link": "https://stackoverflow.com/users/6184866/arsinclair"
+        },
+        "edited": false,
+        "score": 3,
+        "creation_date": 1607807378,
+        "post_id": 62326339,
+        "comment_id": 115390856,
+        "content_license": "CC BY-SA 4.0",
+        "body": "You need to <code>@inject NavigationManager NavigationManager</code>, otherwise <code>CS0120: An object reference is required for the non-static field, method, or property &#39;NavigationManager.Uri&#39;</code>."
+    }
+]

@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 271,
+            "user_id": 103668,
+            "user_type": "registered",
+            "accept_rate": 29,
+            "profile_image": "https://i.stack.imgur.com/SxjA7.jpg?s=128&g=1",
+            "display_name": "mireille raad",
+            "link": "https://stackoverflow.com/users/103668/mireille-raad"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1608133463,
+        "post_id": 61823456,
+        "comment_id": 115490503,
+        "content_license": "CC BY-SA 4.0",
+        "body": "thank you, this was really helpful."
+    }
+]

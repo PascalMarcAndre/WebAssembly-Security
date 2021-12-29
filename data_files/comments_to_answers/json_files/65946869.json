@@ -1,0 +1,82 @@
+[
+    {
+        "owner": {
+            "reputation": 535,
+            "user_id": 5156141,
+            "user_type": "registered",
+            "accept_rate": 33,
+            "profile_image": "https://www.gravatar.com/avatar/564c3f87f87780a0e3dd405813fe0601?s=128&d=identicon&r=PG&f=1",
+            "display_name": "user5156141",
+            "link": "https://stackoverflow.com/users/5156141/user5156141"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1611968372,
+        "post_id": 65946869,
+        "comment_id": 116628750,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<b>PROGRESS UPDATE</b>: So I was able to build the class with command <code>em++ .&#47;src&#47;testing.cpp -s --no-entry --bind -o .&#47;dist&#47;testing.js</code> and run the methods through the JS file using <code>onRuntimeInitialized</code> event. I haven&#39;t actually seen this referenced in many places. Changes how I wanted to require() my WASM code, is there any way to avoid this?"
+    },
+    {
+        "owner": {
+            "reputation": 535,
+            "user_id": 5156141,
+            "user_type": "registered",
+            "accept_rate": 33,
+            "profile_image": "https://www.gravatar.com/avatar/564c3f87f87780a0e3dd405813fe0601?s=128&d=identicon&r=PG&f=1",
+            "display_name": "user5156141",
+            "link": "https://stackoverflow.com/users/5156141/user5156141"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1611966027,
+        "post_id": 65946869,
+        "comment_id": 116628338,
+        "content_license": "CC BY-SA 4.0",
+        "body": "When I started doing tutorials I started off having Emscripten output its JS file which I import via require(), but now I am trying to export a class I never see any reference to &quot;MyClass&quot; in the file at all. Though I can see strings in the .wasm file that correspond. I feel I am missing something"
+    },
+    {
+        "owner": {
+            "reputation": 1591,
+            "user_id": 2770641,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/366fa9e0a1e8f82fddae1595ffc297d6?s=128&d=identicon&r=PG&f=1",
+            "display_name": "sbc100",
+            "link": "https://stackoverflow.com/users/2770641/sbc100"
+        },
+        "reply_to_user": {
+            "reputation": 535,
+            "user_id": 5156141,
+            "user_type": "registered",
+            "accept_rate": 33,
+            "profile_image": "https://www.gravatar.com/avatar/564c3f87f87780a0e3dd405813fe0601?s=128&d=identicon&r=PG&f=1",
+            "display_name": "user5156141",
+            "link": "https://stackoverflow.com/users/5156141/user5156141"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1611965428,
+        "post_id": 65946869,
+        "comment_id": 116628230,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Now you are running up against the fact that you need to implement the APIs that the module depends on.   You can use wasm-objdump or wasm-dis to see what imports it requires.   You will then need to provide implementations of each of the imports.   Normally with emscirpten you build with <code>-o &lt;something&gt;.js</code> and emscripten will provide those for you."
+    },
+    {
+        "owner": {
+            "reputation": 535,
+            "user_id": 5156141,
+            "user_type": "registered",
+            "accept_rate": 33,
+            "profile_image": "https://www.gravatar.com/avatar/564c3f87f87780a0e3dd405813fe0601?s=128&d=identicon&r=PG&f=1",
+            "display_name": "user5156141",
+            "link": "https://stackoverflow.com/users/5156141/user5156141"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1611878116,
+        "post_id": 65946869,
+        "comment_id": 116599398,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Hi, thanks for a fast reply! Tried removing <code>-s SIDE_MODULE=1</code> and I am receiving error <code>[TypeError: WebAssembly.instantiate(): Import #13 module=&quot;wasi_snapshot_preview1&quot; error: module is not an object or function]</code>"
+    }
+]

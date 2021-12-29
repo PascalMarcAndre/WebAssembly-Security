@@ -1,0 +1,44 @@
+[
+    {
+        "owner": {
+            "reputation": 1,
+            "user_id": 15063476,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/6710a0b315262d3dc9fb7bf9b103ba8c?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Mmusa",
+            "link": "https://stackoverflow.com/users/15063476/mmusa"
+        },
+        "reply_to_user": {
+            "reputation": 83,
+            "user_id": 9182405,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/aa60cfe3be6b12825c32eddc9aeced02?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Dumas.DED",
+            "link": "https://stackoverflow.com/users/9182405/dumas-ded"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1614709833,
+        "post_id": 66396919,
+        "comment_id": 117466562,
+        "content_license": "CC BY-SA 4.0",
+        "body": "please look at this example and see if it can help you... <a href=\"https://github.com/microsoft/PowerBI-Developer-Samples/tree/master/.NET%20Core\" rel=\"nofollow noreferrer\">github.com/microsoft/PowerBI-Developer-Samples/tree/master/&hellip;</a>"
+    },
+    {
+        "owner": {
+            "reputation": 83,
+            "user_id": 9182405,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/aa60cfe3be6b12825c32eddc9aeced02?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Dumas.DED",
+            "link": "https://stackoverflow.com/users/9182405/dumas-ded"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1614619699,
+        "post_id": 66396919,
+        "comment_id": 117434349,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I tried this using all three methods I outlined above. None of them worked, unfortunately. Methods 1 and 3 still throw the CORS error, while method 2 returns <code>Unhandled exception rendering component: Operation is not supported on this platform</code>.  It&#39;s also worth noting that we&#39;re going for an &#39;Embed for your customers&#39; solution rather than an &#39;Embed for your organization&#39; solution, though I don&#39;t think that really matters from an access token standpoint."
+    }
+]

@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 15504,
+            "user_id": 93356,
+            "user_type": "registered",
+            "accept_rate": 85,
+            "profile_image": "https://i.stack.imgur.com/vD4W3.jpg?s=128&g=1",
+            "display_name": "Sergi Papaseit",
+            "link": "https://stackoverflow.com/users/93356/sergi-papaseit"
+        },
+        "edited": false,
+        "score": 3,
+        "creation_date": 1592835516,
+        "post_id": 62516491,
+        "comment_id": 110559296,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Well, in my case it is actually <i>removing</i> the <code>IIS Express</code> section from <code>launchSettings.json</code> on the Server project that allows me to debug."
+    }
+]

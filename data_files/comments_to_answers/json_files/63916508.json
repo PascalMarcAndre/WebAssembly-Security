@@ -1,0 +1,19 @@
+[
+    {
+        "owner": {
+            "reputation": 1,
+            "user_id": 14286329,
+            "user_type": "registered",
+            "profile_image": "https://lh4.googleusercontent.com/-tWHqX2mej_c/AAAAAAAAAAI/AAAAAAAAAAA/AMZuuckEAJ99q7XemdguLf9fVBbpZydp6Q/photo.jpg?sz=128",
+            "display_name": "Micha\u0142 Dutka",
+            "link": "https://stackoverflow.com/users/14286329/micha%c5%82-dutka"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1600246883,
+        "post_id": 63916508,
+        "comment_id": 113024151,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Sadly, this doesn&#39;t work for me. After opening a console nothing changes and the page is still on &quot;about:blank&quot;. There are also no messages in the console."
+    }
+]

@@ -1,0 +1,46 @@
+[
+    {
+        "owner": {
+            "reputation": 145,
+            "user_id": 11476545,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/439ded087dfb9e0529421b669d9914ca?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Bisjob",
+            "link": "https://stackoverflow.com/users/11476545/bisjob"
+        },
+        "reply_to_user": {
+            "reputation": 1616,
+            "user_id": 1206480,
+            "user_type": "registered",
+            "accept_rate": 76,
+            "profile_image": "https://www.gravatar.com/avatar/369c998e75bc392472c387df640dd97a?s=128&d=identicon&r=PG",
+            "display_name": "user1206480",
+            "link": "https://stackoverflow.com/users/1206480/user1206480"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1596459386,
+        "post_id": 62654562,
+        "comment_id": 111809152,
+        "content_license": "CC BY-SA 4.0",
+        "body": "That&#39;s a good question ! I haven&#39;t take care of the registration yet, but I&#39;ll need to control it. Maybe you can have a look to the blazor-workshop repo on github. They use IdentityServer. If you have any answear to your question, I would like to here it"
+    },
+    {
+        "owner": {
+            "reputation": 1616,
+            "user_id": 1206480,
+            "user_type": "registered",
+            "accept_rate": 76,
+            "profile_image": "https://www.gravatar.com/avatar/369c998e75bc392472c387df640dd97a?s=128&d=identicon&r=PG",
+            "display_name": "user1206480",
+            "link": "https://stackoverflow.com/users/1206480/user1206480"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1595996823,
+        "post_id": 62654562,
+        "comment_id": 111663559,
+        "content_license": "CC BY-SA 4.0",
+        "body": "How are you handling the registration of new users?  I&#39;ve been researching for the best way to handle this in Blazor Web Assembly, but there doesn&#39;t seem to be much documentation on that part. Documentation seems to only cover Authentication and Authorization, and not the actual registration of new users. It sounds as if you&#39;re registering users from within Identity Server, but I&#39;m curious as exactly how you are handling that from within the blazor client. Do you have any sample code or documentation that I can view?"
+    }
+]

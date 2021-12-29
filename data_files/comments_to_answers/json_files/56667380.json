@@ -1,0 +1,83 @@
+[
+    {
+        "owner": {
+            "reputation": 7890,
+            "user_id": 311343,
+            "user_type": "registered",
+            "accept_rate": 63,
+            "profile_image": "https://www.gravatar.com/avatar/d966ec61fcaf459d0a057828f285694c?s=128&d=identicon&r=PG",
+            "display_name": "Tim",
+            "link": "https://stackoverflow.com/users/311343/tim"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1561115562,
+        "post_id": 56667380,
+        "comment_id": 99967969,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@Isaac:  I am a jack of all trades and master of none :)  Oracle (PL/SQL), SQLServer (T-SQL), postGRES (PL/SQL), SQLite, WinForms, C#, VB, HTML5, javascript, jQuery, ajax, kendoUI, knockout (not to mention PICK database in a former life).  Now I would like to learn Blazor but cannot find a clear description (clear to me, at least) of the differences between HTML5 with Ajax and Blazor, in respect to how the two architectures avoid refreshing the entire page when the user interacts with it.  I believed that SignalR may eliminate the need to use Ajax for that effect, but am not certain of that"
+    },
+    {
+        "owner": {
+            "reputation": 1,
+            "user_id": 6152891,
+            "user_type": "registered",
+            "accept_rate": 75,
+            "profile_image": "https://www.gravatar.com/avatar/b45b7f89429f8766cdbf6c776c0a9d41?s=128&d=identicon&r=PG",
+            "display_name": "enet",
+            "link": "https://stackoverflow.com/users/6152891/enet"
+        },
+        "reply_to_user": {
+            "reputation": 7890,
+            "user_id": 311343,
+            "user_type": "registered",
+            "accept_rate": 63,
+            "profile_image": "https://www.gravatar.com/avatar/d966ec61fcaf459d0a057828f285694c?s=128&d=identicon&r=PG",
+            "display_name": "Tim",
+            "link": "https://stackoverflow.com/users/311343/tim"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1561114047,
+        "post_id": 56667380,
+        "comment_id": 99967323,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Are you Asp.Net Web Forms developer, @Tim ?"
+    },
+    {
+        "owner": {
+            "reputation": 7890,
+            "user_id": 311343,
+            "user_type": "registered",
+            "accept_rate": 63,
+            "profile_image": "https://www.gravatar.com/avatar/d966ec61fcaf459d0a057828f285694c?s=128&d=identicon&r=PG",
+            "display_name": "Tim",
+            "link": "https://stackoverflow.com/users/311343/tim"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1560971685,
+        "post_id": 56667380,
+        "comment_id": 99916235,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Thanks. What if the user&#39;s button-click sends the text in a text box to the server, which does a database query using the text-value as a search-term, and then the server needs to send a dataset back to the client to populate a grid? Does the server invoke (remotely) a client-side method and supply the data as an argument to the client-side method?"
+    },
+    {
+        "owner": {
+            "reputation": 7890,
+            "user_id": 311343,
+            "user_type": "registered",
+            "accept_rate": 63,
+            "profile_image": "https://www.gravatar.com/avatar/d966ec61fcaf459d0a057828f285694c?s=128&d=identicon&r=PG",
+            "display_name": "Tim",
+            "link": "https://stackoverflow.com/users/311343/tim"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1560956709,
+        "post_id": 56667380,
+        "comment_id": 99909018,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@Isaac: Thanks for tackling the question(s) :)   My underlying question is whether, in a Blazor web application, server-side code is (somehow) able to update UI components directly, perhaps via some RPC mechanism over SignalR, which would eliminate the need to expose a routing endpoint to the client and eliminate Ajax.  I thought WASM could run server-side too. I am thinking of intranet apps, not internet apps, in terms of number of clients (relatively few)."
+    }
+]

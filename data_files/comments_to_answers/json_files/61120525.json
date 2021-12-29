@@ -1,0 +1,53 @@
+[
+    {
+        "owner": {
+            "reputation": 774,
+            "user_id": 2862934,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/eeccb6d448bf50536821c3ff2804f9f8?s=128&d=identicon&r=PG&f=1",
+            "display_name": "benjamin",
+            "link": "https://stackoverflow.com/users/2862934/benjamin"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1587047264,
+        "post_id": 61120525,
+        "comment_id": 108360234,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Thanks for that, Henk! For ASP-NET-Core people, below is my first attempt at a solution. It seems to get the job done but I&#39;d be glad to know if it is the standard and correct way:"
+    },
+    {
+        "owner": {
+            "reputation": 774,
+            "user_id": 2862934,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/eeccb6d448bf50536821c3ff2804f9f8?s=128&d=identicon&r=PG&f=1",
+            "display_name": "benjamin",
+            "link": "https://stackoverflow.com/users/2862934/benjamin"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1587042856,
+        "post_id": 61120525,
+        "comment_id": 108357392,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Hi @henk-holterman! I hope you are well. I was wondering if you had a chance to look at this and knew the way to configure controller fallback so that &quot;/api&quot; routes were not routed to the Blazor client app?"
+    },
+    {
+        "owner": {
+            "reputation": 774,
+            "user_id": 2862934,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/eeccb6d448bf50536821c3ff2804f9f8?s=128&d=identicon&r=PG&f=1",
+            "display_name": "benjamin",
+            "link": "https://stackoverflow.com/users/2862934/benjamin"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1586435961,
+        "post_id": 61120525,
+        "comment_id": 108130615,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Thanks for the very fast response, Henk! When the app is set up this way the Blazor application still intercepts requests to <a href=\"https://localhost:44331/api/anything\" rel=\"nofollow noreferrer\">localhost:44331/api/anything</a> and displays a page that says &quot;there is nothing at this address&quot;. If possible, I would expect a request like this to deliver raw JSON from the web api, or an error, instead of a page on the Blazor WASM app, because I only want the client app to be involved when the URL does not have the &quot;/api&quot; path. Do you see what I mean?"
+    }
+]

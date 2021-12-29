@@ -1,0 +1,38 @@
+[
+    {
+        "owner": {
+            "reputation": 10072,
+            "user_id": 1115237,
+            "user_type": "registered",
+            "accept_rate": 76,
+            "profile_image": "https://www.gravatar.com/avatar/a5b371929b9ddad5e22fc6997e5aab49?s=128&d=identicon&r=PG",
+            "display_name": "Shlomi Schwartz",
+            "link": "https://stackoverflow.com/users/1115237/shlomi-schwartz"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1525352835,
+        "post_id": 50151527,
+        "comment_id": 87329332,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Assuming there is no inner function, how would you validate the &quot;snapshot&quot;? retrieving the function string from the JS to the wasm could also be manipulated."
+    },
+    {
+        "owner": {
+            "reputation": 10072,
+            "user_id": 1115237,
+            "user_type": "registered",
+            "accept_rate": 76,
+            "profile_image": "https://www.gravatar.com/avatar/a5b371929b9ddad5e22fc6997e5aab49?s=128&d=identicon&r=PG",
+            "display_name": "Shlomi Schwartz",
+            "link": "https://stackoverflow.com/users/1115237/shlomi-schwartz"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1525339783,
+        "post_id": 50151527,
+        "comment_id": 87320764,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Thanks for the reply, that&#39;s as far as I could go too :("
+    }
+]

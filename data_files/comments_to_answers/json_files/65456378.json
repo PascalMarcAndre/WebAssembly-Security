@@ -1,0 +1,19 @@
+[
+    {
+        "owner": {
+            "reputation": 2170,
+            "user_id": 2263183,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/Phnxh.jpg?s=128&g=1",
+            "display_name": "Ahmed Alejo",
+            "link": "https://stackoverflow.com/users/2263183/ahmed-alejo"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1609685979,
+        "post_id": 65456378,
+        "comment_id": 115894206,
+        "content_license": "CC BY-SA 4.0",
+        "body": "After a seemingly endless battle. using HTTP when I want to \ud83e\uddea, works. Still HTTPS in production \ud83d\ude05 though."
+    }
+]

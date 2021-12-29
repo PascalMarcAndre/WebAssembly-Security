@@ -1,0 +1,19 @@
+[
+    {
+        "owner": {
+            "reputation": 73,
+            "user_id": 13129431,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/be40c8995899485adf5c48d87d01ae69?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Zack",
+            "link": "https://stackoverflow.com/users/13129431/zack"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1594865148,
+        "post_id": 62906037,
+        "comment_id": 111278855,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Thank you for your input, Jeff. If I try your suggestion to use OnParameterSet, it does not get triggered when a page refresh (F5) takes place actually. I did finally overcome this issue, I will update my question with an answer so far."
+    }
+]

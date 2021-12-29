@@ -1,0 +1,61 @@
+[
+    {
+        "owner": {
+            "reputation": 41,
+            "user_id": 4355492,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/c1f8a8dccde8942ba23ec89b04791518?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Jabo",
+            "link": "https://stackoverflow.com/users/4355492/jabo"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1605061015,
+        "post_id": 64763065,
+        "comment_id": 114535594,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Ive had them try chrome, edge, and firefox. Also had them try to clear cookies and cache."
+    },
+    {
+        "owner": {
+            "reputation": 1825,
+            "user_id": 3486567,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/3e554e74f28210f5f84aef154ffd5f72?s=128&d=identicon&r=PG",
+            "display_name": "nahidf",
+            "link": "https://stackoverflow.com/users/3486567/nahidf"
+        },
+        "reply_to_user": {
+            "reputation": 41,
+            "user_id": 4355492,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/c1f8a8dccde8942ba23ec89b04791518?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Jabo",
+            "link": "https://stackoverflow.com/users/4355492/jabo"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1605056058,
+        "post_id": 64763065,
+        "comment_id": 114534646,
+        "content_license": "CC BY-SA 4.0",
+        "body": "do you know what browsers has issue?"
+    },
+    {
+        "owner": {
+            "reputation": 41,
+            "user_id": 4355492,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/c1f8a8dccde8942ba23ec89b04791518?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Jabo",
+            "link": "https://stackoverflow.com/users/4355492/jabo"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1605048365,
+        "post_id": 64763065,
+        "comment_id": 114532814,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Thank you for the reply. Unfortunately this did not resolve the issue. Seems like some users are still experiencing the error."
+    }
+]

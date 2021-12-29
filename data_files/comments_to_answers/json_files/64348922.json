@@ -1,0 +1,62 @@
+[
+    {
+        "owner": {
+            "reputation": 5,
+            "user_id": 14275324,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/790f4bde62277293cf3ba5564ec298d1?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Bas",
+            "link": "https://stackoverflow.com/users/14275324/bas"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1602749967,
+        "post_id": 64348922,
+        "comment_id": 113820299,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Thank you very much for your elaborate response @enet. For now Im going to accept the fact I will need to use the redirect. In the future I might look into creating custom JWT tokens. I think I have also found the example you&#39;re referring to."
+    },
+    {
+        "owner": {
+            "reputation": 1,
+            "user_id": 6152891,
+            "user_type": "registered",
+            "accept_rate": 75,
+            "profile_image": "https://www.gravatar.com/avatar/b45b7f89429f8766cdbf6c776c0a9d41?s=128&d=identicon&r=PG",
+            "display_name": "enet",
+            "link": "https://stackoverflow.com/users/6152891/enet"
+        },
+        "reply_to_user": {
+            "reputation": 5,
+            "user_id": 14275324,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/790f4bde62277293cf3ba5564ec298d1?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Bas",
+            "link": "https://stackoverflow.com/users/14275324/bas"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1602674517,
+        "post_id": 64348922,
+        "comment_id": 113793822,
+        "content_license": "CC BY-SA 4.0",
+        "body": "If you&#39;re going to use JWT Token authentication I can post here some code sample how to do it. You can also go to the web site by Chris Sainty where you can find a full-fledged sample of this..."
+    },
+    {
+        "owner": {
+            "reputation": 5,
+            "user_id": 14275324,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/790f4bde62277293cf3ba5564ec298d1?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Bas",
+            "link": "https://stackoverflow.com/users/14275324/bas"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1602669065,
+        "post_id": 64348922,
+        "comment_id": 113791351,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Thank you for your response! Maybe I just dont get it then... If I want login to any other site I am never redirected to some other domain to login. Does that mean all those sites dont use OIDC? What am I not seeing?"
+    }
+]

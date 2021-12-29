@@ -1,0 +1,19 @@
+[
+    {
+        "owner": {
+            "reputation": 970,
+            "user_id": 1706963,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/WXUTi.jpg?s=128&g=1",
+            "display_name": "inliner49er",
+            "link": "https://stackoverflow.com/users/1706963/inliner49er"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1616340975,
+        "post_id": 65330158,
+        "comment_id": 117965737,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Sorry about that. You&#39;ll find that when you post real code into a forum, it&#39;s easy to miss things when you try to genericize it for the public. To obfuscate your code for privacy and references (as you correctly pointed out), the Constants.ApiClientCors translates to a literal (similar to your &quot;PolicyName&quot; in your response). Thanks for posting and pointing out the unresolved reference and good luck in your learning."
+    }
+]

@@ -1,0 +1,38 @@
+[
+    {
+        "owner": {
+            "reputation": 1000,
+            "user_id": 987863,
+            "user_type": "registered",
+            "accept_rate": 67,
+            "profile_image": "https://www.gravatar.com/avatar/be48acaf99e5b6155a507606d097b962?s=128&d=identicon&r=PG",
+            "display_name": "Christian",
+            "link": "https://stackoverflow.com/users/987863/christian"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1604324449,
+        "post_id": 60165699,
+        "comment_id": 114304760,
+        "content_license": "CC BY-SA 4.0",
+        "body": "It is only the necessary framework files that takes up 2.4 mb. and only needs to be downloaded once until a new version of the framework is out. So once the browser have downloaded those files (could be from another blazor website) then your website does not require that download."
+    },
+    {
+        "owner": {
+            "reputation": 143,
+            "user_id": 3345552,
+            "user_type": "registered",
+            "accept_rate": 88,
+            "profile_image": "https://www.gravatar.com/avatar/2ea698c8c9eb907b967b936f1d551be3?s=128&d=identicon&r=PG&f=1",
+            "display_name": "SvenM",
+            "link": "https://stackoverflow.com/users/3345552/svenm"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1581421918,
+        "post_id": 60165699,
+        "comment_id": 106419932,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Thanks for your answer. Seems like I was a bit confused... But the DLLs are still not human-readable like javascript, so they would still serve the same purpose. And yes, file size is a concern. This may be a little off topic, but do you know of another technology that would be able to do this, with a smaller footprint?"
+    }
+]

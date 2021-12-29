@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 673,
+            "user_id": 1651370,
+            "user_type": "registered",
+            "accept_rate": 100,
+            "profile_image": "https://www.gravatar.com/avatar/b55a041e75bf455e02cc09cc27d4f9d9?s=128&d=identicon&r=PG",
+            "display_name": "user1651370",
+            "link": "https://stackoverflow.com/users/1651370/user1651370"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1627918913,
+        "post_id": 61153225,
+        "comment_id": 121278538,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Thanks for this.  The only problem I now have is if the user has multiple roles.  If you inspect the JWT token the roles are returned as an array:  &quot;role&quot;: [     &quot;Clinician&quot;,     &quot;Patient&quot;   ]     and this does not work client side"
+    }
+]

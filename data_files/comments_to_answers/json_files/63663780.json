@@ -1,0 +1,36 @@
+[
+    {
+        "owner": {
+            "reputation": 70,
+            "user_id": 8254151,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/T3ke8.jpg?s=128&g=1",
+            "display_name": "Bub",
+            "link": "https://stackoverflow.com/users/8254151/bub"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1598896731,
+        "post_id": 63663780,
+        "comment_id": 112599837,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Thank you this ended up being very very helpful, I switched to use Identity.Application on the authorize attribute to switch away from the jwt defaultpolicy on the views I wanted to keep serverside and the redirects works like a charm again and I&#39;m happy. :D"
+    },
+    {
+        "owner": {
+            "reputation": 70,
+            "user_id": 8254151,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/T3ke8.jpg?s=128&g=1",
+            "display_name": "Bub",
+            "link": "https://stackoverflow.com/users/8254151/bub"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1598860819,
+        "post_id": 63663780,
+        "comment_id": 112583556,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Thank you for the information. I had hoped that the handlechallenge would redirect me to the Identity Login and handle everything for me like the normal middleware does when it encounters an Authorize attribute.  Getting this to work with serverside views seems to be more hassle than its worth. I will probably just add the role management ui and stuff to the wasm project like all the other views. If you know of any easy way to get the middleware to work for serverside views I&#39;d appreciate it. Marking this as answer. Thank you for the help."
+    }
+]

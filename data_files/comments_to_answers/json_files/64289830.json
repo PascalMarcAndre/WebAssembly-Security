@@ -1,0 +1,38 @@
+[
+    {
+        "owner": {
+            "reputation": 2661,
+            "user_id": 195965,
+            "user_type": "registered",
+            "accept_rate": 82,
+            "profile_image": "https://www.gravatar.com/avatar/aec177aa3bc73958600e3c37d266b3ee?s=128&d=identicon&r=PG",
+            "display_name": "Jonas Arcangel",
+            "link": "https://stackoverflow.com/users/195965/jonas-arcangel"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1602389576,
+        "post_id": 64289830,
+        "comment_id": 113702407,
+        "content_license": "CC BY-SA 4.0",
+        "body": "How is this generated? <a href=\"http://167.172.118.170/.well-known/openid-configuration\" rel=\"nofollow noreferrer\">167.172.118.170/.well-known/openid-configuration</a> How can I configure the result?"
+    },
+    {
+        "owner": {
+            "reputation": 2661,
+            "user_id": 195965,
+            "user_type": "registered",
+            "accept_rate": 82,
+            "profile_image": "https://www.gravatar.com/avatar/aec177aa3bc73958600e3c37d266b3ee?s=128&d=identicon&r=PG",
+            "display_name": "Jonas Arcangel",
+            "link": "https://stackoverflow.com/users/195965/jonas-arcangel"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1602371710,
+        "post_id": 64289830,
+        "comment_id": 113700114,
+        "content_license": "CC BY-SA 4.0",
+        "body": "It still doesn&#39;t work for me. <a href=\"https://github.com/jonasarcangel/BlazorLoginNetworkErrorIssue/commit/0a85bcfe100ca989db758001bc09a09a804037fe\" rel=\"nofollow noreferrer\">github.com/jonasarcangel/BlazorLoginNetworkErrorIssue/commit&zwnj;&#8203;/&hellip;</a>  <a href=\"http://167.172.118.170/authentication/login\" rel=\"nofollow noreferrer\">167.172.118.170/authentication/login</a>"
+    }
+]

@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 1074,
+            "user_id": 1786516,
+            "user_type": "registered",
+            "accept_rate": 61,
+            "profile_image": "https://www.gravatar.com/avatar/4feb9a577f98b387ebde4f5699bc1a3d?s=128&d=identicon&r=PG",
+            "display_name": "That Marc",
+            "link": "https://stackoverflow.com/users/1786516/that-marc"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1627080043,
+        "post_id": 67119153,
+        "comment_id": 121070265,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I have different issues with @attribute [Authorize] in _Imports.razor.  I can&#39;t seem to set different layouts / pages for NotFound route, based on Authorized property. How did you solve your case in that regard?"
+    }
+]

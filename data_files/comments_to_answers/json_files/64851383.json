@@ -1,0 +1,19 @@
+[
+    {
+        "owner": {
+            "reputation": 16888,
+            "user_id": 10505040,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/643c7cd13b4cd09ce56bb9ee71914516?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Jim Xu",
+            "link": "https://stackoverflow.com/users/10505040/jim-xu"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1605487891,
+        "post_id": 64851383,
+        "comment_id": 114657827,
+        "content_license": "CC BY-SA 4.0",
+        "body": "If it is useful for you, could you please <a href=\"https://meta.stackexchange.com/questions/5234/how-does-accepting-an-answer-work\">accept it as an answer</a>?"
+    }
+]

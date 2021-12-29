@@ -1,0 +1,19 @@
+[
+    {
+        "owner": {
+            "reputation": 211,
+            "user_id": 5830135,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/6a180631e629ef6403922ba8bb55badb?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Rocklands.Cave",
+            "link": "https://stackoverflow.com/users/5830135/rocklands-cave"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1619117784,
+        "post_id": 63903147,
+        "comment_id": 118815081,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Probably obivous but remember register your CustomDelegatingHandler  builder.Services.AddScoped&lt;CustomDelegatingHandler &gt;();"
+    }
+]

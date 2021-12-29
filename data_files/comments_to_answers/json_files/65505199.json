@@ -1,0 +1,46 @@
+[
+    {
+        "owner": {
+            "reputation": 5178,
+            "user_id": 1492496,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/dO7to.png?s=128&g=1",
+            "display_name": "Brian Parker",
+            "link": "https://stackoverflow.com/users/1492496/brian-parker"
+        },
+        "reply_to_user": {
+            "reputation": 9184,
+            "user_id": 693560,
+            "user_type": "registered",
+            "accept_rate": 77,
+            "profile_image": "https://www.gravatar.com/avatar/e71609811ad09d2eba439b051790fbc7?s=128&d=identicon&r=PG",
+            "display_name": "Bronzato",
+            "link": "https://stackoverflow.com/users/693560/bronzato"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1609328583,
+        "post_id": 65505199,
+        "comment_id": 115812597,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@Bronzato <a href=\"https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.components.authorization.authorizerouteview?view=aspnetcore-5.0#properties\" rel=\"nofollow noreferrer\">docs.microsoft.com/en-us/dotnet/api/&hellip;</a>"
+    },
+    {
+        "owner": {
+            "reputation": 9184,
+            "user_id": 693560,
+            "user_type": "registered",
+            "accept_rate": 77,
+            "profile_image": "https://www.gravatar.com/avatar/e71609811ad09d2eba439b051790fbc7?s=128&d=identicon&r=PG",
+            "display_name": "Bronzato",
+            "link": "https://stackoverflow.com/users/693560/bronzato"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1609325236,
+        "post_id": 65505199,
+        "comment_id": 115811345,
+        "content_license": "CC BY-SA 4.0",
+        "body": "May I ask you where I can find any documentation on this ? Thanks anyway."
+    }
+]

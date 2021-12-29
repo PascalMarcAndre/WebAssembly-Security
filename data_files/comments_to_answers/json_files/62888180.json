@@ -1,0 +1,19 @@
+[
+    {
+        "owner": {
+            "reputation": 321,
+            "user_id": 2398817,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/4fBPy.jpg?s=128&g=1",
+            "display_name": "danfer",
+            "link": "https://stackoverflow.com/users/2398817/danfer"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1598743085,
+        "post_id": 62888180,
+        "comment_id": 112559162,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Excellent, b&#225;rbaro! gracias Carlos, only thing is in my case that file _ViewStart.cshtml was under /Areas/Identity/Pages/ . Cheers."
+    }
+]

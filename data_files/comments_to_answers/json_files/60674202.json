@@ -1,0 +1,142 @@
+[
+    {
+        "owner": {
+            "reputation": 18357,
+            "user_id": 9119186,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/RFjFW.png?s=128&g=1",
+            "display_name": "Vencovsky",
+            "link": "https://stackoverflow.com/users/9119186/vencovsky"
+        },
+        "reply_to_user": {
+            "reputation": 7204,
+            "user_id": 7453,
+            "user_type": "registered",
+            "accept_rate": 93,
+            "profile_image": "https://www.gravatar.com/avatar/9221ab436283d74b2f9980004df83c1c?s=128&d=identicon&r=PG",
+            "display_name": "Patrick Szalapski",
+            "link": "https://stackoverflow.com/users/7453/patrick-szalapski"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1584120556,
+        "post_id": 60674202,
+        "comment_id": 107348862,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@PatrickSzalapski Here is a <a href=\"https://chrissainty.com/understanding-cascading-values-and-cascading-parameters/\" rel=\"nofollow noreferrer\">explanation</a>  of how cascading values work. Please take a look at <code>Updating Cascading Values</code> section  if you still have questions on how it works."
+    },
+    {
+        "owner": {
+            "reputation": 18357,
+            "user_id": 9119186,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/RFjFW.png?s=128&g=1",
+            "display_name": "Vencovsky",
+            "link": "https://stackoverflow.com/users/9119186/vencovsky"
+        },
+        "reply_to_user": {
+            "reputation": 7204,
+            "user_id": 7453,
+            "user_type": "registered",
+            "accept_rate": 93,
+            "profile_image": "https://www.gravatar.com/avatar/9221ab436283d74b2f9980004df83c1c?s=128&d=identicon&r=PG",
+            "display_name": "Patrick Szalapski",
+            "link": "https://stackoverflow.com/users/7453/patrick-szalapski"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1584120490,
+        "post_id": 60674202,
+        "comment_id": 107348842,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@PatrickSzalapski <code>a change in a child component will not affect other child components</code> this depends on what you mean by <code>a change in a child component</code>. If you change the property that have the attribute <code>CascadingParameter</code>, then the parent will rerender all change all childs, if you change other property that isn&#39;t <code>CascadingParameter</code>, than only that child will rerender."
+    },
+    {
+        "owner": {
+            "reputation": 18357,
+            "user_id": 9119186,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/RFjFW.png?s=128&g=1",
+            "display_name": "Vencovsky",
+            "link": "https://stackoverflow.com/users/9119186/vencovsky"
+        },
+        "reply_to_user": {
+            "reputation": 7204,
+            "user_id": 7453,
+            "user_type": "registered",
+            "accept_rate": 93,
+            "profile_image": "https://www.gravatar.com/avatar/9221ab436283d74b2f9980004df83c1c?s=128&d=identicon&r=PG",
+            "display_name": "Patrick Szalapski",
+            "link": "https://stackoverflow.com/users/7453/patrick-szalapski"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1584120434,
+        "post_id": 60674202,
+        "comment_id": 107348816,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@PatrickSzalapski <code>only changes to State that happen from the parent will cascade down</code> yes, that is true."
+    },
+    {
+        "owner": {
+            "reputation": 7204,
+            "user_id": 7453,
+            "user_type": "registered",
+            "accept_rate": 93,
+            "profile_image": "https://www.gravatar.com/avatar/9221ab436283d74b2f9980004df83c1c?s=128&d=identicon&r=PG",
+            "display_name": "Patrick Szalapski",
+            "link": "https://stackoverflow.com/users/7453/patrick-szalapski"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1584119673,
+        "post_id": 60674202,
+        "comment_id": 107348480,
+        "content_license": "CC BY-SA 4.0",
+        "body": "In this example, only changes to State that happen from the parent will cascade down, right?  In other words, a change in a child component will not affect other child components?"
+    },
+    {
+        "owner": {
+            "reputation": 18357,
+            "user_id": 9119186,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/RFjFW.png?s=128&g=1",
+            "display_name": "Vencovsky",
+            "link": "https://stackoverflow.com/users/9119186/vencovsky"
+        },
+        "reply_to_user": {
+            "reputation": 7204,
+            "user_id": 7453,
+            "user_type": "registered",
+            "accept_rate": 93,
+            "profile_image": "https://www.gravatar.com/avatar/9221ab436283d74b2f9980004df83c1c?s=128&d=identicon&r=PG",
+            "display_name": "Patrick Szalapski",
+            "link": "https://stackoverflow.com/users/7453/patrick-szalapski"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1584118733,
+        "post_id": 60674202,
+        "comment_id": 107348083,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@PatrickSzalapski not sure, but if you want to react to changes, I think <code>CascadingValue</code> is the only way"
+    },
+    {
+        "owner": {
+            "reputation": 7204,
+            "user_id": 7453,
+            "user_type": "registered",
+            "accept_rate": 93,
+            "profile_image": "https://www.gravatar.com/avatar/9221ab436283d74b2f9980004df83c1c?s=128&d=identicon&r=PG",
+            "display_name": "Patrick Szalapski",
+            "link": "https://stackoverflow.com/users/7453/patrick-szalapski"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1584118571,
+        "post_id": 60674202,
+        "comment_id": 107348021,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Thanks, I&#39;ll try it.  Is there any way to have global or pseudo-global values except through CascadingValue?"
+    }
+]

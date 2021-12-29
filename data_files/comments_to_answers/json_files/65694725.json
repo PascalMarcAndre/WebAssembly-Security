@@ -1,0 +1,46 @@
+[
+    {
+        "owner": {
+            "reputation": 12769,
+            "user_id": 10521739,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/6459b077561be67082b7c27faed22fb2?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Allen Wu",
+            "link": "https://stackoverflow.com/users/10521739/allen-wu"
+        },
+        "reply_to_user": {
+            "reputation": 5658,
+            "user_id": 33272,
+            "user_type": "registered",
+            "accept_rate": 64,
+            "profile_image": "https://www.gravatar.com/avatar/b0260be84c93badc7ff9617758a780f3?s=128&d=identicon&r=PG",
+            "display_name": "Philipp Schmid",
+            "link": "https://stackoverflow.com/users/33272/philipp-schmid"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1610510145,
+        "post_id": 65694725,
+        "comment_id": 116153913,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@PhilippSchmid I&#39;m saying that sign into B2C is using <b>B2C Authentication protocols</b>. But to access personal OneNote via Microsoft Graph, you have to use <b>Azure AD Authentication protocols</b>. You cannot use a single login to achieve this requirement."
+    },
+    {
+        "owner": {
+            "reputation": 5658,
+            "user_id": 33272,
+            "user_type": "registered",
+            "accept_rate": 64,
+            "profile_image": "https://www.gravatar.com/avatar/b0260be84c93badc7ff9617758a780f3?s=128&d=identicon&r=PG",
+            "display_name": "Philipp Schmid",
+            "link": "https://stackoverflow.com/users/33272/philipp-schmid"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1610508871,
+        "post_id": 65694725,
+        "comment_id": 116153671,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Thanks. I was to call the Microsoft Graph API for a user that previously authenticated via Azure B2C using a Microsoft account (one of the social IDPs we integrate with). Because they authenticated with a Microsoft account I know that they have access to OneNote (via Microsoft Graph API). I was hoping to avoid them having to log in a second time to access the Microsoft Graph API, but your answer doesn&#39;t address this scenario. I don&#39;t want to access the B2C tenant via Graph API but OneNote. Or are you saying that I can access the user&#39;s OneNote files via Graph API and B2C tenant?"
+    }
+]

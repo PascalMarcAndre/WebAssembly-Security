@@ -1,0 +1,65 @@
+[
+    {
+        "owner": {
+            "reputation": 1147,
+            "user_id": 656822,
+            "user_type": "registered",
+            "accept_rate": 40,
+            "profile_image": "https://www.gravatar.com/avatar/668c679c425efc6d541c2496a6e1f963?s=128&d=identicon&r=PG",
+            "display_name": "user656822",
+            "link": "https://stackoverflow.com/users/656822/user656822"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1597598194,
+        "post_id": 63416676,
+        "comment_id": 112179077,
+        "content_license": "CC BY-SA 4.0",
+        "body": "By server side I mean in API Controller."
+    },
+    {
+        "owner": {
+            "reputation": 1080,
+            "user_id": 115065,
+            "user_type": "registered",
+            "accept_rate": 67,
+            "profile_image": "https://www.gravatar.com/avatar/14effc24a9a780e68a23094720cd5d8f?s=128&d=identicon&r=PG",
+            "display_name": "Mark3308",
+            "link": "https://stackoverflow.com/users/115065/mark3308"
+        },
+        "reply_to_user": {
+            "reputation": 1147,
+            "user_id": 656822,
+            "user_type": "registered",
+            "accept_rate": 40,
+            "profile_image": "https://www.gravatar.com/avatar/668c679c425efc6d541c2496a6e1f963?s=128&d=identicon&r=PG",
+            "display_name": "user656822",
+            "link": "https://stackoverflow.com/users/656822/user656822"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1597508503,
+        "post_id": 63416676,
+        "comment_id": 112158492,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I&#39;m not sure what you mean by component and server side.  The main differences are web assembly and server side.  The article refers to both."
+    },
+    {
+        "owner": {
+            "reputation": 1147,
+            "user_id": 656822,
+            "user_type": "registered",
+            "accept_rate": 40,
+            "profile_image": "https://www.gravatar.com/avatar/668c679c425efc6d541c2496a6e1f963?s=128&d=identicon&r=PG",
+            "display_name": "user656822",
+            "link": "https://stackoverflow.com/users/656822/user656822"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1597430425,
+        "post_id": 63416676,
+        "comment_id": 112140493,
+        "content_license": "CC BY-SA 4.0",
+        "body": "This seems to be answer for component not server side"
+    }
+]

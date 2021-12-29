@@ -1,0 +1,47 @@
+[
+    {
+        "owner": {
+            "reputation": 13400,
+            "user_id": 2940908,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://i.stack.imgur.com/E79WU.jpg?s=128&g=1",
+            "display_name": "agua from mars",
+            "link": "https://stackoverflow.com/users/2940908/agua-from-mars"
+        },
+        "reply_to_user": {
+            "reputation": 1315,
+            "user_id": 1283836,
+            "user_type": "registered",
+            "accept_rate": 79,
+            "profile_image": "https://www.gravatar.com/avatar/34645c57fa1b5f0791a006b86a9aa10c?s=128&d=identicon&r=PG",
+            "display_name": "wiki",
+            "link": "https://stackoverflow.com/users/1283836/wiki"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1595237707,
+        "post_id": 62991156,
+        "comment_id": 111394501,
+        "content_license": "CC BY-SA 4.0",
+        "body": "replace AddSingleton by AddScoped"
+    },
+    {
+        "owner": {
+            "reputation": 1315,
+            "user_id": 1283836,
+            "user_type": "registered",
+            "accept_rate": 79,
+            "profile_image": "https://www.gravatar.com/avatar/34645c57fa1b5f0791a006b86a9aa10c?s=128&d=identicon&r=PG",
+            "display_name": "wiki",
+            "link": "https://stackoverflow.com/users/1283836/wiki"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1595236704,
+        "post_id": 62991156,
+        "comment_id": 111393986,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Per your suggestion, I put <code>builder.Services.AddBlazoredLocalStorage();             builder.Services.AddSingleton(p =&gt; new StorageManagement(p.GetRequiredService&lt;ILocalStorageService&gt;&zwnj;&#8203;()));</code> into Program.cs and <code>public StorageManagement(ILocalStorageService localStorage) ...</code> for the constructor but I&#39;m getting this error: <code>Unhandled exception rendering component: Cannot resolve scoped service &#39;Blazored.LocalStorage.ILocalStorageService&#39; from root provider.</code>"
+    }
+]

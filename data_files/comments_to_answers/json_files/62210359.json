@@ -1,0 +1,114 @@
+[
+    {
+        "owner": {
+            "reputation": 13400,
+            "user_id": 2940908,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://i.stack.imgur.com/E79WU.jpg?s=128&g=1",
+            "display_name": "agua from mars",
+            "link": "https://stackoverflow.com/users/2940908/agua-from-mars"
+        },
+        "reply_to_user": {
+            "reputation": 33,
+            "user_id": 2112796,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/8e596e47b97f11d02ae01a6605ab0280?s=128&d=identicon&r=PG",
+            "display_name": "user2112796",
+            "link": "https://stackoverflow.com/users/2112796/user2112796"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1591389793,
+        "post_id": 62210359,
+        "comment_id": 110048648,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Regarding Azure certificate management I don&#39;t have enough skills"
+    },
+    {
+        "owner": {
+            "reputation": 13400,
+            "user_id": 2940908,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://i.stack.imgur.com/E79WU.jpg?s=128&g=1",
+            "display_name": "agua from mars",
+            "link": "https://stackoverflow.com/users/2940908/agua-from-mars"
+        },
+        "reply_to_user": {
+            "reputation": 33,
+            "user_id": 2112796,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/8e596e47b97f11d02ae01a6605ab0280?s=128&d=identicon&r=PG",
+            "display_name": "user2112796",
+            "link": "https://stackoverflow.com/users/2112796/user2112796"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1591389421,
+        "post_id": 62210359,
+        "comment_id": 110048494,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Regarding end-to-end HTTPS :  <a href=\"https://www.chromestatus.com/feature/5633521622188032\" rel=\"nofollow noreferrer\">chromestatus.com/feature/5633521622188032</a>"
+    },
+    {
+        "owner": {
+            "reputation": 33,
+            "user_id": 2112796,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/8e596e47b97f11d02ae01a6605ab0280?s=128&d=identicon&r=PG",
+            "display_name": "user2112796",
+            "link": "https://stackoverflow.com/users/2112796/user2112796"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1591381731,
+        "post_id": 62210359,
+        "comment_id": 110045321,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Can you point to any resources where it says that full end-to-end HTTPS is a recommended approach? I&#39;d like to learn more about pros &amp; cons. Also, how do we deal with certificates - would it be possible to reuse the app service managed one or I&#39;d have to create a new one?"
+    },
+    {
+        "owner": {
+            "reputation": 13400,
+            "user_id": 2940908,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://i.stack.imgur.com/E79WU.jpg?s=128&g=1",
+            "display_name": "agua from mars",
+            "link": "https://stackoverflow.com/users/2940908/agua-from-mars"
+        },
+        "reply_to_user": {
+            "reputation": 33,
+            "user_id": 2112796,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/8e596e47b97f11d02ae01a6605ab0280?s=128&d=identicon&r=PG",
+            "display_name": "user2112796",
+            "link": "https://stackoverflow.com/users/2112796/user2112796"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1591369033,
+        "post_id": 62210359,
+        "comment_id": 110038681,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Yes : <a href=\"https://docs.microsoft.com/en-us/aspnet/core/security/docker-https?view=aspnetcore-3.1\" rel=\"nofollow noreferrer\">docs.microsoft.com/en-us/aspnet/core/security/&hellip;</a>"
+    },
+    {
+        "owner": {
+            "reputation": 33,
+            "user_id": 2112796,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/8e596e47b97f11d02ae01a6605ab0280?s=128&d=identicon&r=PG",
+            "display_name": "user2112796",
+            "link": "https://stackoverflow.com/users/2112796/user2112796"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1591365653,
+        "post_id": 62210359,
+        "comment_id": 110036600,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Thank you! Appreciated! When we tried to run e2e https we faced a small problem - web app would not publish https port for docker container, it publishes the only http port, is there any way to overcome this? (Https port is exposed in dockerfile)"
+    }
+]

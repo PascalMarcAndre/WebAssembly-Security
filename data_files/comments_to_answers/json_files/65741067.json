@@ -1,0 +1,36 @@
+[
+    {
+        "owner": {
+            "reputation": 51,
+            "user_id": 15013711,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/c9eed9afd338666af67d74b9b0b36992?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Saga",
+            "link": "https://stackoverflow.com/users/15013711/saga"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1610976619,
+        "post_id": 65741067,
+        "comment_id": 116294961,
+        "content_license": "CC BY-SA 4.0",
+        "body": "When I add  builder.Services.AddApiAuthorization(); the error is gone. But the Http Header still does not have any authentication information. Could it be because the WebApi is not on the same base address as the WASM?"
+    },
+    {
+        "owner": {
+            "reputation": 51,
+            "user_id": 15013711,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/c9eed9afd338666af67d74b9b0b36992?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Saga",
+            "link": "https://stackoverflow.com/users/15013711/saga"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1610971515,
+        "post_id": 65741067,
+        "comment_id": 116292624,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I have upgraded the Blazor WASM Project to 5.0. Now I can use AddHttpClient as you decribed it. But when I try to to get HttpClient from IHttpClientFactory I injected in my Page I get the following error &quot;No service for type &#39;Microsoft.AspNetCore.Components.WebAssembly.Authentication.&zwnj;&#8203;BaseAddressAuthoriza&zwnj;&#8203;tionMessageHandler&#39; has been registered.&quot;"
+    }
+]

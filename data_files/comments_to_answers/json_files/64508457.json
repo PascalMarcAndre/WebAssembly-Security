@@ -1,0 +1,36 @@
+[
+    {
+        "owner": {
+            "reputation": 37,
+            "user_id": 2870553,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/80b8f1fc68df76e5e69ac6549e11e899?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Zero",
+            "link": "https://stackoverflow.com/users/2870553/zero"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1603559430,
+        "post_id": 64508457,
+        "comment_id": 114078361,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Works like a charm, I will dive deeper in UserClaims. Thank you for the information and your help!"
+    },
+    {
+        "owner": {
+            "reputation": 37,
+            "user_id": 2870553,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/80b8f1fc68df76e5e69ac6549e11e899?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Zero",
+            "link": "https://stackoverflow.com/users/2870553/zero"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1603524425,
+        "post_id": 64508457,
+        "comment_id": 114069769,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Well the problem is in the Weatherforecasecontroller.cs. I need the username there. When I look at the Httpcontext.User.Name it\u2019s empty. The only thing that I see is: IsAuthenticated = true.   What I\u2019m trying to do is: get a username in the controller and then use the usermanager.findasync(username);"
+    }
+]

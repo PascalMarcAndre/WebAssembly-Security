@@ -1,0 +1,45 @@
+[
+    {
+        "owner": {
+            "reputation": 1,
+            "user_id": 6152891,
+            "user_type": "registered",
+            "accept_rate": 75,
+            "profile_image": "https://www.gravatar.com/avatar/b45b7f89429f8766cdbf6c776c0a9d41?s=128&d=identicon&r=PG",
+            "display_name": "enet",
+            "link": "https://stackoverflow.com/users/6152891/enet"
+        },
+        "reply_to_user": {
+            "reputation": 281,
+            "user_id": 12393792,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/061b4453a944fafa89ad09f0837ef459?s=128&d=identicon&r=PG&f=1",
+            "display_name": "brstkr",
+            "link": "https://stackoverflow.com/users/12393792/brstkr"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1594460150,
+        "post_id": 62842888,
+        "comment_id": 111138068,
+        "content_license": "CC BY-SA 4.0",
+        "body": "The way to thank folks in stackoverflow is to up vote and accept their answers. I can&#39;t answer your question without seeing the code. Please post the code..."
+    },
+    {
+        "owner": {
+            "reputation": 281,
+            "user_id": 12393792,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/061b4453a944fafa89ad09f0837ef459?s=128&d=identicon&r=PG&f=1",
+            "display_name": "brstkr",
+            "link": "https://stackoverflow.com/users/12393792/brstkr"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1594459217,
+        "post_id": 62842888,
+        "comment_id": 111137843,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Thanks for the response! That helped me alot and I added it to my custom <code>AuthenticationProvider</code> in my client. Now the Authorization is working :-) Another problem I am facing right now is the <code>httpContextAccessor</code> by trying to get the <code>usersId</code> in the controller I am facing <code>SystemNullReferenceExceptions</code>."
+    }
+]

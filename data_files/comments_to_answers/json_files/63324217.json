@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 1948,
+            "user_id": 856947,
+            "user_type": "registered",
+            "accept_rate": 95,
+            "profile_image": "https://i.stack.imgur.com/uFcyq.jpg?s=128&g=1",
+            "display_name": "Jack",
+            "link": "https://stackoverflow.com/users/856947/jack"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1596989422,
+        "post_id": 63324217,
+        "comment_id": 111982198,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Yes, I noticed that, yet hoped there was some special set of requirements that made it possible, as has been done with other platforms. Hopefully, this issue will be rectified soon."
+    }
+]

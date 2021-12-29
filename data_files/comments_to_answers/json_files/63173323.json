@@ -1,0 +1,153 @@
+[
+    {
+        "owner": {
+            "reputation": 34,
+            "user_id": 8122676,
+            "user_type": "registered",
+            "profile_image": "https://lh4.googleusercontent.com/-3Q9uHUdDazk/AAAAAAAAAAI/AAAAAAAAAHc/2PjnC4pMVDQ/photo.jpg?sz=128",
+            "display_name": "Marek S\u0142owikowski",
+            "link": "https://stackoverflow.com/users/8122676/marek-s%c5%82owikowski"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1596332971,
+        "post_id": 63173323,
+        "comment_id": 111777558,
+        "content_license": "CC BY-SA 4.0",
+        "body": "No, I did not. I have published the same copy to Azure storage account static iwebsite and to Azure App Service."
+    },
+    {
+        "owner": {
+            "reputation": 127,
+            "user_id": 10832603,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/69dd885ef780d478a47e8535fe6171f6?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Aditya Singh",
+            "link": "https://stackoverflow.com/users/10832603/aditya-singh"
+        },
+        "reply_to_user": {
+            "reputation": 34,
+            "user_id": 8122676,
+            "user_type": "registered",
+            "profile_image": "https://lh4.googleusercontent.com/-3Q9uHUdDazk/AAAAAAAAAAI/AAAAAAAAAHc/2PjnC4pMVDQ/photo.jpg?sz=128",
+            "display_name": "Marek S\u0142owikowski",
+            "link": "https://stackoverflow.com/users/8122676/marek-s%c5%82owikowski"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1596190812,
+        "post_id": 63173323,
+        "comment_id": 111739591,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@MarekS\u0142owikowski - If you can clarify on the following question it will be really helpful for me - Did you changed any configuration before deploying your app to app service ? If yes would be really helpful to know what was that ?"
+    },
+    {
+        "owner": {
+            "reputation": 127,
+            "user_id": 10832603,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/69dd885ef780d478a47e8535fe6171f6?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Aditya Singh",
+            "link": "https://stackoverflow.com/users/10832603/aditya-singh"
+        },
+        "reply_to_user": {
+            "reputation": 34,
+            "user_id": 8122676,
+            "user_type": "registered",
+            "profile_image": "https://lh4.googleusercontent.com/-3Q9uHUdDazk/AAAAAAAAAAI/AAAAAAAAAHc/2PjnC4pMVDQ/photo.jpg?sz=128",
+            "display_name": "Marek S\u0142owikowski",
+            "link": "https://stackoverflow.com/users/8122676/marek-s%c5%82owikowski"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1596190494,
+        "post_id": 63173323,
+        "comment_id": 111739438,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@MarekS\u0142owikowski -  Glad to know that authentication is working on your static website deployed in an app service , You can take a look at azure app service for static websites(preview) which has been built primarily for static websites and might as well suit your needs better.Strange because storage accounts support cors so therefore  static website hosted in storage accounts should support cors i will investigate further on this issue and update you if i find anything useful."
+    },
+    {
+        "owner": {
+            "reputation": 34,
+            "user_id": 8122676,
+            "user_type": "registered",
+            "profile_image": "https://lh4.googleusercontent.com/-3Q9uHUdDazk/AAAAAAAAAAI/AAAAAAAAAHc/2PjnC4pMVDQ/photo.jpg?sz=128",
+            "display_name": "Marek S\u0142owikowski",
+            "link": "https://stackoverflow.com/users/8122676/marek-s%c5%82owikowski"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1596183422,
+        "post_id": 63173323,
+        "comment_id": 111736275,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I have just read static sites created on Azure Storage Account does not supports CORS. Azure App Service does so the same static site cited with Azure App Service works fine."
+    },
+    {
+        "owner": {
+            "reputation": 127,
+            "user_id": 10832603,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/69dd885ef780d478a47e8535fe6171f6?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Aditya Singh",
+            "link": "https://stackoverflow.com/users/10832603/aditya-singh"
+        },
+        "reply_to_user": {
+            "reputation": 34,
+            "user_id": 8122676,
+            "user_type": "registered",
+            "profile_image": "https://lh4.googleusercontent.com/-3Q9uHUdDazk/AAAAAAAAAAI/AAAAAAAAAHc/2PjnC4pMVDQ/photo.jpg?sz=128",
+            "display_name": "Marek S\u0142owikowski",
+            "link": "https://stackoverflow.com/users/8122676/marek-s%c5%82owikowski"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1596175510,
+        "post_id": 63173323,
+        "comment_id": 111733387,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@MarekS\u0142owikowski-when your application is getting redirected to azure active active directory you will be getting an url in format -<a href=\"https://login.microsoftonline.com/\" rel=\"nofollow noreferrer\">login.microsoftonline.com</a>{tenant}/oauth2/v2.0/authorize? client_id=6731de76-14a6-49ae-97bc-6eba6914391e &amp;response_type=id_token &amp;redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F &amp;scope=openid &amp;response_mode=fragment &amp;state=12345 &amp;nonce=678910 can you please let know what is the redirect uri the application is passing in url?"
+    },
+    {
+        "owner": {
+            "reputation": 127,
+            "user_id": 10832603,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/69dd885ef780d478a47e8535fe6171f6?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Aditya Singh",
+            "link": "https://stackoverflow.com/users/10832603/aditya-singh"
+        },
+        "reply_to_user": {
+            "reputation": 34,
+            "user_id": 8122676,
+            "user_type": "registered",
+            "profile_image": "https://lh4.googleusercontent.com/-3Q9uHUdDazk/AAAAAAAAAAI/AAAAAAAAAHc/2PjnC4pMVDQ/photo.jpg?sz=128",
+            "display_name": "Marek S\u0142owikowski",
+            "link": "https://stackoverflow.com/users/8122676/marek-s%c5%82owikowski"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1596174885,
+        "post_id": 63173323,
+        "comment_id": 111733221,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@MarekS\u0142owikowski - what i meant is that {WebsiteUrl}/authentication/login-callback should be registered as a reply URL in your azure active active directory app registration(authentication blade).Whatever you use as a redirect uri in your app should be exactly similar to the one registered in reply URL&#39;s in AAD."
+    },
+    {
+        "owner": {
+            "reputation": 34,
+            "user_id": 8122676,
+            "user_type": "registered",
+            "profile_image": "https://lh4.googleusercontent.com/-3Q9uHUdDazk/AAAAAAAAAAI/AAAAAAAAAHc/2PjnC4pMVDQ/photo.jpg?sz=128",
+            "display_name": "Marek S\u0142owikowski",
+            "link": "https://stackoverflow.com/users/8122676/marek-s%c5%82owikowski"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1596137974,
+        "post_id": 63173323,
+        "comment_id": 111723223,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I have tried this localhost and full site name. It does not work."
+    }
+]

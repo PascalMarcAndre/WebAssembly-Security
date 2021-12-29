@@ -1,0 +1,217 @@
+[
+    {
+        "owner": {
+            "reputation": 319,
+            "user_id": 10905290,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/78237a5c25d3617efc9395de0300d61c?s=128&d=identicon&r=PG&f=1",
+            "display_name": "sda2584541",
+            "link": "https://stackoverflow.com/users/10905290/sda2584541"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1597332880,
+        "post_id": 63392012,
+        "comment_id": 112104547,
+        "content_license": "CC BY-SA 4.0",
+        "body": "and complementary answer is <a href=\"https://chrissainty.com/avoiding-accesstokennotavailableexception-when-using-blazor-webassembly-hosted-template-with-individual-user-accounts/\" rel=\"nofollow noreferrer\">chrissainty.com/&hellip;</a>"
+    },
+    {
+        "owner": {
+            "reputation": 13400,
+            "user_id": 2940908,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://i.stack.imgur.com/E79WU.jpg?s=128&g=1",
+            "display_name": "agua from mars",
+            "link": "https://stackoverflow.com/users/2940908/agua-from-mars"
+        },
+        "reply_to_user": {
+            "reputation": 319,
+            "user_id": 10905290,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/78237a5c25d3617efc9395de0300d61c?s=128&d=identicon&r=PG&f=1",
+            "display_name": "sda2584541",
+            "link": "https://stackoverflow.com/users/10905290/sda2584541"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1597320922,
+        "post_id": 63392012,
+        "comment_id": 112098119,
+        "content_license": "CC BY-SA 4.0",
+        "body": "If you need 2 <code>HttpClient</code>, one for anonymous endpoints and one for authorized endpoints then consider using a HttpClientFactory with named <code>HttpClient</code>"
+    },
+    {
+        "owner": {
+            "reputation": 13400,
+            "user_id": 2940908,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://i.stack.imgur.com/E79WU.jpg?s=128&g=1",
+            "display_name": "agua from mars",
+            "link": "https://stackoverflow.com/users/2940908/agua-from-mars"
+        },
+        "reply_to_user": {
+            "reputation": 319,
+            "user_id": 10905290,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/78237a5c25d3617efc9395de0300d61c?s=128&d=identicon&r=PG&f=1",
+            "display_name": "sda2584541",
+            "link": "https://stackoverflow.com/users/10905290/sda2584541"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1597320790,
+        "post_id": 63392012,
+        "comment_id": 112098061,
+        "content_license": "CC BY-SA 4.0",
+        "body": "No, this handler is use to retrieve the access token from the session storage and populate the Authorization header. If the user is not authenticated it try to login."
+    },
+    {
+        "owner": {
+            "reputation": 319,
+            "user_id": 10905290,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/78237a5c25d3617efc9395de0300d61c?s=128&d=identicon&r=PG&f=1",
+            "display_name": "sda2584541",
+            "link": "https://stackoverflow.com/users/10905290/sda2584541"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1597320624,
+        "post_id": 63392012,
+        "comment_id": 112097979,
+        "content_license": "CC BY-SA 4.0",
+        "body": "wow, work now. But deleting <code>.AddHttpMessageHandler&lt;BaseAddressAuthorizationMessageHandle&zwnj;&#8203;r&gt;();</code> does not cause a security problem?"
+    },
+    {
+        "owner": {
+            "reputation": 13400,
+            "user_id": 2940908,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://i.stack.imgur.com/E79WU.jpg?s=128&g=1",
+            "display_name": "agua from mars",
+            "link": "https://stackoverflow.com/users/2940908/agua-from-mars"
+        },
+        "reply_to_user": {
+            "reputation": 319,
+            "user_id": 10905290,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/78237a5c25d3617efc9395de0300d61c?s=128&d=identicon&r=PG&f=1",
+            "display_name": "sda2584541",
+            "link": "https://stackoverflow.com/users/10905290/sda2584541"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1597320352,
+        "post_id": 63392012,
+        "comment_id": 112097838,
+        "content_license": "CC BY-SA 4.0",
+        "body": "You need a <code>HttpClient</code> without <code>BaseAddressAuthorizationMessageHandler</code>"
+    },
+    {
+        "owner": {
+            "reputation": 319,
+            "user_id": 10905290,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/78237a5c25d3617efc9395de0300d61c?s=128&d=identicon&r=PG&f=1",
+            "display_name": "sda2584541",
+            "link": "https://stackoverflow.com/users/10905290/sda2584541"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1597320197,
+        "post_id": 63392012,
+        "comment_id": 112097770,
+        "content_license": "CC BY-SA 4.0",
+        "body": "yes, because I use the default template.<code>builder.Services.AddHttpClient(&quot;blazorAuten.ServerA&zwnj;&#8203;PI&quot;, client =&gt; client.BaseAddress = new Uri(builder.HostEnvironment.BaseAddress))                 .AddHttpMessageHandler&lt;BaseAddressAuthorizationMessageHandle&zwnj;&#8203;r&gt;();</code>"
+    },
+    {
+        "owner": {
+            "reputation": 13400,
+            "user_id": 2940908,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://i.stack.imgur.com/E79WU.jpg?s=128&g=1",
+            "display_name": "agua from mars",
+            "link": "https://stackoverflow.com/users/2940908/agua-from-mars"
+        },
+        "reply_to_user": {
+            "reputation": 319,
+            "user_id": 10905290,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/78237a5c25d3617efc9395de0300d61c?s=128&d=identicon&r=PG&f=1",
+            "display_name": "sda2584541",
+            "link": "https://stackoverflow.com/users/10905290/sda2584541"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1597318900,
+        "post_id": 63392012,
+        "comment_id": 112097163,
+        "content_license": "CC BY-SA 4.0",
+        "body": "How do you register the <code>HttpClient</code> in DI ?"
+    },
+    {
+        "owner": {
+            "reputation": 319,
+            "user_id": 10905290,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/78237a5c25d3617efc9395de0300d61c?s=128&d=identicon&r=PG&f=1",
+            "display_name": "sda2584541",
+            "link": "https://stackoverflow.com/users/10905290/sda2584541"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1597316046,
+        "post_id": 63392012,
+        "comment_id": 112095817,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Yes, all attributes on component and web api."
+    },
+    {
+        "owner": {
+            "reputation": 13400,
+            "user_id": 2940908,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://i.stack.imgur.com/E79WU.jpg?s=128&g=1",
+            "display_name": "agua from mars",
+            "link": "https://stackoverflow.com/users/2940908/agua-from-mars"
+        },
+        "reply_to_user": {
+            "reputation": 319,
+            "user_id": 10905290,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/78237a5c25d3617efc9395de0300d61c?s=128&d=identicon&r=PG&f=1",
+            "display_name": "sda2584541",
+            "link": "https://stackoverflow.com/users/10905290/sda2584541"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1597315242,
+        "post_id": 63392012,
+        "comment_id": 112095406,
+        "content_license": "CC BY-SA 4.0",
+        "body": "did you remove authorize attribute ?"
+    },
+    {
+        "owner": {
+            "reputation": 319,
+            "user_id": 10905290,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/78237a5c25d3617efc9395de0300d61c?s=128&d=identicon&r=PG&f=1",
+            "display_name": "sda2584541",
+            "link": "https://stackoverflow.com/users/10905290/sda2584541"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1597311774,
+        "post_id": 63392012,
+        "comment_id": 112093738,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I change <code>App.razor</code> to this, but still redirect to login page(same result)."
+    }
+]

@@ -1,0 +1,53 @@
+[
+    {
+        "owner": {
+            "reputation": 138,
+            "user_id": 11080892,
+            "user_type": "registered",
+            "profile_image": "https://lh4.googleusercontent.com/--FtsbDs1DdA/AAAAAAAAAAI/AAAAAAAAABc/kpnXGBoIXwk/photo.jpg?sz=128",
+            "display_name": "Jeff Bacon",
+            "link": "https://stackoverflow.com/users/11080892/jeff-bacon"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1594921357,
+        "post_id": 62936751,
+        "comment_id": 111303736,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<a href=\"https://docs.microsoft.com/en-us/aspnet/core/blazor/security/webassembly/additional-scenarios?view=aspnetcore-3.1\" rel=\"nofollow noreferrer\">docs.microsoft.com/en-us/aspnet/core/blazor/security/&hellip;</a> --&gt; this doc leaves out how to actually add on the Authentication header to outgoing HttpRequestMessage objects in the Handler"
+    },
+    {
+        "owner": {
+            "reputation": 138,
+            "user_id": 11080892,
+            "user_type": "registered",
+            "profile_image": "https://lh4.googleusercontent.com/--FtsbDs1DdA/AAAAAAAAAAI/AAAAAAAAABc/kpnXGBoIXwk/photo.jpg?sz=128",
+            "display_name": "Jeff Bacon",
+            "link": "https://stackoverflow.com/users/11080892/jeff-bacon"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1594914970,
+        "post_id": 62936751,
+        "comment_id": 111300556,
+        "content_license": "CC BY-SA 4.0",
+        "body": "There only seems to be a SendAsync to override (I assume to add the Authorization header to the HttpRequestMessage)... dependency injection to access IAccessTokenProvider?"
+    },
+    {
+        "owner": {
+            "reputation": 138,
+            "user_id": 11080892,
+            "user_type": "registered",
+            "profile_image": "https://lh4.googleusercontent.com/--FtsbDs1DdA/AAAAAAAAAAI/AAAAAAAAABc/kpnXGBoIXwk/photo.jpg?sz=128",
+            "display_name": "Jeff Bacon",
+            "link": "https://stackoverflow.com/users/11080892/jeff-bacon"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1594914537,
+        "post_id": 62936751,
+        "comment_id": 111300335,
+        "content_license": "CC BY-SA 4.0",
+        "body": "oooh... that&#39;s nicer than doing it on manually every request (I missed this answer while composing mine). ... however, in the AuthorizationMessageHandler, how do I access the Token?.."
+    }
+]

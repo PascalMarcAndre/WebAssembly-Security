@@ -1,0 +1,65 @@
+[
+    {
+        "owner": {
+            "reputation": 13400,
+            "user_id": 2940908,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://i.stack.imgur.com/E79WU.jpg?s=128&g=1",
+            "display_name": "agua from mars",
+            "link": "https://stackoverflow.com/users/2940908/agua-from-mars"
+        },
+        "reply_to_user": {
+            "reputation": 2661,
+            "user_id": 195965,
+            "user_type": "registered",
+            "accept_rate": 82,
+            "profile_image": "https://www.gravatar.com/avatar/aec177aa3bc73958600e3c37d266b3ee?s=128&d=identicon&r=PG",
+            "display_name": "Jonas Arcangel",
+            "link": "https://stackoverflow.com/users/195965/jonas-arcangel"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1601892901,
+        "post_id": 64203477,
+        "comment_id": 113537262,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Ok but <a href=\"http://167.172.118.170/_configuration/BlazorWorld.Web.Client\" rel=\"nofollow noreferrer\">167.172.118.170/_configuration/BlazorWorld.Web.Client</a> is still returning the same document"
+    },
+    {
+        "owner": {
+            "reputation": 2661,
+            "user_id": 195965,
+            "user_type": "registered",
+            "accept_rate": 82,
+            "profile_image": "https://www.gravatar.com/avatar/aec177aa3bc73958600e3c37d266b3ee?s=128&d=identicon&r=PG",
+            "display_name": "Jonas Arcangel",
+            "link": "https://stackoverflow.com/users/195965/jonas-arcangel"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1601890835,
+        "post_id": 64203477,
+        "comment_id": 113536327,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<a href=\"http://167.172.118.170/_configuration/MyProject.Web.Client\" rel=\"nofollow noreferrer\">167.172.118.170/_configuration/MyProject.Web.Client</a>"
+    },
+    {
+        "owner": {
+            "reputation": 2661,
+            "user_id": 195965,
+            "user_type": "registered",
+            "accept_rate": 82,
+            "profile_image": "https://www.gravatar.com/avatar/aec177aa3bc73958600e3c37d266b3ee?s=128&d=identicon&r=PG",
+            "display_name": "Jonas Arcangel",
+            "link": "https://stackoverflow.com/users/195965/jonas-arcangel"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1601890789,
+        "post_id": 64203477,
+        "comment_id": 113536304,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Appsettings are now correct after deploying everything from scratch. I&#39;m still seeing the error though."
+    }
+]

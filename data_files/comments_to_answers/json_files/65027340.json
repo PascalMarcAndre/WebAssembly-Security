@@ -1,0 +1,46 @@
+[
+    {
+        "owner": {
+            "reputation": 5178,
+            "user_id": 1492496,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/dO7to.png?s=128&g=1",
+            "display_name": "Brian Parker",
+            "link": "https://stackoverflow.com/users/1492496/brian-parker"
+        },
+        "reply_to_user": {
+            "reputation": 41119,
+            "user_id": 3850405,
+            "user_type": "registered",
+            "accept_rate": 64,
+            "profile_image": "https://www.gravatar.com/avatar/b2b9eece8c493ba7ddcff82f845ff2af?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Ogglas",
+            "link": "https://stackoverflow.com/users/3850405/ogglas"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1606415244,
+        "post_id": 65027340,
+        "comment_id": 114963178,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@Ogglas Take a look at the commits in this repo I go through the stages to customise ApplicationUser and setup policies and roles. <a href=\"https://github.com/BrianLParker/AuthApp/commits/master\" rel=\"nofollow noreferrer\">github.com/BrianLParker/AuthApp/commits/master</a>"
+    },
+    {
+        "owner": {
+            "reputation": 41119,
+            "user_id": 3850405,
+            "user_type": "registered",
+            "accept_rate": 64,
+            "profile_image": "https://www.gravatar.com/avatar/b2b9eece8c493ba7ddcff82f845ff2af?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Ogglas",
+            "link": "https://stackoverflow.com/users/3850405/ogglas"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1606414856,
+        "post_id": 65027340,
+        "comment_id": 114963044,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Thanks! Found it here as well <a href=\"https://docs.microsoft.com/en-gb/aspnet/core/blazor/security/webassembly/hosted-with-identity-server?view=aspnetcore-5.0&amp;tabs=visual-studio\" rel=\"nofollow noreferrer\">docs.microsoft.com/en-gb/aspnet/core/blazor/security/&hellip;</a>"
+    }
+]

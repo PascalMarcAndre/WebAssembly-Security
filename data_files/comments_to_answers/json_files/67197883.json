@@ -1,0 +1,44 @@
+[
+    {
+        "owner": {
+            "reputation": 31,
+            "user_id": 10785558,
+            "user_type": "registered",
+            "profile_image": "https://lh4.googleusercontent.com/-G8KgiCUSgtE/AAAAAAAAAAI/AAAAAAAAAFo/l-D9fw2ezwU/photo.jpg?sz=128",
+            "display_name": "Mostafa Zaki",
+            "link": "https://stackoverflow.com/users/10785558/mostafa-zaki"
+        },
+        "reply_to_user": {
+            "reputation": 517,
+            "user_id": 12233905,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/2f208e6a8791feecc6bd9a81d2ee8336?s=128&d=identicon&r=PG&f=1",
+            "display_name": "StewieG",
+            "link": "https://stackoverflow.com/users/12233905/stewieg"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1619473538,
+        "post_id": 67197883,
+        "comment_id": 118912268,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@StewieG u can add it in the root folder in each project(Wasm-&gt;index.html or host.cshtml in blzaor server )"
+    },
+    {
+        "owner": {
+            "reputation": 517,
+            "user_id": 12233905,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/2f208e6a8791feecc6bd9a81d2ee8336?s=128&d=identicon&r=PG&f=1",
+            "display_name": "StewieG",
+            "link": "https://stackoverflow.com/users/12233905/stewieg"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1619107036,
+        "post_id": 67197883,
+        "comment_id": 118810520,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I tried something similar like you, it&#39;s a very clean way. But didn&#39;t figure out how to share the www stuff like the CSS-files between the 2 projects. It&#39;s too late for me to go back ;) I now have a single instance running with custom auth, but I can switch between Server and Wasm on runtime."
+    }
+]

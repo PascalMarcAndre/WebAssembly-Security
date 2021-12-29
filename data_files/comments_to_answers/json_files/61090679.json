@@ -1,0 +1,19 @@
+[
+    {
+        "owner": {
+            "reputation": 103,
+            "user_id": 5118785,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/cL7bp.png?s=128&g=1",
+            "display_name": "Sjoerdson",
+            "link": "https://stackoverflow.com/users/5118785/sjoerdson"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1596202201,
+        "post_id": 61090679,
+        "comment_id": 111744535,
+        "content_license": "CC BY-SA 4.0",
+        "body": "This was the only solution that worked for me. Thanks!"
+    }
+]

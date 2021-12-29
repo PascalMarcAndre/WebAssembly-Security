@@ -1,0 +1,19 @@
+[
+    {
+        "owner": {
+            "reputation": 198,
+            "user_id": 972233,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/d1d9209b9792e8ef52cc5bbda0f56d0f?s=128&d=identicon&r=PG",
+            "display_name": "Klom Dark",
+            "link": "https://stackoverflow.com/users/972233/klom-dark"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1601349396,
+        "post_id": 63692141,
+        "comment_id": 113372664,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Interesting! Good find! I switch from IIS Express to &quot;MyApp.Server&quot; and everything is back to working fine. Thanks!"
+    }
+]

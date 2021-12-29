@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 339,
+            "user_id": 4760704,
+            "user_type": "registered",
+            "accept_rate": 100,
+            "profile_image": "https://www.gravatar.com/avatar/3acac720027a5474ca9d46a59df26053?s=128&d=identicon&r=PG&f=1",
+            "display_name": "rajiv karthik",
+            "link": "https://stackoverflow.com/users/4760704/rajiv-karthik"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1623833716,
+        "post_id": 66287332,
+        "comment_id": 120188021,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Hi @user1227445 - you saved my day as I was trying to find the solution for this problem for almost an hour now. Just minor update to you answer, the setting in the appsettings.Development.json is now called <b>BaseAddress</b> rather than <b>API_PREFIX</b>"
+    }
+]

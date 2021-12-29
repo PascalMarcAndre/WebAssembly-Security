@@ -1,0 +1,46 @@
+[
+    {
+        "owner": {
+            "reputation": 31659,
+            "user_id": 1097780,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/a8f01ad795c29c3d05ad26ee47ea6069?s=128&d=identicon&r=PG",
+            "display_name": "Andreas Rossberg",
+            "link": "https://stackoverflow.com/users/1097780/andreas-rossberg"
+        },
+        "reply_to_user": {
+            "reputation": 496,
+            "user_id": 871821,
+            "user_type": "registered",
+            "accept_rate": 67,
+            "profile_image": "https://www.gravatar.com/avatar/86745c80ad5a0974e23d540abdfe5b02?s=128&d=identicon&r=PG",
+            "display_name": "user3673",
+            "link": "https://stackoverflow.com/users/871821/user3673"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1458171539,
+        "post_id": 36044304,
+        "comment_id": 59746429,
+        "content_license": "CC BY-SA 3.0",
+        "body": "@user3673, the only suitable such &quot;restriction&quot; is the one we have now. ;) Your use case is still covered: you can incrementally put fast paths into a Wasm module just fine. You just have to invoke them through the export interface, no short cuts. In case you worry about the call overhead: that is something that Turbofan should be able to inline away."
+    },
+    {
+        "owner": {
+            "reputation": 496,
+            "user_id": 871821,
+            "user_type": "registered",
+            "accept_rate": 67,
+            "profile_image": "https://www.gravatar.com/avatar/86745c80ad5a0974e23d540abdfe5b02?s=128&d=identicon&r=PG",
+            "display_name": "user3673",
+            "link": "https://stackoverflow.com/users/871821/user3673"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1458162111,
+        "post_id": 36044304,
+        "comment_id": 59742254,
+        "content_license": "CC BY-SA 3.0",
+        "body": "Obviously it would be necessary to impose restrictions that maintained the abstraction boundaries.  If those restrictions ended up costing a lot of overhead on the coding and/or execution time of the individual methods then there would be no advantage.  The main advantage I sought was the usual one of using high level source as a de facto specification (and execution fallback for unsupported environments) for on-demand (as determined by execution-time profiling) human optimization in a low level language.  This has the advantage of empirically driven low level coding over apriori architecture."
+    }
+]

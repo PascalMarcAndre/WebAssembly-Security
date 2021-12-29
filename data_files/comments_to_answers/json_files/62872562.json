@@ -1,0 +1,65 @@
+[
+    {
+        "owner": {
+            "reputation": 217,
+            "user_id": 215015,
+            "user_type": "registered",
+            "accept_rate": 75,
+            "profile_image": "https://www.gravatar.com/avatar/528a66df3b23809bdf196043eb02ca91?s=128&d=identicon&r=PG",
+            "display_name": "Robie",
+            "link": "https://stackoverflow.com/users/215015/robie"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1594975443,
+        "post_id": 62872562,
+        "comment_id": 111320599,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I have got it working by injecting the dependency in the DefaultAuth0ProviderOptionsConfiguration. Thanks"
+    },
+    {
+        "owner": {
+            "reputation": 7965,
+            "user_id": 255966,
+            "user_type": "registered",
+            "accept_rate": 64,
+            "profile_image": "https://www.gravatar.com/avatar/00266ff14a605bf99cb6aed0518ad2ec?s=128&d=identicon&r=PG",
+            "display_name": "Stef Heyenrath",
+            "link": "https://stackoverflow.com/users/255966/stef-heyenrath"
+        },
+        "reply_to_user": {
+            "reputation": 217,
+            "user_id": 215015,
+            "user_type": "registered",
+            "accept_rate": 75,
+            "profile_image": "https://www.gravatar.com/avatar/528a66df3b23809bdf196043eb02ca91?s=128&d=identicon&r=PG",
+            "display_name": "Robie",
+            "link": "https://stackoverflow.com/users/215015/robie"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1594840728,
+        "post_id": 62872562,
+        "comment_id": 111271666,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Ah, in your case you need to add the email-address dynamically, I&#39;m not sure if that&#39;s easy to do. I&#39;ll take a look.."
+    },
+    {
+        "owner": {
+            "reputation": 217,
+            "user_id": 215015,
+            "user_type": "registered",
+            "accept_rate": 75,
+            "profile_image": "https://www.gravatar.com/avatar/528a66df3b23809bdf196043eb02ca91?s=128&d=identicon&r=PG",
+            "display_name": "Robie",
+            "link": "https://stackoverflow.com/users/215015/robie"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1594776688,
+        "post_id": 62872562,
+        "comment_id": 111242766,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Thanks Stef, since my parameter which is the email address of the user will be part of application URL (query string), do you think I should be able to read from NavManager and set the value when initialising the application? I had a go but so far no luck."
+    }
+]

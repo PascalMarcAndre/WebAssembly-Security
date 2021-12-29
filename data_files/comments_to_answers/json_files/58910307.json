@@ -1,0 +1,178 @@
+[
+    {
+        "owner": {
+            "reputation": 31659,
+            "user_id": 1097780,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/a8f01ad795c29c3d05ad26ee47ea6069?s=128&d=identicon&r=PG",
+            "display_name": "Andreas Rossberg",
+            "link": "https://stackoverflow.com/users/1097780/andreas-rossberg"
+        },
+        "reply_to_user": {
+            "reputation": 31436,
+            "user_id": 211160,
+            "user_type": "registered",
+            "accept_rate": 92,
+            "profile_image": "https://i.stack.imgur.com/Z2fk7.png?s=128&g=1",
+            "display_name": "HostileFork says dont trust SE",
+            "link": "https://stackoverflow.com/users/211160/hostilefork-says-dont-trust-se"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1574193138,
+        "post_id": 58910307,
+        "comment_id": 104142062,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@HostileFork, stack frame sizes depend on many variables, and locking them down would pretty much be equivalent to restricting to a single implementation. I could imagine specific guarantees for Wasm running in very specific host environments, in a spec layered on top of Wasm (such as the implementation limits in the JS API), but I don&#39;t see how any such guarantees could reasonably be established across all platforms in the general spec without breaking its general utility."
+    },
+    {
+        "owner": {
+            "reputation": 31436,
+            "user_id": 211160,
+            "user_type": "registered",
+            "accept_rate": 92,
+            "profile_image": "https://i.stack.imgur.com/Z2fk7.png?s=128&g=1",
+            "display_name": "HostileFork says dont trust SE",
+            "link": "https://stackoverflow.com/users/211160/hostilefork-says-dont-trust-se"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1574177451,
+        "post_id": 58910307,
+        "comment_id": 104133698,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@AndreasRossberg That is unfortunate to hear, e.g. that Wasm isn&#39;t aiming for any kind of &quot;quality of service&quot; contracts/guarantees? That&#39;s a weakness compared to even small embedded boards; this would be needed for Real-Time OS applications--and I&#39;m always wary of slippery slopes (&quot;if I can&#39;t trust this for a car braking system, why should I trust it for [X,Y,Z]&quot;). Alas. And looks like there&#39;s a <a href=\"https://stackoverflow.com/questions/427209/is-it-possible-to-predict-a-stack-overflow-in-c-on-linux/431024#comment104098846_431024\">lot of confusion surrounding stack overflow handling in general</a>..."
+    },
+    {
+        "owner": {
+            "reputation": 31659,
+            "user_id": 1097780,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/a8f01ad795c29c3d05ad26ee47ea6069?s=128&d=identicon&r=PG",
+            "display_name": "Andreas Rossberg",
+            "link": "https://stackoverflow.com/users/1097780/andreas-rossberg"
+        },
+        "reply_to_user": {
+            "reputation": 31436,
+            "user_id": 211160,
+            "user_type": "registered",
+            "accept_rate": 92,
+            "profile_image": "https://i.stack.imgur.com/Z2fk7.png?s=128&g=1",
+            "display_name": "HostileFork says dont trust SE",
+            "link": "https://stackoverflow.com/users/211160/hostilefork-says-dont-trust-se"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1574090376,
+        "post_id": 58910307,
+        "comment_id": 104096911,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@HostileFork, try <code>Object.defineProperty((function() {return this})(), &quot;x&quot;, {get() {console.log(&quot;boo!&quot;)}}); x; x;</code>. As for Wasm: even there the stack use of a single function depends on architecture, implementation, and optimisations. And if you compile some <i>other</i> language to it, then on all the compiler&#39;s internals, too."
+    },
+    {
+        "owner": {
+            "reputation": 31436,
+            "user_id": 211160,
+            "user_type": "registered",
+            "accept_rate": 92,
+            "profile_image": "https://i.stack.imgur.com/Z2fk7.png?s=128&g=1",
+            "display_name": "HostileFork says dont trust SE",
+            "link": "https://stackoverflow.com/users/211160/hostilefork-says-dont-trust-se"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1574089062,
+        "post_id": 58910307,
+        "comment_id": 104096129,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@AndreasRossberg Thanks for confirming my suspicions <i>(sidenote: I&#39;m curious how <code>x;</code> as a lone statement can run code)</i>.  As you work on WebAssembly itself: I&#39;ll mention that my question is motivated by <a href=\"https://groups.google.com/forum/#!topic/emscripten-discuss/CDyYsskh1D0\" rel=\"nofollow noreferrer\">this emscripten-discuss thread</a>--if you might have anything to add there that would be appreciated!  I&#39;m not too interested in JavaScript myself, so it&#39;s a much bigger question to me if a completely different language built in Wasm could offer some more rigorous guarantees."
+    },
+    {
+        "owner": {
+            "reputation": 31659,
+            "user_id": 1097780,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/a8f01ad795c29c3d05ad26ee47ea6069?s=128&d=identicon&r=PG",
+            "display_name": "Andreas Rossberg",
+            "link": "https://stackoverflow.com/users/1097780/andreas-rossberg"
+        },
+        "reply_to_user": {
+            "reputation": 526892,
+            "user_id": 1048572,
+            "user_type": "registered",
+            "accept_rate": 77,
+            "profile_image": "https://www.gravatar.com/avatar/7f2c4de95e8f4f8f5a71c3aaf0ed312a?s=128&d=identicon&r=PG",
+            "display_name": "Bergi",
+            "link": "https://stackoverflow.com/users/1048572/bergi"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1574087104,
+        "post_id": 58910307,
+        "comment_id": 104094959,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@Bergi, in practice that is the more serious hurdle, though. There simply is no realistic way to defend against that, there are way too many possibilities, and they keep growing with every language version."
+    },
+    {
+        "owner": {
+            "reputation": 526892,
+            "user_id": 1048572,
+            "user_type": "registered",
+            "accept_rate": 77,
+            "profile_image": "https://www.gravatar.com/avatar/7f2c4de95e8f4f8f5a71c3aaf0ed312a?s=128&d=identicon&r=PG",
+            "display_name": "Bergi",
+            "link": "https://stackoverflow.com/users/1048572/bergi"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1574073145,
+        "post_id": 58910307,
+        "comment_id": 104087059,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Thanks, that&#39;s what I wanted to hear. The argument &quot;<i>can lead to the invocation of arbitrary user code</i>&quot; didn&#39;t seem convincing :-)"
+    },
+    {
+        "owner": {
+            "reputation": 31659,
+            "user_id": 1097780,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/a8f01ad795c29c3d05ad26ee47ea6069?s=128&d=identicon&r=PG",
+            "display_name": "Andreas Rossberg",
+            "link": "https://stackoverflow.com/users/1097780/andreas-rossberg"
+        },
+        "reply_to_user": {
+            "reputation": 526892,
+            "user_id": 1048572,
+            "user_type": "registered",
+            "accept_rate": 77,
+            "profile_image": "https://www.gravatar.com/avatar/7f2c4de95e8f4f8f5a71c3aaf0ed312a?s=128&d=identicon&r=PG",
+            "display_name": "Bergi",
+            "link": "https://stackoverflow.com/users/1048572/bergi"
+        },
+        "edited": false,
+        "score": 2,
+        "creation_date": 1574070062,
+        "post_id": 58910307,
+        "comment_id": 104085332,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@Bergi, I doubt you can reasonably expect any such general guarantees, especially not across engines. There are way too many variables involved, both explicit and implicit. For example, many built-ins are implemented in JS itself on some engines. A JS function, even if just consisting of &quot;harmless&quot; operations, might have to spill some (or all) intermediate results to the stack in some optimisation modes on some architectures. Inlining might increase the stack use of a caller. And so on."
+    },
+    {
+        "owner": {
+            "reputation": 526892,
+            "user_id": 1048572,
+            "user_type": "registered",
+            "accept_rate": 77,
+            "profile_image": "https://www.gravatar.com/avatar/7f2c4de95e8f4f8f5a71c3aaf0ed312a?s=128&d=identicon&r=PG",
+            "display_name": "Bergi",
+            "link": "https://stackoverflow.com/users/1048572/bergi"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1574068928,
+        "post_id": 58910307,
+        "comment_id": 104084715,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I think the more interesting question would then be: is an operation that does not invoke user code guaranteed not to produce a stackoverflow error, i.e. can these only happening when calling a function? And what about calling builtin functions like <code>Math.random()</code>?"
+    }
+]

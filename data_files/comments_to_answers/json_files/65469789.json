@@ -1,0 +1,64 @@
+[
+    {
+        "owner": {
+            "reputation": 374,
+            "user_id": 5141561,
+            "user_type": "registered",
+            "accept_rate": 80,
+            "profile_image": "https://graph.facebook.com/926750996976/picture?type=large",
+            "display_name": "JoeyD",
+            "link": "https://stackoverflow.com/users/5141561/joeyd"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1609792267,
+        "post_id": 65469789,
+        "comment_id": 115928397,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Thanks @Michel Jansson for all the info!"
+    },
+    {
+        "owner": {
+            "reputation": 488,
+            "user_id": 1807542,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/2c4d94a78189c198f834dc1ff93c11cf?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Michel Jansson",
+            "link": "https://stackoverflow.com/users/1807542/michel-jansson"
+        },
+        "reply_to_user": {
+            "reputation": 374,
+            "user_id": 5141561,
+            "user_type": "registered",
+            "accept_rate": 80,
+            "profile_image": "https://graph.facebook.com/926750996976/picture?type=large",
+            "display_name": "JoeyD",
+            "link": "https://stackoverflow.com/users/5141561/joeyd"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1609246469,
+        "post_id": 65469789,
+        "comment_id": 115787787,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@JoeyD Nice. And yes - that is to be expected - you will have to catch that exception and forward the user to the login page in those cases. Please review the very first section of the docs link I posted as it talks about this (with written out code examples in the second code snippet of that page)"
+    },
+    {
+        "owner": {
+            "reputation": 374,
+            "user_id": 5141561,
+            "user_type": "registered",
+            "accept_rate": 80,
+            "profile_image": "https://graph.facebook.com/926750996976/picture?type=large",
+            "display_name": "JoeyD",
+            "link": "https://stackoverflow.com/users/5141561/joeyd"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1609190109,
+        "post_id": 65469789,
+        "comment_id": 115773448,
+        "content_license": "CC BY-SA 4.0",
+        "body": "So that is a big step in the right direction and i will mark this as the answer.  One thing I am coming across is when the httpclient makes a call to the API with the Authorize attribute on it and its coming from a client that is not logged in (no access token) i get an exception of AccessTokenNotAvailableException instead of getting a 401 unauthorized"
+    }
+]

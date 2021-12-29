@@ -1,0 +1,36 @@
+[
+    {
+        "owner": {
+            "reputation": 111,
+            "user_id": 12083557,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/7a03c19591731309bb8d69971e321b63?s=128&d=identicon&r=PG",
+            "display_name": "Life after Guest",
+            "link": "https://stackoverflow.com/users/12083557/life-after-guest"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1625228993,
+        "post_id": 61696510,
+        "comment_id": 120578785,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@ColinE : very easy? I couldn&#39;t find a way to decompile my own wasm after loosing the C source!  :-)"
+    },
+    {
+        "owner": {
+            "reputation": 393,
+            "user_id": 5799347,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/760081ded945a140e7897370389a2974?s=128&d=identicon&r=PG",
+            "display_name": "TonyB",
+            "link": "https://stackoverflow.com/users/5799347/tonyb"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1589112001,
+        "post_id": 61696510,
+        "comment_id": 109157538,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Thank you for answer. I wanted to be sure about it."
+    }
+]

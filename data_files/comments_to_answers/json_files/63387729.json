@@ -1,0 +1,82 @@
+[
+    {
+        "owner": {
+            "reputation": 4510,
+            "user_id": 210456,
+            "user_type": "registered",
+            "accept_rate": 75,
+            "profile_image": "https://www.gravatar.com/avatar/20387dcb084b25f5f6a2ac41ee22431e?s=128&d=identicon&r=PG",
+            "display_name": "Dragouf",
+            "link": "https://stackoverflow.com/users/210456/dragouf"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1597402148,
+        "post_id": 63387729,
+        "comment_id": 112127490,
+        "content_license": "CC BY-SA 4.0",
+        "body": "sure but since MainLayout is the default layout all pages will no be secured. I guess it&#39;s the reason why I get a blank page when I use a new page with &lt;RemoteAuthenticatorView Action=&quot;@Action&quot; /&gt; component inside as it is in the example template of Visual Studio?"
+    },
+    {
+        "owner": {
+            "reputation": 5164,
+            "user_id": 12884742,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/Aq9Y1.jpg?s=128&g=1",
+            "display_name": "LouraQ",
+            "link": "https://stackoverflow.com/users/12884742/louraq"
+        },
+        "reply_to_user": {
+            "reputation": 4510,
+            "user_id": 210456,
+            "user_type": "registered",
+            "accept_rate": 75,
+            "profile_image": "https://www.gravatar.com/avatar/20387dcb084b25f5f6a2ac41ee22431e?s=128&d=identicon&r=PG",
+            "display_name": "Dragouf",
+            "link": "https://stackoverflow.com/users/210456/dragouf"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1597397387,
+        "post_id": 63387729,
+        "comment_id": 112125454,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@Dragouf, In fact, when user are not logged in, you can define any page you want to jump to. The path I provided is the login page under identity."
+    },
+    {
+        "owner": {
+            "reputation": 4510,
+            "user_id": 210456,
+            "user_type": "registered",
+            "accept_rate": 75,
+            "profile_image": "https://www.gravatar.com/avatar/20387dcb084b25f5f6a2ac41ee22431e?s=128&d=identicon&r=PG",
+            "display_name": "Dragouf",
+            "link": "https://stackoverflow.com/users/210456/dragouf"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1597396992,
+        "post_id": 63387729,
+        "comment_id": 112125280,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I see that you used directly Identity/Account/Login. Why not create an intermediate view with &lt;RemoteAuthenticatorView Action=&quot;@Action&quot; /&gt; like it&#39;s done in the default template? I notice it&#39;s the reason why it was failing on my side. If I use this intermediate page I get a blank page"
+    },
+    {
+        "owner": {
+            "reputation": 4510,
+            "user_id": 210456,
+            "user_type": "registered",
+            "accept_rate": 75,
+            "profile_image": "https://www.gravatar.com/avatar/20387dcb084b25f5f6a2ac41ee22431e?s=128&d=identicon&r=PG",
+            "display_name": "Dragouf",
+            "link": "https://stackoverflow.com/users/210456/dragouf"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1597352277,
+        "post_id": 63387729,
+        "comment_id": 112112984,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Great, thanks a lot. I was not able to achieve it correctly, and I ended by wrapping &lt;AuthorizeRouteView&gt; inside a &lt;AuthorizeView&gt;. It was quite working correctly, but I felt it was not the correct way. Moreover, it appends multiple time the returnUrl value"
+    }
+]

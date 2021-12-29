@@ -1,0 +1,44 @@
+[
+    {
+        "owner": {
+            "reputation": 241,
+            "user_id": 9122330,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/906765334468a6006f8f19eae4363ce1?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Alois",
+            "link": "https://stackoverflow.com/users/9122330/alois"
+        },
+        "reply_to_user": {
+            "reputation": 488,
+            "user_id": 1807542,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/2c4d94a78189c198f834dc1ff93c11cf?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Michel Jansson",
+            "link": "https://stackoverflow.com/users/1807542/michel-jansson"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1604647592,
+        "post_id": 60281779,
+        "comment_id": 114416059,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Yes you are right. If you implement the clean architecture in a strict way the Requests, DTOs, etc. should always be mapped into Domain-Project and not be referenced. In real world I think it saves time to share that class. But of course, each pro comes with a contra. So you must decide it per project."
+    },
+    {
+        "owner": {
+            "reputation": 488,
+            "user_id": 1807542,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/2c4d94a78189c198f834dc1ff93c11cf?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Michel Jansson",
+            "link": "https://stackoverflow.com/users/1807542/michel-jansson"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1604530106,
+        "post_id": 60281779,
+        "comment_id": 114378352,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Would it not violate the clean/onion architecture to have the request handlers in the domain project, as it then would require dependency on infrastructure etc.?"
+    }
+]

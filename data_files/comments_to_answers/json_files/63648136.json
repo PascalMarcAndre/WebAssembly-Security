@@ -1,0 +1,36 @@
+[
+    {
+        "owner": {
+            "reputation": 143,
+            "user_id": 10371377,
+            "user_type": "registered",
+            "profile_image": "https://lh3.googleusercontent.com/-9fgEldXjMGM/AAAAAAAAAAI/AAAAAAAAAKo/yqNgYYO8Wfs/photo.jpg?sz=128",
+            "display_name": "Nath Shivanand",
+            "link": "https://stackoverflow.com/users/10371377/nath-shivanand"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1598848530,
+        "post_id": 63648136,
+        "comment_id": 112579692,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I replace httppost instead of http get but same error when I run the project"
+    },
+    {
+        "owner": {
+            "reputation": 143,
+            "user_id": 10371377,
+            "user_type": "registered",
+            "profile_image": "https://lh3.googleusercontent.com/-9fgEldXjMGM/AAAAAAAAAAI/AAAAAAAAAKo/yqNgYYO8Wfs/photo.jpg?sz=128",
+            "display_name": "Nath Shivanand",
+            "link": "https://stackoverflow.com/users/10371377/nath-shivanand"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1598847255,
+        "post_id": 63648136,
+        "comment_id": 112579464,
+        "content_license": "CC BY-SA 4.0",
+        "body": "here I am facing the actual issue  which value compare when user enter the right or wrong value <code>@if(empList.username == &quot;txtusername&quot; || empList.username == &quot;txtpassword&quot;)</code>"
+    }
+]

@@ -1,0 +1,36 @@
+[
+    {
+        "owner": {
+            "reputation": 5178,
+            "user_id": 1492496,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/dO7to.png?s=128&g=1",
+            "display_name": "Brian Parker",
+            "link": "https://stackoverflow.com/users/1492496/brian-parker"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1606197820,
+        "post_id": 64890511,
+        "comment_id": 114882342,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Here is a working Repo : <a href=\"https://github.com/BrianLParker/AuthApp\" rel=\"nofollow noreferrer\">github.com/BrianLParker/AuthApp</a>"
+    },
+    {
+        "owner": {
+            "reputation": 5178,
+            "user_id": 1492496,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/dO7to.png?s=128&g=1",
+            "display_name": "Brian Parker",
+            "link": "https://stackoverflow.com/users/1492496/brian-parker"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1605692938,
+        "post_id": 64890511,
+        "comment_id": 114726881,
+        "content_license": "CC BY-SA 4.0",
+        "body": "If this does not work for you I can make a repo I am working on public with policy and role based access on both the client and api."
+    }
+]

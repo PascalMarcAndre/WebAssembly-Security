@@ -1,0 +1,19 @@
+[
+    {
+        "owner": {
+            "reputation": 11,
+            "user_id": 11006618,
+            "user_type": "registered",
+            "profile_image": "https://lh6.googleusercontent.com/-p14kug4YbMc/AAAAAAAAAAI/AAAAAAAAAAA/ACevoQODf8rZrS-lFqM-i5cWWbD2_ZWaXw/mo/photo.jpg?sz=128",
+            "display_name": "Aya Choo",
+            "link": "https://stackoverflow.com/users/11006618/aya-choo"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1570378825,
+        "post_id": 58236395,
+        "comment_id": 102886926,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Thank you.I post this qustion to the <a href=\"https://github.com/AssemblyScript/assemblyscript/issues/888\" rel=\"nofollow noreferrer\">github.com/AssemblyScript/assemblyscript/issues/888</a>  export function getTypeOf():string {   let x:i32 = 12;   return typeof x; }  this code does not return &quot;i32&quot; but &quot;number&quot; in assemblyscript."
+    }
+]

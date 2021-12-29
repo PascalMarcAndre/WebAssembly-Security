@@ -1,0 +1,82 @@
+[
+    {
+        "owner": {
+            "reputation": 13855,
+            "user_id": 61311,
+            "user_type": "registered",
+            "accept_rate": 71,
+            "profile_image": "https://i.stack.imgur.com/EgbU7.jpg?s=128&g=1",
+            "display_name": "Peter Morris",
+            "link": "https://stackoverflow.com/users/61311/peter-morris"
+        },
+        "reply_to_user": {
+            "reputation": 9499,
+            "user_id": 631527,
+            "user_type": "registered",
+            "accept_rate": 36,
+            "profile_image": "https://i.stack.imgur.com/92e59.jpg?s=128&g=1",
+            "display_name": "Toolkit",
+            "link": "https://stackoverflow.com/users/631527/toolkit"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1616407025,
+        "post_id": 62701224,
+        "comment_id": 117982675,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@Toolkit You NEVER give a client access to the database server, it is a security flaw. The client should talk to an API server, and that should connect to the server."
+    },
+    {
+        "owner": {
+            "reputation": 9499,
+            "user_id": 631527,
+            "user_type": "registered",
+            "accept_rate": 36,
+            "profile_image": "https://i.stack.imgur.com/92e59.jpg?s=128&g=1",
+            "display_name": "Toolkit",
+            "link": "https://stackoverflow.com/users/631527/toolkit"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1616264536,
+        "post_id": 62701224,
+        "comment_id": 117949899,
+        "content_license": "CC BY-SA 4.0",
+        "body": "But how will you be doing calls to a database server?"
+    },
+    {
+        "owner": {
+            "reputation": 1370,
+            "user_id": 336829,
+            "user_type": "registered",
+            "accept_rate": 69,
+            "profile_image": "https://www.gravatar.com/avatar/05797da610f22ea6e7285909d562ee29?s=128&d=identicon&r=PG",
+            "display_name": "WinFXGuy",
+            "link": "https://stackoverflow.com/users/336829/winfxguy"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1612310563,
+        "post_id": 62701224,
+        "comment_id": 116725898,
+        "content_license": "CC BY-SA 4.0",
+        "body": "As per the link, Microsoft.AspNetCore.ProtectedBrowserStorage is only supported in Blazor server projects."
+    },
+    {
+        "owner": {
+            "reputation": 71,
+            "user_id": 3860630,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/02f624ae24cf9dc2527b81894c2bb99e?s=128&d=identicon&r=PG&f=1",
+            "display_name": "user3860630",
+            "link": "https://stackoverflow.com/users/3860630/user3860630"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1593708984,
+        "post_id": 62701224,
+        "comment_id": 110881896,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Thank you. I need to access the details in program.cs before initializing blazor. Any help for this?"
+    }
+]

@@ -1,0 +1,45 @@
+[
+    {
+        "owner": {
+            "reputation": 9443,
+            "user_id": 41403,
+            "user_type": "registered",
+            "accept_rate": 88,
+            "profile_image": "https://www.gravatar.com/avatar/476b1c3cf22e774b835403adc9af6a59?s=128&d=identicon&r=PG",
+            "display_name": "Quango",
+            "link": "https://stackoverflow.com/users/41403/quango"
+        },
+        "reply_to_user": {
+            "reputation": 573,
+            "user_id": 12984060,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/oytzY.jpg?s=128&g=1",
+            "display_name": "nogood",
+            "link": "https://stackoverflow.com/users/12984060/nogood"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1590781645,
+        "post_id": 62084031,
+        "comment_id": 109821871,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Support assumed you were using ASP.NET Framework, not Core/Blazor. Just copy the connection string bit starting at &quot;Data Source..&quot; upto the password bit"
+    },
+    {
+        "owner": {
+            "reputation": 573,
+            "user_id": 12984060,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/oytzY.jpg?s=128&g=1",
+            "display_name": "nogood",
+            "link": "https://stackoverflow.com/users/12984060/nogood"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1590757753,
+        "post_id": 62084031,
+        "comment_id": 109809455,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Mistake it is not MySQL it is a MSSQL. Support told me  connection string should be something like this   &lt;connectionStrings&gt; &lt;add name=&quot;DefaultConnection&quot; connectionString=&quot;Data Source=69.11.30.12;Initial Catalog=DBname;Persist Security Info=True;User ID=USERNAME;Password=PASSWORD&quot; providerName=&quot;System.Data.SqlClient&quot;/&gt;     &lt;!--&lt;add name=&quot;DefaultConnection&quot; connectionString=&quot;Data Source=(LocalDb)\\MSSQLLocalDB;AttachDbFilename=|DataDirector&zwnj;&#8203;y|\\db.mdf;Initial Catalog=Portal.Web;Integrated Security=True&quot; providerName=&quot;System.Data.SqlClient&quot; /&gt;--&gt;&lt;/connectionStrings&gt;"
+    }
+]

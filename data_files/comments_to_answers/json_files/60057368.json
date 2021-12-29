@@ -1,0 +1,46 @@
+[
+    {
+        "owner": {
+            "reputation": 31659,
+            "user_id": 1097780,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/a8f01ad795c29c3d05ad26ee47ea6069?s=128&d=identicon&r=PG",
+            "display_name": "Andreas Rossberg",
+            "link": "https://stackoverflow.com/users/1097780/andreas-rossberg"
+        },
+        "reply_to_user": {
+            "reputation": 255416,
+            "user_id": 147192,
+            "user_type": "registered",
+            "accept_rate": 80,
+            "profile_image": "https://i.stack.imgur.com/E78Vj.png?s=128&g=1",
+            "display_name": "Matthieu M.",
+            "link": "https://stackoverflow.com/users/147192/matthieu-m"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1580890425,
+        "post_id": 60057368,
+        "comment_id": 106242300,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@MatthieuM., &quot;across the whole of the WebAssembly VM memory&quot; -- not really. A Wasm module is sandboxed and can can only access memory objects it was explicitly given as imports. It can not modify other memories, especially not ones that are private to other modules. A &quot;nanoprocess&quot; is merely a tool convention for taking advantage of this already existing semantics."
+    },
+    {
+        "owner": {
+            "reputation": 9837,
+            "user_id": 257568,
+            "user_type": "registered",
+            "accept_rate": 50,
+            "profile_image": "https://www.gravatar.com/avatar/6c736aafc7e3bfcf9f924d09bde3aa99?s=128&d=identicon&r=PG",
+            "display_name": "ArtemGr",
+            "link": "https://stackoverflow.com/users/257568/artemgr"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1580823181,
+        "post_id": 60057368,
+        "comment_id": 106218212,
+        "content_license": "CC BY-SA 4.0",
+        "body": "&quot;<i>to find a vulnerability in the browser itself</i>&quot;... or in the JS layer that gives WASM access to the external world, and in the external world thus accessed."
+    }
+]

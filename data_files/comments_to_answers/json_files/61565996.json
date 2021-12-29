@@ -1,0 +1,36 @@
+[
+    {
+        "owner": {
+            "reputation": 480,
+            "user_id": 13440841,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/d7fdd03f3fe9e1c495551063d8b8da2a?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Marvin Klein",
+            "link": "https://stackoverflow.com/users/13440841/marvin-klein"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1588742900,
+        "post_id": 61565996,
+        "comment_id": 109012184,
+        "content_license": "CC BY-SA 4.0",
+        "body": "OnInitialized throws an NavigationException. To fix it, I used the OnAfterRenderedAsync() method."
+    },
+    {
+        "owner": {
+            "reputation": 55,
+            "user_id": 13253887,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/ptSpj.jpg?s=128&g=1",
+            "display_name": "dingdonglars",
+            "link": "https://stackoverflow.com/users/13253887/dingdonglars"
+        },
+        "edited": false,
+        "score": 2,
+        "creation_date": 1588696797,
+        "post_id": 61565996,
+        "comment_id": 108995796,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Thank you! I got this to work. The out-of-the box Blazor hosted client template already creates a RedirectToLogin.razor control. However, different to yours, the default RediriectToLogin redirects to the page Authentication.razor, which is also provided by the template. I wanted to preserve this and thus had to add a new, empty Layout to be used by the Authentication.razor page. Otherwise the Authentication page would load the MainLayout.razor again and RedirectToLogin and off it went in a silly loop :-) I got one step further in this adventure, thanks for your help!"
+    }
+]

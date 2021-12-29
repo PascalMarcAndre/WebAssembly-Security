@@ -1,0 +1,105 @@
+[
+    {
+        "owner": {
+            "reputation": 13400,
+            "user_id": 2940908,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://i.stack.imgur.com/E79WU.jpg?s=128&g=1",
+            "display_name": "agua from mars",
+            "link": "https://stackoverflow.com/users/2940908/agua-from-mars"
+        },
+        "reply_to_user": {
+            "reputation": 37,
+            "user_id": 12816347,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/cf89f024de7e476652de800a9d145393?s=128&d=identicon&r=PG&f=1",
+            "display_name": "ca53rlb",
+            "link": "https://stackoverflow.com/users/12816347/ca53rlb"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1588800904,
+        "post_id": 61593217,
+        "comment_id": 109043312,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Check your log and settings"
+    },
+    {
+        "owner": {
+            "reputation": 37,
+            "user_id": 12816347,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/cf89f024de7e476652de800a9d145393?s=128&d=identicon&r=PG&f=1",
+            "display_name": "ca53rlb",
+            "link": "https://stackoverflow.com/users/12816347/ca53rlb"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1588796190,
+        "post_id": 61593217,
+        "comment_id": 109041184,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Ahh, I think it was because I was missing .Services in your example  .Services.AddHttpClient(&quot;apiClient&quot;) However, I still get a 401 when calling the client?"
+    },
+    {
+        "owner": {
+            "reputation": 37,
+            "user_id": 12816347,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/cf89f024de7e476652de800a9d145393?s=128&d=identicon&r=PG&f=1",
+            "display_name": "ca53rlb",
+            "link": "https://stackoverflow.com/users/12816347/ca53rlb"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1588794835,
+        "post_id": 61593217,
+        "comment_id": 109040458,
+        "content_license": "CC BY-SA 4.0",
+        "body": "hmm,  It appears there might be some breaking changes ahead.  I am using Microsoft.AspNetCore.Components.WebAssembly.Authentication, Version=3.2.0.0,  I can&#39;t see any signatures matching AddOidcAuthentication&lt;RemoteAuthenticationState, RemoteUserAccount&gt;? I get this compile-time exception  &#39;IRemoteAuthenticationBuilder&lt;RemoteAuthenticationState, RemoteUserAccount&gt;&#39; does not contain a definition for &#39;AddHttpClient&#39; and the best extension method overload &#39;HttpClientFactoryServiceCollectionExtensions.AddHttpClient(&zwnj;&#8203;IServiceCollection, string)&#39; requires a receiver of type &#39;IServiceCollection&#39;"
+    },
+    {
+        "owner": {
+            "reputation": 13400,
+            "user_id": 2940908,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://i.stack.imgur.com/E79WU.jpg?s=128&g=1",
+            "display_name": "agua from mars",
+            "link": "https://stackoverflow.com/users/2940908/agua-from-mars"
+        },
+        "reply_to_user": {
+            "reputation": 37,
+            "user_id": 12816347,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/cf89f024de7e476652de800a9d145393?s=128&d=identicon&r=PG&f=1",
+            "display_name": "ca53rlb",
+            "link": "https://stackoverflow.com/users/12816347/ca53rlb"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1588626217,
+        "post_id": 61593217,
+        "comment_id": 108966638,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<code>Microsoft.Extensions.Http</code> 3.1.3"
+    },
+    {
+        "owner": {
+            "reputation": 37,
+            "user_id": 12816347,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/cf89f024de7e476652de800a9d145393?s=128&d=identicon&r=PG&f=1",
+            "display_name": "ca53rlb",
+            "link": "https://stackoverflow.com/users/12816347/ca53rlb"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1588612854,
+        "post_id": 61593217,
+        "comment_id": 108960073,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Thanks, I really appreciate your help. What references are you using?  When I add <code>Microsoft.AspNetCore.Components.WebAssembly.Authentication</code> I get &#39;IRemoteAuthenticationBuilder&lt;RemoteAuthenticationState, RemoteUserAccount&gt;&#39; does not contain a definition for &#39;AddHttpClient&#39; and no accessible extension method &#39;AddHttpClient&#39;"
+    }
+]

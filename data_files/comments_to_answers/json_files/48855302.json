@@ -1,0 +1,222 @@
+[
+    {
+        "owner": {
+            "reputation": 20886,
+            "user_id": 6036428,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/b632c15ba23e78e466c8d33d657378fe?s=128&d=identicon&r=PG&f=1",
+            "display_name": "jmrk",
+            "link": "https://stackoverflow.com/users/6036428/jmrk"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1519085796,
+        "post_id": 48855302,
+        "comment_id": 84756118,
+        "content_license": "CC BY-SA 3.0",
+        "body": "I don&#39;t see anyone making claims about &quot;console.log&quot;. Measuring and comparing performance is tricky -- no one-line program will give you results that are representative of real, large apps. Nobody knows just how slow JavaScript compiled to WebAssembly would be for typical applications because nobody has tried it, but 10x-100x slower than running it on V8 directly is a reasonable estimate, I think."
+    },
+    {
+        "owner": {
+            "reputation": 2248,
+            "user_id": 931409,
+            "user_type": "registered",
+            "accept_rate": 70,
+            "profile_image": "https://www.gravatar.com/avatar/597e6c69fda7baf00dde0c2e181efb69?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Tomov",
+            "link": "https://stackoverflow.com/users/931409/tomov"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1519029954,
+        "post_id": 48855302,
+        "comment_id": 84727559,
+        "content_license": "CC BY-SA 3.0",
+        "body": "Yet the claim that &quot;console.log(&#39;hi&#39;);&quot; compiled to webassembly will be 100 times slower than &quot;printf(&#39;hi&#39;);&quot; compiled to webassembly is quite strange and lacking argumentation. So I hope you understand where I&#39;m coming from."
+    },
+    {
+        "owner": {
+            "reputation": 2248,
+            "user_id": 931409,
+            "user_type": "registered",
+            "accept_rate": 70,
+            "profile_image": "https://www.gravatar.com/avatar/597e6c69fda7baf00dde0c2e181efb69?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Tomov",
+            "link": "https://stackoverflow.com/users/931409/tomov"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1519026700,
+        "post_id": 48855302,
+        "comment_id": 84726098,
+        "content_license": "CC BY-SA 3.0",
+        "body": "No disrespect meant, sorry if it seemed like this :)"
+    },
+    {
+        "owner": {
+            "reputation": 20886,
+            "user_id": 6036428,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/b632c15ba23e78e466c8d33d657378fe?s=128&d=identicon&r=PG&f=1",
+            "display_name": "jmrk",
+            "link": "https://stackoverflow.com/users/6036428/jmrk"
+        },
+        "edited": false,
+        "score": 2,
+        "creation_date": 1519006870,
+        "post_id": 48855302,
+        "comment_id": 84720887,
+        "content_license": "CC BY-SA 3.0",
+        "body": "Two corrections here: (1) optimized compiled JS code is about as fast as C++ or whatever you call &quot;native&quot;. It is not &quot;a joke&quot;. (2) Andreas Rossberg is a &quot;dev with deep V8 experience&quot;, he knows what he&#39;s talking about, and it&#39;s not &quot;nonsense&quot;. Please be respectful of the people who are spending their time to help you."
+    },
+    {
+        "owner": {
+            "reputation": 2248,
+            "user_id": 931409,
+            "user_type": "registered",
+            "accept_rate": 70,
+            "profile_image": "https://www.gravatar.com/avatar/597e6c69fda7baf00dde0c2e181efb69?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Tomov",
+            "link": "https://stackoverflow.com/users/931409/tomov"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1518984983,
+        "post_id": 48855302,
+        "comment_id": 84715654,
+        "content_license": "CC BY-SA 3.0",
+        "body": "That&#39;s ok. But even with all the theoretically possible optimizations one can do on the JS code, it will still run 10x times slower than the native code equivalent. That&#39;s not my statement, this is what the browser devs are saying. So this discussion about js optimizations is really a nonsense.  Its performance is a joke compared to native code. I&#39;ve researched the topic long enough and the reason I&#39;m posting here is to hopefully get a response from devs with deep V8 experience that can explain how the &quot;Script::Compile&quot; function works, what it does, is it limited in API capabilities, etc."
+    },
+    {
+        "owner": {
+            "reputation": 31659,
+            "user_id": 1097780,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/a8f01ad795c29c3d05ad26ee47ea6069?s=128&d=identicon&r=PG",
+            "display_name": "Andreas Rossberg",
+            "link": "https://stackoverflow.com/users/1097780/andreas-rossberg"
+        },
+        "reply_to_user": {
+            "reputation": 2248,
+            "user_id": 931409,
+            "user_type": "registered",
+            "accept_rate": 70,
+            "profile_image": "https://www.gravatar.com/avatar/597e6c69fda7baf00dde0c2e181efb69?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Tomov",
+            "link": "https://stackoverflow.com/users/931409/tomov"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1518983801,
+        "post_id": 48855302,
+        "comment_id": 84715311,
+        "content_license": "CC BY-SA 3.0",
+        "body": "JS requires dynamic optimisation to be fast (especially for math, because you first need to find out all the types, which you cannot statically for JS). Simply speaking, a JS VM first compiles a JS program to very slow code, profiles it while running, and then recompiles it to something more optimised, often over and over again, while the program is still running. For that, it needs to have the original JS program or something equivalent. An offline compiler could likewise only generate very slow code initially, but with no way of recompiling and optimising it while running."
+    },
+    {
+        "owner": {
+            "reputation": 2248,
+            "user_id": 931409,
+            "user_type": "registered",
+            "accept_rate": 70,
+            "profile_image": "https://www.gravatar.com/avatar/597e6c69fda7baf00dde0c2e181efb69?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Tomov",
+            "link": "https://stackoverflow.com/users/931409/tomov"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1518982182,
+        "post_id": 48855302,
+        "comment_id": 84714867,
+        "content_license": "CC BY-SA 3.0",
+        "body": "Sorry I&#39;m stupid and I still don&#39;t understand. The webassembly native code is meant to perform mostly math calculations - and it&#39;s doing it tens of times faster than standard JS - event with all its dynamic optimisations, and so on. That&#39;s why it exists - speed. And you don&#39;t know what language was used to generate this webassembly native code - it could be c++, rust, anything. How come if it was javascript, it becomes 100x slower? The only possible problem I see is if the native code is limited to only certain operations - like lack of DOM. Speed is absolutely not the problem here."
+    },
+    {
+        "owner": {
+            "reputation": 31659,
+            "user_id": 1097780,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/a8f01ad795c29c3d05ad26ee47ea6069?s=128&d=identicon&r=PG",
+            "display_name": "Andreas Rossberg",
+            "link": "https://stackoverflow.com/users/1097780/andreas-rossberg"
+        },
+        "reply_to_user": {
+            "reputation": 2248,
+            "user_id": 931409,
+            "user_type": "registered",
+            "accept_rate": 70,
+            "profile_image": "https://www.gravatar.com/avatar/597e6c69fda7baf00dde0c2e181efb69?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Tomov",
+            "link": "https://stackoverflow.com/users/931409/tomov"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1518981247,
+        "post_id": 48855302,
+        "comment_id": 84714565,
+        "content_license": "CC BY-SA 3.0",
+        "body": "Compiling JS to Wasm first and from there into native code later would would lose all dynamic optimisations. The result will easily be 10-100x slower. Moreover, you would have to ship half a JavaScript VM with every script, which would blow it up to megabytes of code. JavaScript is simply not designed for static compilation."
+    },
+    {
+        "owner": {
+            "reputation": 2248,
+            "user_id": 931409,
+            "user_type": "registered",
+            "accept_rate": 70,
+            "profile_image": "https://www.gravatar.com/avatar/597e6c69fda7baf00dde0c2e181efb69?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Tomov",
+            "link": "https://stackoverflow.com/users/931409/tomov"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1518980891,
+        "post_id": 48855302,
+        "comment_id": 84714447,
+        "content_license": "CC BY-SA 3.0",
+        "body": "this is how it looks like: <a href=\"https://mdn.mozillademos.org/files/14653/assembly-output.png\" rel=\"nofollow noreferrer\">mdn.mozillademos.org/files/14653/assembly-output.png</a> If c++ code can be compiled into this, then I&#39;m trying to understand why JS cannot be. It seems to me like nobody bothered to write the tool for this task yet. And not that it&#39;s not possible."
+    },
+    {
+        "owner": {
+            "reputation": 31659,
+            "user_id": 1097780,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/a8f01ad795c29c3d05ad26ee47ea6069?s=128&d=identicon&r=PG",
+            "display_name": "Andreas Rossberg",
+            "link": "https://stackoverflow.com/users/1097780/andreas-rossberg"
+        },
+        "reply_to_user": {
+            "reputation": 2248,
+            "user_id": 931409,
+            "user_type": "registered",
+            "accept_rate": 70,
+            "profile_image": "https://www.gravatar.com/avatar/597e6c69fda7baf00dde0c2e181efb69?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Tomov",
+            "link": "https://stackoverflow.com/users/931409/tomov"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1518980441,
+        "post_id": 48855302,
+        "comment_id": 84714314,
+        "content_license": "CC BY-SA 3.0",
+        "body": "But it&#39;s not machine code. The VM still has to compile it to machine code in your browser."
+    },
+    {
+        "owner": {
+            "reputation": 2248,
+            "user_id": 931409,
+            "user_type": "registered",
+            "accept_rate": 70,
+            "profile_image": "https://www.gravatar.com/avatar/597e6c69fda7baf00dde0c2e181efb69?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Tomov",
+            "link": "https://stackoverflow.com/users/931409/tomov"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1518980132,
+        "post_id": 48855302,
+        "comment_id": 84714208,
+        "content_license": "CC BY-SA 3.0",
+        "body": "Well today I compiled a bunch of webassembly stuff and it&#39;s quite non-humanly readable :)  I don&#39;t know what you mean by &quot;webassembly is not doing that&quot; - it&#39;s precisely that :)"
+    }
+]

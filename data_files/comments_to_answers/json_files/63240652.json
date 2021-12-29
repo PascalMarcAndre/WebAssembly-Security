@@ -1,0 +1,72 @@
+[
+    {
+        "owner": {
+            "reputation": 273,
+            "user_id": 5574962,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/EmmZL.png?s=128&g=1",
+            "display_name": "3per",
+            "link": "https://stackoverflow.com/users/5574962/3per"
+        },
+        "reply_to_user": {
+            "reputation": 3093,
+            "user_id": 2427359,
+            "user_type": "registered",
+            "accept_rate": 62,
+            "profile_image": "https://www.gravatar.com/avatar/ab8c78d8270ab839f9461cf72cd20a57?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Simon",
+            "link": "https://stackoverflow.com/users/2427359/simon"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1596525963,
+        "post_id": 63240652,
+        "comment_id": 111830997,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@Simon, I have an AspNet.Core Blazor WebAssembly project working with 401 for non-authenticated requests and 403 for non-authorized"
+    },
+    {
+        "owner": {
+            "reputation": 273,
+            "user_id": 5574962,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/EmmZL.png?s=128&g=1",
+            "display_name": "3per",
+            "link": "https://stackoverflow.com/users/5574962/3per"
+        },
+        "reply_to_user": {
+            "reputation": 3093,
+            "user_id": 2427359,
+            "user_type": "registered",
+            "accept_rate": 62,
+            "profile_image": "https://www.gravatar.com/avatar/ab8c78d8270ab839f9461cf72cd20a57?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Simon",
+            "link": "https://stackoverflow.com/users/2427359/simon"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1596525478,
+        "post_id": 63240652,
+        "comment_id": 111830784,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@Simon, you have added <code>OnRedirectToAccessDenied</code>. Just add <code>OnRedirectToLogin</code> below"
+    },
+    {
+        "owner": {
+            "reputation": 3093,
+            "user_id": 2427359,
+            "user_type": "registered",
+            "accept_rate": 62,
+            "profile_image": "https://www.gravatar.com/avatar/ab8c78d8270ab839f9461cf72cd20a57?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Simon",
+            "link": "https://stackoverflow.com/users/2427359/simon"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1596524472,
+        "post_id": 63240652,
+        "comment_id": 111830346,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I already added this codeblock. Please look into my question."
+    }
+]

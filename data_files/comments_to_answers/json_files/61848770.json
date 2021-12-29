@@ -1,0 +1,157 @@
+[
+    {
+        "owner": {
+            "reputation": 13400,
+            "user_id": 2940908,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://i.stack.imgur.com/E79WU.jpg?s=128&g=1",
+            "display_name": "agua from mars",
+            "link": "https://stackoverflow.com/users/2940908/agua-from-mars"
+        },
+        "reply_to_user": {
+            "reputation": 33,
+            "user_id": 7979810,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/43ee3fccebd7cae5e3ee5171c0c91566?s=128&d=identicon&r=PG&f=1",
+            "display_name": "matlodej",
+            "link": "https://stackoverflow.com/users/7979810/matlodej"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1589783390,
+        "post_id": 61848770,
+        "comment_id": 109419129,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<a href=\"https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.builder.jwtbeareroptions.refreshonissuerkeynotfound?view=aspnetcore-1.1\" rel=\"nofollow noreferrer\">docs.microsoft.com/en-us/dotnet/api/&hellip;</a>"
+    },
+    {
+        "owner": {
+            "reputation": 13400,
+            "user_id": 2940908,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://i.stack.imgur.com/E79WU.jpg?s=128&g=1",
+            "display_name": "agua from mars",
+            "link": "https://stackoverflow.com/users/2940908/agua-from-mars"
+        },
+        "reply_to_user": {
+            "reputation": 33,
+            "user_id": 7979810,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/43ee3fccebd7cae5e3ee5171c0c91566?s=128&d=identicon&r=PG&f=1",
+            "display_name": "matlodej",
+            "link": "https://stackoverflow.com/users/7979810/matlodej"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1589783018,
+        "post_id": 61848770,
+        "comment_id": 109418982,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Maybe by settings JwtBearer options : <a href=\"https://docs.microsoft.com/en-us/aspnet/core/security/blazor/webassembly/additional-scenarios?view=aspnetcore-3.1#use-open-id-connect-oidc-v20-endpoints\" rel=\"nofollow noreferrer\">docs.microsoft.com/en-us/aspnet/core/security/blazor/&hellip;</a>. <a href=\"https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.builder.jwtbeareroptions.refreshonissuerkeynotfound?view=aspnetcore-1.1\" rel=\"nofollow noreferrer\">docs.microsoft.com/en-us/dotnet/api/&hellip;</a> Or by implementing your <code>AuthenticationStateManager</code> I guess yes"
+    },
+    {
+        "owner": {
+            "reputation": 33,
+            "user_id": 7979810,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/43ee3fccebd7cae5e3ee5171c0c91566?s=128&d=identicon&r=PG&f=1",
+            "display_name": "matlodej",
+            "link": "https://stackoverflow.com/users/7979810/matlodej"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1589760760,
+        "post_id": 61848770,
+        "comment_id": 109413777,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Is there any way or workaround on Blazor side to get it to work with Cognito (for example to not use iframes)? My entire infrastructure is based on AWS, I use Cognito as an Authorizer for API Gateway, and I would really like to use Blazor for this project..."
+    },
+    {
+        "owner": {
+            "reputation": 13400,
+            "user_id": 2940908,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://i.stack.imgur.com/E79WU.jpg?s=128&g=1",
+            "display_name": "agua from mars",
+            "link": "https://stackoverflow.com/users/2940908/agua-from-mars"
+        },
+        "reply_to_user": {
+            "reputation": 33,
+            "user_id": 7979810,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/43ee3fccebd7cae5e3ee5171c0c91566?s=128&d=identicon&r=PG&f=1",
+            "display_name": "matlodej",
+            "link": "https://stackoverflow.com/users/7979810/matlodej"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1589756586,
+        "post_id": 61848770,
+        "comment_id": 109412811,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Hummm, cognito doesn&#39;t support iframe silent renew at the moment if I read well this issue : <a href=\"https://github.com/amazon-archives/amazon-cognito-identity-js/issues/599\" rel=\"nofollow noreferrer\">github.com/amazon-archives/amazon-cognito-identity-js/issues&zwnj;&#8203;/&hellip;</a>"
+    },
+    {
+        "owner": {
+            "reputation": 33,
+            "user_id": 7979810,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/43ee3fccebd7cae5e3ee5171c0c91566?s=128&d=identicon&r=PG&f=1",
+            "display_name": "matlodej",
+            "link": "https://stackoverflow.com/users/7979810/matlodej"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1589750172,
+        "post_id": 61848770,
+        "comment_id": 109411070,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Yes, I configured both <code>login</code> and <code>logout</code> redirect urls, and they work just fine when the app eventually calls Cognito, the callback is processed without problems. The problem is the app trying and failing to load the iframe, as detailed in my edited question"
+    },
+    {
+        "owner": {
+            "reputation": 13400,
+            "user_id": 2940908,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://i.stack.imgur.com/E79WU.jpg?s=128&g=1",
+            "display_name": "agua from mars",
+            "link": "https://stackoverflow.com/users/2940908/agua-from-mars"
+        },
+        "reply_to_user": {
+            "reputation": 33,
+            "user_id": 7979810,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/43ee3fccebd7cae5e3ee5171c0c91566?s=128&d=identicon&r=PG&f=1",
+            "display_name": "matlodej",
+            "link": "https://stackoverflow.com/users/7979810/matlodej"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1589732176,
+        "post_id": 61848770,
+        "comment_id": 109404069,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Did you add <i><a href=\"https://localhost:44306/authentication/login-callback\" rel=\"nofollow noreferrer\">localhost:44306/authentication/login-callback</a></i> as redirect Uri in cognito ?"
+    },
+    {
+        "owner": {
+            "reputation": 33,
+            "user_id": 7979810,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/43ee3fccebd7cae5e3ee5171c0c91566?s=128&d=identicon&r=PG&f=1",
+            "display_name": "matlodej",
+            "link": "https://stackoverflow.com/users/7979810/matlodej"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1589727203,
+        "post_id": 61848770,
+        "comment_id": 109401932,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Thank you very much for your answer, however, I am still unable to get this to work. I believe I may have not described my issue properly, I have updated my question with additional details which will hopefully help illustrate the problem. Any chance you could take another look?"
+    }
+]

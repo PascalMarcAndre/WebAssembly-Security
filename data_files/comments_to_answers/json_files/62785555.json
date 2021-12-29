@@ -1,0 +1,61 @@
+[
+    {
+        "owner": {
+            "reputation": 73,
+            "user_id": 13129431,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/be40c8995899485adf5c48d87d01ae69?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Zack",
+            "link": "https://stackoverflow.com/users/13129431/zack"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1594245136,
+        "post_id": 62785555,
+        "comment_id": 111062719,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Yes, I mean that it was throwing C# runtime null reference errors until I restarted VS -- no matter if I had stuff in the browser storage or not. I couldn&#39;t get it to run to store anything in other words. I read others having the same issues with webassembly."
+    },
+    {
+        "owner": {
+            "reputation": 141,
+            "user_id": 4096106,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/acbe8a5efc5502ec1c1b3475b89bde93?s=128&d=identicon&r=PG&f=1",
+            "display_name": "mend0k",
+            "link": "https://stackoverflow.com/users/4096106/mend0k"
+        },
+        "reply_to_user": {
+            "reputation": 73,
+            "user_id": 13129431,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/be40c8995899485adf5c48d87d01ae69?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Zack",
+            "link": "https://stackoverflow.com/users/13129431/zack"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1594244392,
+        "post_id": 62785555,
+        "comment_id": 111062492,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@Zack Actually there are multiple types of storage services provided by Blazored. Session storage persists (user state) only in the current browsing session as it&#39;s only stored in the browser cache, local storage persists even if you close your current browsing session/open a new tab as it&#39;s stored in your local machine&#39;s temp folder (iirc).  Hope that helps :)"
+    },
+    {
+        "owner": {
+            "reputation": 73,
+            "user_id": 13129431,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/be40c8995899485adf5c48d87d01ae69?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Zack",
+            "link": "https://stackoverflow.com/users/13129431/zack"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1594243801,
+        "post_id": 62785555,
+        "comment_id": 111062296,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Thank you. I actually tried it this way and my example way and both failed. Turns out I had to restart my whole computer as Visual Studio (19) was holding onto some sort of cache causing the errors. Once I restarted, then I could do it the way you showed here. One thing though, you must be using a different Blazored library or version because ISessionStorageService  doesn&#39;t exist in the one I am talking about -- it is ILocalStorageService. I&#39;ll go ahead and mark this as answered though."
+    }
+]

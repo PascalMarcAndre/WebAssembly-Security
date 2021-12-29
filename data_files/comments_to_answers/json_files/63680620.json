@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 151,
+            "user_id": 997351,
+            "user_type": "registered",
+            "accept_rate": 0,
+            "profile_image": "https://www.gravatar.com/avatar/01fe1702d92c39ee9fa7bb5258e7b2cc?s=128&d=identicon&r=PG",
+            "display_name": "topspin",
+            "link": "https://stackoverflow.com/users/997351/topspin"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1598978354,
+        "post_id": 63680620,
+        "comment_id": 112628667,
+        "content_license": "CC BY-SA 4.0",
+        "body": "(a) Cling looks interesting, thanks - though probably no way prevent invalid pointer access. (b) You&#39;re right, interpreted code can offer decent performance. There are still cases where C/C++ is desirable, however - hence projects like Chromium Sandbox, etc."
+    }
+]

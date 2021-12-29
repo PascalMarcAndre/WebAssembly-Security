@@ -1,0 +1,19 @@
+[
+    {
+        "owner": {
+            "reputation": 505,
+            "user_id": 11023699,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/d02a3ca4d9eefe8d3133ece3dc68e0d3?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Franky",
+            "link": "https://stackoverflow.com/users/11023699/franky"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1616966742,
+        "post_id": 66846341,
+        "comment_id": 118161687,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Aha, understand now. Thanks!"
+    }
+]

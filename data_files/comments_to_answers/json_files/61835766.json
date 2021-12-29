@@ -1,0 +1,19 @@
+[
+    {
+        "owner": {
+            "reputation": 2574,
+            "user_id": 1721898,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/7rd9J.jpg?s=128&g=1",
+            "display_name": "Norm Johanson",
+            "link": "https://stackoverflow.com/users/1721898/norm-johanson"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1589662034,
+        "post_id": 61835766,
+        "comment_id": 109384444,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Thanks. That was the missing piece. Not sure why I didn&#39;t find that sooner."
+    }
+]

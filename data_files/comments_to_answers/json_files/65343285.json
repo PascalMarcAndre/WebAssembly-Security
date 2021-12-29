@@ -1,0 +1,19 @@
+[
+    {
+        "owner": {
+            "reputation": 31,
+            "user_id": 14842076,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/fc06ae93da30a23da61df31d01654057?s=128&d=identicon&r=PG&f=1",
+            "display_name": "rayder2007",
+            "link": "https://stackoverflow.com/users/14842076/rayder2007"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1608367990,
+        "post_id": 65343285,
+        "comment_id": 115566323,
+        "content_license": "CC BY-SA 4.0",
+        "body": "The question has been completed."
+    }
+]

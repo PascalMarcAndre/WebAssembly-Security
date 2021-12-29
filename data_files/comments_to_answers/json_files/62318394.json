@@ -1,0 +1,38 @@
+[
+    {
+        "owner": {
+            "reputation": 1493,
+            "user_id": 4784579,
+            "user_type": "registered",
+            "accept_rate": 100,
+            "profile_image": "https://i.stack.imgur.com/KRlU0.jpg?s=128&g=1",
+            "display_name": "ipavlu",
+            "link": "https://stackoverflow.com/users/4784579/ipavlu"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1596903552,
+        "post_id": 62318394,
+        "comment_id": 111963117,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Who cares about Win32 on x64 servers?? This is not a workaround... Microsoft says that for years! It is more like: solve itching of your hand by chopping it OFF!!!"
+    },
+    {
+        "owner": {
+            "reputation": 3268,
+            "user_id": 3545438,
+            "user_type": "registered",
+            "accept_rate": 49,
+            "profile_image": "https://www.gravatar.com/avatar/a7e318fc7a4e748e9be04ea7b03341e7?s=128&d=identicon&r=PG",
+            "display_name": "Matthew Flynn",
+            "link": "https://stackoverflow.com/users/3545438/matthew-flynn"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1591863733,
+        "post_id": 62318394,
+        "comment_id": 110218644,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Thank you for the link, I&#39;ve updated the question to include a screen for the application pool being used, along with a bit more info on the server (which has a plesk admin installed as well)."
+    }
+]

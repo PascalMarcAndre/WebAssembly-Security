@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 2712,
+            "user_id": 1081918,
+            "user_type": "registered",
+            "accept_rate": 50,
+            "profile_image": "https://www.gravatar.com/avatar/cf7a26b409d779374d927c68f40f9602?s=128&d=identicon&r=PG",
+            "display_name": "Dave",
+            "link": "https://stackoverflow.com/users/1081918/dave"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1605709699,
+        "post_id": 62700961,
+        "comment_id": 114734509,
+        "content_license": "CC BY-SA 4.0",
+        "body": "For me, this works for a few hours until my token expires, but the Msal library doesn&#39;t seem to automatically get a new token. Do you have the same experience?   Even after I manually try to sign out with <code>await SignOutManager.SetSignOutState();</code> any pages that I decorate with an <code>[Authorize]</code> attribute, still get routed to my NotAuthorized view.  The only way I can get a new token is if I completely clear localStorage in my browser."
+    }
+]

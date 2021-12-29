@@ -1,0 +1,131 @@
+[
+    {
+        "owner": {
+            "reputation": 96,
+            "user_id": 6830857,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/sXQMo.jpg?s=128&g=1",
+            "display_name": "Kasper Olesen",
+            "link": "https://stackoverflow.com/users/6830857/kasper-olesen"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1574233508,
+        "post_id": 58875620,
+        "comment_id": 104153932,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Good to know :) Thanks."
+    },
+    {
+        "owner": {
+            "reputation": 13400,
+            "user_id": 2940908,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://i.stack.imgur.com/E79WU.jpg?s=128&g=1",
+            "display_name": "agua from mars",
+            "link": "https://stackoverflow.com/users/2940908/agua-from-mars"
+        },
+        "reply_to_user": {
+            "reputation": 96,
+            "user_id": 6830857,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/sXQMo.jpg?s=128&g=1",
+            "display_name": "Kasper Olesen",
+            "link": "https://stackoverflow.com/users/6830857/kasper-olesen"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1574109159,
+        "post_id": 58875620,
+        "comment_id": 104106310,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Yes, that act as if (user.IsAuthorized) { display authorized links } else { display unauthorized links }"
+    },
+    {
+        "owner": {
+            "reputation": 96,
+            "user_id": 6830857,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/sXQMo.jpg?s=128&g=1",
+            "display_name": "Kasper Olesen",
+            "link": "https://stackoverflow.com/users/6830857/kasper-olesen"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1574105479,
+        "post_id": 58875620,
+        "comment_id": 104104567,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Yes, and that does seem useful. But does it help update the NavBar when the authorization state changes?"
+    },
+    {
+        "owner": {
+            "reputation": 13400,
+            "user_id": 2940908,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://i.stack.imgur.com/E79WU.jpg?s=128&g=1",
+            "display_name": "agua from mars",
+            "link": "https://stackoverflow.com/users/2940908/agua-from-mars"
+        },
+        "reply_to_user": {
+            "reputation": 96,
+            "user_id": 6830857,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/sXQMo.jpg?s=128&g=1",
+            "display_name": "Kasper Olesen",
+            "link": "https://stackoverflow.com/users/6830857/kasper-olesen"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1573824473,
+        "post_id": 58875620,
+        "comment_id": 104023372,
+        "content_license": "CC BY-SA 4.0",
+        "body": "or this <a href=\"https://github.com/aguacongas/TheIdServer/blob/master/src/Aguacongas.TheIdServer.BlazorApp/Components/Form/AuthorizeCheckbox.razor\" rel=\"nofollow noreferrer\">github.com/aguacongas/TheIdServer/blob/master/src/&hellip;</a>"
+    },
+    {
+        "owner": {
+            "reputation": 13400,
+            "user_id": 2940908,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://i.stack.imgur.com/E79WU.jpg?s=128&g=1",
+            "display_name": "agua from mars",
+            "link": "https://stackoverflow.com/users/2940908/agua-from-mars"
+        },
+        "reply_to_user": {
+            "reputation": 96,
+            "user_id": 6830857,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/sXQMo.jpg?s=128&g=1",
+            "display_name": "Kasper Olesen",
+            "link": "https://stackoverflow.com/users/6830857/kasper-olesen"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1573824012,
+        "post_id": 58875620,
+        "comment_id": 104023136,
+        "content_license": "CC BY-SA 4.0",
+        "body": "You can use the AuthorizeView in your nav-bar, or every where you want, I use it to render input or text depending on the user authorization, check this <a href=\"https://github.com/aguacongas/TheIdServer/blob/f629c85524a1f815b90f4da149c61533a01522af/src/Aguacongas.TheIdServer.BlazorApp/Shared/NavMenu.razor\" rel=\"nofollow noreferrer\">github.com/aguacongas/TheIdServer/blob/&hellip;</a>"
+    },
+    {
+        "owner": {
+            "reputation": 96,
+            "user_id": 6830857,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/sXQMo.jpg?s=128&g=1",
+            "display_name": "Kasper Olesen",
+            "link": "https://stackoverflow.com/users/6830857/kasper-olesen"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1573817569,
+        "post_id": 58875620,
+        "comment_id": 104019801,
+        "content_license": "CC BY-SA 4.0",
+        "body": "This does seem like a great option for authorization, but I want to ensure that the admin / moderation page links are completely hidden unless authorized. Otherwise, I could make it work with my current system. Clicking the links on the NavBar already also does update it. I found a method called StateHasChanged() that all the pages have, so I think I will try to make a solution where I manually call this method on the NavBar after the user is logged in."
+    }
+]

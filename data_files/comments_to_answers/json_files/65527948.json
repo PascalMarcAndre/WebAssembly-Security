@@ -1,0 +1,46 @@
+[
+    {
+        "owner": {
+            "reputation": 32597,
+            "user_id": 9455659,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/Albsq.jpg?s=128&g=1",
+            "display_name": "Joy Wang-MSFT",
+            "link": "https://stackoverflow.com/users/9455659/joy-wang-msft"
+        },
+        "reply_to_user": {
+            "reputation": 1171,
+            "user_id": 1200984,
+            "user_type": "registered",
+            "accept_rate": 50,
+            "profile_image": "https://i.stack.imgur.com/VVBzu.jpg?s=128&g=1",
+            "display_name": "phil",
+            "link": "https://stackoverflow.com/users/1200984/phil"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1609644698,
+        "post_id": 65527948,
+        "comment_id": 115885629,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@phil If so, you may need to use the <a href=\"https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-oauth2-implicit-grant-flow#getting-access-tokens-silently-in-the-background\" rel=\"nofollow noreferrer\">implicit flow</a>, it can get the token from the <code>&#47;authorize</code> endpoint directly, msal sample <a href=\"https://docs.microsoft.com/en-us/azure/active-directory/develop/scenario-spa-overview\" rel=\"nofollow noreferrer\">docs.microsoft.com/en-us/azure/active-directory/develop/&hellip;</a>"
+    },
+    {
+        "owner": {
+            "reputation": 1171,
+            "user_id": 1200984,
+            "user_type": "registered",
+            "accept_rate": 50,
+            "profile_image": "https://i.stack.imgur.com/VVBzu.jpg?s=128&g=1",
+            "display_name": "phil",
+            "link": "https://stackoverflow.com/users/1200984/phil"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1609618252,
+        "post_id": 65527948,
+        "comment_id": 115880489,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I tried this but to clarify my client is a Blazor Web Assembly App, effectively a Single Page Application, which cannot be trusted to have a secret. The <code>AcquireTokenForClient()</code> call actually returns an error that it is not supported on the platform. I have added further information to my question."
+    }
+]

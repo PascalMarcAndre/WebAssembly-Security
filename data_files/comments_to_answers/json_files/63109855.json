@@ -1,0 +1,45 @@
+[
+    {
+        "owner": {
+            "reputation": 13400,
+            "user_id": 2940908,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://i.stack.imgur.com/E79WU.jpg?s=128&g=1",
+            "display_name": "agua from mars",
+            "link": "https://stackoverflow.com/users/2940908/agua-from-mars"
+        },
+        "reply_to_user": {
+            "reputation": 965,
+            "user_id": 880658,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/d7b7ea5acb3b3598fa50e51754d954ea?s=128&d=identicon&r=PG",
+            "display_name": "lnaie",
+            "link": "https://stackoverflow.com/users/880658/lnaie"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1612768643,
+        "post_id": 63109855,
+        "comment_id": 116859482,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@Inaie, actually it does work, I just test it using .Net 5. Are you sure you use an OIDC authentication ?"
+    },
+    {
+        "owner": {
+            "reputation": 965,
+            "user_id": 880658,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/d7b7ea5acb3b3598fa50e51754d954ea?s=128&d=identicon&r=PG",
+            "display_name": "lnaie",
+            "link": "https://stackoverflow.com/users/880658/lnaie"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1612556320,
+        "post_id": 63109855,
+        "comment_id": 116813335,
+        "content_license": "CC BY-SA 4.0",
+        "body": "this doesn&#39;t work with the latest and .net 5"
+    }
+]

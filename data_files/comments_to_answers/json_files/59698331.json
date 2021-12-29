@@ -1,0 +1,47 @@
+[
+    {
+        "owner": {
+            "reputation": 2743,
+            "user_id": 2838509,
+            "user_type": "registered",
+            "accept_rate": 63,
+            "profile_image": "https://www.gravatar.com/avatar/ddc514bdff431b6db641bba4d96d7658?s=128&d=identicon&r=PG&f=1",
+            "display_name": "NPadrutt",
+            "link": "https://stackoverflow.com/users/2838509/npadrutt"
+        },
+        "reply_to_user": {
+            "reputation": 2187,
+            "user_id": 384585,
+            "user_type": "registered",
+            "accept_rate": 100,
+            "profile_image": "https://www.gravatar.com/avatar/7127d88b22518f086edc3f3edc6c24db?s=128&d=identicon&r=PG",
+            "display_name": "Michael Washington",
+            "link": "https://stackoverflow.com/users/384585/michael-washington"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1578775091,
+        "post_id": 59698331,
+        "comment_id": 105551223,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I have to wait two days since it is my own answer, but I&#39;ll do that then :)"
+    },
+    {
+        "owner": {
+            "reputation": 2187,
+            "user_id": 384585,
+            "user_type": "registered",
+            "accept_rate": 100,
+            "profile_image": "https://www.gravatar.com/avatar/7127d88b22518f086edc3f3edc6c24db?s=128&d=identicon&r=PG",
+            "display_name": "Michael Washington",
+            "link": "https://stackoverflow.com/users/384585/michael-washington"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1578774831,
+        "post_id": 59698331,
+        "comment_id": 105551170,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Mark this as the answer :)"
+    }
+]

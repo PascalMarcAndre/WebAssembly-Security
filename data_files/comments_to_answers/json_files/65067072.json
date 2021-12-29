@@ -1,0 +1,19 @@
+[
+    {
+        "owner": {
+            "reputation": 13,
+            "user_id": 13681455,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/453183c305fffd9afd8f28701f9adba1?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Mohammed Rubeesh ",
+            "link": "https://stackoverflow.com/users/13681455/mohammed-rubeesh"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1606802733,
+        "post_id": 65067072,
+        "comment_id": 115065011,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Even tried changing the second scope to AdditionalScopesToConsent.  builder.Configuration.Bind(&quot;AzureAd&quot;, options.ProviderOptions.Authentication);     options.ProviderOptions.DefaultAccessTokenScopes.Add(&quot;<a href=\"https://graph.microsoft.com/User.Read&quot;\" rel=\"nofollow noreferrer\">graph.&zwnj;&#8203;microsoft.com/User.R&zwnj;&#8203;ead&quot;</a>);     options.ProviderOptions.AdditionalScopesToConsent.Add(&quot;api:/&zwnj;&#8203;/861be009-5e73-4c6c-&zwnj;&#8203;a095-b6e193522222/AP&zwnj;&#8203;I.Access&quot;);"
+    }
+]

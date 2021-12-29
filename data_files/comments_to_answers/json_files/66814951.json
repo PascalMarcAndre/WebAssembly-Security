@@ -1,0 +1,38 @@
+[
+    {
+        "owner": {
+            "reputation": 1964,
+            "user_id": 4675770,
+            "user_type": "registered",
+            "accept_rate": 100,
+            "profile_image": "https://www.gravatar.com/avatar/3f03c96e787ca2330d89c2e3c6b8d2cb?s=128&d=identicon&r=PG",
+            "display_name": "Jinjinov",
+            "link": "https://stackoverflow.com/users/4675770/jinjinov"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1616755826,
+        "post_id": 66814951,
+        "comment_id": 118108288,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Using <code>RouteView</code> instead of <code>AuthorizeRouteView</code> works, I had an error in my OAuth config."
+    },
+    {
+        "owner": {
+            "reputation": 1964,
+            "user_id": 4675770,
+            "user_type": "registered",
+            "accept_rate": 100,
+            "profile_image": "https://www.gravatar.com/avatar/3f03c96e787ca2330d89c2e3c6b8d2cb?s=128&d=identicon&r=PG",
+            "display_name": "Jinjinov",
+            "link": "https://stackoverflow.com/users/4675770/jinjinov"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1616754769,
+        "post_id": 66814951,
+        "comment_id": 118107833,
+        "content_license": "CC BY-SA 4.0",
+        "body": "If I use RouteView instead of AuthorizeRouteView then I can display the Google login page optionally, but after login, the app displays /authentication/login-callback#state=...&amp;access_token=... with This site can\u2019t be reached  localhost refused to connect.  ERR_CONNECTION_REFUSED"
+    }
+]

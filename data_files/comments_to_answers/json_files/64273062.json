@@ -1,0 +1,146 @@
+[
+    {
+        "owner": {
+            "reputation": 1,
+            "user_id": 6152891,
+            "user_type": "registered",
+            "accept_rate": 75,
+            "profile_image": "https://www.gravatar.com/avatar/b45b7f89429f8766cdbf6c776c0a9d41?s=128&d=identicon&r=PG",
+            "display_name": "enet",
+            "link": "https://stackoverflow.com/users/6152891/enet"
+        },
+        "reply_to_user": {
+            "reputation": 2661,
+            "user_id": 195965,
+            "user_type": "registered",
+            "accept_rate": 82,
+            "profile_image": "https://www.gravatar.com/avatar/aec177aa3bc73958600e3c37d266b3ee?s=128&d=identicon&r=PG",
+            "display_name": "Jonas Arcangel",
+            "link": "https://stackoverflow.com/users/195965/jonas-arcangel"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1602584392,
+        "post_id": 64273062,
+        "comment_id": 113760439,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Glad to hear that... I&#39;ve learned a great deal from attempting to find a solution... And from the look and design of your application; The Identity UI looks great and is cleverly integrated with the other parts of the app."
+    },
+    {
+        "owner": {
+            "reputation": 2661,
+            "user_id": 195965,
+            "user_type": "registered",
+            "accept_rate": 82,
+            "profile_image": "https://www.gravatar.com/avatar/aec177aa3bc73958600e3c37d266b3ee?s=128&d=identicon&r=PG",
+            "display_name": "Jonas Arcangel",
+            "link": "https://stackoverflow.com/users/195965/jonas-arcangel"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1602553300,
+        "post_id": 64273062,
+        "comment_id": 113750187,
+        "content_license": "CC BY-SA 4.0",
+        "body": "This solution worked.  using IdentityServer4.Extensions; //... app.Use((ctx, next) =&gt;  {     ctx.SetIdentityServerOrigin(&quot;<a href=\"http://167.172.118.170&quot;\" rel=\"nofollow noreferrer\">167.172.118.170&quot;</a>);     return next(); });"
+    },
+    {
+        "owner": {
+            "reputation": 2661,
+            "user_id": 195965,
+            "user_type": "registered",
+            "accept_rate": 82,
+            "profile_image": "https://www.gravatar.com/avatar/aec177aa3bc73958600e3c37d266b3ee?s=128&d=identicon&r=PG",
+            "display_name": "Jonas Arcangel",
+            "link": "https://stackoverflow.com/users/195965/jonas-arcangel"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1602501714,
+        "post_id": 64273062,
+        "comment_id": 113731245,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Implemented all the suggestions you have provided, but still getting the issue.  <a href=\"https://github.com/jonasarcangel/BlazorLoginNetworkErrorIssue/blob/master/src/MyProject.Data.Identity/Extensions.cs\" rel=\"nofollow noreferrer\">github.com/jonasarcangel/BlazorLoginNetworkErrorIssue/blob/&hellip;</a> <a href=\"https://github.com/jonasarcangel/BlazorLoginNetworkErrorIssue/blob/master/src/MyProject.Web.Server/Startup.cs\" rel=\"nofollow noreferrer\">github.com/jonasarcangel/BlazorLoginNetworkErrorIssue/blob/&hellip;</a>"
+    },
+    {
+        "owner": {
+            "reputation": 2661,
+            "user_id": 195965,
+            "user_type": "registered",
+            "accept_rate": 82,
+            "profile_image": "https://www.gravatar.com/avatar/aec177aa3bc73958600e3c37d266b3ee?s=128&d=identicon&r=PG",
+            "display_name": "Jonas Arcangel",
+            "link": "https://stackoverflow.com/users/195965/jonas-arcangel"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1602389555,
+        "post_id": 64273062,
+        "comment_id": 113702405,
+        "content_license": "CC BY-SA 4.0",
+        "body": "How is this file generated? <a href=\"http://167.172.118.170/.well-known/openid-configuration\" rel=\"nofollow noreferrer\">167.172.118.170/.well-known/openid-configuration</a> How can I configure the result?"
+    },
+    {
+        "owner": {
+            "reputation": 2661,
+            "user_id": 195965,
+            "user_type": "registered",
+            "accept_rate": 82,
+            "profile_image": "https://www.gravatar.com/avatar/aec177aa3bc73958600e3c37d266b3ee?s=128&d=identicon&r=PG",
+            "display_name": "Jonas Arcangel",
+            "link": "https://stackoverflow.com/users/195965/jonas-arcangel"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1602373347,
+        "post_id": 64273062,
+        "comment_id": 113700337,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I tried it. Didn&#39;t work. It might be needing some other configuration."
+    },
+    {
+        "owner": {
+            "reputation": 1,
+            "user_id": 6152891,
+            "user_type": "registered",
+            "accept_rate": 75,
+            "profile_image": "https://www.gravatar.com/avatar/b45b7f89429f8766cdbf6c776c0a9d41?s=128&d=identicon&r=PG",
+            "display_name": "enet",
+            "link": "https://stackoverflow.com/users/6152891/enet"
+        },
+        "reply_to_user": {
+            "reputation": 2661,
+            "user_id": 195965,
+            "user_type": "registered",
+            "accept_rate": 82,
+            "profile_image": "https://www.gravatar.com/avatar/aec177aa3bc73958600e3c37d266b3ee?s=128&d=identicon&r=PG",
+            "display_name": "Jonas Arcangel",
+            "link": "https://stackoverflow.com/users/195965/jonas-arcangel"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1602318854,
+        "post_id": 64273062,
+        "comment_id": 113687320,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Perhaps you should also change to: client =&gt; client.BaseAddress = new Uri(&quot;<a href=\"http://167.172.118.170/&quot;\" rel=\"nofollow noreferrer\">167.172.118.170/&quot;</a>)); instead of the current definition. there are Two changes to make. Why do you use &quot;http&quot; instead of https ?"
+    },
+    {
+        "owner": {
+            "reputation": 2661,
+            "user_id": 195965,
+            "user_type": "registered",
+            "accept_rate": 82,
+            "profile_image": "https://www.gravatar.com/avatar/aec177aa3bc73958600e3c37d266b3ee?s=128&d=identicon&r=PG",
+            "display_name": "Jonas Arcangel",
+            "link": "https://stackoverflow.com/users/195965/jonas-arcangel"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1602286001,
+        "post_id": 64273062,
+        "comment_id": 113682511,
+        "content_license": "CC BY-SA 4.0",
+        "body": "This change worked: <a href=\"https://github.com/jonasarcangel/BlazorLoginNetworkErrorIssue/commit/399beb807acb4a8f8c28267fe37d8e8df376226b\" rel=\"nofollow noreferrer\">github.com/jonasarcangel/BlazorLoginNetworkErrorIssue/commit&zwnj;&#8203;/&hellip;</a> Now the issue is it is using localhost to redirect to the login screen."
+    }
+]

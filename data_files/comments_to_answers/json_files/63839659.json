@@ -1,0 +1,19 @@
+[
+    {
+        "owner": {
+            "reputation": 83,
+            "user_id": 9182405,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/aa60cfe3be6b12825c32eddc9aeced02?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Dumas.DED",
+            "link": "https://stackoverflow.com/users/9182405/dumas-ded"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1599838682,
+        "post_id": 63839659,
+        "comment_id": 112908591,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I&#39;ve actually tried this out in my code and it does work, at least in that I&#39;m able to include the cookie value in the header. That being said, the <code>HttpContext.Request.Cookies</code> collection is still empty. I&#39;ve also tried using <code>Http.DefaultRequestHeaders.Add(&quot;Set-Cookie&quot;, $&quot;myCookie={someValue}&quot;)</code>, but that still doesn&#39;t populate the collection. I don&#39;t know how much it matters if I can still read the cookie value from the header, but it&#39;s puzzling nonetheless."
+    }
+]

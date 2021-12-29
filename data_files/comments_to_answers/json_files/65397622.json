@@ -1,0 +1,148 @@
+[
+    {
+        "owner": {
+            "reputation": 29,
+            "user_id": 14307252,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/e54a11089a3f3c3c95c64e358aaa82eb?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Enrique",
+            "link": "https://stackoverflow.com/users/14307252/enrique"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1608591770,
+        "post_id": 65397622,
+        "comment_id": 115626293,
+        "content_license": "CC BY-SA 4.0",
+        "body": "It worked perfect now I can request properties of my claims"
+    },
+    {
+        "owner": {
+            "reputation": 1,
+            "user_id": 6152891,
+            "user_type": "registered",
+            "accept_rate": 75,
+            "profile_image": "https://www.gravatar.com/avatar/b45b7f89429f8766cdbf6c776c0a9d41?s=128&d=identicon&r=PG",
+            "display_name": "enet",
+            "link": "https://stackoverflow.com/users/6152891/enet"
+        },
+        "reply_to_user": {
+            "reputation": 29,
+            "user_id": 14307252,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/e54a11089a3f3c3c95c64e358aaa82eb?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Enrique",
+            "link": "https://stackoverflow.com/users/14307252/enrique"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1608581302,
+        "post_id": 65397622,
+        "comment_id": 115622777,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I&#39;ve updated my answer. Run and test."
+    },
+    {
+        "owner": {
+            "reputation": 29,
+            "user_id": 14307252,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/e54a11089a3f3c3c95c64e358aaa82eb?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Enrique",
+            "link": "https://stackoverflow.com/users/14307252/enrique"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1608575045,
+        "post_id": 65397622,
+        "comment_id": 115620376,
+        "content_license": "CC BY-SA 4.0",
+        "body": "in the aspnetuser table you can find the name property, it is the name of the user when registering, I ask for his name and surname, with user.Identity.Name I get the UserName field from the aspnetuser table but I want the Name property that I i included in aspnetuser table, edit my question with an image"
+    },
+    {
+        "owner": {
+            "reputation": 1,
+            "user_id": 6152891,
+            "user_type": "registered",
+            "accept_rate": 75,
+            "profile_image": "https://www.gravatar.com/avatar/b45b7f89429f8766cdbf6c776c0a9d41?s=128&d=identicon&r=PG",
+            "display_name": "enet",
+            "link": "https://stackoverflow.com/users/6152891/enet"
+        },
+        "reply_to_user": {
+            "reputation": 29,
+            "user_id": 14307252,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/e54a11089a3f3c3c95c64e358aaa82eb?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Enrique",
+            "link": "https://stackoverflow.com/users/14307252/enrique"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1608574486,
+        "post_id": 65397622,
+        "comment_id": 115620138,
+        "content_license": "CC BY-SA 4.0",
+        "body": "You first must tell me what  Nombre stands for, and in what database table(s) it may be found ..."
+    },
+    {
+        "owner": {
+            "reputation": 29,
+            "user_id": 14307252,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/e54a11089a3f3c3c95c64e358aaa82eb?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Enrique",
+            "link": "https://stackoverflow.com/users/14307252/enrique"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1608573896,
+        "post_id": 65397622,
+        "comment_id": 115619918,
+        "content_license": "CC BY-SA 4.0",
+        "body": "how to use and inject claims in blazor page ?"
+    },
+    {
+        "owner": {
+            "reputation": 1,
+            "user_id": 6152891,
+            "user_type": "registered",
+            "accept_rate": 75,
+            "profile_image": "https://www.gravatar.com/avatar/b45b7f89429f8766cdbf6c776c0a9d41?s=128&d=identicon&r=PG",
+            "display_name": "enet",
+            "link": "https://stackoverflow.com/users/6152891/enet"
+        },
+        "reply_to_user": {
+            "reputation": 29,
+            "user_id": 14307252,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/e54a11089a3f3c3c95c64e358aaa82eb?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Enrique",
+            "link": "https://stackoverflow.com/users/14307252/enrique"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1608573433,
+        "post_id": 65397622,
+        "comment_id": 115619742,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I&#39;ve updated my answer..."
+    },
+    {
+        "owner": {
+            "reputation": 29,
+            "user_id": 14307252,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/e54a11089a3f3c3c95c64e358aaa82eb?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Enrique",
+            "link": "https://stackoverflow.com/users/14307252/enrique"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1608573359,
+        "post_id": 65397622,
+        "comment_id": 115619696,
+        "content_license": "CC BY-SA 4.0",
+        "body": "ok very good thank you very much for that information, I wanted to extract from the ApplicationUser the name in my app is different from the UserName"
+    }
+]

@@ -1,0 +1,44 @@
+[
+    {
+        "owner": {
+            "reputation": 3445,
+            "user_id": 2658697,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/1d9486e90f5e906e38a06aa76bf5fa0b?s=128&d=identicon&r=PG",
+            "display_name": "Mister Magoo",
+            "link": "https://stackoverflow.com/users/2658697/mister-magoo"
+        },
+        "reply_to_user": {
+            "reputation": 193,
+            "user_id": 2631623,
+            "user_type": "registered",
+            "profile_image": "https://graph.facebook.com/1188276998/picture?type=large",
+            "display_name": "Michael Kossin",
+            "link": "https://stackoverflow.com/users/2631623/michael-kossin"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1606154655,
+        "post_id": 64950072,
+        "comment_id": 114869925,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Not good documentation, no - there is the component page in docs, but it doesn&#39;t explain anything about using the component - but that pointed me to the OnLogInSucceeded and from there it was just a matter of inspecting the RemoteAuthenticationState to see what options were available and that led to the ReturnUrl.  <a href=\"https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.components.webassembly.authentication.remoteauthenticationstate.returnurl?view=aspnetcore-5.0#Microsoft_AspNetCore_Components_WebAssembly_Authentication_RemoteAuthenticationState_ReturnUrl\" rel=\"nofollow noreferrer\">docs.microsoft.com/en-us/dotnet/api/&hellip;</a>"
+    },
+    {
+        "owner": {
+            "reputation": 193,
+            "user_id": 2631623,
+            "user_type": "registered",
+            "profile_image": "https://graph.facebook.com/1188276998/picture?type=large",
+            "display_name": "Michael Kossin",
+            "link": "https://stackoverflow.com/users/2631623/michael-kossin"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1606152687,
+        "post_id": 64950072,
+        "comment_id": 114869056,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Thank you.  This works perfectly. Do you know where I could have found the documentation that would have explained this?  I could not find any reference to this on any of the documentation I looked at concerning securing a .NET Core app."
+    }
+]

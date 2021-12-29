@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 414,
+            "user_id": 215263,
+            "user_type": "registered",
+            "accept_rate": 43,
+            "profile_image": "https://www.gravatar.com/avatar/2aa7638b045d1bfb5cc568748408d33d?s=128&d=identicon&r=PG&f=1",
+            "display_name": "b26",
+            "link": "https://stackoverflow.com/users/215263/b26"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1582906871,
+        "post_id": 60450888,
+        "comment_id": 106950138,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Thanks, I have also just discovered that it can be used to retrieve strings using EM_ASM_INT too. <a href=\"https://emscripten.org/docs/api_reference/emscripten.h.html#c.EM_ASM_INT\" rel=\"nofollow noreferrer\">emscripten.org/docs/api_reference/&hellip;</a>"
+    }
+]

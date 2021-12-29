@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 1387,
+            "user_id": 1764116,
+            "user_type": "registered",
+            "accept_rate": 42,
+            "profile_image": "https://www.gravatar.com/avatar/8dd1910dd49d37bbbf91815b33f3325a?s=128&d=identicon&r=PG",
+            "display_name": "NSS",
+            "link": "https://stackoverflow.com/users/1764116/nss"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1624551103,
+        "post_id": 61252765,
+        "comment_id": 120395866,
+        "content_license": "CC BY-SA 4.0",
+        "body": "would you explain what {**slug} means here ?"
+    }
+]

@@ -1,0 +1,19 @@
+[
+    {
+        "owner": {
+            "reputation": 143,
+            "user_id": 10371377,
+            "user_type": "registered",
+            "profile_image": "https://lh3.googleusercontent.com/-9fgEldXjMGM/AAAAAAAAAAI/AAAAAAAAAKo/yqNgYYO8Wfs/photo.jpg?sz=128",
+            "display_name": "Nath Shivanand",
+            "link": "https://stackoverflow.com/users/10371377/nath-shivanand"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1598948822,
+        "post_id": 63672740,
+        "comment_id": 112614273,
+        "content_license": "CC BY-SA 4.0",
+        "body": "not solve the issue stil I am trying to solve the problem"
+    }
+]

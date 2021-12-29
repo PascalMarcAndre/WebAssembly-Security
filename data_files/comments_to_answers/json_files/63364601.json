@@ -1,0 +1,116 @@
+[
+    {
+        "owner": {
+            "reputation": 11,
+            "user_id": 2298872,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/fa94eb272c6bb7a76e02117beb706d3f?s=128&d=identicon&r=PG&f=1",
+            "display_name": "34gl3",
+            "link": "https://stackoverflow.com/users/2298872/34gl3"
+        },
+        "reply_to_user": {
+            "reputation": 708,
+            "user_id": 4700997,
+            "user_type": "registered",
+            "accept_rate": 55,
+            "profile_image": "https://lh6.googleusercontent.com/-xXfHlrfDkSY/AAAAAAAAAAI/AAAAAAAAABw/_PFg_w4h1mE/photo.jpg?sz=128",
+            "display_name": "Kacey Ezerioha",
+            "link": "https://stackoverflow.com/users/4700997/kacey-ezerioha"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1598945403,
+        "post_id": 63364601,
+        "comment_id": 112612668,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Please follow the instruction in <a href=\"https://benjii.me/2017/06/creating-self-signed-certificate-identity-server-azure/\" rel=\"nofollow noreferrer\">benjii.me/2017/06/&hellip;</a>"
+    },
+    {
+        "owner": {
+            "reputation": 708,
+            "user_id": 4700997,
+            "user_type": "registered",
+            "accept_rate": 55,
+            "profile_image": "https://lh6.googleusercontent.com/-xXfHlrfDkSY/AAAAAAAAAAI/AAAAAAAAABw/_PFg_w4h1mE/photo.jpg?sz=128",
+            "display_name": "Kacey Ezerioha",
+            "link": "https://stackoverflow.com/users/4700997/kacey-ezerioha"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1598395149,
+        "post_id": 63364601,
+        "comment_id": 112444200,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I tried your suggestion but I still get an error that it was unable to locate a valid certificate. And the certificate is right there. I created the .pfx with openssl. Could this be the issue?"
+    },
+    {
+        "owner": {
+            "reputation": 11,
+            "user_id": 2298872,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/fa94eb272c6bb7a76e02117beb706d3f?s=128&d=identicon&r=PG&f=1",
+            "display_name": "34gl3",
+            "link": "https://stackoverflow.com/users/2298872/34gl3"
+        },
+        "reply_to_user": {
+            "reputation": 708,
+            "user_id": 4700997,
+            "user_type": "registered",
+            "accept_rate": 55,
+            "profile_image": "https://lh6.googleusercontent.com/-xXfHlrfDkSY/AAAAAAAAAAI/AAAAAAAAABw/_PFg_w4h1mE/photo.jpg?sz=128",
+            "display_name": "Kacey Ezerioha",
+            "link": "https://stackoverflow.com/users/4700997/kacey-ezerioha"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1598355567,
+        "post_id": 63364601,
+        "comment_id": 112425966,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Yes, you don&#39;t need a custom domain for this. Remember to add WEBSITE_LOAD_CERTIFCATES app setting: az webapp config appsettings set --name &lt;YOUR_APP_NAME&gt; --resource-group &lt;YOUR_RESOURCE_GROUP&gt; --settings WEBSITE_LOAD_CERTIFICATES=&lt;YOUR_CERTIFICATE_THUMBPRINT&gt;"
+    },
+    {
+        "owner": {
+            "reputation": 708,
+            "user_id": 4700997,
+            "user_type": "registered",
+            "accept_rate": 55,
+            "profile_image": "https://lh6.googleusercontent.com/-xXfHlrfDkSY/AAAAAAAAAAI/AAAAAAAAABw/_PFg_w4h1mE/photo.jpg?sz=128",
+            "display_name": "Kacey Ezerioha",
+            "link": "https://stackoverflow.com/users/4700997/kacey-ezerioha"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1598264561,
+        "post_id": 63364601,
+        "comment_id": 112391659,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Great. I&#39;m in a similar situation. I have created the pfx file but I learned, I&#39;ll need a domain to get it to work. I don&#39;t need this cos my app is just a PoC and I&#39;m fine with the default azurewebsites.net domain. Can I still use the pfx without a domain?"
+    },
+    {
+        "owner": {
+            "reputation": 11,
+            "user_id": 2298872,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/fa94eb272c6bb7a76e02117beb706d3f?s=128&d=identicon&r=PG&f=1",
+            "display_name": "34gl3",
+            "link": "https://stackoverflow.com/users/2298872/34gl3"
+        },
+        "reply_to_user": {
+            "reputation": 708,
+            "user_id": 4700997,
+            "user_type": "registered",
+            "accept_rate": 55,
+            "profile_image": "https://lh6.googleusercontent.com/-xXfHlrfDkSY/AAAAAAAAAAI/AAAAAAAAABw/_PFg_w4h1mE/photo.jpg?sz=128",
+            "display_name": "Kacey Ezerioha",
+            "link": "https://stackoverflow.com/users/4700997/kacey-ezerioha"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1598247763,
+        "post_id": 63364601,
+        "comment_id": 112384570,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Yes, I&#39;m using it Azure App Service."
+    }
+]

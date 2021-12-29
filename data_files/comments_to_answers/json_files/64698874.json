@@ -1,0 +1,19 @@
+[
+    {
+        "owner": {
+            "reputation": 159,
+            "user_id": 6511006,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/67c2f344de5436f587be8dec25e89c19?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Snipe3000",
+            "link": "https://stackoverflow.com/users/6511006/snipe3000"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1608540355,
+        "post_id": 64698874,
+        "comment_id": 115605302,
+        "content_license": "CC BY-SA 4.0",
+        "body": "How does the access_token get set?"
+    }
+]

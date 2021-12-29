@@ -1,0 +1,61 @@
+[
+    {
+        "owner": {
+            "reputation": 76,
+            "user_id": 9479817,
+            "user_type": "registered",
+            "profile_image": "https://lh3.googleusercontent.com/-XdUIqdMkCWA/AAAAAAAAAAI/AAAAAAAAAAA/4252rscbv5M/photo.jpg?sz=128",
+            "display_name": "Yakir E",
+            "link": "https://stackoverflow.com/users/9479817/yakir-e"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1573021413,
+        "post_id": 58681913,
+        "comment_id": 103740131,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I see. The thing is that our product can run the same JS code in browser and on tablets. We have some complected algorithm that we need to run and we wanted to share the same webasm code in the browser and in the embedded app so, as I see it, I have no choice but to use the v8 API. From your comment I understand now what I need to do. I will do it and post a working example when I&#39;ll get it running. Thanks for your help!"
+    },
+    {
+        "owner": {
+            "reputation": 20886,
+            "user_id": 6036428,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/b632c15ba23e78e466c8d33d657378fe?s=128&d=identicon&r=PG&f=1",
+            "display_name": "jmrk",
+            "link": "https://stackoverflow.com/users/6036428/jmrk"
+        },
+        "reply_to_user": {
+            "reputation": 76,
+            "user_id": 9479817,
+            "user_type": "registered",
+            "profile_image": "https://lh3.googleusercontent.com/-XdUIqdMkCWA/AAAAAAAAAAI/AAAAAAAAAAA/4252rscbv5M/photo.jpg?sz=128",
+            "display_name": "Yakir E",
+            "link": "https://stackoverflow.com/users/9479817/yakir-e"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1572897151,
+        "post_id": 58681913,
+        "comment_id": 103696383,
+        "content_license": "CC BY-SA 4.0",
+        "body": "It is supported, just convoluted and fairly inefficient: <code>v8::Object::New</code> creates a new object, and then you&#39;ll have to create a JavaScript-compatible function that wraps the host function you want to expose, and install that as a property on the object. I don&#39;t know of a good example you could follow, but that&#39;s the general concept. The Wasm C API makes all this much easier."
+    },
+    {
+        "owner": {
+            "reputation": 76,
+            "user_id": 9479817,
+            "user_type": "registered",
+            "profile_image": "https://lh3.googleusercontent.com/-XdUIqdMkCWA/AAAAAAAAAAI/AAAAAAAAAAA/4252rscbv5M/photo.jpg?sz=128",
+            "display_name": "Yakir E",
+            "link": "https://stackoverflow.com/users/9479817/yakir-e"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1572881070,
+        "post_id": 58681913,
+        "comment_id": 103689222,
+        "content_license": "CC BY-SA 4.0",
+        "body": "thanks for the quick and elaborate reply. I followed your advice and figure out that I need to pass a second argument to <i>args_type instance_args{module,</i> <b>imports</b> <i>};</i> that will include the import table. I&#39;ve tried to figure out how to create this import object and populate it with host function ( in my case the host <i>rand()</i> function but without any help. Reading in <a href=\"https://github.com/WebAssembly/wasm-c-api\" rel=\"nofollow noreferrer\">link</a> I&#39;ve noticed that this might not even being supported by V8 ( for now ). Any idea if it&#39;s indeed not supported or am I missing something. 10x"
+    }
+]

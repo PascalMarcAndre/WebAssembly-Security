@@ -1,0 +1,88 @@
+[
+    {
+        "owner": {
+            "reputation": 380,
+            "user_id": 6302540,
+            "user_type": "registered",
+            "profile_image": "https://graph.facebook.com/1290103207684328/picture?type=large",
+            "display_name": "Luis Paulo",
+            "link": "https://stackoverflow.com/users/6302540/luis-paulo"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1524296852,
+        "post_id": 49880273,
+        "comment_id": 86923616,
+        "content_license": "CC BY-SA 3.0",
+        "body": "You can download the source. That&#39;s what I did"
+    },
+    {
+        "owner": {
+            "reputation": 1137,
+            "user_id": 2174271,
+            "user_type": "registered",
+            "accept_rate": 11,
+            "profile_image": "https://www.gravatar.com/avatar/f04f3022784248de423fe3e0373d8c5a?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Tarun Gehlaut",
+            "link": "https://stackoverflow.com/users/2174271/tarun-gehlaut"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1524287275,
+        "post_id": 49880273,
+        "comment_id": 86921652,
+        "content_license": "CC BY-SA 3.0",
+        "body": "This wont work in the context of web-assembly, as libgcrypt is not available there. Everything needs to be in source form."
+    },
+    {
+        "owner": {
+            "reputation": 22366,
+            "user_id": 9305398,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/cqJvE.png?s=128&g=1",
+            "display_name": "Acorn",
+            "link": "https://stackoverflow.com/users/9305398/acorn"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1524148714,
+        "post_id": 49880273,
+        "comment_id": 86863428,
+        "content_license": "CC BY-SA 3.0",
+        "body": "This isn&#39;t what people normally understand by &quot;standalone function&quot;."
+    },
+    {
+        "owner": {
+            "reputation": 380,
+            "user_id": 6302540,
+            "user_type": "registered",
+            "profile_image": "https://graph.facebook.com/1290103207684328/picture?type=large",
+            "display_name": "Luis Paulo",
+            "link": "https://stackoverflow.com/users/6302540/luis-paulo"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1523973999,
+        "post_id": 49880273,
+        "comment_id": 86776249,
+        "content_license": "CC BY-SA 3.0",
+        "body": "Also, the execution shows that this returns the same values as your JSFiddle example"
+    },
+    {
+        "owner": {
+            "reputation": 380,
+            "user_id": 6302540,
+            "user_type": "registered",
+            "profile_image": "https://graph.facebook.com/1290103207684328/picture?type=large",
+            "display_name": "Luis Paulo",
+            "link": "https://stackoverflow.com/users/6302540/luis-paulo"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1523973958,
+        "post_id": 49880273,
+        "comment_id": 86776208,
+        "content_license": "CC BY-SA 3.0",
+        "body": "I hope this is the accepted answer :) I&#39;ve answered your question exactly as you asked. A standalone function to calculate HMAC"
+    }
+]

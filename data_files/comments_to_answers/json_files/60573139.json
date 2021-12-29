@@ -1,0 +1,81 @@
+[
+    {
+        "owner": {
+            "reputation": 2035,
+            "user_id": 2137483,
+            "user_type": "registered",
+            "accept_rate": 91,
+            "profile_image": "https://i.stack.imgur.com/zH7ZS.jpg?s=128&g=1",
+            "display_name": "Luke T O&#39;Brien",
+            "link": "https://stackoverflow.com/users/2137483/luke-t-obrien"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1605020820,
+        "post_id": 60573139,
+        "comment_id": 114521634,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I am getting this issue for one of my own components... It&#39;s a &lt;Menu&gt; component that I created ???"
+    },
+    {
+        "owner": {
+            "reputation": 3093,
+            "user_id": 2427359,
+            "user_type": "registered",
+            "accept_rate": 62,
+            "profile_image": "https://www.gravatar.com/avatar/ab8c78d8270ab839f9461cf72cd20a57?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Simon",
+            "link": "https://stackoverflow.com/users/2427359/simon"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1595923255,
+        "post_id": 60573139,
+        "comment_id": 111633858,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Please add to each codeblock the project-location client or server ."
+    },
+    {
+        "owner": {
+            "reputation": 2707,
+            "user_id": 10823490,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/58aab0dd119c8dac4dc2bc5a209c3f11?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Jackal",
+            "link": "https://stackoverflow.com/users/10823490/jackal"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1583581297,
+        "post_id": 60573139,
+        "comment_id": 107170127,
+        "content_license": "CC BY-SA 4.0",
+        "body": "This worked, i added it on client and my app finally loaded. Althought I don&#39;t know why or whats the connection with it"
+    },
+    {
+        "owner": {
+            "reputation": 1,
+            "user_id": 6152891,
+            "user_type": "registered",
+            "accept_rate": 75,
+            "profile_image": "https://www.gravatar.com/avatar/b45b7f89429f8766cdbf6c776c0a9d41?s=128&d=identicon&r=PG",
+            "display_name": "enet",
+            "link": "https://stackoverflow.com/users/6152891/enet"
+        },
+        "reply_to_user": {
+            "reputation": 2707,
+            "user_id": 10823490,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/58aab0dd119c8dac4dc2bc5a209c3f11?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Jackal",
+            "link": "https://stackoverflow.com/users/10823490/jackal"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1583546793,
+        "post_id": 60573139,
+        "comment_id": 107165012,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Perhaps your issue is related to a linking issue. Try turning off the linker like this: &lt;BlazorLinkOnBuild&gt;false&lt;/BlazorLinkOnBuild&gt;"
+    }
+]

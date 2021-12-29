@@ -1,0 +1,110 @@
+[
+    {
+        "owner": {
+            "reputation": 7321,
+            "user_id": 68490,
+            "user_type": "registered",
+            "accept_rate": 20,
+            "profile_image": "https://www.gravatar.com/avatar/b3c70bbc491ede87ae5682c561af07d2?s=128&d=identicon&r=PG",
+            "display_name": "Tore Nestenius",
+            "link": "https://stackoverflow.com/users/68490/tore-nestenius"
+        },
+        "reply_to_user": {
+            "reputation": 1769,
+            "user_id": 4971859,
+            "user_type": "registered",
+            "accept_rate": 30,
+            "profile_image": "https://i.stack.imgur.com/C4KE3.png?s=128&g=1",
+            "display_name": "Steve",
+            "link": "https://stackoverflow.com/users/4971859/steve"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1597040566,
+        "post_id": 63325080,
+        "comment_id": 111993554,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Awesome! Glad you found the problem!"
+    },
+    {
+        "owner": {
+            "reputation": 1769,
+            "user_id": 4971859,
+            "user_type": "registered",
+            "accept_rate": 30,
+            "profile_image": "https://i.stack.imgur.com/C4KE3.png?s=128&g=1",
+            "display_name": "Steve",
+            "link": "https://stackoverflow.com/users/4971859/steve"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1597017340,
+        "post_id": 63325080,
+        "comment_id": 111989148,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Thanks. I realized what I did wrong is I didn&#39;t put the correct <code>a unique identifier</code> when I register the API and this affects the last step which is to put the same value at <code>Default Audience</code>"
+    },
+    {
+        "owner": {
+            "reputation": 1769,
+            "user_id": 4971859,
+            "user_type": "registered",
+            "accept_rate": 30,
+            "profile_image": "https://i.stack.imgur.com/C4KE3.png?s=128&g=1",
+            "display_name": "Steve",
+            "link": "https://stackoverflow.com/users/4971859/steve"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1597015347,
+        "post_id": 63325080,
+        "comment_id": 111988802,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<code>have you added this discovery endpoint to your API (the &#47;quiz endpoint)? can you verify that the API that receives the token actually gets the discovery document?</code> What this means? For the source code, I have added in the original post."
+    },
+    {
+        "owner": {
+            "reputation": 7321,
+            "user_id": 68490,
+            "user_type": "registered",
+            "accept_rate": 20,
+            "profile_image": "https://www.gravatar.com/avatar/b3c70bbc491ede87ae5682c561af07d2?s=128&d=identicon&r=PG",
+            "display_name": "Tore Nestenius",
+            "link": "https://stackoverflow.com/users/68490/tore-nestenius"
+        },
+        "reply_to_user": {
+            "reputation": 1769,
+            "user_id": 4971859,
+            "user_type": "registered",
+            "accept_rate": 30,
+            "profile_image": "https://i.stack.imgur.com/C4KE3.png?s=128&g=1",
+            "display_name": "Steve",
+            "link": "https://stackoverflow.com/users/4971859/steve"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1596982080,
+        "post_id": 63325080,
+        "comment_id": 111979789,
+        "content_license": "CC BY-SA 4.0",
+        "body": "The error message complains about HTTPS is missing, have you added this discovery endpoint to your API (the /quiz endpoint)? can you verify that the API that receives the token actually gets the discovery document? Use a tool like Fiddler and investigate... feel free to add those requests to your question. How is the API protected? feel free to add your startup class here as well."
+    },
+    {
+        "owner": {
+            "reputation": 1769,
+            "user_id": 4971859,
+            "user_type": "registered",
+            "accept_rate": 30,
+            "profile_image": "https://i.stack.imgur.com/C4KE3.png?s=128&g=1",
+            "display_name": "Steve",
+            "link": "https://stackoverflow.com/users/4971859/steve"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1596979992,
+        "post_id": 63325080,
+        "comment_id": 111979165,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Yes, I can access to that OpenId URL from browser. What else to check?"
+    }
+]

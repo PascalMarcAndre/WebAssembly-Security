@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 662,
+            "user_id": 4663185,
+            "user_type": "registered",
+            "accept_rate": 61,
+            "profile_image": "https://lh4.googleusercontent.com/-CRvmCOKLHsE/AAAAAAAAAAI/AAAAAAAAHWI/AWXw4ZVN-jQ/photo.jpg?sz=128",
+            "display_name": "Erik Thysell",
+            "link": "https://stackoverflow.com/users/4663185/erik-thysell"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1605291061,
+        "post_id": 64814798,
+        "comment_id": 114614761,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I have already used the buildt in as described abbove but I need more finegrained filtering combination of role and other claims. But thanks for the comment about the security issues."
+    }
+]

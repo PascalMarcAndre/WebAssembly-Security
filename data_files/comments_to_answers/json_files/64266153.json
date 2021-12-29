@@ -1,0 +1,19 @@
+[
+    {
+        "owner": {
+            "reputation": 824,
+            "user_id": 1400883,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/792a4a38008a002be5857a31d280fd26?s=128&d=identicon&r=PG",
+            "display_name": "Bill Noel",
+            "link": "https://stackoverflow.com/users/1400883/bill-noel"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1615608859,
+        "post_id": 64266153,
+        "comment_id": 117750576,
+        "content_license": "CC BY-SA 4.0",
+        "body": "This worked for me.  The experience is a little jarring as it replaces the entire surface of the app with the login page.  I don&#39;t mind the popup, if it were modal.  Far too easy to click off of it and lose focus.  The average user would promptly be lost."
+    }
+]

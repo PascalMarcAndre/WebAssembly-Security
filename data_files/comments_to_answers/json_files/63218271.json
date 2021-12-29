@@ -1,0 +1,86 @@
+[
+    {
+        "owner": {
+            "reputation": 127,
+            "user_id": 10832603,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/69dd885ef780d478a47e8535fe6171f6?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Aditya Singh",
+            "link": "https://stackoverflow.com/users/10832603/aditya-singh"
+        },
+        "reply_to_user": {
+            "reputation": 273,
+            "user_id": 5574962,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/EmmZL.png?s=128&g=1",
+            "display_name": "3per",
+            "link": "https://stackoverflow.com/users/5574962/3per"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1596525668,
+        "post_id": 63218271,
+        "comment_id": 111830862,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@simon-It would be really helpful if you can shed some light so as to whether you are protecting your api with an access token or if the requirement is that if the user is not authenticated then the request should fail with a 401?"
+    },
+    {
+        "owner": {
+            "reputation": 127,
+            "user_id": 10832603,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/69dd885ef780d478a47e8535fe6171f6?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Aditya Singh",
+            "link": "https://stackoverflow.com/users/10832603/aditya-singh"
+        },
+        "reply_to_user": {
+            "reputation": 273,
+            "user_id": 5574962,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/EmmZL.png?s=128&g=1",
+            "display_name": "3per",
+            "link": "https://stackoverflow.com/users/5574962/3per"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1596524941,
+        "post_id": 63218271,
+        "comment_id": 111830550,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@3per- Agreed brother..I apologize.. what i meant the authentication scheme should be JWT bearer instead of cookie authentication since the requirement  is that  the api call if its not authenticated should fail with 401 instead of getting redirected to login page."
+    },
+    {
+        "owner": {
+            "reputation": 273,
+            "user_id": 5574962,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/EmmZL.png?s=128&g=1",
+            "display_name": "3per",
+            "link": "https://stackoverflow.com/users/5574962/3per"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1596518304,
+        "post_id": 63218271,
+        "comment_id": 111828502,
+        "content_license": "CC BY-SA 4.0",
+        "body": "&quot;cookie authentication scheme will always redirect the user to default login page&quot; it is not true, see my answer below"
+    },
+    {
+        "owner": {
+            "reputation": 127,
+            "user_id": 10832603,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/69dd885ef780d478a47e8535fe6171f6?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Aditya Singh",
+            "link": "https://stackoverflow.com/users/10832603/aditya-singh"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1596384989,
+        "post_id": 63218271,
+        "comment_id": 111788898,
+        "content_license": "CC BY-SA 4.0",
+        "body": "At the api level please dont decorate the  authorize attribute with any authentication scheme it should pick up the auth scheme from the configured service."
+    }
+]

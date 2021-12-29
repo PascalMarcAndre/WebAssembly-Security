@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 18610,
+            "user_id": 20446,
+            "user_type": "registered",
+            "accept_rate": 59,
+            "profile_image": "https://www.gravatar.com/avatar/1b0e72f6efc6573bf7e130a757797b84?s=128&d=identicon&r=PG",
+            "display_name": "aherrick",
+            "link": "https://stackoverflow.com/users/20446/aherrick"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1621553771,
+        "post_id": 64907087,
+        "comment_id": 119538146,
+        "content_license": "CC BY-SA 4.0",
+        "body": "thank you so much this helped move me forward!"
+    }
+]

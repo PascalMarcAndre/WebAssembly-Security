@@ -1,0 +1,19 @@
+[
+    {
+        "owner": {
+            "reputation": 193,
+            "user_id": 2631623,
+            "user_type": "registered",
+            "profile_image": "https://graph.facebook.com/1188276998/picture?type=large",
+            "display_name": "Michael Kossin",
+            "link": "https://stackoverflow.com/users/2631623/michael-kossin"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1605026959,
+        "post_id": 64765741,
+        "comment_id": 114524638,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Thank you.  I have actually been working to implement the advice in the article you posted before, but these specific instructions will certainly make that task easier."
+    }
+]

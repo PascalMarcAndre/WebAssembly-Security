@@ -1,0 +1,74 @@
+[
+    {
+        "owner": {
+            "reputation": 13400,
+            "user_id": 2940908,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://i.stack.imgur.com/E79WU.jpg?s=128&g=1",
+            "display_name": "agua from mars",
+            "link": "https://stackoverflow.com/users/2940908/agua-from-mars"
+        },
+        "reply_to_user": {
+            "reputation": 1616,
+            "user_id": 1206480,
+            "user_type": "registered",
+            "accept_rate": 76,
+            "profile_image": "https://www.gravatar.com/avatar/369c998e75bc392472c387df640dd97a?s=128&d=identicon&r=PG",
+            "display_name": "user1206480",
+            "link": "https://stackoverflow.com/users/1206480/user1206480"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1594709389,
+        "post_id": 62870328,
+        "comment_id": 111212012,
+        "content_license": "CC BY-SA 4.0",
+        "body": "May be try to camel case your appsettings.json"
+    },
+    {
+        "owner": {
+            "reputation": 13400,
+            "user_id": 2940908,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://i.stack.imgur.com/E79WU.jpg?s=128&g=1",
+            "display_name": "agua from mars",
+            "link": "https://stackoverflow.com/users/2940908/agua-from-mars"
+        },
+        "reply_to_user": {
+            "reputation": 1616,
+            "user_id": 1206480,
+            "user_type": "registered",
+            "accept_rate": 76,
+            "profile_image": "https://www.gravatar.com/avatar/369c998e75bc392472c387df640dd97a?s=128&d=identicon&r=PG",
+            "display_name": "user1206480",
+            "link": "https://stackoverflow.com/users/1206480/user1206480"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1594709305,
+        "post_id": 62870328,
+        "comment_id": 111211982,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Actually is what I do here : <a href=\"https://github.com/Aguafrommars/TheIdServer/blob/2adf1a008dd99e00ae9e76f7a5609d973289ea50/src/BlazorApp/Aguacongas.TheIdServer.BlazorApp.Infrastructure/Extensions/WebAssemblyHostBuilderExtensions.cs#L50-L55\" rel=\"nofollow noreferrer\">github.com/Aguafrommars/TheIdServer/blob/&hellip;</a>   And it works well. You can see it in action here : <a href=\"https://theidserver.herokuapp.com/\" rel=\"nofollow noreferrer\">theidserver.herokuapp.com</a>"
+    },
+    {
+        "owner": {
+            "reputation": 1616,
+            "user_id": 1206480,
+            "user_type": "registered",
+            "accept_rate": 76,
+            "profile_image": "https://www.gravatar.com/avatar/369c998e75bc392472c387df640dd97a?s=128&d=identicon&r=PG",
+            "display_name": "user1206480",
+            "link": "https://stackoverflow.com/users/1206480/user1206480"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1594708596,
+        "post_id": 62870328,
+        "comment_id": 111211694,
+        "content_license": "CC BY-SA 4.0",
+        "body": "The redirectUri made no difference in the original problem that I was having. I discovered that changing Local in the appSettings file to oidc resolved the initial issue, but now I&#39;m getting a network error. See my response on the answer below."
+    }
+]

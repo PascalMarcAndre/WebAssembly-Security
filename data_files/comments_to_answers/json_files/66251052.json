@@ -1,0 +1,19 @@
+[
+    {
+        "owner": {
+            "reputation": 1,
+            "user_id": 2260740,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/172a1d96f5c1dd33a1d7865c6c2a3c73?s=128&d=identicon&r=PG&f=1",
+            "display_name": "MhD hN",
+            "link": "https://stackoverflow.com/users/2260740/mhd-hn"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1613602814,
+        "post_id": 66251052,
+        "comment_id": 117129366,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I know that is not good answer but all things were correct and I had created some blazor server side projects which working and there weren&#39;t any acceptable reason for the ssl connection failure."
+    }
+]

@@ -1,0 +1,173 @@
+[
+    {
+        "owner": {
+            "reputation": 1,
+            "user_id": 6152891,
+            "user_type": "registered",
+            "accept_rate": 75,
+            "profile_image": "https://www.gravatar.com/avatar/b45b7f89429f8766cdbf6c776c0a9d41?s=128&d=identicon&r=PG",
+            "display_name": "enet",
+            "link": "https://stackoverflow.com/users/6152891/enet"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1561138672,
+        "post_id": 56679804,
+        "comment_id": 99979517,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Continue.....This factor, however, has no weight whatsoever, in determining what mode of execution to choose. Can&#39;t I use Web Api with Server-Side Blazor ! Of course I can. Can&#39;t I use a local simple server in a Server-Side Blazor, to access data  and send it to the calling code !  Of course I can... Blazor  you..."
+    },
+    {
+        "owner": {
+            "reputation": 1,
+            "user_id": 6152891,
+            "user_type": "registered",
+            "accept_rate": 75,
+            "profile_image": "https://www.gravatar.com/avatar/b45b7f89429f8766cdbf6c776c0a9d41?s=128&d=identicon&r=PG",
+            "display_name": "enet",
+            "link": "https://stackoverflow.com/users/6152891/enet"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1561137791,
+        "post_id": 56679804,
+        "comment_id": 99979129,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@Henk Holterman, your answer is contains two quotes, each of which is accompanied by a suggestion. I&#39;ve already related to the first quote, now I shall relate to the second one:  HttpHandler, in its simplest sense is a class (process) that handles incoming requests made to the ASP.NET websites. Web Service Handler (.asmx) is a good example. Indeed, &quot;API server exposing endpoints to the client&quot;, or Web Api controller class, is the replacement of the old Asp.Net HTTPHandlers in Asp.Net Core. But how can you conclude from this that Hosted model should be chosen!"
+    },
+    {
+        "owner": {
+            "reputation": 1,
+            "user_id": 6152891,
+            "user_type": "registered",
+            "accept_rate": 75,
+            "profile_image": "https://www.gravatar.com/avatar/b45b7f89429f8766cdbf6c776c0a9d41?s=128&d=identicon&r=PG",
+            "display_name": "enet",
+            "link": "https://stackoverflow.com/users/6152891/enet"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1561135198,
+        "post_id": 56679804,
+        "comment_id": 99978064,
+        "content_license": "CC BY-SA 4.0",
+        "body": "&quot;@Tim - you are right&quot; Right about what ? Do you mind elaborating?"
+    },
+    {
+        "owner": {
+            "reputation": 1,
+            "user_id": 6152891,
+            "user_type": "registered",
+            "accept_rate": 75,
+            "profile_image": "https://www.gravatar.com/avatar/b45b7f89429f8766cdbf6c776c0a9d41?s=128&d=identicon&r=PG",
+            "display_name": "enet",
+            "link": "https://stackoverflow.com/users/6152891/enet"
+        },
+        "reply_to_user": {
+            "reputation": 7890,
+            "user_id": 311343,
+            "user_type": "registered",
+            "accept_rate": 63,
+            "profile_image": "https://www.gravatar.com/avatar/d966ec61fcaf459d0a057828f285694c?s=128&d=identicon&r=PG",
+            "display_name": "Tim",
+            "link": "https://stackoverflow.com/users/311343/tim"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1561134593,
+        "post_id": 56679804,
+        "comment_id": 99977837,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@Tim, where exactly have I said that  System.Data.SqlClient wouldn&#39;t be &quot;accessible in one of the app.Server.Controllers?&quot; I&#39;ve explicitly said &quot;In both mode of execution, server-side or client side Blazor, SqlClient technology is employed on the server, be it a Web Api controller class, or a local simple service..&quot; Please, read my comment again and again till you fully comprehend it. Then read my answer once more, so that you really understand what I am saying. I know it&#39;s not easy to understand,  not the language but the concepts behind it, but this is the way to understand what is Blazor."
+    },
+    {
+        "owner": {
+            "reputation": 240386,
+            "user_id": 60761,
+            "user_type": "registered",
+            "accept_rate": 91,
+            "profile_image": "https://www.gravatar.com/avatar/5bf43bae0431d8f4a062234b5e3a0cb9?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Henk Holterman",
+            "link": "https://stackoverflow.com/users/60761/henk-holterman"
+        },
+        "reply_to_user": {
+            "reputation": 7890,
+            "user_id": 311343,
+            "user_type": "registered",
+            "accept_rate": 63,
+            "profile_image": "https://www.gravatar.com/avatar/d966ec61fcaf459d0a057828f285694c?s=128&d=identicon&r=PG",
+            "display_name": "Tim",
+            "link": "https://stackoverflow.com/users/311343/tim"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1561118524,
+        "post_id": 56679804,
+        "comment_id": 99969381,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@Tim - you are right. Your choices are the Hosted model (Blazor CS + Web API) or Blazor ServerSide. I would favour the Hosted model for now, a Web API is very established. Using a Db in Server side still has its problems (like lack of usable Scoping)."
+    },
+    {
+        "owner": {
+            "reputation": 240386,
+            "user_id": 60761,
+            "user_type": "registered",
+            "accept_rate": 91,
+            "profile_image": "https://www.gravatar.com/avatar/5bf43bae0431d8f4a062234b5e3a0cb9?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Henk Holterman",
+            "link": "https://stackoverflow.com/users/60761/henk-holterman"
+        },
+        "reply_to_user": {
+            "reputation": 1,
+            "user_id": 6152891,
+            "user_type": "registered",
+            "accept_rate": 75,
+            "profile_image": "https://www.gravatar.com/avatar/b45b7f89429f8766cdbf6c776c0a9d41?s=128&d=identicon&r=PG",
+            "display_name": "enet",
+            "link": "https://stackoverflow.com/users/6152891/enet"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1561118282,
+        "post_id": 56679804,
+        "comment_id": 99969267,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@Issac - I never drew the conclusion that &quot;that Blazor server-side should be selected&quot;. Your reading is incorrect."
+    },
+    {
+        "owner": {
+            "reputation": 7890,
+            "user_id": 311343,
+            "user_type": "registered",
+            "accept_rate": 63,
+            "profile_image": "https://www.gravatar.com/avatar/d966ec61fcaf459d0a057828f285694c?s=128&d=identicon&r=PG",
+            "display_name": "Tim",
+            "link": "https://stackoverflow.com/users/311343/tim"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1561118157,
+        "post_id": 56679804,
+        "comment_id": 99969210,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@Isaac: I am confused by your remark to Henk. The Core Hosted model splits the project into app.Client and app.Server parts. Why wouldn&#39;t System.Data.SqlClient be accessible in one of the app.Server.Controllers?"
+    },
+    {
+        "owner": {
+            "reputation": 1,
+            "user_id": 6152891,
+            "user_type": "registered",
+            "accept_rate": 75,
+            "profile_image": "https://www.gravatar.com/avatar/b45b7f89429f8766cdbf6c776c0a9d41?s=128&d=identicon&r=PG",
+            "display_name": "enet",
+            "link": "https://stackoverflow.com/users/6152891/enet"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1561115883,
+        "post_id": 56679804,
+        "comment_id": 99968130,
+        "content_license": "CC BY-SA 4.0",
+        "body": "SqlClient technology is used to retrieve data from an SQL Server database. It is not supported on client devices such as a web browser. It is supported on the server. Your conclusion, however,  that Blazor server-side should be selected on account of this is incorrect. In both mode of execution, server-side or client side Blazor, SqlClient technology is employed on the server, be it a Web Api controller class, or a local simple service..."
+    }
+]

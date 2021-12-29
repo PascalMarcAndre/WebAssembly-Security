@@ -1,0 +1,110 @@
+[
+    {
+        "owner": {
+            "reputation": 938531,
+            "user_id": 23354,
+            "user_type": "moderator",
+            "accept_rate": 100,
+            "profile_image": "https://i.stack.imgur.com/CrVFH.png?s=128&g=1",
+            "display_name": "Marc Gravell",
+            "link": "https://stackoverflow.com/users/23354/marc-gravell"
+        },
+        "reply_to_user": {
+            "reputation": 3333,
+            "user_id": 1862658,
+            "user_type": "registered",
+            "accept_rate": 71,
+            "profile_image": "https://www.gravatar.com/avatar/f3f7f8447402ea77e41cade2a491a38b?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Aria",
+            "link": "https://stackoverflow.com/users/1862658/aria"
+        },
+        "edited": false,
+        "score": 2,
+        "creation_date": 1592490276,
+        "post_id": 62450855,
+        "comment_id": 110449499,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@Aria important: no, those applications will not &quot;be supported in .Net 5&quot; <i>at all</i> - they will simply continue to run <i>in .NET Framework</i> - whatever version of that you are currently using. If you choose to stay with .NET Framework, you <i>are choosing to stay with .NET Framework</i> - with everything that implies. .NET 5 is fundamentally a different beast to .NET Framework, and you need to migrate your code for that; essentially .NET 5 is .NET Core, so migrating to .NET Core 3.1 is a great step towards .NET 5; there should be minimal work migrating from .NET Core 3.1 to .NET 5"
+    },
+    {
+        "owner": {
+            "reputation": 3333,
+            "user_id": 1862658,
+            "user_type": "registered",
+            "accept_rate": 71,
+            "profile_image": "https://www.gravatar.com/avatar/f3f7f8447402ea77e41cade2a491a38b?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Aria",
+            "link": "https://stackoverflow.com/users/1862658/aria"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1592487159,
+        "post_id": 62450855,
+        "comment_id": 110447622,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Yes, I mean the latest version of .Net Core."
+    },
+    {
+        "owner": {
+            "reputation": 3333,
+            "user_id": 1862658,
+            "user_type": "registered",
+            "accept_rate": 71,
+            "profile_image": "https://www.gravatar.com/avatar/f3f7f8447402ea77e41cade2a491a38b?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Aria",
+            "link": "https://stackoverflow.com/users/1862658/aria"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1592486930,
+        "post_id": 62450855,
+        "comment_id": 110447447,
+        "content_license": "CC BY-SA 4.0",
+        "body": "So the meaning of <code>If you have existing .NET Framework applications that you are maintaining, there is no need to move these applications to .NET Core.</code> is that the .Net frameworks just will be supported in .Net 5 not being Cross-Platform-ed and if an applicaton wnats to be cross-platform still need to be port to .Net first."
+    },
+    {
+        "owner": {
+            "reputation": 938531,
+            "user_id": 23354,
+            "user_type": "moderator",
+            "accept_rate": 100,
+            "profile_image": "https://i.stack.imgur.com/CrVFH.png?s=128&g=1",
+            "display_name": "Marc Gravell",
+            "link": "https://stackoverflow.com/users/23354/marc-gravell"
+        },
+        "reply_to_user": {
+            "reputation": 3333,
+            "user_id": 1862658,
+            "user_type": "registered",
+            "accept_rate": 71,
+            "profile_image": "https://www.gravatar.com/avatar/f3f7f8447402ea77e41cade2a491a38b?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Aria",
+            "link": "https://stackoverflow.com/users/1862658/aria"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1592486473,
+        "post_id": 62450855,
+        "comment_id": 110447189,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@Aria yes, basically (note: .NET Core 3.1 is the LTS - so I&#39;d pick that for now, <i>not</i> .NET Core 3.0): <a href=\"https://dotnet.microsoft.com/platform/support/policy/dotnet-core\" rel=\"nofollow noreferrer\">dotnet.microsoft.com/platform/support/policy/dotnet-core</a>"
+    },
+    {
+        "owner": {
+            "reputation": 3333,
+            "user_id": 1862658,
+            "user_type": "registered",
+            "accept_rate": 71,
+            "profile_image": "https://www.gravatar.com/avatar/f3f7f8447402ea77e41cade2a491a38b?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Aria",
+            "link": "https://stackoverflow.com/users/1862658/aria"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1592486430,
+        "post_id": 62450855,
+        "comment_id": 110447164,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Thanks, so if we want to make our project to be cross-platform, firstly should port them to .Net Core 3 or .Net 5 in future?"
+    }
+]

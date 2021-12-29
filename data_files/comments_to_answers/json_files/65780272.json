@@ -1,0 +1,61 @@
+[
+    {
+        "owner": {
+            "reputation": 7,
+            "user_id": 10216272,
+            "user_type": "registered",
+            "profile_image": "https://graph.facebook.com/2027863500570931/picture?type=large",
+            "display_name": "Samo Simoncic",
+            "link": "https://stackoverflow.com/users/10216272/samo-simoncic"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1611087603,
+        "post_id": 65780272,
+        "comment_id": 116336711,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Please imagine the single-page website. Usually, this kind of page has a &quot;contact us&quot; tab where is the contact form.  If the user fills up the contact form then data have to be somehow sent to us. For this purpose, I tried to use MS graph API. When the user clicks the submit button, in the background the registration to my account will be created and an email will be sent to me. It means that the user is not aware of any registration procedure."
+    },
+    {
+        "owner": {
+            "reputation": 26,
+            "user_id": 6526032,
+            "user_type": "registered",
+            "profile_image": "https://graph.facebook.com/260519407643274/picture?type=large",
+            "display_name": "Ahmad Mozaffar",
+            "link": "https://stackoverflow.com/users/6526032/ahmad-mozaffar"
+        },
+        "reply_to_user": {
+            "reputation": 7,
+            "user_id": 10216272,
+            "user_type": "registered",
+            "profile_image": "https://graph.facebook.com/2027863500570931/picture?type=large",
+            "display_name": "Samo Simoncic",
+            "link": "https://stackoverflow.com/users/10216272/samo-simoncic"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1611078133,
+        "post_id": 65780272,
+        "comment_id": 116332696,
+        "content_license": "CC BY-SA 4.0",
+        "body": "You mean, you want the user to be redirected automatically to the login page without the need to click Login?"
+    },
+    {
+        "owner": {
+            "reputation": 7,
+            "user_id": 10216272,
+            "user_type": "registered",
+            "profile_image": "https://graph.facebook.com/2027863500570931/picture?type=large",
+            "display_name": "Samo Simoncic",
+            "link": "https://stackoverflow.com/users/10216272/samo-simoncic"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1611057461,
+        "post_id": 65780272,
+        "comment_id": 116322033,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I completely understand your modifications but I would like that the registration is made automatically without user intervention. I would like to use this approach for our webpage. When the user fills in the contact form the email will be sent."
+    }
+]

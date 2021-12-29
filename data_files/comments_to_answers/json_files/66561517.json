@@ -1,0 +1,148 @@
+[
+    {
+        "owner": {
+            "reputation": 7321,
+            "user_id": 68490,
+            "user_type": "registered",
+            "accept_rate": 20,
+            "profile_image": "https://www.gravatar.com/avatar/b3c70bbc491ede87ae5682c561af07d2?s=128&d=identicon&r=PG",
+            "display_name": "Tore Nestenius",
+            "link": "https://stackoverflow.com/users/68490/tore-nestenius"
+        },
+        "reply_to_user": {
+            "reputation": 431,
+            "user_id": 14201840,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/4e05d4fd94801927852066255854d2c6?s=128&d=identicon&r=PG&f=1",
+            "display_name": "TheNoobProgrammer",
+            "link": "https://stackoverflow.com/users/14201840/thenoobprogrammer"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1615553915,
+        "post_id": 66561517,
+        "comment_id": 117733109,
+        "content_license": "CC BY-SA 4.0",
+        "body": "you need to do claims mapping if claims in the token does not end up in the User object. That is by design. only a few standard claims are included by default."
+    },
+    {
+        "owner": {
+            "reputation": 431,
+            "user_id": 14201840,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/4e05d4fd94801927852066255854d2c6?s=128&d=identicon&r=PG&f=1",
+            "display_name": "TheNoobProgrammer",
+            "link": "https://stackoverflow.com/users/14201840/thenoobprogrammer"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1615550043,
+        "post_id": 66561517,
+        "comment_id": 117731537,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I got everything working for the identity server but the requested claims and the claims that is returned from the identity server to the client is not matching. I already updated the code"
+    },
+    {
+        "owner": {
+            "reputation": 7321,
+            "user_id": 68490,
+            "user_type": "registered",
+            "accept_rate": 20,
+            "profile_image": "https://www.gravatar.com/avatar/b3c70bbc491ede87ae5682c561af07d2?s=128&d=identicon&r=PG",
+            "display_name": "Tore Nestenius",
+            "link": "https://stackoverflow.com/users/68490/tore-nestenius"
+        },
+        "reply_to_user": {
+            "reputation": 431,
+            "user_id": 14201840,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/4e05d4fd94801927852066255854d2c6?s=128&d=identicon&r=PG&f=1",
+            "display_name": "TheNoobProgrammer",
+            "link": "https://stackoverflow.com/users/14201840/thenoobprogrammer"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1615535731,
+        "post_id": 66561517,
+        "comment_id": 117725803,
+        "content_license": "CC BY-SA 4.0",
+        "body": "So, what is the problem right now? I would l use a took like <a href=\"http://www.getfiddler.com\" rel=\"nofollow noreferrer\">getfiddler.com</a> to examine the tokens that the clients receive, to verify what they contain. because what you see in the token and in your application might now always be the same."
+    },
+    {
+        "owner": {
+            "reputation": 431,
+            "user_id": 14201840,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/4e05d4fd94801927852066255854d2c6?s=128&d=identicon&r=PG&f=1",
+            "display_name": "TheNoobProgrammer",
+            "link": "https://stackoverflow.com/users/14201840/thenoobprogrammer"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1615477244,
+        "post_id": 66561517,
+        "comment_id": 117707645,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I still have the same problem event though i got the Identity Server to work but using oidc instead with google sign-in link as its authority, it still show the same like in the image, i&#39;ll update the post"
+    },
+    {
+        "owner": {
+            "reputation": 431,
+            "user_id": 14201840,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/4e05d4fd94801927852066255854d2c6?s=128&d=identicon&r=PG&f=1",
+            "display_name": "TheNoobProgrammer",
+            "link": "https://stackoverflow.com/users/14201840/thenoobprogrammer"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1615374882,
+        "post_id": 66561517,
+        "comment_id": 117669413,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Thanks for the suggestion"
+    },
+    {
+        "owner": {
+            "reputation": 7321,
+            "user_id": 68490,
+            "user_type": "registered",
+            "accept_rate": 20,
+            "profile_image": "https://www.gravatar.com/avatar/b3c70bbc491ede87ae5682c561af07d2?s=128&d=identicon&r=PG",
+            "display_name": "Tore Nestenius",
+            "link": "https://stackoverflow.com/users/68490/tore-nestenius"
+        },
+        "reply_to_user": {
+            "reputation": 431,
+            "user_id": 14201840,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/4e05d4fd94801927852066255854d2c6?s=128&d=identicon&r=PG&f=1",
+            "display_name": "TheNoobProgrammer",
+            "link": "https://stackoverflow.com/users/14201840/thenoobprogrammer"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1615372029,
+        "post_id": 66561517,
+        "comment_id": 117668178,
+        "content_license": "CC BY-SA 4.0",
+        "body": "a good practrice is to separate the client, API and IdentityServer in separate projects, makes the reasoning around the system much easier..."
+    },
+    {
+        "owner": {
+            "reputation": 431,
+            "user_id": 14201840,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/4e05d4fd94801927852066255854d2c6?s=128&d=identicon&r=PG&f=1",
+            "display_name": "TheNoobProgrammer",
+            "link": "https://stackoverflow.com/users/14201840/thenoobprogrammer"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1615371801,
+        "post_id": 66561517,
+        "comment_id": 117668056,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I decided to create new identity server file and it worked perfectly. I think this is because before i started this side project, i didn&#39;t think it through about the backend security. So i think i&#39;m going to start over for the backend."
+    }
+]

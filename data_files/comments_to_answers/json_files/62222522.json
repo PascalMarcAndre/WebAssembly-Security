@@ -1,0 +1,160 @@
+[
+    {
+        "owner": {
+            "reputation": 3502,
+            "user_id": 13378247,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/10d7d5a6636d8776427782cf74f9bba7?s=128&d=identicon&r=PG&f=1",
+            "display_name": "GirkovArpa",
+            "link": "https://stackoverflow.com/users/13378247/girkovarpa"
+        },
+        "reply_to_user": {
+            "reputation": 1874,
+            "user_id": 1816260,
+            "user_type": "registered",
+            "accept_rate": 46,
+            "profile_image": "https://i.stack.imgur.com/PiN0u.jpg?s=128&g=1",
+            "display_name": "Tito",
+            "link": "https://stackoverflow.com/users/1816260/tito"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1591947733,
+        "post_id": 62222522,
+        "comment_id": 110253173,
+        "content_license": "CC BY-SA 4.0",
+        "body": "&quot;<a href=\"https://wiki.sei.cmu.edu/confluence/display/cplusplus/CTR51-CPP.+Use+valid+references%2C+pointers%2C+and+iterators+to+reference+elements+of+a+container\" rel=\"nofollow noreferrer\">Storing an iterator, reference, or pointer to an element within a container for any length of time comes with a risk that the underlying container may be modified such that the stored iterator, pointer, or reference becomes invalid. For instance, when a sequence container such as std::vector requires an underlying reallocation, outstanding iterators, pointers, and references will be invalidated</a>.&quot;"
+    },
+    {
+        "owner": {
+            "reputation": 1874,
+            "user_id": 1816260,
+            "user_type": "registered",
+            "accept_rate": 46,
+            "profile_image": "https://i.stack.imgur.com/PiN0u.jpg?s=128&g=1",
+            "display_name": "Tito",
+            "link": "https://stackoverflow.com/users/1816260/tito"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1591945864,
+        "post_id": 62222522,
+        "comment_id": 110252366,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@GirkovArpha now that all makes sense, do you know  such undefined behavior has been described in the official documentation?"
+    },
+    {
+        "owner": {
+            "reputation": 3502,
+            "user_id": 13378247,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/10d7d5a6636d8776427782cf74f9bba7?s=128&d=identicon&r=PG&f=1",
+            "display_name": "GirkovArpa",
+            "link": "https://stackoverflow.com/users/13378247/girkovarpa"
+        },
+        "reply_to_user": {
+            "reputation": 1874,
+            "user_id": 1816260,
+            "user_type": "registered",
+            "accept_rate": 46,
+            "profile_image": "https://i.stack.imgur.com/PiN0u.jpg?s=128&g=1",
+            "display_name": "Tito",
+            "link": "https://stackoverflow.com/users/1816260/tito"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1591908106,
+        "post_id": 62222522,
+        "comment_id": 110242235,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Another way of putting it is, it causes undefined behavior."
+    },
+    {
+        "owner": {
+            "reputation": 3502,
+            "user_id": 13378247,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/10d7d5a6636d8776427782cf74f9bba7?s=128&d=identicon&r=PG&f=1",
+            "display_name": "GirkovArpa",
+            "link": "https://stackoverflow.com/users/13378247/girkovarpa"
+        },
+        "reply_to_user": {
+            "reputation": 1874,
+            "user_id": 1816260,
+            "user_type": "registered",
+            "accept_rate": 46,
+            "profile_image": "https://i.stack.imgur.com/PiN0u.jpg?s=128&g=1",
+            "display_name": "Tito",
+            "link": "https://stackoverflow.com/users/1816260/tito"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1591907509,
+        "post_id": 62222522,
+        "comment_id": 110242010,
+        "content_license": "CC BY-SA 4.0",
+        "body": "You cannot reliably access vector elements by pointers in pure C++, much less in WebAssembly, because vectors invalidate such pointers as part of automatic memory management."
+    },
+    {
+        "owner": {
+            "reputation": 1874,
+            "user_id": 1816260,
+            "user_type": "registered",
+            "accept_rate": 46,
+            "profile_image": "https://i.stack.imgur.com/PiN0u.jpg?s=128&g=1",
+            "display_name": "Tito",
+            "link": "https://stackoverflow.com/users/1816260/tito"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1591863985,
+        "post_id": 62222522,
+        "comment_id": 110218774,
+        "content_license": "CC BY-SA 4.0",
+        "body": "thank you for the responce, I want to clear which pointer i am sending i.e. here is the code        const vector&lt;uint8_t&gt;&amp;  v;  const uint8_t *PtrSentToJavaScript = &amp;v[0];   .  Here i am not sending a pointer to the vector itself but a pointer to the first element in the vector that represent effectivelly the file/blog/string that i want to read in JavaScript"
+    },
+    {
+        "owner": {
+            "reputation": 3502,
+            "user_id": 13378247,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/10d7d5a6636d8776427782cf74f9bba7?s=128&d=identicon&r=PG&f=1",
+            "display_name": "GirkovArpa",
+            "link": "https://stackoverflow.com/users/13378247/girkovarpa"
+        },
+        "reply_to_user": {
+            "reputation": 1874,
+            "user_id": 1816260,
+            "user_type": "registered",
+            "accept_rate": 46,
+            "profile_image": "https://i.stack.imgur.com/PiN0u.jpg?s=128&g=1",
+            "display_name": "Tito",
+            "link": "https://stackoverflow.com/users/1816260/tito"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1591481790,
+        "post_id": 62222522,
+        "comment_id": 110074364,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Direct pointer from vector doesn&#39;t produce the results you wanted because there is no such thing as a vector in JavaScript.  Not because the vector is &quot;garbage collected&quot;.  Typed Array pointers work because they exist in JavaScript.  You would need a JavaScript implementation of vector that is compatible with your C++ vector implementation in order to do what you&#39;re trying to do."
+    },
+    {
+        "owner": {
+            "reputation": 1874,
+            "user_id": 1816260,
+            "user_type": "registered",
+            "accept_rate": 46,
+            "profile_image": "https://i.stack.imgur.com/PiN0u.jpg?s=128&g=1",
+            "display_name": "Tito",
+            "link": "https://stackoverflow.com/users/1816260/tito"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1591430909,
+        "post_id": 62222522,
+        "comment_id": 110057189,
+        "content_license": "CC BY-SA 4.0",
+        "body": "most likelly i did not express myself clearly when i mean send i pointer to javascript i mean that this pointer is used to create a  Uint8Array which is holding the string , as shown in the example above in the quesiton. What works is if i copy the memroy from the vector to another  &quot;char* char_array &quot;  using the new operator and  then send the pointer of that char_array. Thus my question was is the vector &quot;garbage collected&quot; in this case since it is living on the stack and was that the reason why direct pointer from vector is not producing the results i wanted?"
+    }
+]

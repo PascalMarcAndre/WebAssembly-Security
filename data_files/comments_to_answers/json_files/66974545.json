@@ -1,0 +1,86 @@
+[
+    {
+        "owner": {
+            "reputation": 10905,
+            "user_id": 18938,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/cad36aea9ff5e233ea939e212bfc466b?s=128&d=identicon&r=PG",
+            "display_name": "Eric King",
+            "link": "https://stackoverflow.com/users/18938/eric-king"
+        },
+        "reply_to_user": {
+            "reputation": 630,
+            "user_id": 9475977,
+            "user_type": "registered",
+            "profile_image": "https://lh3.googleusercontent.com/-XdUIqdMkCWA/AAAAAAAAAAI/AAAAAAAAAAA/4252rscbv5M/photo.jpg?sz=128",
+            "display_name": "Gur Galler",
+            "link": "https://stackoverflow.com/users/9475977/gur-galler"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1617735374,
+        "post_id": 66974545,
+        "comment_id": 118386945,
+        "content_license": "CC BY-SA 4.0",
+        "body": "There&#39;s no direct &quot;event&quot; to subscribe to, in the sense that this code will be running in the browser while the authentication itself is happening on the server, a completely different machine. As @enet has mentioned, the client&#39;s <a href=\"https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.components.webassembly.authentication.remoteauthenticatorview?view=aspnetcore-5.0\" rel=\"nofollow noreferrer\">RemoteAuthenticatorView</a> has a property called <code>OnLoginSucceeded</code> that may be what you want."
+    },
+    {
+        "owner": {
+            "reputation": 630,
+            "user_id": 9475977,
+            "user_type": "registered",
+            "profile_image": "https://lh3.googleusercontent.com/-XdUIqdMkCWA/AAAAAAAAAAI/AAAAAAAAAAA/4252rscbv5M/photo.jpg?sz=128",
+            "display_name": "Gur Galler",
+            "link": "https://stackoverflow.com/users/9475977/gur-galler"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1617734962,
+        "post_id": 66974545,
+        "comment_id": 118386774,
+        "content_license": "CC BY-SA 4.0",
+        "body": "As far as I know, there is no way to run code just once in Blazor...the best we can do is once per page refresh. Using persistent storage is an option, but I think there should be a better way to subscribe to a simple event... The provider knows when there is a change and it triggers an event, I just can figure out how to subscribe to it."
+    },
+    {
+        "owner": {
+            "reputation": 10905,
+            "user_id": 18938,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/cad36aea9ff5e233ea939e212bfc466b?s=128&d=identicon&r=PG",
+            "display_name": "Eric King",
+            "link": "https://stackoverflow.com/users/18938/eric-king"
+        },
+        "reply_to_user": {
+            "reputation": 630,
+            "user_id": 9475977,
+            "user_type": "registered",
+            "profile_image": "https://lh3.googleusercontent.com/-XdUIqdMkCWA/AAAAAAAAAAI/AAAAAAAAAAA/4252rscbv5M/photo.jpg?sz=128",
+            "display_name": "Gur Galler",
+            "link": "https://stackoverflow.com/users/9475977/gur-galler"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1617734673,
+        "post_id": 66974545,
+        "comment_id": 118386637,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Then you can put it in a component that only gets rendered once (like your main layout or similar) or use some application state to keep track of whether you&#39;ve triggered the function already."
+    },
+    {
+        "owner": {
+            "reputation": 630,
+            "user_id": 9475977,
+            "user_type": "registered",
+            "profile_image": "https://lh3.googleusercontent.com/-XdUIqdMkCWA/AAAAAAAAAAI/AAAAAAAAAAA/4252rscbv5M/photo.jpg?sz=128",
+            "display_name": "Gur Galler",
+            "link": "https://stackoverflow.com/users/9475977/gur-galler"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1617734353,
+        "post_id": 66974545,
+        "comment_id": 118386512,
+        "content_license": "CC BY-SA 4.0",
+        "body": "But then my code will run every time the component is rendered. I&#39;d like the authentication action to trigger a function just once"
+    }
+]

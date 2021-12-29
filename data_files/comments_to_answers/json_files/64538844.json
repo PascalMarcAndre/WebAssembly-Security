@@ -1,0 +1,28 @@
+[
+    {
+        "owner": {
+            "reputation": 938531,
+            "user_id": 23354,
+            "user_type": "moderator",
+            "accept_rate": 100,
+            "profile_image": "https://i.stack.imgur.com/CrVFH.png?s=128&g=1",
+            "display_name": "Marc Gravell",
+            "link": "https://stackoverflow.com/users/23354/marc-gravell"
+        },
+        "reply_to_user": {
+            "reputation": 199,
+            "user_id": 3443770,
+            "user_type": "registered",
+            "profile_image": "https://graph.facebook.com/601368775/picture?type=large",
+            "display_name": "paburgos",
+            "link": "https://stackoverflow.com/users/3443770/paburgos"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1604010953,
+        "post_id": 64538844,
+        "comment_id": 114225234,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@paburgos you&#39;re welcome; if it answered your question, please consider pressing that green tick icon"
+    }
+]

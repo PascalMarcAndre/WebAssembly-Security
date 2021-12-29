@@ -1,0 +1,330 @@
+[
+    {
+        "owner": {
+            "reputation": 2265,
+            "user_id": 3960200,
+            "user_type": "registered",
+            "accept_rate": 41,
+            "profile_image": "https://graph.facebook.com/726296462/picture?type=large",
+            "display_name": "Etienne Charland",
+            "link": "https://stackoverflow.com/users/3960200/etienne-charland"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1607547098,
+        "post_id": 64337213,
+        "comment_id": 115310600,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Got any time to look into this approach? My JS skills aren&#39;t good enough."
+    },
+    {
+        "owner": {
+            "reputation": 139,
+            "user_id": 8375468,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/5dc2d545590290f9e23aac8936a3a992?s=128&d=identicon&r=PG&f=1",
+            "display_name": "JoeGER94",
+            "link": "https://stackoverflow.com/users/8375468/joeger94"
+        },
+        "reply_to_user": {
+            "reputation": 2265,
+            "user_id": 3960200,
+            "user_type": "registered",
+            "accept_rate": 41,
+            "profile_image": "https://graph.facebook.com/726296462/picture?type=large",
+            "display_name": "Etienne Charland",
+            "link": "https://stackoverflow.com/users/3960200/etienne-charland"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1602827912,
+        "post_id": 64337213,
+        "comment_id": 113848087,
+        "content_license": "CC BY-SA 4.0",
+        "body": "this is not a too bad idea. i think you could create a JS function which get called from Blazor. This JS function could do the &quot;post&quot; for you. Its not difficult to try but i havent had time to try yet. I will check and give you response"
+    },
+    {
+        "owner": {
+            "reputation": 2265,
+            "user_id": 3960200,
+            "user_type": "registered",
+            "accept_rate": 41,
+            "profile_image": "https://graph.facebook.com/726296462/picture?type=large",
+            "display_name": "Etienne Charland",
+            "link": "https://stackoverflow.com/users/3960200/etienne-charland"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1602801017,
+        "post_id": 64337213,
+        "comment_id": 113842717,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Do you think it would be possible to write a JavaScript function that posts in an IFrame and then waits for and returns the result? If that would be possible, then Blazor could post and get the result back very smoothly in a non-disruptive way. I&#39;m not good enough in JavaScript though."
+    },
+    {
+        "owner": {
+            "reputation": 2265,
+            "user_id": 3960200,
+            "user_type": "registered",
+            "accept_rate": 41,
+            "profile_image": "https://graph.facebook.com/726296462/picture?type=large",
+            "display_name": "Etienne Charland",
+            "link": "https://stackoverflow.com/users/3960200/etienne-charland"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1602770973,
+        "post_id": 64337213,
+        "comment_id": 113830535,
+        "content_license": "CC BY-SA 4.0",
+        "body": "actually I was using .NET 5 RC2"
+    },
+    {
+        "owner": {
+            "reputation": 139,
+            "user_id": 8375468,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/5dc2d545590290f9e23aac8936a3a992?s=128&d=identicon&r=PG&f=1",
+            "display_name": "JoeGER94",
+            "link": "https://stackoverflow.com/users/8375468/joeger94"
+        },
+        "reply_to_user": {
+            "reputation": 2265,
+            "user_id": 3960200,
+            "user_type": "registered",
+            "accept_rate": 41,
+            "profile_image": "https://graph.facebook.com/726296462/picture?type=large",
+            "display_name": "Etienne Charland",
+            "link": "https://stackoverflow.com/users/3960200/etienne-charland"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1602742010,
+        "post_id": 64337213,
+        "comment_id": 113817172,
+        "content_license": "CC BY-SA 4.0",
+        "body": "this is just an example which should give you an idea. But i will refactor it and will give you a fully working Solution later this day. The appearing &quot;reconnecting...&quot; Message is caused by a dotnet-core bug see: <a href=\"https://github.com/dotnet/aspnetcore/issues/25646\" rel=\"nofollow noreferrer\">github.com/dotnet/aspnetcore/issues/25646</a> This bug is already fixed in .net5 RC2 but the backport to 3.1 is incoming"
+    },
+    {
+        "owner": {
+            "reputation": 2265,
+            "user_id": 3960200,
+            "user_type": "registered",
+            "accept_rate": 41,
+            "profile_image": "https://graph.facebook.com/726296462/picture?type=large",
+            "display_name": "Etienne Charland",
+            "link": "https://stackoverflow.com/users/3960200/etienne-charland"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1602707895,
+        "post_id": 64337213,
+        "comment_id": 113809382,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Here&#39;s another idea. It &quot;should&quot; be possible to set the cookie within an IFrame, right?  Using your controller. It might even be possible to read the result back, but that might require a bit of JavaScript work. Perhaps if you or someone want to look into this? <a href=\"https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage\" rel=\"nofollow noreferrer\">developer.mozilla.org/en-US/docs/Web/API/Window/postMessage</a>"
+    },
+    {
+        "owner": {
+            "reputation": 2265,
+            "user_id": 3960200,
+            "user_type": "registered",
+            "accept_rate": 41,
+            "profile_image": "https://graph.facebook.com/726296462/picture?type=large",
+            "display_name": "Etienne Charland",
+            "link": "https://stackoverflow.com/users/3960200/etienne-charland"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1602692646,
+        "post_id": 64337213,
+        "comment_id": 113803141,
+        "content_license": "CC BY-SA 4.0",
+        "body": "There&#39;s also the issue that I can&#39;t embed Blazor controls on a standard <code>&lt;form&gt;</code> and that basic validators aren&#39;t working. If putting them on a <code>EditForm</code>, the HTML looks fine but Submit isn&#39;t working... not sure what&#39;s blocking it. There&#39;s also the &quot;reconnecting...&quot; message that appears while it&#39;s posting a form."
+    },
+    {
+        "owner": {
+            "reputation": 2265,
+            "user_id": 3960200,
+            "user_type": "registered",
+            "accept_rate": 41,
+            "profile_image": "https://graph.facebook.com/726296462/picture?type=large",
+            "display_name": "Etienne Charland",
+            "link": "https://stackoverflow.com/users/3960200/etienne-charland"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1602691993,
+        "post_id": 64337213,
+        "comment_id": 113802841,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Your html code needs to set &quot;name&quot; instead of &quot;id&quot; or the controller doesn&#39;t get the data. Also your controller crashes if username or password is null."
+    },
+    {
+        "owner": {
+            "reputation": 2265,
+            "user_id": 3960200,
+            "user_type": "registered",
+            "accept_rate": 41,
+            "profile_image": "https://graph.facebook.com/726296462/picture?type=large",
+            "display_name": "Etienne Charland",
+            "link": "https://stackoverflow.com/users/3960200/etienne-charland"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1602690489,
+        "post_id": 64337213,
+        "comment_id": 113802157,
+        "content_license": "CC BY-SA 4.0",
+        "body": "btw you have broken <code>&lt;p&#47;&gt;</code> tags"
+    },
+    {
+        "owner": {
+            "reputation": 2265,
+            "user_id": 3960200,
+            "user_type": "registered",
+            "accept_rate": 41,
+            "profile_image": "https://graph.facebook.com/726296462/picture?type=large",
+            "display_name": "Etienne Charland",
+            "link": "https://stackoverflow.com/users/3960200/etienne-charland"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1602690191,
+        "post_id": 64337213,
+        "comment_id": 113802009,
+        "content_license": "CC BY-SA 4.0",
+        "body": "hum. Instead of messing around with JS interop, there&#39;s also the option of first validating the login via Blazor, and if successful, asking the client to post the form. (This would however result in double-login check.) Also need to add ReturnUrl parameter."
+    },
+    {
+        "owner": {
+            "reputation": 139,
+            "user_id": 8375468,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/5dc2d545590290f9e23aac8936a3a992?s=128&d=identicon&r=PG&f=1",
+            "display_name": "JoeGER94",
+            "link": "https://stackoverflow.com/users/8375468/joeger94"
+        },
+        "reply_to_user": {
+            "reputation": 2265,
+            "user_id": 3960200,
+            "user_type": "registered",
+            "accept_rate": 41,
+            "profile_image": "https://graph.facebook.com/726296462/picture?type=large",
+            "display_name": "Etienne Charland",
+            "link": "https://stackoverflow.com/users/3960200/etienne-charland"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1602683806,
+        "post_id": 64337213,
+        "comment_id": 113798453,
+        "content_license": "CC BY-SA 4.0",
+        "body": "My solution doesnt throw errors?... dont know what you mean but i would like to help you."
+    },
+    {
+        "owner": {
+            "reputation": 2265,
+            "user_id": 3960200,
+            "user_type": "registered",
+            "accept_rate": 41,
+            "profile_image": "https://graph.facebook.com/726296462/picture?type=large",
+            "display_name": "Etienne Charland",
+            "link": "https://stackoverflow.com/users/3960200/etienne-charland"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1602682075,
+        "post_id": 64337213,
+        "comment_id": 113797483,
+        "content_license": "CC BY-SA 4.0",
+        "body": "The main issue is that I&#39;d struggle to show error messages. Still, it satisfies the first criteria of avoiding to duplicate the templates for Razor Pages."
+    },
+    {
+        "owner": {
+            "reputation": 139,
+            "user_id": 8375468,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/5dc2d545590290f9e23aac8936a3a992?s=128&d=identicon&r=PG&f=1",
+            "display_name": "JoeGER94",
+            "link": "https://stackoverflow.com/users/8375468/joeger94"
+        },
+        "reply_to_user": {
+            "reputation": 2265,
+            "user_id": 3960200,
+            "user_type": "registered",
+            "accept_rate": 41,
+            "profile_image": "https://graph.facebook.com/726296462/picture?type=large",
+            "display_name": "Etienne Charland",
+            "link": "https://stackoverflow.com/users/3960200/etienne-charland"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1602666323,
+        "post_id": 64337213,
+        "comment_id": 113790009,
+        "content_license": "CC BY-SA 4.0",
+        "body": "i personally think, there are not much more solutions than a Post. The exact implementation can vary - sure"
+    },
+    {
+        "owner": {
+            "reputation": 2265,
+            "user_id": 3960200,
+            "user_type": "registered",
+            "accept_rate": 41,
+            "profile_image": "https://graph.facebook.com/726296462/picture?type=large",
+            "display_name": "Etienne Charland",
+            "link": "https://stackoverflow.com/users/3960200/etienne-charland"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1602625188,
+        "post_id": 64337213,
+        "comment_id": 113779009,
+        "content_license": "CC BY-SA 4.0",
+        "body": "It&#39;s &quot;a&quot; solution. This thread will be a good place to list the various options. I still think we can do better."
+    },
+    {
+        "owner": {
+            "reputation": 139,
+            "user_id": 8375468,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/5dc2d545590290f9e23aac8936a3a992?s=128&d=identicon&r=PG&f=1",
+            "display_name": "JoeGER94",
+            "link": "https://stackoverflow.com/users/8375468/joeger94"
+        },
+        "reply_to_user": {
+            "reputation": 2265,
+            "user_id": 3960200,
+            "user_type": "registered",
+            "accept_rate": 41,
+            "profile_image": "https://graph.facebook.com/726296462/picture?type=large",
+            "display_name": "Etienne Charland",
+            "link": "https://stackoverflow.com/users/3960200/etienne-charland"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1602613033,
+        "post_id": 64337213,
+        "comment_id": 113774089,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@EtienneCharland i implemented a full postback because i wanted to keep it simple. But maybe there is a more elegant way. Never thought about. But you&#39;ve got the full functionality (like cookies etc.). If you like the answer i would appreciate if you mark it"
+    },
+    {
+        "owner": {
+            "reputation": 2265,
+            "user_id": 3960200,
+            "user_type": "registered",
+            "accept_rate": 41,
+            "profile_image": "https://graph.facebook.com/726296462/picture?type=large",
+            "display_name": "Etienne Charland",
+            "link": "https://stackoverflow.com/users/3960200/etienne-charland"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1602605777,
+        "post_id": 64337213,
+        "comment_id": 113770942,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Oh right. You can still do a simple Form Post in Blazor! Only issue I can see is that it will do a full postback on failed login. I like the simplicity of it though!"
+    }
+]

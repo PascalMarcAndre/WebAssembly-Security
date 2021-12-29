@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 795,
+            "user_id": 4873542,
+            "user_type": "registered",
+            "accept_rate": 83,
+            "profile_image": "https://lh4.googleusercontent.com/-Pgb3zoKnvRo/AAAAAAAAAAI/AAAAAAAAAU8/kDuu8Tt_h6Q/photo.jpg?sz=128",
+            "display_name": "Niek Jannink",
+            "link": "https://stackoverflow.com/users/4873542/niek-jannink"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1611782143,
+        "post_id": 60835555,
+        "comment_id": 116564836,
+        "content_license": "CC BY-SA 4.0",
+        "body": "This is also how Im doing it at the moment"
+    }
+]

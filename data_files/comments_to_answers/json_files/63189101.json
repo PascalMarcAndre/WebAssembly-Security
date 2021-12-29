@@ -1,0 +1,163 @@
+[
+    {
+        "owner": {
+            "reputation": 314734,
+            "user_id": 216074,
+            "user_type": "registered",
+            "accept_rate": 90,
+            "profile_image": "https://www.gravatar.com/avatar/609c93bafd659500f83fde04802a9be5?s=128&d=identicon&r=PG",
+            "display_name": "poke",
+            "link": "https://stackoverflow.com/users/216074/poke"
+        },
+        "reply_to_user": {
+            "reputation": 3093,
+            "user_id": 2427359,
+            "user_type": "registered",
+            "accept_rate": 62,
+            "profile_image": "https://www.gravatar.com/avatar/ab8c78d8270ab839f9461cf72cd20a57?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Simon",
+            "link": "https://stackoverflow.com/users/2427359/simon"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1596459661,
+        "post_id": 63189101,
+        "comment_id": 111809288,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@Simon Glad to hear that! Thanks for taking another look :)"
+    },
+    {
+        "owner": {
+            "reputation": 3093,
+            "user_id": 2427359,
+            "user_type": "registered",
+            "accept_rate": 62,
+            "profile_image": "https://www.gravatar.com/avatar/ab8c78d8270ab839f9461cf72cd20a57?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Simon",
+            "link": "https://stackoverflow.com/users/2427359/simon"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1596452437,
+        "post_id": 63189101,
+        "comment_id": 111806146,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@poke: Thank you for your persistence. It works now with UseAuthentication"
+    },
+    {
+        "owner": {
+            "reputation": 314734,
+            "user_id": 216074,
+            "user_type": "registered",
+            "accept_rate": 90,
+            "profile_image": "https://www.gravatar.com/avatar/609c93bafd659500f83fde04802a9be5?s=128&d=identicon&r=PG",
+            "display_name": "poke",
+            "link": "https://stackoverflow.com/users/216074/poke"
+        },
+        "reply_to_user": {
+            "reputation": 3093,
+            "user_id": 2427359,
+            "user_type": "registered",
+            "accept_rate": 62,
+            "profile_image": "https://www.gravatar.com/avatar/ab8c78d8270ab839f9461cf72cd20a57?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Simon",
+            "link": "https://stackoverflow.com/users/2427359/simon"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1596217430,
+        "post_id": 63189101,
+        "comment_id": 111751504,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@Simon The <code>Configure</code> method you show in your edited question does not include a call to <code>UseAuthentication()</code>."
+    },
+    {
+        "owner": {
+            "reputation": 3093,
+            "user_id": 2427359,
+            "user_type": "registered",
+            "accept_rate": 62,
+            "profile_image": "https://www.gravatar.com/avatar/ab8c78d8270ab839f9461cf72cd20a57?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Simon",
+            "link": "https://stackoverflow.com/users/2427359/simon"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1596205587,
+        "post_id": 63189101,
+        "comment_id": 111746276,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@poke: your entire answer seem to be wrong. Not working at all."
+    },
+    {
+        "owner": {
+            "reputation": 314734,
+            "user_id": 216074,
+            "user_type": "registered",
+            "accept_rate": 90,
+            "profile_image": "https://www.gravatar.com/avatar/609c93bafd659500f83fde04802a9be5?s=128&d=identicon&r=PG",
+            "display_name": "poke",
+            "link": "https://stackoverflow.com/users/216074/poke"
+        },
+        "reply_to_user": {
+            "reputation": 3093,
+            "user_id": 2427359,
+            "user_type": "registered",
+            "accept_rate": 62,
+            "profile_image": "https://www.gravatar.com/avatar/ab8c78d8270ab839f9461cf72cd20a57?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Simon",
+            "link": "https://stackoverflow.com/users/2427359/simon"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1596205306,
+        "post_id": 63189101,
+        "comment_id": 111746125,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@Simon I\u2019ve edited my answer to include an explanation to what is going on there and what you actually should do."
+    },
+    {
+        "owner": {
+            "reputation": 1416,
+            "user_id": 12896555,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/7MDPX.jpg?s=128&g=1",
+            "display_name": "Nadeem Taj",
+            "link": "https://stackoverflow.com/users/12896555/nadeem-taj"
+        },
+        "reply_to_user": {
+            "reputation": 3093,
+            "user_id": 2427359,
+            "user_type": "registered",
+            "accept_rate": 62,
+            "profile_image": "https://www.gravatar.com/avatar/ab8c78d8270ab839f9461cf72cd20a57?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Simon",
+            "link": "https://stackoverflow.com/users/2427359/simon"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1596192733,
+        "post_id": 63189101,
+        "comment_id": 111740458,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@simon did you get a chance to look into it? <a href=\"https://stackoverflow.com/questions/23689588/is-it-possible-to-use-async-await-in-mvc-4-authorizeattribute\" title=\"is it possible to use async await in mvc 4 authorizeattribute\">stackoverflow.com/questions/23689588/&hellip;</a>"
+    },
+    {
+        "owner": {
+            "reputation": 3093,
+            "user_id": 2427359,
+            "user_type": "registered",
+            "accept_rate": 62,
+            "profile_image": "https://www.gravatar.com/avatar/ab8c78d8270ab839f9461cf72cd20a57?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Simon",
+            "link": "https://stackoverflow.com/users/2427359/simon"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1596187467,
+        "post_id": 63189101,
+        "comment_id": 111738147,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Sorry, but your answer is not matching my question. The question is: Why is my Authentication Cookie not working against the [Authorize] attribute? The user HAS AN AUTHENCIATION COOKIE as you can see in my posted screenshot. But the framework accidentally redirects the user to the login page."
+    }
+]

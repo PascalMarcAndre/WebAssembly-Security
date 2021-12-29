@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 723,
+            "user_id": 1508479,
+            "user_type": "registered",
+            "accept_rate": 64,
+            "profile_image": "https://i.stack.imgur.com/K8WcV.jpg?s=128&g=1",
+            "display_name": "Vinay",
+            "link": "https://stackoverflow.com/users/1508479/vinay"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1560135415,
+        "post_id": 56507571,
+        "comment_id": 99624930,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Wow, thanks for the info. I didn&#39;t know that. So is there any option to hide my salt in native binary such that it is at least very hard to reverse engineer (such that it is not worth the effort ?)"
+    }
+]

@@ -1,0 +1,86 @@
+[
+    {
+        "owner": {
+            "reputation": 31659,
+            "user_id": 1097780,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/a8f01ad795c29c3d05ad26ee47ea6069?s=128&d=identicon&r=PG",
+            "display_name": "Andreas Rossberg",
+            "link": "https://stackoverflow.com/users/1097780/andreas-rossberg"
+        },
+        "reply_to_user": {
+            "reputation": 95,
+            "user_id": 4907638,
+            "user_type": "registered",
+            "profile_image": "https://graph.facebook.com/10209703477730108/picture?type=large",
+            "display_name": "Vasilii Rogin",
+            "link": "https://stackoverflow.com/users/4907638/vasilii-rogin"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1563042764,
+        "post_id": 56942074,
+        "comment_id": 100574017,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Yes, r15 points to the base address of the memory&#39;s backing store, which is an 8 GiB address range, the beginning of which is the memory at its current size and the rest an unmapped red zone accessing which will signal a memory fault that the engine catches. (It has to be 8GiB because Wasm&#39;s memory instructions use an 32 bit index plus a 32 bit offset.)"
+    },
+    {
+        "owner": {
+            "reputation": 95,
+            "user_id": 4907638,
+            "user_type": "registered",
+            "profile_image": "https://graph.facebook.com/10209703477730108/picture?type=large",
+            "display_name": "Vasilii Rogin",
+            "link": "https://stackoverflow.com/users/4907638/vasilii-rogin"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1562959588,
+        "post_id": 56942074,
+        "comment_id": 100558213,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I still do not understand. I opened <a href=\"https://mbebenita.github.io/WasmExplorer/\" rel=\"nofollow noreferrer\">mbebenita.github.io/WasmExplorer</a>, I wrote this code:  <code>C char test() {   char *p = (char *)(0x0);   return p[0xAABBCC]; }; </code>  Complied asm output contains this line <code>movsx eax, byte ptr [r15 + 0xaabbcc]</code>. Does <code>r15</code> makes this &quot;more efficient virtual memory techniques&quot;?  Am I right that on x64 architecture browsers uses some 4gb memory range which holds only WS ASM data?"
+    },
+    {
+        "owner": {
+            "reputation": 31659,
+            "user_id": 1097780,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/a8f01ad795c29c3d05ad26ee47ea6069?s=128&d=identicon&r=PG",
+            "display_name": "Andreas Rossberg",
+            "link": "https://stackoverflow.com/users/1097780/andreas-rossberg"
+        },
+        "reply_to_user": {
+            "reputation": 95,
+            "user_id": 4907638,
+            "user_type": "registered",
+            "profile_image": "https://graph.facebook.com/10209703477730108/picture?type=large",
+            "display_name": "Vasilii Rogin",
+            "link": "https://stackoverflow.com/users/4907638/vasilii-rogin"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1562935738,
+        "post_id": 56942074,
+        "comment_id": 100547359,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I thought I explain that in the second paragraph? I.e., either by compiling in explicit bounds checks or by intercepting hardware signals."
+    },
+    {
+        "owner": {
+            "reputation": 95,
+            "user_id": 4907638,
+            "user_type": "registered",
+            "profile_image": "https://graph.facebook.com/10209703477730108/picture?type=large",
+            "display_name": "Vasilii Rogin",
+            "link": "https://stackoverflow.com/users/4907638/vasilii-rogin"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1562915768,
+        "post_id": 56942074,
+        "comment_id": 100536955,
+        "content_license": "CC BY-SA 4.0",
+        "body": "You answered &quot;how it works according to standard&quot;. My question is &quot;how it is implemented in browsers&quot;. Browser compile WS code into native x86 instructions. How it checks that output asm code will not go out of borders &quot;pre-defined linear memory&quot;? WS code and JS code runs in the same process (thread?), right? At least they should do so because they have shared memory.  So, my question is about &quot;how this trap mechanism in implemented in browsers&quot;.  How CPU knows that this part of instructions is able to access only subset of process memory?"
+    }
+]

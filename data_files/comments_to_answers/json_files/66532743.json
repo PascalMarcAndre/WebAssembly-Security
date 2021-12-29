@@ -1,0 +1,61 @@
+[
+    {
+        "owner": {
+            "reputation": 1591,
+            "user_id": 2770641,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/366fa9e0a1e8f82fddae1595ffc297d6?s=128&d=identicon&r=PG&f=1",
+            "display_name": "sbc100",
+            "link": "https://stackoverflow.com/users/2770641/sbc100"
+        },
+        "reply_to_user": {
+            "reputation": 304,
+            "user_id": 6348841,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/1018076303083f804ef1d43d2c24fd98?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Asanka",
+            "link": "https://stackoverflow.com/users/6348841/asanka"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1615313707,
+        "post_id": 66532743,
+        "comment_id": 117650986,
+        "content_license": "CC BY-SA 4.0",
+        "body": "No.. WebAssembly core can&#39;t go anything except call the functions that it imports, so if you want want create your own JS code to load the module its completely up to use to decide what it has access to.  In that case you would effectively be creating your own sandbox implementation in JS."
+    },
+    {
+        "owner": {
+            "reputation": 304,
+            "user_id": 6348841,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/1018076303083f804ef1d43d2c24fd98?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Asanka",
+            "link": "https://stackoverflow.com/users/6348841/asanka"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1615225598,
+        "post_id": 66532743,
+        "comment_id": 117620230,
+        "content_license": "CC BY-SA 4.0",
+        "body": "My use-case is running on server-side: if only <code>.wasm</code> file is generated using  Emscripten for native code, with file read implementation in native language. (Js code is use to just instantiate WebAssembly module). Then can webassebly code read the file system ?"
+    },
+    {
+        "owner": {
+            "reputation": 1591,
+            "user_id": 2770641,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/366fa9e0a1e8f82fddae1595ffc297d6?s=128&d=identicon&r=PG&f=1",
+            "display_name": "sbc100",
+            "link": "https://stackoverflow.com/users/2770641/sbc100"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1615218201,
+        "post_id": 66532743,
+        "comment_id": 117616819,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Interestingly/confusingly due to the fast that the web isself provides no local filesystem access at all, emscripten code normally runs in <i>more</i> of a filesystem sandbox than wasi (since wasi programs are often given access to certain local directories).   But this is not but design of emscripten, its just a side effect of running on the web."
+    }
+]

@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 13922,
+            "user_id": 547365,
+            "user_type": "registered",
+            "accept_rate": 79,
+            "profile_image": "https://www.gravatar.com/avatar/ddefbca930fdd39846b698bab7ac3146?s=128&d=identicon&r=PG",
+            "display_name": "w.brian",
+            "link": "https://stackoverflow.com/users/547365/w-brian"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1518036953,
+        "post_id": 48672786,
+        "comment_id": 84344470,
+        "content_license": "CC BY-SA 3.0",
+        "body": "I am using parcel \ud83d\ude42"
+    }
+]

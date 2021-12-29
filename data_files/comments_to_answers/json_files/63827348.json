@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 533,
+            "user_id": 583523,
+            "user_type": "registered",
+            "accept_rate": 40,
+            "profile_image": "https://www.gravatar.com/avatar/d3feb3f2c8373a0945b8f56b5cabcb54?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Andrea",
+            "link": "https://stackoverflow.com/users/583523/andrea"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1599808362,
+        "post_id": 63827348,
+        "comment_id": 112894070,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I understand I have to study, you are right... I thought there could be some solution just out of the box, at least for simple cases...Thank you very much! :-)"
+    }
+]

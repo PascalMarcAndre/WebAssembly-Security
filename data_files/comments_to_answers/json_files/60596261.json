@@ -1,0 +1,81 @@
+[
+    {
+        "owner": {
+            "reputation": 13400,
+            "user_id": 2940908,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://i.stack.imgur.com/E79WU.jpg?s=128&g=1",
+            "display_name": "agua from mars",
+            "link": "https://stackoverflow.com/users/2940908/agua-from-mars"
+        },
+        "reply_to_user": {
+            "reputation": 356,
+            "user_id": 2101456,
+            "user_type": "registered",
+            "accept_rate": 58,
+            "profile_image": "https://i.stack.imgur.com/JVHuZ.png?s=128&g=1",
+            "display_name": "Lucas",
+            "link": "https://stackoverflow.com/users/2101456/lucas"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1587364083,
+        "post_id": 60596261,
+        "comment_id": 108471642,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@Insight I hope this like will help you : <a href=\"https://docs.microsoft.com/en-us/aspnet/core/security/blazor/webassembly/additional-scenarios?view=aspnetcore-3.1#customize-the-authentication-user-interface\" rel=\"nofollow noreferrer\">docs.microsoft.com/en-us/aspnet/core/security/blazor/&hellip;</a>"
+    },
+    {
+        "owner": {
+            "reputation": 356,
+            "user_id": 2101456,
+            "user_type": "registered",
+            "accept_rate": 58,
+            "profile_image": "https://i.stack.imgur.com/JVHuZ.png?s=128&g=1",
+            "display_name": "Lucas",
+            "link": "https://stackoverflow.com/users/2101456/lucas"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1587354299,
+        "post_id": 60596261,
+        "comment_id": 108469139,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Any recommendation on how to get a full SPA login instead of using the MVC scaffolding?"
+    },
+    {
+        "owner": {
+            "reputation": 23,
+            "user_id": 6029872,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/9836937630e3d725f89ac7d03b898828?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Vu Minh",
+            "link": "https://stackoverflow.com/users/6029872/vu-minh"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1583995268,
+        "post_id": 60596261,
+        "comment_id": 107300339,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Thanks, just finished the demo ^^. I&#39;ll check that new Microsoft&#39;s feature"
+    },
+    {
+        "owner": {
+            "reputation": 23,
+            "user_id": 6029872,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/9836937630e3d725f89ac7d03b898828?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Vu Minh",
+            "link": "https://stackoverflow.com/users/6029872/vu-minh"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1583741843,
+        "post_id": 60596261,
+        "comment_id": 107205070,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Thanks, I didn&#39;t know these projects. You helped me a lot. I just played around with these repositories and I think HLSoft.BlazorWebAssembly.Authentication.OpenIdConnect is suitable with my app.  The author has just written it recently, it will support neswest blazor, and he supplied many expamles, one for full-website authentication, and one has silent renew token supporting. I think it&#39;s enough for my project - only technical review demo though. Again, thank you very much :D"
+    }
+]

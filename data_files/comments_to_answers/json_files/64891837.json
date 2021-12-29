@@ -1,0 +1,131 @@
+[
+    {
+        "owner": {
+            "reputation": 3575,
+            "user_id": 1158845,
+            "user_type": "registered",
+            "accept_rate": 48,
+            "profile_image": "https://www.gravatar.com/avatar/e7d3b47649bd04652577d03ecddeed5e?s=128&d=identicon&r=PG",
+            "display_name": "Umair",
+            "link": "https://stackoverflow.com/users/1158845/umair"
+        },
+        "reply_to_user": {
+            "reputation": 29,
+            "user_id": 14307252,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/e54a11089a3f3c3c95c64e358aaa82eb?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Enrique",
+            "link": "https://stackoverflow.com/users/14307252/enrique"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1605730329,
+        "post_id": 64891837,
+        "comment_id": 114744341,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Ahh... I recommend to keep both projects separate. have never seen both client and is4 in the same projects. Hence I am not sure how to solve this issue, sorry."
+    },
+    {
+        "owner": {
+            "reputation": 29,
+            "user_id": 14307252,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/e54a11089a3f3c3c95c64e358aaa82eb?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Enrique",
+            "link": "https://stackoverflow.com/users/14307252/enrique"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1605730206,
+        "post_id": 64891837,
+        "comment_id": 114744292,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I put identity4 to the blazor webassembly project, the identity4 configuration is in the startup class"
+    },
+    {
+        "owner": {
+            "reputation": 3575,
+            "user_id": 1158845,
+            "user_type": "registered",
+            "accept_rate": 48,
+            "profile_image": "https://www.gravatar.com/avatar/e7d3b47649bd04652577d03ecddeed5e?s=128&d=identicon&r=PG",
+            "display_name": "Umair",
+            "link": "https://stackoverflow.com/users/1158845/umair"
+        },
+        "reply_to_user": {
+            "reputation": 29,
+            "user_id": 14307252,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/e54a11089a3f3c3c95c64e358aaa82eb?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Enrique",
+            "link": "https://stackoverflow.com/users/14307252/enrique"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1605730053,
+        "post_id": 64891837,
+        "comment_id": 114744213,
+        "content_license": "CC BY-SA 4.0",
+        "body": "The above startup from blazor or identityserver4?"
+    },
+    {
+        "owner": {
+            "reputation": 29,
+            "user_id": 14307252,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/e54a11089a3f3c3c95c64e358aaa82eb?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Enrique",
+            "link": "https://stackoverflow.com/users/14307252/enrique"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1605727285,
+        "post_id": 64891837,
+        "comment_id": 114742992,
+        "content_license": "CC BY-SA 4.0",
+        "body": "which startup class do you need? already publish my startup class above"
+    },
+    {
+        "owner": {
+            "reputation": 3575,
+            "user_id": 1158845,
+            "user_type": "registered",
+            "accept_rate": 48,
+            "profile_image": "https://www.gravatar.com/avatar/e7d3b47649bd04652577d03ecddeed5e?s=128&d=identicon&r=PG",
+            "display_name": "Umair",
+            "link": "https://stackoverflow.com/users/1158845/umair"
+        },
+        "reply_to_user": {
+            "reputation": 29,
+            "user_id": 14307252,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/e54a11089a3f3c3c95c64e358aaa82eb?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Enrique",
+            "link": "https://stackoverflow.com/users/14307252/enrique"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1605724992,
+        "post_id": 64891837,
+        "comment_id": 114742012,
+        "content_license": "CC BY-SA 4.0",
+        "body": "This code was meant for the blazor app, and I removed some code as I assumed you already had, can you update your question to include the blazor app startup.cs code?"
+    },
+    {
+        "owner": {
+            "reputation": 29,
+            "user_id": 14307252,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/e54a11089a3f3c3c95c64e358aaa82eb?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Enrique",
+            "link": "https://stackoverflow.com/users/14307252/enrique"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1605714214,
+        "post_id": 64891837,
+        "comment_id": 114736936,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I tried the code that you give me as an example but I get the following error: ArgumentException: Options.ClientId must be provided (Parameter &#39;ClientId&#39;)"
+    }
+]

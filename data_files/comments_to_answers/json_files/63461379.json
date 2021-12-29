@@ -1,0 +1,44 @@
+[
+    {
+        "owner": {
+            "reputation": 93083,
+            "user_id": 134204,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/vwnA5.jpg?s=128&g=1",
+            "display_name": "Panagiotis Kanavos",
+            "link": "https://stackoverflow.com/users/134204/panagiotis-kanavos"
+        },
+        "reply_to_user": {
+            "reputation": 107,
+            "user_id": 2587822,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/1217659cff71804549faf1d8596ab27f?s=128&d=identicon&r=PG",
+            "display_name": "David Bowser",
+            "link": "https://stackoverflow.com/users/2587822/david-bowser"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1603460867,
+        "post_id": 63461379,
+        "comment_id": 114052722,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@DavidBowser .NET Core is contained but IIS knows nothing about it without it, so it doesn&#39;t know it needs to integrate your application in its pipeline and forward calls to it"
+    },
+    {
+        "owner": {
+            "reputation": 107,
+            "user_id": 2587822,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/1217659cff71804549faf1d8596ab27f?s=128&d=identicon&r=PG",
+            "display_name": "David Bowser",
+            "link": "https://stackoverflow.com/users/2587822/david-bowser"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1597756820,
+        "post_id": 63461379,
+        "comment_id": 112233248,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I don&#39;t understand why I need to install .Net Hosting Bundle when I am deploying a Self-Contained App. I thought this meant that .Net Core would be contained in my app so I wouldn&#39;t need to also install it on the system."
+    }
+]

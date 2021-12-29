@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 4473,
+            "user_id": 1104820,
+            "user_type": "registered",
+            "accept_rate": 66,
+            "profile_image": "https://www.gravatar.com/avatar/7325b123195f91240452230eac497fed?s=128&d=identicon&r=PG",
+            "display_name": "Vlado Pand\u017ei\u0107",
+            "link": "https://stackoverflow.com/users/1104820/vlado-pand%c5%bei%c4%87"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1605609931,
+        "post_id": 64873624,
+        "comment_id": 114696834,
+        "content_license": "CC BY-SA 4.0",
+        "body": "In fact, I already have some decorator for all my &quot;destrcutive&quot; actions. So I could add this authorize check at beginning of method"
+    }
+]

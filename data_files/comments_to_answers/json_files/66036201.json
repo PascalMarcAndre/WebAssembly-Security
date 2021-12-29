@@ -1,0 +1,19 @@
+[
+    {
+        "owner": {
+            "reputation": 311,
+            "user_id": 13705843,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/75dee0c4aea2cb4dde0631495f0290a1?s=128&d=identicon&r=PG&f=1",
+            "display_name": "azzurro123",
+            "link": "https://stackoverflow.com/users/13705843/azzurro123"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1612796870,
+        "post_id": 66036201,
+        "comment_id": 116871552,
+        "content_license": "CC BY-SA 4.0",
+        "body": "thanks for answering this question!"
+    }
+]

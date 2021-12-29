@@ -1,0 +1,19 @@
+[
+    {
+        "owner": {
+            "reputation": 125,
+            "user_id": 2055619,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/09f4f9ed5f7c073668b3508ea2c43a02?s=128&d=identicon&r=PG",
+            "display_name": "Pascal Veilleux",
+            "link": "https://stackoverflow.com/users/2055619/pascal-veilleux"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1627071930,
+        "post_id": 65393938,
+        "comment_id": 121068490,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Works great thanks! On my side I had to add a route to my api to make sure it&#39;s not served by Blazor.  { &quot;route&quot;: &quot;/api/*&quot; }"
+    }
+]

@@ -1,0 +1,61 @@
+[
+    {
+        "owner": {
+            "reputation": 103,
+            "user_id": 468997,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/d83c70f72513faaa2939b982fedd68af?s=128&d=identicon&r=PG",
+            "display_name": "Surma",
+            "link": "https://stackoverflow.com/users/468997/surma"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1562260078,
+        "post_id": 56875811,
+        "comment_id": 100330821,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Eugh yes, NOT Von Neumann, it IS a Harvard architecture. Thanks for catching that."
+    },
+    {
+        "owner": {
+            "reputation": 31659,
+            "user_id": 1097780,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/a8f01ad795c29c3d05ad26ee47ea6069?s=128&d=identicon&r=PG",
+            "display_name": "Andreas Rossberg",
+            "link": "https://stackoverflow.com/users/1097780/andreas-rossberg"
+        },
+        "reply_to_user": {
+            "reputation": 103,
+            "user_id": 468997,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/d83c70f72513faaa2939b982fedd68af?s=128&d=identicon&r=PG",
+            "display_name": "Surma",
+            "link": "https://stackoverflow.com/users/468997/surma"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1562233681,
+        "post_id": 56875811,
+        "comment_id": 100317664,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@Surma, I suppose you meant to say that Wasm is <b>not</b> a von Neumann architecture?"
+    },
+    {
+        "owner": {
+            "reputation": 103,
+            "user_id": 468997,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/d83c70f72513faaa2939b982fedd68af?s=128&d=identicon&r=PG",
+            "display_name": "Surma",
+            "link": "https://stackoverflow.com/users/468997/surma"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1562232272,
+        "post_id": 56875811,
+        "comment_id": 100316760,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Quick addition: The WebAssembly VM is a Von Neumann architecture. So while your C program might still have buffer overflows, they can\u2019t be exploited (as easily). A program can\u2019t execute code from memory nor can it change its own code."
+    }
+]

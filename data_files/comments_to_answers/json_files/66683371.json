@@ -1,0 +1,19 @@
+[
+    {
+        "owner": {
+            "reputation": 2523,
+            "user_id": 1499294,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/GsdSn.jpg?s=128&g=1",
+            "display_name": "Daz",
+            "link": "https://stackoverflow.com/users/1499294/daz"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1617206936,
+        "post_id": 66683371,
+        "comment_id": 118241601,
+        "content_license": "CC BY-SA 4.0",
+        "body": "This didn&#39;t work for me. <code>builder.HostEnvironment.BaseAddress</code> already reflected the ngrok URL being used in the browser. I was able to fix it in the server config as per my answer, but my answer might only be relevant to ASPNET hosted WASM."
+    }
+]

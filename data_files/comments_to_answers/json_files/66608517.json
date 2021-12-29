@@ -1,0 +1,88 @@
+[
+    {
+        "owner": {
+            "reputation": 560,
+            "user_id": 1302730,
+            "user_type": "registered",
+            "accept_rate": 100,
+            "profile_image": "https://www.gravatar.com/avatar/7b2da2cbd748a04d91ef1d886a26b77c?s=128&d=identicon&r=PG",
+            "display_name": "DotNetDublin",
+            "link": "https://stackoverflow.com/users/1302730/dotnetdublin"
+        },
+        "reply_to_user": {
+            "reputation": 517,
+            "user_id": 12233905,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/2f208e6a8791feecc6bd9a81d2ee8336?s=128&d=identicon&r=PG&f=1",
+            "display_name": "StewieG",
+            "link": "https://stackoverflow.com/users/12233905/stewieg"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1615804861,
+        "post_id": 66608517,
+        "comment_id": 117795576,
+        "content_license": "CC BY-SA 4.0",
+        "body": "In danger of answering every question with a link to Blazor Train however I&#39;m wondering whether there would be anything of help in Episode 37? <a href=\"https://blazortrain.com/\" rel=\"nofollow noreferrer\">blazortrain.com</a> Note that you can download the source code for both WASM and Server-Side"
+    },
+    {
+        "owner": {
+            "reputation": 517,
+            "user_id": 12233905,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/2f208e6a8791feecc6bd9a81d2ee8336?s=128&d=identicon&r=PG&f=1",
+            "display_name": "StewieG",
+            "link": "https://stackoverflow.com/users/12233905/stewieg"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1615801135,
+        "post_id": 66608517,
+        "comment_id": 117793937,
+        "content_license": "CC BY-SA 4.0",
+        "body": "This is what I do at the moment \ud83d\ude09. But now I&#39;m at a point where I need a file upload, As far as I know, this is only possible via Http / Web-API, so I need some workaround agian."
+    },
+    {
+        "owner": {
+            "reputation": 560,
+            "user_id": 1302730,
+            "user_type": "registered",
+            "accept_rate": 100,
+            "profile_image": "https://www.gravatar.com/avatar/7b2da2cbd748a04d91ef1d886a26b77c?s=128&d=identicon&r=PG",
+            "display_name": "DotNetDublin",
+            "link": "https://stackoverflow.com/users/1302730/dotnetdublin"
+        },
+        "reply_to_user": {
+            "reputation": 517,
+            "user_id": 12233905,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/2f208e6a8791feecc6bd9a81d2ee8336?s=128&d=identicon&r=PG&f=1",
+            "display_name": "StewieG",
+            "link": "https://stackoverflow.com/users/12233905/stewieg"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1615800260,
+        "post_id": 66608517,
+        "comment_id": 117793548,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I see, Out of interest why don&#39;t you concentrate on server-side for now with the knowledge that as you are utilising an API the switch to client-side would not be arduous should it prove advantageous to do so in the future?"
+    },
+    {
+        "owner": {
+            "reputation": 517,
+            "user_id": 12233905,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/2f208e6a8791feecc6bd9a81d2ee8336?s=128&d=identicon&r=PG&f=1",
+            "display_name": "StewieG",
+            "link": "https://stackoverflow.com/users/12233905/stewieg"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1615718095,
+        "post_id": 66608517,
+        "comment_id": 117772993,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I did this kind of setup nearly 20 times, but you still have the problem with Authentication, because on serverside you have SignalR and on Wasm you have Http. The only working way so far, was to use a own login system (which sends an Token on EVERY request)."
+    }
+]

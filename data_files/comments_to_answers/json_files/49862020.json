@@ -1,0 +1,264 @@
+[
+    {
+        "owner": {
+            "user_type": "does_not_exist",
+            "display_name": "user7340499"
+        },
+        "reply_to_user": {
+            "reputation": 1841,
+            "user_id": 1116068,
+            "user_type": "registered",
+            "accept_rate": 76,
+            "profile_image": "https://www.gravatar.com/avatar/833e391c99c8405d4ee64f9528584fc4?s=128&d=identicon&r=PG",
+            "display_name": "Roni Gadot",
+            "link": "https://stackoverflow.com/users/1116068/roni-gadot"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1560862962,
+        "post_id": 49862020,
+        "comment_id": 99869285,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@RoniGadot No problem :)"
+    },
+    {
+        "owner": {
+            "user_type": "does_not_exist",
+            "display_name": "user7340499"
+        },
+        "reply_to_user": {
+            "reputation": 1841,
+            "user_id": 1116068,
+            "user_type": "registered",
+            "accept_rate": 76,
+            "profile_image": "https://www.gravatar.com/avatar/833e391c99c8405d4ee64f9528584fc4?s=128&d=identicon&r=PG",
+            "display_name": "Roni Gadot",
+            "link": "https://stackoverflow.com/users/1116068/roni-gadot"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1557091389,
+        "post_id": 49862020,
+        "comment_id": 98640104,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@RoniGadot I&#39;m sorry for the late reply, I was busy and then forgot about this question. I have run your string and secret key right now, and I&#39;ve got &quot;X/8qVQ05VCzazUhN9sN8/HlWsg0djnrJrZA7k6rHrOk=&quot; using both the code above, and the website I&#39;ve provided in the link. Can you share where you have got that expected output? Perhaps I can be of more help."
+    },
+    {
+        "owner": {
+            "reputation": 1841,
+            "user_id": 1116068,
+            "user_type": "registered",
+            "accept_rate": 76,
+            "profile_image": "https://www.gravatar.com/avatar/833e391c99c8405d4ee64f9528584fc4?s=128&d=identicon&r=PG",
+            "display_name": "Roni Gadot",
+            "link": "https://stackoverflow.com/users/1116068/roni-gadot"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1529481430,
+        "post_id": 49862020,
+        "comment_id": 88883636,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@Maximus, thank you so much. I&#39;m not sure it&#39;s the length. <b>String is</b> :&quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1MjkwNTE5M&zwnj;&#8203;jAsImRhdGEiOiJlNEx0d&zwnj;&#8203;0ljSmdRK2IxZmpESWpDN&zwnj;&#8203;mxsc0QwLzg2bVFOLzltb&zwnj;&#8203;3h4eHJHMUdkeXU5cCtQS&zwnj;&#8203;FRGbm9Wa0VneG5IcThwO&zwnj;&#8203;UJzMVc0R1Z5c1RtL2pKV&zwnj;&#8203;jhoZmpoRGNabkRZRWQyd&zwnj;&#8203;VZRQjNHSVdSWjZ6ckFhV&zwnj;&#8203;UZ3WVhNUGdmcFppcWtac&zwnj;&#8203;W4rWkEzVWphdVBiNjA0R&zwnj;&#8203;EdzdGxxeklXY2RMSjFkU&zwnj;&#8203;2FPSW0yYWFLZGEwSEtJT&zwnj;&#8203;TBNV0lGZ3Q0OE82dFNzN&zwnj;&#8203;UhlMlpXSGdiVWYwZEhyN&zwnj;&#8203;TVnPT0ifQ&quot; <b>secret is</b> &quot;eyJleHAiOjE1MjkwNTE5MjAsImRhdGEiOiJlNEx&quot; <b>output</b> &quot;zMGF5gB-M-_6w8AwQHTu6fZAiG9iPtwY2rKrFi9RD4w=&quot; <b>expected</b> &quot;0Qij4hc41B0VOIWls5lVH6KtTf5T0tRcx7nePm1b1PM&quot;."
+    },
+    {
+        "owner": {
+            "user_type": "does_not_exist",
+            "display_name": "user7340499"
+        },
+        "reply_to_user": {
+            "reputation": 1841,
+            "user_id": 1116068,
+            "user_type": "registered",
+            "accept_rate": 76,
+            "profile_image": "https://www.gravatar.com/avatar/833e391c99c8405d4ee64f9528584fc4?s=128&d=identicon&r=PG",
+            "display_name": "Roni Gadot",
+            "link": "https://stackoverflow.com/users/1116068/roni-gadot"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1529356881,
+        "post_id": 49862020,
+        "comment_id": 88835311,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@RoniGadot What is the length of the string you tried? I&#39;ll try to see if it works out for me. Never tried it with long strings. Perhaps there is a bug as you mentioned. Or something else is fishy."
+    },
+    {
+        "owner": {
+            "reputation": 1841,
+            "user_id": 1116068,
+            "user_type": "registered",
+            "accept_rate": 76,
+            "profile_image": "https://www.gravatar.com/avatar/833e391c99c8405d4ee64f9528584fc4?s=128&d=identicon&r=PG",
+            "display_name": "Roni Gadot",
+            "link": "https://stackoverflow.com/users/1116068/roni-gadot"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1529344707,
+        "post_id": 49862020,
+        "comment_id": 88830135,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@maximus, when I try to encode a long string, the result is incorrect."
+    },
+    {
+        "owner": {
+            "user_type": "does_not_exist",
+            "display_name": "user7340499"
+        },
+        "reply_to_user": {
+            "reputation": 10072,
+            "user_id": 1115237,
+            "user_type": "registered",
+            "accept_rate": 76,
+            "profile_image": "https://www.gravatar.com/avatar/a5b371929b9ddad5e22fc6997e5aab49?s=128&d=identicon&r=PG",
+            "display_name": "Shlomi Schwartz",
+            "link": "https://stackoverflow.com/users/1115237/shlomi-schwartz"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1529248121,
+        "post_id": 49862020,
+        "comment_id": 88795394,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@ShlomiSchwartz You can free the mallocs once they are not needed. I showed an example of this in the code. Maybe you can expand it from there? (or even make it better)"
+    },
+    {
+        "owner": {
+            "user_type": "does_not_exist",
+            "display_name": "user7340499"
+        },
+        "reply_to_user": {
+            "reputation": 1841,
+            "user_id": 1116068,
+            "user_type": "registered",
+            "accept_rate": 76,
+            "profile_image": "https://www.gravatar.com/avatar/833e391c99c8405d4ee64f9528584fc4?s=128&d=identicon&r=PG",
+            "display_name": "Roni Gadot",
+            "link": "https://stackoverflow.com/users/1116068/roni-gadot"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1529248007,
+        "post_id": 49862020,
+        "comment_id": 88795360,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@RoniGadot What is the bug? Can you explain?"
+    },
+    {
+        "owner": {
+            "reputation": 1841,
+            "user_id": 1116068,
+            "user_type": "registered",
+            "accept_rate": 76,
+            "profile_image": "https://www.gravatar.com/avatar/833e391c99c8405d4ee64f9528584fc4?s=128&d=identicon&r=PG",
+            "display_name": "Roni Gadot",
+            "link": "https://stackoverflow.com/users/1116068/roni-gadot"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1528967105,
+        "post_id": 49862020,
+        "comment_id": 88710004,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@Maximus there is a bug when trying to encode a large string, what is the limit?"
+    },
+    {
+        "owner": {
+            "reputation": 10072,
+            "user_id": 1115237,
+            "user_type": "registered",
+            "accept_rate": 76,
+            "profile_image": "https://www.gravatar.com/avatar/a5b371929b9ddad5e22fc6997e5aab49?s=128&d=identicon&r=PG",
+            "display_name": "Shlomi Schwartz",
+            "link": "https://stackoverflow.com/users/1115237/shlomi-schwartz"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1526988235,
+        "post_id": 49862020,
+        "comment_id": 87945985,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@Maximus could you please point out where exactly I need to free the  mid-result mallocs? Thanks."
+    },
+    {
+        "owner": {
+            "user_type": "does_not_exist",
+            "display_name": "user7340499"
+        },
+        "reply_to_user": {
+            "reputation": 10072,
+            "user_id": 1115237,
+            "user_type": "registered",
+            "accept_rate": 76,
+            "profile_image": "https://www.gravatar.com/avatar/a5b371929b9ddad5e22fc6997e5aab49?s=128&d=identicon&r=PG",
+            "display_name": "Shlomi Schwartz",
+            "link": "https://stackoverflow.com/users/1115237/shlomi-schwartz"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1524447802,
+        "post_id": 49862020,
+        "comment_id": 86960706,
+        "content_license": "CC BY-SA 3.0",
+        "body": "@ShlomiSchwartz I&#39;ve just added it now."
+    },
+    {
+        "owner": {
+            "reputation": 10072,
+            "user_id": 1115237,
+            "user_type": "registered",
+            "accept_rate": 76,
+            "profile_image": "https://www.gravatar.com/avatar/a5b371929b9ddad5e22fc6997e5aab49?s=128&d=identicon&r=PG",
+            "display_name": "Shlomi Schwartz",
+            "link": "https://stackoverflow.com/users/1115237/shlomi-schwartz"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1524400768,
+        "post_id": 49862020,
+        "comment_id": 86947667,
+        "content_license": "CC BY-SA 3.0",
+        "body": "Great answer, what about converting it to the Base64 format?"
+    },
+    {
+        "owner": {
+            "user_type": "does_not_exist",
+            "display_name": "user7340499"
+        },
+        "reply_to_user": {
+            "reputation": 116412,
+            "user_id": 2410359,
+            "user_type": "registered",
+            "accept_rate": 87,
+            "profile_image": "https://i.stack.imgur.com/pIl9T.png?s=128&g=1",
+            "display_name": "chux - Reinstate Monica",
+            "link": "https://stackoverflow.com/users/2410359/chux-reinstate-monica"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1524004662,
+        "post_id": 49862020,
+        "comment_id": 86793075,
+        "content_license": "CC BY-SA 3.0",
+        "body": "@chux I actually forgot to add the document I based the function on. I edited my answer and added it. Tried my best to do the calculations step by step as pointed in the document. (I didn&#39;t even free some of the mid-result mallocs). But you have a good point."
+    },
+    {
+        "owner": {
+            "reputation": 116412,
+            "user_id": 2410359,
+            "user_type": "registered",
+            "accept_rate": 87,
+            "profile_image": "https://i.stack.imgur.com/pIl9T.png?s=128&g=1",
+            "display_name": "chux - Reinstate Monica",
+            "link": "https://stackoverflow.com/users/2410359/chux-reinstate-monica"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1524004330,
+        "post_id": 49862020,
+        "comment_id": 86792965,
+        "content_license": "CC BY-SA 3.0",
+        "body": "Note: With a small amount of code change, code could use <code>uint64_t len_b = (0ULL + ctx-&gt;tot_len + ctx-&gt;len) &lt;&lt; 3</code> and a 5 or 8 byte write to allow byte lengths up to 2^32 rather than only 2^29.  IAC, Using <code>size_t</code> rather than <code>unsigned</code> would make more sense for <code>len</code> and <code>tot_len</code>."
+    }
+]

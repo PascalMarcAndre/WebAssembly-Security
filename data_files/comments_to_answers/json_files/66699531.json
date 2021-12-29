@@ -1,0 +1,44 @@
+[
+    {
+        "owner": {
+            "reputation": 646,
+            "user_id": 15419298,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/2ff48691478ce41162c97f9b5323641a?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Cory Podojil",
+            "link": "https://stackoverflow.com/users/15419298/cory-podojil"
+        },
+        "reply_to_user": {
+            "reputation": 103,
+            "user_id": 5118785,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/cL7bp.png?s=128&g=1",
+            "display_name": "Sjoerdson",
+            "link": "https://stackoverflow.com/users/5118785/sjoerdson"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1616430592,
+        "post_id": 66699531,
+        "comment_id": 117994260,
+        "content_license": "CC BY-SA 4.0",
+        "body": "You should still try adding the Application Cookie as Identity Server uses those settings to configure it."
+    },
+    {
+        "owner": {
+            "reputation": 103,
+            "user_id": 5118785,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/cL7bp.png?s=128&g=1",
+            "display_name": "Sjoerdson",
+            "link": "https://stackoverflow.com/users/5118785/sjoerdson"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1616419958,
+        "post_id": 66699531,
+        "comment_id": 117988599,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I updated the question with my identity configuration."
+    }
+]

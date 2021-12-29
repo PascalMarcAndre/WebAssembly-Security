@@ -1,0 +1,19 @@
+[
+    {
+        "owner": {
+            "reputation": 41,
+            "user_id": 4355492,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/c1f8a8dccde8942ba23ec89b04791518?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Jabo",
+            "link": "https://stackoverflow.com/users/4355492/jabo"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1607467306,
+        "post_id": 65117251,
+        "comment_id": 115281199,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I was using File type in our prod environment config just like your error but the error still occurred."
+    }
+]

@@ -1,0 +1,19 @@
+[
+    {
+        "owner": {
+            "reputation": 406,
+            "user_id": 5561792,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/3ab90d08213bd2e3f0eb8ff6be5808a8?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Dave Oakley",
+            "link": "https://stackoverflow.com/users/5561792/dave-oakley"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1598447005,
+        "post_id": 63049339,
+        "comment_id": 112461571,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Thanks Hamdan. I have been having similar issues with Chrome and local IIS. My webAssembly app works when fine when running without debugging but in debug mode it was exiting with code 0 when i tried to navigate to the Home page, but only when running in debug.  I tried your solution above and swapped to Edge, running the app as the server and it works now in debug mode also. There seems to be some issues with Chrome or IIS in debug mode."
+    }
+]

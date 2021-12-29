@@ -1,0 +1,64 @@
+[
+    {
+        "owner": {
+            "reputation": 169,
+            "user_id": 12048621,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/7fcf63701e61729a6748a34f809bba90?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Stellarade",
+            "link": "https://stackoverflow.com/users/12048621/stellarade"
+        },
+        "reply_to_user": {
+            "reputation": 1,
+            "user_id": 6152891,
+            "user_type": "registered",
+            "accept_rate": 75,
+            "profile_image": "https://www.gravatar.com/avatar/b45b7f89429f8766cdbf6c776c0a9d41?s=128&d=identicon&r=PG",
+            "display_name": "enet",
+            "link": "https://stackoverflow.com/users/6152891/enet"
+        },
+        "edited": false,
+        "score": 2,
+        "creation_date": 1606685204,
+        "post_id": 65052061,
+        "comment_id": 115029098,
+        "content_license": "CC BY-SA 4.0",
+        "body": "If this is actually the way the framework handles transients, then it is a serious problem that Microsoft should address. It really means that you can never use an IDisposable as a transient service, which is less than acceptable and more than non-intuitive.    Microsoft should handle the scope in such a way that Dispose is called automatically when the page you injected the service into is Disposed  Anyway, thanks for making me aware of this limitation in the framework."
+    },
+    {
+        "owner": {
+            "reputation": 1,
+            "user_id": 6152891,
+            "user_type": "registered",
+            "accept_rate": 75,
+            "profile_image": "https://www.gravatar.com/avatar/b45b7f89429f8766cdbf6c776c0a9d41?s=128&d=identicon&r=PG",
+            "display_name": "enet",
+            "link": "https://stackoverflow.com/users/6152891/enet"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1606595336,
+        "post_id": 65052061,
+        "comment_id": 115010082,
+        "content_license": "CC BY-SA 4.0",
+        "body": "You say: &quot;BlazorTimer should implement IDisposable&quot;. But I read &quot;Only register classes as Transient dependencies if they DO NOT implement IDisposable, otherwise, your application will leak memory.&quot; in <a href=\"https://blazor-university.com/dependency-injection/dependency-lifetimes-and-scopes/transient-dependencies/\" rel=\"nofollow noreferrer\">blazor-university.com/dependency-injection/&hellip;</a> I guess that means that my application is not leaking, right ? Adopting your suggestion would only harm, not improve my application."
+    },
+    {
+        "owner": {
+            "reputation": 1,
+            "user_id": 6152891,
+            "user_type": "registered",
+            "accept_rate": 75,
+            "profile_image": "https://www.gravatar.com/avatar/b45b7f89429f8766cdbf6c776c0a9d41?s=128&d=identicon&r=PG",
+            "display_name": "enet",
+            "link": "https://stackoverflow.com/users/6152891/enet"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1606593789,
+        "post_id": 65052061,
+        "comment_id": 115009702,
+        "content_license": "CC BY-SA 4.0",
+        "body": "&quot;BlazorTimer should implement IDisposable&quot; Would you please explain why... &quot;You should implement IDisposable only if your type uses unmanaged resources directly. &quot; (<a href=\"https://docs.microsoft.com/en-us/dotnet/api/system.idisposable?view=net-5.0#implementing-idisposable\" rel=\"nofollow noreferrer\">docs.microsoft.com/en-us/dotnet/api/&hellip;</a>) . Am I using &quot;unmanaged resources directly?&quot; &quot;So for each new request, you\u2019re getting new BlazorTimer objects with new .Net timers&quot; I know that. &quot;that are never getting disposed properly&quot; Here is the issue: How can I know or verify that the new BlazorTimer objects &quot;are never getting disposed properly&quot;"
+    }
+]

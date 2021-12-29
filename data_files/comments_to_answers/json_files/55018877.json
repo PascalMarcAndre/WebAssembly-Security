@@ -1,0 +1,46 @@
+[
+    {
+        "owner": {
+            "reputation": 63,
+            "user_id": 4444829,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/0f2256e67124ed4d8b90388023d9e0d6?s=128&d=identicon&r=PG&f=1",
+            "display_name": "dokicoder",
+            "link": "https://stackoverflow.com/users/4444829/dokicoder"
+        },
+        "reply_to_user": {
+            "reputation": 3370,
+            "user_id": 3440266,
+            "user_type": "registered",
+            "accept_rate": 77,
+            "profile_image": "https://www.gravatar.com/avatar/9d37ddb4e007bfd22023d6d5b95f0a45?s=128&d=identicon&r=PG&f=1",
+            "display_name": "macabeus",
+            "link": "https://stackoverflow.com/users/3440266/macabeus"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1551876362,
+        "post_id": 55018877,
+        "comment_id": 96800020,
+        "content_license": "CC BY-SA 4.0",
+        "body": "True, if you cannot edit the webpack config at all, then this solution does not help you, sorry."
+    },
+    {
+        "owner": {
+            "reputation": 3370,
+            "user_id": 3440266,
+            "user_type": "registered",
+            "accept_rate": 77,
+            "profile_image": "https://www.gravatar.com/avatar/9d37ddb4e007bfd22023d6d5b95f0a45?s=128&d=identicon&r=PG&f=1",
+            "display_name": "macabeus",
+            "link": "https://stackoverflow.com/users/3440266/macabeus"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1551862237,
+        "post_id": 55018877,
+        "comment_id": 96791533,
+        "content_license": "CC BY-SA 4.0",
+        "body": "But in this case I&#39;ll need to change the <code>webpack.config.js</code> to set this new rules, right? I&#39;m looking for a solution which I don&#39;t need to update the configurations, because of the isolation of responsibilities. The part of project that uses webassembly is a module used by a part that uses Webpack."
+    }
+]

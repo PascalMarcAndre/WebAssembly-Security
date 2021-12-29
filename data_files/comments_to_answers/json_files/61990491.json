@@ -1,0 +1,111 @@
+[
+    {
+        "owner": {
+            "reputation": 5030,
+            "user_id": 812369,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/bf76341bdec26376f2b4ff2a77a5d80a?s=128&d=identicon&r=PG",
+            "display_name": "rdmptn",
+            "link": "https://stackoverflow.com/users/812369/rdmptn"
+        },
+        "reply_to_user": {
+            "reputation": 31,
+            "user_id": 6762219,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/ca22cfa49b08a5709181e17b018eed10?s=128&d=identicon&r=PG&f=1",
+            "display_name": "dvlpr",
+            "link": "https://stackoverflow.com/users/6762219/dvlpr"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1590427226,
+        "post_id": 61990491,
+        "comment_id": 109669538,
+        "content_license": "CC BY-SA 4.0",
+        "body": "because an employee with malicious intent could probably authenticate and then get the source anyway. Then, if that&#39;s a public facing app, you&#39;d put sensitive data behind an authenticated REST API and only send it out when authenticated - no secrets on the client at all."
+    },
+    {
+        "owner": {
+            "reputation": 5030,
+            "user_id": 812369,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/bf76341bdec26376f2b4ff2a77a5d80a?s=128&d=identicon&r=PG",
+            "display_name": "rdmptn",
+            "link": "https://stackoverflow.com/users/812369/rdmptn"
+        },
+        "reply_to_user": {
+            "reputation": 31,
+            "user_id": 6762219,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/ca22cfa49b08a5709181e17b018eed10?s=128&d=identicon&r=PG&f=1",
+            "display_name": "dvlpr",
+            "link": "https://stackoverflow.com/users/6762219/dvlpr"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1590427156,
+        "post_id": 61990491,
+        "comment_id": 109669506,
+        "content_license": "CC BY-SA 4.0",
+        "body": "My analogy might have been incomplete. Imagine your spa.js is just one file for both auth and non-auth portions - that&#39;s what blazor is at the moment. You could separate components and business logic into several assemblies, you could probably do some web server trickery to allow loading certain assemblies only for authenticated users, but those 401s will break the blazor app as it initializes on first load. An enterprise would probably use server-side blazor for its internal employees though. If they give them WASM apps (PWAs maybe) then what&#39;s the difference...to be continued"
+    },
+    {
+        "owner": {
+            "reputation": 31,
+            "user_id": 6762219,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/ca22cfa49b08a5709181e17b018eed10?s=128&d=identicon&r=PG&f=1",
+            "display_name": "dvlpr",
+            "link": "https://stackoverflow.com/users/6762219/dvlpr"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1590419784,
+        "post_id": 61990491,
+        "comment_id": 109665859,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Normal SPA .js bundle can be restricted to be available only after login. You just need to implement login functionality outside SPA .js bundle and allow bundle loading only to logged in users. Somethinkg like this should be documented by Microsoft for Blazor webassembly too, because I am 100% sure that most corporations like to protect their bundle from anonymous access."
+    },
+    {
+        "owner": {
+            "reputation": 5030,
+            "user_id": 812369,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/bf76341bdec26376f2b4ff2a77a5d80a?s=128&d=identicon&r=PG",
+            "display_name": "rdmptn",
+            "link": "https://stackoverflow.com/users/812369/rdmptn"
+        },
+        "reply_to_user": {
+            "reputation": 31,
+            "user_id": 6762219,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/ca22cfa49b08a5709181e17b018eed10?s=128&d=identicon&r=PG&f=1",
+            "display_name": "dvlpr",
+            "link": "https://stackoverflow.com/users/6762219/dvlpr"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1590407323,
+        "post_id": 61990491,
+        "comment_id": 109659205,
+        "content_license": "CC BY-SA 4.0",
+        "body": "well, there isn&#39;t, open up an issue with MS for that maybe, or maybe find an existing one. This is the same as downloading your app.js in a &quot;normal&quot; SPA - it all goes down to the client even if not all views can render without proper settings."
+    },
+    {
+        "owner": {
+            "reputation": 31,
+            "user_id": 6762219,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/ca22cfa49b08a5709181e17b018eed10?s=128&d=identicon&r=PG&f=1",
+            "display_name": "dvlpr",
+            "link": "https://stackoverflow.com/users/6762219/dvlpr"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1590406224,
+        "post_id": 61990491,
+        "comment_id": 109658678,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Yes, every user can read SPA client code, but there should be a way to restrict SPA bundle to only users that can login. I think this is a basic requirement when a company in-house app is made available in public internet. Nobody wants that their competitors can inspect their app client functionality. There should be a way to make login separately before allowing main client app bundle to be loaded."
+    }
+]

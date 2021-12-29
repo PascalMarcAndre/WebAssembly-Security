@@ -1,0 +1,19 @@
+[
+    {
+        "owner": {
+            "reputation": 1,
+            "user_id": 7293785,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/ed9f548009f98161b0038060e7e9a574?s=128&d=identicon&r=PG&f=1",
+            "display_name": "mshirobokov",
+            "link": "https://stackoverflow.com/users/7293785/mshirobokov"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1559947270,
+        "post_id": 56501209,
+        "comment_id": 99592851,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Thank you for your answer. I&#39;ll try to google something useful in terms of WebAssembly&#39;s capabilities of running low-level network code."
+    }
+]

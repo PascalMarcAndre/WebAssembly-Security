@@ -1,0 +1,38 @@
+[
+    {
+        "owner": {
+            "reputation": 2272,
+            "user_id": 3552217,
+            "user_type": "registered",
+            "accept_rate": 73,
+            "profile_image": "https://www.gravatar.com/avatar/d11502ba69350424586cbc8c89e6893e?s=128&d=identicon&r=PG",
+            "display_name": "pitaridis",
+            "link": "https://stackoverflow.com/users/3552217/pitaridis"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1604686068,
+        "post_id": 64707260,
+        "comment_id": 114432208,
+        "content_license": "CC BY-SA 4.0",
+        "body": "One more question if you know. Can this function be implemented by the server? Can we define claims on the server during login?"
+    },
+    {
+        "owner": {
+            "reputation": 2272,
+            "user_id": 3552217,
+            "user_type": "registered",
+            "accept_rate": 73,
+            "profile_image": "https://www.gravatar.com/avatar/d11502ba69350424586cbc8c89e6893e?s=128&d=identicon&r=PG",
+            "display_name": "pitaridis",
+            "link": "https://stackoverflow.com/users/3552217/pitaridis"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1604685895,
+        "post_id": 64707260,
+        "comment_id": 114432139,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Thank you very much Brian. I was following a completely wrong approach. You helped me a lot with your example. Thank you again."
+    }
+]

@@ -1,0 +1,170 @@
+[
+    {
+        "owner": {
+            "reputation": 4020,
+            "user_id": 69433,
+            "user_type": "registered",
+            "accept_rate": 87,
+            "profile_image": "https://www.gravatar.com/avatar/5ea646ff4c1c89f3d68c546e37582c9a?s=128&d=identicon&r=PG",
+            "display_name": "adopilot",
+            "link": "https://stackoverflow.com/users/69433/adopilot"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1600968436,
+        "post_id": 63662595,
+        "comment_id": 113264247,
+        "content_license": "CC BY-SA 4.0",
+        "body": "My blazor webassamby also crash on leaving page with passwords inputs.It happening only if dev tools ls is open in chrome. If I run app in regular browser leaving page with password input woks ok"
+    },
+    {
+        "owner": {
+            "reputation": 1208,
+            "user_id": 570705,
+            "user_type": "registered",
+            "accept_rate": 70,
+            "profile_image": "https://i.stack.imgur.com/azkqV.jpg?s=128&g=1",
+            "display_name": "Richard Hauer",
+            "link": "https://stackoverflow.com/users/570705/richard-hauer"
+        },
+        "reply_to_user": {
+            "reputation": 436,
+            "user_id": 1584725,
+            "user_type": "registered",
+            "accept_rate": 67,
+            "profile_image": "https://www.gravatar.com/avatar/3b4af23cd0ebfb961c3ab01ffd884073?s=128&d=identicon&r=PG",
+            "display_name": "Brett JB",
+            "link": "https://stackoverflow.com/users/1584725/brett-jb"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1600158200,
+        "post_id": 63662595,
+        "comment_id": 112992131,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Not sure if this is the issue logged by @BrettJB but we are also seeing this behaviour and there is an open GitHub issue at <a href=\"https://github.com/dotnet/runtime/issues/41969\" rel=\"nofollow noreferrer\">github.com/dotnet/runtime/issues/41969</a>"
+    },
+    {
+        "owner": {
+            "reputation": 106,
+            "user_id": 5974088,
+            "user_type": "registered",
+            "profile_image": "https://lh6.googleusercontent.com/-U9xLzt7HDA4/AAAAAAAAAAI/AAAAAAAAUC0/dIplOo3hFqo/photo.jpg?sz=128",
+            "display_name": "Dejan Mauer",
+            "link": "https://stackoverflow.com/users/5974088/dejan-mauer"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1599934241,
+        "post_id": 63662595,
+        "comment_id": 112931746,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I had the same problem. Deleting the username/password combination from the autocomplete solved the problem. This was problem only when the project was run in debug mode."
+    },
+    {
+        "owner": {
+            "reputation": 155,
+            "user_id": 9733925,
+            "user_type": "registered",
+            "profile_image": "https://lh5.googleusercontent.com/-9V9qSenk3bc/AAAAAAAAAAI/AAAAAAAAACc/azFymwcyXj0/photo.jpg?sz=128",
+            "display_name": "TheAnachronism",
+            "link": "https://stackoverflow.com/users/9733925/theanachronism"
+        },
+        "reply_to_user": {
+            "reputation": 436,
+            "user_id": 1584725,
+            "user_type": "registered",
+            "accept_rate": 67,
+            "profile_image": "https://www.gravatar.com/avatar/3b4af23cd0ebfb961c3ab01ffd884073?s=128&d=identicon&r=PG",
+            "display_name": "Brett JB",
+            "link": "https://stackoverflow.com/users/1584725/brett-jb"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1599304381,
+        "post_id": 63662595,
+        "comment_id": 112737362,
+        "content_license": "CC BY-SA 4.0",
+        "body": "The question is now, where to report it? Sorry but I&#39;ve never reported something like this^^"
+    },
+    {
+        "owner": {
+            "reputation": 436,
+            "user_id": 1584725,
+            "user_type": "registered",
+            "accept_rate": 67,
+            "profile_image": "https://www.gravatar.com/avatar/3b4af23cd0ebfb961c3ab01ffd884073?s=128&d=identicon&r=PG",
+            "display_name": "Brett JB",
+            "link": "https://stackoverflow.com/users/1584725/brett-jb"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1599222232,
+        "post_id": 63662595,
+        "comment_id": 112714974,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Ok, so I have now saved password on my Chrome browser, logged in and it failed again. Deleted the save password and it works. So you can mark your answer as a solution/workaround I would say. I guess not many others experiencing this. I think it needs reporting to Github. Rgds Brett"
+    },
+    {
+        "owner": {
+            "reputation": 436,
+            "user_id": 1584725,
+            "user_type": "registered",
+            "accept_rate": 67,
+            "profile_image": "https://www.gravatar.com/avatar/3b4af23cd0ebfb961c3ab01ffd884073?s=128&d=identicon&r=PG",
+            "display_name": "Brett JB",
+            "link": "https://stackoverflow.com/users/1584725/brett-jb"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1599215257,
+        "post_id": 63662595,
+        "comment_id": 112711881,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I see what you mean. I have upgraded my Visual Studio to 16.7.2 and the problem has gone away!.. For now :-S Cheers"
+    },
+    {
+        "owner": {
+            "reputation": 155,
+            "user_id": 9733925,
+            "user_type": "registered",
+            "profile_image": "https://lh5.googleusercontent.com/-9V9qSenk3bc/AAAAAAAAAAI/AAAAAAAAACc/azFymwcyXj0/photo.jpg?sz=128",
+            "display_name": "TheAnachronism",
+            "link": "https://stackoverflow.com/users/9733925/theanachronism"
+        },
+        "reply_to_user": {
+            "reputation": 436,
+            "user_id": 1584725,
+            "user_type": "registered",
+            "accept_rate": 67,
+            "profile_image": "https://www.gravatar.com/avatar/3b4af23cd0ebfb961c3ab01ffd884073?s=128&d=identicon&r=PG",
+            "display_name": "Brett JB",
+            "link": "https://stackoverflow.com/users/1584725/brett-jb"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1599059018,
+        "post_id": 63662595,
+        "comment_id": 112657495,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Ever since I&#39;ve discovered that issue and started manually typing the password I haven&#39;t encountered that weird crash again. So I kinda guess it somehow is a workaround. Sorry but I haven&#39;t found anything else yet."
+    },
+    {
+        "owner": {
+            "reputation": 436,
+            "user_id": 1584725,
+            "user_type": "registered",
+            "accept_rate": 67,
+            "profile_image": "https://www.gravatar.com/avatar/3b4af23cd0ebfb961c3ab01ffd884073?s=128&d=identicon&r=PG",
+            "display_name": "Brett JB",
+            "link": "https://stackoverflow.com/users/1584725/brett-jb"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1598969498,
+        "post_id": 63662595,
+        "comment_id": 112624393,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Are you sure that this is the case or just a fluke. I found your question because I have just started experiencing the same thing, but the retyping password doesn&#39;t do anything different.  I am investigating and will come back if I find anything. Its weird as it was fine on Friday and I (am pretty certain I) haven&#39;t changed anything... ??"
+    }
+]

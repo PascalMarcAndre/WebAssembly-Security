@@ -1,0 +1,36 @@
+[
+    {
+        "owner": {
+            "reputation": 1833,
+            "user_id": 6239644,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/bjYDm.jpg?s=128&g=1",
+            "display_name": "Sigge",
+            "link": "https://stackoverflow.com/users/6239644/sigge"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1618536523,
+        "post_id": 60678605,
+        "comment_id": 118637146,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Important! look at the answer of He-Wolf, it&#39;s crucial to compare to DateTime.UtcNow, not DateTime.Now"
+    },
+    {
+        "owner": {
+            "reputation": 91,
+            "user_id": 6525935,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/9ca0e7a647281198ab8958d4679dc4f7?s=128&d=identicon&r=PG",
+            "display_name": "Lucas Luis Baruffi",
+            "link": "https://stackoverflow.com/users/6525935/lucas-luis-baruffi"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1584277667,
+        "post_id": 60678605,
+        "comment_id": 107381639,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Thanks, It was exactly what I needed, Thinking now it was obvious because all evaluation is made on the client"
+    }
+]

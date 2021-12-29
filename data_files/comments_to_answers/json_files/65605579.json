@@ -1,0 +1,38 @@
+[
+    {
+        "owner": {
+            "reputation": 195,
+            "user_id": 848967,
+            "user_type": "registered",
+            "accept_rate": 40,
+            "profile_image": "https://i.stack.imgur.com/IFUsG.png?s=128&g=1",
+            "display_name": "Robert Sundstr&#246;m",
+            "link": "https://stackoverflow.com/users/848967/robert-sundstr%c3%b6m"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1610056059,
+        "post_id": 65605579,
+        "comment_id": 116019680,
+        "content_license": "CC BY-SA 4.0",
+        "body": "And you could use ActiveLogin (<a href=\"https://github.com/ActiveLogin/ActiveLogin.Authentication\" rel=\"nofollow noreferrer\">github.com/ActiveLogin/ActiveLogin.Authentication</a>) to load the cert from Azure Key Vault."
+    },
+    {
+        "owner": {
+            "reputation": 195,
+            "user_id": 848967,
+            "user_type": "registered",
+            "accept_rate": 40,
+            "profile_image": "https://i.stack.imgur.com/IFUsG.png?s=128&g=1",
+            "display_name": "Robert Sundstr&#246;m",
+            "link": "https://stackoverflow.com/users/848967/robert-sundstr%c3%b6m"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1610055426,
+        "post_id": 65605579,
+        "comment_id": 116019440,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I did add the thumbprint but with no luck. Maybe I have gotten KeyVault wrong since IdentityServer tries to load the cert using the .NET API. I guess you need to use the Key Vault client to fetch the cert. Perhaps I should just go the easier route and add the cert to the site."
+    }
+]

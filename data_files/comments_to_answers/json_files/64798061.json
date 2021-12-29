@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 360,
+            "user_id": 892477,
+            "user_type": "registered",
+            "accept_rate": 100,
+            "profile_image": "https://www.gravatar.com/avatar/9401d6e3172dd984d3e000d634413c4a?s=128&d=identicon&r=PG",
+            "display_name": "Christian Rios",
+            "link": "https://stackoverflow.com/users/892477/christian-rios"
+        },
+        "edited": false,
+        "score": 2,
+        "creation_date": 1614815223,
+        "post_id": 64798061,
+        "comment_id": 117503463,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Thanks. This really should be in the blazor boilerplate as the roles do not work without it."
+    }
+]

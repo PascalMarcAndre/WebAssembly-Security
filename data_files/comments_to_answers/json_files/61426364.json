@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 5752,
+            "user_id": 51841,
+            "user_type": "registered",
+            "accept_rate": 42,
+            "profile_image": "https://www.gravatar.com/avatar/c9efbc8ac5c88d7c9389276af0bc53a0?s=128&d=identicon&r=PG",
+            "display_name": "maxfridbe",
+            "link": "https://stackoverflow.com/users/51841/maxfridbe"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1588030463,
+        "post_id": 61426364,
+        "comment_id": 108738353,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Thank you, this lead me to <a href=\"https://github.com/justjake/quickjs-emscripten\" rel=\"nofollow noreferrer\">github.com/justjake/quickjs-emscripten</a> which may be the answer, will mark it as answer if it pans out. found older <a href=\"https://github.com/kareniel/duktape-wasm\" rel=\"nofollow noreferrer\">github.com/kareniel/duktape-wasm</a> also"
+    }
+]

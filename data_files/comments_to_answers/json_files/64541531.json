@@ -1,0 +1,45 @@
+[
+    {
+        "owner": {
+            "reputation": 436,
+            "user_id": 1584725,
+            "user_type": "registered",
+            "accept_rate": 67,
+            "profile_image": "https://www.gravatar.com/avatar/3b4af23cd0ebfb961c3ab01ffd884073?s=128&d=identicon&r=PG",
+            "display_name": "Brett JB",
+            "link": "https://stackoverflow.com/users/1584725/brett-jb"
+        },
+        "reply_to_user": {
+            "reputation": 106,
+            "user_id": 1333795,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/dTk6I.jpg?s=128&g=1",
+            "display_name": "Adam Sieros\u0142awski",
+            "link": "https://stackoverflow.com/users/1333795/adam-sieros%c5%82awski"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1612781354,
+        "post_id": 64541531,
+        "comment_id": 116864362,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Thats great Adam, would it be ok for you to mark this as answered then? It doesn&#39;t just help me but also many others who are searching and skip over ones that don&#39;t have an answer ... Cheers"
+    },
+    {
+        "owner": {
+            "reputation": 106,
+            "user_id": 1333795,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/dTk6I.jpg?s=128&g=1",
+            "display_name": "Adam Sieros\u0142awski",
+            "link": "https://stackoverflow.com/users/1333795/adam-sieros%c5%82awski"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1607609456,
+        "post_id": 64541531,
+        "comment_id": 115330792,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Yes! It works! Thank you!"
+    }
+]

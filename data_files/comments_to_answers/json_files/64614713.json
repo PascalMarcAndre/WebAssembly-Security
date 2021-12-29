@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 550,
+            "user_id": 638420,
+            "user_type": "registered",
+            "accept_rate": 100,
+            "profile_image": "https://www.gravatar.com/avatar/0226692a520543b1baa9349e058fd1fc?s=128&d=identicon&r=PG",
+            "display_name": "Didier Caron",
+            "link": "https://stackoverflow.com/users/638420/didier-caron"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1604569797,
+        "post_id": 64614713,
+        "comment_id": 114388516,
+        "content_license": "CC BY-SA 4.0",
+        "body": "0  for other people arriving here via a web search, this answer is pointing you in the right direction. Azure AD adds a roles array to your token and a has roles. the claim type blazor uses (&quot;role&quot; or &quot;<a href=\"http://schemas.microsoft.com/ws/2008/06/identity/claims/role&quot;\" rel=\"nofollow noreferrer\">schemas.microsoft.com/ws/2008/06/identity/claims/role&quot;</a>) can be configured in the setup."
+    }
+]

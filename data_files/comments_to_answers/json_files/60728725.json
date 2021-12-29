@@ -1,0 +1,19 @@
+[
+    {
+        "owner": {
+            "reputation": 609,
+            "user_id": 4250126,
+            "user_type": "registered",
+            "profile_image": "https://graph.facebook.com/100000650157504/picture?type=large",
+            "display_name": "John Dover",
+            "link": "https://stackoverflow.com/users/4250126/john-dover"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1591370881,
+        "post_id": 60728725,
+        "comment_id": 110039802,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Haven&#39;t had a chance to test yet, but supposedly this is fixed. <a href=\"https://github.com/dotnet/aspnetcore/issues/19928\" rel=\"nofollow noreferrer\">github.com/dotnet/aspnetcore/issues/19928</a>"
+    }
+]

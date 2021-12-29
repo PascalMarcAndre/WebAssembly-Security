@@ -1,0 +1,82 @@
+[
+    {
+        "owner": {
+            "reputation": 2248,
+            "user_id": 931409,
+            "user_type": "registered",
+            "accept_rate": 70,
+            "profile_image": "https://www.gravatar.com/avatar/597e6c69fda7baf00dde0c2e181efb69?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Tomov",
+            "link": "https://stackoverflow.com/users/931409/tomov"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1519114907,
+        "post_id": 48858766,
+        "comment_id": 84765244,
+        "content_license": "CC BY-SA 3.0",
+        "body": "The case in point is an electron app - so it uses both nodejs and chrome. It is also widely considered impossible to protect, but if you move part of the logic in node C++ modules, it&#39;s perfectly possible. So I was wondering if a similar thing can be done with Chrome. But I didn&#39;t ask the right question :) So If there&#39;s no &quot;native code&quot; in Chrome and it can only run Webassembly and JS, yet webassembly is limited to math operations only, then... yeah :) Thanks for the help!"
+    },
+    {
+        "owner": {
+            "reputation": 20886,
+            "user_id": 6036428,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/b632c15ba23e78e466c8d33d657378fe?s=128&d=identicon&r=PG&f=1",
+            "display_name": "jmrk",
+            "link": "https://stackoverflow.com/users/6036428/jmrk"
+        },
+        "reply_to_user": {
+            "reputation": 2248,
+            "user_id": 931409,
+            "user_type": "registered",
+            "accept_rate": 70,
+            "profile_image": "https://www.gravatar.com/avatar/597e6c69fda7baf00dde0c2e181efb69?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Tomov",
+            "link": "https://stackoverflow.com/users/931409/tomov"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1519085531,
+        "post_id": 48858766,
+        "comment_id": 84756051,
+        "content_license": "CC BY-SA 3.0",
+        "body": "Chrome can execute JavaScript and WebAssembly. I don&#39;t know what &quot;native code&quot; you&#39;re talking about. -- If you&#39;re talking about a node.js app, why are you asking about Chrome?"
+    },
+    {
+        "owner": {
+            "reputation": 2248,
+            "user_id": 931409,
+            "user_type": "registered",
+            "accept_rate": 70,
+            "profile_image": "https://www.gravatar.com/avatar/597e6c69fda7baf00dde0c2e181efb69?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Tomov",
+            "link": "https://stackoverflow.com/users/931409/tomov"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1519027577,
+        "post_id": 48858766,
+        "comment_id": 84726490,
+        "content_license": "CC BY-SA 3.0",
+        "body": "And I actually got a far better solution than minifying the code. Since this is a nodejs app, I rewrote parts of it in C++, so the critical stuff is no longer plain text. I was just wondering if that&#39;s the only option. Sure it can be disassembled, but this is good enough."
+    },
+    {
+        "owner": {
+            "reputation": 2248,
+            "user_id": 931409,
+            "user_type": "registered",
+            "accept_rate": 70,
+            "profile_image": "https://www.gravatar.com/avatar/597e6c69fda7baf00dde0c2e181efb69?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Tomov",
+            "link": "https://stackoverflow.com/users/931409/tomov"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1519026918,
+        "post_id": 48858766,
+        "comment_id": 84726193,
+        "content_license": "CC BY-SA 3.0",
+        "body": "Thanks. I still think I&#39;m missing something though. Is it correct that Chrome can run &quot;native code&quot; and not only optimized javascript? And if so can this &quot;native code&quot; perform instructions to manipulate the DOM, or is it only limited to math operations?"
+    }
+]

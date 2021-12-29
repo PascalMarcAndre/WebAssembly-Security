@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 3010,
+            "user_id": 1469714,
+            "user_type": "registered",
+            "accept_rate": 71,
+            "profile_image": "https://i.stack.imgur.com/R5rUf.png?s=128&g=1",
+            "display_name": "xryl669",
+            "link": "https://stackoverflow.com/users/1469714/xryl669"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1550173469,
+        "post_id": 48892136,
+        "comment_id": 96182933,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Except that webcrypto does not work over HTTP. So if you <i>absolutely</i> need HTTP, using Webassembly might be your only option."
+    }
+]

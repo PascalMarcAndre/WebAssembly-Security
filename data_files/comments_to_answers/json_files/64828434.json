@@ -1,0 +1,19 @@
+[
+    {
+        "owner": {
+            "reputation": 361,
+            "user_id": 352635,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/86af079ffb6ad80ecaacbd6af9ce0a51?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Vitaly",
+            "link": "https://stackoverflow.com/users/352635/vitaly"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1605312003,
+        "post_id": 64828434,
+        "comment_id": 114621252,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Thank you! I&#39;ve seen some of your other comments/answers and was hoping you would answer mine as well :)  Also seen your reference to the UI in other posts, but didn&#39;t realize this applies to my use case as well. Thank you again!"
+    }
+]

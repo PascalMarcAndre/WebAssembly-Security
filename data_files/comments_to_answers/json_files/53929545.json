@@ -1,0 +1,44 @@
+[
+    {
+        "owner": {
+            "reputation": 15190,
+            "user_id": 8605791,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/9ae3be140b26db13a86d624dba4ef1c8?s=128&d=identicon&r=PG&f=1",
+            "display_name": "llllllllll",
+            "link": "https://stackoverflow.com/users/8605791/llllllllll"
+        },
+        "reply_to_user": {
+            "reputation": 103,
+            "user_id": 10829442,
+            "user_type": "registered",
+            "profile_image": "https://lh3.googleusercontent.com/-OPJ-9w-2lQk/AAAAAAAAAAI/AAAAAAAAAAA/AKxrwcarNere7_BBVVKYA1WTpdan5nhiUQ/mo/photo.jpg?sz=128",
+            "display_name": "mhk",
+            "link": "https://stackoverflow.com/users/10829442/mhk"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1545839560,
+        "post_id": 53929545,
+        "comment_id": 94708548,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Actually that <code>error</code> is a long-standing GCC bug, the syntax in my answer is valid both for compile and runtime. Clang correctly accepts. <a href=\"https://stackoverflow.com/questions/15458883/using-array-init-list-as-temporary-in-c11#comment24292271_15458897\" title=\"using array init list as temporary in c11%23comment24292271_15458897\">stackoverflow.com/questions/15458883/&hellip;</a> But it&#39;s good to make gcc happy..."
+    },
+    {
+        "owner": {
+            "reputation": 103,
+            "user_id": 10829442,
+            "user_type": "registered",
+            "profile_image": "https://lh3.googleusercontent.com/-OPJ-9w-2lQk/AAAAAAAAAAI/AAAAAAAAAAA/AKxrwcarNere7_BBVVKYA1WTpdan5nhiUQ/mo/photo.jpg?sz=128",
+            "display_name": "mhk",
+            "link": "https://stackoverflow.com/users/10829442/mhk"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1545833462,
+        "post_id": 53929545,
+        "comment_id": 94706657,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Thank you @liliscent, that was exactly what I was looking for. I knew that it would not work without using a bit of JS glue code so this is perfect acceptable. I added your answer to the <i>solution</i> section with some fixes for <code>error: taking address of temporary array</code> compile errors."
+    }
+]

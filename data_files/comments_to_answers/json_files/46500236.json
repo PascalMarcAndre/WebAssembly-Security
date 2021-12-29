@@ -1,0 +1,28 @@
+[
+    {
+        "owner": {
+            "reputation": 3022,
+            "user_id": 1031804,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/293e9e28753b0d7e4e4e08a4a81ad247?s=128&d=identicon&r=PG",
+            "display_name": "Vitaly",
+            "link": "https://stackoverflow.com/users/1031804/vitaly"
+        },
+        "reply_to_user": {
+            "reputation": 65239,
+            "user_id": 249933,
+            "user_type": "registered",
+            "accept_rate": 81,
+            "profile_image": "https://www.gravatar.com/avatar/458f2e0d08d4114f8b323798cfea141d?s=128&d=identicon&r=PG",
+            "display_name": "ColinE",
+            "link": "https://stackoverflow.com/users/249933/coline"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1506803396,
+        "post_id": 46500236,
+        "comment_id": 79967916,
+        "content_license": "CC BY-SA 3.0",
+        "body": "To be honest, it&#39;s difficult to explain all details in text. It will be much more useful to inspect multimath src. Those are small, battle-tested and well commented. But SO rules prohibit to reply with single link :)"
+    }
+]

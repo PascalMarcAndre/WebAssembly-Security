@@ -1,0 +1,69 @@
+[
+    {
+        "owner": {
+            "reputation": 7194,
+            "user_id": 7670262,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/3zdDY.jpg?s=128&g=1",
+            "display_name": "Azeem",
+            "link": "https://stackoverflow.com/users/7670262/azeem"
+        },
+        "reply_to_user": {
+            "reputation": 322,
+            "user_id": 5147834,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/732459705630740316c5a2965662e056?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Axeon Thra",
+            "link": "https://stackoverflow.com/users/5147834/axeon-thra"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1586621646,
+        "post_id": 61156588,
+        "comment_id": 108196561,
+        "content_license": "CC BY-SA 4.0",
+        "body": "@AxeonThra: An idea that you can explore is a <i>sentinel module</i> (kind of wrapper) that handles the errors internally and reinitiates/reinitializes the required values - one that goes of scope last."
+    },
+    {
+        "owner": {
+            "reputation": 7194,
+            "user_id": 7670262,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/3zdDY.jpg?s=128&g=1",
+            "display_name": "Azeem",
+            "link": "https://stackoverflow.com/users/7670262/azeem"
+        },
+        "reply_to_user": {
+            "reputation": 322,
+            "user_id": 5147834,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/732459705630740316c5a2965662e056?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Axeon Thra",
+            "link": "https://stackoverflow.com/users/5147834/axeon-thra"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1586621507,
+        "post_id": 61156588,
+        "comment_id": 108196508,
+        "content_license": "CC BY-SA 4.0",
+        "body": "You&#39;re welcome! Right. So, there is more to this. :) Right now, the question is more focused around error-handling and avoiding memory leaks (i.e. avoid leaks and no need to restart). But, your actual requirement is focused on porting involving multiple libraries. Can you make another post focused on these things? Post its link here, I&#39;ll try to look into that. You must add your whole scenario of porting like how many libraries roughly, how the error-handling is approached (error codes, exceptions, etc.), and examples on this <i>so that I can guarantee that the outputs are not corrupted</i>."
+    },
+    {
+        "owner": {
+            "reputation": 322,
+            "user_id": 5147834,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/732459705630740316c5a2965662e056?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Axeon Thra",
+            "link": "https://stackoverflow.com/users/5147834/axeon-thra"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1586620200,
+        "post_id": 61156588,
+        "comment_id": 108195962,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Thank you for the detailed answer. However, my aim is to make the module failure resistant. I am only doing the porting part and I cannot assume that the module(s) wont fail. Failure is inevitable (I am using multiple libraries, written by multiple people). And when it happens, I want to reload the module (so that I can guarantee that the outputs are not corrupted). I was looking for an answer that would help me to reinitialize the &#39;Module&#39; somehow. Seems like that is not possible. Anyway, have your +100."
+    }
+]

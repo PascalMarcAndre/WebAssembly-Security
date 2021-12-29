@@ -1,0 +1,44 @@
+[
+    {
+        "owner": {
+            "reputation": 1747,
+            "user_id": 1070012,
+            "user_type": "registered",
+            "profile_image": "https://graph.facebook.com/561873850/picture?type=large",
+            "display_name": "rmhrisk",
+            "link": "https://stackoverflow.com/users/1070012/rmhrisk"
+        },
+        "reply_to_user": {
+            "reputation": 23,
+            "user_id": 7019826,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/bff410fa303e7980f3be4d2e86998cac?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Alvai",
+            "link": "https://stackoverflow.com/users/7019826/alvai"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1519278824,
+        "post_id": 48916559,
+        "comment_id": 84847326,
+        "content_license": "CC BY-SA 3.0",
+        "body": "Yes, I am referring to architecture specific assembly and use associated hardware optimization\u2019s. It is very common for native implementations to do this to optimize performance,"
+    },
+    {
+        "owner": {
+            "reputation": 23,
+            "user_id": 7019826,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/bff410fa303e7980f3be4d2e86998cac?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Alvai",
+            "link": "https://stackoverflow.com/users/7019826/alvai"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1519265134,
+        "post_id": 48916559,
+        "comment_id": 84843341,
+        "content_license": "CC BY-SA 3.0",
+        "body": "Hi @rmhrisk with ASM you are probably just referring to assembly code and not to the specific subset of Javascript asm.js. Just in case you are indeed mentioning the latter, on several Emscriptem (which compiles C to asm.js) videos and documentation cryptography was mentioned as a use case. However, asm.js still have 32Int as its largest integers right? How is that compatible with the big intengers (64 bits) often needed in crypto?"
+    }
+]

@@ -1,0 +1,64 @@
+[
+    {
+        "owner": {
+            "reputation": 117,
+            "user_id": 12997127,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/2412c0383b51e04ff29afa9e36143d75?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Tim O&#39;Connell",
+            "link": "https://stackoverflow.com/users/12997127/tim-oconnell"
+        },
+        "reply_to_user": {
+            "reputation": 2984,
+            "user_id": 1621232,
+            "user_type": "registered",
+            "accept_rate": 74,
+            "profile_image": "https://www.gravatar.com/avatar/4ca2ea1416fa3dc15d1037e6502ac4da?s=128&d=identicon&r=PG",
+            "display_name": "Nicolas Marshall",
+            "link": "https://stackoverflow.com/users/1621232/nicolas-marshall"
+        },
+        "edited": false,
+        "score": 1,
+        "creation_date": 1583291976,
+        "post_id": 60499942,
+        "comment_id": 107063253,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I don&#39;t think so, in theory it&#39;s just a reference."
+    },
+    {
+        "owner": {
+            "reputation": 2984,
+            "user_id": 1621232,
+            "user_type": "registered",
+            "accept_rate": 74,
+            "profile_image": "https://www.gravatar.com/avatar/4ca2ea1416fa3dc15d1037e6502ac4da?s=128&d=identicon&r=PG",
+            "display_name": "Nicolas Marshall",
+            "link": "https://stackoverflow.com/users/1621232/nicolas-marshall"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1583260672,
+        "post_id": 60499942,
+        "comment_id": 107053973,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Would the overhead of &quot;storing&quot; the import in each instance of the library be big ?"
+    },
+    {
+        "owner": {
+            "reputation": 2984,
+            "user_id": 1621232,
+            "user_type": "registered",
+            "accept_rate": 74,
+            "profile_image": "https://www.gravatar.com/avatar/4ca2ea1416fa3dc15d1037e6502ac4da?s=128&d=identicon&r=PG",
+            "display_name": "Nicolas Marshall",
+            "link": "https://stackoverflow.com/users/1621232/nicolas-marshall"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1583209082,
+        "post_id": 60499942,
+        "comment_id": 107029309,
+        "content_license": "CC BY-SA 4.0",
+        "body": "&quot;the library is always defined within the class&quot; do you have a code example to achieve precisely this ?"
+    }
+]

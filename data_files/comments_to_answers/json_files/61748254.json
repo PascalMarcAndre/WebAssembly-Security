@@ -1,0 +1,36 @@
+[
+    {
+        "owner": {
+            "reputation": 185,
+            "user_id": 6432344,
+            "user_type": "registered",
+            "profile_image": "https://graph.facebook.com/1142767009124124/picture?type=large",
+            "display_name": "Istv&#225;n Piroska",
+            "link": "https://stackoverflow.com/users/6432344/istv%c3%a1n-piroska"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1589282130,
+        "post_id": 61748254,
+        "comment_id": 109224902,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Basically the <a href=\"https://localhost:44319/authentication/login\" rel=\"nofollow noreferrer\">localhost:44319/authentication/login</a> (I assume it should do the authentication automatically inside the framework) redirects to the /login-failed page"
+    },
+    {
+        "owner": {
+            "reputation": 185,
+            "user_id": 6432344,
+            "user_type": "registered",
+            "profile_image": "https://graph.facebook.com/1142767009124124/picture?type=large",
+            "display_name": "Istv&#225;n Piroska",
+            "link": "https://stackoverflow.com/users/6432344/istv%c3%a1n-piroska"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1589282028,
+        "post_id": 61748254,
+        "comment_id": 109224851,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I created a new client app and I was following the articles. Can you tell me how to set up properly for facebook?  Startup: <a href=\"https://prnt.sc/sfa0vc\" rel=\"nofollow noreferrer\">prnt.sc/sfa0vc</a> appsettings.json: <a href=\"https://prnt.sc/sfa1sw\" rel=\"nofollow noreferrer\">prnt.sc/sfa1sw</a> After clicking on login: <a href=\"https://prnt.sc/sfa29z\" rel=\"nofollow noreferrer\">prnt.sc/sfa29z</a>  What is going wrong? (The FB app is set up properly, I can use it from a Server app)"
+    }
+]

@@ -1,0 +1,64 @@
+[
+    {
+        "owner": {
+            "reputation": 31659,
+            "user_id": 1097780,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/a8f01ad795c29c3d05ad26ee47ea6069?s=128&d=identicon&r=PG",
+            "display_name": "Andreas Rossberg",
+            "link": "https://stackoverflow.com/users/1097780/andreas-rossberg"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1517960276,
+        "post_id": 48646858,
+        "comment_id": 84305477,
+        "content_license": "CC BY-SA 3.0",
+        "body": "A validation algorithm is also given in the <a href=\"https://webassembly.github.io/spec/core/appendix/algorithm.html\" rel=\"nofollow noreferrer\">Appendix</a> of the Wasm specification."
+    },
+    {
+        "owner": {
+            "reputation": 2048,
+            "user_id": 582010,
+            "user_type": "registered",
+            "accept_rate": 91,
+            "profile_image": "https://www.gravatar.com/avatar/ab181aba4f2cdba8199be9f20c3665dc?s=128&d=identicon&r=PG",
+            "display_name": "Daniel N&#228;slund",
+            "link": "https://stackoverflow.com/users/582010/daniel-n%c3%a4slund"
+        },
+        "reply_to_user": {
+            "reputation": 1152,
+            "user_id": 8151832,
+            "user_type": "registered",
+            "accept_rate": 74,
+            "profile_image": "https://i.stack.imgur.com/JazGH.png?s=128&g=1",
+            "display_name": "YHSPY",
+            "link": "https://stackoverflow.com/users/8151832/yhspy"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1517940397,
+        "post_id": 48646858,
+        "comment_id": 84296221,
+        "content_license": "CC BY-SA 3.0",
+        "body": "@YHSPY I&#39;ve updated my answer with an explanation of how the type stack works."
+    },
+    {
+        "owner": {
+            "reputation": 1152,
+            "user_id": 8151832,
+            "user_type": "registered",
+            "accept_rate": 74,
+            "profile_image": "https://i.stack.imgur.com/JazGH.png?s=128&g=1",
+            "display_name": "YHSPY",
+            "link": "https://stackoverflow.com/users/8151832/yhspy"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1517934821,
+        "post_id": 48646858,
+        "comment_id": 84292819,
+        "content_license": "CC BY-SA 3.0",
+        "body": "&quot;Validation of code is mostly defined in terms of type-checking the use of the operand stack.&quot; Dose that mean the browser engine will pre-run the   WebAssembly binary module and validate module according to the runtime status of the operand stack?"
+    }
+]

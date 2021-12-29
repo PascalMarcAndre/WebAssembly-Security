@@ -1,0 +1,38 @@
+[
+    {
+        "owner": {
+            "reputation": 9499,
+            "user_id": 631527,
+            "user_type": "registered",
+            "accept_rate": 36,
+            "profile_image": "https://i.stack.imgur.com/92e59.jpg?s=128&g=1",
+            "display_name": "Toolkit",
+            "link": "https://stackoverflow.com/users/631527/toolkit"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1616264474,
+        "post_id": 63260701,
+        "comment_id": 117949884,
+        "content_license": "CC BY-SA 4.0",
+        "body": "<code>There&#39;s no .NET server-side dependency. The app is fully functioning after it&#39;s downloaded to the client.</code> So that means that the app will be calling DB server and you can see the traffic. I am assuming it is unsafe"
+    },
+    {
+        "owner": {
+            "reputation": 1370,
+            "user_id": 336829,
+            "user_type": "registered",
+            "accept_rate": 69,
+            "profile_image": "https://www.gravatar.com/avatar/05797da610f22ea6e7285909d562ee29?s=128&d=identicon&r=PG",
+            "display_name": "WinFXGuy",
+            "link": "https://stackoverflow.com/users/336829/winfxguy"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1612310625,
+        "post_id": 63260701,
+        "comment_id": 116725917,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Is this secure?  Can a hacker not have access to values saved in MemoryConfigurationSource?"
+    }
+]

@@ -1,0 +1,20 @@
+[
+    {
+        "owner": {
+            "reputation": 618,
+            "user_id": 349575,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://i.stack.imgur.com/m9YIV.jpg?s=128&g=1",
+            "display_name": "aethieria",
+            "link": "https://stackoverflow.com/users/349575/aethieria"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1623419564,
+        "post_id": 65564998,
+        "comment_id": 120081410,
+        "content_license": "CC BY-SA 4.0",
+        "body": "Please make sure to add some information about what the code is doing, and why to use it"
+    }
+]

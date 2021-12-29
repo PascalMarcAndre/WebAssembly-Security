@@ -1,0 +1,64 @@
+[
+    {
+        "owner": {
+            "reputation": 31659,
+            "user_id": 1097780,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/a8f01ad795c29c3d05ad26ee47ea6069?s=128&d=identicon&r=PG",
+            "display_name": "Andreas Rossberg",
+            "link": "https://stackoverflow.com/users/1097780/andreas-rossberg"
+        },
+        "reply_to_user": {
+            "reputation": 9869,
+            "user_id": 345716,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://www.gravatar.com/avatar/07f86ee9fbdc7b247c49a6894b46a455?s=128&d=identicon&r=PG",
+            "display_name": "Peter V. M&#248;rch",
+            "link": "https://stackoverflow.com/users/345716/peter-v-m%c3%b8rch"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1579770075,
+        "post_id": 42187365,
+        "comment_id": 105879719,
+        "content_license": "CC BY-SA 4.0",
+        "body": "asm.js is JS that&#39;s no less obscure than Wasm and also delivers near-native perf. There is a quantitative difference between what both languages can do, but it&#39;s way too small to be a qualitative one for the purpose in question. Any DRM technique you could apply to Wasm you could also apply to JS."
+    },
+    {
+        "owner": {
+            "reputation": 9869,
+            "user_id": 345716,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://www.gravatar.com/avatar/07f86ee9fbdc7b247c49a6894b46a455?s=128&d=identicon&r=PG",
+            "display_name": "Peter V. M&#248;rch",
+            "link": "https://stackoverflow.com/users/345716/peter-v-m%c3%b8rch"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1579732179,
+        "post_id": 42187365,
+        "comment_id": 105869296,
+        "content_license": "CC BY-SA 4.0",
+        "body": "&quot;other than performance&quot;... But performance is key! Obscured Javascript would not in general be able to decrypt live HiRes video on a Raspberry PI, but WASM might over time..."
+    },
+    {
+        "owner": {
+            "reputation": 9869,
+            "user_id": 345716,
+            "user_type": "registered",
+            "accept_rate": 60,
+            "profile_image": "https://www.gravatar.com/avatar/07f86ee9fbdc7b247c49a6894b46a455?s=128&d=identicon&r=PG",
+            "display_name": "Peter V. M&#248;rch",
+            "link": "https://stackoverflow.com/users/345716/peter-v-m%c3%b8rch"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1579731722,
+        "post_id": 42187365,
+        "comment_id": 105869088,
+        "content_license": "CC BY-SA 4.0",
+        "body": "I don&#39;t understand... I think you&#39;re saying that because one can &quot;inspect and step through Wasm code in text form&quot; it isn&#39;t suitable for DRM. But can&#39;t one &quot;inspect and step through any DRM code in text form&quot; with e.g. GDB and see the machine instructions in symbolic form? How does compiled C -&gt; binary library provide &quot;better&quot; DRM protection than C -&gt; WASM?"
+    }
+]

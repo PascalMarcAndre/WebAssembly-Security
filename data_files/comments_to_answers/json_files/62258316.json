@@ -1,0 +1,19 @@
+[
+    {
+        "owner": {
+            "reputation": 1,
+            "user_id": 13259718,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/3d929f0ee668666c8789576f6e5fe3be?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Steve Pearson",
+            "link": "https://stackoverflow.com/users/13259718/steve-pearson"
+        },
+        "edited": false,
+        "score": 0,
+        "creation_date": 1591695414,
+        "post_id": 62258316,
+        "comment_id": 110146012,
+        "content_license": "CC BY-SA 4.0",
+        "body": "See comment on issue in GitHub.  To make it work with Cognito will require building client code to handle the specifics, similar to the MSAL code."
+    }
+]
