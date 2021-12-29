@@ -1,0 +1,18 @@
+{
+    "owner": {
+        "reputation": 289,
+        "user_id": 14201840,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/4e05d4fd94801927852066255854d2c6?s=128&d=identicon&r=PG&f=1",
+        "display_name": "TheNoobProgrammer",
+        "link": "https://stackoverflow.com/users/14201840/thenoobprogrammer"
+    },
+    "is_accepted": true,
+    "score": 0,
+    "last_activity_date": 1615278283,
+    "creation_date": 1615278283,
+    "answer_id": 66543229,
+    "question_id": 66534753,
+    "content_license": "CC BY-SA 4.0",
+    "body": "<p>I found an answer to this problem, what i need to do is quite simple. I create the gRPC server without Identity Server UI and configuration, i just need to add the UI for it to work.<br />\nInstall IdentityServer4 UI template</p>\n<pre><code>dotnet new -i IdentityServer4.Templates\n</code></pre>\n<p>Add IdentityServer UI</p>\n<pre><code>dotnet new is4ui\n</code></pre>\n<p>Add the controller</p>\n<pre><code>app.UseEndpoints(endpoints =&gt;\n{\n    endpoints.MapGrpcService&lt;GreeterService&gt;().RequireCors(&quot;AllowAll&quot;);\n\n    endpoints.MapGrpcService&lt;UserService&gt;().RequireCors(&quot;AllowAll&quot;);\n\n    endpoints.MapGet(&quot;/&quot;, async context =&gt;\n    {\n        await context.Response.WriteAsync(&quot;Communication with gRPC endpoints must be made through a gRPC client. To learn how to create a client, visit: https://go.microsoft.com/fwlink/?linkid=2086909&quot;);\n    });\n\n    // Add this\n    endpoints.MapDefaultControllerRoute().RequireAuthorization();\n});\n</code></pre>\n"
+}

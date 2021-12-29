@@ -1,0 +1,18 @@
+{
+    "owner": {
+        "reputation": 2723,
+        "user_id": 2658697,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/1d9486e90f5e906e38a06aa76bf5fa0b?s=128&d=identicon&r=PG",
+        "display_name": "Mister Magoo",
+        "link": "https://stackoverflow.com/users/2658697/mister-magoo"
+    },
+    "is_accepted": true,
+    "score": 1,
+    "last_activity_date": 1606011587,
+    "creation_date": 1606011587,
+    "answer_id": 64950072,
+    "question_id": 64947553,
+    "content_license": "CC BY-SA 4.0",
+    "body": "<p>You should have an Authentication component, which has in it a RemoteAuthenticatorView component, and that has an OnLogInSucceeded parameter which you can use to register a method to be called when the user logs in - in this method you can set the <code>state.ReturnUrl</code> to redirect wherever you like, e.g. Counter as shown below:</p>\n<h3>Authentication.razor</h3>\n<pre class=\"lang-cs prettyprint-override\"><code>@page &quot;/authentication/{action}&quot;\n@using Microsoft.AspNetCore.Components.WebAssembly.Authentication\n&lt;RemoteAuthenticatorView Action=&quot;@Action&quot; OnLogInSucceeded=&quot;LoginSuccessHandler&quot; /&gt;\n\n@code{\n [Parameter] public string Action { get; set; }\n [Inject] public NavigationManager NavigationManager { get; set; }\n\n void LoginSuccessHandler(RemoteAuthenticationState state)\n {\n  state.ReturnUrl = &quot;Counter&quot;;\n }\n}\n</code></pre>\n"
+}

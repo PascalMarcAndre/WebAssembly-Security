@@ -1,0 +1,19 @@
+{
+    "owner": {
+        "reputation": 918034,
+        "user_id": 23354,
+        "user_type": "moderator",
+        "accept_rate": 100,
+        "profile_image": "https://i.stack.imgur.com/CrVFH.png?s=128&g=1",
+        "display_name": "Marc Gravell",
+        "link": "https://stackoverflow.com/users/23354/marc-gravell"
+    },
+    "is_accepted": true,
+    "score": 2,
+    "last_activity_date": 1603721561,
+    "creation_date": 1603721561,
+    "answer_id": 64538844,
+    "question_id": 64473529,
+    "content_license": "CC BY-SA 4.0",
+    "body": "<p>It looks like the problem here is that you're using <code>ServerCallContext</code> in the method signature; the underlying gRPC core has separate client/server context APIs, but this is not amenable to use on an agnostic interface, and as such, protobuf-net.Grpc <em>unifies</em> these two APIs, via <code>CallContext</code>. So: instead of:</p>\n<pre class=\"lang-cs prettyprint-override\"><code>async ValueTask&lt;Customer&gt; CreateCustomer(Customer customerDTO, ServerCallContext context)\n</code></pre>\n<p>for the signature, consider:</p>\n<pre class=\"lang-cs prettyprint-override\"><code>async ValueTask&lt;Customer&gt; CreateCustomer(Customer customerDTO, CallContext context)\n</code></pre>\n<p>or</p>\n<pre class=\"lang-cs prettyprint-override\"><code>async ValueTask&lt;Customer&gt; CreateCustomer(Customer customerDTO, CallContext context = default)\n</code></pre>\n<hr />\n<p>The <code>CallContext</code> API exposes the common server-side and client-side APIs (headers, cancellation, etc) in a single way, or you can use (for example) <code>context.ServerCallContext</code> to get the server-specific API if needed (this will throw an exception if used on a client-context). For client-side usage, a <code>CallContext</code> can be constructed from a <code>CallOptions</code>, which is the core gRPC client-side API, for example:</p>\n<pre class=\"lang-cs prettyprint-override\"><code>var result = await service.CreateCustomer(customer, new CallOptions(headers));\n</code></pre>\n<hr />\n<p>I'm <em>open</em> to the idea of allowing <code>CallContext</code> to be created directly from <code>Metadata</code> / <code>CancellationToken</code> etc (allowing <code>var result = await service.CreateCustomer(customer, headers);</code>) - but it doesn't seem <em>essential</em>.</p>\n"
+}

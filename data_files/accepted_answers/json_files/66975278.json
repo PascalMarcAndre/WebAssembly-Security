@@ -1,0 +1,19 @@
+{
+    "owner": {
+        "reputation": 25297,
+        "user_id": 6152891,
+        "user_type": "registered",
+        "accept_rate": 75,
+        "profile_image": "https://www.gravatar.com/avatar/b45b7f89429f8766cdbf6c776c0a9d41?s=128&d=identicon&r=PG",
+        "display_name": "enet",
+        "link": "https://stackoverflow.com/users/6152891/enet"
+    },
+    "is_accepted": true,
+    "score": 1,
+    "last_activity_date": 1617737206,
+    "creation_date": 1617737206,
+    "answer_id": 66975278,
+    "question_id": 66974094,
+    "content_license": "CC BY-SA 4.0",
+    "body": "<p>If you're using the token based authentication (API), you can attach an event handler to the RemoteAuthenticatorView component located in the Authentication component. I think it has an event that is invoked immediately after a user log in. As far as I recall, I've once answered a similar question that way, and then changed my answer to something more useful. Try this solution, and let us know if it's OK.</p>\n"
+}

@@ -1,0 +1,18 @@
+{
+    "owner": {
+        "reputation": 184,
+        "user_id": 14924779,
+        "user_type": "registered",
+        "profile_image": "https://lh3.googleusercontent.com/a-/AOh14Gj5YSg_5YhTpAY-SjfVbNFuFcH918PDbXPM9_tZ2w=k-s128",
+        "display_name": "David Eggenberger",
+        "link": "https://stackoverflow.com/users/14924779/david-eggenberger"
+    },
+    "is_accepted": true,
+    "score": 1,
+    "last_activity_date": 1616966560,
+    "creation_date": 1616966560,
+    "answer_id": 66846341,
+    "question_id": 66846249,
+    "content_license": "CC BY-SA 4.0",
+    "body": "<p>The BlazingPizza projects consists of a Blazor WebAssembly App and an ASP.NET Core API. The database is only accessible over the API and doesn't get downloaded to the client.</p>\n"
+}

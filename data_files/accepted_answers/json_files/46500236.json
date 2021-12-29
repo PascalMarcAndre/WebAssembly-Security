@@ -1,0 +1,18 @@
+{
+    "owner": {
+        "reputation": 3012,
+        "user_id": 1031804,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/293e9e28753b0d7e4e4e08a4a81ad247?s=128&d=identicon&r=PG",
+        "display_name": "Vitaly",
+        "link": "https://stackoverflow.com/users/1031804/vitaly"
+    },
+    "is_accepted": true,
+    "score": 4,
+    "last_activity_date": 1506753395,
+    "creation_date": 1506753395,
+    "answer_id": 46500236,
+    "question_id": 46331830,
+    "content_license": "CC BY-SA 3.0",
+    "body": "<h1>General</h1>\n\n<p>Usually you can hope to get ~10% boost on heavy math, compared to optimized JS. That consists of:</p>\n\n<ul>\n<li>wasm profit</li>\n<li>in/out memory copy expences.</li>\n</ul>\n\n<p>Note, Uint8Array copy is notably slow in chrome (ok in FF). When you work with rgba data, it's better to recast underlying buffers to Uint32Array ant use <code>.set()</code> on it.</p>\n\n<p>Attempt to read/write pixels by word (rgba) in wasm works with the same speed as read/write bytes (r, g, b, a). I did not found difference.</p>\n\n<p>When use <code>node.js</code> for development (as i do), it worth to stay on 8.2.1 for JS benchmarks. Next version upgraded v8 to v6.0 and introduced serious speed regressions for such math. For 8.2.1 - don't use modern ES6 features like <code>const</code>, <code>=&gt;</code> and so on. Use ES5 instead. May be next version with v8 v6.2 will fix those issues.</p>\n\n<h1>Samples comments</h1>\n\n<ol>\n<li>Use <code>wasm-opt -O3</code>, that may help sometime after <code>clang -O3</code>.</li>\n<li>Use <code>s2wasm --import-memory</code> instead of hardcoding fixed memory size</li>\n<li>In code at wasdk site, do NOT use global vars. When those present, compiler will allocate unknown block at memory start for globals, and you can override those by mistake.</li>\n<li>Probably, correct code should add memory copy from proper location, and that should be included into benchmark. Your samples are not complete, and IMHO code from wasdk should not work right.</li>\n<li>Use <code>benchmark.js</code>, that's more precise.</li>\n</ol>\n\n<hr>\n\n<p>In short: prior to continue, it worth to cleanup things.</p>\n\n<p>You may find useful to dig <a href=\"https://github.com/nodeca/multimath\" rel=\"nofollow noreferrer\">https://github.com/nodeca/multimath</a> sources, or use it in your experiments. I created it specially for small CPU intensive things, to simplify issues with proper modules init, memory management, js fallbacks and so on. It contains 'unsharp mask' implementation as example and benchmarks. It should not be difficult to adopt your code there.</p>\n"
+}

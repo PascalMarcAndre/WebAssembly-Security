@@ -1,0 +1,19 @@
+{
+    "owner": {
+        "reputation": 1895,
+        "user_id": 473368,
+        "user_type": "registered",
+        "accept_rate": 88,
+        "profile_image": "https://www.gravatar.com/avatar/4e24aa1cfabf417ef8833ea8721a66a8?s=128&d=identicon&r=PG",
+        "display_name": "01AutoMonkey",
+        "link": "https://stackoverflow.com/users/473368/01automonkey"
+    },
+    "is_accepted": true,
+    "score": 0,
+    "last_activity_date": 1476522592,
+    "creation_date": 1476522592,
+    "answer_id": 40057194,
+    "question_id": 39998553,
+    "content_license": "CC BY-SA 3.0",
+    "body": "<p>After experimenting a bit I've come to the conclusion that HTTP redirects are the best solution, essentially making the backend serve as nothing more but a way to bounce off of to the right URLs. There are some problems with POST requests though which might be possible to fix with frontend javascript modifications, but if it's really a problem it's always possible to switch redirects with \"forwards\" instead.</p>\n"
+}

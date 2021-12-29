@@ -1,0 +1,19 @@
+{
+    "owner": {
+        "reputation": 73,
+        "user_id": 13129431,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/be40c8995899485adf5c48d87d01ae69?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Zack",
+        "link": "https://stackoverflow.com/users/13129431/zack"
+    },
+    "is_accepted": true,
+    "score": 2,
+    "last_activity_date": 1594866237,
+    "last_edit_date": 1594866237,
+    "creation_date": 1594865511,
+    "answer_id": 62926383,
+    "question_id": 62760219,
+    "content_license": "CC BY-SA 4.0",
+    "body": "<p>To overcome this, I so far settled with the workaround to use the Authorized section in razor of the LoginDisplay component, to trigger the service to check if the service user info is empty and then go to Graph again instead of trying to store in in localstorage or something like that... Then, I have user info displaying components subscribe to an event in the service to know when the user info needed updated to call StateHasChanged().</p>\n<p>If there is a better solution to persisting service data across page refreshes, I am all eyes.</p>\n"
+}

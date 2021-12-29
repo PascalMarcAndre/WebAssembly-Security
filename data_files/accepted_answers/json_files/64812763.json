@@ -1,0 +1,18 @@
+{
+    "owner": {
+        "reputation": 4004,
+        "user_id": 1492496,
+        "user_type": "registered",
+        "profile_image": "https://i.stack.imgur.com/dO7to.png?s=128&g=1",
+        "display_name": "Brian Parker",
+        "link": "https://stackoverflow.com/users/1492496/brian-parker"
+    },
+    "is_accepted": true,
+    "score": 1,
+    "last_activity_date": 1605220112,
+    "creation_date": 1605220112,
+    "answer_id": 64812763,
+    "question_id": 64811949,
+    "content_license": "CC BY-SA 4.0",
+    "body": "<p>No its not safe in a browser. Browser should only see what the client has privileges for. Also the hardware of a client is really unknown so the performance ability to do sorting and filtering of data is questionable.</p>\n"
+}

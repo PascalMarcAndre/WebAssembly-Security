@@ -1,0 +1,20 @@
+{
+    "owner": {
+        "reputation": 25297,
+        "user_id": 6152891,
+        "user_type": "registered",
+        "accept_rate": 75,
+        "profile_image": "https://www.gravatar.com/avatar/b45b7f89429f8766cdbf6c776c0a9d41?s=128&d=identicon&r=PG",
+        "display_name": "enet",
+        "link": "https://stackoverflow.com/users/6152891/enet"
+    },
+    "is_accepted": true,
+    "score": 3,
+    "last_activity_date": 1595925033,
+    "last_edit_date": 1595925033,
+    "creation_date": 1583539533,
+    "answer_id": 60573139,
+    "question_id": 60571958,
+    "content_license": "CC BY-SA 4.0",
+    "body": "<p>Add <code>@using Microsoft.AspNetCore.Components.Authorization</code> at the top of the App.razor file.</p>\n<p>Add services for options and authorization to Program.Main (Client-side):</p>\n<pre><code>builder.Services.AddOptions();\nbuilder.Services.AddAuthorizationCore();\n</code></pre>\n<p>Note: The following (Client-side):</p>\n<pre><code> services.AddBlazoredLocalStorage();\n services.AddAuthorizationCore();\n services.AddScoped&lt;AuthenticationStateProvider, \n                          ApiAuthenticationStateProvider&gt;();\n        services.AddScoped&lt;IAuthService, AuthService&gt;();\n</code></pre>\n<p>Belongs in the client, not in the server, though at the end of the day its the same configuration...</p>\n<p>Note: The following (Client-side):</p>\n<pre><code>services.AddScoped&lt;AuthenticationStateProvider, \n                          ApiAuthenticationStateProvider&gt;();\n</code></pre>\n<p>Should be (Client-side):</p>\n<pre><code>services.AddScoped&lt;ApiAuthenticationStateProvider&gt;();\nservices.AddScoped&lt;AuthenticationStateProvider&gt;(provider =&gt; provider.GetRequiredService&lt;ApiAuthenticationStateProvider&gt;());\n</code></pre>\n<p>You should pay attention to order in the Startup class</p>\n<p><strong>Update:</strong></p>\n<p>Disabling the linker, as I've suggested in a comment below seems to be working. However, this should be a temporary solution. This is how you disable the linker: <code>&lt;BlazorLinkOnBuild&gt;false&lt;/BlazorLinkOnBuild&gt;</code></p>\n<p>By disabling the linker, you prevent the removal of unused or un-referenced code, which may be the cause of the error... And by enabling the linker, you allow this. However, this code:</p>\n<pre><code>builder.Services.AddOptions();\nbuilder.Services.AddAuthorizationCore();\n</code></pre>\n<p>should have prevented the linker from stripping off un-referenced logic.\nStill better, adding a custom AuthenticationStateProvider implementation in the Program class:</p>\n<pre><code> builder.Services.AddScoped&lt;AuthenticationStateProvider, \n                          ApiAuthenticationStateProvider&gt;(); \n</code></pre>\n<p>should have fixed this issue. Did you do that like that ?</p>\n<p>Once again, disabling the linker is a temporary solution.</p>\n"
+}

@@ -1,0 +1,19 @@
+{
+    "owner": {
+        "reputation": 12588,
+        "user_id": 2940908,
+        "user_type": "registered",
+        "accept_rate": 60,
+        "profile_image": "https://i.stack.imgur.com/E79WU.jpg?s=128&g=1",
+        "display_name": "agua from mars",
+        "link": "https://stackoverflow.com/users/2940908/agua-from-mars"
+    },
+    "is_accepted": true,
+    "score": 2,
+    "last_activity_date": 1589815748,
+    "creation_date": 1589815748,
+    "answer_id": 61873178,
+    "question_id": 61872050,
+    "content_license": "CC BY-SA 4.0",
+    "body": "<p>So each time you acquire an <code>HttpClient</code> it use the <code>BaseAddressAuthorizationMessageHandler</code> which try to authentify the request. But it this case your request should not be authentified, so you can make something like :</p>\n\n<p><strong>Registration</strong></p>\n\n<pre><code>builder.Services.AddHttpClient(\"JPB.BorannRemapping.ServerAPI.Anonymous\", client =&gt;\n    {\n        client.BaseAddress = new Uri(builder.HostEnvironment.BaseAddress);\n    });\n</code></pre>\n\n<p><strong>Usage</strong></p>\n\n<pre class=\"lang-cs prettyprint-override\"><code>@inject IHttpClientFactory _factory\n\n@code {\n...\n     var httpClient = _factory.CreateClient(\"JPB.BorannRemapping.ServerAPI.Anonymous\");\n     var httpService = new HttpService(httpClient);\n     SystemEvalPublicViewModel = await httpClient\n                .GetFromJsonAsync&lt;SystemEvalPublicViewModel&gt;(\n                    httpService.BuildUrl(\"api/SystemEvalApi/LatestEvals\"));\n}\n</code></pre>\n"
+}

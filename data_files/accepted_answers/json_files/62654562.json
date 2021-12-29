@@ -1,0 +1,18 @@
+{
+    "owner": {
+        "reputation": 153,
+        "user_id": 11476545,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/439ded087dfb9e0529421b669d9914ca?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Bisjob",
+        "link": "https://stackoverflow.com/users/11476545/bisjob"
+    },
+    "is_accepted": true,
+    "score": 0,
+    "last_activity_date": 1593510106,
+    "creation_date": 1593510106,
+    "answer_id": 62654562,
+    "question_id": 62434400,
+    "content_license": "CC BY-SA 4.0",
+    "body": "<p>Ok so after an update the middleware delegate works !</p>\n<pre><code>app.Use(async (context, next) =&gt;\n{\n    await next.Invoke();\n    if (context.User.Identity.IsAuthenticated)\n    {\n        var userName = context.User.Identity.Name;\n        using (var dbContext = context.RequestServices.GetRequiredService&lt;ApplicationDbContext&gt;())\n        {\n            var user = dbContext.Users.Where(u =&gt; u.UserName == userName).FirstOrDefault();\n            if (user != null)\n            {\n                user.LastLogon = System.DateTime.Now;\n                user.LastIpAddress = context.Connection?.RemoteIpAddress?.ToString();\n\n                dbContext.Update(user);\n                dbContext.SaveChanges();\n            }\n        }\n    }\n});\n</code></pre>\n<p>Just be carefull to the order of app.use... in the Configure method ! You need to add this <strong>AFTER</strong> <code>app.UseIdentityServer(); app.UseAuthentication(); app.UseAuthorization();</code></p>\n<p>But badly the EventSink from IdentityServer still doesn't work, the <code>httpContextAccessor.HttpContext.User.Identity</code> is always anonymous.</p>\n"
+}

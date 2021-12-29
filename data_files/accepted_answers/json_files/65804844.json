@@ -1,0 +1,18 @@
+{
+    "owner": {
+        "reputation": 61,
+        "user_id": 13685139,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/9742c97009c682c2c357ce7c6f0c8d0f?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Shama",
+        "link": "https://stackoverflow.com/users/13685139/shama"
+    },
+    "is_accepted": true,
+    "score": 0,
+    "last_activity_date": 1611127506,
+    "creation_date": 1611127506,
+    "answer_id": 65804844,
+    "question_id": 65634788,
+    "content_license": "CC BY-SA 4.0",
+    "body": "<blockquote>\n<p>Please imagine the single-page website. Usually, this kind of page has a &quot;contact us&quot; tab where is the contact form. If the user fills up the contact form then data have to be somehow sent to us. For this purpose, I tried to use MS graph API. When the user clicks the submit button, in the background the registration to my account will be created and an email will be sent to me. It means that the user is not aware of any registration procedure. \u2013 Samo Simoncic</p>\n</blockquote>\n<p>For your app to be able to create users in a tenant, it needs to use an app only flow which requires a secret. We do not advise exposing app only flows of this nature, which can easily be exploited to create bogus users or overwhelm your tenant, open to the general public.</p>\n<p>The best approach would be to take this registrations in a local DB, and then have a daemon app process them behind the scenes. Here is the sample where <a href=\"https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2/tree/master/1-Call-MSGraph\" rel=\"nofollow noreferrer\">daemon console application is calling Microsoft Graph</a>.</p>\n"
+}

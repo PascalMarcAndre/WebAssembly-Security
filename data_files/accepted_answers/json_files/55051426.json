@@ -1,0 +1,19 @@
+{
+    "owner": {
+        "reputation": 3188,
+        "user_id": 3440266,
+        "user_type": "registered",
+        "accept_rate": 77,
+        "profile_image": "https://www.gravatar.com/avatar/9d37ddb4e007bfd22023d6d5b95f0a45?s=128&d=identicon&r=PG&f=1",
+        "display_name": "macabeus",
+        "link": "https://stackoverflow.com/users/3440266/macabeus"
+    },
+    "is_accepted": true,
+    "score": 0,
+    "last_activity_date": 1551986825,
+    "creation_date": 1551986825,
+    "answer_id": 55051426,
+    "question_id": 55018810,
+    "content_license": "CC BY-SA 4.0",
+    "body": "<p>I resolved the problem. My solution is adding Webpack at <code>scissors</code> in order to set the configurations in this project.</p>\n\n<pre><code>const path = require('path')\n\nconst rules = [\n  {\n    loader: 'file-loader',\n    test: /huffman\\.wasm$/,\n    type: 'javascript/auto',\n  },\n]\n\nrules.concat()\n\nmodule.exports = {\n  devtool: 'source-map',\n  entry: './src/index.js',\n  module: {\n    rules,\n  },\n  node: {\n    fs: 'empty',\n  },\n  output: {\n    filename: 'scissors.js',\n    libraryTarget: 'commonjs2',\n    path: path.join(__dirname, './dist'),\n    sourceMapFilename: 'scissors.js.map',\n  },\n}\n</code></pre>\n\n<p>I don't know if this is the best solution, because now I have a Webpack in <code>brush</code> project and also in <code>scissors</code> project, then it will increase complexity in my code... But in this way I can keep the isolation of responsibilities.</p>\n"
+}

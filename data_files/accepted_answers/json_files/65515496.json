@@ -1,0 +1,18 @@
+{
+    "owner": {
+        "reputation": 36,
+        "user_id": 14916173,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/563820d59e9cd3dbc14fc644d6b4d3e4?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Sascha Stops",
+        "link": "https://stackoverflow.com/users/14916173/sascha-stops"
+    },
+    "is_accepted": true,
+    "score": 2,
+    "last_activity_date": 1609376879,
+    "creation_date": 1609376879,
+    "answer_id": 65515496,
+    "question_id": 65001011,
+    "content_license": "CC BY-SA 4.0",
+    "body": "<p>I managed to solve this error in my project by adding the &quot;Audience&quot; value into the server's appsettings.json file</p>\n<pre><code>  &quot;AzureAd&quot;: {\n    &quot;Instance&quot;: &quot;https://login.microsoftonline.com/&quot;,\n    &quot;Domain&quot;: &quot;&lt;domain&gt;&quot;,\n    &quot;TenantId&quot;: &quot;&lt;guid&gt;&quot;,\n    &quot;ClientId&quot;: &quot;api://&lt;apiname&gt;&quot;,\n    &quot;CallbackPath&quot;: &quot;/signin-oidc&quot;,\n    &quot;Audience&quot;: &quot;api://blazorapp1_server&quot;\n  },\n</code></pre>\n<p>It looks like the audience validation is case-sensitive and fails if the ClientId contains uppercase letters and the audience value passed in the bearer token is in all lowercase. Adding the audience value in all lower case solved it for me.</p>\n"
+}

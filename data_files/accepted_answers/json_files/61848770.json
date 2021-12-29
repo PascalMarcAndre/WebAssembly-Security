@@ -1,0 +1,19 @@
+{
+    "owner": {
+        "reputation": 12588,
+        "user_id": 2940908,
+        "user_type": "registered",
+        "accept_rate": 60,
+        "profile_image": "https://i.stack.imgur.com/E79WU.jpg?s=128&g=1",
+        "display_name": "agua from mars",
+        "link": "https://stackoverflow.com/users/2940908/agua-from-mars"
+    },
+    "is_accepted": true,
+    "score": 0,
+    "last_activity_date": 1589702896,
+    "creation_date": 1589702896,
+    "answer_id": 61848770,
+    "question_id": 61845477,
+    "content_license": "CC BY-SA 4.0",
+    "body": "<p>Response 1:</p>\n\n<p>While the authorizing message is displayed, the app check for a valid authentication and set up auto renew token iframe. If you look at the network log on your browser  you'll see requests made by this time.<br>\nWhen the app run in release it's faster.</p>\n\n<p>Response 2:</p>\n\n<p>You need to add authorization on pages you want to protect by adding the <a href=\"https://docs.microsoft.com/en-us/aspnet/core/security/blazor/?view=aspnetcore-3.1#authorize-attribute\" rel=\"nofollow noreferrer\"><code>Authorize</code> attribute</a>.</p>\n\n<pre class=\"lang-cs prettyprint-override\"><code>@page \"/\"\n@attribute [Authorize]\n\n</code></pre>\n"
+}

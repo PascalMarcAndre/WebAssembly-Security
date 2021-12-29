@@ -1,0 +1,19 @@
+{
+    "owner": {
+        "reputation": 337,
+        "user_id": 4304606,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/dc4a64e47b61badb366e765926782644?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Eric Lemanissier",
+        "link": "https://stackoverflow.com/users/4304606/eric-lemanissier"
+    },
+    "is_accepted": true,
+    "score": 1,
+    "last_activity_date": 1568718010,
+    "last_edit_date": 1568718010,
+    "creation_date": 1563540804,
+    "answer_id": 57112940,
+    "question_id": 57095229,
+    "content_license": "CC BY-SA 4.0",
+    "body": "<p>Indeed, when building qt, all paths to dependencies are hardcoded in configurations files (mkspecs\\modules\\qt_lib_*.pri).\nI assume you are building your application with qmake, because you use static qt, and static qt is incompatible with cmake. One thing you could try is to pass the full path to harfbuzz lib to qmake by adding argument <code>QMAKE_LIBS_HARFBUZZ=/home/kaupes/.conan/data/harfbuzz/2.4.0/bje/stable/package/c68551ae35bf5d62e66263379d58a38416eb84a9/lib/libharfbuzz.a</code> to your qmake invocation.</p>\n\n<p>Edit: it seems to be a knwonw behaviour of qt >= 5.12.1 : <a href=\"https://bugreports.qt.io/browse/QTBUG-72903\" rel=\"nofollow noreferrer\">https://bugreports.qt.io/browse/QTBUG-72903</a>. This feature has been reverted in 5.14.x and 5.15.x with <a href=\"https://github.com/qt/qtbase/commit/9864d2c6f3b628ca9f07a56b197e77bd43931cca\" rel=\"nofollow noreferrer\">https://github.com/qt/qtbase/commit/9864d2c6f3b628ca9f07a56b197e77bd43931cca</a></p>\n"
+}

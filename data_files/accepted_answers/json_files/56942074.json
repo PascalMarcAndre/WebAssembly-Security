@@ -1,0 +1,18 @@
+{
+    "owner": {
+        "reputation": 31091,
+        "user_id": 1097780,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/a8f01ad795c29c3d05ad26ee47ea6069?s=128&d=identicon&r=PG",
+        "display_name": "Andreas Rossberg",
+        "link": "https://stackoverflow.com/users/1097780/andreas-rossberg"
+    },
+    "is_accepted": true,
+    "score": 1,
+    "last_activity_date": 1562617302,
+    "creation_date": 1562617302,
+    "answer_id": 56942074,
+    "question_id": 56940990,
+    "content_license": "CC BY-SA 4.0",
+    "body": "<p>Wasm code cannot directly access physical memory, neither inside the Wasm engine itself nor anywhere else in the process. It can only access memory within its declared \"linear memory\" array, which is like accessing a big byte array.</p>\n\n<p>Out of bounds access to this array does not seg-fault. Instead, the Wasm execution will be aborted with a so-called trap, a kind of exception on the Wasm level. Engines can implement bounds checks in any way they like. On 32 bit architectures it is typically an actual address comparison. On 64 bit architectures, engines can use more efficient virtual memory techniques, which cause a hardware signal that the engine then catches and translates into a trap. However, the hardware fault in this case is an implementation detail and not observable by Wasm code.</p>\n"
+}

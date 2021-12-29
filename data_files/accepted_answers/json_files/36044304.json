@@ -1,0 +1,19 @@
+{
+    "owner": {
+        "reputation": 31091,
+        "user_id": 1097780,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/a8f01ad795c29c3d05ad26ee47ea6069?s=128&d=identicon&r=PG",
+        "display_name": "Andreas Rossberg",
+        "link": "https://stackoverflow.com/users/1097780/andreas-rossberg"
+    },
+    "is_accepted": true,
+    "score": 1,
+    "last_activity_date": 1458171566,
+    "last_edit_date": 1458171566,
+    "creation_date": 1458153602,
+    "answer_id": 36044304,
+    "question_id": 36042935,
+    "content_license": "CC BY-SA 3.0",
+    "body": "<p>No, that's not possible, and it's highly unlikely that it ever will be, given that it would probably require piercing all sorts of abstraction barriers within the system. The complexity would be enormous, and the effect on maintainability and security would probably be severe.</p>\n\n<p>The web interface to WebAssembly modules (through the <code>Wasm</code> object) provides a clean and simple way to interface between JS and Wasm. In the future, ES6 modules might simplify interop further. It's not obvious what advantage a complicated mechanism like you propose would have over that.</p>\n"
+}

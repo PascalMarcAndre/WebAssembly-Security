@@ -1,0 +1,19 @@
+{
+    "owner": {
+        "reputation": 122,
+        "user_id": 12997127,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/2412c0383b51e04ff29afa9e36143d75?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Tim O&#39;Connell",
+        "link": "https://stackoverflow.com/users/12997127/tim-oconnell"
+    },
+    "is_accepted": true,
+    "score": 1,
+    "last_activity_date": 1583209667,
+    "last_edit_date": 1583209667,
+    "creation_date": 1583208516,
+    "answer_id": 60499942,
+    "question_id": 60499885,
+    "content_license": "CC BY-SA 4.0",
+    "body": "<p>There's a couple of ways I would approach this:</p>\n\n<ol>\n<li><p>If the class doesn't need to be instantiated immediately, then I would await the library loading, then pass it to the class constructor. This is the cleanest way as the library is always defined within the class.</p></li>\n<li><p>If the class must be instantiated before fetching the library, then methods in the class must handle the situation when it is not defined (e.g. not loaded yet). You can then call something like <code>await myClassInstance.init()</code> to fetch the library. I typically provide a fallback for each method if the library is not loaded yet, perhaps it returns an empty string or a dummy UI.</p></li>\n</ol>\n\n<p>EDIT: adding TypeScript example for option 1</p>\n\n<pre><code>interface MyLibrary {\n  libraryMethod: () =&gt; void;\n}\n\nclass ExampleClass {\n  localLib: MyLibrary;\n\n  constructor(lib: MyLibrary) {\n    this.localLib = lib;\n  }\n\n  myClassMethod() {\n    this.localLib.libraryMethod();\n  }\n}\n\nasync function run() {\n  // first we fetch the remote library\n  const myLibrary: MyLibrary | undefined = await import('/lib.js');\n\n  // good practise to add some check here\n  if (!myLibrary) {\n    throw Error('failed to fetch myLib');\n  }\n\n  // then we create the class instance using the downloaded library\n  const myClassInstance = new ExampleClass(myLibrary);\n\n  // now we can call our class method which definitely has the remote library\n  myClassInstance.myClassMethod();\n}\n</code></pre>\n"
+}

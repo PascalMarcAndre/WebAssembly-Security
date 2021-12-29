@@ -1,0 +1,18 @@
+{
+    "owner": {
+        "reputation": 4004,
+        "user_id": 1492496,
+        "user_type": "registered",
+        "profile_image": "https://i.stack.imgur.com/dO7to.png?s=128&g=1",
+        "display_name": "Brian Parker",
+        "link": "https://stackoverflow.com/users/1492496/brian-parker"
+    },
+    "is_accepted": true,
+    "score": 1,
+    "last_activity_date": 1606414476,
+    "creation_date": 1606414476,
+    "answer_id": 65027340,
+    "question_id": 65027144,
+    "content_license": "CC BY-SA 4.0",
+    "body": "<p>You did not click self hosted so it wants to connect to and existing server.</p>\n<p><a href=\"https://i.stack.imgur.com/XxIT9.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/XxIT9.png\" alt=\"enter image description here\" /></a></p>\n"
+}

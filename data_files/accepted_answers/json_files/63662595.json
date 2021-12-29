@@ -1,0 +1,18 @@
+{
+    "owner": {
+        "reputation": 155,
+        "user_id": 9733925,
+        "user_type": "registered",
+        "profile_image": "https://lh5.googleusercontent.com/-9V9qSenk3bc/AAAAAAAAAAI/AAAAAAAAACc/azFymwcyXj0/photo.jpg?sz=128",
+        "display_name": "TheAnachronism",
+        "link": "https://stackoverflow.com/users/9733925/theanachronism"
+    },
+    "is_accepted": true,
+    "score": 2,
+    "last_activity_date": 1598825153,
+    "creation_date": 1598825153,
+    "answer_id": 63662595,
+    "question_id": 63651738,
+    "content_license": "CC BY-SA 4.0",
+    "body": "<p>Ok so something that has caused the debug browser NOT to crash is:\nNot using the password autocomplete for the login page.\nIf I enter the password manually the browser doesn't crash on successful login.\nI have no idea how or why this works but it seems it does in some weird way.</p>\n<p>If anyone has an idea or so please post it so I can mark it as the actual answer to this problem. This here is more of a weird workaround.</p>\n"
+}

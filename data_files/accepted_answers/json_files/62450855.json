@@ -1,0 +1,19 @@
+{
+    "owner": {
+        "reputation": 918034,
+        "user_id": 23354,
+        "user_type": "moderator",
+        "accept_rate": 100,
+        "profile_image": "https://i.stack.imgur.com/CrVFH.png?s=128&g=1",
+        "display_name": "Marc Gravell",
+        "link": "https://stackoverflow.com/users/23354/marc-gravell"
+    },
+    "is_accepted": true,
+    "score": 3,
+    "last_activity_date": 1592486181,
+    "creation_date": 1592486181,
+    "answer_id": 62450855,
+    "question_id": 62450555,
+    "content_license": "CC BY-SA 4.0",
+    "body": "<p>All they are saying there is that nobody is coming to uninstall .NET Framework from their machines; whatever works today, will keep working. This is to stave off cries of \"you broke our perfectly working system\" and people fetching pitch-forks.</p>\n\n<p>All of the benefits, including (but not limited to) cross-platform compatibility: are in .NET Core, and it is absolutely correct to migrate to .NET Core if you <em>even possibly</em> can.</p>\n"
+}

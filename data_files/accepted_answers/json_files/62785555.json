@@ -1,0 +1,18 @@
+{
+    "owner": {
+        "reputation": 121,
+        "user_id": 4096106,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/acbe8a5efc5502ec1c1b3475b89bde93?s=128&d=identicon&r=PG&f=1",
+        "display_name": "mend0k",
+        "link": "https://stackoverflow.com/users/4096106/mend0k"
+    },
+    "is_accepted": true,
+    "score": 0,
+    "last_activity_date": 1594166381,
+    "creation_date": 1594166381,
+    "answer_id": 62785555,
+    "question_id": 62780915,
+    "content_license": "CC BY-SA 4.0",
+    "body": "<p>You must first inject using <code>@inject &lt;IService&gt; &lt;serviceInstanceName&gt;</code></p>\n<p>Example:</p>\n<pre><code>@using Blazored.SessionStorage\n@inject ISessionStorageService sessionStorageService\n...\n@code\n{\n     var eml = sessionStorage.sessionStorageService.GetItemAsync&lt;string&gt;(&quot;emailAddress&quot;);\n}\n</code></pre>\n<p>EDIT: Sorry I misinterpreted. The above is to inject session storage to a razor page. If you wanted to inject into a class you do below:</p>\n<pre><code>public class SomeClass\n{\n    private ISessionStorageService _sessionStorageService;\n        \n\n    // inject in the class constructor\n    public SomeClass(ISessionStorageService sessionStorageService)\n    {\n        _sessionStorageService = sessionStorageService;\n    }\n}\n</code></pre>\n<p>This is on top of registering the service in your Program.cs (in Client) which you have done already.</p>\n"
+}

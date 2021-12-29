@@ -1,0 +1,19 @@
+{
+    "owner": {
+        "reputation": 1596,
+        "user_id": 1206480,
+        "user_type": "registered",
+        "accept_rate": 76,
+        "profile_image": "https://www.gravatar.com/avatar/369c998e75bc392472c387df640dd97a?s=128&d=identicon&r=PG",
+        "display_name": "user1206480",
+        "link": "https://stackoverflow.com/users/1206480/user1206480"
+    },
+    "is_accepted": true,
+    "score": 1,
+    "last_activity_date": 1595190787,
+    "creation_date": 1595190787,
+    "answer_id": 62985357,
+    "question_id": 62868998,
+    "content_license": "CC BY-SA 4.0",
+    "body": "<p>The solution was rather simple, but I'm not sure to as why when I literally followed the tutorial from microsoft. Basically it involved changing &quot;Local&quot; name in the appsettings.json to &quot;oidc&quot;. I don't know if this is a camel/pascal case thing or what.</p>\n<p><strong>appsettings.json:</strong></p>\n<pre><code>{\n  &quot;oidc&quot;: {\n    &quot;Authority&quot;: &quot;https://localhost:5001/&quot;,\n    &quot;ClientId&quot;: &quot;SedduoBlazorClient&quot;,\n    &quot;DefaultScopes&quot;: [\n      &quot;openid&quot;,\n      &quot;profile&quot;\n    ],\n    &quot;PostLogoutRedirectUri&quot;: &quot;/&quot;,\n    &quot;RedirectUri&quot;:  &quot;https://localhost:5003/authentication/login-callback&quot;,\n    &quot;ResponseType&quot;: &quot;code&quot;\n  }\n}\n</code></pre>\n<p><strong>Program.cs:</strong></p>\n<pre><code>public class Program\n    {\n        public static async Task Main(string[] args)\n        {\n            var builder = WebAssemblyHostBuilder.CreateDefault(args);\n            builder.RootComponents.Add&lt;App&gt;(&quot;app&quot;);\n\n            builder.Services.AddTransient(sp =&gt; new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });\n\n            builder.Services.AddOidcAuthentication(options =&gt;\n            {\n                //options.ProviderOptions.Authority = &quot;https://localhost:5001/&quot;;\n                // Configure your authentication provider options here.\n                // For more information, see https://aka.ms/blazor-standalone-auth\n                builder.Configuration.Bind(&quot;oidc&quot;, options.ProviderOptions);\n            });\n\n            await builder.Build().RunAsync();\n        }\n    }\n</code></pre>\n"
+}

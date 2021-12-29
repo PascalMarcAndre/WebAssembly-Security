@@ -1,0 +1,18 @@
+{
+    "owner": {
+        "reputation": 150,
+        "user_id": 4206056,
+        "user_type": "registered",
+        "profile_image": "https://lh6.googleusercontent.com/-ntqirprVPx4/AAAAAAAAAAI/AAAAAAAAA1s/NAGJ3SV9k3s/photo.jpg?sz=128",
+        "display_name": "Jacob Runge",
+        "link": "https://stackoverflow.com/users/4206056/jacob-runge"
+    },
+    "is_accepted": true,
+    "score": 0,
+    "last_activity_date": 1604980759,
+    "creation_date": 1604980759,
+    "answer_id": 64762676,
+    "question_id": 64342972,
+    "content_license": "CC BY-SA 4.0",
+    "body": "<p>Okay--I'm assuming this question is VERY specific to my use case, so there may not be much demand for an answer here, but if anyone is headed down this same path...</p>\n<p>What I went with was creating a simple HTTP server in Go that the client could install on their own server, and then my web application could communicate with it. It was all simpler than I thought it would be. Using SSH was not possible, so I created a simple authentication system, and then all actions on the client's server were prompted by HTTP requests from the web application.</p>\n<p>The one catch here is that you WILL run afoul of CORS policy. Thankfully, you have full control over the server application, so cross-origin requests are manageable. You'll need to read up on how to allow cross origin requests on your server (see <a href=\"https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS\" rel=\"nofollow noreferrer\">the excellent MDN reference</a>), paying special attention to all the possible Access-Control-* headers.</p>\n<p>Also be aware (and this had me stuck for a long time) that CORS requests come in pairs--one with an OPTIONS method (as part of the browser's pre-flight check) and one with whatever method you assign (GET, POST, etc.). The OPTIONS method is sent first, and is pretty finicky. Read up on OPTIONS and the browser's pre-flight <a href=\"https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/OPTIONS\" rel=\"nofollow noreferrer\">again at MDN</a>, and anywhere else you can find the info you need.</p>\n<p>Authentication is a barrier for OPTIONS, as a status code other than 200 can cause the pre-flight to fail and halt your request; but blanket approval of OPTIONS requests can cause a mismatch in content sizes between OPTIONS and your method, causing your request to fail also. To overcome that barrier, I had my initial authentication always return a status 200 and then set &quot;authenticated&quot; or &quot;not authenticated&quot; in the return body, so that my client app knew if the request was successful or not. I also set a session variable on the server side so that the user wouldn't need to keep sending auth information and I could use HTTP status responses normally.</p>\n<p>This is a big overview. If anyone has specific questions, feel free to ask them--I'm no CORS expert, but I might be able to point you in the right direction!</p>\n"
+}

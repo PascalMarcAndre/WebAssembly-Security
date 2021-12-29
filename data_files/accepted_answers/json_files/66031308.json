@@ -1,0 +1,18 @@
+{
+    "owner": {
+        "reputation": 144,
+        "user_id": 1818708,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/c90c7234f2777a457568ab2237dd8baf?s=128&d=identicon&r=PG",
+        "display_name": "RaminMT",
+        "link": "https://stackoverflow.com/users/1818708/raminmt"
+    },
+    "is_accepted": true,
+    "score": 2,
+    "last_activity_date": 1612368535,
+    "creation_date": 1612368535,
+    "answer_id": 66031308,
+    "question_id": 66023219,
+    "content_license": "CC BY-SA 4.0",
+    "body": "<p>With this in mind that you're using Blazor WASM which runs on client side just like JavaScript, I should note that all the requests including api calls (<code>/api/people</code>) are executed in the client browser &amp; machine and they're browser can't resolve a host named <code>api_container</code> so unsurprisingly any request to your api and <code>api_container</code> will fail.</p>\n"
+}

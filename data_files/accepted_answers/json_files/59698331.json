@@ -1,0 +1,19 @@
+{
+    "owner": {
+        "reputation": 2601,
+        "user_id": 2838509,
+        "user_type": "registered",
+        "accept_rate": 63,
+        "profile_image": "https://www.gravatar.com/avatar/ddc514bdff431b6db641bba4d96d7658?s=128&d=identicon&r=PG&f=1",
+        "display_name": "NPadrutt",
+        "link": "https://stackoverflow.com/users/2838509/npadrutt"
+    },
+    "is_accepted": true,
+    "score": 1,
+    "last_activity_date": 1578774007,
+    "creation_date": 1578774007,
+    "answer_id": 59698331,
+    "question_id": 59696171,
+    "content_license": "CC BY-SA 4.0",
+    "body": "<p>okay, this is frustrating. The solution was to reboot all my computer. It seems that the issue was somewhere in IIS Express or so - on both my computer simultaneously.</p>\n"
+}

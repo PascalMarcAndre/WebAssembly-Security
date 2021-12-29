@@ -1,0 +1,18 @@
+{
+    "owner": {
+        "reputation": 469,
+        "user_id": 12492341,
+        "user_type": "registered",
+        "profile_image": "https://lh3.googleusercontent.com/a-/AAuE7mBLb0YZg9Sw6N67vnPmuAdlIRKV1cu_4lz6Fr9Jrw=k-s128",
+        "display_name": "Jaden Garcia",
+        "link": "https://stackoverflow.com/users/12492341/jaden-garcia"
+    },
+    "is_accepted": true,
+    "score": 0,
+    "last_activity_date": 1607739536,
+    "creation_date": 1607739536,
+    "answer_id": 65260950,
+    "question_id": 64757646,
+    "content_license": "CC BY-SA 4.0",
+    "body": "<p>This was a compiler bug fixed by Chromium in\n<a href=\"https://chromium-review.googlesource.com/c/v8/v8/+/2551100\" rel=\"nofollow noreferrer\">https://chromium-review.googlesource.com/c/v8/v8/+/2551100</a>.</p>\n<p>This was the response that I had gotten from one of the developers:</p>\n<blockquote>\n<p>This is indeed a timing issue that has been fixed in <a href=\"https://chromium-review.googlesource.com/c/v8/v8/+/2551100\" rel=\"nofollow noreferrer\">https://chromium-review.googlesource.com/c/v8/v8/+/2551100</a>. The problem happens when there are only imported globals, and compilation of the WebAssembly functions finishes before the stream actually finishes. In this case, the offset calculation happens after the compiler uses the offsets, and therefore produces incorrect code.</p>\n<p>A workaround is to define one global that is not imported, as this causes the offset calculation to happen earlier.</p>\n</blockquote>\n<p>Seems like sending a small module that only imports globals instead of functions was breaking the code.</p>\n<p>Their code had a threading race condition between the stream and the compiler.</p>\n"
+}

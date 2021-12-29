@@ -1,0 +1,18 @@
+{
+    "owner": {
+        "reputation": 93,
+        "user_id": 12027484,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/1751cf197ecd4b3e4ad9be37065331a2?s=128&d=identicon&r=PG&f=1",
+        "display_name": "amdorsey12",
+        "link": "https://stackoverflow.com/users/12027484/amdorsey12"
+    },
+    "is_accepted": true,
+    "score": 1,
+    "last_activity_date": 1593049121,
+    "creation_date": 1593049121,
+    "answer_id": 62566565,
+    "question_id": 62524753,
+    "content_license": "CC BY-SA 4.0",
+    "body": "<p>Thanks for all the suggestions, Jason. Helped me head in the right direction.</p>\n<p>The problem was quite silly. Apparently the Database and Entity Framework settings had automatically come up with the same string for both my &quot;Users&quot; and &quot;Todos&quot; databases:</p>\n<pre><code>Data Source=tcp:myserver.database.windows.net,1433;Initial Catalog=todos;User Id=&lt;myid&gt;@myserver;Password=&lt;my-password&gt;\n</code></pre>\n<p>But I hadn't noticed that it was the same string. I just had to change <code>Initial Catalog</code> to <code>users</code> and re check the &quot;use this connection string at runtime&quot; and &quot;apply this migration on publish&quot; boxes again with the edited string. That solved the issue.</p>\n"
+}

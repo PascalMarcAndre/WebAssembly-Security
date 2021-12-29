@@ -1,0 +1,18 @@
+{
+    "owner": {
+        "reputation": 115,
+        "user_id": 3175734,
+        "user_type": "registered",
+        "profile_image": "https://lh6.googleusercontent.com/-Vt3mlSr2wXU/AAAAAAAAAAI/AAAAAAAAFlk/ZShizRXscmo/photo.jpg?sz=128",
+        "display_name": "WALEED",
+        "link": "https://stackoverflow.com/users/3175734/waleed"
+    },
+    "is_accepted": true,
+    "score": 1,
+    "last_activity_date": 1597573985,
+    "creation_date": 1597573985,
+    "answer_id": 63435794,
+    "question_id": 62812702,
+    "content_license": "CC BY-SA 4.0",
+    "body": "<p>Turns out Azure may be a little ahead of ASP.NET Core</p>\n<p>The Azure AD authentication default template doesn't work out of the box, it needs a little tweaking.</p>\n<p>Follow the steps in MS docs here: <a href=\"https://docs.microsoft.com/en-us/aspnet/core/blazor/security/webassembly/azure-active-directory-groups-and-roles?view=aspnetcore-3.1\" rel=\"nofollow noreferrer\">Azure AD Groups, Administrative Roles, and user-defined roles</a></p>\n<p>Long story short:</p>\n<ul>\n<li>It works out of the box with a single role. e.g. &quot;Admin&quot;</li>\n<li>The problem is having multiple roles.</li>\n<li>The &quot;roles&quot; claim arrive as a string &quot;[Admin,User]&quot; which fails to match &quot;Admin&quot; or &quot;User&quot;</li>\n<li>The CustomUserAccount class breaks the roles into a string[] object which solves the problem.</li>\n<li>Microsoft did a good job documenting the workaround. (link above)</li>\n</ul>\n"
+}

@@ -1,0 +1,19 @@
+{
+    "owner": {
+        "reputation": 25297,
+        "user_id": 6152891,
+        "user_type": "registered",
+        "accept_rate": 75,
+        "profile_image": "https://www.gravatar.com/avatar/b45b7f89429f8766cdbf6c776c0a9d41?s=128&d=identicon&r=PG",
+        "display_name": "enet",
+        "link": "https://stackoverflow.com/users/6152891/enet"
+    },
+    "is_accepted": true,
+    "score": 1,
+    "last_activity_date": 1592562170,
+    "creation_date": 1592562170,
+    "answer_id": 62468163,
+    "question_id": 62467195,
+    "content_license": "CC BY-SA 4.0",
+    "body": "<ol>\n<li>Are your components defined in a Razor Component Library ?</li>\n<li>Did you add a reference to your Blazor App for the library project?</li>\n<li>Most importantly, Do you define routable ( decorated with the @page directive) components in your library projects ?</li>\n<li>Do you have a SharedObjects project where you define objects that are used in the Razor Component Library project and the Blazor App project? Do you add a reference to the SharedObjects project to both projects ? </li>\n</ol>\n"
+}

@@ -1,0 +1,18 @@
+{
+    "owner": {
+        "reputation": 468,
+        "user_id": 1807542,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/2c4d94a78189c198f834dc1ff93c11cf?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Michel Jansson",
+        "link": "https://stackoverflow.com/users/1807542/michel-jansson"
+    },
+    "is_accepted": true,
+    "score": 1,
+    "last_activity_date": 1609098452,
+    "creation_date": 1609098452,
+    "answer_id": 65469789,
+    "question_id": 65396156,
+    "content_license": "CC BY-SA 4.0",
+    "body": "<p>You are likely having this issue since you are using <code>ICountryService</code> that has it's own http client which is not configured to include auth tokens in the outgoing requests -- no tokens, no access.</p>\n<p>We can attach tokens by adding an <code>AuthorizationMessageHandler</code> to the client, just like your named client (<code>XXX.ServerAPI</code>) is configured.</p>\n<p>Try changing your typed client helper method to this:</p>\n<pre class=\"lang-cs prettyprint-override\"><code>/* Client Program.cs */\n\nvoid RegisterTypedClient&lt;TClient, TImplementation&gt;(Uri apiBaseUrl)\n    where TClient : class where TImplementation : class, TClient\n{\n    builder.Services.AddHttpClient&lt;TClient, TImplementation&gt;(\n            client =&gt; client.BaseAddress = apiBaseUrl)\n        .AddHttpMessageHandler&lt;BaseAddressAuthorizationMessageHandler&gt;();\n}\n</code></pre>\n<p>You probably want to change the helper to also only include tokens to client's that actually require them (if you are using that helper for other clients as well)</p>\n<p><a href=\"https://docs.microsoft.com/en-us/aspnet/core/blazor/security/webassembly/additional-scenarios\" rel=\"nofollow noreferrer\">See the docs</a> for more info.</p>\n"
+}

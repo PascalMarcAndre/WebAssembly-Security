@@ -1,0 +1,20 @@
+{
+    "owner": {
+        "reputation": 235075,
+        "user_id": 60761,
+        "user_type": "registered",
+        "accept_rate": 91,
+        "profile_image": "https://www.gravatar.com/avatar/5bf43bae0431d8f4a062234b5e3a0cb9?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Henk Holterman",
+        "link": "https://stackoverflow.com/users/60761/henk-holterman"
+    },
+    "is_accepted": true,
+    "score": 3,
+    "last_activity_date": 1606334520,
+    "last_edit_date": 1606334520,
+    "creation_date": 1606333909,
+    "answer_id": 65011795,
+    "question_id": 65011727,
+    "content_license": "CC BY-SA 4.0",
+    "body": "<blockquote>\n<p>But I'm little bit worried on calling StateHasChanged() every second.</p>\n</blockquote>\n<p>Don't be. Every millisecond might be a problem, every second should be fine.</p>\n<p>Some improvements:</p>\n<ol>\n<li><p>System.Threading.Timer is IDisposable. You should implement the Dispose logic in this Page.  See <a href=\"https://stackoverflow.com/a/62513110/60761\">this answer</a>.</p>\n</li>\n<li><p>You should make the callback an <code>async void</code> and then <code>await InvokeAsync(StateHasChanged);</code>\nThis makes no difference in WebAssembly at the moment, but one day Blazor/Wasm will get real Threads and then your code will fail. InvokeAsync() is already required for Blazor/server.</p>\n</li>\n</ol>\n"
+}

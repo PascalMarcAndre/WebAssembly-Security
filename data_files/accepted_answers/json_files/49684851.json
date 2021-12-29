@@ -1,0 +1,18 @@
+{
+    "owner": {
+        "reputation": 31091,
+        "user_id": 1097780,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/a8f01ad795c29c3d05ad26ee47ea6069?s=128&d=identicon&r=PG",
+        "display_name": "Andreas Rossberg",
+        "link": "https://stackoverflow.com/users/1097780/andreas-rossberg"
+    },
+    "is_accepted": true,
+    "score": 3,
+    "last_activity_date": 1522985546,
+    "creation_date": 1522985546,
+    "answer_id": 49684851,
+    "question_id": 49675646,
+    "content_license": "CC BY-SA 3.0",
+    "body": "<p>The Rationale section of the original Wasm design docs contains an <a href=\"https://github.com/WebAssembly/design/blob/master/Rationale.md#why-polymorphic-stack-typing-after-control-transfer\" rel=\"nofollow noreferrer\">extensive motivation</a> of this feature.</p>\n"
+}

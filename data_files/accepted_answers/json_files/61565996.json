@@ -1,0 +1,18 @@
+{
+    "owner": {
+        "reputation": 523,
+        "user_id": 11144591,
+        "user_type": "registered",
+        "profile_image": "https://lh3.googleusercontent.com/-LhwR4jQgwq8/AAAAAAAAAAI/AAAAAAAAH9Q/QCvrmdGUeEw/photo.jpg?sz=128",
+        "display_name": "David Masterson",
+        "link": "https://stackoverflow.com/users/11144591/david-masterson"
+    },
+    "is_accepted": true,
+    "score": 3,
+    "last_activity_date": 1588451978,
+    "creation_date": 1588451978,
+    "answer_id": 61565996,
+    "question_id": 61565364,
+    "content_license": "CC BY-SA 4.0",
+    "body": "<p>I created a control RedirectToLogin.razor</p>\n\n<pre><code>@inject NavigationManager Navigation\n@code {\n    protected override void OnInitialized()\n    {\n        String thisPage = Navigation.Uri.Replace(Navigation.BaseUri, \"~/\");\n        Navigation.NavigateTo($\"Identity/Account/Login?returnUrl={thisPage}\");\n        base.OnInitialized();\n    }\n}\n</code></pre>\n\n<p>And then inserted it into the mainlayout.razor</p>\n\n<pre><code>&lt;div class=\"container-fluid\"&gt;\n &lt;AuthorizeView&gt;\n        &lt;Authorized&gt;\n            &lt;NavigationLogger /&gt;\n            &lt;ContextMenuMouseClick&gt;\n                &lt;MenuTopBar /&gt;\n                &lt;NavMenu /&gt;\n                &lt;SubPageContainer&gt;\n                    @Body\n                &lt;/SubPageContainer&gt;\n            &lt;/ContextMenuMouseClick&gt;\n        &lt;/Authorized&gt;\n        &lt;NotAuthorized&gt;\n            &lt;RedirectToLogin /&gt;\n        &lt;/NotAuthorized&gt;\n&lt;/AuthorizeView&gt;\n&lt;/div&gt;\n</code></pre>\n\n<p>So when the layout is loaded and it is in the NotAuthorized state it will redirect to the login page and after authorising  will return to the page it was trying to access.</p>\n\n<p>Hope this helps.</p>\n"
+}

@@ -1,0 +1,19 @@
+{
+    "owner": {
+        "reputation": 953980,
+        "user_id": 29407,
+        "user_type": "registered",
+        "accept_rate": 86,
+        "profile_image": "https://www.gravatar.com/avatar/e3a181e9cdd4757a8b416d93878770c5?s=128&d=identicon&r=PG",
+        "display_name": "Darin Dimitrov",
+        "link": "https://stackoverflow.com/users/29407/darin-dimitrov"
+    },
+    "is_accepted": true,
+    "score": 4,
+    "last_activity_date": 1579104621,
+    "creation_date": 1579104621,
+    "answer_id": 59755379,
+    "question_id": 56428990,
+    "content_license": "CC BY-SA 4.0",
+    "body": "<p>The WebAssembly's async compile API registers the ongoing work on one of v8::Platform's background threads, and eventually in the future, a task will be posted to the foreground thread to resolve the promise for the compilation.</p>\n\n<p>In order for this promise to be resolved you need to pump the message loop and run any pending micro-tasks:</p>\n\n<pre><code>v8::platform::PumpMessageLoop(platform.get(), isolate);\nisolate-&gt;RunMicrotasks();\n</code></pre>\n\n<p>It may be necessary to perform this pumping for a longer period depending on how long it takes to complete the compilation.</p>\n"
+}

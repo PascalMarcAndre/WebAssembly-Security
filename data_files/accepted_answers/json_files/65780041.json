@@ -1,0 +1,19 @@
+{
+    "owner": {
+        "reputation": 25297,
+        "user_id": 6152891,
+        "user_type": "registered",
+        "accept_rate": 75,
+        "profile_image": "https://www.gravatar.com/avatar/b45b7f89429f8766cdbf6c776c0a9d41?s=128&d=identicon&r=PG",
+        "display_name": "enet",
+        "link": "https://stackoverflow.com/users/6152891/enet"
+    },
+    "is_accepted": true,
+    "score": 0,
+    "last_activity_date": 1610994127,
+    "creation_date": 1610994127,
+    "answer_id": 65780041,
+    "question_id": 65772055,
+    "content_license": "CC BY-SA 4.0",
+    "body": "<blockquote>\n<p>Exactly, that is my problem. It does get stored for about half a second something like oidc.user etc en then after a redirect or navigating to another page within my application its no longer there. Because of that my user now is logged out. This problem only is here after deploying, running it locally works.</p>\n</blockquote>\n<p>It seems as though the session cookie is being deleted immediately after a request is made. Note: The cookie session ID is sent to the server at each request.</p>\n<p>This may be only a guesswork, but you better try it than not...</p>\n<p>Add the following code to your CongiureServices:</p>\n<pre><code>   services.AddDistributedMemoryCache();\n\n    services.AddSession(options =&gt;\n    {\n        options.IdleTimeout = TimeSpan.FromSeconds(600);\n        options.Cookie.HttpOnly = true;\n        options.Cookie.IsEssential = true;\n    });\n</code></pre>\n<p>And <code>app.UseSession();</code> in the Configure method, immediately above <code>app.UseEndpoints(endpoints =&gt;</code></p>\n<p>Hope this works...</p>\n<p>Note: AuthenticationStateProvider has got nothing to do with the issue you're facing.</p>\n"
+}

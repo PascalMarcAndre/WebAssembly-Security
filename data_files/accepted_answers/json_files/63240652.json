@@ -1,0 +1,19 @@
+{
+    "owner": {
+        "reputation": 244,
+        "user_id": 5574962,
+        "user_type": "registered",
+        "profile_image": "https://i.stack.imgur.com/EmmZL.png?s=128&g=1",
+        "display_name": "3per",
+        "link": "https://stackoverflow.com/users/5574962/3per"
+    },
+    "is_accepted": true,
+    "score": 1,
+    "last_activity_date": 1596529112,
+    "last_edit_date": 1596529112,
+    "creation_date": 1596518169,
+    "answer_id": 63240652,
+    "question_id": 63191785,
+    "content_license": "CC BY-SA 4.0",
+    "body": "<p>Just add <code>OnRedirectToLogin</code> yet</p>\n<pre><code>options.Events.OnRedirectToLogin = context =&gt;\n{\n    context.Response.StatusCode = 401; // or 403 if you want\n    return Task.CompletedTask;\n};\n</code></pre>\n"
+}

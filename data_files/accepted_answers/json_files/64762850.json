@@ -1,0 +1,19 @@
+{
+    "owner": {
+        "reputation": 1701,
+        "user_id": 826402,
+        "user_type": "registered",
+        "accept_rate": 80,
+        "profile_image": "https://i.stack.imgur.com/ZPWp8.jpg?s=128&g=1",
+        "display_name": "nAviD",
+        "link": "https://stackoverflow.com/users/826402/navid"
+    },
+    "is_accepted": true,
+    "score": 1,
+    "last_activity_date": 1604982104,
+    "creation_date": 1604982104,
+    "answer_id": 64762850,
+    "question_id": 64742018,
+    "content_license": "CC BY-SA 4.0",
+    "body": "<p>The easiest way is to use a <code>CascadeParameter</code>.</p>\n"
+}

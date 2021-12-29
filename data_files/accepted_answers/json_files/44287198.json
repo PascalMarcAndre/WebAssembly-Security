@@ -1,0 +1,18 @@
+{
+    "owner": {
+        "reputation": 6025,
+        "user_id": 3983557,
+        "user_type": "registered",
+        "profile_image": "https://i.stack.imgur.com/01A0D.jpg?s=128&g=1",
+        "display_name": "JF Bastien",
+        "link": "https://stackoverflow.com/users/3983557/jf-bastien"
+    },
+    "is_accepted": true,
+    "score": 7,
+    "last_activity_date": 1496240132,
+    "creation_date": 1496240132,
+    "answer_id": 44287198,
+    "question_id": 44286798,
+    "content_license": "CC BY-SA 3.0",
+    "body": "<p>A WebAssembly program can use up all of its allocated memory, and once it runs out by reaching the memory's declared maximum, or 4GiB, or the browser's limit, then it'll likely crash. Inside that memory C++ programs using toolchains like emscripten have an allocator, and that allocator will decide what it does when out of memory. Likely crash!</p>\n\n<p>Outside that memory, a program can also \"leak\" by holding onto a bunch of JavaScript objects and preventing the GC from collecting them. This will eventually hit memory limits, leading to crash.</p>\n"
+}

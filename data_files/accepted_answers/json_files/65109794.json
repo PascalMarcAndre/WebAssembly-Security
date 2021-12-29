@@ -1,0 +1,19 @@
+{
+    "owner": {
+        "reputation": 1332,
+        "user_id": 2663033,
+        "user_type": "registered",
+        "accept_rate": 100,
+        "profile_image": "https://i.stack.imgur.com/8RJho.jpg?s=128&g=1",
+        "display_name": "TheMagnificent11",
+        "link": "https://stackoverflow.com/users/2663033/themagnificent11"
+    },
+    "is_accepted": true,
+    "score": 0,
+    "last_activity_date": 1606918402,
+    "creation_date": 1606918402,
+    "answer_id": 65109794,
+    "question_id": 65038989,
+    "content_license": "CC BY-SA 4.0",
+    "body": "<p>So it turns out the issue was actually in the code.</p>\n<p>I missed a note section in the docs that said I had to manually edit the client app code if API ID URI was <em>untrusted publisher domain similar to <a href=\"https://contoso.onmicrosoft.com/41451fa7-82d9-4673-8fa5-69eff5a761fd\" rel=\"nofollow noreferrer\">https://contoso.onmicrosoft.com/41451fa7-82d9-4673-8fa5-69eff5a761fd</a></em>, which it was in my case.</p>\n<p>Removing the extra <code>https://{TENANT DOMAIN}/</code> in the <code>Program.cs</code> of the client app fixed things (note the difference between the commented-out line and the line that comes after).</p>\n<pre><code>namespace BlazorClient\n{\n    public class Program\n    {\n        public static async Task Main(string[] args)\n        {\n            ...\n\n            builder.Services.AddMsalAuthentication(options =&gt;\n            {\n                builder.Configuration.Bind(&quot;AzureAdB2C&quot;, options.ProviderOptions.Authentication);\n                //options.ProviderOptions.DefaultAccessTokenScopes.Add(&quot;https://***.onmicrosoft.com/https://***.onmicrosoft.com/*******/blazor.client&quot;);\n                options.ProviderOptions.DefaultAccessTokenScopes.Add(&quot;https://***.onmicrosoft.com/*******/blazor.client&quot;);\n            });\n\n            await builder.Build().RunAsync();\n        }\n    }\n}\n</code></pre>\n"
+}

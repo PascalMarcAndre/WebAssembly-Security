@@ -1,0 +1,19 @@
+{
+    "owner": {
+        "reputation": 6900,
+        "user_id": 7453,
+        "user_type": "registered",
+        "accept_rate": 93,
+        "profile_image": "https://www.gravatar.com/avatar/9221ab436283d74b2f9980004df83c1c?s=128&d=identicon&r=PG",
+        "display_name": "Patrick Szalapski",
+        "link": "https://stackoverflow.com/users/7453/patrick-szalapski"
+    },
+    "is_accepted": true,
+    "score": 0,
+    "last_activity_date": 1587664686,
+    "creation_date": 1587664686,
+    "answer_id": 61393934,
+    "question_id": 60980081,
+    "content_license": "CC BY-SA 4.0",
+    "body": "<p>There seems to be no way of doing this in Blazor without Javascript interop, as of 3.2.0-preview4.</p>\n"
+}

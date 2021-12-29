@@ -1,0 +1,18 @@
+{
+    "owner": {
+        "reputation": 244,
+        "user_id": 5574962,
+        "user_type": "registered",
+        "profile_image": "https://i.stack.imgur.com/EmmZL.png?s=128&g=1",
+        "display_name": "3per",
+        "link": "https://stackoverflow.com/users/5574962/3per"
+    },
+    "is_accepted": true,
+    "score": 0,
+    "last_activity_date": 1610756771,
+    "creation_date": 1610756771,
+    "answer_id": 65745288,
+    "question_id": 63499351,
+    "content_license": "CC BY-SA 4.0",
+    "body": "<ol>\n<li><p>I've copied *.StaticWebAssets.xml files from <code>...\\Server\\bin\\Debug\\netcoreapp3.1</code> to <code>...\\NUnitTestProject1\\bin\\Debug\\netcoreapp3.1</code></p>\n</li>\n<li><p>I've added <code>UseStaticWebAssets()</code> into backend launch code.</p>\n<pre><code>builder\n .ConfigureWebHostDefaults(w =&gt;\n {\n     w.UseUrls(serviceUrl);\n     w.UseStaticWebAssets();\n })\n.Build()\n.Start();\n</code></pre>\n</li>\n</ol>\n<p>All of the tests passed. Debugger shows <code>CompositeFileProvider</code> injection with same structure as when backend launched manual...</p>\n<p>I've setup copying of these files in build events</p>\n<pre><code>&lt;Target Name=&quot;PostBuild&quot; AfterTargets=&quot;PostBuildEvent&quot;&gt;\n    &lt;Exec Command=&quot;copy ..\\Rest\\bin\\$(ConfigurationName)\\net5.0-windows\\*.StaticWebAssets.xml .\\bin\\$(ConfigurationName)\\net5.0-windows\\*.*&quot; /&gt;\n&lt;/Target&gt;\n</code></pre>\n<p>It a pity, that I cannot realize how implement auto-generation StaticWebAssets.xml in a test project.</p>\n"
+}

@@ -1,0 +1,20 @@
+{
+    "owner": {
+        "reputation": 25297,
+        "user_id": 6152891,
+        "user_type": "registered",
+        "accept_rate": 75,
+        "profile_image": "https://www.gravatar.com/avatar/b45b7f89429f8766cdbf6c776c0a9d41?s=128&d=identicon&r=PG",
+        "display_name": "enet",
+        "link": "https://stackoverflow.com/users/6152891/enet"
+    },
+    "is_accepted": true,
+    "score": 2,
+    "last_activity_date": 1616431236,
+    "last_edit_date": 1616431236,
+    "creation_date": 1612388871,
+    "answer_id": 66036201,
+    "question_id": 66029743,
+    "content_license": "CC BY-SA 4.0",
+    "body": "<blockquote>\n<p>How can I solve this issue?</p>\n</blockquote>\n<p>By ignoring it. No issue here.</p>\n<blockquote>\n<p>It looks to me like a permanent roundtrip from the Blazor app back to the IdentityServer4</p>\n</blockquote>\n<p>Not at all. A message such as this:</p>\n<blockquote>\n<p>info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[1]\nAuthorization was successful.</p>\n</blockquote>\n<p>is issued by the authorization service when you try to access a protected resource ( annotated by the Authorize attribute), and it is called to check if you are authorized to access the protected resource. In your Blazor client, annotate the Counter page with the Authorize attribute, run your app, and alternately navigate from the Index page to the Counter page (after being authenticated), you'll notice that each time you try to navigate to the Counter page the above message will increase by one (to left of the message). Once again, this is because the authorization service is being called to check if you are authorized to access the protected resource... This is by design. You authenticate only once, but being spied on again and again, not without reason of course, and even that not always succeed.</p>\n"
+}

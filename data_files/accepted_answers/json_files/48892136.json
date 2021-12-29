@@ -1,0 +1,18 @@
+{
+    "owner": {
+        "reputation": 6025,
+        "user_id": 3983557,
+        "user_type": "registered",
+        "profile_image": "https://i.stack.imgur.com/01A0D.jpg?s=128&g=1",
+        "display_name": "JF Bastien",
+        "link": "https://stackoverflow.com/users/3983557/jf-bastien"
+    },
+    "is_accepted": true,
+    "score": 6,
+    "last_activity_date": 1519152029,
+    "creation_date": 1519152029,
+    "answer_id": 48892136,
+    "question_id": 48891593,
+    "content_license": "CC BY-SA 3.0",
+    "body": "<p>Even if a WebAssembly implementation can outperform WebCrypto I would strongly advise against using your own. WebCrypto has platform knowledge which you simply don't have when using WebAssembly, and that means the implementation can make its algorithms use ISA-specific instructions as well as ensure that your crypto doesn't leak secrets. This simply isn't possible with WebAssembly today.</p>\n\n<p>You might think \"the JIT knows the platform, and could pattern-match my crypto code to Make It Do The Right Thing\", but at that point it might as well instead recognize that you're calling into WebCrypto and make that call extra fast. You're then shipping less code.</p>\n\n<p>Here's <a href=\"https://eprint.iacr.org/2018/119.pdf\" rel=\"noreferrer\">a paper which shows secret extraction when not using WebCrypto \"Drive-by Key-Extraction Cache Attacks from Portable Code\"</a>.</p>\n\n<p>Quoting the paper:</p>\n\n<blockquote>\n  <p>the only secure way to perform cryptographic operations in JavaScript is to delegate them to the browser so that they can be executed using a native code implementation. Indeed, modern Browsers are equipped with WebCrypto API [70] that allows JavaScript to execute some cryptographic operations</p>\n</blockquote>\n\n<p>This applies to WebAssembly as well as JavaScript.</p>\n"
+}

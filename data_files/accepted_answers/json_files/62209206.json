@@ -1,0 +1,19 @@
+{
+    "owner": {
+        "reputation": 12588,
+        "user_id": 2940908,
+        "user_type": "registered",
+        "accept_rate": 60,
+        "profile_image": "https://i.stack.imgur.com/E79WU.jpg?s=128&g=1",
+        "display_name": "agua from mars",
+        "link": "https://stackoverflow.com/users/2940908/agua-from-mars"
+    },
+    "is_accepted": true,
+    "score": 0,
+    "last_activity_date": 1591337680,
+    "creation_date": 1591337680,
+    "answer_id": 62209206,
+    "question_id": 62199777,
+    "content_license": "CC BY-SA 4.0",
+    "body": "<p>Your issue is here :  </p>\n\n<pre class=\"lang-cs prettyprint-override\"><code>            builder.Services.AddHttpClient(\"MyApp.ServerAPI\",\n                        client =&gt; client.BaseAddress = new Uri(builder.HostEnvironment.BaseAddress))\n                        .AddHttpMessageHandler&lt;BaseAddressAuthorizationMessageHandler&gt;();\n\n            // each HttpClient use the BaseAddressAuthorizationMessageHandle\n            builder.Services.AddTransient(sp =&gt; sp.GetRequiredService&lt;IHttpClientFactory&gt;()\n                                                    .CreateClient(\"MyApp.ServerAPI\"));\n</code></pre>\n\n<p>Each HttpClient use the BaseAddressAuthorizationMessageHandler but the user is not yet authentified when you request for policies here:</p>\n\n<pre class=\"lang-cs prettyprint-override\"><code>            builder.Services.AddAuthorizationCore(config =&gt;\n            {\n                var httpClient = builder.Services.BuildServiceProvider().GetService&lt;HttpClient&gt;();\n                var policies =  await httpClient.GetFromJsonAsync&lt;List&lt;ApplicationPolicies&gt;&gt;(\"ApplicationPolicies\");\n                foreach (var policy in policies)\n                        {\n                            config.AddPolicy(policy.Name, policyBuilder =&gt;\n                            {\n                                policyBuilder.RequireRole(policy.PolicyRoles.Select(x =&gt; x.Role.Name));\n                            });\n                        }\n            });\n</code></pre>\n\n<p>Instead use a different <code>HttpClient</code>:</p>\n\n<pre class=\"lang-cs prettyprint-override\"><code>            builder.Services.AddAuthorizationCore(config =&gt;\n            {\n                var httpClient = new HttpClient\n                {\n                    BaseAddress = new Uri(builder.HostEnvironment.BaseAddress)   \n                };\n                var policies =  await httpClient.GetFromJsonAsync&lt;List&lt;ApplicationPolicies&gt;&gt;(\"ApplicationPolicies\");\n                foreach (var policy in policies)\n                        {\n                            config.AddPolicy(policy.Name, policyBuilder =&gt;\n                            {\n                                policyBuilder.RequireRole(policy.PolicyRoles.Select(x =&gt; x.Role.Name));\n                            });\n                        }\n            });\n\n</code></pre>\n"
+}

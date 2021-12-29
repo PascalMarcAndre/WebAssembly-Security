@@ -1,0 +1,19 @@
+{
+    "owner": {
+        "reputation": 6582,
+        "user_id": 147301,
+        "user_type": "registered",
+        "accept_rate": 97,
+        "profile_image": "https://i.stack.imgur.com/5cRaa.png?s=128&g=1",
+        "display_name": "Flores",
+        "link": "https://stackoverflow.com/users/147301/flores"
+    },
+    "is_accepted": true,
+    "score": 0,
+    "last_activity_date": 1530111921,
+    "creation_date": 1530111921,
+    "answer_id": 51066107,
+    "question_id": 51065916,
+    "content_license": "CC BY-SA 4.0",
+    "body": "<p>As far as I know this (a WASM compiler for C#) does not exist. Blazor does this by running Mono (which is compiled to WASM) in the browser. And then this Mono runtime executes your .netstandard (C#) assemblies.</p>\n\n<p>If it is only one function and you are worried about different behavior, your best bet is making an Ajax call and run the code on the server side.</p>\n"
+}

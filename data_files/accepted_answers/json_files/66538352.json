@@ -1,0 +1,19 @@
+{
+    "owner": {
+        "reputation": 403,
+        "user_id": 2209634,
+        "user_type": "registered",
+        "accept_rate": 80,
+        "profile_image": "https://www.gravatar.com/avatar/afe4a5f554d071c8ce24b96131678fde?s=128&d=identicon&r=PG&f=1",
+        "display_name": "user2209634",
+        "link": "https://stackoverflow.com/users/2209634/user2209634"
+    },
+    "is_accepted": true,
+    "score": 0,
+    "last_activity_date": 1615243707,
+    "creation_date": 1615243707,
+    "answer_id": 66538352,
+    "question_id": 66521906,
+    "content_license": "CC BY-SA 4.0",
+    "body": "<p>On further investigation, there was an Inner Exception that I hadn't spotted which read:</p>\n<pre><code>Unable to find a default constructor to use for type System.IdentityModel.Tokens.Jwt.JwtHeader\n</code></pre>\n<p>This lead me to this known issue on Github: <a href=\"https://github.com/mono/linker/issues/870\" rel=\"nofollow noreferrer\">https://github.com/mono/linker/issues/870</a></p>\n<p>In summary, there is a workaround, by including the following code in program.cs after builder.Build():</p>\n<pre><code>_ = new JwtHeader();\n_ = new JwtPayload();\n</code></pre>\n<p>I don't begin to understand what the issue is, but am just happy that now everything works as expected.</p>\n"
+}

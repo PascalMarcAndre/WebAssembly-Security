@@ -1,0 +1,18 @@
+{
+    "owner": {
+        "reputation": 267,
+        "user_id": 15527686,
+        "user_type": "registered",
+        "profile_image": "https://lh3.googleusercontent.com/-h6AuIi3Xea0/AAAAAAAAAAI/AAAAAAAAAAA/AMZuuclwOP1LTrxU-7r_kZmXUKLJcDIpbA/s96-c/photo.jpg?sz=128",
+        "display_name": "\u0110\u0103ng Khoa \u0110inh",
+        "link": "https://stackoverflow.com/users/15527686/%c4%90%c4%83ng-khoa-%c4%90inh"
+    },
+    "is_accepted": true,
+    "score": 0,
+    "last_activity_date": 1617687457,
+    "creation_date": 1617687457,
+    "answer_id": 66963202,
+    "question_id": 66960982,
+    "content_license": "CC BY-SA 4.0",
+    "body": "<p>Firstly, CORS is managed by <strong>the server</strong>. The fact that you add some header in your request doesn't help. It <strong>the server</strong> who, based on the domain of incoming requests, sets appropriate headers if CORS requests are allowed.</p>\n<p>You're right about making a proxy server. You can use <a href=\"https://cors-anywhere.herokuapp.com/corsdemo\" rel=\"nofollow noreferrer\">https://cors-anywhere.herokuapp.com/corsdemo</a>, which is a proxy server for frontend developers to make CORS requests. The github page is <a href=\"https://github.com/Rob--W/cors-anywhere\" rel=\"nofollow noreferrer\">here</a></p>\n"
+}

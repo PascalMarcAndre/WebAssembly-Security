@@ -1,0 +1,18 @@
+{
+    "owner": {
+        "reputation": 1283,
+        "user_id": 3623566,
+        "user_type": "registered",
+        "profile_image": "https://i.stack.imgur.com/TbMBs.png?s=128&g=1",
+        "display_name": "Lee",
+        "link": "https://stackoverflow.com/users/3623566/lee"
+    },
+    "is_accepted": true,
+    "score": 1,
+    "last_activity_date": 1561446300,
+    "creation_date": 1561446300,
+    "answer_id": 56748525,
+    "question_id": 56737992,
+    "content_license": "CC BY-SA 4.0",
+    "body": "<p>I don't know how much you know about web assembly but it depends on what your plugins actually should do. If it basically handle Arrays and numeric data with not that match interacting with host applications then it might fit. But when you have heavy object handling then it will not fit at the moment. So for image processing it might be perfect match like it is used in some web examples. Also be aware that some web assembly targeting system or not suitable for none web targets as they generate also some javascript code to be used in browsers beside the generate wasm. Some wasm modules for example require that you call malloc and free for string handling other have functions like new and gc for the nearly the same.</p>\n"
+}

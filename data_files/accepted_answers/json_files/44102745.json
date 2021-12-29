@@ -1,0 +1,18 @@
+{
+    "owner": {
+        "reputation": 816,
+        "user_id": 8045462,
+        "user_type": "registered",
+        "profile_image": "https://i.stack.imgur.com/WXBPW.png?s=128&g=1",
+        "display_name": "Ghillie",
+        "link": "https://stackoverflow.com/users/8045462/ghillie"
+    },
+    "is_accepted": true,
+    "score": 4,
+    "last_activity_date": 1495409180,
+    "creation_date": 1495409180,
+    "answer_id": 44102745,
+    "question_id": 44097584,
+    "content_license": "CC BY-SA 3.0",
+    "body": "<p>You aren't providing an implementation of <code>log()</code> in <code>imports.env</code></p>\n\n<pre><code>Object.assign(imports.env, {\n    memoryBase: 0,\n    tableBase: 0,\n    memory: new WebAssembly.Memory({\n        initial: 256,\n        maximum: 512,\n    }),\n    table: new WebAssembly.Table({\n        initial: 0,\n        maximum: 0,\n        element: 'anyfunc',\n    }),\n    _log: Math.log,\n})\n</code></pre>\n"
+}

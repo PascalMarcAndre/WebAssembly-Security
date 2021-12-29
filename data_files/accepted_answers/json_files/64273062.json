@@ -1,0 +1,19 @@
+{
+    "owner": {
+        "reputation": 25297,
+        "user_id": 6152891,
+        "user_type": "registered",
+        "accept_rate": 75,
+        "profile_image": "https://www.gravatar.com/avatar/b45b7f89429f8766cdbf6c776c0a9d41?s=128&d=identicon&r=PG",
+        "display_name": "enet",
+        "link": "https://stackoverflow.com/users/6152891/enet"
+    },
+    "is_accepted": true,
+    "score": 2,
+    "last_activity_date": 1602210007,
+    "creation_date": 1602210007,
+    "answer_id": 64273062,
+    "question_id": 64201620,
+    "content_license": "CC BY-SA 4.0",
+    "body": "<p>It is clear by now that Blazor uses the internal url <code>http://localhost:5008</code> as the authority instead of the external url <code>http://167.172.118.170/</code></p>\n<p>When the client attempts to connect to <code>http://localhost:5008/.well-known/openid-configuration</code>, an error occurs: connection refused...</p>\n<p>As a matter of fact the client should use this url: <code>http://167.172.118.170/.well-known/openid-configuration</code>, but it does not as the value of the authority is determined by Blazor.</p>\n<p>If you type the url <code>http://167.172.118.170/.well-known/openid-configuration</code> in the browser's address bar, you'll see all the configuration information about the Identity Provider. Indeed, <code>http://167.172.118.170/</code> is the authority. But as you've seen setting the Authority to this url in the appsettings.json file was simply ignored, and the internal url was used instead.</p>\n<p>How to solve this ? We should tell Blazor not to use the internal url but the external one...</p>\n<p>Attempts suggested:</p>\n<p>In the web server project's Startup class's ConfigureService change this code:</p>\n<pre><code>services.AddIdentityServer()\n           .AddApiAuthorization&lt;ApplicationUser, ApplicationIdentityDbContext&gt; \n            ();\n</code></pre>\n<p>To</p>\n<pre><code>services.AddIdentityServer(options =&gt;\n            {\n                options.IssuerUri = &quot;https://167.172.118.170/&quot;;\n               \n            })\n              .AddApiAuthorization&lt;ApplicationUser, \n                                ApplicationIdentityDbContext&gt;(); \n</code></pre>\n<ol start=\"2\">\n<li><p><a href=\"https://www.nuget.org/packages/Microsoft.AspNetCore.HttpOverrides/\" rel=\"nofollow noreferrer\">Use the ForwardedHeaders middleware</a>. <a href=\"https://github.com/aspnet/BasicMiddleware/blob/rel/1.1.0/samples/HttpOverridesSample/Startup.cs#L13-L16\" rel=\"nofollow noreferrer\">See this sample</a> as to how to do it.</p>\n</li>\n<li><p>Stick to the above... The issue is here, and not somewhere else.</p>\n</li>\n</ol>\n<p>Good luck...</p>\n"
+}

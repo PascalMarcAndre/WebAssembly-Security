@@ -1,0 +1,18 @@
+{
+    "owner": {
+        "reputation": 2409,
+        "user_id": 10851213,
+        "user_type": "registered",
+        "profile_image": "https://i.stack.imgur.com/r7MgN.jpg?s=128&g=1",
+        "display_name": "fingers10",
+        "link": "https://stackoverflow.com/users/10851213/fingers10"
+    },
+    "is_accepted": true,
+    "score": 1,
+    "last_activity_date": 1607796830,
+    "creation_date": 1607796830,
+    "answer_id": 65268247,
+    "question_id": 65025694,
+    "content_license": "CC BY-SA 4.0",
+    "body": "<p>The issue got resolved after updating <code>Microsoft.AspNetCore.Components.WebAssembly</code> and <code>Microsoft.AspNetCore.Components.WebAssembly.DevServer</code> nuget packages from version <code>5.0.0</code> to <code>5.0.1</code></p>\n"
+}

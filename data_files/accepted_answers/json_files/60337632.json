@@ -1,0 +1,19 @@
+{
+    "owner": {
+        "reputation": 25297,
+        "user_id": 6152891,
+        "user_type": "registered",
+        "accept_rate": 75,
+        "profile_image": "https://www.gravatar.com/avatar/b45b7f89429f8766cdbf6c776c0a9d41?s=128&d=identicon&r=PG",
+        "display_name": "enet",
+        "link": "https://stackoverflow.com/users/6152891/enet"
+    },
+    "is_accepted": true,
+    "score": 1,
+    "last_activity_date": 1582284102,
+    "creation_date": 1582284102,
+    "answer_id": 60337632,
+    "question_id": 60335476,
+    "content_license": "CC BY-SA 4.0",
+    "body": "<p>First off, you can't use HttpContext in WebAssembly Blazor app or Server Blazor app.\nThe following link to my answer will teach you how<br>\n<a href=\"https://stackoverflow.com/a/60289289/6152891\">pass a value</a> to your AuthorizationHandler. Additionally it illustrate the use of the AuthorizeView component to secure your content, and allow access to authorized users only. </p>\n\n<p>Then see <a href=\"https://stackoverflow.com/a/60284148/6152891\">this answer</a> to get some idea how you can save your Jwt token on the local storage, how to retrieve it, and how to use it to perform HTTP calls.</p>\n\n<p>Note: What is missing here a way to extract a claim from your Jwt token and pass it to your AuthorizationHandler. This merits a new question...</p>\n\n<p>You also need to implement the StateAuthenticationProvider which may be combined with the Jwt token mechanism which is shown in my answer ( I call it TokenProvider)</p>\n\n<p>From what you describe in your question I get the impression that every thing is new to you, so I'd suggest you <a href=\"https://docs.microsoft.com/en-us/aspnet/core/security/blazor/?view=aspnetcore-3.1&amp;tabs=visual-studio\" rel=\"nofollow noreferrer\">start here...</a> </p>\n\n<p>hope this helps...</p>\n"
+}

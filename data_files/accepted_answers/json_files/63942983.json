@@ -1,0 +1,18 @@
+{
+    "owner": {
+        "reputation": 144,
+        "user_id": 9028374,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/e5cd0b8950b5831de518ed53b45638a6?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Tacot",
+        "link": "https://stackoverflow.com/users/9028374/tacot"
+    },
+    "is_accepted": true,
+    "score": 0,
+    "last_activity_date": 1600362496,
+    "creation_date": 1600362496,
+    "answer_id": 63942983,
+    "question_id": 63493496,
+    "content_license": "CC BY-SA 4.0",
+    "body": "<p>Found my problem, the code was fine, the problem was on the Azure registration side, The client uses the roles registered in the client app in Azure while the server uses the ones in the server app. so make sure you register the user in both with the same role.</p>\n"
+}

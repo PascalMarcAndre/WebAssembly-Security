@@ -1,0 +1,19 @@
+{
+    "owner": {
+        "reputation": 3240,
+        "user_id": 13378247,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/10d7d5a6636d8776427782cf74f9bba7?s=128&d=identicon&r=PG&f=1",
+        "display_name": "GirkovArpa",
+        "link": "https://stackoverflow.com/users/13378247/girkovarpa"
+    },
+    "is_accepted": true,
+    "score": 1,
+    "last_activity_date": 1591387176,
+    "last_edit_date": 1592644375,
+    "creation_date": 1591383943,
+    "answer_id": 62222522,
+    "question_id": 62177715,
+    "content_license": "CC BY-SA 4.0",
+    "body": "<p>WebAssembly memory can grow, but never shrink.  <code>delete</code> allows memory to be overwritten, but it remains reserved for future use by your WebAssembly application.</p>\n<blockquote>\n<p>when i try to send the pointer, poiting to the first value of the vector back to java script</p>\n<p>then i get some random garbage instead of the string.</p>\n</blockquote>\n<p>JavaScript doesn't understand the <code>vector</code> type.</p>\n"
+}

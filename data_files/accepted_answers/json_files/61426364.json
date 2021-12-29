@@ -1,0 +1,19 @@
+{
+    "owner": {
+        "reputation": 64155,
+        "user_id": 249933,
+        "user_type": "registered",
+        "accept_rate": 81,
+        "profile_image": "https://www.gravatar.com/avatar/458f2e0d08d4114f8b323798cfea141d?s=128&d=identicon&r=PG",
+        "display_name": "ColinE",
+        "link": "https://stackoverflow.com/users/249933/coline"
+    },
+    "is_accepted": true,
+    "score": 3,
+    "last_activity_date": 1587821241,
+    "creation_date": 1587821241,
+    "answer_id": 61426364,
+    "question_id": 61425680,
+    "content_license": "CC BY-SA 4.0",
+    "body": "<p>JavaScript engines are typically written in C++ making them an ideal candidate for compiling to WebAssembly using Emscripten. And yes, you could use this for the purposes of isolation - see this excellent blog post from Figma that discusses that specifically:</p>\n\n<p><a href=\"https://www.figma.com/blog/how-we-built-the-figma-plugin-system/\" rel=\"nofollow noreferrer\">https://www.figma.com/blog/how-we-built-the-figma-plugin-system/</a></p>\n\n<p>It also discusses various other useful options such as Realms.</p>\n"
+}

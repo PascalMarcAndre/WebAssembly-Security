@@ -1,0 +1,20 @@
+{
+    "owner": {
+        "reputation": 235075,
+        "user_id": 60761,
+        "user_type": "registered",
+        "accept_rate": 91,
+        "profile_image": "https://www.gravatar.com/avatar/5bf43bae0431d8f4a062234b5e3a0cb9?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Henk Holterman",
+        "link": "https://stackoverflow.com/users/60761/henk-holterman"
+    },
+    "is_accepted": true,
+    "score": 1,
+    "last_activity_date": 1598697285,
+    "last_edit_date": 1598697285,
+    "creation_date": 1598690730,
+    "answer_id": 63645099,
+    "question_id": 63644395,
+    "content_license": "CC BY-SA 4.0",
+    "body": "<p>The error is about <code>&lt;</code> not being the valid start of a Json response, which indeed it isn't.</p>\n<p>You are getting back an HTML page (with error information, probably).</p>\n<p>From the text I gather that you created 2 separate projects. That means <code>&quot;api/emps/&quot;</code> cannot be a valid route. Your API and Client are probably running on localhost:xxxx and localhost:yyyy .</p>\n<p>When you have fixed that routing you will probably run into a CORS problem, configure it on your server.</p>\n<p>Be aware that a basic setup for this is provided when you create a Blazor Webassembly app and check the 'Hosted' box.</p>\n<hr />\n<p>Try</p>\n<pre><code>empList = await Http.GetJsonAsync&lt;Emp[]&gt;(&quot;https://localhost:44333/api/emps&quot;); \n</code></pre>\n<p>and in your server Startup.Configure()</p>\n<pre><code>app.UseCors(policy =&gt; \n    policy.WithOrigins(&quot;https://localhost:44399&quot;)  // client address \n    .AllowAnyMethod()\n    .WithHeaders(HeaderNames.ContentType));\n</code></pre>\n"
+}

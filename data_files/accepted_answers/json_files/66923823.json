@@ -1,0 +1,18 @@
+{
+    "owner": {
+        "reputation": 51,
+        "user_id": 15097523,
+        "user_type": "unregistered",
+        "profile_image": "https://www.gravatar.com/avatar/a12e21e286eb28b12a98ec916ea1490a?s=128&d=identicon&r=PG",
+        "display_name": "Nick Lewycky",
+        "link": "https://stackoverflow.com/users/15097523/nick-lewycky"
+    },
+    "is_accepted": true,
+    "score": 1,
+    "last_activity_date": 1617388934,
+    "creation_date": 1617388934,
+    "answer_id": 66923823,
+    "question_id": 66776662,
+    "content_license": "CC BY-SA 4.0",
+    "body": "<p>At the specification level, &quot;linear memory&quot; is the only space that WebAssembly programs can access with its load and store instructions. Ensuring that this is true is the job of the WebAssembly VM, which is free to do it in any way so long as it meets the specification. In the VM I work on, Wasmer, the pointers into linear memory are 32-bit offsets from a base pointer and by default we allocate 6GiB of virtual addresses so that all possible pointer accesses fall inside the linear memory (from -2GiB to +4GiB, hence 6GiB). Some of these addresses are mapped inaccessible so that accesses to them cause a trap as required by the Wasm spec. There's no need to implement linear memory this way, you could write a WebAssembly VM that uses a hashtable for linear memory accesses (key=address, value=byte) and as long as it's implemented correctly no program should be able to tell.</p>\n<p>On the broader topic of SFI, I answered a variation of this question elsewhere on StackOverflow. <a href=\"https://stackoverflow.com/questions/64763007/why-is-webassembly-safe-and-what-is-linear-memory-model/65933986#65933986\">Why is WebAssembly safe and what is linear memory model</a> .</p>\n"
+}

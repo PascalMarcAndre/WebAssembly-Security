@@ -1,0 +1,19 @@
+{
+    "owner": {
+        "reputation": 64155,
+        "user_id": 249933,
+        "user_type": "registered",
+        "accept_rate": 81,
+        "profile_image": "https://www.gravatar.com/avatar/458f2e0d08d4114f8b323798cfea141d?s=128&d=identicon&r=PG",
+        "display_name": "ColinE",
+        "link": "https://stackoverflow.com/users/249933/coline"
+    },
+    "is_accepted": true,
+    "score": 7,
+    "last_activity_date": 1561532114,
+    "creation_date": 1561532114,
+    "answer_id": 56766887,
+    "question_id": 56766674,
+    "content_license": "CC BY-SA 4.0",
+    "body": "<p>WebAssembly was never designed to be less hackable than JavaScript. WebAssembly modules run within the browser and can be inspected and debugged just like any other JavaScript application. The only additional protection they offer is that of obfuscation. It is a lower level language which makes it harder to decipher the code - although that is not a strong protection!</p>\n\n<p>WebAssembly modules are sandboxed in that one module cannot access the memory, or interact with, another running module. They have their own isolated execution environment. JavaScript is also sandboxed in order to prevent code from one tab or page interacting with another - and more importantly preventing it from accessing the underlying host OS!</p>\n\n<p>Webassembly uses linear memory, which is a contiguous block of memory, that is typical used to create a heap. It can be exported to the host environment, which means that the hosting JavaScript code can directly read and write to it as a byte array.</p>\n\n<p>In summary, WebAssembly is not less hackable and has a different sandbox. If these are the trains you\u2019re looking at this technology, perhaps it\u2019s time for a rethink?</p>\n"
+}

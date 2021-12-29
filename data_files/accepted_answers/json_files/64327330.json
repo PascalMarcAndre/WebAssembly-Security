@@ -1,0 +1,19 @@
+{
+    "owner": {
+        "reputation": 2579,
+        "user_id": 195965,
+        "user_type": "registered",
+        "accept_rate": 82,
+        "profile_image": "https://www.gravatar.com/avatar/aec177aa3bc73958600e3c37d266b3ee?s=128&d=identicon&r=PG",
+        "display_name": "Jonas Arcangel",
+        "link": "https://stackoverflow.com/users/195965/jonas-arcangel"
+    },
+    "is_accepted": true,
+    "score": 1,
+    "last_activity_date": 1602553365,
+    "creation_date": 1602553365,
+    "answer_id": 64327330,
+    "question_id": 64289166,
+    "content_license": "CC BY-SA 4.0",
+    "body": "<p>The solution was to add the following:</p>\n<p>using IdentityServer4.Extensions;</p>\n<pre><code>//...\napp.Use((ctx, next) =&gt; \n{\n    ctx.SetIdentityServerOrigin(&quot;http://167.172.118.170&quot;);\n    return next();\n});\n</code></pre>\n"
+}

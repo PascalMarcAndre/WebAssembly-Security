@@ -1,0 +1,19 @@
+{
+    "owner": {
+        "reputation": 20697,
+        "user_id": 2733851,
+        "user_type": "registered",
+        "profile_image": "https://i.stack.imgur.com/MUOS4.png?s=128&g=1",
+        "display_name": "mcarton",
+        "link": "https://stackoverflow.com/users/2733851/mcarton"
+    },
+    "is_accepted": true,
+    "score": 5,
+    "last_activity_date": 1580819309,
+    "last_edit_date": 1580819309,
+    "creation_date": 1580818989,
+    "answer_id": 60057368,
+    "question_id": 60056483,
+    "content_license": "CC BY-SA 4.0",
+    "body": "<p>Yes.</p>\n\n<p>While WASM prevents some attacks by itself, many attacks that Rust make impossible or harder to exploit would still be present in a C to WASM program. At least the following attack vectors exist in WASM:</p>\n\n<ul>\n<li>Integer overflows/underflows: Those are UB in C, but are defined in Rust.</li>\n<li>Buffer overflows: WASM uses a linear memory. Rust prevents buffer overflows, those are UB in C.</li>\n<li>Use after free: Impossible to have in safe Rust, those are common in C.</li>\n</ul>\n\n<p>Some other attacks should not be possible using WASM whether using C or Rust as the source language:</p>\n\n<ul>\n<li>Arbitrary OS level code execution: WASM doesn't have those at all.</li>\n<li>Executable-space protection is not needed in WASM.</li>\n</ul>\n\n<p>The only way to use those attack vectors would be to find a vulnerability in the browser itself.</p>\n"
+}

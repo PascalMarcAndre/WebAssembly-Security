@@ -1,0 +1,19 @@
+{
+    "owner": {
+        "reputation": 235075,
+        "user_id": 60761,
+        "user_type": "registered",
+        "accept_rate": 91,
+        "profile_image": "https://www.gravatar.com/avatar/5bf43bae0431d8f4a062234b5e3a0cb9?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Henk Holterman",
+        "link": "https://stackoverflow.com/users/60761/henk-holterman"
+    },
+    "is_accepted": true,
+    "score": 1,
+    "last_activity_date": 1561010286,
+    "creation_date": 1561010286,
+    "answer_id": 56679804,
+    "question_id": 56665744,
+    "content_license": "CC BY-SA 4.0",
+    "body": "<blockquote>\n  <p>that fetches data from a remote SQL Server instance by way of System.Data.SqlCient</p>\n</blockquote>\n\n<p>That part should defintely run on the server. There is no SqlClient in the Browser.<br>\nRunning Blazor server-side ought to work. You should not have to deal with SignalR directly.</p>\n\n<blockquote>\n  <p>running in the code-behind of a HttpHandler (the data returned from the server gets jsonified and ...</p>\n</blockquote>\n\n<p>That sounds like it would fit to the Hosted model: an API server exposing endpoints to the client. It would leave you with the best architecture, but it may be more work. </p>\n"
+}

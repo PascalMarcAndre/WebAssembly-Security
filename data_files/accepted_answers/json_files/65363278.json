@@ -1,0 +1,19 @@
+{
+    "owner": {
+        "reputation": 12633,
+        "user_id": 653457,
+        "user_type": "registered",
+        "accept_rate": 89,
+        "profile_image": "https://www.gravatar.com/avatar/8870f099add93fa56421a87532ea0fe3?s=128&d=identicon&r=PG",
+        "display_name": "Luke Vo",
+        "link": "https://stackoverflow.com/users/653457/luke-vo"
+    },
+    "is_accepted": true,
+    "score": 0,
+    "last_activity_date": 1608321945,
+    "creation_date": 1608321945,
+    "answer_id": 65363278,
+    "question_id": 60986461,
+    "content_license": "CC BY-SA 4.0",
+    "body": "<p>Since there is no answer for a long time, I just want to state that I used <a href=\"https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API\" rel=\"nofollow noreferrer\">IndexedDB</a> as a workaround. It's a bit overkill but it helped me. It's just a single table with 2 columns for Key and Value.</p>\n"
+}

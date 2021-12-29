@@ -1,0 +1,18 @@
+{
+    "owner": {
+        "reputation": 53,
+        "user_id": 9182405,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/aa60cfe3be6b12825c32eddc9aeced02?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Dumas.DED",
+        "link": "https://stackoverflow.com/users/9182405/dumas-ded"
+    },
+    "is_accepted": true,
+    "score": 0,
+    "last_activity_date": 1600177183,
+    "creation_date": 1600177183,
+    "answer_id": 63903147,
+    "question_id": 63831943,
+    "content_license": "CC BY-SA 4.0",
+    "body": "<p>Based on some of @Mihaimyh's insights I was able to get this to work using a custom delegating handler on the user data service. It is registered thusly:</p>\n<pre><code>builder.Services.AddHttpClient&lt;IUserDataService, UserDataService&gt;(client =&gt; client.BaseAddress = new Uri(&quot;https://localhost:44336/&quot;))\n                .AddHttpMessageHandler&lt;CustomDelegatingHandler&gt;();\n</code></pre>\n<p>Internally it uses <code>JSInterop</code> to run a Javascript function to retrieve the cookie, which it then attaches to all outgoing requests that use the <code>SendAsync()</code> method:</p>\n<pre><code>public class CustomDelegatingHandler : DelegatingHandler\n{\n    private IJSRuntime JSRuntime;\n\n    public CustomDelegatingHandler(IJSRuntime jSRuntime) : base()\n    {\n        JSRuntime = jSRuntime;\n    }\n\n    protected override async Task&lt;HttpResponseMessage&gt; SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)\n    {\n        var cookie = await JSRuntime.InvokeAsync&lt;string&gt;(&quot;blazorExtensions.GetCookie&quot;, new[] { &quot;MyCookie&quot; });\n        Debug.WriteLine($&quot;My cookie: {cookie}&quot;);\n        request.Headers.Add(&quot;MyCookie&quot;, $&quot;{cookie}&quot;);\n        return await base.SendAsync(request, cancellationToken);\n    }\n}\n</code></pre>\n<p>The Javascript function looks like this (lifted almost verbatim from <a href=\"https://www.w3schools.com/js/js_cookies.asp\" rel=\"nofollow noreferrer\">W3Schools</a>):</p>\n<pre><code>window.blazorExtensions = { \n    GetCookie: function (cname) {\n        var name = cname + &quot;=&quot;;\n        var decodedCookie = decodeURIComponent(document.cookie);\n        var ca = decodedCookie.split(';');\n        for (var i = 0; i &lt; ca.length; i++) {\n            var c = ca[i];\n            while (c.charAt(0) == ' ') {\n                c = c.substring(1);\n            }\n            if (c.indexOf(name) == 0) {\n                return c.substring(name.length, c.length);\n            }\n        }\n        return &quot;&quot;;\n    }\n}\n</code></pre>\n<p>I've also modified things on the service end to look for the cookie in the headers instead of the cookie collection. Now, instead of this...</p>\n<pre><code>var myCookie = HttpContext.Request.Cookies.FirstOrDefault(c =&gt; c.Key == &quot;MyCookie&quot;);\n</code></pre>\n<p>...I've done this:</p>\n<pre><code>HttpContext.Request.Headers.TryGetValue(&quot;MyCookie&quot;, out var myCookie);\n</code></pre>\n<p>I admittedly have no idea how this tracks with the conventions for such things in Blazor apps, but it appears to be working well enough for our purposes. Thanks again everyone for all your help.</p>\n"
+}

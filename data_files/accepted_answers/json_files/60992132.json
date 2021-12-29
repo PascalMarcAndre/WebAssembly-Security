@@ -1,0 +1,18 @@
+{
+    "owner": {
+        "reputation": 77,
+        "user_id": 10229906,
+        "user_type": "registered",
+        "profile_image": "https://lh4.googleusercontent.com/-Apbpadfhkd0/AAAAAAAAAAI/AAAAAAAAEAI/QLCFL4EnJWg/photo.jpg?sz=128",
+        "display_name": "Luiz Eug&#234;nio Barbieri",
+        "link": "https://stackoverflow.com/users/10229906/luiz-eug%c3%aanio-barbieri"
+    },
+    "is_accepted": true,
+    "score": 2,
+    "last_activity_date": 1585832252,
+    "creation_date": 1585832252,
+    "answer_id": 60992132,
+    "question_id": 60932702,
+    "content_license": "CC BY-SA 4.0",
+    "body": "<p>I solved the problem. I surrounded the login service with a try catch and started to return the stacktrace. With that I noticed that the error was in the connecion string, I had not informed the database login and password. In development mode, it is not necessary to enter the database login and password, but in production this is mandatory. Thanks everyone for the tips = D</p>\n"
+}

@@ -1,0 +1,19 @@
+{
+    "owner": {
+        "reputation": 64155,
+        "user_id": 249933,
+        "user_type": "registered",
+        "accept_rate": 81,
+        "profile_image": "https://www.gravatar.com/avatar/458f2e0d08d4114f8b323798cfea141d?s=128&d=identicon&r=PG",
+        "display_name": "ColinE",
+        "link": "https://stackoverflow.com/users/249933/coline"
+    },
+    "is_accepted": true,
+    "score": 2,
+    "last_activity_date": 1589026211,
+    "creation_date": 1589026211,
+    "answer_id": 61696510,
+    "question_id": 61696080,
+    "content_license": "CC BY-SA 4.0",
+    "body": "<p>No, there is no way to access the current URL from a WebAssembly module without interoperating with the JavaScript host. In fact, WebAssembly cannot do <em>anything</em> without the host's help! It is design to have no I/O capabilities.</p>\n\n<p>Furthermore, even if it could access the URL - it would still not be a very robust security model. It is very easy to decompile and modify a WebAssembly module. Any code you deploy to the web, regardless of the language you use, can be stolen!</p>\n"
+}

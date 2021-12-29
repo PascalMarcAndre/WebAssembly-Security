@@ -1,0 +1,19 @@
+{
+    "owner": {
+        "reputation": 1103,
+        "user_id": 3581466,
+        "user_type": "registered",
+        "accept_rate": 40,
+        "profile_image": "https://i.stack.imgur.com/JdFyh.jpg?s=128&g=1",
+        "display_name": "ossentoo",
+        "link": "https://stackoverflow.com/users/3581466/ossentoo"
+    },
+    "is_accepted": true,
+    "score": 1,
+    "last_activity_date": 1592198779,
+    "creation_date": 1592198779,
+    "answer_id": 62381848,
+    "question_id": 62349575,
+    "content_license": "CC BY-SA 4.0",
+    "body": "<p>I managed to resolve this issue.</p>\n\n<p>Pay particular attention to the client app setup in this document, i.e. here: <a href=\"https://docs.microsoft.com/en-us/aspnet/core/security/blazor/webassembly/hosted-with-azure-active-directory?view=aspnetcore-3.1#client-app-configuration\" rel=\"nofollow noreferrer\">https://docs.microsoft.com/en-us/aspnet/core/security/blazor/webassembly/hosted-with-azure-active-directory?view=aspnetcore-3.1#client-app-configuration</a></p>\n\n<p>This section: </p>\n\n<p><a href=\"https://i.stack.imgur.com/biqC3.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/biqC3.png\" alt=\"Client app 401\"></a></p>\n\n<p>As it says here, ensure you use your api client id for the DefaultAccessTokenScopes.</p>\n\n<p>So in our case, i changed from:</p>\n\n<p>'<a href=\"https://app.com/d8302c4f-7ef1-49ac-92a0-a9c46b875313/App.Writers\" rel=\"nofollow noreferrer\">https://app.com/d8302c4f-7ef1-49ac-92a0-a9c46b875313/App.Writers</a>'</p>\n\n<p>to</p>\n\n<p>'d8302c4f-7ef1-49ac-92a0-a9c46b875313/App.Writers'</p>\n"
+}

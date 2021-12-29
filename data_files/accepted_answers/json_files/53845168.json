@@ -1,0 +1,19 @@
+{
+    "owner": {
+        "reputation": 10473,
+        "user_id": 644010,
+        "user_type": "registered",
+        "accept_rate": 73,
+        "profile_image": "https://www.gravatar.com/avatar/36ad60b78c391845429a4daa24cfc602?s=128&d=identicon&r=PG",
+        "display_name": "yushulx",
+        "link": "https://stackoverflow.com/users/644010/yushulx"
+    },
+    "is_accepted": true,
+    "score": 4,
+    "last_activity_date": 1545197823,
+    "creation_date": 1545197823,
+    "answer_id": 53845168,
+    "question_id": 53781802,
+    "content_license": "CC BY-SA 4.0",
+    "body": "<p>Someone has successfully compiled OpenCV to WebAssembly. You can visit the <a href=\"https://github.com/njor/opencvjs\" rel=\"nofollow noreferrer\">GitHub repository</a> and follow the steps:</p>\n\n<ol>\n<li>Get the source code:<br>\n<code>\ngit clone https://github.com/ucisysarch/opencvjs.git\ncd opencvjs\ngit clone https://github.com/opencv/opencv\ncd opencv\ngit checkout 3.1.0\n</code></li>\n<li>Install Emscripten:\n<code>\n./emsdk update\n./emsdk install sdk-incoming-64bit --shallow\n./emsdk activate sdk-incoming-64bit\nsource ./emsdk_env.sh\n</code></li>\n<li>Build OpenCV to WebAssembly.\n<code>\npython make.py --wasm\n</code></li>\n</ol>\n"
+}

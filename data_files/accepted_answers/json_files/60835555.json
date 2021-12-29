@@ -1,0 +1,19 @@
+{
+    "owner": {
+        "reputation": 765,
+        "user_id": 4873542,
+        "user_type": "registered",
+        "accept_rate": 83,
+        "profile_image": "https://lh4.googleusercontent.com/-Pgb3zoKnvRo/AAAAAAAAAAI/AAAAAAAAAU8/kDuu8Tt_h6Q/photo.jpg?sz=128",
+        "display_name": "Niek Jannink",
+        "link": "https://stackoverflow.com/users/4873542/niek-jannink"
+    },
+    "is_accepted": true,
+    "score": 0,
+    "last_activity_date": 1585068421,
+    "creation_date": 1585068421,
+    "answer_id": 60835555,
+    "question_id": 60745737,
+    "content_license": "CC BY-SA 4.0",
+    "body": "<p>The best solution is indeed as <a href=\"https://stackoverflow.com/users/4358683/ismail-umar\">Ismail Umer</a> described using a seperate authentication service using something like IdentityServer4. And use this service in all other services. This is something I will do in a next iteration.</p>\n\n<p>As short term solution I temporary moved the blazor server part into my api service and use a dual authentication method (JWT header or cookie). </p>\n\n<pre><code>        var key = Encoding.UTF8.GetBytes(m_configuration[@\"SecurityKey\"]);\n        services.AddAuthentication(options =&gt;\n            {\n                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;\n                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;\n            })\n            .AddJwtBearer(options =&gt;\n            {\n                options.TokenValidationParameters = new TokenValidationParameters\n                {\n                    NameClaimType = @\"http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier\",\n                    ValidateIssuerSigningKey = true,\n                    IssuerSigningKey = new SymmetricSecurityKey(key),\n                    ValidateIssuer = false,\n                    ValidateAudience = false,\n                    ValidateLifetime = true\n                };\n            })\n            .AddCookie();\n\n        // TODO: For time being support dual authorization. At later stage split in various micro-services and use IdentityServer4 for Auth\n        services.AddAuthorization(options =&gt;\n        {\n            var defaultAuthorizationPolicyBuilder = new AuthorizationPolicyBuilder(\n                CookieAuthenticationDefaults.AuthenticationScheme,\n                JwtBearerDefaults.AuthenticationScheme);\n            defaultAuthorizationPolicyBuilder =\n                defaultAuthorizationPolicyBuilder.RequireAuthenticatedUser();\n            options.DefaultPolicy = defaultAuthorizationPolicyBuilder.Build();\n        });\n</code></pre>\n"
+}

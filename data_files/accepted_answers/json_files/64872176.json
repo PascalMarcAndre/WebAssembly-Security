@@ -1,0 +1,19 @@
+{
+    "owner": {
+        "reputation": 3183,
+        "user_id": 3706778,
+        "user_type": "registered",
+        "profile_image": "https://i.stack.imgur.com/IpRV8.png?s=128&g=1",
+        "display_name": "Major",
+        "link": "https://stackoverflow.com/users/3706778/major"
+    },
+    "is_accepted": true,
+    "score": 3,
+    "last_activity_date": 1612948596,
+    "last_edit_date": 1612948596,
+    "creation_date": 1605603750,
+    "answer_id": 64872176,
+    "question_id": 64241884,
+    "content_license": "CC BY-SA 4.0",
+    "body": "<p>You can try to use this <a href=\"https://www.nuget.org/packages/Majorsoft.Blazor.WebAssembly.Logging.Console/\" rel=\"nofollow noreferrer\">Nuget package</a> In my project it logs Debug messages as well when correctly configured. It works always because using <code>Console.WriteLine()</code> See <a href=\"https://github.com/majorimi/blazor-components/blob/master/.github/docs/WebAssemblyHostedLogging.md\" rel=\"nofollow noreferrer\">docs</a>.</p>\n<pre><code>using Blazor.WebAssembly.Logging.Console;\n\n...\n\nbuilder.Logging.AddBrowserConsole()\n    .SetMinimumLevel(LogLevel.Debug) //Setting LogLevel is optional\n    .AddFilter(&quot;Microsoft&quot;, LogLevel.Information); //System logs can be filtered.\n</code></pre>\n<p><strong>NOTE</strong>: in .NET 5 Blazor Web Assembly apps (NOT in Server side) if you use standard logging it will log to Browser console automatically. However <strong>it is possible your Browser is filtering out some logs</strong>. It means if you are not enabling &quot;Verbose/Detailed&quot; logging probably won't see <code>Debug</code> and <code>Trace</code> logs. Check your settings.</p>\n<p>In <strong>Chrome</strong> it is here:\n<a href=\"https://i.stack.imgur.com/s3qrV.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/s3qrV.png\" alt=\"enter image description here\" /></a></p>\n<p><strong>All above mentioned works only for Blazor Web Assembly (client side) Apps</strong>. If you want to <strong>log from a Blazor Server hosted app to your Browser console</strong>, then it is only possible with 3rd party tool. Use <a href=\"https://www.nuget.org/packages/Majorsoft.Blazor.Server.Logging.Console/\" rel=\"nofollow noreferrer\">this Nuget package</a> which will do the &quot;magic&quot;. It works by sending logs from your server via SignalR channel to the user's Browser and logging to the console. Since it requires somewhat complex setup recommend to follow <a href=\"https://github.com/majorimi/blazor-components/blob/master/.github/docs/ServerHostedLogging.md\" rel=\"nofollow noreferrer\">this detailed docs</a>.</p>\n"
+}

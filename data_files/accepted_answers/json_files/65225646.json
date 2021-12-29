@@ -1,0 +1,19 @@
+{
+    "owner": {
+        "reputation": 1,
+        "user_id": 14794191,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/05660aa2cb4221caf3a7dbf2fbc2b86c?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Falco Lannoo",
+        "link": "https://stackoverflow.com/users/14794191/falco-lannoo"
+    },
+    "is_accepted": true,
+    "score": 0,
+    "last_activity_date": 1607552220,
+    "last_edit_date": 1607552220,
+    "creation_date": 1607551725,
+    "answer_id": 65225646,
+    "question_id": 65219885,
+    "content_license": "CC BY-SA 4.0",
+    "body": "<p>I found the solution to this issue.\nI needed to make use of the &quot;Microsoft.Identity.Web&quot; &amp; &quot;Microsoft.Identity.Web.UI&quot; nuget packages to be able to retrieve the tokens to call the API.</p>\n<p>I followed the solution explained in following sample: <a href=\"https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/tree/b07a9e06206f7274fdcadc34a50b8bebf9666fcf/4-WebApp-your-API/4-1-MyOrg#step-2-register-the-sample-with-your-azure-active-directory-tenant\" rel=\"nofollow noreferrer\">https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/tree/b07a9e06206f7274fdcadc34a50b8bebf9666fcf/4-WebApp-your-API/4-1-MyOrg#step-2-register-the-sample-with-your-azure-active-directory-tenant</a></p>\n<p>I did encounter some issues with the consent mechanism that is needed the first time a user logs in. This is solved by adding the &quot;Microsoft Identity consent and conditional access handler service&quot; which is explained here: <a href=\"https://github.com/AzureAD/microsoft-identity-web/wiki/Managing-incremental-consent-and-conditional-access\" rel=\"nofollow noreferrer\">https://github.com/AzureAD/microsoft-identity-web/wiki/Managing-incremental-consent-and-conditional-access</a></p>\n<p>So case closed :)</p>\n<p>Hope this helps someone in the future as well.</p>\n<p>For completeness, I added the changes I did in my code:</p>\n<p><strong>Startup.cs</strong></p>\n<pre><code>services.AddControllersWithViews(options =&gt;\n        {\n            var policy = new AuthorizationPolicyBuilder()\n                .RequireAuthenticatedUser()\n                .Build();\n            options.Filters.Add(new AuthorizeFilter(policy));\n        }).AddMicrosoftIdentityUI();\n\n        \nservices.AddAuthentication(OpenIdConnectDefaults.AuthenticationScheme)\n             .AddMicrosoftIdentityWebApp(Configuration)\n             .EnableTokenAcquisitionToCallDownstreamApi(new string[] { Configuration[&quot;DashboardAPI:ApiScope&quot;] })\n             .AddInMemoryTokenCaches();\n\nservices.AddServerSideBlazor()\n            .AddMicrosoftIdentityConsentHandler();\n</code></pre>\n<p><strong>API controller class</strong></p>\n<p>Injected &quot;ITokenAcquisition&quot; class in my constructor and assigned it to the &quot;_tokenAcquisition&quot; var\nEach time I call the API, I execute the &quot;PrepareAuthenticatedClient&quot; method first</p>\n<pre><code>private async Task PrepareAuthenticatedClient()\n    {\n        var accessToken = await _tokenAcquisition.GetAccessTokenForUserAsync(new[] { _dashboardAPIScope });\n        _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(&quot;Bearer&quot;, accessToken);\n    }\n</code></pre>\n<p>In the view where I call the API controller, I added a try-catch block for the consent handling and inject the consenthandler</p>\n<pre><code>[Inject]\nMicrosoftIdentityConsentAndConditionalAccessHandler ConsentHandler { get; set; }\n\ntry\n{\n   // Call to my API controller\n}\ncatch(Exception ex)\n{\n    ConsentHandler.HandleException(ex);\n}\n</code></pre>\n"
+}

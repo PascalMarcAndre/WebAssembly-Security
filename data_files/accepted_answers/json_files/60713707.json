@@ -1,0 +1,19 @@
+{
+    "owner": {
+        "reputation": 1531,
+        "user_id": 439965,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/016775e869b4a6c2e13e0e938b974016?s=128&d=identicon&r=PG",
+        "display_name": "RReverser",
+        "link": "https://stackoverflow.com/users/439965/rreverser"
+    },
+    "is_accepted": true,
+    "score": 2,
+    "last_activity_date": 1584443714,
+    "last_edit_date": 1584443714,
+    "creation_date": 1584395674,
+    "answer_id": 60713707,
+    "question_id": 60496032,
+    "content_license": "CC BY-SA 4.0",
+    "body": "<p>The issue is in how you're loading the code:</p>\n\n<pre class=\"lang-js prettyprint-override\"><code>(async function() {\n  // Get the JS File\n  const src = await import(\"/pkg/rusty.js\");\n  // Fetch the wasm file.\n  const wasm_src = chrome.extension.getURL(\"/pkg/rusty_bg.wasm\");\n  //src has an exported function 'default' that initializes the WebAssembly module.\n  let wasm = await src.default(wasm_src);\n\n  wasm.hello(\"stack-overflow\");\n})();\n</code></pre>\n\n<p><code>wasm</code> returned from <code>.default(...)</code> is an object with raw WebAssembly exports that can operate only on raw numbers.</p>\n\n<p>In this case what's happening is that <code>wasm.hello</code> expects two integer numbers - pointer and length of the string in WebAssembly memory - and JavaScript happily converts <code>\"stack-overflow\"</code> to <code>0</code> and provides another <code>0</code> as a default value, which is why you're ending up with an empty string on the Rust side.</p>\n\n<p>What you want instead is the wrapped version of the function that takes care of proper conversions. These live directly on imports of the <code>.js</code> file:</p>\n\n<pre class=\"lang-js prettyprint-override\"><code>(async function() {\n  // Get the JS File\n  const rusty = await import(\"/pkg/rusty.js\");\n  // Fetch the wasm file.\n  const wasm_src = chrome.extension.getURL(\"/pkg/rusty_bg.wasm\");\n  // rusty has an exported function 'default' that initializes the WebAssembly module.\n  await rusty.default(wasm_src);\n\n  rusty.hello(\"stack-overflow\"); // it works!\n})();\n</code></pre>\n"
+}

@@ -1,0 +1,18 @@
+{
+    "owner": {
+        "reputation": 753,
+        "user_id": 91445,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/1aec00ffca93de3bdf99eb001a7f8fee?s=128&d=identicon&r=PG",
+        "display_name": "Derek",
+        "link": "https://stackoverflow.com/users/91445/derek"
+    },
+    "is_accepted": true,
+    "score": 3,
+    "last_activity_date": 1481867609,
+    "creation_date": 1481867609,
+    "answer_id": 41178057,
+    "question_id": 41083606,
+    "content_license": "CC BY-SA 3.0",
+    "body": "<p>Some clarification:</p>\n\n<ol>\n<li>NaCl will not be supported by browsers other than Chrome. We (Google's NaCl/WebAssembly team) are more focused on WebAssembly for the future.</li>\n<li>PPAPI is the set of APIs used by NaCl.</li>\n<li>NPAPI: on the way out, and needs a plugin installation anyway.</li>\n<li>Emscripten. It does compile C++ to JS, but I would not say that it reveals your source code to the user. It has been significantly transformed through the usual compilation and optimization process, and I would say it's closer to machine code than source code. In addition we are adding WebAssembly support to emscripten, so that with the same source you can produce WebAssembly for those browsers that support it, and asm.js for those that don't yet.</li>\n<li>WebAssembly is the future, and will meet all of your criteria, with the caveat that the browser APIs and capabilities available to wasm are the same as those available to JavaScript. So you won't be able to get unlimited access to the user's filesystem, for example. All 4 major browser vendors are implementing webassembly, but it should appear in Chrome and Firefox first, because the release schedules of those browsers are uncoupled from their respective operating systems.</li>\n</ol>\n\n<p>My suggestion would be to try porting your code with emscripten. You can start that today and use asm.js, and when WebAssembly launches, you can target that with minimal extra effort. In the future there will be other toolchains and languages that support wasm, but today emscripten is really the only ready-to-go option.</p>\n"
+}

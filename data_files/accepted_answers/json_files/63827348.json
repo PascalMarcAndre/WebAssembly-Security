@@ -1,0 +1,20 @@
+{
+    "owner": {
+        "reputation": 5283,
+        "user_id": 68490,
+        "user_type": "registered",
+        "accept_rate": 20,
+        "profile_image": "https://www.gravatar.com/avatar/b3c70bbc491ede87ae5682c561af07d2?s=128&d=identicon&r=PG",
+        "display_name": "Tore Nestenius",
+        "link": "https://stackoverflow.com/users/68490/tore-nestenius"
+    },
+    "is_accepted": true,
+    "score": 0,
+    "last_activity_date": 1599732744,
+    "last_edit_date": 1599732744,
+    "creation_date": 1599732321,
+    "answer_id": 63827348,
+    "question_id": 63818789,
+    "content_license": "CC BY-SA 4.0",
+    "body": "<p><strong>/connect/authorize</strong> is one of the endpoints that IdentityServer listens for and it is the first URL that the application/client should redirect to when the user is about to authenticate.</p>\n<p>One way to tell if IdentityServer is up and running is to go to this URL <a href=\"https://yourdomain.com/.well-known/openid-configuration\" rel=\"nofollow noreferrer\">https://yourdomain.com/.well-known/openid-configuration</a></p>\n<p>This URL Should always succeed.</p>\n<p>When you deploy to the cloud and Azure Service App, one thing is to make sure you understand where HTTPS is terminated, is it in your application or in Azure Service? If it is not terminated in the application it-self, then it might be that the public URL is HTTPS but what your application sees is HTTP.</p>\n<p>Some links to follow:</p>\n<ul>\n<li><a href=\"https://securecloud.blog/2020/07/23/unobvious-stuff-about-azure-services-app-service-tls-termination/\" rel=\"nofollow noreferrer\">https://securecloud.blog/2020/07/23/unobvious-stuff-about-azure-services-app-service-tls-termination/</a></li>\n<li><a href=\"https://www.hanselman.com/blog/SecuringAnAzureAppServiceWebsiteUnderSSLInMinutesWithLetsEncrypt.aspx\" rel=\"nofollow noreferrer\">https://www.hanselman.com/blog/SecuringAnAzureAppServiceWebsiteUnderSSLInMinutesWithLetsEncrypt.aspx</a></li>\n</ul>\n"
+}

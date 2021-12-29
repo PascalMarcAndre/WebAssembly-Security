@@ -1,0 +1,19 @@
+{
+    "owner": {
+        "reputation": 1348,
+        "user_id": 5275376,
+        "user_type": "registered",
+        "accept_rate": 83,
+        "profile_image": "https://www.gravatar.com/avatar/a8bbb1e2df58ceebc9bbb5596bf823f3?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Shiva Kishore",
+        "link": "https://stackoverflow.com/users/5275376/shiva-kishore"
+    },
+    "is_accepted": true,
+    "score": 4,
+    "last_activity_date": 1560006584,
+    "creation_date": 1560006584,
+    "answer_id": 56507571,
+    "question_id": 56506468,
+    "content_license": "CC BY-SA 4.0",
+    "body": "<p>First to answer your question. No, WASM is not safe to store client secrets for the scenario that you are describing.</p>\n\n<p>And your current implementation doesn't seem to be secure as well (from the limited info available).</p>\n\n<p>If you are compiling your code to binary just so that an attacker cannot find your <strong>fixed salt</strong> I got bad news for you. It is very much possible to extract data from a binary file.</p>\n\n<p>Just think of a case where you have your salt stored as a variable inside a c program.</p>\n\n<pre><code>int main() {\n char* mySaltVar = \"my salt\";\n char* b = \"my other string\";\n}\n</code></pre>\n\n<p>and you compile this with gcc and create binary. you might think these strings cannot be read as they inside the binary but you can just run <code>strings</code> program on the binary to get the strings inside the binary.</p>\n\n<pre><code>sk$ strings binary.out \nmy salt\nmy other string\n</code></pre>\n\n<p>The two strings are extracted from the binary.</p>\n\n<p>This is an over simplified example to show that everything in your code is inside the binary. In most of the cases the compiler throws away some info to make the binary as efficient as possible. In such cases attacker would use reverse engineering tools to figure out what is going on inside the binary.</p>\n"
+}

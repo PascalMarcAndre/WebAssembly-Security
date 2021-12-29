@@ -1,0 +1,20 @@
+{
+    "owner": {
+        "reputation": 25297,
+        "user_id": 6152891,
+        "user_type": "registered",
+        "accept_rate": 75,
+        "profile_image": "https://www.gravatar.com/avatar/b45b7f89429f8766cdbf6c776c0a9d41?s=128&d=identicon&r=PG",
+        "display_name": "enet",
+        "link": "https://stackoverflow.com/users/6152891/enet"
+    },
+    "is_accepted": true,
+    "score": 2,
+    "last_activity_date": 1594419053,
+    "last_edit_date": 1594419053,
+    "creation_date": 1594418476,
+    "answer_id": 62842888,
+    "question_id": 62841969,
+    "content_license": "CC BY-SA 4.0",
+    "body": "<p>Note:</p>\n<ol>\n<li><p>When your user tries to access a protected (annotated with the Authorize attribute) page on the client he should login first or register.</p>\n</li>\n<li><p>In order to register, he should be redirected to an Account Controller where you should create a new user, and add it to the database (You said you &quot; integrated the AspNetCore.Identity into it&quot;), which is fine...and should be used to authenticate and verify the user's identity. You account controller should also produce a Jwt Token that should be passed to the client app, and stored in the local storage.</p>\n</li>\n<li><p>Now, whenever your user tries to access protected resources on your Web Api endpoints, you should retrieve the Jwt Token from the local storage, and add it to the request header. If you do so, the Unauthorized response would be something of the past.</p>\n</li>\n<li><p>Custom AuthenticationStateProvider can be a good place from which you can manage storing the Jwt Token in the local storage and retrieving it for outbound HTTP request calls.</p>\n</li>\n</ol>\n<p>Here's some sample code to clarify what you should do:</p>\n<pre><code>@code {\n    WeatherForecast[] forecasts;\n\n    protected override async Task OnInitializedAsync()\n    {\n        var token = await TokenProvider.GetTokenAsync();\n        forecasts = await Http.GetJsonAsync&lt;WeatherForecast[]&gt;(\n            &quot;api/WeatherForecast&quot;,\n            new AuthenticationHeaderValue(&quot;Bearer&quot;, token));\n    }\n}\n</code></pre>\n<p>Note: TokenProvider is a custom AuthenticationStateProvider that defines a method called GetTokenAsync that provides (reading the Jwt Token from the local storage and passing it to the calling code) the Jwt Token</p>\n<p>Hope this helps...</p>\n"
+}

@@ -1,0 +1,18 @@
+{
+    "owner": {
+        "reputation": 2723,
+        "user_id": 2658697,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/1d9486e90f5e906e38a06aa76bf5fa0b?s=128&d=identicon&r=PG",
+        "display_name": "Mister Magoo",
+        "link": "https://stackoverflow.com/users/2658697/mister-magoo"
+    },
+    "is_accepted": true,
+    "score": 2,
+    "last_activity_date": 1615773547,
+    "creation_date": 1615773547,
+    "answer_id": 66631463,
+    "question_id": 66626979,
+    "content_license": "CC BY-SA 4.0",
+    "body": "<p>The password reset flow was just updated in AzureADB2c, please refer to the updated docs here <a href=\"https://docs.microsoft.com/en-us/azure/active-directory-b2c/add-password-reset-policy?pivots=b2c-user-flow#self-service-password-reset-recommended\" rel=\"nofollow noreferrer\">https://docs.microsoft.com/en-us/azure/active-directory-b2c/add-password-reset-policy?pivots=b2c-user-flow#self-service-password-reset-recommended</a></p>\n<p>They have removed the need to trap and handle an error code on the client - as it is all handled by AzureADB2C.</p>\n"
+}

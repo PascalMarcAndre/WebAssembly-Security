@@ -1,0 +1,18 @@
+{
+    "owner": {
+        "reputation": 10331,
+        "user_id": 10521739,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/6459b077561be67082b7c27faed22fb2?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Allen Wu",
+        "link": "https://stackoverflow.com/users/10521739/allen-wu"
+    },
+    "is_accepted": true,
+    "score": 1,
+    "last_activity_date": 1612144666,
+    "creation_date": 1612144666,
+    "answer_id": 65986234,
+    "question_id": 65960547,
+    "content_license": "CC BY-SA 4.0",
+    "body": "<p>You are correct. There is no <strong>Permissions &gt; Grant admin consent to openid and offline_access</strong> under normal <strong>AAD | App registrations</strong>.</p>\n<p>But it indeed has this part under <strong>Azure AD B2C</strong>.</p>\n<p><a href=\"https://i.stack.imgur.com/ivQej.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/ivQej.png\" alt=\"enter image description here\" /></a></p>\n<p>So I guess the document is not updated to synchronize with the Azure portal.</p>\n<p>Don't worry about that. You can skip the step 5. After the Azure AD app is created successfully, you can assign and consent the <code>openid</code> and <code>offline_access</code> under Microsoft Graph permissions. Please note that don't forget to click on <strong>Grant admin consent for {your tenant}</strong>.</p>\n<p><a href=\"https://i.stack.imgur.com/JnHBc.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/JnHBc.png\" alt=\"enter image description here\" /></a></p>\n"
+}

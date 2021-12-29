@@ -1,0 +1,19 @@
+{
+    "owner": {
+        "reputation": 1684,
+        "user_id": 2396264,
+        "user_type": "registered",
+        "accept_rate": 100,
+        "profile_image": "https://www.gravatar.com/avatar/423ea1e7faf341fbc2a08cc48c1d5886?s=128&d=identicon&r=PG",
+        "display_name": "MarengoHue",
+        "link": "https://stackoverflow.com/users/2396264/marengohue"
+    },
+    "is_accepted": true,
+    "score": 1,
+    "last_activity_date": 1600854162,
+    "creation_date": 1600854162,
+    "answer_id": 64025188,
+    "question_id": 63973611,
+    "content_license": "CC BY-SA 4.0",
+    "body": "<p>It turns out that default configuration for the Oidc doesn't request access_token, only id_token. Had to add the following:</p>\n<pre class=\"lang-cs prettyprint-override\"><code>builder.Services.AddOidcAuthentication(options =&gt; {\n    // Rest of configs ...\n    options.ProviderOptions.ResponseType = &quot;id_token token&quot;;\n});\n</code></pre>\n"
+}

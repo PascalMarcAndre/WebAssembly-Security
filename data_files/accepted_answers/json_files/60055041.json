@@ -1,0 +1,19 @@
+{
+    "owner": {
+        "reputation": 6582,
+        "user_id": 147301,
+        "user_type": "registered",
+        "accept_rate": 97,
+        "profile_image": "https://i.stack.imgur.com/5cRaa.png?s=128&g=1",
+        "display_name": "Flores",
+        "link": "https://stackoverflow.com/users/147301/flores"
+    },
+    "is_accepted": true,
+    "score": 2,
+    "last_activity_date": 1580810874,
+    "creation_date": 1580810874,
+    "answer_id": 60055041,
+    "question_id": 60054668,
+    "content_license": "CC BY-SA 4.0",
+    "body": "<p>The permissions of blazor are limited by the browser javascript sandbox, so you cannot do anything you also cannot do in javascript. Starting processes is one of them.</p>\n"
+}

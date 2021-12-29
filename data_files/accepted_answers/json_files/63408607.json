@@ -1,0 +1,18 @@
+{
+    "owner": {
+        "reputation": 336,
+        "user_id": 10540286,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/799f5c7fed12571229b69dfffade5793?s=128&d=identicon&r=PG",
+        "display_name": "CodeFromItaly",
+        "link": "https://stackoverflow.com/users/10540286/codefromitaly"
+    },
+    "is_accepted": true,
+    "score": 1,
+    "last_activity_date": 1597391104,
+    "creation_date": 1597391104,
+    "answer_id": 63408607,
+    "question_id": 63371014,
+    "content_license": "CC BY-SA 4.0",
+    "body": "<p>I solved the issue by using hosting my application into Azure.</p>\n<p>I think that I had problems with the autosigned certificate.\nMoreover some features were missing from my Windows feature windows.</p>\n"
+}

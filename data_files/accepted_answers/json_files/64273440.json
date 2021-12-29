@@ -1,0 +1,20 @@
+{
+    "owner": {
+        "reputation": 52556,
+        "user_id": 555045,
+        "user_type": "registered",
+        "accept_rate": 100,
+        "profile_image": "https://www.gravatar.com/avatar/182d0ce855c8324a596648c04643e8f9?s=128&d=identicon&r=PG",
+        "display_name": "harold",
+        "link": "https://stackoverflow.com/users/555045/harold"
+    },
+    "is_accepted": true,
+    "score": 3,
+    "last_activity_date": 1602214060,
+    "last_edit_date": 1602214060,
+    "creation_date": 1602213242,
+    "answer_id": 64273440,
+    "question_id": 64273143,
+    "content_license": "CC BY-SA 4.0",
+    "body": "<p><code>mulhs(a, b) = mulhu(a, b) - (a &lt; 0 ? b : 0) - (b &lt; 0 ? a : 0)</code></p>\n<p>Using that, two signed double-width products can be computed like this,</p>\n<pre><code>__m128i mul_epi32(__m128i a, __m128i b) {\n    a = _mm_shuffle_epi32(a, _MM_SHUFFLE(3, 1, 1, 0));\n    b = _mm_shuffle_epi32(b, _MM_SHUFFLE(3, 1, 1, 0));\n    __m128i unsignedProduct = _mm_mul_epu32(a, b);\n    __m128i threshold = _mm_set_epi32(INT_MIN, 0, INT_MIN, 0);\n    __m128i signA = _mm_cmplt_epi32(a, threshold);\n    __m128i signB = _mm_cmplt_epi32(b, threshold);\n    __m128i x = _mm_shuffle_epi32(_mm_and_si128(signA, b), _MM_SHUFFLE(2, 3, 0, 1));\n    __m128i y = _mm_shuffle_epi32(_mm_and_si128(signB, a), _MM_SHUFFLE(2, 3, 0, 1));\n    return _mm_sub_epi32(_mm_sub_epi32(unsignedProduct, x), y);\n}\n</code></pre>\n<p>That saves a couple of operations over the other proposal, but it's very close and now it includes a load which could be bad if this code is cold.</p>\n"
+}

@@ -1,0 +1,19 @@
+{
+    "owner": {
+        "reputation": 64155,
+        "user_id": 249933,
+        "user_type": "registered",
+        "accept_rate": 81,
+        "profile_image": "https://www.gravatar.com/avatar/458f2e0d08d4114f8b323798cfea141d?s=128&d=identicon&r=PG",
+        "display_name": "ColinE",
+        "link": "https://stackoverflow.com/users/249933/coline"
+    },
+    "is_accepted": true,
+    "score": 2,
+    "last_activity_date": 1589127083,
+    "creation_date": 1589127083,
+    "answer_id": 61715011,
+    "question_id": 61709122,
+    "content_license": "CC BY-SA 4.0",
+    "body": "<p>Yes, you could compile a JavaScript virtual machine to WebAssembly for the purposes of executing untrusted user code. WebAssembly has no built in I/O, therefore you can run code in such a way that it can do no harm at all. For practical purposes you\u2019d want to provide a secure API which this code could use in order to perform any useful functions. In your case this sounds very simple - your API simply allows a string to be exchanged.</p>\n\n<p>However, there are some simpler alternatives - see this excellent blog post from Figma that discusses that specifically:</p>\n\n<p><a href=\"https://www.figma.com/blog/how-we-built-the-figma-plugin-system/\" rel=\"nofollow noreferrer\">https://www.figma.com/blog/how-we-built-the-figma-plugin-system/</a></p>\n\n<p>It also discusses various other useful options such as Realms.</p>\n"
+}

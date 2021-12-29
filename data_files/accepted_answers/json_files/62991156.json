@@ -1,0 +1,20 @@
+{
+    "owner": {
+        "reputation": 12588,
+        "user_id": 2940908,
+        "user_type": "registered",
+        "accept_rate": 60,
+        "profile_image": "https://i.stack.imgur.com/E79WU.jpg?s=128&g=1",
+        "display_name": "agua from mars",
+        "link": "https://stackoverflow.com/users/2940908/agua-from-mars"
+    },
+    "is_accepted": true,
+    "score": 0,
+    "last_activity_date": 1595237694,
+    "last_edit_date": 1595237694,
+    "creation_date": 1595232574,
+    "answer_id": 62991156,
+    "question_id": 62991035,
+    "content_license": "CC BY-SA 4.0",
+    "body": "<p>Just <code>builder.Services.AddBlazoredLocalStorage();</code> or <code>builder.Services.AddBlazoredLocalStorage(config =&gt; config.JsonSerializerOptions.WriteIndented = true);</code> as it's explain in <a href=\"https://github.com/Blazored/LocalStorage/blob/master/README.md\" rel=\"nofollow noreferrer\">README</a>.<br />\nThen <code>builder.Services.AddScoped&lt;StorageManagement&gt;();</code> or <code>builder.Services.AddScoped(p =&gt; new StorageManagement(p.GetRequiredSerice&lt;ILocalStorageService&gt;()));</code></p>\n<p>But your service should take a <code>ILocalStorageService</code> not a <code>LocalStorageService</code> instance :</p>\n<pre class=\"lang-cs prettyprint-override\"><code>public class StorageManagement\n{\n    public StorageManagement(ILocalStorageService localStorage)\n    {\n        //How to initialize it here?\n    }\n}\n</code></pre>\n"
+}

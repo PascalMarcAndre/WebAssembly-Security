@@ -1,0 +1,19 @@
+{
+    "owner": {
+        "reputation": 25297,
+        "user_id": 6152891,
+        "user_type": "registered",
+        "accept_rate": 75,
+        "profile_image": "https://www.gravatar.com/avatar/b45b7f89429f8766cdbf6c776c0a9d41?s=128&d=identicon&r=PG",
+        "display_name": "enet",
+        "link": "https://stackoverflow.com/users/6152891/enet"
+    },
+    "is_accepted": true,
+    "score": 2,
+    "last_activity_date": 1607976608,
+    "creation_date": 1607976608,
+    "answer_id": 65295775,
+    "question_id": 65295133,
+    "content_license": "CC BY-SA 4.0",
+    "body": "<pre><code>&lt;a href=&quot;authentication/login&quot;&gt;Log in&lt;/a&gt;\n</code></pre>\n<p>The value of the href attribute is a relative local url...It points to the Authentication component in your client app. The second segment of the url, <code>login</code>, is actually a parameter passed to the Authentication component. Here's the definition of the component:</p>\n<h2>Authentication.razor</h2>\n<pre><code>@page &quot;/authentication/{action}&quot;\n@using Microsoft.AspNetCore.Components.WebAssembly.Authentication\n&lt;RemoteAuthenticatorView Action=&quot;@Action&quot; /&gt;\n\n@code{\n    [Parameter] public string Action { get; set; }\n}\n</code></pre>\n<p>Note that the <code>login</code> string is assigned to the Action attribute of the RemoteAuthenticatorView component that handles remote authentication operations.\nIn this case telling her that we wish to login the user. If you're interested to know how the url is created and follow the whole process of the authentication, you may consult the classes that are involved in the this process... I deem it a waste of time, though. And complicated.</p>\n<blockquote>\n<p>The cshtml page has @page directive but does not specify a roue</p>\n</blockquote>\n<p>This is a Razor Pages page, not a Razor Page component. A Razor Page component, also known as routable must be annotated with a @page directive plus route template, as for instance: <code>@page &quot;/counter&quot;</code>. This tell Blazor that the current component is routable, and its relative url is given in the route template\nThe @page directive, without a route template, in Razor Pages page, such as the Login.cshtml, &quot;makes the file into an MVC action - which means that it handles requests directly, without going through a controller.&quot;</p>\n"
+}

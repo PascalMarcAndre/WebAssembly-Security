@@ -1,0 +1,18 @@
+{
+    "owner": {
+        "reputation": 285,
+        "user_id": 9855089,
+        "user_type": "registered",
+        "profile_image": "https://i.stack.imgur.com/hMA6J.jpg?s=128&g=1",
+        "display_name": "Jaap",
+        "link": "https://stackoverflow.com/users/9855089/jaap"
+    },
+    "is_accepted": true,
+    "score": 1,
+    "last_activity_date": 1585895553,
+    "creation_date": 1585895553,
+    "answer_id": 61006252,
+    "question_id": 60989640,
+    "content_license": "CC BY-SA 4.0",
+    "body": "<p>I also posted this question at GitHub dotnet/aspnetcore and James Newton-King came up with the answer, see: <a href=\"https://github.com/dotnet/aspnetcore/issues/20442#issuecomment-608064432\" rel=\"nofollow noreferrer\">https://github.com/dotnet/aspnetcore/issues/20442#issuecomment-608064432</a></p>\n\n<p><strong>JamesNK:</strong></p>\n\n<blockquote>\n  <p>You should be able to get an IConfiguration inside the AddSingleton. e.g.</p>\n</blockquote>\n\n<pre><code>builder.Services.AddSingleton(services =&gt;\n{\n    var configuration = services.GetRequiredService&lt;IConfiguration&gt;();\n    var backendUrl = configuration[\"BackendUrl\"];\n\n    // Create a gRPC-Web channel pointing to the backend server.\n    // GrpcWebText is used because server streaming requires it. If server streaming is not used in your app\n    // then GrpcWeb is recommended because it produces smaller messages.\n    var httpClient = new HttpClient(new GrpcWebHandler(GrpcWebMode.GrpcWebText, new HttpClientHandler()));\n    var channel = GrpcChannel.ForAddress(backendUrl, new GrpcChannelOptions { HttpClient = httpClient });\n    return channel;\n});\n</code></pre>\n"
+}

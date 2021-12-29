@@ -1,0 +1,19 @@
+{
+    "owner": {
+        "reputation": 4004,
+        "user_id": 1492496,
+        "user_type": "registered",
+        "profile_image": "https://i.stack.imgur.com/dO7to.png?s=128&g=1",
+        "display_name": "Brian Parker",
+        "link": "https://stackoverflow.com/users/1492496/brian-parker"
+    },
+    "is_accepted": true,
+    "score": 1,
+    "last_activity_date": 1598523290,
+    "last_edit_date": 1598523290,
+    "creation_date": 1598517226,
+    "answer_id": 63612176,
+    "question_id": 63611732,
+    "content_license": "CC BY-SA 4.0",
+    "body": "<p>Try using AuthorizeView with a different context :</p>\n<pre><code>&lt;CascadingAuthenticationState&gt;\n    &lt;Router AppAssembly=&quot;@typeof(Program).Assembly&quot;&gt;\n        &lt;Found Context=&quot;routeData&quot;&gt;\n            &lt;AuthorizeRouteView RouteData=&quot;@routeData&quot;&gt;\n                &lt;Authorizing&gt;\n                    &lt;p&gt;Authorizing...&lt;/p&gt;\n                &lt;/Authorizing&gt;\n                &lt;NotAuthorized&gt;\n                    &lt;AuthorizeView Context=&quot;authenticated&quot;&gt;\n                        &lt;Authorized Context=&quot;authenticated&quot;&gt;\n                            &lt;AuthorizeView Roles=&quot;WhatEver&quot; Context=&quot;role&quot;&gt;\n                                &lt;Authorized Context=&quot;role&quot;&gt;\n                                    &lt;NotAuthorizedView /&gt;\n                                &lt;/Authorized&gt;\n                                &lt;NotAuthorized Context=&quot;role&quot;&gt;\n                                    &lt;ForbiddenView /&gt;\n                                &lt;/NotAuthorized&gt;\n                            &lt;/AuthorizeView&gt;\n                        &lt;/Authorized&gt;\n                        &lt;NotAuthorized Context=&quot;authenticated&quot;&gt;\n                            &lt;RedirectToLogin /&gt;\n                        &lt;/NotAuthorized&gt;\n                    &lt;/AuthorizeView&gt;\n                &lt;/NotAuthorized&gt;\n            &lt;/AuthorizeRouteView&gt;\n        &lt;/Found&gt;\n        &lt;NotFound&gt;\n            &lt;NotFoundView /&gt;\n        &lt;/NotFound&gt;\n    &lt;/Router&gt;\n&lt;/CascadingAuthenticationState&gt;\n</code></pre>\n<p>or <code>!context.User.IsInRole(&quot;WhatEver&quot;);</code></p>\n<p>if you specifically need NotInRole:</p>\n<pre><code>public static bool NotInRole(this ClaimsPrincipal claimsPrincipal) \n    =&gt; claimsPrincipal.Claims.All(c =&gt; c.Type != &quot;role&quot;);\n</code></pre>\n"
+}

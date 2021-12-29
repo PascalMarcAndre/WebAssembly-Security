@@ -1,0 +1,20 @@
+{
+    "owner": {
+        "reputation": 25297,
+        "user_id": 6152891,
+        "user_type": "registered",
+        "accept_rate": 75,
+        "profile_image": "https://www.gravatar.com/avatar/b45b7f89429f8766cdbf6c776c0a9d41?s=128&d=identicon&r=PG",
+        "display_name": "enet",
+        "link": "https://stackoverflow.com/users/6152891/enet"
+    },
+    "is_accepted": true,
+    "score": 21,
+    "last_activity_date": 1603890673,
+    "last_edit_date": 1603890673,
+    "creation_date": 1585834139,
+    "answer_id": 60992719,
+    "question_id": 60992581,
+    "content_license": "CC BY-SA 4.0",
+    "body": "<p>I usually do something like this:</p>\n<pre><code>Console.WriteLine(&quot;My debug output.&quot;);\n</code></pre>\n<p>if it's Blazor WebAssembly, I see the message in the browser\u00b4s console.</p>\n<p>If it's Blazor Server App I see the message in the Output window. (In the output window, there is a dropdown - select: &quot; ASP.NET Core Web Server&quot;)</p>\n<p>Hope this helps...</p>\n"
+}

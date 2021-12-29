@@ -1,0 +1,18 @@
+{
+    "owner": {
+        "reputation": 620,
+        "user_id": 12188459,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/4b9ce262491702b1f16a2af065d377a5?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Nishant",
+        "link": "https://stackoverflow.com/users/12188459/nishant"
+    },
+    "is_accepted": true,
+    "score": 2,
+    "last_activity_date": 1598962418,
+    "creation_date": 1598962418,
+    "answer_id": 63687434,
+    "question_id": 63605653,
+    "content_license": "CC BY-SA 4.0",
+    "body": "<p>Sending the domain_hint with Blazor web assembly is not supported currently. I have opened a <a href=\"https://github.com/dotnet/sdk/issues/13297\" rel=\"nofollow noreferrer\">GitHub issue</a> to track this further.</p>\n"
+}

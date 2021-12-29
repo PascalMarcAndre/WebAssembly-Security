@@ -1,0 +1,20 @@
+{
+    "owner": {
+        "reputation": 568,
+        "user_id": 1415454,
+        "user_type": "registered",
+        "accept_rate": 67,
+        "profile_image": "https://www.gravatar.com/avatar/6ff55239f069e204b22596b14e1e63e6?s=128&d=identicon&r=PG",
+        "display_name": "Chris Simeone",
+        "link": "https://stackoverflow.com/users/1415454/chris-simeone"
+    },
+    "is_accepted": true,
+    "score": 1,
+    "last_activity_date": 1590608040,
+    "last_edit_date": 1590608040,
+    "creation_date": 1590607602,
+    "answer_id": 62051295,
+    "question_id": 60324442,
+    "content_license": "CC BY-SA 4.0",
+    "body": "<p>**</p>\n\n<h2>Microsoft has released a fix for this issue!</h2>\n\n<p>**</p>\n\n<p>Support for Blazor WebAssembly projects has been added in the 8.6 release of Visual Studio for Mac. You can update by installing the latest from <a href=\"https://visualstudio.com/mac\" rel=\"nofollow noreferrer\">https://visualstudio.com/mac</a> or updating to the Stable channel using the Visual Studio > Check for Updates\u2026 menu. </p>\n\n<p>Ultimately this update worked. However when trying to run the Blazor WebAssembly the very first time I got the following error:</p>\n\n<blockquote>\n  <p>The ASP.NET Core developer certificate is in an invalid state. To fix\n  this issue, run the following commands to remove all existing ASP.NET\n  Core development certificates and create a new untrusted developer\n  certificate.</p>\n</blockquote>\n\n<pre><code>dotnet dev-certs https --clean\ndotnet dev-certs https\ndotnet dev-certs https --trust\n</code></pre>\n\n<p>I followed the instructions running the three commands above and that resolved my error. FYI, the first of the three commands may take a few minutes and you may not see any output activity immediately.</p>\n\n<p>Now I can build a run Blazor WebAssembly in Version 8.6 of Visual Studio for Mac.</p>\n\n<p>For more info see the <a href=\"https://developercommunity.visualstudio.com/content/problem/925026/missing-blazor-webassembly-app-template-for-visual.html\" rel=\"nofollow noreferrer\">post I created</a> in the Visual Studio Developer Community: </p>\n"
+}

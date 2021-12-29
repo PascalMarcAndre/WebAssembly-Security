@@ -1,0 +1,19 @@
+{
+    "owner": {
+        "reputation": 2100,
+        "user_id": 931409,
+        "user_type": "registered",
+        "accept_rate": 70,
+        "profile_image": "https://www.gravatar.com/avatar/597e6c69fda7baf00dde0c2e181efb69?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Tomov",
+        "link": "https://stackoverflow.com/users/931409/tomov"
+    },
+    "is_accepted": true,
+    "score": 0,
+    "last_activity_date": 1589093087,
+    "creation_date": 1589093087,
+    "answer_id": 61708171,
+    "question_id": 48854770,
+    "content_license": "CC BY-SA 4.0",
+    "body": "<p>What I ended up doing is moving some of the logic from JavaScript into C++ and compiling that into NodeJS native modules (that's possible for Electron apps).</p>\n\n<p>It works pretty good, it's very fast, the source is... as protected as it can get, but you may need to worry about cross-platform issues, also compiling/linking can be a bit of a pain, but other than that it's great.</p>\n"
+}

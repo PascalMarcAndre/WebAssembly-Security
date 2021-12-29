@@ -1,0 +1,18 @@
+{
+    "owner": {
+        "reputation": 41,
+        "user_id": 4408465,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/49bafb0388c66c92fe408cfa6f302de9?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Martin Man&#248;",
+        "link": "https://stackoverflow.com/users/4408465/martin-man%c3%b8"
+    },
+    "is_accepted": true,
+    "score": 0,
+    "last_activity_date": 1606602733,
+    "creation_date": 1606602733,
+    "answer_id": 65055109,
+    "question_id": 63972772,
+    "content_license": "CC BY-SA 4.0",
+    "body": "<p>The issue were the serviceworker, catching all requests and sending them to index.html. The answer to this issue can be found in the following: <a href=\"https://stackoverflow.com/questions/62073764/url-rewrite-exceptions-for-blazor-webassembly-hosted-deployment/62088093#62088093\">URL Rewrite exceptions for Blazor WebAssembly Hosted deployment</a></p>\n"
+}

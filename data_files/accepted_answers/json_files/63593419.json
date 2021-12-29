@@ -1,0 +1,20 @@
+{
+    "owner": {
+        "reputation": 141,
+        "user_id": 8578818,
+        "user_type": "registered",
+        "accept_rate": 100,
+        "profile_image": "https://www.gravatar.com/avatar/f1e0e85a7efdc5e0e4d455a4a2a9b6a9?s=128&d=identicon&r=PG&f=1",
+        "display_name": "harris",
+        "link": "https://stackoverflow.com/users/8578818/harris"
+    },
+    "is_accepted": true,
+    "score": 2,
+    "last_activity_date": 1598430231,
+    "last_edit_date": 1598430231,
+    "creation_date": 1598429824,
+    "answer_id": 63593419,
+    "question_id": 63593076,
+    "content_license": "CC BY-SA 4.0",
+    "body": "<p>I have forgotten to add get; set; for ALL my model properties...</p>\n<p>{ get; set; }</p>\n<pre><code>  public string Error { get; set; }\n  public bool IsSuccessfull { get; set; }\n  public string userid { get; set; }\n  public string username { get; set; }\n  .....\n</code></pre>\n"
+}

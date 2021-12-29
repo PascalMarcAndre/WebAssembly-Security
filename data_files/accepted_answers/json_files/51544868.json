@@ -1,0 +1,20 @@
+{
+    "owner": {
+        "reputation": 267015,
+        "user_id": 155423,
+        "user_type": "registered",
+        "accept_rate": 90,
+        "profile_image": "https://www.gravatar.com/avatar/419218774d04a581476ea1887a0921e0?s=128&d=identicon&r=PG",
+        "display_name": "Shepmaster",
+        "link": "https://stackoverflow.com/users/155423/shepmaster"
+    },
+    "is_accepted": true,
+    "score": 15,
+    "last_activity_date": 1532628094,
+    "last_edit_date": 1532628094,
+    "creation_date": 1532627613,
+    "answer_id": 51544868,
+    "question_id": 51544240,
+    "content_license": "CC BY-SA 4.0",
+    "body": "<p><a href=\"https://webassembly.github.io/spec/core/syntax/instructions.html#memory-instructions\" rel=\"noreferrer\">WebAssembly does not offer any instructions to deallocate memory</a>, there is only the ability to increase the allocated size. Practically speaking, this means that the peak memory usage of your WebAssembly application is also the <strong>permanent</strong> memory usage.</p>\n\n<p>For a given problem, it may be possible to tweak your algorithm to reduce the peak amount of memory.</p>\n\n<p>I don't have the knowledge or ability to test this, but one out-of-the-box idea would be to try and have multiple WebAssembly runtimes distinct from each other. You could chew up a lot of memory in one to compute a relatively small result, serialize that result outside of the WASM runtime, then throw it away and spin up a new one. This is likely only to be useful in certain specific problem domains.</p>\n\n<hr>\n\n<p>In the future, memory resizing may be <strong>re</strong>-added to WebAssembly. It was explicitly removed before the MVP release:</p>\n\n<blockquote>\n  <p>After the MVP, we are moving to things that diverge and cannot be polyfilled, and memory resizing makes more sense to add at that point in time.</p>\n</blockquote>\n\n<ul>\n<li><a href=\"https://github.com/WebAssembly/design/issues/294\" rel=\"noreferrer\">Remove memory resizing from the MVP (294)</a></li>\n<li><a href=\"https://github.com/WebAssembly/design/pull/389\" rel=\"noreferrer\">Only allow memory growth in MVP (389)</a></li>\n</ul>\n\n<p>Thanks to <a href=\"https://discordapp.com/channels/442252698964721669/443151097398296587/472096547635462156\" rel=\"noreferrer\">alexcrichton</a> and <a href=\"https://discordapp.com/channels/442252698964721669/443151097398296587/472096596725858314\" rel=\"noreferrer\">steveklabnik</a> for answering this question in the Rust Discord.</p>\n"
+}

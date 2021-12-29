@@ -1,0 +1,19 @@
+{
+    "owner": {
+        "reputation": 910,
+        "user_id": 1706963,
+        "user_type": "registered",
+        "profile_image": "https://i.stack.imgur.com/WXUTi.jpg?s=128&g=1",
+        "display_name": "inliner49er",
+        "link": "https://stackoverflow.com/users/1706963/inliner49er"
+    },
+    "is_accepted": true,
+    "score": 4,
+    "last_activity_date": 1599727771,
+    "last_edit_date": 1599727771,
+    "creation_date": 1587407606,
+    "answer_id": 61329552,
+    "question_id": 61311181,
+    "content_license": "CC BY-SA 4.0",
+    "body": "<p>What a misleading error message. It was a CORS issue.</p>\n<p>The fix was adding <code>&quot;PATCH&quot;</code> to my CORS policy in my API's startup.cs <code>ConfigureServices</code> method (which previously was <code>&quot;GET, DELETE, PUT, POST, OPTIONS&quot;</code>).</p>\n<pre class=\"lang-cs prettyprint-override\"><code>services.AddCors(options =&gt;\n{\n    options.AddPolicy(CorsAllowAll,\n    builder =&gt;\n    {\n            builder.WithOrigins(Constants.ApiClientCors).AllowAnyHeader().WithMethods(&quot;GET, PATCH, DELETE, PUT, POST, OPTIONS&quot;);\n    });  \n});\n</code></pre>\n"
+}

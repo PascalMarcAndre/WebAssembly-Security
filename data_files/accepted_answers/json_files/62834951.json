@@ -1,0 +1,19 @@
+{
+    "owner": {
+        "reputation": 12588,
+        "user_id": 2940908,
+        "user_type": "registered",
+        "accept_rate": 60,
+        "profile_image": "https://i.stack.imgur.com/E79WU.jpg?s=128&g=1",
+        "display_name": "agua from mars",
+        "link": "https://stackoverflow.com/users/2940908/agua-from-mars"
+    },
+    "is_accepted": true,
+    "score": 1,
+    "last_activity_date": 1594386300,
+    "creation_date": 1594386300,
+    "answer_id": 62834951,
+    "question_id": 62834687,
+    "content_license": "CC BY-SA 4.0",
+    "body": "<p>Because of security concern, it's not a good idea.<br />\nBut you can implement a login page where you want if you provide the good anti forgery token in the form data and request header. This means you need the login page from the IS4 server. Parse the page to find the hidden form field containing the anti XSRF forgery token. Send back cookies and headers to the IS4 server.<br />\nGood luck.</p>\n<p>If you manage the IS4 server, it's easier to customize the IS4's login page.</p>\n"
+}

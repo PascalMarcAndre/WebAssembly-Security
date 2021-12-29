@@ -1,0 +1,19 @@
+{
+    "owner": {
+        "reputation": 14294,
+        "user_id": 2069605,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/06d4b7148dd01f17ac266a6d0ca523de?s=128&d=identicon&r=PG",
+        "display_name": "Preston PHX",
+        "link": "https://stackoverflow.com/users/2069605/preston-phx"
+    },
+    "is_accepted": true,
+    "score": 1,
+    "last_activity_date": 1605304609,
+    "last_edit_date": 1605304609,
+    "creation_date": 1605304055,
+    "answer_id": 64828434,
+    "question_id": 64827234,
+    "content_license": "CC BY-SA 4.0",
+    "body": "<p>Redirecting is a legacy flow.</p>\n<p>The modern user experience is to not use any redirects. At all.</p>\n<p>You'll need two routes, one for 'Set Up Transaction' (create order) and one for 'Capture Transaction' (capture order), <a href=\"https://developer.paypal.com/docs/checkout/reference/server-integration/\" rel=\"nofollow noreferrer\">documented here.</a></p>\n<p>Pair your two routes with this UI for approval: <a href=\"https://developer.paypal.com/demo/checkout/#/pattern/server\" rel=\"nofollow noreferrer\">https://developer.paypal.com/demo/checkout/#/pattern/server</a></p>\n<hr />\n<p>Subscriptions add their own complexity and there's no documentation on how to pair client side approval with a server integration like the above, but it's fairly straightforward when you know the create/activate API calls to use, and extra <code>user_action</code> parameter to set empty: <a href=\"https://stackoverflow.com/a/63908112/2069605\">https://stackoverflow.com/a/63908112/2069605</a></p>\n"
+}

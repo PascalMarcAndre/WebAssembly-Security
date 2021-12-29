@@ -1,0 +1,18 @@
+{
+    "owner": {
+        "reputation": 868,
+        "user_id": 14625593,
+        "user_type": "registered",
+        "profile_image": "https://i.stack.imgur.com/o6RMg.png?s=128&g=1",
+        "display_name": "Just the benno",
+        "link": "https://stackoverflow.com/users/14625593/just-the-benno"
+    },
+    "is_accepted": true,
+    "score": 1,
+    "last_activity_date": 1611212427,
+    "creation_date": 1611212427,
+    "answer_id": 65822497,
+    "question_id": 65808332,
+    "content_license": "CC BY-SA 4.0",
+    "body": "<p>I was able to upload a file with your code. It was working like a charm. So, there is no error in your source code. I used the <code>Microsoft.NET.Sdk.BlazorWebAssembly</code> SDK with <code>net5.0</code> as the target framework. Probably, it's a configuration issue with the storage account.</p>\n<p><a href=\"https://i.stack.imgur.com/pi8PN.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/pi8PN.png\" alt=\"CORS policies\" /></a></p>\n<p>The CORS policy allows the host of the application (https://localhost:5001) to accesses the resources with any verb and any header (*) values. The response can include the <code>content-length</code> header. Is your WASM self hosted or hosted within an ASP core application? You can easily spot what origin is sent to azure by inspected the request.</p>\n<p><a href=\"https://i.stack.imgur.com/UqWNM.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/UqWNM.png\" alt=\"what origin is used to send a request\" /></a></p>\n<p>Based on your context, only a few verbs like <strong>PUT</strong> might be enough.</p>\n<p>The configuration of the SAS key can also be more specific.</p>\n<p><a href=\"https://i.stack.imgur.com/ll0sd.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/ll0sd.png\" alt=\"Configuration for SAS\" /></a></p>\n<p><strong>Using SAS from Blazor WASM</strong></p>\n<p>Even not entirely part of your questions, but worth mentioning. If you want to allow a direct upload into your blob storage - and there are good reasons for it - before uploading a file, your WASM app should send a request to your API, the response contains the SAS key that can only be used for this one operation. The SAS key itself should be a <a href=\"https://docs.microsoft.com/en-us/azure/storage/common/storage-sas-overview?toc=/azure/storage/blobs/toc.json#user-delegation-sas\" rel=\"nofollow noreferrer\">user delegation SAS key</a></p>\n"
+}

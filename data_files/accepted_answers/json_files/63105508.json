@@ -1,0 +1,19 @@
+{
+    "owner": {
+        "reputation": 2017,
+        "user_id": 384585,
+        "user_type": "registered",
+        "accept_rate": 100,
+        "profile_image": "https://www.gravatar.com/avatar/7127d88b22518f086edc3f3edc6c24db?s=128&d=identicon&r=PG",
+        "display_name": "Michael Washington",
+        "link": "https://stackoverflow.com/users/384585/michael-washington"
+    },
+    "is_accepted": true,
+    "score": 1,
+    "last_activity_date": 1595796278,
+    "creation_date": 1595796278,
+    "answer_id": 63105508,
+    "question_id": 63100932,
+    "content_license": "CC BY-SA 4.0",
+    "body": "<p>The default <strong>httpClient</strong> <em>requires</em> authorization so even making a call to see if a person is authorized causes the code to prompt the user to log in kicks in.</p>\n<p>So to get around this, in the Program.cs file (in the Client project), I created a <strong>httpClient</strong> that allows <em>anonymous requests</em></p>\n<pre><code>// This allows anonymous requests\n// See: https://docs.microsoft.com/en-us/aspnet/core/security/blazor/webassembly/additional-scenarios?view=aspnetcore-3.1#unauthenticated-or-unauthorized-web-api-requests-in-an-app-with-a-secure-default-client\n            builder.Services.AddHttpClient(&quot;ServerAPI.NoAuthenticationClient&quot;, client =&gt; client.BaseAddress = new Uri(builder.HostEnvironment.BaseAddress));\n</code></pre>\n<p>This example should help:\n<a href=\"https://github.com/ADefWebserver/SyncfusionHelpDeskClient/blob/main/Client/Pages/Index.razor\" rel=\"nofollow noreferrer\">https://github.com/ADefWebserver/SyncfusionHelpDeskClient/blob/main/Client/Pages/Index.razor</a></p>\n<p>It calls the NoAuthenticationClient <strong>httpClient</strong></p>\n<pre><code>protected override void OnInitialized()\n{\n    // Create a httpClient to use for non-authenticated calls\n    NoAuthenticationClient =\n         ClientFactory.CreateClient(\n             &quot;ServerAPI.NoAuthenticationClient&quot;);\n}\n\npublic async Task HandleValidSubmit(EditContext context)\n{\n    try\n    {\n        // Save the new Help Desk Ticket\n\n        // Create a new GUID for this Help Desk Ticket\n        objHelpDeskTicket.TicketGuid =\n            System.Guid.NewGuid().ToString();\n\n        await NoAuthenticationClient.PostAsJsonAsync(\n            &quot;SyncfusionHelpDesk&quot;, objHelpDeskTicket);\n\n        // Send Email\n        HelpDeskEmail objHelpDeskEmail = new HelpDeskEmail();\n        objHelpDeskEmail.EmailType = &quot;Help Desk Ticket Created&quot;;\n        objHelpDeskEmail.EmailAddress = &quot;&quot;;\n        objHelpDeskEmail.TicketGuid = objHelpDeskTicket.TicketGuid;\n\n        await NoAuthenticationClient.PostAsJsonAsync(\n            &quot;Email&quot;, objHelpDeskEmail);\n\n        // Clear the form\n        objHelpDeskTicket = new HelpDeskTicket();\n\n        // Show the Toast\n        ToastContent = &quot;Saved!&quot;;\n        StateHasChanged();\n        await this.ToastObj.Show();\n\n    }\n    catch (Exception ex)\n    {\n        ToastContent = ex.Message;\n        StateHasChanged();\n        await this.ToastObj.Show();\n    }\n}\n</code></pre>\n"
+}

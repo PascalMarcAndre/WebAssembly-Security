@@ -1,0 +1,18 @@
+{
+    "owner": {
+        "reputation": 1531,
+        "user_id": 439965,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/016775e869b4a6c2e13e0e938b974016?s=128&d=identicon&r=PG",
+        "display_name": "RReverser",
+        "link": "https://stackoverflow.com/users/439965/rreverser"
+    },
+    "is_accepted": true,
+    "score": 3,
+    "last_activity_date": 1589558170,
+    "creation_date": 1589558170,
+    "answer_id": 61823456,
+    "question_id": 61821267,
+    "content_license": "CC BY-SA 4.0",
+    "body": "<blockquote>\n  <p>Ideally, such an offering would improve load times with caching</p>\n</blockquote>\n\n<p>It doesn't work like that in modern browsers; for security reasons they incorporate a technique called a double-keyed HTTP cache (unfortunately, I don't know of a good explainer to link out to, but this one should work well: <a href=\"https://github.com/shivanigithub/http-cache-partitioning/\" rel=\"nofollow noreferrer\">https://github.com/shivanigithub/http-cache-partitioning/</a>).</p>\n\n<p>What this means is that any resources from a CDN are loaded and stored separately under the origin that requested them, and not shared between various websites like it used to be in the past.</p>\n\n<p>As such, you will be much better off actually compiling the required native libraries for your particular application - that way you will benefit from compile-time optimisations, and won't be loading any unused parts of the huge libraries or frameworks for each user.</p>\n\n<p>However, now that we covered the performance aspect, there are indeed some attempts to serve precompiled Wasm modules, mainly for tiny libraries where code size is not as much of a concern as in standard frameworks.</p>\n\n<p>If you're looking for Wasm libraries intended for use from JavaScript, then npm is used just like for other libraries, and is a convenient platform because you can ship JavaScript wrappers (e.g. Emscripten or wasm-bindgen generated code) together with the actual native code. E.g. just a random example from a quick search: <a href=\"https://www.npmjs.com/package/xsalsa20\" rel=\"nofollow noreferrer\">https://www.npmjs.com/package/xsalsa20</a>.</p>\n\n<p>If you're looking to ship Wasm applications built with WASI API in mind, then you might be interested to take a look at <a href=\"https://wapm.io/\" rel=\"nofollow noreferrer\">https://wapm.io/</a>, which does just that and ships a bunch of precompiled apps.</p>\n\n<p><strong>TL;DR:</strong> there are some package managers and CDNs that allow shipping WebAssembly libraries and applications, but it's done mainly for convenience, not performance; if you care about performance and download sizes, then you're better off compiling native libraries yourself for your particular app.</p>\n"
+}

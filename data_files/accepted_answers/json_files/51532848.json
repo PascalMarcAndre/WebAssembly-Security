@@ -1,0 +1,20 @@
+{
+    "owner": {
+        "reputation": 12473,
+        "user_id": 1402929,
+        "user_type": "registered",
+        "accept_rate": 100,
+        "profile_image": "https://i.stack.imgur.com/IORgE.jpg?s=128&g=1",
+        "display_name": "Matt Harrison",
+        "link": "https://stackoverflow.com/users/1402929/matt-harrison"
+    },
+    "is_accepted": true,
+    "score": 1,
+    "last_activity_date": 1532591805,
+    "last_edit_date": 1532591805,
+    "creation_date": 1532588645,
+    "answer_id": 51532848,
+    "question_id": 51451679,
+    "content_license": "CC BY-SA 4.0",
+    "body": "<p>I've tested with your example and it seems to work fine for me in latest Chrome (67.0.3396.99) and FF (61.0.1).</p>\n\n<p><strong>index.wat</strong></p>\n\n<pre><code>(module\n    (memory (import \"js\" \"mem\") 1)\n    (data (i32.const 0) \"\\aa\"))\n</code></pre>\n\n<p>Then I produced a binary with <code>wat2wasm index.wat</code> which matches the bytes you mentioned in the comment above:</p>\n\n<p><strong>index.wasm</strong></p>\n\n<pre><code>00 61 73 6D 01 00 00 00 02 0B 01 02 6A 73 03 6D 65 6D 02 00 01 0B 07 01 00 41 00 0B 01 AA\n</code></pre>\n\n<p>Then I loaded this via a simple HTML page:</p>\n\n<p><strong>index.wasm</strong></p>\n\n<pre><code>&lt;!DOCTYPE html&gt;\n&lt;html lang=\"en\"&gt;\n&lt;head&gt;\n    &lt;meta charset=\"UTF-8\"&gt;\n    &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"&gt;\n    &lt;meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\"&gt;\n    &lt;title&gt;Document&lt;/title&gt;\n&lt;/head&gt;\n&lt;body&gt;\n    &lt;script&gt;\n\n        fetch('index.wasm').then((response) =&gt; response.arrayBuffer())\n        .then((bytes) =&gt; {\n\n            const memory = new WebAssembly.Memory({\n                initial:10,\n                maximum:100\n            });\n\n            return WebAssembly.instantiate(bytes, {\n                js: { mem: memory }\n            });\n        })\n        .then(function (module) {\n\n            console.log(module);\n        })\n        .catch((err) =&gt; {\n\n            console.log(err);\n        });\n    &lt;/script&gt;\n&lt;/body&gt;\n&lt;/html&gt;\n</code></pre>\n\n<p>The console output looks correct in that it parsed and loaded the WebAssembly module correctly:</p>\n\n<p><strong>Console screenshot</strong></p>\n\n<p><a href=\"https://i.stack.imgur.com/htWfz.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/htWfz.png\" alt=\"enter image description here\"></a></p>\n\n<p>Regarding the second part of your question, you can encode 123 in memory using the expression exactly as you stated it <code>\"\\7b\"</code>. Here's an example:</p>\n\n<p><strong>index.wat</strong></p>\n\n<pre><code>(module\n    (memory (import \"js\" \"mem\") 1)\n    (data (i32.const 0) \"\\7b\"))\n</code></pre>\n\n<p>If we log out the first index in our memory in the JS we can see it's 123:</p>\n\n<p><strong>index.html</strong></p>\n\n<pre><code>const memory = new WebAssembly.Memory({\n    initial:1,\n    maximum:1\n});\n\nfetch('index.wasm').then((response) =&gt; response.arrayBuffer())\n.then((bytes) =&gt; {\n\n    return WebAssembly.instantiate(bytes, {\n        js: { mem: memory }\n    });\n})\n.then(function (module) {\n\n    console.log(new Uint8Array(memory.buffer));\n})\n.catch((err) =&gt; {\n\n    console.log(err);\n});\n</code></pre>\n\n<p><strong>console output</strong></p>\n\n<p><a href=\"https://i.stack.imgur.com/mbior.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/mbior.png\" alt=\"enter image description here\"></a></p>\n\n<p>Hope this helps you somewhat!</p>\n"
+}

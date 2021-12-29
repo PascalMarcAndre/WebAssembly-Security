@@ -1,0 +1,18 @@
+{
+    "owner": {
+        "reputation": 1664,
+        "user_id": 1786007,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/c6bfb48152374c6833ec10ecf0574e0b?s=128&d=identicon&r=PG",
+        "display_name": "Venson",
+        "link": "https://stackoverflow.com/users/1786007/venson"
+    },
+    "is_accepted": true,
+    "score": 0,
+    "last_activity_date": 1610982853,
+    "creation_date": 1610982853,
+    "answer_id": 65777187,
+    "question_id": 59343706,
+    "content_license": "CC BY-SA 4.0",
+    "body": "<p>I found a solution. With the latest update to .Net5 it is now possible to use the <code>IJSUnmarshalledRuntime</code>. This makes everything a lot easier. Beware there seems to be still limits or other restrictions in place I was forced to partition my files to around 200mb but the solution is very fast and does seem to work &quot;fine&quot; enough. Warning: Works only in Webassembly Blazor!</p>\n<p>First write use a FileUtil:</p>\n<pre class=\"lang-cs prettyprint-override\"><code>public static class FileUtil\n{\n    public static void SaveAs(this IJSRuntime js, string filename, MemoryStream data)\n    {\n        var rt = js as IJSUnmarshalledRuntime;\n        var dataArray = data.ToArray();\n        rt.InvokeUnmarshalled&lt;string, byte[], object&gt;(\n            &quot;saveAsFile&quot;,\n            filename,\n            dataArray);\n    }\n}\n</code></pre>\n<p>and then use this js function:</p>\n<pre class=\"lang-js prettyprint-override\"><code>function saveAsFile(filenamePointer, contentPointer) {\n    var parts = Blazor.platform.toUint8Array(contentPointer);\n    var filename = BINDING.conv_string(filenamePointer);\n\n    var blob = new Blob([parts], { type: &quot;application/octet-stream&quot; });\n    if (navigator.msSaveBlob) {\n        //Download document in Edge browser\n        navigator.msSaveBlob(blob, filename);\n    }\n    else {\n        var link = document.createElement('a');\n        link.download = filename;\n        link.href = URL.createObjectURL(blob);\n        document.body.appendChild(link); // Needed for Firefox\n        link.click();\n        document.body.removeChild(link);\n    }\n}\n</code></pre>\n"
+}
